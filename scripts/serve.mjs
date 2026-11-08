@@ -20,7 +20,7 @@ const liveReload = `<script>
       boot = next;
     });
     changes.addEventListener("change", (event) => {
-      const paths = JSON.parse(event.data).filter(path => /^(landing(?:-scene\.js|\.css)|images\/landing\/)/.test(path) || path.startsWith("review/") === location.pathname.startsWith("/review/"));
+      const paths = JSON.parse(event.data).filter(path => path.startsWith("landing") || path.startsWith("images/landing/") || path.startsWith("review/") === location.pathname.startsWith("/review/"));
       if (!paths.length) return;
       if (paths.every(path => path.endsWith(".css"))) {
         for (const path of paths) {
