@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-08",
+  "artDirection": "C \u00b7 Miniature World",
+  "selection": "Explicit user choice in current chat",
+  "layoutAndMovementApproval": "pending",
+  "finalAssets": "not authorized until detailed preview approval",
+  "files": [
+    {
+      "file": "selected-direction-c.png",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1ba0f-4c64-7283-ad94-82bf4f83d352\\exec-4fc8edec-ae7b-4e19-a0f5-0a04b3f06ab9.png",
+      "sha256": "d26c35ac3667d02b9bfb4a1b790afb2ae16328352cefdb2a5d91a66456c59e86",
+      "status": "Selected art direction; not production assets",
+      "method": "built-in image_gen",
+      "scope": "preproduction preview only"
+    },
+    {
+      "file": "dispatch-layout-initial.png",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1ba0f-4c64-7283-ad94-82bf4f83d352\\exec-f3e940b8-9fbf-4d5d-9d3d-78bb4359b462.png",
+      "sha256": "bb2c7bd7113d5a230ec353f4483c96d0379299d08e3e1950aed70d0a432f6f5b",
+      "status": "Superseded: Van thumbnail incorrectly resembled a train",
+      "method": "built-in image_gen",
+      "scope": "preproduction preview only"
+    },
+    {
+      "file": "dispatch-layout-corrected.png",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1ba0f-4c64-7283-ad94-82bf4f83d352\\exec-4fd9081b-fd29-4cd3-8b98-dd471008b824.png",
+      "sha256": "413265e75db26b7e337bd463b1c37d41eb9cf90318102f4abc1b93a2e790971a",
+      "status": "Current detailed layout proposal; approval pending",
+      "method": "built-in image_gen",
+      "scope": "preproduction preview only"
+    }
+  ]
+}

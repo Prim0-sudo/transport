@@ -15,3 +15,6 @@ Updated 8 November 2026: user selected concept 1, Transport Dispatch, first; lik
 All need tap/select-place and keyboard alternatives, gentle feedback, clear replay/reset, responsive phone composition, hidden/Teacher holds, reduced-motion equivalents and owned cleanup. New coordinated movement uses GSAP and MotionPath for curves. A rebuilt environment requires four genuine registered planes plus independent actors/UI.
 
 After selection: show detailed desktop/phone layout, full movement cycle, controls, hardest contact and failure/correction states; obtain approval before generating final assets. Show actual assets for approval before implementation. Current assets remain preserved.
+
+
+User selected overall art direction C, Miniature World, in the current chat. Dispatch detailed preview is in DISPATCH-DETAILED-PREVIEW.md and docs/previews/miniature-dispatch-layout-motion.html. Detailed-preview approval is pending; no final asset production yet. The separate interactive driving game remains planned.

@@ -34,3 +34,6 @@ Second functional batch: active-time delayed work with independent named holds, 
 ## Latest review and upgrade order
 
 Read docs/UPGRADE-PLAN.md for the current ordered plan and post-push lifecycle evidence. The supplied comparison ZIP and its three report/task/start documents are reference evidence; retain their dated snapshots without re-running the same audit. Five focused scheduler tests and bounded Chrome startup/Wheel-exit review passed after 112a006; real Teacher UI/scopes and physical-tab/OS checks remain open. Preview 4251 is restored/current for user inspection. No broader v6-completion claim follows.
+
+
+Art direction selected: C · Miniature World. Current creative gate: review DISPATCH-DETAILED-PREVIEW.md and its illustrated/interactive preview; obtain detailed-layout/movement approval before final assets. No runtime art swap or new deployment. Keep the separate interactive driving game on the plan.
