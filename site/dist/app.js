@@ -97,7 +97,9 @@ let promptTask;
 let confettiTask;
 let speechHeld = false;
 const activeEffects = new Set();
+const landingScene = new TransportLanding(document.querySelector('.backdrop'));
 const work = new TransportLifecycle({ onHold: held => {
+  landingScene.setHold('activity', held);
   if ("speechSynthesis" in window) {
     if (held) {
       speechHeld = speechSynthesis.speaking && !speechSynthesis.paused;
@@ -149,6 +151,9 @@ function shuffled(items) {
 function showScreen(name) {
   Object.values(screens).forEach(s => s.classList.remove("active"));
   screens[name].classList.add("active");
+  const launch = name === 'home' && !screens.home.classList.contains('menu-open');
+  document.body.dataset.screen = launch ? 'launch' : name === 'home' ? 'menu' : name;
+  landingScene.setActive(launch);
 }
 
 function speak(text) {
@@ -782,6 +787,8 @@ function goHome() {
   cancelCurrentWork();
   document.getElementById("homeScreen").classList.remove("menu-open");
   showScreen("home");
+  screens.home.setAttribute('aria-labelledby', 'homeTitle');
+  focusLandingHeading('homeTitle');
 }
 
 function goMenu() {
@@ -791,7 +798,39 @@ function goMenu() {
 
 function openGameMenu() {
   document.getElementById("homeScreen").classList.add("menu-open");
+  document.body.dataset.screen = 'menu';
+  screens.home.setAttribute('aria-labelledby', 'menuTitle');
+  landingScene.setActive(false);
+  focusLandingHeading('menuTitle');
 }
+
+function focusLandingHeading(id) {
+  const heading = document.getElementById(id);
+  heading.tabIndex = -1;
+  heading.focus({ preventScroll: true });
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+const landingTeacher = document.getElementById('landingTeacher');
+const reducedControl = document.getElementById('reduceLandingMotion');
+document.getElementById('teacherBtn').addEventListener('click', () => {
+  reducedControl.checked = landingScene.reduced;
+  landingTeacher.showModal();
+  work.setHold('teacher', true);
+});
+document.getElementById('closeLandingTeacher').addEventListener('click', () => landingTeacher.close());
+landingTeacher.addEventListener('close', () => work.setHold('teacher', false));
+reducedControl.addEventListener('change', () => landingScene.setReduced(reducedControl.checked));
+
+// Retain the existing playable activities; use their existing illustrations in the shared menu.
+const menuArt = {learn:'bus',sort:'boat',sound:'helicopter',identify:'car',safety:'police_car',hangman:'truck',flip:'train',wheel:'bicycle'};
+for (const card of document.querySelectorAll('.mode-card')) {
+  const image = document.createElement('img');
+  image.src = `images/emoji-codex/${menuArt[card.dataset.mode]}.png`;
+  image.alt = '';
+  card.querySelector('.mode-icon').replaceChildren(image);
+}
+landingScene.setActive(true);
 
 document.querySelectorAll(".mode-card").forEach(btn => btn.addEventListener("click", () => startGame(btn.dataset.mode)));
 document.getElementById("homeBtn").addEventListener("click", goHome);
@@ -810,7 +849,8 @@ els.emojiToggle.addEventListener("click", () => {
 
 els.sound.addEventListener("click", () => {
   state.muted = !state.muted;
-  els.sound.textContent = state.muted ? "🔇" : "🔊";
+  els.sound.textContent = state.muted ? "Sound off" : "Sound on";
+  els.sound.setAttribute('aria-pressed', String(!state.muted));
   els.sound.title = state.muted ? "Sound off (M)" : "Sound on (M)";
   els.sound.setAttribute("aria-label", state.muted ? "Turn sound on" : "Turn sound off");
   if (state.muted) {
@@ -841,6 +881,10 @@ document.addEventListener("keydown", e => {
   if (e.key.toLowerCase() === "m") els.sound.click();
   if (e.key.toLowerCase() === "f") document.getElementById("fullscreenBtn").click();
   if (e.key === "Escape" && active && !document.fullscreenElement) goMenu();
+  else if (e.key === 'Escape' && !document.fullscreenElement) {
+    if (screens.home.classList.contains('active') && screens.home.classList.contains('menu-open')) goHome();
+    else if (screens.results.classList.contains('active')) goMenu();
+  }
   if (!active) return;
   if (e.code === "Space") { e.preventDefault(); playCurrentAudio(); }
   if (["1", "2", "3"].includes(e.key)) {

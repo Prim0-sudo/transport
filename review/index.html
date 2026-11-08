@@ -4,6 +4,7 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="robots" content="noindex,nofollow"><title>Transport Town — local visual review</title>
   <link rel="stylesheet" href="/review/style.css">
+  <link rel="stylesheet" href="/landing.css">
 </head>
 <body>
   <div class="world" aria-hidden="true"></div>
@@ -14,7 +15,7 @@
   <main id="main">
     <section class="launch" id="launch" aria-labelledby="launchTitle">
       <div class="launch-copy"><h1 id="launchTitle">Transport Town</h1><p>Journeys & discoveries</p></div>
-      <button class="explore" id="explore" aria-label="Explore Transport Town"><span class="explore-world" aria-hidden="true"></span><strong>Explore</strong><small>Choose an activity</small></button>
+      <button class="explore" id="explore" aria-label="Explore Transport Town"><img class="landing-start-art" src="/images/landing/miniature-world-v1/bus.png" alt=""><strong>Explore</strong><small>Choose an activity</small></button>
     </section>
     <section class="menu" id="menu" aria-labelledby="menuTitle" hidden>
       <h1 id="menuTitle">Choose a game</h1>
@@ -30,8 +31,11 @@
       <div class="surface dispatch-surface"><h1 id="activityTitle">Transport Dispatch</h1><iframe id="dispatchFrame" title="Dispatch movement and layout preview"></iframe></div>
     </section>
   </main>
-  <footer class="review-note">Local presentation review · existing menu pictures retained for layout · final Miniature World assets await approval</footer>
-  <dialog id="teacherPanel" aria-labelledby="teacherTitle"><h2 id="teacherTitle">Teacher</h2><p>The shared Level, Lesson and Collection controls will stay here. Their curriculum implementation remains in the upgrade plan.</p><button id="closeTeacher">Close</button></dialog>
+  <footer class="review-note">Local upgrade preview · approved Miniature World landing · activity upgrades in progress</footer>
+  <dialog class="landing-teacher" id="teacherPanel" aria-labelledby="teacherTitle"><h2 id="teacherTitle">Teacher</h2><label><input type="checkbox" id="reduceLandingMotion">Reduce landing movement</label><p>Keep the town still while choosing an activity. Your device’s reduced-motion preference is also respected.</p><button id="closeTeacher">Close</button></dialog>
+  <script src="/vendor/gsap.min.js"></script>
+  <script src="/vendor/MotionPathPlugin.min.js"></script>
+  <script src="/landing-scene.js"></script>
   <script src="/review/shell.js"></script>
 </body>
 </html>

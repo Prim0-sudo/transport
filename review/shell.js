@@ -1,6 +1,7 @@
 const pages={launch:document.getElementById('launch'),menu:document.getElementById('menu'),games:document.getElementById('games'),activity:document.getElementById('activity')};
 const frame=document.getElementById('dispatchFrame'),teacher=document.getElementById('teacherPanel');
 let current='launch';
+const landingScene = new TransportLanding(document.querySelector('.world'));
 const modes=[
  ['Meet the Words',['car','bus','train']],['Sort It',['bicycle','boat','airplane']],['Detective',['helicopter']],['Which One Is It?',['bus','ferry','airplane']],
  ['Knowledge & Safety',['police_car','ambulance']],['Transport Spelling',['truck']],['Flip the Tiles',['car','car']],['Spin the Wheel',['bicycle','ferry','helicopter']],
@@ -19,6 +20,7 @@ function show(name){
  Object.entries(pages).forEach(([id,page])=>page.hidden=id!==name);
  current=name;
  document.body.dataset.screen=name;
+ landingScene.setActive(name==='launch');
  if(name==='activity'&&!frame.hasAttribute('src'))frame.src='/review/dispatch.html';
  document.getElementById('home').hidden=name==='launch';
  window.scrollTo({top:0,behavior:'instant'});
@@ -33,8 +35,13 @@ document.getElementById('sound').addEventListener('click',event=>{const on=event
 document.getElementById('fullscreen').addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch{}});
 document.getElementById('teacher').addEventListener('click',()=>{
  const child=current==='activity'?frame.contentDocument?.querySelector('[data-action=teacher]'):null;
- if(child)child.click();else teacher.showModal();
+ if(child)child.click();else {
+  document.getElementById('reduceLandingMotion').checked=landingScene.reduced;
+  teacher.showModal();landingScene.setHold('teacher',true);
+ }
 });
+teacher.addEventListener('close',()=>landingScene.setHold('teacher',false));
+document.getElementById('reduceLandingMotion').addEventListener('change',event=>landingScene.setReduced(event.currentTarget.checked));
 document.getElementById('closeTeacher').addEventListener('click',()=>teacher.close());
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!teacher.open&&!document.fullscreenElement){if(current==='activity'||current==='games')show('menu');else if(current==='menu')show('launch');}});
 window.addEventListener('message',event=>{if(event.origin===location.origin&&event.source===frame.contentWindow&&event.data?.type==='transport-review-height'){const height=Number(event.data.height);if(Number.isFinite(height))frame.style.height=`${Math.max(500,Math.min(1800,height))}px`;}});

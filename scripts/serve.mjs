@@ -20,7 +20,7 @@ const liveReload = `<script>
       boot = next;
     });
     changes.addEventListener("change", (event) => {
-      const paths = JSON.parse(event.data).filter(path => path.startsWith("review/") === location.pathname.startsWith("/review/"));
+      const paths = JSON.parse(event.data).filter(path => /^(landing(?:-scene\.js|\.css)|images\/landing\/)/.test(path) || path.startsWith("review/") === location.pathname.startsWith("/review/"));
       if (!paths.length) return;
       if (paths.every(path => path.endsWith(".css"))) {
         for (const path of paths) {
@@ -76,7 +76,7 @@ createServer((request, response) => {
   const path = normalize(join(servingRoot, relative));
 
   const safeRelative = relativePath(servingRoot, path).replaceAll("\\", "/");
-  const allowed = isAssetReview ? /^(index\.html|manifest\.json|(?:sky|distant-background|middle-ground|foreground|bus|train|train-front|ferry|airplane|cloud)\.png)$/ : isReview ? /^(index\.html|style\.css|shell\.js|scene\.png|dispatch\.html|gsap\.min\.js|MotionPathPlugin\.min\.js)$/ : /^(index\.html|(?:app|lifecycle)\.js|styles\.css|transport-town-bg\.png|images\/[^.].*)$/;
+  const allowed = isAssetReview ? /^(index\.html|manifest\.json|(?:sky|distant-background|middle-ground|foreground|bus|train|train-front|ferry|airplane|cloud)\.png)$/ : isReview ? /^(index\.html|style\.css|shell\.js|scene\.png|dispatch\.html|gsap\.min\.js|MotionPathPlugin\.min\.js)$/ : /^(index\.html|(?:app|lifecycle|landing-scene)\.js|(?:styles|landing)\.css|vendor\/(?:gsap|MotionPathPlugin)\.min\.js|transport-town-bg\.png|images\/[^.].*)$/;
   if (!allowed.test(safeRelative) || safeRelative.split("/").some(part => part.startsWith("."))) {
     response.writeHead(403).end("Forbidden");
     return;
@@ -126,12 +126,12 @@ function seed(folder) {
   }
 }
 for (const folder of ["images"]) seed(folder);
-for(const path of ['index.html','app.js','lifecycle.js','styles.css'])signatures.set(path,signature(path));
+for(const path of ['index.html','app.js','lifecycle.js','styles.css','landing.css','landing-scene.js'])signatures.set(path,signature(path));
 let changeTimer;
 watch(root, { recursive: true }, (_event, filename) => {
   if (!filename) return;
   const path = String(filename).replaceAll("\\", "/");
-  if (!/^(index\.html$|(?:app|lifecycle)\.js$|styles\.css$|images\/)/.test(path)) return;
+  if (!/^(index\.html$|(?:app|lifecycle|landing-scene)\.js$|(?:styles|landing)\.css$|images\/)/.test(path)) return;
   const next = signature(path);
   if (signatures.get(path) === next) return;
   signatures.set(path, next);
