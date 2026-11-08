@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="styles.css?v=20260917-emoji-library">
   <link rel="stylesheet" href="landing.css">
   <link rel="stylesheet" href="classroom.css">
+  <link rel="stylesheet" href="standard.css">
 </head>
 <body data-transport-shell data-screen="launch">
   <div class="backdrop" aria-hidden="true"></div>
@@ -40,17 +41,17 @@
       <div class="mode-grid">
         <button class="mode-card yellow" data-mode="learn">
           <span class="mode-icon">🚌</span>
-          <span class="mode-text"><strong>Meet the Vehicles</strong></span>
+          <span class="mode-text"><strong>Meet the Words</strong></span>
           <span class="mode-arrow">›</span>
         </button>
         <button class="mode-card green" data-mode="sort">
           <span class="mode-icon">🌍</span>
-          <span class="mode-text"><strong>Where Does It Go?</strong></span>
+          <span class="mode-text"><strong>Sort It</strong></span>
           <span class="mode-arrow">›</span>
         </button>
-        <button class="mode-card blue locked" data-mode="sound" disabled aria-label="Sound Detective is locked while new sounds are prepared">
-          <span class="mode-icon">🔒</span>
-          <span class="mode-text"><strong>Sound Detective</strong><em>Coming soon</em></span>
+        <button class="mode-card blue" data-mode="detective">
+          <span class="mode-icon"></span>
+          <span class="mode-text"><strong>Transport Detective</strong></span>
           <span class="mode-arrow">›</span>
         </button>
         <button class="mode-card purple" data-mode="identify">
@@ -60,12 +61,12 @@
         </button>
         <button class="mode-card red" data-mode="safety">
           <span class="mode-icon">🚦</span>
-          <span class="mode-text"><strong>Safe Traveller</strong></span>
+          <span class="mode-text"><strong>Knowledge &amp; Safety</strong></span>
           <span class="mode-arrow">›</span>
         </button>
         <button class="mode-card orange" data-mode="hangman">
           <span class="mode-icon">🍦</span>
-          <span class="mode-text"><strong>Ice Cream Meltdown</strong></span>
+          <span class="mode-text"><strong>Transport Spelling</strong></span>
           <span class="mode-arrow">›</span>
         </button>
         <button class="mode-card pink" data-mode="flip">
@@ -78,6 +79,10 @@
           <span class="mode-text"><strong>Spin the Wheel</strong></span>
           <span class="mode-arrow">›</span>
         </button>
+        <button class="mode-card" data-mode="media"><span class="mode-icon"></span><span class="mode-text"><strong>Media</strong></span></button>
+        <button class="mode-card" data-mode="games"><span class="mode-icon"></span><span class="mode-text"><strong>Transport Games</strong></span></button>
+        <button class="mode-card" data-mode="phonics"><span class="mode-icon"></span><span class="mode-text"><strong>Phonics &amp; Sight Words</strong></span></button>
+        <button class="mode-card" data-mode="create"><span class="mode-icon"></span><span class="mode-text"><strong>Read, Draw &amp; Talk</strong></span></button>
       </div>
       <div class="home-parade" aria-hidden="true">
         <span>🚲</span><span>🚕</span><span>🚂</span><span>🚁</span><span>⛵</span><span>✈️</span>
@@ -140,6 +145,12 @@
     <p id="teacherScopeSummary" role="status" aria-live="polite"></p>
     <p class="teacher-proposal">Levels and six undated lessons are proposed teaching groupings, not age placements.</p>
     <button type="button" id="clearTeacherScope">Clear selection</button>
+    <fieldset class="teacher-picture-settings"><legend>Activity pictures</legend>
+      <label><input type="checkbox" data-picture-setting="identifyTarget">Identify target picture</label>
+      <label><input type="checkbox" data-picture-setting="identifyAnswers">Identify answer pictures</label>
+      <label><input type="checkbox" data-picture-setting="safetyQuestion">Safety question picture</label>
+      <label><input type="checkbox" data-picture-setting="safetyAnswers">Safety answer pictures</label>
+    </fieldset>
     <label><input type="checkbox" id="reduceLandingMotion">Reduce landing movement</label>
     <p id="teacherStorageStatus" class="teacher-proposal"></p>
     <div class="teacher-actions"><button id="closeLandingTeacher">Cancel</button><button id="applyTeacherScope">Apply selection</button></div>
@@ -150,6 +161,10 @@
   <script src="lifecycle.js"></script>
   <script src="curriculum.js"></script>
   <script src="classroom-core.js"></script>
+  <script src="standard-data.js"></script>
+  <script src="detective-model.js"></script>
+  <script src="detective-view.js"></script>
+  <script src="standard-views.js"></script>
   <script src="app.js?v=20260917-hangman"></script>
 </body>
 </html>

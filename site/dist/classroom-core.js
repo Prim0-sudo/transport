@@ -27,8 +27,9 @@
     words(scope=this.scope){const s=this.curriculum.normaliseScope(scope);return this.entries.filter(item=>this.curriculum.inScope(item,s));}
     pool(mode,scope=this.scope){const words=this.words(scope);if(mode==='safety'){const ids=new Set(words.map(i=>i.id));return this.questions.filter(q=>q.eligible&&q.relatedIds.some(id=>ids.has(id)));}return words.filter(item=>item.eligibility[mode]===true);}
     base(mode,scope=this.scope,variant='default'){const s=this.curriculum.normaliseScope(scope);return JSON.stringify([mode,s.level,s.lesson,s.collection,variant]);}
-    prepare(mode,scope=this.scope,variant='default'){
-      const pool=this.pool(mode,scope),ids=pool.map(i=>i.id),signature=[...ids].sort().join('|'),key=this.base(mode,scope,variant);
+    prepare(mode,scope=this.scope,variant='default',selectedPool=null){
+      const eligible=this.pool(mode,scope),selected=selectedPool&&new Set(selectedPool.map(i=>i.id));
+      const pool=selected?eligible.filter(item=>selected.has(item.id)):eligible,ids=pool.map(i=>i.id),signature=[...ids].sort().join('|'),key=this.base(mode,scope,variant);
       let cycle=this.data.cycles[key],invalidated=false;
       const badCycle=cycle&&(!Array.isArray(cycle.remaining)||!Array.isArray(cycle.held)||!Array.isArray(cycle.completed)||[...cycle.remaining,...cycle.held,...cycle.completed].some(id=>!ids.includes(id))||cycle.remaining.length+cycle.held.length+cycle.completed.length!==ids.length||new Set([...cycle.remaining,...cycle.held,...cycle.completed]).size!==ids.length);
       if(!cycle||cycle.signature!==signature||badCycle){

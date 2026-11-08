@@ -1,0 +1,47 @@
+/* Standard activities only. Landing scenery, layout and choreography are untouched. */
+#gameScreen [hidden],.teacher-picture-settings[hidden]{display:none!important}
+.game-screen .game-status,.game-screen .game-card{width:100%;max-width:none}
+.game-screen .game-card{min-height:0;padding:clamp(14px,2.5vw,30px);border-width:2px;border-radius:24px}
+.game-screen .vehicle-stage{min-height:0;height:clamp(230px,42vh,470px);padding:10px 0;gap:8px}
+.game-screen .vehicle-emoji.vehicle-icon-image,.game-screen .vehicle-emoji.vehicle-picture{height:100%;width:min(100%,800px);max-width:none;background-size:contain!important;background-repeat:no-repeat}
+.game-screen .vehicle-shadow{display:none}.game-screen .vehicle-name:empty{display:none}
+.game-screen .question-helper:empty,.game-screen .feedback:empty{display:none}
+.game-screen .question-helper{max-width:85ch;line-height:1.5;margin:8px auto 14px}
+.game-screen .answers{width:100%;margin-top:16px;gap:12px}
+.game-screen .answer-btn{min-height:80px;border-width:2px;border-radius:16px;gap:12px;padding:14px}
+.game-screen .answer-image-icon{width:clamp(65px,9vw,110px);height:clamp(65px,9vw,110px);object-fit:contain}
+.game-screen .answer-icon[hidden]{display:none!important}
+.game-screen .feedback{width:100%;line-height:1.5;padding:8px 0}.game-screen .feedback p{margin:8px 0 12px}
+.standard-example{display:block;font-size:.92em;margin-top:8px;color:#455d6c}
+.standard-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;grid-column:1/-1}
+.standard-action,.standard-actions button,.standard-settings button,.spelling-clue button,.departure-ticket>button{font:inherit;font-weight:800;color:#183a51;border:1px solid #d8bd7d;border-radius:12px;min-height:46px;padding:10px 16px;background:#fffbed;cursor:pointer}
+button:disabled{cursor:default}.standard-actions button:disabled{opacity:.55}
+.standard-choice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:14px;width:100%;grid-column:1/-1}
+.standard-choice{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#fffbed;border:1px solid #d8bd7d;border-radius:18px;padding:18px;font:inherit;color:#183a51;cursor:pointer;min-height:200px}
+.standard-choice>img{width:150px;height:110px;object-fit:contain}.standard-choice strong{font-size:22px}.standard-choice small{line-height:1.5;max-width:45ch}.standard-choice:disabled{opacity:.6}
+.rule-pictures{display:flex;gap:6px}.rule-pictures img{width:80px;height:80px;object-fit:contain}
+.standard-settings{display:flex;flex-wrap:wrap;gap:18px;align-items:end;justify-content:center;grid-column:1/-1;width:100%;padding:12px}
+.standard-settings label{display:grid;gap:8px;font-weight:800}.standard-settings select{font:inherit;min-height:44px;padding:8px 12px;border:1px solid #a9b7bb;border-radius:10px;background:white;color:#183a51}.setup-availability{flex-basis:100%;text-align:center;line-height:1.5}
+.standard-resource{display:grid;gap:12px;width:100%;grid-column:1/-1}.resource-choice{text-align:left;display:grid;gap:8px;padding:18px;border:1px solid #d8bd7d;border-radius:14px;background:#fffbed;font:inherit;color:#183a51;cursor:pointer}.resource-choice strong{font-size:22px}.resource-choice span,.standard-resource p{line-height:1.5}
+.teacher-picture-settings{margin:18px 0;border:1px solid #d8bd7d;border-radius:12px;padding:10px 14px}.teacher-picture-settings legend{font-weight:bold}.teacher-picture-settings label{font-size:14px}
+.detective-workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.34fr);gap:20px;width:100%;grid-column:1/-1;align-items:center}
+.detective-picture{position:relative;width:100%;height:clamp(310px,52vh,650px);overflow:hidden;background:#edf5f8;border-radius:18px}
+.detective-picture canvas{position:absolute;inset:0;width:100%;height:100%}.detective-mosaic{position:absolute;display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:repeat(10,1fr)}
+.detective-mosaic i{background:#244d62;border:.5px solid #527787;display:block;min-width:0;min-height:0}
+.detective-controls{display:grid;gap:14px;align-content:center}.detective-controls .standard-actions{flex-direction:column;align-items:stretch}
+.detective-time{font-size:20px;font-weight:800;margin:0}.detective-status{line-height:1.5}.detective-choices{display:grid;gap:10px}.detective-choices .answer-btn{min-height:50px;text-align:left;font-size:18px}.detective-controls>[data-reveal-practice]{min-height:44px;padding:10px;border:1px solid #d8bd7d;border-radius:12px;background:#fffbed;color:#183a51;font:inherit;font-weight:bold;cursor:pointer}
+.game-card[data-mode=detective] .answers{display:block}.game-card[data-mode=learn] .answers,.game-card[data-mode=wheel] .answers{display:block}.game-card[data-mode=learn] .vehicle-definition{max-width:85ch;font-size:clamp(17px,1.6vw,23px);line-height:1.5}
+.game-card[data-mode=identify].hide-answer-emojis .answers{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}.game-card[data-mode=identify].hide-answer-emojis .answer-btn{display:block;font-size:clamp(20px,2.5vw,30px)}
+.transport-spelling{display:grid;grid-template-columns:minmax(220px,.42fr) minmax(0,1fr);gap:24px;width:100%;grid-column:1/-1;align-items:start}
+.spelling-clue{display:flex;flex-direction:column;align-items:center;gap:12px}.spelling-clue img{width:100%;height:clamp(180px,28vh,320px);object-fit:contain}.spelling-clue p{font-size:18px;line-height:1.5;margin:0}
+.departure-ticket{padding:clamp(14px,2vw,26px);border:2px solid #d8bd7d;border-radius:18px;background:#fffbed;text-align:center}.ticket-title{font:700 25px Georgia,serif;margin:0 0 18px}.departure-ticket .hangman-word{display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:center;margin:0 0 20px}.spelling-word{display:inline-flex;gap:4px;max-width:100%;flex-wrap:wrap;justify-content:center}
+.departure-ticket .hangman-letter{width:clamp(25px,3vw,44px);min-width:0;height:48px;font-size:clamp(22px,2.5vw,34px);border-bottom:3px solid #183a51;display:inline-flex;align-items:center;justify-content:center}
+.ticket-checks{display:flex;justify-content:center;gap:8px}.ticket-checks span{display:grid;place-items:center;background:#24764d;color:white;width:27px;height:27px;border-radius:50%}.ticket-checks span.used{background:#b94c44}
+.departure-ticket .hangman-keys{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px;margin:18px 0}.departure-ticket .hangman-key{min-width:0;min-height:44px;font-size:18px;padding:4px;border:1px solid #a9b7bb;border-radius:8px}.departure-ticket .hangman-key.correct{background:#bce7c4}.departure-ticket .hangman-key.wrong{background:#ead0ce}
+.flip-choice-art{display:flex;justify-content:center;gap:4px}.flip-choice-art img{width:65px;height:70px;object-fit:contain}.game-card[data-mode=flip] .flip-choice{display:flex;flex-direction:column;align-items:center;gap:8px;min-height:170px;padding:16px}
+.game-card[data-mode=flip] .flip-tile-front img{width:100%;height:75%;object-fit:contain}.game-card[data-mode=flip] .flip-setup{padding:0;min-height:0}
+.game-card[data-mode=wheel] .vocab-wheel{animation:none!important;transition:none!important}.game-card[data-mode=wheel] .wheel-segment-emoji{transform:translate(-50%,-50%);width:16%;height:16%;font-size:0}.wheel-segment-emoji img{width:100%;height:100%;object-fit:contain}
+.game-card[data-mode=wheel] .vehicle-stage{display:flex}.game-card[data-mode=wheel] .vehicle-definition{max-width:80ch;font-size:21px;line-height:1.5}
+@media(max-width:800px){.detective-workspace{grid-template-columns:1fr}.detective-picture{height:clamp(270px,46vh,480px)}.detective-controls .standard-actions{flex-direction:row}.transport-spelling{grid-template-columns:1fr}.spelling-clue{display:grid;grid-template-columns:120px 1fr;gap:12px}.spelling-clue img{height:125px}.spelling-clue button{grid-column:1/-1;justify-self:center}.game-screen .vehicle-stage{height:clamp(230px,36vh,380px)}}
+@media(max-width:480px){.game-screen .game-card{padding:14px;border-radius:20px}.game-screen .game-status{gap:8px;grid-template-columns:auto 1fr auto}.game-status .progress-track{grid-column:1/-1;grid-row:2}.standard-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.standard-choice{padding:12px;min-height:175px}.standard-choice>img{width:100%;height:90px}.standard-choice strong{font-size:18px}.rule-pictures img{width:50px;height:55px}.standard-settings{padding:0;gap:12px}.standard-settings label{flex:1;min-width:130px}.standard-settings select{width:100%}.detective-controls .standard-actions button{flex:1}.detective-picture{height:300px}.departure-ticket .hangman-keys{grid-template-columns:repeat(7,minmax(0,1fr))}.departure-ticket .hangman-letter{height:40px;width:27px}.ticket-checks{gap:6px}.ticket-checks span{width:24px;height:24px}.flip-choice-art img{width:45px;height:55px}}
+@media(prefers-reduced-motion:reduce){.game-screen *, .game-screen *::before,.game-screen *::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}

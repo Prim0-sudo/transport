@@ -55,6 +55,7 @@ const safetyQuestions = [
 ];
 
 TransportCurriculum.prepare(vehicles, safetyQuestions);
+TransportStandard.prepare(vehicles);
 const classroom = new TransportClassroom({entries:vehicles,questions:safetyQuestions,curriculum:TransportCurriculum});
 let activeSession = null;
 
@@ -67,10 +68,10 @@ const zones = [
 const modeInfo = {
   learn: { badge: "VOCABULARY", title: "What vehicle is this?", helper: "" },
   sort: { badge: "SORTING", title: "Where does the {vehicle} travel?", helper: "" },
-  sound: { badge: "LISTENING", title: "Which vehicle makes this sound?", helper: "" },
+  detective: { badge: "TRANSPORT DETECTIVE", title: "What vehicle is hidden?", helper: "" },
   identify: { badge: "WHICH ONE IS IT?", title: "", helper: "" },
   safety: { badge: "ROAD SAFETY", title: "", helper: "" },
-  hangman: { badge: "ICE CREAM MELTDOWN", title: "", helper: "" },
+  hangman: { badge: "TRANSPORT SPELLING", title: "", helper: "" },
   flip: { badge: "FLIP THE TILES", title: "", helper: "" },
   wheel: { badge: "SPIN THE WHEEL", title: "", helper: "" }
 };
@@ -100,9 +101,13 @@ let wheelTickTimers = [];
 let promptTask;
 let confettiTask;
 let speechHeld = false;
+let detectiveView=null;
+let wheelTween=null;
 const activeEffects = new Set();
 const landingScene = new TransportLanding(document.querySelector('.backdrop'));
 const work = new TransportLifecycle({ onHold: held => {
+  detectiveView?.setHeld(held);
+  wheelTween?.paused(held);
   landingScene.setHold('activity', held);
   if ("speechSynthesis" in window) {
     if (held) {
@@ -118,6 +123,8 @@ const work = new TransportLifecycle({ onHold: held => {
 } });
 
 function cancelCurrentWork() {
+  detectiveView?.destroy();detectiveView=null;
+  wheelTween?.kill();wheelTween=null;
   work.cancel();
   wheelTickTimers = [];
   promptTask = confettiTask = null;
@@ -231,9 +238,9 @@ function scheduleWheelTicks(duration = 4200) {
   });
 }
 
-function identifyChoices(vehicle) {
+function identifyChoices(vehicle,pool=classroom.pool('identify')) {
   const choices = [vehicle];
-  for (const candidate of shuffled(classroom.pool('identify'))) {
+  for (const candidate of shuffled(pool)) {
     if(choices.length===3)break;
     if(choices.every(choice=>choice.id!==candidate.id&&choice.pictureGroup!==candidate.pictureGroup))choices.push(candidate);
   }
@@ -249,31 +256,34 @@ function identifyQuestion(choices) {
   return names.length===1?`Practise the word: ${choices[0].name}`:names.length===2?`Is it ${names[0]} or ${names[1]}?`:`Is it ${names[0]}, ${names[1]}, or ${names[2]}?`;
 }
 
-function startGame(mode, {fresh=false}={}) {
-  if (mode === "sound") return;
-  rememberAttempt(true);
-  cancelCurrentWork();
-  activeSession=null;
+function startGame(mode, {fresh=false,setup=null}={}) {
+  mode=mode==='sound'?'detective':mode;
+  rememberAttempt(true);cancelCurrentWork();activeSession=null;
+  if(TransportStandard.hubs[mode]){renderStandardHub(mode);return;}
   if(mode==='flip'){
-    state={...state,mode,round:0,score:0,questions:[],answered:false,wrongThisRound:false,flip:null,wheel:null,completedIds:[],sessionKey:null};
+    state={...state,mode,round:0,score:0,questions:[],answered:false,wrongThisRound:false,flip:null,wheel:null,completedIds:[],sessionKey:null,choosing:true,setup:{}};
     showScreen('game');renderQuestion();return;
   }
-  const session=classroom.prepare(mode);
+  if(!setup&&['learn','wheel'].includes(mode)){renderStandardCategories(mode);return;}
+  if(!setup&&mode==='sort'){renderStandardSortRules();return;}
+  if(!setup&&mode==='detective'){renderStandardDetectiveSetup();return;}
+  setup=setup||{};
+  const session=standardSession(mode,setup);
   if(!session.pool.length){showScopeRecovery(mode);return;}
+  if(mode==='sort'&&TransportStandard.availableGroups(TransportStandard.ruleFor(setup.rule),session.pool).length<2){showScopeRecovery(mode,'This sorting rule needs words in at least two of its groups. Change the selection or choose another rule.');return;}
+  if(mode==='detective'&&new Set(session.pool.map(i=>i.pictureGroup)).size<2){showScopeRecovery(mode,'Detective needs at least two distinct teaching pictures. Change the selection or reveal type.');return;}
   if(session.invalidated&&!fresh){showScopeRecovery(mode,'The saved activity no longer matches the available content. Choose how to continue.',true);return;}
   if(!fresh&&restoreAttempt(session))return;
   if(fresh)classroom.discard(session.key);
   activeSession=session;
-  const reserved=classroom.reserve(session,mode==='safety'?7:10);
+  const reserved=classroom.reserve(session,mode==='safety'?7:mode==='wheel'?8:10);
   let questions=reserved;
-  if(mode==='identify')questions=reserved.map(vehicle=>({vehicle,choices:identifyChoices(vehicle)}));
-  if(mode==='hangman')questions=reserved.map(vehicle=>({vehicle,guessed:[],misses:0,sadConeIndex:null}));
+  if(mode==='identify'||mode==='detective')questions=reserved.map(vehicle=>({vehicle,choices:identifyChoices(vehicle,session.pool),...(mode==='detective'?{reveal:TransportReveal.create(setup.kind,setup.duration,shuffled(Array.from({length:120},(_,i)=>i)))}:{})}));
+  if(mode==='hangman')questions=reserved.map(vehicle=>({vehicle,guessed:[],misses:0,sadConeIndex:null,awarded:false,assisted:false}));
   if(mode==='safety')questions=reserved.map(q=>({...q,answerOrder:shuffled(q.answerIds)}));
   if(!questions.length){showScopeRecovery(mode,'No unplayed words are available in this activity cycle.',true);return;}
-  state = { ...state, mode, round: 0, score: 0, questions, answered: false, wrongThisRound: false, flip: null, practice:session.pool.length<2&&['identify','wheel'].includes(mode),completedIds:[],sessionKey:session.key,wheel: mode === "wheel" ? { remaining: [...questions], selected: null, landing: null, spinning: false, returning: false } : null };
-  showScreen("game");
-  renderQuestion();
-  rememberAttempt();
+  state={...state,mode,round:0,score:0,questions,answered:false,wrongThisRound:false,flip:null,practice:['learn','wheel'].includes(mode)||session.pool.length<2&&mode==='identify',completedIds:[],sessionKey:session.key,choosing:false,setup,wheel:mode==='wheel'?{remaining:[...questions],selected:null,landing:null,spinning:false,returning:false}:null};
+  showScreen('game');renderQuestion();rememberAttempt();
 }
 
 function questionId(item) { return item?.vehicle?.id||item?.id; }
@@ -286,6 +296,7 @@ function completeQuestion(id=questionId(state.questions[state.round])) {
 
 function rememberAttempt(release=false) {
   if(!activeSession||!screens.game.classList.contains('active')||state.recovery)return;
+  detectiveView?.flush();
   const snapshot=JSON.parse(JSON.stringify(state,(_key,value)=>value?.id?.startsWith('vehicle.')&&value.eligibility?{$vehicle:value.id}:value));
   if(snapshot.wheel){
     snapshot.wheel.selected=snapshot.wheel.selected||snapshot.wheel.landing||snapshot.wheel.pending||null;
@@ -307,7 +318,8 @@ function restoreAttempt(session) {
     const mode=JSON.parse(session.key)[0],ids=restored.questions?.map(questionId);
     if(restored.mode!==mode||!ids?.length||new Set(ids).size!==ids.length||ids.some(id=>!session.pool.some(item=>item.id===id))||!Number.isInteger(restored.round)||restored.round<0||restored.round>=ids.length||!Number.isInteger(restored.score)||restored.score<0||restored.score>ids.length)throw Error('Invalid attempt');
     if(!Array.isArray(restored.completedIds)||restored.completedIds.some(id=>!ids.includes(id)))throw Error('Invalid progress');
-    if(mode==='identify'&&restored.questions.some(item=>!Array.isArray(item.choices)||!item.choices.length||new Set(item.choices.map(c=>c.id)).size!==item.choices.length||!item.choices.some(c=>c.id===item.vehicle.id)||item.choices.some(c=>!session.pool.some(p=>p.id===c.id))))throw Error('Invalid choices');
+    if(['identify','detective'].includes(mode)&&restored.questions.some(item=>!Array.isArray(item.choices)||!item.choices.length||new Set(item.choices.map(c=>c.id)).size!==item.choices.length||!item.choices.some(c=>c.id===item.vehicle.id)||item.choices.some(c=>!session.pool.some(p=>p.id===c.id))))throw Error('Invalid choices');
+    if(mode==='detective'&&restored.questions.some(item=>!TransportReveal.valid(item.reveal)))throw Error('Invalid reveal');
     if(mode==='hangman'&&restored.questions.some(item=>!Array.isArray(item.guessed)||item.guessed.some(l=>!(/^[a-z]$/).test(l))||new Set(item.guessed).size!==item.guessed.length||!Number.isInteger(item.misses)||item.misses<0||item.misses>8))throw Error('Invalid spelling progress');
     if(mode==='safety'){
       restored.questions=restored.questions.map(item=>{const canonical=safetyQuestions.find(q=>q.id===item.id);if(!canonical||!Array.isArray(item.answerOrder)||new Set(item.answerOrder).size!==canonical.answerIds.length||item.answerOrder.some(id=>!canonical.answerIds.includes(id)))throw Error('Invalid safety choices');return {...canonical,answerOrder:item.answerOrder};});
@@ -317,13 +329,16 @@ function restoreAttempt(session) {
     const pending=ids.filter(id=>!restored.completedIds.includes(id));
     if(!classroom.claim(session,pending))throw Error('Reservation changed');
     const muted=state.muted;state={...restored,muted,recovery:false};activeSession=session;
+    state.choosing=false;state.setup=state.setup||TransportStandard.setupFor(mode,JSON.parse(session.key)[4]);
+    if(['learn','wheel'].includes(mode))state.practice=true;
     const answered=Boolean(state.answered),wrong=Boolean(state.wrongThisRound);
     showScreen('game');renderQuestion();work.cancelTask(promptTask);
     state.answered=answered;state.wrongThisRound=wrong;
     if(mode==='hangman')renderHangman();
     if(['sort','identify','safety'].includes(mode)&&!state.practice){
       for(const button of els.answers.querySelectorAll('.answer-btn')){
-        const previouslyWrong=(saved.ui?.disabledChoiceIds||[]).includes(button.dataset.choiceId);
+        const previous=saved.ui?.disabledChoiceIds||[];
+        const previouslyWrong=previous.includes(button.dataset.choiceId)||previous.includes(button.textContent.trim());
         button.disabled=answered||previouslyWrong;
         button.classList.toggle('wrong',previouslyWrong&&button.dataset.correct!=='true');
         button.classList.toggle('correct',answered&&button.dataset.correct==='true');
@@ -347,7 +362,7 @@ function showScopeRecovery(mode,message='No eligible content matches this select
   state={...state,mode,questions:[],round:0,score:0,recovery:true,sessionKey:null};
   showScreen('game');
   clearVehiclePicture();els.stage.style.display='none';els.emojiToggle.hidden=true;els.listen.disabled=true;
-  els.modeBadge.textContent=modeInfo[mode].badge;els.question.textContent='Choose content for this activity';els.helper.textContent='';
+  els.modeBadge.textContent=modeInfo[mode]?.badge||'Transport';els.question.textContent='Choose content for this activity';els.helper.textContent='';
   els.round.textContent='Selection';els.progress.style.width='0%';els.scorePill.hidden=true;els.feedback.replaceChildren();
   const panel=document.createElement('div');panel.className='scope-recovery';
   const text=document.createElement('p');text.textContent=message;
@@ -364,6 +379,7 @@ function showScopeRecovery(mode,message='No eligible content matches this select
 function renderQuestion() {
   cancelCurrentWork();
   state.recovery=false;els.stage.style.display='';els.listen.disabled=false;els.scorePill.hidden=false;
+  els.listen.hidden=false;document.querySelector('.progress-track').hidden=false;setStandardBack('Games');
   const gameCard = document.getElementById("gameCard");
   gameCard.dataset.mode = state.mode;
   gameCard.classList.toggle("hide-answer-emojis", state.mode === "identify" && !state.identifyEmojis);
@@ -389,7 +405,7 @@ function renderQuestion() {
   els.modeBadge.textContent = info.badge;
   els.helper.textContent = info.helper;
   els.listen.textContent = "🔊";
-  els.emojiToggle.hidden = state.mode !== "identify";
+  els.emojiToggle.hidden = true;
   els.emojiToggle.textContent = state.identifyEmojis ? "🙈" : "🖼️";
   els.emojiToggle.title = state.identifyEmojis ? "Hide answer pictures" : "Show answer pictures";
   els.emojiToggle.setAttribute("aria-label", els.emojiToggle.title);
@@ -398,6 +414,7 @@ function renderQuestion() {
     if(state.flip)renderFlipGame();else renderFlipSetup();
     return;
   }
+  if(state.mode==='detective'){renderStandardDetective();return;}
   if (state.mode === "wheel") {
     renderWheel();
     return;
@@ -410,7 +427,7 @@ function renderQuestion() {
   else if (state.mode === "hangman") renderHangman();
   else renderSound();
 
-  promptTask = work.schedule(() => state.mode === "sound" ? playCurrentAudio() : speakCurrentPrompt(), 260);
+  // Teaching speech is explicit through Listen/Hear controls, never automatic on entry.
 }
 
 function renderFlipSetup() {
@@ -422,6 +439,7 @@ function renderFlipSetup() {
   els.stage.dataset.sound = "";
   els.question.textContent = "How many vocabulary words would you like?";
   els.round.textContent = "CHOOSE";
+  els.scorePill.hidden=true;els.listen.hidden=true;els.stage.style.display='none';document.querySelector('.progress-track').hidden=true;setStandardBack('Games');
   els.progress.style.width = "0%";
   els.answers.innerHTML = `<div class="flip-setup"><p>Each word has two matching tiles.</p><div class="flip-choice-row"><button class="flip-choice" data-count="10">10 words<span>20 tiles</span></button><button class="flip-choice" data-count="20">20 words<span>40 tiles</span></button><button class="flip-choice" data-count="30">30 words<span>60 tiles</span></button></div></div>`;
   els.answers.querySelectorAll("[data-count]").forEach(button => {
@@ -432,6 +450,7 @@ function renderFlipSetup() {
     const detail=document.createElement('span');detail.textContent=`${count} ${count===1?'word · practice':'words'} · ${count*2} tiles`;button.append(detail);
     button.addEventListener('click',()=>startFlipGame(limit));
   });
+  illustrateFlipChoices();
 }
 
 function startFlipGame(vocabularyCount) {
@@ -445,6 +464,7 @@ function startFlipGame(vocabularyCount) {
   ]));
   state.questions = vocabulary;
   state.sessionKey=session.key;state.completedIds=[];state.practice=vocabulary.length<2;
+  state.choosing=false;state.setup={flipCount:vocabularyCount};setStandardBack('Matching choices');
   state.flip = { tiles, firstTileId: null, locked: false, matches: 0 };
   state.score = 0;
   renderFlipGame();
@@ -452,6 +472,7 @@ function startFlipGame(vocabularyCount) {
 }
 
 function renderFlipGame() {
+  setStandardBack('Matching choices');els.stage.style.display='none';els.listen.hidden=true;document.querySelector('.progress-track').hidden=false;
   const { tiles, matches } = state.flip;
   clearVehiclePicture();
   els.emoji.textContent = "";
@@ -522,6 +543,7 @@ function wheelColors(count) {
 }
 
 function renderWheel() {
+  state.practice=true;setStandardBack('Categories');els.listen.hidden=true;els.scorePill.hidden=true;
   const game = state.wheel;
   const total = state.questions.length;
   const wordsRead = total - game.remaining.length;
@@ -533,20 +555,18 @@ function renderWheel() {
   els.round.textContent = `WORDS ${wordsRead}/${total}`;
   els.progress.style.width = `${(wordsRead / total) * 100}%`;
   els.score.textContent = wordsRead;
-  if (game.selected) {
-    els.answers.innerHTML = `<div class="wheel-reveal"><strong>${game.selected.name}</strong><p>Read the word together.</p><button class="next-btn" id="wheelNextBtn">Next ➜</button></div>`;
-    document.getElementById("wheelNextBtn").onclick = nextWheelWord;
-    return;
-  }
-  const count = game.remaining.length;
+  if(renderStandardWheelSelection())return;
+  els.stage.style.display='none';
+  const count = Math.min(8,game.remaining.length);
+  els.helper.textContent=count<game.remaining.length?`This wheel shows ${count} of ${game.remaining.length} remaining words. More words follow.`:'Spin, then explore the selected word.';
   const slice = 360 / count;
-  const segmentEmojis = game.remaining.map((vehicle, index) => {
+  const segmentEmojis = game.remaining.slice(0,count).map((vehicle, index) => {
     const angle = -90 + (index + .5) * slice;
     const radians = angle * Math.PI / 180;
     const x = 50 + 34 * Math.cos(radians);
     const y = 50 + 34 * Math.sin(radians);
     const rotation = game.spinning ? -(game.rotation || 0) : 0;
-    return `<span class="wheel-segment-emoji" style="--x:${x}%; --y:${y}%; --segment-angle:${angle}deg; --counter-angle:${-angle}deg; --emoji-rotation:${rotation}deg" aria-hidden="true">${vehicle.icon || "🛥️"}</span>`;
+    return `<span class="wheel-segment-emoji" style="--x:${x}%; --y:${y}%; --segment-angle:${angle}deg; --counter-angle:${-angle}deg; --emoji-rotation:${rotation}deg" aria-hidden="true"><img src="${vehicle.image}" alt=""></span>`;
   }).join("");
   const spinClass = game.spinning ? "spinning" : game.returning ? "returning" : "";
   const landingWord = game.landing ? `<div class="wheel-landing-word">${game.landing.name}</div>` : "";
@@ -557,14 +577,19 @@ function renderWheel() {
 function spinWheel() {
   const game = state.wheel;
   if (game.spinning || !game.remaining.length) return;
-  const selectedIndex = Math.floor(Math.random() * game.remaining.length);
-  const slice = 360 / game.remaining.length;
+  const count=Math.min(8,game.remaining.length);
+  const selectedIndex = Math.floor(Math.random() * count);
+  const slice = 360 / count;
   game.pending = game.remaining[selectedIndex];
   game.rotation = 2610 - (selectedIndex * slice + slice / 2);
   game.spinning = true;
   game.returning = false;
   renderWheel();
-  scheduleWheelTicks(4200);
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const duration=reduced?0:4200;
+  const wheel=els.answers.querySelector('.vocab-wheel');
+  wheelTween=gsap.fromTo(wheel,{rotation:0},{rotation:game.rotation,duration:duration/1000,ease:'power3.out'});
+  if(!reduced)scheduleWheelTicks(duration);
   work.schedule(() => {
     game.spinning = false;
     game.landing = game.pending;
@@ -574,8 +599,8 @@ function spinWheel() {
       game.selected = game.landing;
       game.landing = null;
       renderWheel();
-    }, 1400);
-  }, 4200);
+    }, reduced?0:1400);
+  }, duration);
 }
 
 function nextWheelWord() {
@@ -628,28 +653,9 @@ function setVehiclePicture(vehicle) {
   els.stage.dataset.sound = "";
 }
 
-function renderLearn() {
-  const v = state.questions[state.round];
-  els.question.textContent = "What vehicle is this?";
-  setVehicle(v, true);
-  els.definition.textContent = v.definition;
-  els.definition.classList.add("visible");
-  els.answers.innerHTML = `
-    <button class="answer-btn" data-action="word"><span class="answer-icon">🗣️</span><span>Say: ${v.name}</span></button>
-    <button class="answer-btn" data-action="clue"><span class="answer-icon">💡</span><span>Hear the meaning</span></button>
-    <button class="answer-btn" data-action="next"><span class="answer-icon">➡️</span><span>Next vehicle</span></button>`;
-  els.answers.querySelector('[data-action="word"]').onclick = () => speak(v.name);
-  els.answers.querySelector('[data-action="clue"]').onclick = () => speak(v.definition);
-  els.answers.querySelector('[data-action="next"]').onclick = () => { if(!state.practice)state.score++; nextQuestion(); };
-}
+function renderLearn() { return renderStandardLearn(); }
 
-function renderSort() {
-  const v = state.questions[state.round];
-  els.question.textContent = `Where does the ${v.name} travel?`;
-  setVehicle(v, true);
-  const place = v.zone === "air" ? "in the air" : `on ${v.zone}`;
-  zones.forEach(z => makeAnswer(z.name, z.icon, z.value === v.zone, `A ${v.name} travels ${place}.`, false, z.iconImage));
-}
+function renderSort() { return renderStandardSort(); }
 
 function renderSound() {
   const correct = state.questions[state.round];
@@ -663,31 +669,9 @@ function renderSound() {
   choices.forEach(v => makeAnswer(v.name, v.icon, v.name === correct.name, `It is the ${correct.name}!`, true));
 }
 
-function renderIdentify() {
-  const item = state.questions[state.round];
-  const v = item.vehicle;
-  els.question.textContent = identifyQuestion(item.choices);
-  setVehiclePicture(v);
-  if(item.choices.length===1){
-    state.practice=true;
-    setVehicle(v,true);
-    const note=document.createElement('p');note.className='practice-note';note.textContent='One distinct picture is available. Practise this word, or use Teacher to change the selection.';els.answers.append(note);
-    const next=document.createElement('button');next.className='answer-btn';next.textContent='Next word';next.onclick=nextQuestion;els.answers.append(next);return;
-  }
-  item.choices.forEach(choice => {
-    makeAnswer(choice.name, choice.icon, choice.name === v.name, `Yes! It is a ${v.name}.`, true);
-  });
-}
+function renderIdentify() { return renderStandardIdentify(); }
 
-function renderSafety() {
-  const item = state.questions[state.round];
-  els.question.textContent = item.q;
-  clearVehiclePicture();
-  els.emoji.textContent = item.icon;
-  els.name.textContent = "BE SAFE!";
-  els.stage.dataset.sound = "";
-  item.answerOrder.forEach(id=>{const i=item.answerIds.indexOf(id),answer=item.answers[i];makeAnswer(answer[0],answer[1],i===item.correct,item.explain,false,'',id);});
-}
+function renderSafety() { return renderStandardSafety(); }
 
 function hangmanLetters(name) {
   return name.toLowerCase().replace(/[^a-z]/g, "");
@@ -730,81 +714,19 @@ function showHangmanSadRain(item) {
   }, 2500);
 }
 
-function renderHangman() {
-  const item = state.questions[state.round];
-  const v = item.vehicle;
-  const guessed = new Set(item.guessed);
-  const letters = hangmanLetters(v.name);
-  const scoopCount = MAX_SPELLING_MISSES;
-  clearVehiclePicture();
-  els.emoji.textContent = "";
-  els.name.textContent = "";
-  els.stage.dataset.sound = "";
-  els.question.textContent = "";
-  const wordMarkup = [...v.name].map(character => {
-    if (character === " ") return '<span class="hangman-letter hangman-space" aria-hidden="true"></span>';
-    const shown = !/[a-z]/i.test(character) || guessed.has(character.toLowerCase()) || state.answered;
-    return `<span class="hangman-letter">${shown ? character : ""}</span>`;
-  }).join("");
-  const scoopFlavors = ["strawberry", "vanilla", "mint"];
-  const scoopsRemaining = scoopCount - item.misses;
-  const cones = Array.from({ length: Math.ceil(scoopCount / SCOOPS_PER_CONE) }, (_, coneIndex) => {
-    const coneCapacity = Math.min(SCOOPS_PER_CONE, scoopCount - coneIndex * SCOOPS_PER_CONE);
-    const scoopsOnCone = Math.min(coneCapacity, Math.max(0, scoopsRemaining - coneIndex * SCOOPS_PER_CONE));
-    const scoops = Array.from({ length: scoopsOnCone }, (_, scoopIndex) => {
-      const index = coneIndex * SCOOPS_PER_CONE + scoopIndex;
-      return `<i class="ice-cream-scoop ice-cream-scoop-${scoopFlavors[index % scoopFlavors.length]}" style="--scoop-index:${index}" aria-hidden="true"></i>`;
-    }).join("");
-    const coneMarkup = scoopsOnCone > 0
-      ? '<span class="ice-cream-cone" aria-hidden="true"></span>'
-      : item.sadConeIndex === coneIndex ? '<span class="ice-cream-sad-face" role="img" aria-label="Sad face">😢</span>' : "";
-    return `<div class="ice-cream-scene">${coneMarkup}<span class="ice-cream-stack" aria-hidden="true">${scoops}</span></div>`;
-  }).join("");
-  const iceCreamMarkup = item.winCelebration
-    ? '<div class="ice-cream-meltdown ice-cream-meltdown-cleared" aria-label="Ice cream celebration"></div>'
-    : `<div class="ice-cream-meltdown" aria-label="Ice cream scoops remaining: ${scoopsRemaining} of ${scoopCount}"><div class="ice-cream-scenes">${cones}</div></div>`;
-  const keyboard = "abcdefghijklmnopqrstuvwxyz".split("").map(letter => {
-    const wasGuessed = guessed.has(letter);
-    const isCorrect = letters.includes(letter);
-    const className = wasGuessed ? (isCorrect ? "correct" : "wrong") : "";
-    return `<button class="hangman-key ${className}" data-letter="${letter}" ${wasGuessed || state.answered ? "disabled" : ""}>${letter.toUpperCase()}</button>`;
-  }).join("");
-  els.answers.innerHTML = `<div class="hangman-board">${iceCreamMarkup}<div class="hangman-word" aria-label="Hidden transport word">${wordMarkup}</div><div class="hangman-keys" aria-label="Letter keyboard">${keyboard}</div></div>`;
-  els.answers.querySelectorAll("[data-letter]").forEach(button => button.addEventListener("click", () => chooseHangmanLetter(button.dataset.letter)));
-}
+function renderHangman() { return renderStandardSpelling(); }
 
 function chooseHangmanLetter(letter) {
-  if (state.mode !== "hangman" || state.answered || state.recovery) return;
-  const item = state.questions[state.round];
-  if (item.guessed.includes(letter)) return;
-  item.guessed.push(letter);
-  const letters = hangmanLetters(item.vehicle.name);
-  const correct = letters.includes(letter);
-  const scoopsBefore = MAX_SPELLING_MISSES - item.misses;
-  if (!correct) item.misses++;
-  const lostCone = !correct && scoopsBefore > 0 && (scoopsBefore - 1) % SCOOPS_PER_CONE === 0;
-  const lostConeIndex = lostCone ? Math.floor((scoopsBefore - 1) / SCOOPS_PER_CONE) : null;
-  if (lostCone) showSadConeForThreeSeconds(item, lostConeIndex);
-  const complete = [...letters].every(character => item.guessed.includes(character));
-  if (complete || item.misses >= MAX_SPELLING_MISSES) {
-    state.answered = true;
-    completeQuestion(item.vehicle.id);
-    if (complete && item.misses === 0) state.score++;
-    renderHangman();
-    els.score.textContent = state.score;
-    els.feedback.className = complete ? "feedback good" : "feedback try";
-    els.feedback.innerHTML = `<button class="next-btn" id="nextBtn" aria-label="Next word">➜</button>`;
-    speak(complete ? `Correct. ${item.vehicle.name}.` : item.vehicle.name);
-    if (complete) { tone(523, 0, .16); tone(659, .16, .16); tone(784, .32, .28); }
-    if (complete) { burstConfetti(); showHangmanWinSequence(item); }
-    else showHangmanSadRain(item);
-    document.getElementById("nextBtn").onclick = nextQuestion;
-    return;
+  if(state.mode!=='hangman'||state.answered||state.recovery||work.held)return;
+  const round=state.questions[state.round],result=TransportStandard.guessSpelling(round,letter);if(!result.changed)return;
+  if(result.terminal){
+    state.answered=true;completeQuestion(round.vehicle.id);
+    state.score+=result.reward;
+    renderHangman();els.score.textContent=state.score;
+    standardFeedback(result.won?'Ready to depart. '+round.vehicle.name:round.vehicle.name+'. This word was revealed for practice.');
+    if(result.won)tone(659,0,.18);rememberAttempt();return;
   }
-  els.feedback.className = "feedback";
-  els.feedback.textContent = "";
-  if (correct) tone(523, 0, .16); else tone(180, 0, .18, "sine", .08);
-  renderHangman();
+  renderHangman();rememberAttempt();
 }
 
 function makeAnswer(label, icon, correct, explain, revealVehicle = false, imagePath = "",choiceId=label) {
@@ -828,7 +750,7 @@ function chooseAnswer(btn, correct, explain, revealVehicle) {
     btn.classList.add("wrong");
     btn.disabled = true;
     els.feedback.className = "feedback";
-    els.feedback.textContent = "";
+    els.feedback.textContent = 'Try another choice.';
     tone(180, 0, .18, "sine", .08);
     return;
   }
@@ -848,9 +770,8 @@ function chooseAnswer(btn, correct, explain, revealVehicle) {
     }
   }
   els.feedback.className = "feedback";
-  els.feedback.innerHTML = `<button class="next-btn" id="nextBtn" aria-label="Next">➜</button>`;
+  standardFeedback(explain);
   els.score.textContent = state.score;
-  speak("Correct!");
   tone(523, 0, .16); tone(659, .16, .16); tone(784, .32, .28);
   document.getElementById("nextBtn").onclick = nextQuestion;
 }
@@ -863,17 +784,18 @@ function nextQuestion() {
 }
 
 function currentPrompt() {
+  if(state.choosing||state.recovery||TransportStandard.hubs[state.mode]||state.mode==='detective')return '';
   if (state.mode === "safety") return state.questions[state.round].q;
   if (state.mode === "identify") {
     const item = state.questions[state.round];
-    return identifyQuestion(item.choices);
+    return standardPreferences().identifyTarget?identifyQuestion(item.choices):item.vehicle.definition;
   }
   if (state.mode === "hangman") return "";
   if (state.mode === "flip") return "";
   if (state.mode === "wheel") return "";
   const v = state.questions[state.round];
   if (state.mode === "learn") return `This is a ${v.name}.`;
-  if (state.mode === "sort") return `Where does the ${v.name} travel? Land, water, or air?`;
+  if (state.mode === "sort") return TransportStandard.ruleFor(state.setup?.rule).prompt(v.name);
   return "Listen carefully. Which vehicle makes this sound?";
 }
 
@@ -892,12 +814,10 @@ function finishGame() {
   els.finalScore.textContent = state.score;
   els.totalQuestions.textContent = total;
   const ratio = state.score / total;
-  els.stars.textContent = ratio >= .85 ? "⭐⭐⭐" : ratio >= .55 ? "⭐⭐" : "⭐";
-  if(state.practice)els.stars.textContent='Practice complete';
+  els.stars.textContent=state.practice||!state.score?'Practice complete':`${state.score} ${state.score===1?'star':'stars'} earned`;
   document.querySelector('.result-score').hidden=Boolean(state.practice);
-  els.resultMessage.textContent = state.mode === "safety" ? "You made safe travel choices!" : state.mode === "sort" ? "You know where vehicles travel!" : state.mode === "identify" ? "You identified all the transportation pictures!" : state.mode === "hangman" ? "You built transport words before the ice cream melted!" : state.mode === "flip" ? "You found every vocabulary match!" : state.mode === "wheel" ? "You practised every vocabulary word!" : `You reviewed all ${vehicles.length} transportation words!`;
+  els.resultMessage.textContent=state.mode==='hangman'?'You worked on the departure words.':state.mode==='detective'?'You explored the hidden Transport pictures.':state.mode==='safety'?'Talk together about the safe travel choices.':state.mode==='sort'?'You compared vehicles using the chosen rule.':state.mode==='flip'?'You found the matching word pairs.':`You explored this set of ${total} words.`;
   showScreen("results");
-  speak(`Round complete! You got ${state.score} out of ${total}.`);
   if (state.mode !== "flip") burstConfetti();
 }
 
@@ -971,6 +891,7 @@ function renderTeacherDraft(focusKey){
 }
 document.getElementById('teacherBtn').addEventListener('click', () => {
   teacherDraft=TransportCurriculum.normaliseScope(classroom.scope);renderTeacherDraft();
+  renderStandardTeacher();
   reducedControl.checked = landingScene.reduced;
   landingTeacher.showModal();
   work.setHold('teacher', true);
@@ -983,13 +904,14 @@ document.getElementById('clearTeacherScope').addEventListener('click',()=>{teach
 document.getElementById('applyTeacherScope').addEventListener('click',()=>{
   const changed=JSON.stringify(teacherDraft)!==JSON.stringify(classroom.scope);
   if(changed){goMenu();classroom.apply(teacherDraft);}
+  applyStandardTeacher();
   landingScene.setReduced(reducedControl.checked);
   landingTeacher.close();refreshTeacherButton();
 });
 refreshTeacherButton();
 
 // Retain the existing playable activities; use their existing illustrations in the shared menu.
-const menuArt = {learn:'bus',sort:'boat',sound:'helicopter',identify:'car',safety:'police_car',hangman:'truck',flip:'train',wheel:'bicycle'};
+const menuArt = {learn:'bus',sort:'boat',detective:'helicopter',identify:'car',safety:'police_car',hangman:'truck',flip:'train',wheel:'bicycle',media:'ship',games:'car',phonics:'tram',create:'hot_air_balloon'};
 for (const card of document.querySelectorAll('.mode-card')) {
   const image = document.createElement('img');
   image.src = `images/emoji-codex/${menuArt[card.dataset.mode]}.png`;
@@ -1001,9 +923,9 @@ landingScene.setActive(true);
 document.querySelectorAll(".mode-card").forEach(btn => btn.addEventListener("click", () => startGame(btn.dataset.mode)));
 document.getElementById("homeBtn").addEventListener("click", goHome);
 document.getElementById("openGamesBtn").addEventListener("click", openGameMenu);
-document.getElementById("backMenuBtn").addEventListener("click", goMenu);
+document.getElementById("backMenuBtn").addEventListener("click", standardBack);
 document.getElementById("chooseGameBtn").addEventListener("click", goMenu);
-document.getElementById("playAgainBtn").addEventListener("click", () => startGame(state.mode));
+document.getElementById("playAgainBtn").addEventListener("click", () => startGame(state.mode,{setup:state.setup,fresh:true}));
 els.listen.addEventListener("click", playCurrentAudio);
 els.emojiToggle.addEventListener("click", () => {
   state.identifyEmojis = !state.identifyEmojis;
@@ -1046,12 +968,13 @@ document.addEventListener("keydown", e => {
   }
   if (e.key.toLowerCase() === "m") els.sound.click();
   if (e.key.toLowerCase() === "f") document.getElementById("fullscreenBtn").click();
-  if (e.key === "Escape" && active && !document.fullscreenElement) goMenu();
+  if (e.key === "Escape" && active && !document.fullscreenElement) standardBack();
   else if (e.key === 'Escape' && !document.fullscreenElement) {
     if (screens.home.classList.contains('active') && screens.home.classList.contains('menu-open')) goHome();
     else if (screens.results.classList.contains('active')) goMenu();
   }
   if (!active || state.recovery) return;
+  if(e.target.closest?.('button')&&(e.key==='Enter'||e.code==='Space'))return;
   if (e.code === "Space") { e.preventDefault(); playCurrentAudio(); }
   if (["1", "2", "3"].includes(e.key)) {
     const target = els.answers.children[Number(e.key) - 1];
@@ -1072,7 +995,7 @@ window.addEventListener("pagehide", () => work.setHold("page", true));
 window.addEventListener('pageshow',event=>{
   if(event.persisted&&!activeSession&&state.sessionKey&&screens.game.classList.contains('active')){
     const variant=JSON.parse(state.sessionKey)[4];
-    const session=classroom.prepare(state.mode,classroom.scope,variant);
+    const session=standardSession(state.mode,state.setup||TransportStandard.setupFor(state.mode,variant));
     const pending=state.questions.map(questionId).filter(id=>!(state.completedIds||[]).includes(id));
     if(session.key===state.sessionKey&&classroom.claim(session,pending))activeSession=session;
     else showScopeRecovery(state.mode,'The saved activity changed while this page was away. Choose how to continue.',true);
