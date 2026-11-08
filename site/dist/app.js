@@ -303,6 +303,8 @@ function renderFlipGame() {
     button.classList.toggle("matched", tile.matched);
     button.disabled = tile.matched;
     button.setAttribute("aria-label", tile.flipped || tile.matched ? tile.vehicle.name : "Hidden tile");
+    button.querySelector(".flip-tile-front").setAttribute("aria-hidden", String(!tile.flipped && !tile.matched));
+    button.querySelector(".flip-tile-back").setAttribute("aria-hidden", String(tile.flipped || tile.matched));
   }
 }
 
@@ -734,6 +736,11 @@ function goHome() {
   showScreen("home");
 }
 
+function goMenu() {
+  goHome();
+  openGameMenu();
+}
+
 function openGameMenu() {
   document.getElementById("homeScreen").classList.add("menu-open");
 }
@@ -741,8 +748,8 @@ function openGameMenu() {
 document.querySelectorAll(".mode-card").forEach(btn => btn.addEventListener("click", () => startGame(btn.dataset.mode)));
 document.getElementById("homeBtn").addEventListener("click", goHome);
 document.getElementById("openGamesBtn").addEventListener("click", openGameMenu);
-document.getElementById("backMenuBtn").addEventListener("click", goHome);
-document.getElementById("chooseGameBtn").addEventListener("click", goHome);
+document.getElementById("backMenuBtn").addEventListener("click", goMenu);
+document.getElementById("chooseGameBtn").addEventListener("click", goMenu);
 document.getElementById("playAgainBtn").addEventListener("click", () => startGame(state.mode));
 els.listen.addEventListener("click", playCurrentAudio);
 els.emojiToggle.addEventListener("click", () => {
@@ -780,7 +787,7 @@ document.addEventListener("keydown", e => {
   }
   if (e.key.toLowerCase() === "m") els.sound.click();
   if (e.key.toLowerCase() === "f") document.getElementById("fullscreenBtn").click();
-  if (e.key === "Escape" && active && !document.fullscreenElement) goHome();
+  if (e.key === "Escape" && active && !document.fullscreenElement) goMenu();
   if (!active) return;
   if (e.code === "Space") { e.preventDefault(); playCurrentAudio(); }
   if (["1", "2", "3"].includes(e.key)) {

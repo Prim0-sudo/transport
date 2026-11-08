@@ -635,3 +635,6 @@ kbd { min-width: 24px; padding: 2px 6px; border-radius: 5px; color: #273157; bac
   .flip-tile-front img { width: 64px; height: 72px; }
   .flip-tile-front strong { overflow-wrap: anywhere; line-height: 1.1; }
 }
+
+.game-screen:has(.flip-setup) .score-pill,
+.game-screen:has(.flip-setup) .progress-track { visibility: hidden; }
