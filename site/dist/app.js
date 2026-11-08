@@ -793,7 +793,7 @@ function currentPrompt() {
   if (state.mode === "safety") return state.questions[state.round].q;
   if (state.mode === "identify") {
     const item = state.questions[state.round];
-    return standardPreferences().identifyTarget?identifyQuestion(item.choices):item.vehicle.definition;
+    return standardPreferences().identifyTarget?'Which word names this vehicle?':item.vehicle.definition;
   }
   if (state.mode === "hangman") return "";
   if (state.mode === "flip") return "";

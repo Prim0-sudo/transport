@@ -1,0 +1,34 @@
+// Apply explicit decisions to the existing 60-variant audit; retain every original.
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {readTransportContent} from './content-source.mjs';
+const root=new URL('../',import.meta.url),{entries}=await readTransportContent(root);
+const repairs=new Set(['bus','tram','ambulance','fire-engine','airplane']);
+const replacements=new Set(['train','glider']);
+const notes={
+ car:'Complete passenger car; avoid testing colour as identity.',bus:'Face-like front and yellow school-bus overlap; repair face and give route/context distinction.',bicycle:'Complete bicycle; preserve visible pedals, wheels and handlebars.',motorcycle:'Complete seated motorbike; compare standing kick scooter only with clear body cues.',scooter:'Keep as kick scooter; never use this standing deck image for motor scooter.',train:'Face-bearing toy engine; replace with factual complete train and carriage context.',subway:'Keep metro train; underground/city meaning needs station context, not assumed from shape.',taxi:'Clear taxi cue, but yellow/checker pattern is one local example rather than universal.',truck:'Complete goods truck; retain load-carrying cue.',van:'Passenger-window van overlaps minibus; retain but restrict same-picture distractors until contextual comparison.',tram:'Repair face-like front; preserve overhead collector and rails context.',minibus:'Small passenger bus; add scale/passenger context rather than testing bus size from isolated scale.',
+ 'school-bus':'Yellow school bus is a valid example, not a worldwide colour rule; compare contextual bus uses.',
+ 'police-car':'Emergency markings/lights clear; locale review of emblems, no assumed universal colours.',ambulance:'Repair eyes/mouth on windscreen/front; retain whole medical transport body.',
+ 'fire-engine':'Repair anthropomorphic front cues; preserve ladder/equipment and all wheels.',tractor:'Useful complete farm tractor; large rear wheels clear.',rickshaw:'Keep pulled cart; motorised alternate must become a separate auto-rickshaw proposal.',skateboard:'Complete deck and small wheels; avoid confusing truck underside with vehicle truck word.',boat:'Useful motorboat example; generic boat overlaps speedboat, so use picture-group exclusions.',ship:'Cruise-style large ship example; container alternate is a valid different ship, not random style cycling.',ferry:'Crossing function needs dock/passenger context; isolated hull does not prove ferry use.',speedboat:'Complete fast motorboat; speed needs context, not red colour.',yacht:'Leisure motor yacht; no forced sail/wind classification.',
+ 'jet-ski':'Complete personal watercraft; retain seat/handlebars distinction, water-safety context if occupied.',airplane:'Repair face-like cockpit; factual fixed wings and engines must stay readable.',helicopter:'Complete rotor/tail silhouette; preserve rotor tips and landing supports.',
+ 'hot-air-balloon':'Useful complete envelope and basket; colour is not a teaching distinction.',glider:'Face-bearing powered-looking/toy geometry; replace with clear long-wing unpowered glider.',
+ 'space-shuttle':'Keep as winged orbiter example with context; never alternate with upright generic rocket.'};
+const variants=[];
+for(const entry of entries){
+  const key=entry.id.slice('vehicle.'.length),base=entry.image.split('/').pop();
+  for(const bank of ['emoji-codex','emoji-user']){
+    const path=`images/${bank}/${bank==='emoji-user'&&key==='space-shuttle'?'rocket_ship.png':base}`;
+    const bytes=await readFile(new URL('site/dist/'+path,root));
+    const retarget=bank==='emoji-user'&&['rickshaw','space-shuttle'].includes(key);
+    const decision=retarget?'retarget':bank==='emoji-user'?'keep-alternate':replacements.has(key)?'replace':repairs.has(key)?'repair':'keep';
+    variants.push({assetId:`teaching.${key}.${bank}`,currentConcept:entry.id,path,sha256:createHash('sha256').update(bytes).digest('hex'),width:bytes.readUInt32BE(16),height:bytes.readUInt32BE(20),alphaChannel:[4,6].includes(bytes[25]),sourcePrompt:'unknown',sourceLicense:'unknown; recover before release',originalPreserved:true,runtimeDerivative:'none; unchanged original',decision,
+      proposedConcept:retarget?(key==='rickshaw'?'vehicle.auto-rickshaw':'vehicle.rocket'):entry.id,
+      active:bank==='emoji-codex',implementationApproval:'pending for any changed/new picture',notes:retarget?'Do not map this picture to the current canonical label. Candidate only for the separately reviewed new concept.':bank==='emoji-user'?'Preserve as an alternate candidate; no automatic round-driven switching. Review style and factual detail at teaching size. '+notes[key]:notes[key],
+      evidence:'Existing 8 November all-60 audit and its bank-1/bank-2 full screenshots; 9 November decision mapping. Native byte metadata is not image acceptance.'});
+  }
+}
+await mkdir(new URL('docs/content/',root),{recursive:true});
+await writeFile(new URL('docs/content/TEACHING-ART-LEDGER.json',root),JSON.stringify({schema:1,date:'2026-11-09',status:'Production decisions proposed; no new art installed',selectedDirection:'Miniature World',variants},null,2)+'\n');
+const table=entries.map(entry=>{const rows=variants.filter(v=>v.currentConcept===entry.id);return `| ${entry.name} | ${rows[0].decision} | ${rows[1].decision}${rows[1].decision==='retarget'?' → '+rows[1].proposedConcept:''} | ${notes[entry.id.slice(8)]} |`;}).join('\n');
+await writeFile(new URL('docs/content/TEACHING-ART-DECISIONS.md',root),`# Transport teaching-art decisions\n\nThis is the per-entry continuation of the supplied 60-variant audit, not another full audit or an approval certificate. Miniature World remains the selected direction. Current runtime keeps the pinned original bank while changed/new teaching pictures await review. All 60 original files remain unchanged. Hashes, dimensions, alpha-channel presence and unknown provenance are recorded in TEACHING-ART-LEDGER.json.\n\nKeep means preserve a useful original; repair means change a specified defect while retaining the useful subject; replace requires a clearer factual teaching subject. Keep-alternate preserves an uninstalled candidate. Retarget means the old label was wrong for the picture; it cannot silently replace the current subject. No unknown prompt/license has been invented.\n\n| Canonical entry | Current bank | Alternate bank | Teaching decision |\n|---|---|---|---|\n${table}\n\nBefore production, inspect individual originals at final phone/projector size and settle exact reference/style and licensing. Show changed subjects and contextual comparisons before implementation. Native dimensions, alpha or successful HTTP loading do not certify factual accuracy, edge quality or acceptance.\n`);
+console.log(`Prepared decisions and source metadata for ${variants.length} retained variants. No pixels or runtime paths changed.`);
