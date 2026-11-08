@@ -9,3 +9,5 @@ Design tokens retain the series' readable cream controls (#fffbed), navy text (#
 The Explore vignette reuses a CSS view of the provisional scene, avoiding the earlier mixed-style launch icon. The viewport layout reserves space for the utility controls and review note on short and narrow screens. The menu's existing Transport illustrations remain provisional.
 
 This is a composition preview, not final environment delivery. The scene is currently flattened; final production requires separately generated and approved camera-aligned sky, background, middle ground and foreground, independent vehicles, responsive motion paths, reduced-motion support and lifecycle cleanup. No false parallax is applied to the flattened scene. Dispatch retains its schematic movement preview; the separate interactive driving game remains in the Games plan.
+
+Focused review after source checkpoint bf874cf: Explore opens the twelve-tile menu; Home returns to launch. Visually inspected at 390x844 and 1280x800. Desktop evidence: docs/previews/transport-landing-local.png. Browser override reset after review. Final assets remain pending layout approval.
