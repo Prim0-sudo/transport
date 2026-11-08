@@ -1,6 +1,6 @@
 # Transport applied-game concept choices
 
-Proposals only, 8 November 2026. No selected concept, detailed preview approval or asset-production authority yet. Concepts use Transport identity, not Plants mechanics. User selection is requested in the chat.
+Updated 8 November 2026: user selected concept 1, Transport Dispatch, first; likes concepts 2 and 3 for later. User also requests an interactive driving game with mouse/tap and arrows like Plants Garden Patrol. No detailed preview or final-asset approval yet. Preserve a distinct driving activity on the roadmap. Concepts use Transport identity, not garden scenery.
 
 | | Transport Dispatch | Build the Journey | Safe Street |
 |---|---|---|---|

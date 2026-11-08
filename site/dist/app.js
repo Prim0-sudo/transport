@@ -93,6 +93,47 @@ let state = { mode: null, round: 0, score: 0, questions: [], answered: false, wr
 let audioCtx;
 let activeClip;
 let wheelTickTimers = [];
+let promptTask;
+let confettiTask;
+let speechHeld = false;
+const activeEffects = new Set();
+const work = new TransportLifecycle({ onHold: held => {
+  if ("speechSynthesis" in window) {
+    if (held) {
+      speechHeld = speechSynthesis.speaking && !speechSynthesis.paused;
+      if (speechHeld) speechSynthesis.pause();
+    } else if (speechHeld) {
+      speechHeld = false;
+      if (!state.muted && speechSynthesis.paused) speechSynthesis.resume();
+    }
+  }
+  if (held) audioCtx?.suspend().catch(() => {});
+  else if (!state.muted) audioCtx?.resume().catch(() => {});
+} });
+
+function cancelCurrentWork() {
+  work.cancel();
+  wheelTickTimers = [];
+  promptTask = confettiTask = null;
+  speechHeld = false;
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  if (activeClip) activeClip.pause();
+  for (const source of activeEffects) {
+    try { source.stop(); } catch (_) {}
+    source.disconnect();
+  }
+  activeEffects.clear();
+  els.confetti.replaceChildren();
+  for (const animation of screens.game.getAnimations({ subtree: true })) animation.cancel();
+}
+
+function ownEffect(source) {
+  activeEffects.add(source);
+  source.addEventListener("ended", () => {
+    activeEffects.delete(source);
+    source.disconnect();
+  }, { once: true });
+}
 const SCOOPS_PER_CONE = 5;
 const MAX_SPELLING_MISSES = 8;
 
@@ -111,7 +152,9 @@ function showScreen(name) {
 }
 
 function speak(text) {
-  if (state.muted || !("speechSynthesis" in window)) return;
+  work.cancelTask(promptTask);
+  if (state.muted || work.held || !text || !("speechSynthesis" in window)) return;
+  speechHeld = false;
   speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.rate = .82;
@@ -122,12 +165,12 @@ function speak(text) {
 
 function getAudio() {
   audioCtx ||= new (window.AudioContext || window.webkitAudioContext)();
-  if (audioCtx.state === "suspended") audioCtx.resume();
+  if (audioCtx.state === "suspended") audioCtx.resume().catch(() => {});
   return audioCtx;
 }
 
 function tone(freq, start, duration, type = "sine", volume = .12) {
-  if (state.muted) return;
+  if (state.muted || work.held) return;
   const ctx = getAudio();
   const osc = ctx.createOscillator();
   const gain = ctx.createGain();
@@ -137,12 +180,13 @@ function tone(freq, start, duration, type = "sine", volume = .12) {
   gain.gain.exponentialRampToValueAtTime(volume, ctx.currentTime + start + .02);
   gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + start + duration);
   osc.connect(gain).connect(ctx.destination);
+  ownEffect(osc);
   osc.start(ctx.currentTime + start);
   osc.stop(ctx.currentTime + start + duration + .03);
 }
 
 function noise(start, duration, volume = .07) {
-  if (state.muted) return;
+  if (state.muted || work.held) return;
   const ctx = getAudio();
   const length = Math.floor(ctx.sampleRate * duration);
   const buffer = ctx.createBuffer(1, length, ctx.sampleRate);
@@ -153,6 +197,7 @@ function noise(start, duration, volume = .07) {
   gain.gain.value = volume;
   source.buffer = buffer;
   source.connect(gain).connect(ctx.destination);
+  ownEffect(source);
   source.start(ctx.currentTime + start);
 }
 
@@ -161,7 +206,7 @@ function wheelTick() {
 }
 
 function scheduleWheelTicks(duration = 4200) {
-  wheelTickTimers.forEach(timer => clearTimeout(timer));
+  wheelTickTimers.forEach(timer => work.cancelTask(timer));
   wheelTickTimers = [];
   const tickCount = 34;
   const weights = Array.from({ length: tickCount }, (_, index) => 1 + 7 * (index / (tickCount - 1)) ** 2);
@@ -171,7 +216,7 @@ function scheduleWheelTicks(duration = 4200) {
   weights.forEach((weight, index) => {
     elapsed += duration * weight / totalWeight;
     if (index === tickCount - 1) return;
-    wheelTickTimers.push(setTimeout(() => {
+    wheelTickTimers.push(work.schedule(() => {
       if (state.mode === "wheel" && state.wheel?.spinning) wheelTick();
     }, elapsed));
   });
@@ -210,6 +255,7 @@ function startGame(mode) {
 }
 
 function renderQuestion() {
+  cancelCurrentWork();
   const gameCard = document.getElementById("gameCard");
   gameCard.dataset.mode = state.mode;
   gameCard.classList.toggle("hide-answer-emojis", state.mode === "identify" && !state.identifyEmojis);
@@ -256,7 +302,7 @@ function renderQuestion() {
   else if (state.mode === "hangman") renderHangman();
   else renderSound();
 
-  setTimeout(() => state.mode === "sound" ? playCurrentAudio() : speakCurrentPrompt(), 260);
+  promptTask = work.schedule(() => state.mode === "sound" ? playCurrentAudio() : speakCurrentPrompt(), 260);
 }
 
 function renderFlipSetup() {
@@ -396,12 +442,12 @@ function spinWheel() {
   game.returning = false;
   renderWheel();
   scheduleWheelTicks(4200);
-  setTimeout(() => {
+  work.schedule(() => {
     game.spinning = false;
     game.landing = game.pending;
     game.pending = null;
     renderWheel();
-    setTimeout(() => {
+    work.schedule(() => {
       game.selected = game.landing;
       game.landing = null;
       renderWheel();
@@ -410,6 +456,7 @@ function spinWheel() {
 }
 
 function nextWheelWord() {
+  cancelCurrentWork();
   const game = state.wheel;
   game.remaining = game.remaining.filter(vehicle => vehicle !== game.selected);
   game.selected = null;
@@ -420,7 +467,7 @@ function nextWheelWord() {
   }
   game.returning = true;
   renderWheel();
-  setTimeout(() => {
+  work.schedule(() => {
     if (state.mode === "wheel" && !state.wheel.selected) state.wheel.returning = false;
   }, 450);
 }
@@ -518,7 +565,7 @@ function hangmanLetters(name) {
 function showSadConeForThreeSeconds(item, coneIndex) {
   const round = state.round;
   item.sadConeIndex = coneIndex;
-  setTimeout(() => {
+  work.schedule(() => {
     if (state.mode === "hangman" && state.round === round && state.questions[round] === item && item.sadConeIndex === coneIndex) {
       item.sadConeIndex = null;
       renderHangman();
@@ -528,12 +575,12 @@ function showSadConeForThreeSeconds(item, coneIndex) {
 
 function showHangmanWinSequence(item) {
   const round = state.round;
-  setTimeout(() => {
+  work.schedule(() => {
     if (state.mode === "hangman" && state.round === round && state.questions[round] === item && state.answered) {
       item.winCelebration = true;
       renderHangman();
       els.hangmanWin.hidden = false;
-      setTimeout(() => {
+      work.schedule(() => {
         if (state.mode === "hangman" && state.round === round && state.questions[round] === item && state.answered) {
           els.hangmanWin.hidden = true;
         }
@@ -545,7 +592,7 @@ function showHangmanWinSequence(item) {
 function showHangmanSadRain(item) {
   const round = state.round;
   els.hangmanSadRain.hidden = false;
-  setTimeout(() => {
+  work.schedule(() => {
     if (state.mode === "hangman" && state.round === round && state.questions[round] === item && state.answered) {
       els.hangmanSadRain.hidden = true;
     }
@@ -702,6 +749,7 @@ function playCurrentAudio() {
 }
 
 function finishGame() {
+  cancelCurrentWork();
   const total = state.questions.length;
   els.progress.style.width = "100%";
   els.finalScore.textContent = state.score;
@@ -715,6 +763,7 @@ function finishGame() {
 }
 
 function burstConfetti(pieceCount = 55) {
+  work.cancelTask(confettiTask);
   els.confetti.innerHTML = "";
   const colors = ["#ffd54a", "#ef5b5b", "#37b56c", "#52bff2", "#8b65d8"];
   for (let i = 0; i < pieceCount; i++) {
@@ -726,12 +775,11 @@ function burstConfetti(pieceCount = 55) {
     piece.style.animationDelay = `${Math.random() * .55}s`;
     els.confetti.appendChild(piece);
   }
-  setTimeout(() => els.confetti.innerHTML = "", 2500);
+  confettiTask = work.schedule(() => els.confetti.innerHTML = "", 2500);
 }
 
 function goHome() {
-  if ("speechSynthesis" in window) speechSynthesis.cancel();
-  if (activeClip) activeClip.pause();
+  cancelCurrentWork();
   document.getElementById("homeScreen").classList.remove("menu-open");
   showScreen("home");
 }
@@ -765,8 +813,13 @@ els.sound.addEventListener("click", () => {
   els.sound.textContent = state.muted ? "🔇" : "🔊";
   els.sound.title = state.muted ? "Sound off (M)" : "Sound on (M)";
   els.sound.setAttribute("aria-label", state.muted ? "Turn sound on" : "Turn sound off");
-  if (state.muted && "speechSynthesis" in window) speechSynthesis.cancel();
-  if (state.muted && activeClip) activeClip.pause();
+  if (state.muted) {
+    speechHeld = false;
+    if ("speechSynthesis" in window) speechSynthesis.cancel();
+    if (activeClip) activeClip.pause();
+    for (const source of activeEffects) { try { source.stop(); } catch (_) {} }
+    activeEffects.clear();
+  }
 });
 
 document.getElementById("fullscreenBtn").addEventListener("click", async () => {
@@ -777,7 +830,7 @@ document.getElementById("fullscreenBtn").addEventListener("click", async () => {
 });
 
 document.addEventListener("keydown", e => {
-  if (e.defaultPrevented || e.isComposing || e.ctrlKey || e.altKey || e.metaKey ||
+  if (work.held || e.defaultPrevented || e.isComposing || e.ctrlKey || e.altKey || e.metaKey ||
       e.target.closest?.("input, textarea, select, [contenteditable]:not([contenteditable='false'])")) return;
   const active = screens.game.classList.contains("active");
   if (active && state.mode === "hangman" && /^[a-z]$/i.test(e.key)) {
@@ -799,3 +852,8 @@ document.addEventListener("keydown", e => {
     if (next) next.click();
   }
 });
+
+// Named Teacher holds can be added without releasing the independent hidden hold.
+// The Teacher dialog/scoped sessions are a separate next batch.
+window.addEventListener("pagehide", () => work.setHold("page", true));
+window.addEventListener("pageshow", () => work.setHold("page", false));

@@ -70,7 +70,7 @@ createServer((request, response) => {
   const path = normalize(join(root, relative));
 
   const safeRelative = relativePath(root, path).replaceAll("\\", "/");
-  if (!/^(index\.html|app\.js|styles\.css|transport-town-bg\.png|images\/[^.].*)$/.test(safeRelative) || safeRelative.split("/").some(part => part.startsWith("."))) {
+  if (!/^(index\.html|(?:app|lifecycle)\.js|styles\.css|transport-town-bg\.png|images\/[^.].*)$/.test(safeRelative) || safeRelative.split("/").some(part => part.startsWith("."))) {
     response.writeHead(403).end("Forbidden");
     return;
   }
@@ -119,12 +119,12 @@ function seed(folder) {
   }
 }
 for (const folder of ["images"]) seed(folder);
-for(const path of ['index.html','app.js','styles.css'])signatures.set(path,signature(path));
+for(const path of ['index.html','app.js','lifecycle.js','styles.css'])signatures.set(path,signature(path));
 let changeTimer;
 watch(root, { recursive: true }, (_event, filename) => {
   if (!filename) return;
   const path = String(filename).replaceAll("\\", "/");
-  if (!/^(index\.html$|app\.js$|styles\.css$|images\/)/.test(path)) return;
+  if (!/^(index\.html$|(?:app|lifecycle)\.js$|styles\.css$|images\/)/.test(path)) return;
   const next = signature(path);
   if (signatures.get(path) === next) return;
   signatures.set(path, next);
