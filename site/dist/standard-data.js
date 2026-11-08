@@ -11,22 +11,22 @@
     {id:'space',label:'Space travel',image:'images/emoji-codex/space_shuttle.png'},
   ];
   const sortRules=[
-    {id:'surfaces',label:'Land, water or air?',description:'Group each pictured vehicle by where it travels. Spacecraft are outside this rule.',prompt:name=>`Where does the ${name} travel?`,groups:[
+    {id:'surfaces',label:'Land, water or air?',description:'Group each pictured vehicle by where it travels.',notes:'Spacecraft are outside this rule.',prompt:name=>`Where does the ${name} travel?`,groups:[
       {id:'land',label:'Land',image:'images/categories/land.png',members:ids('car bus bicycle motorcycle scooter train subway taxi truck van tram minibus school-bus police-car ambulance fire-engine tractor rickshaw skateboard'),explanation:'It travels on land.'},
       {id:'water',label:'Water',image:'images/categories/water.png',members:ids('boat ship ferry speedboat yacht jet-ski'),explanation:'It travels on water.'},
       {id:'air',label:'Air',image:'images/categories/air.png',members:ids('airplane helicopter hot-air-balloon glider'),explanation:'It travels through the air.'},
     ]},
-    {id:'power',label:'People power or engine power?',description:'Compare the pictured kinds. Boats, yachts, balloons, gliders and spacecraft are left out where a simple choice would be misleading.',prompt:name=>`How is this ${name} powered?`,groups:[
+    {id:'power',label:'People power or engine power?',description:'Group the pictures into people-powered and engine-powered vehicles.',notes:'Boats, yachts, balloons, gliders and spacecraft are excluded from this simple comparison.',prompt:name=>`How is this ${name} powered?`,groups:[
       {id:'people',label:'People power',image:'images/emoji-codex/bicycle.png',members:ids('bicycle scooter skateboard rickshaw'),explanation:'A person pedals, pushes or pulls it.'},
       {id:'engine',label:'Engine power',image:'images/emoji-codex/car.png',members:ids('car bus motorcycle train subway taxi truck van tram minibus school-bus police-car ambulance fire-engine tractor ship ferry speedboat jet-ski airplane helicopter'),explanation:'An engine or motor powers it.'},
     ]},
   ];
   const silhouetteIds=new Set(ids('bicycle scooter helicopter hot-air-balloon skateboard rickshaw tractor'));
   const hubs={
-    media:{title:'Media',description:'Choose a resource group.',groups:[['printables','Printables','No Transport printable packs are installed yet.'],['books','Books','No Transport books are installed yet.'],['videos','Videos','No Transport films are installed yet.'],['songs','Songs','Songs remain on the series backlog.']]},
-    games:{title:'Transport Games',description:'Applied games follow the standard activities in the upgrade plan.',groups:[['dispatch','Transport Dispatch','Dispatch is the first planned applied game. Its detailed study is not a finished playable activity.'],['driving','Driving game','A separate mouse, tap and arrow-controlled driving game is planned.']]},
-    phonics:{title:'Phonics & Sight Words',description:'Approved sound recordings and topic reading plans will be installed in the literacy stage.',groups:[['sounds','Shared sounds','No approved shared sound library is packaged in Transport yet.'],['words','Transport words','Transport decoding plans have not been installed yet.']]},
-    create:{title:'Read, Draw & Talk',description:'Reading cards and teacher-led drawing/talk prompts follow in the literacy stage.',groups:[['cards','Reading cards','No authored Transport reading-card pack is installed yet.']]},
+    media:{title:'Media',description:'Choose a resource group.',groups:[['printables','Printables','Printable cards are not available yet.'],['books','Books','Books are not available yet.'],['videos','Videos','Films are not available yet.'],['songs','Songs','Songs are not available yet.']]},
+    games:{title:'Transport Games',description:'Choose a transport game.',groups:[['dispatch','Transport Dispatch','Transport Dispatch is being prepared. Choose another activity for now.'],['driving','Driving game','A separate driving game is being prepared. Choose another activity for now.']]},
+    phonics:{title:'Phonics & Sight Words',description:'Explore sounds and Transport words.',groups:[['sounds','Shared sounds','Sound practice is not available yet.'],['words','Transport words','Transport word practice is not available yet.']]},
+    create:{title:'Read, Draw & Talk',description:'Read together, then draw and talk.',groups:[['cards','Reading cards','Reading cards are not available yet.']]},
   };
   function prepare(entries){for(const entry of entries){entry.eligibility.detective=true;entry.silhouetteEligible=silhouetteIds.has(entry.id);if(entry.id==='vehicle.space-shuttle')entry.category='space';}}
   const ruleFor=id=>sortRules.find(rule=>rule.id===id)||sortRules[0];
