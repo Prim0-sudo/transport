@@ -22,3 +22,22 @@ main{padding:0 clamp(14px,3vw,40px) 22px}.launch{min-height:calc(100svh - 124px)
 /* Headings receive navigation focus without an interactive control outline. */
 h1:focus{outline:none}
 
+/* Provisional miniature vignette reuses the composition; no final sprite is made. */
+.explore-world{display:block;width:148px;height:95px;flex-shrink:0;border-radius:48% 48% 38% 38%;background:url('/review/scene.png') -70px -310px/780px 439px no-repeat;box-shadow:inset 0 0 0 1px #d8bd7d66}
+body[data-screen=launch]{height:100svh;overflow:hidden}
+body[data-screen=launch] main{padding-bottom:0}
+body[data-screen=launch] .launch{height:calc(100svh - 78px);min-height:0;padding-bottom:40px}
+body[data-screen=launch] .review-note{position:fixed;bottom:0;left:0;right:0;padding:6px 12px;font-size:11px}
+@media(max-width:560px){
+ body[data-screen=launch] .launch{height:calc(100svh - 64px);padding-top:clamp(24px,6svh,55px);gap:clamp(20px,4svh,36px)}
+ .world{background-position:48% center}
+ .launch h1{font-size:clamp(39px,10vw,52px)}
+}
+@media(max-height:600px){
+ body[data-screen=launch] .launch{height:calc(100svh - 64px);gap:10px;padding-top:0;padding-bottom:28px}
+ .explore-world{width:120px;height:67px;background-size:640px 360px;background-position:-60px -263px}
+ .explore{width:176px;padding:12px;gap:0}
+ .explore strong{font-size:27px}.explore small{font-size:12px}
+ .launch-copy h1{font-size:40px;margin-bottom:6px}.launch-copy p{font-size:16px}
+}
+

@@ -18,6 +18,7 @@ function show(name){
  if(current==='activity'&&name!=='activity')frame.removeAttribute('src');
  Object.entries(pages).forEach(([id,page])=>page.hidden=id!==name);
  current=name;
+ document.body.dataset.screen=name;
  if(name==='activity'&&!frame.hasAttribute('src'))frame.src='/review/dispatch.html';
  document.getElementById('home').hidden=name==='launch';
  window.scrollTo({top:0,behavior:'instant'});
