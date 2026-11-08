@@ -1,5 +1,7 @@
 # Transport reference requirement
 
+Current user direction: stop landing-page work. Follow docs/UPGRADE-PLAN.md in order. Step 2 content/classroom foundations are now implemented; consult docs/CLASSROOM-FOUNDATIONS.md for evidence and continue with standard activities next. Do not resume landing art/animation as a detour. Consult the blueprint and Plants before changes.
+
 User instruction, 8 November 2026: before any Transport work, consult the relevant blueprint section or one of the two accepted example sites (Plants or Our Town). Do not invent shared structures or behaviours from memory. Record the applicable source in the work notes and check the result against it.
 
 Blueprint entry: E:/Projects/Codex/plants-weekly-game/docs/blueprint-v6.0/START-HERE.md. Shared layout: LAYOUT-AND-UI.md and MASTER-CURRICULUM-GAME-BLUEPRINT.md. Artwork/animation: ART-AND-ANIMATION.md.

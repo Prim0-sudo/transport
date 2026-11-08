@@ -1,5 +1,7 @@
 # Transport upgrade plan — current continuation
 
+Current continuation after the classroom-foundations batch: step 2 is implemented for the existing 30-word bank, with three proposed levels, six undated lessons, ten collections, Teacher draft/apply/cancel, intersected scopes, fair queues and versioned browser-local attempt restoration. Fourteen focused model checks and bounded browser restoration/modal checks passed after commit/push. See CLASSROOM-FOUNDATIONS.md for exact evidence and limits. Next is step 3's standard activities and twelve real routes. User explicitly stopped landing-page work; do not resume its scene/art/animation work as a detour. The dated checkpoint/status paragraphs below preserve the original plan and audit state, not current feature counts.
+
 8 November 2026. Runtime/source checkpoint: 112a006 on codex/v6-upgrade-2026-11-08. Repo Prim0-sudo/transport; Pages identifier transport; local folder and content identity remain transport-town. Local preview: http://127.0.0.1:4251/. No production deployment is authorized.
 
 ## Read and carried forward
