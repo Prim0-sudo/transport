@@ -1,0 +1,9 @@
+{
+  "prompt": "Use case: stylized-concept. Production transparent game sprite, additional registered view of the SAME single short red-and-cream diesel railcar. Reference 1 is the exact railcar identity (body, navy roof, cream window band, twin round headlamps, railway bogies). Reference 2 is the town CAMERA and curved rail contact reference. Render a much MORE FRONT-ON, FORESHORTENED elevated view: large cab front dominant at lower right, the short body recedes DIAGONALLY toward upper left at roughly 45 degrees in the image. Both near-side railway wheelset contact points must recede along that upper-left/lower-right diagonal, matching the nearer left-hand curve in the town, NOT the mostly horizontal side view of reference 1. Vertical cab edges stay upright; do not rotate a flat side picture. Same matte miniature hand-painted material and upper-left lighting. Complete single railcar on genuine alpha transparency, no rails, floor, cast shadow, glow, backdrop, labels, other vehicles or UI. Generous padding around all parts. One actor, one view, no atlas. Do not add coaches or change livery. This will be the front-quarter asset; the previous side asset is retained for its own view.",
+  "references": [
+    "train.png",
+    "../../../../review/scene.png"
+  ],
+  "method": "built-in image_gen",
+  "transparent_background": true
+}

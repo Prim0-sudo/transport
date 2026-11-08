@@ -1,0 +1,596 @@
+{
+  "date": "2026-11-08",
+  "stage": "Actual production candidates for asset approval; not landing implementation",
+  "userAuthorization": "Continue with actual layered Transport landing assets and separate vehicles. Show assets before implementing; no disposable mockups.",
+  "blueprint": "E:/Projects/Codex/plants-weekly-game/docs/blueprint-v6.0/ART-AND-ANIMATION.md",
+  "camera": {
+    "reference": "../../../../review/scene.png",
+    "canvas": [
+      1672,
+      941
+    ],
+    "planeFit": "Every scenery plane shares exact dimensions and full-frame registration.",
+    "responsive": "Final phone camera/crop and motion envelopes must be checked during authorized implementation; this asset board preserves the full source view."
+  },
+  "registrationNote": "Bounds and alpha ranges measured from the originals. Support/pivot/waterline coordinates are manually authored source-pixel annotations, not automated contact certification. Rest rectangles are static fit-review placements; whole-cycle motion remains unimplemented.",
+  "files": [
+    {
+      "id": "airplane",
+      "file": "airplane.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "boundsAlpha32": [
+        92,
+        118,
+        1621,
+        874
+      ],
+      "sourceSha256": "ee0f9378c215ca85887852547796ce9cdbf8867a9756b7bb4c58a7190531c949",
+      "stableId": "transport.landing.miniature.airplane",
+      "sourceFile": "C:/Users/Administrator/.codex/generated_images/01a1ba0f-4c64-7283-ad94-82bf4f83d352/exec-1981de94-f368-421e-97cb-0f9f352e5b85.png",
+      "method": "built-in image_gen",
+      "purpose": "Independent landing actor",
+      "prompt": "Use case: stylized-concept. Production transparent game actor for Transport landing. Input reference is the selected Miniature World town: match its matte hand-painted wooden/resin model textures, soft daylight from upper left, navy/cream palette, elevated three-quarter camera and toy-scale realism, NO vehicle faces. Output a single complete isolated vehicle on genuine alpha transparency, centred with comfortable transparent padding, all parts inside canvas. No text, UI, logos, captions, scenery, track, road, water, landscape, podium, white background or checkerboard. No opaque ground patch or detached cast shadow. Keep wheels/keel/landing gear clearly defined for contact registration. The complete small cream-and-navy single-engine passenger airplane from the distant airfield in the reference. One view: nose facing screen LEFT and slightly toward viewer, tail at RIGHT, slightly elevated three-quarter side view with wings and all three landing wheels fully visible. Small realistic high-wing utility aircraft, NOT airliner or jet. Navy stripe, dark cabin windows, blue tail tip, crisp modest two-blade propeller at the nose in a still pose. Keep the model consistent with the reference runway plane, all wing tips in frame, no ground shadow or sky, no speed lines. Landscape canvas; airplane fills about 80% width.",
+      "references": [
+        "../../../../review/scene.png"
+      ],
+      "status": "production candidate; user approval pending",
+      "runtimeDerivative": null,
+      "runtimeHash": null,
+      "crop": "Keep full native canvas. Stable support points, not per-frame alpha fitting.",
+      "registration": {
+        "facing": "nose-left, elevated quarter view",
+        "supportPoints": {
+          "noseTyre": [
+            370,
+            872
+          ],
+          "nearMainTyre": [
+            922,
+            851
+          ],
+          "farMainTyre": [
+            588,
+            805
+          ]
+        },
+        "pivot": [
+          646,
+          861
+        ],
+        "propellerHub": [
+          280,
+          580
+        ],
+        "rest": {
+          "sceneImageRect": [
+            1310,
+            264,
+            160,
+            90.05
+          ]
+        },
+        "allowedMotion": "Runway taxi with native attitude. Take-off/changing wing attitude is not proven by this single pose; do not rotate a flat picture through a full turn."
+      },
+      "license": "Generated in-session with built-in image_gen using the user-selected/generated reference chain; no external stock source.",
+      "reviewNotes": "Awaiting static composited visual review."
+    },
+    {
+      "id": "bus",
+      "file": "bus.png",
+      "dimensions": [
+        1671,
+        941
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "boundsAlpha32": [
+        117,
+        64,
+        1553,
+        891
+      ],
+      "sourceSha256": "6deadb9ce7efafa167d12a22f6cd44188785249a6b5de87640a774aabd4b4de5",
+      "stableId": "transport.landing.miniature.bus",
+      "sourceFile": "C:/Users/Administrator/.codex/generated_images/01a1ba0f-4c64-7283-ad94-82bf4f83d352/exec-250e3237-f4f3-4d39-8cae-b49e93454bb7.png",
+      "method": "built-in image_gen",
+      "purpose": "Independent landing actor",
+      "prompt": "Use case: stylized-concept. Production transparent game actor for Transport landing. Input reference is the selected Miniature World town: match its matte hand-painted wooden/resin model textures, soft daylight from upper left, navy/cream palette, elevated three-quarter camera and toy-scale realism, NO vehicle faces. Output a single complete isolated vehicle on genuine alpha transparency, centred with comfortable transparent padding, all parts inside canvas. No text, UI, logos, captions, scenery, track, road, water, landscape, podium, white background or checkerboard. No opaque ground patch or detached cast shadow. Keep wheels/keel/landing gear clearly defined for contact registration. A warm yellow single-decker town bus matching the yellow bus in the reference. One view only: front three-quarter facing toward screen LEFT and slightly toward the viewer; the front is at the left, long passenger side extends to the right, roof is visible from the reference's modestly elevated camera. Proper two axles, four tyres (visible near-side two), clear grey seats through dark windows, navy window trim and realistic proportionate small mirrors. Complete standalone bus, no depot behind it. Landscape canvas, bus occupies about 80% width, not tiny. Still/rest driving pose, wheels round and aligned. Natural scale, not exaggerated cartoon.",
+      "references": [
+        "../../../../review/scene.png"
+      ],
+      "status": "production candidate; user approval pending",
+      "runtimeDerivative": null,
+      "runtimeHash": null,
+      "crop": "Keep full native canvas. Stable support points, not per-frame alpha fitting.",
+      "registration": {
+        "facing": "front-left, elevated quarter view",
+        "supportPoints": {
+          "frontNearTyre": [
+            795,
+            888
+          ],
+          "rearNearTyre": [
+            1340,
+            792
+          ]
+        },
+        "pivot": [
+          1067,
+          840
+        ],
+        "rest": {
+          "sceneImageRect": [
+            170,
+            695,
+            260,
+            146.42
+          ]
+        },
+        "allowedMotion": "Short leftward approach/departure on the lower depot road; no flat-image rotation around the entire square."
+      },
+      "license": "Generated in-session with built-in image_gen using the user-selected/generated reference chain; no external stock source.",
+      "reviewNotes": "Awaiting static composited visual review."
+    },
+    {
+      "id": "cloud",
+      "file": "cloud.png",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "boundsAlpha32": [
+        117,
+        210,
+        1666,
+        672
+      ],
+      "sourceSha256": "9059e96a10bd6b6d5d0b11eb5ae4471a403707303e6c45e448c1d082466b1121",
+      "stableId": "transport.landing.miniature.cloud",
+      "sourceFile": "C:/Users/Administrator/.codex/generated_images/01a1ba0f-4c64-7283-ad94-82bf4f83d352/exec-a13bccc1-f004-44ee-a1a1-ca62e923f40f.png",
+      "method": "built-in image_gen",
+      "purpose": "Independent landing actor",
+      "prompt": "Use case: stylized-concept. Production independent cloud sprite for Transport Miniature World landing. Input reference provides its hand-painted matte model-world style and daylight only. Create ONE soft white cumulus cloud, horizontally elongated, softly rounded clumps with subtle cool blue underside, naturally uneven silhouette, generous transparent padding. Genuine alpha transparency all around, soft clean edges; no sky colour rectangle, no ground, no other clouds, text or UI. Landscape canvas, cloud fills about 75% width. Do not imitate a cotton toy with hard plastic edges. It will drift independently over a clear blue sky.",
+      "references": [
+        "../../../../review/scene.png"
+      ],
+      "status": "production candidate; user approval pending",
+      "runtimeDerivative": null,
+      "runtimeHash": null,
+      "crop": "Keep full native canvas. Stable support points, not per-frame alpha fitting.",
+      "registration": {
+        "facing": "not applicable",
+        "pivot": [
+          890,
+          440
+        ],
+        "allowedMotion": "Slow one-way offscreen-to-offscreen drift behind distant landscape, no static duplicate baked in sky."
+      },
+      "license": "Generated in-session with built-in image_gen using the user-selected/generated reference chain; no external stock source.",
+      "reviewNotes": "Maximum alpha 254, not 255; preserve original. Assess composited appearance. Hidden RGB beyond alpha does not itself establish a visible halo."
+    },
+    {
+      "id": "distant-background",
+      "file": "distant-background.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "boundsAlpha32": [
+        0,
+        202,
+        1672,
+        941
+      ],
+      "sourceSha256": "698f931df2af3f0983c0481e731fe9b87f3ae49785714a905b7ea21395b1584f",
+      "stableId": "transport.landing.miniature.distant-background",
+      "sourceFile": "C:/Users/Administrator/.codex/generated_images/01a1ba0f-4c64-7283-ad94-82bf4f83d352/exec-88379059-4531-43b1-a96f-70f774febd24.png",
+      "method": "built-in image_gen",
+      "purpose": "Shared-camera landing scenery plane",
+      "prompt": "Use case: precise-object-edit. Production game scenery layer, NOT a mockup or interface screenshot. Input image 1 is the approved Transport Miniature World composition/camera reference. Preserve its matte hand-painted miniature model materials, warm stone buildings, navy roofs, bright soft daylight, coherent elevated three-quarter perspective, exact shared 16:9 canvas and spatial registration (1672 by 941 reference). No text, UI, logos, people, labels, watermark, white frame or baked checkerboard. Create ONLY the DISTANT BACKGROUND layer: the far green coastal hills and pale cliffs on left, distant blue sea across the centre at the original horizon roughly 32% down, right-side rolling hills and small empty airfield with complete runway and blue-roofed hangar at the reference positions. No plane. All sky above the natural hill silhouette must be genuinely transparent. Remove ALL middle-ground town buildings, station, depot, road, railway, square, quay, nearby harbour details and foreground tree/bushes. Instead extend the distant sea and hillside terrain downwards behind those removed areas all the way to the bottom canvas edge, so this backing has no holes and will be safely overlapped by the separate middle-ground layer. Keep exact horizon/camera/scale of reference; do not move the distant airfield to the front. No vehicles, no clouds, no foreground scene. Full wide 16:9 canvas, no crop.",
+      "references": [
+        "../../../../review/scene.png"
+      ],
+      "status": "production candidate; user approval pending",
+      "runtimeDerivative": null,
+      "runtimeHash": null,
+      "crop": "Full aligned canvas, no independent fitting.",
+      "registration": {
+        "canvas": [
+          1672,
+          941
+        ],
+        "camera": "Shared elevated three-quarter composition from review/scene.png",
+        "drawOrder": 2,
+        "pivot": [
+          836,
+          470.5
+        ]
+      },
+      "license": "Generated in-session with built-in image_gen using the user-selected/generated reference chain; no external stock source.",
+      "reviewNotes": "Awaiting static composited visual review."
+    },
+    {
+      "id": "ferry",
+      "file": "ferry.png",
+      "dimensions": [
+        1671,
+        941
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "boundsAlpha32": [
+        188,
+        26,
+        1521,
+        905
+      ],
+      "sourceSha256": "0919d1b60b1a3d92c65818ede0ef40fa3202750b17debf7efcaa4ce7c2a63d01",
+      "stableId": "transport.landing.miniature.ferry",
+      "sourceFile": "C:/Users/Administrator/.codex/generated_images/01a1ba0f-4c64-7283-ad94-82bf4f83d352/exec-4749a52d-fd01-455f-ace5-0e4d69a93931.png",
+      "method": "built-in image_gen",
+      "purpose": "Independent landing actor",
+      "prompt": "Use case: stylized-concept. Production transparent game actor for Transport landing. Input reference is the selected Miniature World town: match its matte hand-painted wooden/resin model textures, soft daylight from upper left, navy/cream palette, elevated three-quarter camera and toy-scale realism, NO vehicle faces. Output a single complete isolated vehicle on genuine alpha transparency, centred with comfortable transparent padding, all parts inside canvas. No text, UI, logos, captions, scenery, track, road, water, landscape, podium, white background or checkerboard. No opaque ground patch or detached cast shadow. Keep wheels/keel/landing gear clearly defined for contact registration. The complete cream-and-navy passenger ferry from the reference's right harbour, isolated without water, wake or dock. One view: bow faces screen LEFT and slightly toward viewer, stern extends screen RIGHT, elevated three-quarter side view matching the town camera. Rounded cream bow railings, two decks, navy hull, narrow muted red waterline band, compact navy-and-cream funnel, clear small windows. Hull complete below the waterline so a registered water mask can cover it later; no square blue water patch. Do not include its painted shadow or waves. Landscape canvas, generous padding around all rails and mast, ship about 80% width, no cropping.",
+      "references": [
+        "../../../../review/scene.png"
+      ],
+      "status": "production candidate; user approval pending",
+      "runtimeDerivative": null,
+      "runtimeHash": null,
+      "crop": "Keep full native canvas. Stable support points, not per-frame alpha fitting.",
+      "registration": {
+        "facing": "bow-left, elevated quarter view",
+        "pivot": [
+          855,
+          820
+        ],
+        "waterlineLandmarks": [
+          [
+            240,
+            820
+          ],
+          [
+            550,
+            850
+          ],
+          [
+            1000,
+            825
+          ],
+          [
+            1470,
+            730
+          ]
+        ],
+        "rest": {
+          "sceneImageRect": [
+            1220,
+            510,
+            480,
+            270.31
+          ]
+        },
+        "allowedMotion": "Translation within harbour water; slight rocking only. A future registered waterline mask/wake must not introduce an opaque blue rectangle."
+      },
+      "license": "Generated in-session with built-in image_gen using the user-selected/generated reference chain; no external stock source.",
+      "reviewNotes": "Awaiting static composited visual review."
+    },
+    {
+      "id": "foreground",
+      "file": "foreground.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "boundsAlpha32": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "sourceSha256": "99538e8f39f9ac5b9c4a33655fb39e35464ead46594c4d9f4297df08b6e52c8e",
+      "stableId": "transport.landing.miniature.foreground",
+      "sourceFile": "C:/Users/Administrator/.codex/generated_images/01a1ba0f-4c64-7283-ad94-82bf4f83d352/exec-12745cad-492c-48d3-b44f-17ab643ebd11.png",
+      "method": "built-in image_gen",
+      "purpose": "Shared-camera landing scenery plane",
+      "prompt": "Use case: precise-object-edit. Production game scenery layer, NOT a mockup or interface screenshot. Input image 1 is the approved Transport Miniature World composition/camera reference. Preserve its matte hand-painted miniature model materials, warm stone buildings, navy roofs, bright soft daylight, coherent elevated three-quarter perspective, exact shared 16:9 canvas and spatial registration (1672 by 941 reference). No text, UI, logos, people, labels, watermark, white frame or baked checkerboard. Create ONLY the FOREGROUND OCCLUSION layer on genuine transparency: the original overhanging tree trunk, branches and leaves framing the extreme upper left corner, sparse leaves at extreme upper right, and the original close low bushes at extreme lower left corner and low edge foliage. Preserve their original positions and scale and hand-painted miniature texture. Everything else must be fully transparent including all sky, clouds, buildings, land, roads, harbour, water and central area. Very sparse extreme-edge framing, no new tree across the centre, no ground strip, no rectangular opaque patches. Full 16:9 reference-sized canvas with transparent centre, not a tight foliage crop.",
+      "references": [
+        "../../../../review/scene.png"
+      ],
+      "status": "production candidate; user approval pending",
+      "runtimeDerivative": null,
+      "runtimeHash": null,
+      "crop": "Full aligned canvas, no independent fitting.",
+      "registration": {
+        "canvas": [
+          1672,
+          941
+        ],
+        "camera": "Shared elevated three-quarter composition from review/scene.png",
+        "drawOrder": 6,
+        "pivot": [
+          836,
+          470.5
+        ]
+      },
+      "license": "Generated in-session with built-in image_gen using the user-selected/generated reference chain; no external stock source.",
+      "reviewNotes": "Awaiting static composited visual review."
+    },
+    {
+      "id": "middle-ground",
+      "file": "middle-ground.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "boundsAlpha32": [
+        0,
+        283,
+        1672,
+        941
+      ],
+      "sourceSha256": "7fe31cb5e260afb7e71f85d5b05a46f5f66d9966a548909f9ff780e55c4014c3",
+      "stableId": "transport.landing.miniature.middle-ground",
+      "sourceFile": "C:/Users/Administrator/.codex/generated_images/01a1ba0f-4c64-7283-ad94-82bf4f83d352/exec-c048a248-88fc-4507-a0fa-3b9985fa0a73.png",
+      "method": "built-in image_gen",
+      "purpose": "Shared-camera landing scenery plane",
+      "prompt": "Use case: precise-object-edit. Production game scenery layer, NOT a mockup or interface screenshot. Input image 1 is the approved Transport Miniature World composition/camera reference. Preserve its matte hand-painted miniature model materials, warm stone buildings, navy roofs, bright soft daylight, coherent elevated three-quarter perspective, exact shared 16:9 canvas and spatial registration (1672 by 941 reference). No text, UI, logos, people, labels, watermark, white frame or baked checkerboard. Create ONLY the MIDDLE-GROUND stage layer with genuine alpha transparency above its silhouette. Retain the original station and depot at left, central back-row houses, broad curving road, complete empty railway track on left, central quiet sandy square, harbour water and complete quay on right, all lower ground to the bottom edge. REMOVE the train, yellow bus, ferry, airplane and ALL their cast shadows; reconstruct complete unobstructed rail sleepers, asphalt, pavement and water behind them. REMOVE the entire sky, all clouds, distant hills/cliffs/sea beyond the town, distant airfield/runway/hangar (they belong in the separate background layer), overhead foreground branches/leaves and nearest bottom-edge bushes. Those removed upper/background areas must be truly transparent. The remaining middle ground must reach every lower canvas edge as in the reference, except removed foreground foliage is replaced with complete clean ground, never holes in road or water. Keep all buildings, track, road and quay in the reference positions, not isolated floating props, not a newly framed scene. Do not add any vehicle, cloud, foreground branch or distant landscape. Native canvas stays full wide reference frame; do not tightly crop to content.",
+      "references": [
+        "../../../../review/scene.png"
+      ],
+      "status": "production candidate; user approval pending",
+      "runtimeDerivative": null,
+      "runtimeHash": null,
+      "crop": "Full aligned canvas, no independent fitting.",
+      "registration": {
+        "canvas": [
+          1672,
+          941
+        ],
+        "camera": "Shared elevated three-quarter composition from review/scene.png",
+        "drawOrder": 4,
+        "pivot": [
+          836,
+          470.5
+        ]
+      },
+      "license": "Generated in-session with built-in image_gen using the user-selected/generated reference chain; no external stock source.",
+      "reviewNotes": "Awaiting static composited visual review."
+    },
+    {
+      "id": "sky",
+      "file": "sky.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alphaRange": null,
+      "boundsAlpha32": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "sourceSha256": "f5f8f83e32ca9a4cffceda5f94260ca25d4d37469a3d867348e62caf2048b304",
+      "stableId": "transport.landing.miniature.sky",
+      "sourceFile": "C:/Users/Administrator/.codex/generated_images/01a1ba0f-4c64-7283-ad94-82bf4f83d352/exec-9778c28c-0a16-4bba-b213-842e09a342c6.png",
+      "method": "built-in image_gen",
+      "purpose": "Shared-camera landing scenery plane",
+      "prompt": "Use case: precise-object-edit. Production game scenery layer, NOT a mockup or interface screenshot. Input image 1 is the approved Transport Miniature World composition/camera reference. Preserve its matte hand-painted miniature model materials, warm stone buildings, navy roofs, bright soft daylight, coherent elevated three-quarter perspective, exact shared 16:9 canvas and spatial registration (1672 by 941 reference). No text, UI, logos, people, labels, watermark, white frame or baked checkerboard. Create ONLY a complete quiet blue SKY BACKPLATE. Match the original cheerful daylight azure with subtle hand-painted tonal variation, slightly paler toward the lower horizon. Fill the ENTIRE wide 16:9 canvas with opaque sky extending behind all later layers. Remove absolutely all clouds, land, water, trees, vehicles, buildings and interface. No sun disc, no birds, no gradients to white edges. This is a clean reusable sky texture with no baked moving objects.",
+      "references": [
+        "../../../../review/scene.png"
+      ],
+      "status": "production candidate; user approval pending",
+      "runtimeDerivative": null,
+      "runtimeHash": null,
+      "crop": "Full aligned canvas, no independent fitting.",
+      "registration": {
+        "canvas": [
+          1672,
+          941
+        ],
+        "camera": "Shared elevated three-quarter composition from review/scene.png",
+        "drawOrder": 0,
+        "pivot": [
+          836,
+          470.5
+        ]
+      },
+      "license": "Generated in-session with built-in image_gen using the user-selected/generated reference chain; no external stock source.",
+      "reviewNotes": "Awaiting static composited visual review."
+    },
+    {
+      "id": "train-front",
+      "file": "train-front.png",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "boundsAlpha32": [
+        299,
+        46,
+        1160,
+        971
+      ],
+      "sourceSha256": "c1a6ca13a540c04b2570264fb049b44b2698043c0aecca67ffe12accf5353440",
+      "stableId": "transport.landing.miniature.train-front",
+      "sourceFile": "C:/Users/Administrator/.codex/generated_images/01a1ba0f-4c64-7283-ad94-82bf4f83d352/exec-10143174-46e6-4eff-b6c2-5ee306741c81.png",
+      "method": "built-in image_gen",
+      "purpose": "Independent landing actor",
+      "prompt": "Use case: stylized-concept. Production transparent game sprite, additional registered view of the SAME single short red-and-cream diesel railcar. Reference 1 is the exact railcar identity (body, navy roof, cream window band, twin round headlamps, railway bogies). Reference 2 is the town CAMERA and curved rail contact reference. Render a much MORE FRONT-ON, FORESHORTENED elevated view: large cab front dominant at lower right, the short body recedes DIAGONALLY toward upper left at roughly 45 degrees in the image. Both near-side railway wheelset contact points must recede along that upper-left/lower-right diagonal, matching the nearer left-hand curve in the town, NOT the mostly horizontal side view of reference 1. Vertical cab edges stay upright; do not rotate a flat side picture. Same matte miniature hand-painted material and upper-left lighting. Complete single railcar on genuine alpha transparency, no rails, floor, cast shadow, glow, backdrop, labels, other vehicles or UI. Generous padding around all parts. One actor, one view, no atlas. Do not add coaches or change livery. This will be the front-quarter asset; the previous side asset is retained for its own view.",
+      "references": [
+        "train.png",
+        "../../../../review/scene.png"
+      ],
+      "status": "production candidate; user approval pending",
+      "runtimeDerivative": null,
+      "runtimeHash": null,
+      "crop": "Keep full native canvas. Stable support points, not per-frame alpha fitting.",
+      "registration": {
+        "facing": "front-right toward viewer, foreshortened",
+        "supportPoints": {
+          "rearNearWheelset": [
+            415,
+            655
+          ],
+          "frontNearWheelset": [
+            705,
+            968
+          ]
+        },
+        "pivot": [
+          560,
+          812
+        ],
+        "rest": {
+          "sceneImageRect": [
+            100,
+            440,
+            260,
+            173.33
+          ]
+        },
+        "allowedMotion": "Near track approach. Both wheelsets must stay on authored rail-contact anchors; cross-view registration remains an implementation check."
+      },
+      "license": "Generated in-session with built-in image_gen using the user-selected/generated reference chain; no external stock source.",
+      "reviewNotes": "Maximum alpha 254, not 255; preserve original. Assess composited appearance. Hidden RGB beyond alpha does not itself establish a visible halo."
+    },
+    {
+      "id": "train-initial",
+      "file": "train-initial.png",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "boundsAlpha32": [
+        101,
+        114,
+        1417,
+        911
+      ],
+      "sourceSha256": "c7d8c645a860b898529b9d8d13dde4d9637fa7b8758b5176e45c2cb0a079e72f",
+      "stableId": "transport.landing.miniature.train-initial",
+      "sourceFile": "C:/Users/Administrator/.codex/generated_images/01a1ba0f-4c64-7283-ad94-82bf4f83d352/exec-94fdd54d-77ac-46a4-bd76-11447d781156.png",
+      "method": "built-in image_gen",
+      "purpose": "Superseded railcar source retained for provenance",
+      "prompt": "Use case: stylized-concept. Production transparent game actor for Transport landing. Input reference is the selected Miniature World town: match its matte hand-painted wooden/resin model textures, soft daylight from upper left, navy/cream palette, elevated three-quarter camera and toy-scale realism, NO vehicle faces. Output a single complete isolated vehicle on genuine alpha transparency, centred with comfortable transparent padding, all parts inside canvas. No text, UI, logos, captions, scenery, track, road, water, landscape, podium, white background or checkerboard. No opaque ground patch or detached cast shadow. Keep wheels/keel/landing gear clearly defined for contact registration. A single short red-and-cream diesel passenger RAILCAR in the same miniature design as the train at the reference's left station. ONE compact self-propelled passenger car, not a locomotive plus trailing cars: this actor must negotiate the scene's curved track. Front three-quarter view, cab nose facing screen RIGHT and toward the viewer (diagonal down-right), long windowed side extends back to screen LEFT, visible navy roof from the modestly elevated camera. Correct steel train wheelsets/bogies and undercarriage, no road tyres, no track beneath it. Twin round pale headlamps, navy cab glass, cream band through side windows. Entire car in frame on transparent background, landscape canvas, fill about 80% width. No smoke, no steam, no human face.",
+      "references": [
+        "../../../../review/scene.png"
+      ],
+      "status": "superseded, not served in asset review",
+      "runtimeDerivative": null,
+      "runtimeHash": null,
+      "crop": "Full aligned canvas, no independent fitting.",
+      "registration": {
+        "canvas": [
+          1672,
+          941
+        ],
+        "camera": "Shared elevated three-quarter composition from review/scene.png",
+        "drawOrder": -1,
+        "pivot": [
+          836,
+          470.5
+        ]
+      },
+      "license": "Generated in-session with built-in image_gen using the user-selected/generated reference chain; no external stock source.",
+      "reviewNotes": "Maximum alpha 254, not 255; preserve original. Assess composited appearance. Hidden RGB beyond alpha does not itself establish a visible halo."
+    },
+    {
+      "id": "train",
+      "file": "train.png",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "boundsAlpha32": [
+        100,
+        113,
+        1420,
+        912
+      ],
+      "sourceSha256": "6257977e25298196c7bbb4e6ecde269a8c58491e3e6ff2557490b718ee8291dc",
+      "stableId": "transport.landing.miniature.train",
+      "sourceFile": "C:/Users/Administrator/.codex/generated_images/01a1ba0f-4c64-7283-ad94-82bf4f83d352/exec-e8f3dc1f-5dfd-4c5c-ae32-3d36fd0579e3.png",
+      "method": "built-in image_gen",
+      "purpose": "Independent landing actor",
+      "prompt": "Use case: background-extraction. Edit the supplied red-and-cream miniature railcar image. Preserve exactly the complete railcar design, shape, camera, wheels, colours and all internal pixels. Remove the ENTIRE diffuse coloured glow, dark studio backdrop and cast-shadow haze around the railcar. Outside the vehicle silhouette must be genuine fully transparent alpha, clean cutout with only a narrow antialiased edge, no surrounding mist or opaque rectangle. Make the railcar body fully opaque. No cropping, all wheels and bumpers remain. Output a production transparent game sprite, no background, no new scenery, no checkerboard, no text. Do not recreate or redesign the vehicle.",
+      "references": [
+        "train-initial.png"
+      ],
+      "status": "production candidate; user approval pending",
+      "runtimeDerivative": null,
+      "runtimeHash": null,
+      "crop": "Keep full native canvas. Stable support points, not per-frame alpha fitting.",
+      "registration": {
+        "facing": "side/front-right, elevated quarter view",
+        "supportPoints": {
+          "rearNearWheelset": [
+            350,
+            730
+          ],
+          "frontNearWheelset": [
+            940,
+            910
+          ]
+        },
+        "pivot": [
+          645,
+          820
+        ],
+        "allowedMotion": "Shallow-angle track segment only; use train-front for the nearer curve, never rotate the side sprite to fake perspective."
+      },
+      "license": "Generated in-session with built-in image_gen using the user-selected/generated reference chain; no external stock source.",
+      "reviewNotes": "Maximum alpha 254, not 255; preserve original. Assess composited appearance. Hidden RGB beyond alpha does not itself establish a visible halo."
+    }
+  ]
+}

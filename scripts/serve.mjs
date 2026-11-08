@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const root = resolve(fileURLToPath(new URL("../site/dist/", import.meta.url)));
 const reviewRoot = resolve(root, "../../review");
+const landingAssetsRoot = resolve(root, "../../artwork/landing/miniature-world-v1");
 const liveClients = new Set();
 const bootId = String(Date.now());
 const liveReload = `<script>
@@ -69,12 +70,13 @@ createServer((request, response) => {
     return;
   }
   const isReview = requested === "/review/" || requested.startsWith("/review/");
-  const servingRoot = isReview ? reviewRoot : root;
-  const relative = isReview ? requested.slice("/review/".length) || "index.html" : requested === "/" ? "index.html" : requested.replace(/^\/+/, "");
+  const isAssetReview = requested.startsWith("/review/landing-assets/");
+  const servingRoot = isAssetReview ? landingAssetsRoot : isReview ? reviewRoot : root;
+  const relative = isAssetReview ? requested.slice("/review/landing-assets/".length) || "index.html" : isReview ? requested.slice("/review/".length) || "index.html" : requested === "/" ? "index.html" : requested.replace(/^\/+/, "");
   const path = normalize(join(servingRoot, relative));
 
   const safeRelative = relativePath(servingRoot, path).replaceAll("\\", "/");
-  const allowed = isReview ? /^(index\.html|style\.css|shell\.js|scene\.png|dispatch\.html|gsap\.min\.js|MotionPathPlugin\.min\.js)$/ : /^(index\.html|(?:app|lifecycle)\.js|styles\.css|transport-town-bg\.png|images\/[^.].*)$/;
+  const allowed = isAssetReview ? /^(index\.html|manifest\.json|(?:sky|distant-background|middle-ground|foreground|bus|train|train-front|ferry|airplane|cloud)\.png)$/ : isReview ? /^(index\.html|style\.css|shell\.js|scene\.png|dispatch\.html|gsap\.min\.js|MotionPathPlugin\.min\.js)$/ : /^(index\.html|(?:app|lifecycle)\.js|styles\.css|transport-town-bg\.png|images\/[^.].*)$/;
   if (!allowed.test(safeRelative) || safeRelative.split("/").some(part => part.startsWith("."))) {
     response.writeHead(403).end("Forbidden");
     return;

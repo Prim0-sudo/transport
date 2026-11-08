@@ -1,0 +1,6 @@
+{
+  "prompt": "Use case: background-extraction. Edit the supplied red-and-cream miniature railcar image. Preserve exactly the complete railcar design, shape, camera, wheels, colours and all internal pixels. Remove the ENTIRE diffuse coloured glow, dark studio backdrop and cast-shadow haze around the railcar. Outside the vehicle silhouette must be genuine fully transparent alpha, clean cutout with only a narrow antialiased edge, no surrounding mist or opaque rectangle. Make the railcar body fully opaque. No cropping, all wheels and bumpers remain. Output a production transparent game sprite, no background, no new scenery, no checkerboard, no text. Do not recreate or redesign the vehicle.",
+  "reference": "train-initial.png",
+  "method": "built-in image_gen",
+  "transparent_background": true
+}
