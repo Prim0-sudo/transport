@@ -40,7 +40,7 @@
 #mini-dispatch-review .md-actions .md-primary{background:var(--yellow);color:#173457;border-color:transparent;font-weight:700}
 #mini-dispatch-review dialog{background:var(--paper);color:var(--ink);border:1px solid var(--road);border-radius:16px;padding:22px;width:min(410px,calc(100% - 24px))}
 #mini-dispatch-review dialog::backdrop{background:#10213888}
-#mini-dispatch-review dialog form{display:grid;gap:16px}
+#mini-dispatch-review .md-settings-body{display:grid;gap:16px}
 #mini-dispatch-review dialog label{display:grid;gap:6px}
 #mini-dispatch-review dialog label.md-check{display:flex;align-items:center;gap:8px}
 #mini-dispatch-review dialog h3{margin:0}
@@ -82,11 +82,11 @@
         <div class="md-actions"><button class="md-primary" data-action="primary" disabled>Load passengers</button><button data-action="restart">Restart delivery</button><button data-action="replay" hidden>Replay</button></div>
       </main>
     </section>
-    <dialog aria-label="Dispatch preview settings"><form method="dialog"><h3>Dispatch preview settings</h3>
-      <label>Difficulty<select name="level"><option value="easy">Easy · two open routes</option><option value="medium" selected>Medium · bridge closed</option><option value="hard">Hard · school pickup and closed bridge</option></select></label>
+    <dialog aria-label="Dispatch preview settings"><div class="md-settings-body"><h3>Dispatch preview settings</h3>
+      <label>Difficulty<select name="level" aria-label="Difficulty"><option value="easy">Easy · two open routes</option><option value="medium" selected>Medium · bridge closed</option><option value="hard">Hard · school pickup and closed bridge</option></select></label>
       <label class="md-check"><input type="checkbox" name="instant">Reduced-motion preview</label>
-      <div class="md-actions"><button type="button" data-action="close">Close</button><button type="submit">Apply and restart</button></div>
-    </form></dialog>
+      <div class="md-actions"><button type="button" data-action="close">Close</button><button type="button" data-action="apply">Apply and restart</button></div>
+    </div></dialog>
   </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
@@ -176,9 +176,9 @@
   root.querySelector('[data-action=replay]').addEventListener('click',()=>{restart(true);save();},{signal});
   skip.addEventListener('click',()=>{if(!holds.size&&timeline){assisted=true;timeline.progress(1);}}, {signal});
   root.querySelector('[data-action=teacher]').addEventListener('click',()=>{dialog.querySelector('[name=level]').value=level;dialog.querySelector('[name=instant]').checked=instant;hold('teacher',true);dialog.showModal();},{signal});
-  dialog.querySelector('[data-action=close]').addEventListener('click',()=>dialog.close(),{signal});
+  dialog.querySelector('[data-action=close]').addEventListener('click',()=>{dialog.close();hold('teacher',false);},{signal});
   dialog.addEventListener('close',()=>hold('teacher',false),{signal});
-  dialog.querySelector('form').addEventListener('submit',event=>{event.preventDefault();level=dialog.querySelector('[name=level]').value;instant=dialog.querySelector('[name=instant]').checked;earned=false;restart();dialog.close();save();},{signal});
+  dialog.querySelector('[data-action=apply]').addEventListener('click',()=>{level=dialog.querySelector('[name=level]').value;instant=dialog.querySelector('[name=instant]').checked;earned=false;restart();dialog.close();hold('teacher',false);save();},{signal});
   function applyFrame(){frame.style.width=reviewFrame==='phone'?'min(390px, 100%)':'100%';root.querySelectorAll('[data-frame]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.frame===reviewFrame)));}
   root.querySelectorAll('[data-frame]').forEach(b=>b.addEventListener('click',()=>{reviewFrame=b.dataset.frame;applyFrame();save();},{signal}));
   const visibility=()=>hold('hidden',document.hidden);document.addEventListener('visibilitychange',visibility,{signal});
