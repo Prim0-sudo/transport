@@ -94,6 +94,7 @@ let audioCtx;
 let activeClip;
 let wheelTickTimers = [];
 const SCOOPS_PER_CONE = 5;
+const MAX_SPELLING_MISSES = 8;
 
 function shuffled(items) {
   const copy = [...items];
@@ -292,14 +293,29 @@ function renderFlipGame() {
   els.round.textContent = `MATCHES ${matches}/${state.questions.length}`;
   els.progress.style.width = `${(matches / state.questions.length) * 100}%`;
   els.score.textContent = matches;
+  if (!els.answers.querySelector(".flip-board")) {
   els.answers.innerHTML = `<div class="flip-board flip-board-${tiles.length}" aria-label="Vocabulary matching tiles">${tiles.map(tile => `<button class="flip-tile ${tile.flipped || tile.matched ? "flipped" : ""} ${tile.matched ? "matched" : ""}" data-tile-id="${tile.id}" ${tile.matched ? "disabled" : ""} aria-label="${tile.flipped || tile.matched ? tile.vehicle.name : "Hidden tile"}"><span class="flip-tile-inner"><span class="flip-tile-back">?</span><span class="flip-tile-front"><img src="${vehicleEmojiPath(tile.vehicle)}" alt=""><strong>${tile.vehicle.name}</strong></span></span></button>`).join("")}</div>`;
   els.answers.querySelectorAll("[data-tile-id]").forEach(tile => tile.addEventListener("click", () => flipTile(tile.dataset.tileId)));
+  }
+  for (const tile of tiles) {
+    const button = els.answers.querySelector(`[data-tile-id="${tile.id}"]`);
+    button.classList.toggle("flipped", tile.flipped || tile.matched);
+    button.classList.toggle("matched", tile.matched);
+    button.disabled = tile.matched;
+    button.setAttribute("aria-label", tile.flipped || tile.matched ? tile.vehicle.name : "Hidden tile");
+  }
 }
 
 function flipTile(tileId) {
   const game = state.flip;
   const tile = game.tiles.find(candidate => candidate.id === tileId);
-  if (!tile || game.locked || tile.flipped || tile.matched) return;
+  if (!tile || tile.flipped || tile.matched) return;
+  // A mismatch remains available to compare until the next hidden tile is chosen.
+  if (game.mismatch) {
+    for (const id of game.mismatch) game.tiles.find(candidate => candidate.id === id).flipped = false;
+    game.mismatch = null;
+    game.firstTileId = null;
+  }
   tile.flipped = true;
   if (!game.firstTileId) {
     game.firstTileId = tileId;
@@ -307,35 +323,25 @@ function flipTile(tileId) {
     return;
   }
   const firstTile = game.tiles.find(candidate => candidate.id === game.firstTileId);
-  game.locked = true;
-  const isMatch = firstTile.vehicle.name === tile.vehicle.name;
-  renderFlipGame();
-  setTimeout(() => {
-    if (isMatch) {
-      firstTile.matched = true;
-      tile.matched = true;
-      game.matches++;
-      state.score = game.matches;
-      tone(523, 0, .16); tone(659, .16, .16);
-      burstConfetti(game.matches === state.questions.length ? 275 : 55);
-    } else {
-      firstTile.flipped = false;
-      tile.flipped = false;
-      tone(180, 0, .18, "sine", .08);
-    }
+  if (firstTile.vehicle.name === tile.vehicle.name) {
+    firstTile.matched = tile.matched = true;
+    game.matches++;
+    state.score = game.matches;
     game.firstTileId = null;
-    game.locked = false;
-    if (game.matches === state.questions.length) {
-      state.answered = true;
-      renderFlipGame();
-      els.feedback.className = "feedback good";
-      els.feedback.innerHTML = '<button class="next-btn" id="nextBtn" aria-label="Finish game">➜</button>';
-      document.getElementById("nextBtn").onclick = finishGame;
-      speak("You found every match!");
-      return;
-    }
-    renderFlipGame();
-  }, 700);
+    tone(523, 0, .16); tone(659, .16, .16);
+    burstConfetti();
+  } else {
+    game.mismatch = [firstTile.id, tile.id];
+    tone(180, 0, .18, "sine", .08);
+  }
+  renderFlipGame();
+  if (game.matches === state.questions.length) {
+    state.answered = true;
+    els.feedback.className = "feedback good";
+    els.feedback.innerHTML = '<button class="next-btn" id="nextBtn">Finish game</button>';
+    document.getElementById("nextBtn").onclick = finishGame;
+    speak("You found every match!");
+  }
 }
 
 function wheelColors(count) {
@@ -549,7 +555,7 @@ function renderHangman() {
   const v = item.vehicle;
   const guessed = new Set(item.guessed);
   const letters = hangmanLetters(v.name);
-  const scoopCount = letters.length;
+  const scoopCount = MAX_SPELLING_MISSES;
   clearVehiclePicture();
   els.emoji.textContent = "";
   els.name.textContent = "";
@@ -557,7 +563,7 @@ function renderHangman() {
   els.question.textContent = "";
   const wordMarkup = [...v.name].map(character => {
     if (character === " ") return '<span class="hangman-letter hangman-space" aria-hidden="true"></span>';
-    const shown = guessed.has(character.toLowerCase()) || state.answered;
+    const shown = !/[a-z]/i.test(character) || guessed.has(character.toLowerCase()) || state.answered;
     return `<span class="hangman-letter">${shown ? character : ""}</span>`;
   }).join("");
   const scoopFlavors = ["strawberry", "vanilla", "mint"];
@@ -594,13 +600,13 @@ function chooseHangmanLetter(letter) {
   item.guessed.push(letter);
   const letters = hangmanLetters(item.vehicle.name);
   const correct = letters.includes(letter);
-  const scoopsBefore = letters.length - item.misses;
+  const scoopsBefore = MAX_SPELLING_MISSES - item.misses;
   if (!correct) item.misses++;
   const lostCone = !correct && scoopsBefore > 0 && (scoopsBefore - 1) % SCOOPS_PER_CONE === 0;
   const lostConeIndex = lostCone ? Math.floor((scoopsBefore - 1) / SCOOPS_PER_CONE) : null;
   if (lostCone) showSadConeForThreeSeconds(item, lostConeIndex);
   const complete = [...letters].every(character => item.guessed.includes(character));
-  if (complete || item.misses >= letters.length) {
+  if (complete || item.misses >= MAX_SPELLING_MISSES) {
     state.answered = true;
     if (complete && item.misses === 0) state.score++;
     renderHangman();
@@ -764,16 +770,18 @@ document.getElementById("fullscreenBtn").addEventListener("click", async () => {
 });
 
 document.addEventListener("keydown", e => {
+  if (e.defaultPrevented || e.isComposing || e.ctrlKey || e.altKey || e.metaKey ||
+      e.target.closest?.("input, textarea, select, [contenteditable]:not([contenteditable='false'])")) return;
   const active = screens.game.classList.contains("active");
-  if (e.key.toLowerCase() === "m") els.sound.click();
-  if (e.key.toLowerCase() === "f") document.getElementById("fullscreenBtn").click();
-  if (e.key === "Escape" && active && !document.fullscreenElement) goHome();
-  if (!active) return;
-  if (state.mode === "hangman" && /^[a-z]$/i.test(e.key)) {
+  if (active && state.mode === "hangman" && /^[a-z]$/i.test(e.key)) {
     e.preventDefault();
     chooseHangmanLetter(e.key.toLowerCase());
     return;
   }
+  if (e.key.toLowerCase() === "m") els.sound.click();
+  if (e.key.toLowerCase() === "f") document.getElementById("fullscreenBtn").click();
+  if (e.key === "Escape" && active && !document.fullscreenElement) goHome();
+  if (!active) return;
   if (e.code === "Space") { e.preventDefault(); playCurrentAudio(); }
   if (["1", "2", "3"].includes(e.key)) {
     const target = els.answers.children[Number(e.key) - 1];

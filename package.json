@@ -1,0 +1,6 @@
+{
+  "name": "transport-town",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "node scripts/preview-start.mjs", "preview:status": "node scripts/preview-start.mjs --status" }
+}

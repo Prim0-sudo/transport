@@ -623,3 +623,15 @@ kbd { min-width: 24px; padding: 2px 6px; border-radius: 5px; color: #273157; bac
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition: none !important; }
 }
+
+/* Existing matching artwork gets useful board space at every tile count. */
+.flip-board { width: 100%; }
+.flip-tile-front img { width: clamp(48px, 6vw, 88px); height: 72px; }
+.flip-setup { margin: 16px auto; }
+.game-card[data-mode="flip"]:has(.flip-setup) .feedback { display: none; }
+@media (max-width: 760px) {
+  .flip-board-20, .flip-board-40, .flip-board-60 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .flip-tile, .flip-tile-inner, .flip-board-20 .flip-tile, .flip-board-20 .flip-tile-inner { min-height: 118px; }
+  .flip-tile-front img { width: 64px; height: 72px; }
+  .flip-tile-front strong { overflow-wrap: anywhere; line-height: 1.1; }
+}

@@ -1,25 +1,7 @@
 # Transport Town
 
-Transport Town is a teacher-controlled kindergarten transportation game for a classroom laptop and television. It is a self-contained static site with five game modes, 30 transportation words, local photographs, and local sound clips.
+Static teacher-led transport game. Current v6 upgrade: [handoff](HANDOFF.md) and [gap inventory](docs/V6-UPGRADE-2026-11-08.md).
 
-## Run locally
+Run `npm start` to start or reuse the supervised local source preview at http://127.0.0.1:4251/. Run `npm run preview:status` for workspace identity and health. Node built-ins only; no dependency installation or build required.
 
-Serve `site/dist/` with any static HTTP server. For example:
-
-```powershell
-python -m http.server 4173 --directory site/dist
-```
-
-Then open `http://127.0.0.1:4173/`.
-
-## Deploy on Cloudflare Pages
-
-- Framework preset: `None`
-- Build command: leave blank
-- Build output directory: `site/dist`
-
-Cloudflare Pages can redeploy automatically whenever the connected GitHub repository is updated.
-
-## Source of truth
-
-Read `HANDOFF.md` before changing the game. The files in `site/dist/` are the authoritative implementation; preserve the existing appearance, assets, game logic, classroom flow, and controls unless a change is explicitly requested.
+The runtime source is `site/dist/`. This inherited directory name does not imply a separate built copy. Preview tooling injects local live reload only in HTTP responses; files remain static and deployment-ready for a later authorized release. No deployment is authorized by this README.
