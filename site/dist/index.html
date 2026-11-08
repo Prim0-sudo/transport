@@ -9,6 +9,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232457c5'/%3E%3Cpath d='M13 37h38l-5-14H24l-6 7h-5z' fill='%23ffd54a'/%3E%3Ccircle cx='22' cy='43' r='7' fill='%23232b45'/%3E%3Ccircle cx='44' cy='43' r='7' fill='%23232b45'/%3E%3Ccircle cx='22' cy='43' r='3' fill='white'/%3E%3Ccircle cx='44' cy='43' r='3' fill='white'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css?v=20260917-emoji-library">
   <link rel="stylesheet" href="landing.css">
+  <link rel="stylesheet" href="classroom.css">
 </head>
 <body data-transport-shell data-screen="launch">
   <div class="backdrop" aria-hidden="true"></div>
@@ -135,14 +136,20 @@
   <div class="confetti" id="confetti" aria-hidden="true"></div>
   <dialog class="landing-teacher" id="landingTeacher" aria-labelledby="landingTeacherTitle">
     <h2 id="landingTeacherTitle">Teacher</h2>
+    <div id="teacherScopeFields"></div>
+    <p id="teacherScopeSummary" role="status" aria-live="polite"></p>
+    <p class="teacher-proposal">Levels and six undated lessons are proposed teaching groupings, not age placements.</p>
+    <button type="button" id="clearTeacherScope">Clear selection</button>
     <label><input type="checkbox" id="reduceLandingMotion">Reduce landing movement</label>
-    <p>Keep the town still while choosing an activity. Your device’s reduced-motion preference is also respected.</p>
-    <button id="closeLandingTeacher">Close</button>
+    <p id="teacherStorageStatus" class="teacher-proposal"></p>
+    <div class="teacher-actions"><button id="closeLandingTeacher">Cancel</button><button id="applyTeacherScope">Apply selection</button></div>
   </dialog>
   <script src="vendor/gsap.min.js"></script>
   <script src="vendor/MotionPathPlugin.min.js"></script>
   <script src="landing-scene.js"></script>
   <script src="lifecycle.js"></script>
+  <script src="curriculum.js"></script>
+  <script src="classroom-core.js"></script>
   <script src="app.js?v=20260917-hangman"></script>
 </body>
 </html>

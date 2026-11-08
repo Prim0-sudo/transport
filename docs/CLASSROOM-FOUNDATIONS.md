@@ -1,0 +1,19 @@
+# Content and classroom foundations — 8 November 2026
+
+Scope: step 2 of UPGRADE-PLAN.md. Landing work is stopped; this batch changes content/session data and the Teacher classroom dialog, not the landing scene/controller/art. The current bank remains 30 concepts. The 120+ expansion belongs to step 4.
+
+References consulted before changes: blueprint-v6.0 master sections 5–6; Plants src/topics/curriculum.js, src/core/teacher-controls.js, src/core/session-queues.js and game-engine.js session snapshot/restore implementation. User instructions govern; these sources are design references, not publication authorization.
+
+Stable explicit IDs attach to legacy entry identities, independently of corrected labels. Canonical labels/aliases distinguish kick scooter, pulled rickshaw and metro train. Every entry has a child-readable definition, example, alt text, category, explicit collections/lessons/level and mode eligibility. Levels and six flexible undated lessons are proposed teaching groupings, not age placements. Canonical existing pictures are pinned rather than alternating conflicting banks; legacy illustration style/provenance issues remain for the artwork phase. Space shuttle stays reachable in Learn but is excluded from the current land/water/air Sort criterion.
+
+Factual checks informing the narrow definition/safety corrections: NASA Space Shuttle reference (https://www.nasa.gov/reference/the-space-shuttle/); Cambridge rickshaw definition (https://dictionary.cambridge.org/us/dictionary/english/rickshaw); UK THINK early-years road-safety teaching material (https://www.think.gov.uk/wp-content/uploads/2018/04/Stepping-Stones-To-Road-Safety-3-to-6yrs.pdf); NHTSA child safety (https://www.nhtsa.gov/road-safety/child-safety). No universal age/height/legal rule is taught. A trusted adult checks the appropriate car restraint; children stay well away from reversing vehicles.
+
+Level/Lesson/Collection remain inside Teacher. Choices are drafts with intersected word/question counts. Apply saves/releases the old-scope attempt before changing scope and returns to games. Cancel/Escape discards drafts. Existing named Teacher and hidden holds remain independent; the dialog is outside the inert main shell. Content fields do not reroll a live task while edited.
+
+Queues are keyed by activity, exact eligible membership, scope and relevant setup variant. Reserve only a bounded batch, exhaust before refill, keep a short final batch, and return unplayed IDs to the front on exit. Completed IDs stay consumed. Matching counts are bounded; one/two-word identification never invents out-of-scope distractors. Ambiguous same-picture groups cannot be competing identification choices. Empty/tiny pools provide explicit recovery; widening requires the Show all Transport words action.
+
+Storage: version 1 browser-local localStorage at this origin/device, with content revision/signature checks and an in-memory fallback if unavailable. Reload releases stale held reservations, then a saved attempt reclaims its exact uncompleted IDs. Word order, Identify choices, Safety answer order, spelling guesses/misses, matched/flipped cards, wrong disabled answers and score are retained. An interrupted Wheel keeps its already selected pending word and resumes at its word view, not a new random spin. Decorative callbacks are not persisted. Invalid task state gets explicit recovery rather than a silently changed task. This is per-activity scope fairness, not a collection-wide exposure guarantee.
+
+The ordinary source app at http://127.0.0.1:4251/ is the classroom preview. /review/ remains the separate earlier visual/applied-game authoring preview and is not the Teacher/session implementation. No new art, paid audio or production deployment.
+
+Validation follows the commit/push checkpoint. See subsequent evidence below.

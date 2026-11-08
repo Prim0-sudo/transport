@@ -1,0 +1,15 @@
+/* Classroom controls stay inside Teacher; no permanent child-facing filter wall. */
+.landing-teacher{max-height:calc(100svh - 28px);overflow-y:auto}
+#teacherScopeFields{display:grid;gap:12px}
+#teacherScopeFields label{display:grid;gap:6px}
+#teacherScopeFields select{width:100%;min-height:44px;padding:8px 10px;font:inherit;color:#183a51;border:1px solid #a9b7bb;border-radius:9px;background:white}
+.teacher-proposal{font-size:13px;color:#455d6c}
+#teacherScopeSummary{font-weight:bold;line-height:1.5}
+.teacher-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:18px;position:sticky;bottom:-24px;padding:12px 0;background:#fffbed}
+.landing-teacher .teacher-actions button:first-child,.landing-teacher #clearTeacherScope{background:white}
+.scope-recovery{grid-column:1/-1;text-align:center;max-width:650px;margin:0 auto;padding:16px}
+.scope-recovery h3{font-size:24px;margin:0 0 12px}.scope-recovery p{line-height:1.5}
+.scope-recovery .recovery-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+.scope-recovery button{border:1px solid #d8b34f;border-radius:12px;padding:12px 18px;min-height:44px;font:inherit;font-weight:bold;background:#fffbed;color:#183a51;cursor:pointer}
+.practice-note{grid-column:1/-1;font-size:16px;line-height:1.5;text-align:center}
+@media(max-width:480px){.landing-teacher{padding:18px}.teacher-actions{bottom:-18px}.scope-recovery{padding:8px}}
