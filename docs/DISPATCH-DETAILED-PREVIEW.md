@@ -2,6 +2,10 @@
 
 8 November 2026. User explicitly selected C, Miniature World. This is the detailed-layout/movement approval stage. No final scenery planes, actor sheets, teaching assets or runtime implementation have been produced. Existing local game remains on 4251; this proposal does not replace it. The separate mouse/tap/arrow driving game stays a distinct planned Games activity.
 
+## Current shell correction
+
+The user rejected the separate boxed/dark-header presentation as inconsistent with the games' home screens. The full-bleed shared-shell revision is now the current local review at http://127.0.0.1:4251/review/. It follows direct inspection of deployed Our Town and Plants. The earlier illustrated board remains provenance for Miniature World composition and Dispatch actions; its enclosing shell is superseded, not approved. Review source/provisional-art limits are in review/PROVENANCE.md. Dispatch movement semantics and the separate driving-game plan remain.
+
 ## Layout and visual language
 
 Use the selected matte hand-painted miniature world: warm cream, navy structure, clear yellow bus, restrained red rail/van and blue ferry. High, fixed slightly elevated camera; clear road, rail and water support. Desktop has compact utility header, one mission strip, large dominant world, compact vehicle/route choices and one contextual primary action. Phone uses a taller recomposed board, retaining depot, station and routes rather than squeezing the landscape. Primary controls remain immediately below the board, with deliberate page scrolling where necessary. No visible Pause or learner transcript; no extra top-level slot.

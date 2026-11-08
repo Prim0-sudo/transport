@@ -1,0 +1,193 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dispatch local movement review</title></head><body><style>
+#mini-dispatch-review{width:100%;container-type:inline-size}
+#mini-dispatch-review .md-reviewbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+#mini-dispatch-review .md-frame{width:100%;margin:0 auto;container-type:inline-size;color-scheme:light dark;--paper:light-dark(#fffaf0,#1e2e43);--ink:light-dark(#183457,#edf2fa);--navy:light-dark(#17365d,#b7cdf2);--onnavy:light-dark(#fffaf0,#14243b);--ground:light-dark(#ede5ce,#303c43);--road:light-dark(#9b9f9f,#717f89);--line:light-dark(#fff4ce,#e0d7bb);--water:light-dark(#b8d9e1,#295667);--muted:light-dark(#526780,#c0ccda);--yellow:light-dark(#f4c453,#f0c76b);font:16px/1.4 'Trebuchet MS',sans-serif;color:var(--ink)}
+#mini-dispatch-review .md-app{background:var(--paper);border:1px solid color-mix(in srgb,var(--ink) 20%,transparent);border-radius:20px;overflow:hidden}
+#mini-dispatch-review .md-app *{box-sizing:border-box}
+#mini-dispatch-review [hidden]{display:none!important}
+#mini-dispatch-review .md-head{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--navy);color:var(--onnavy);padding:12px 18px}
+#mini-dispatch-review .md-head strong{font-size:20px}
+#mini-dispatch-review .md-main{padding:14px;display:grid;gap:12px}
+#mini-dispatch-review .md-mission{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+#mini-dispatch-review h2{font-size:21px;margin:0}
+#mini-dispatch-review .md-count{font-size:14px;color:var(--muted)}
+#mini-dispatch-review .md-app button,#mini-dispatch-review dialog button,#mini-dispatch-review dialog select{font:inherit;border:1px solid color-mix(in srgb,var(--ink) 30%,transparent);background:var(--paper);color:var(--ink);border-radius:11px;padding:10px 14px;min-height:44px;cursor:pointer}
+#mini-dispatch-review .md-app button:focus-visible,#mini-dispatch-review dialog button:focus-visible,#mini-dispatch-review dialog select:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+#mini-dispatch-review .md-app button:disabled{opacity:.5;cursor:default}
+#mini-dispatch-review .md-app button[aria-pressed=true]{background:var(--navy);color:var(--onnavy)}
+#mini-dispatch-review .md-world{position:relative;aspect-ratio:1.95;background:var(--ground);border-radius:13px;overflow:hidden}
+#mini-dispatch-review .md-world>svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#mini-dispatch-review .md-road{fill:none;stroke:var(--road);stroke-width:9;stroke-linecap:round;stroke-linejoin:round}
+#mini-dispatch-review .md-centre{fill:none;stroke:var(--line);stroke-width:.45;stroke-dasharray:2 2}
+#mini-dispatch-review .md-platform{fill:var(--paper);stroke:var(--ink);stroke-opacity:.12;stroke-width:.3}
+#mini-dispatch-review .md-place{position:absolute;background:var(--paper);padding:5px 9px;border-radius:8px;font-size:13px;z-index:2;box-shadow:0 2px 4px #0002}
+#mini-dispatch-review .md-depot{left:3%;bottom:3%}
+#mini-dispatch-review .md-station{right:3%;top:9%}
+#mini-dispatch-review .md-school{left:32%;top:8%}
+#mini-dispatch-review .md-harbour{right:3%;bottom:12%}
+#mini-dispatch-review .md-closed{position:absolute;left:48%;top:48%;transform:rotate(-32deg);background:var(--paper);color:var(--ink);padding:3px 7px;border:2px dashed var(--ink);font-size:12px;z-index:1}
+#mini-dispatch-review .md-actor{position:absolute;left:0;top:0;width:52px;height:25px;margin:-12.5px 0 0 -26px;background:var(--yellow);color:#173457;border:2px solid var(--paper);border-radius:7px;box-shadow:0 3px 5px #0003;display:grid;place-items:center;font-size:11px;font-weight:700;transform-origin:50% 50%;pointer-events:none;z-index:3}
+#mini-dispatch-review .md-actor:after{content:'';position:absolute;right:2px;top:3px;bottom:3px;width:4px;border-radius:2px;background:#173457}
+#mini-dispatch-review .md-person{position:absolute;left:0;top:0;width:12px;height:12px;margin:-6px;background:var(--navy);border:2px solid var(--paper);border-radius:50%;pointer-events:none;z-index:3}
+#mini-dispatch-review .md-onboard{font-size:14px;color:var(--muted);margin-top:3px}
+#mini-dispatch-review .md-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+#mini-dispatch-review .md-choices button{display:grid;gap:2px;text-align:left;min-width:0}
+#mini-dispatch-review .md-choices small{font-size:13px}
+#mini-dispatch-review .md-routes{display:flex;gap:8px;flex-wrap:wrap}
+#mini-dispatch-review .md-routes button{flex:1;min-width:140px}
+#mini-dispatch-review .md-status{min-height:42px;font-size:15px;color:var(--muted)}
+#mini-dispatch-review .md-actions{display:flex;gap:8px;flex-wrap:wrap}
+#mini-dispatch-review .md-actions .md-primary{background:var(--yellow);color:#173457;border-color:transparent;font-weight:700}
+#mini-dispatch-review dialog{background:var(--paper);color:var(--ink);border:1px solid var(--road);border-radius:16px;padding:22px;width:min(410px,calc(100% - 24px))}
+#mini-dispatch-review dialog::backdrop{background:#10213888}
+#mini-dispatch-review .md-settings-body{display:grid;gap:16px}
+#mini-dispatch-review dialog label{display:grid;gap:6px}
+#mini-dispatch-review dialog label.md-check{display:flex;align-items:center;gap:8px}
+#mini-dispatch-review dialog h3{margin:0}
+@container(max-width:480px){#mini-dispatch-review .md-world{aspect-ratio:1.07}#mini-dispatch-review .md-main{padding:10px;gap:10px}#mini-dispatch-review .md-head{padding:10px}#mini-dispatch-review .md-head strong{font-size:17px}#mini-dispatch-review h2{font-size:18px}#mini-dispatch-review .md-choices button{padding:9px}#mini-dispatch-review .md-routes button{min-width:110px;padding:9px}#mini-dispatch-review .md-actor{width:42px;margin-left:-21px}#mini-dispatch-review .md-place{font-size:12px;padding:4px 6px}#mini-dispatch-review .md-onboard{font-size:13px}#mini-dispatch-review .md-closed{font-size:11px;left:43%}}
+</style>
+<div id="mini-dispatch-review">
+  <div class="md-reviewbar" aria-label="Preview controls">
+    <button class="btn" data-frame="desktop" aria-pressed="true">Desktop</button><button class="btn" data-frame="phone" aria-pressed="false">Phone</button>
+    <span class="text-small">Movement study · schematic markers</span>
+    <button class="btn btn-ghost" data-review="finish" disabled>Show movement end</button>
+  </div>
+  <div class="md-frame">
+    <section class="md-app" aria-label="Miniature World Dispatch interaction preview">
+      <header class="md-head"><strong>Transport Dispatch</strong><button data-action="teacher">Teacher</button></header>
+      <main class="md-main">
+        <div class="md-mission"><div><h2>6 passengers to the station</h2><div class="md-onboard">6 waiting at the depot</div></div><span class="md-count">Delivery 1 · 0 earned</span></div>
+        <div class="md-world" role="group" aria-label="Depot at lower left, station at upper right. Choose the bridge road or the town bypass.">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M72 0 H100 V100 H66 C76 78 53 62 61 42 S72 20 72 0" fill="var(--water)"/>
+            <path class="md-road" d="M15 78 C8 78 8 65 8 55 L8 36 Q8 23 23 23 H84"/>
+            <path class="md-road" d="M15 78 C38 78 49 62 61 48 L84 23"/>
+            <path class="md-centre" d="M15 78 C8 78 8 65 8 55 L8 36 Q8 23 23 23 H84"/>
+            <path class="md-centre" d="M15 78 C38 78 49 62 61 48 L84 23"/>
+            <rect class="md-platform" x="9" y="84" width="23" height="10" rx="2"/>
+            <rect class="md-platform" x="77" y="29" width="19" height="10" rx="2"/>
+            <rect class="md-platform" x="36" y="29" width="15" height="8" rx="2"/>
+          </svg>
+          <span class="md-place md-depot">Depot</span><span class="md-place md-station">Station</span><span class="md-place md-school">School</span><span class="md-place md-harbour">Harbour</span>
+          <span class="md-closed">Bridge closed</span>
+          <div class="md-actor" aria-hidden="true">BUS</div>
+        </div>
+        <div class="md-choices" aria-label="Vehicles for this mission">
+          <button data-vehicle="bus" aria-pressed="false"><strong>Bus</strong><small>12 seats · road</small></button>
+          <button data-vehicle="van" aria-pressed="false"><strong>Van</strong><small>2 seats · road</small></button>
+          <button data-vehicle="ferry" aria-pressed="false"><strong>Ferry</strong><small>12 seats · water</small></button>
+        </div>
+        <div class="md-routes" aria-label="Choose a road route"><button data-route="bridge" aria-pressed="false">Bridge route · closed</button><button data-route="bypass" aria-pressed="false">Town bypass · open</button></div>
+        <div class="md-status" role="status" aria-live="polite">Choose a vehicle for six passengers on a road journey.</div>
+        <div class="md-actions"><button class="md-primary" data-action="primary" disabled>Load passengers</button><button data-action="restart">Restart delivery</button><button data-action="replay" hidden>Replay</button></div>
+      </main>
+    </section>
+    <dialog aria-label="Dispatch preview settings"><div class="md-settings-body"><h3>Dispatch preview settings</h3>
+      <label>Difficulty<select name="level" aria-label="Difficulty"><option value="easy">Easy · two open routes</option><option value="medium" selected>Medium · bridge closed</option><option value="hard">Hard · school pickup and closed bridge</option></select></label>
+      <label class="md-check"><input type="checkbox" name="instant">Reduced-motion preview</label>
+      <div class="md-actions"><button type="button" data-action="close">Close</button><button type="button" data-action="apply">Apply and restart</button></div>
+    </div></dialog>
+  </div>
+</div>
+<script src="/review/gsap.min.js"></script>
+<script src="/review/MotionPathPlugin.min.js"></script>
+<script>
+(() => {
+  const root=document.getElementById('mini-dispatch-review'),frame=root.querySelector('.md-frame'),app=root.querySelector('.md-app'),world=root.querySelector('.md-world');
+  const actor=root.querySelector('.md-actor'),primary=root.querySelector('[data-action=primary]'),status=root.querySelector('.md-status'),dialog=root.querySelector('dialog'),skip=root.querySelector('[data-review=finish]');
+  const abort=new AbortController(),signal=abort.signal,media=matchMedia('(prefers-reduced-motion: reduce)'),holds=new Set();
+  const paths={bypass:'M15 78 C8 78 8 65 8 55 L8 36 Q8 23 23 23 H84',bridge:'M15 78 C38 78 49 62 61 48 L84 23',school:'M15 78 C8 78 8 65 8 55 L8 36 Q8 23 23 23 H42',last:'M42 23 H84'};
+  const passengers=Array.from({length:8},(_,i)=>{const el=document.createElement('i');el.className='md-person';el.setAttribute('aria-hidden','true');world.appendChild(el);return {el,x:i<6?12+i*3:45+(i-6)*3,y:i<6?89:33,a:1};});
+  const preferences={seconds:7};
+  let level='medium',instant=false,reviewFrame='desktop',phase='choose',selected=false,route=null,onboard=0,schoolDone=false,earned=false,assisted=false,replaying=false;
+  let bus={x:15,y:78,rotation:180},timeline=null,size={w:1,h:1},alive=true,revision=0;
+  if(window.gsap&&window.MotionPathPlugin)gsap.registerPlugin(MotionPathPlugin);
+  const reduced=()=>instant||media.matches;
+  const busy=()=>['boarding','travelling','unloading','pickup'].includes(phase);
+  const say=text=>status.textContent=text;
+  function paint(){
+    const r=bus.rotation*Math.PI/180,angle=Math.atan2(Math.sin(r)*size.h,Math.cos(r)*size.w)*180/Math.PI;
+    actor.style.transform=`translate(${size.w*bus.x/100}px,${size.h*bus.y/100}px) rotate(${angle}deg)`;
+    passengers.forEach(p=>{p.el.style.transform=`translate(${size.w*p.x/100}px,${size.h*p.y/100}px)`;p.el.style.opacity=p.a;p.el.hidden=passengers.indexOf(p)>5&&level!=='hard';});
+  }
+  const resize=new ResizeObserver(entries=>{size={w:entries[0].contentRect.width,h:entries[0].contentRect.height};paint();});resize.observe(world);
+  function save(){window.openai?.setWidgetState?.({modelContent:{artDirection:'C · Miniature World',activity:'Dispatch',separateDrivingGame:true,level,reviewFrame,phase,route},privateContent:{version:2,level,instant,reviewFrame}}).catch(()=>{});}
+  function update(){
+    const needed=level==='hard'?8:6;
+    root.querySelector('h2').textContent=level==='hard'?'Collect 2 at school; take 8 to the station':'6 passengers to the station';
+    root.querySelector('.md-count').textContent=`Delivery 1 · ${earned?1:0} earned`;
+    root.querySelector('.md-closed').hidden=level==='easy';
+    root.querySelector('[data-route=bridge]').textContent=level==='easy'?'Bridge route · open':'Bridge route · closed';
+    root.querySelectorAll('[data-vehicle]').forEach(b=>{b.disabled=phase!=='choose';b.setAttribute('aria-pressed',String(selected&&b.dataset.vehicle==='bus'));});
+    root.querySelectorAll('[data-route]').forEach(b=>{b.disabled=!['route','ready'].includes(phase);b.setAttribute('aria-pressed',String(route===b.dataset.route));});
+    primary.textContent=phase==='choose'?'Load passengers':phase==='route'||phase==='ready'?'Dispatch':phase==='checkpoint'?'Collect 2 passengers':phase==='continue'?'Continue to station':phase==='arrived'?'Unload passengers':phase==='done'?'Delivery complete':phase==='boarding'?'Boarding…':phase==='pickup'?'Collecting…':phase==='unloading'?'Unloading…':'Travelling…';
+    primary.disabled=holds.size>0||busy()||phase==='done'||(phase==='choose'&&!selected)||phase==='route';
+    root.querySelector('[data-action=replay]').hidden=phase!=='done';
+    skip.disabled=!busy()||holds.size>0;
+    root.querySelector('.md-onboard').textContent=phase==='done'?`${needed} passengers delivered`:onboard?`${onboard} passengers aboard`:`6 waiting at the depot${level==='hard'?' · 2 at school':''}`;
+    paint();
+  }
+  function hold(reason,value){if(value)holds.add(reason);else holds.delete(reason);app.inert=holds.size>0;if(holds.size)timeline?.pause();else if(reduced())timeline?.progress(1);else timeline?.resume();update();}
+  function run(build,finish){
+    const token=revision;
+    if(reduced()||!window.gsap||!window.MotionPathPlugin){finish();update();save();return;}
+    timeline=gsap.timeline({paused:true,onComplete:()=>{if(!alive||token!==revision)return;timeline=null;finish();update();save();}});
+    build(timeline);if(!holds.size)timeline.play();update();
+  }
+  function board(indices,finish){
+    run(tl=>{indices.forEach((index,order)=>tl.to(passengers[index],{x:bus.x,y:bus.y+2,a:0,duration:.45,ease:'power1.inOut',onUpdate:paint},order*.17));},()=>{indices.forEach(i=>{passengers[i].a=0;});onboard+=indices.length;finish();});
+  }
+  function travel(path,checkpoint=false){
+    phase='travelling';say(checkpoint?'Travelling around town to collect two passengers at school.':'Travelling to the station on the chosen road route.');
+    run(tl=>tl.to(bus,{duration:checkpoint?preferences.seconds*.65:schoolDone?preferences.seconds*.35:preferences.seconds,ease:'power1.inOut',motionPath:{path,autoRotate:true},onUpdate:paint}),()=>{
+      bus={x:checkpoint?42:84,y:23,rotation:0};phase=checkpoint?'checkpoint':'arrived';say(checkpoint?'Stopped at school, beside the pickup platform. Collect two passengers.':'Stopped beside the station platform. Unload when ready.');
+    });
+  }
+  function restart(demo=false){
+    revision++;timeline?.kill();timeline=null;selected=demo;route=null;phase=demo?'route':'choose';onboard=demo?6:0;schoolDone=false;assisted=demo;replaying=demo;bus={x:15,y:78,rotation:180};
+    passengers.forEach((p,i)=>{p.x=i<6?12+i*3:45+(i-6)*3;p.y=i<6?89:33;p.a=demo&&i<6?0:1;});
+    say(demo?'Replay. Choose a route; no additional reward is earned.':'Choose a vehicle for six passengers on a road journey.');update();
+  }
+  root.querySelectorAll('[data-vehicle]').forEach(b=>b.addEventListener('click',()=>{
+    if(holds.size||phase!=='choose')return;
+    if(b.dataset.vehicle==='van'){say('This mission’s van has only two seats. Six passengers need more seats.');return;}
+    if(b.dataset.vehicle==='ferry'){say('The ferry carries passengers on water. This mission goes by road.');return;}
+    selected=true;say('The bus has enough seats. Load the passengers beside its door.');update();save();
+  },{signal}));
+  root.querySelectorAll('[data-route]').forEach(b=>b.addEventListener('click',()=>{
+    if(holds.size||!['route','ready'].includes(phase))return;
+    if(b.dataset.route==='bridge'&&level!=='easy'){say('The bridge is closed. Keep the bus at the depot and choose the town bypass.');return;}
+    route=b.dataset.route;phase='ready';say(level==='hard'?'The bypass reaches school first. Dispatch when ready.':`The ${route==='bridge'?'bridge road':'town bypass'} is open. Dispatch when ready.`);update();save();
+  },{signal}));
+  primary.addEventListener('click',()=>{
+    if(holds.size||primary.disabled)return;
+    if(phase==='choose'){phase='boarding';say('Passengers board from the pavement beside the stopped bus.');board([0,1,2,3,4,5],()=>{phase='route';say('Six passengers aboard. Choose an open road route.');});}
+    else if(phase==='ready')travel(level==='hard'?paths.school:paths[route],level==='hard');
+    else if(phase==='checkpoint'){phase='pickup';say('Two passengers board from the school platform.');board([6,7],()=>{schoolDone=true;phase='continue';say('Eight passengers aboard. Continue to the station.');});}
+    else if(phase==='continue')travel(paths.last);
+    else if(phase==='arrived'){
+      phase='unloading';say('Passengers leave the stopped bus for the station platform.');const count=onboard;
+      for(let i=0;i<count;i++){passengers[i].x=bus.x;passengers[i].y=bus.y+2;passengers[i].a=0;}
+      run(tl=>{for(let i=0;i<count;i++)tl.to(passengers[i],{x:79+(i%4)*4,y:32+Math.floor(i/4)*4,a:1,duration:.45,ease:'power1.inOut',onUpdate:paint},i*.13);},()=>{for(let i=0;i<count;i++){passengers[i].x=79+(i%4)*4;passengers[i].y=32+Math.floor(i/4)*4;passengers[i].a=1;}onboard=0;phase='done';if(!assisted&&!replaying)earned=true;say(assisted?'Journey review complete. No new reward for a replay or skipped movement.':'Delivery complete. All passengers reached the station.');});
+    }
+    update();
+  },{signal});
+  root.querySelector('[data-action=restart]').addEventListener('click',()=>{restart();save();},{signal});
+  root.querySelector('[data-action=replay]').addEventListener('click',()=>{restart(true);save();},{signal});
+  skip.addEventListener('click',()=>{if(!holds.size&&timeline){assisted=true;timeline.progress(1);}}, {signal});
+  root.querySelector('[data-action=teacher]').addEventListener('click',()=>{dialog.querySelector('[name=level]').value=level;dialog.querySelector('[name=instant]').checked=instant;hold('teacher',true);dialog.showModal();},{signal});
+  dialog.querySelector('[data-action=close]').addEventListener('click',()=>{dialog.close();hold('teacher',false);},{signal});
+  dialog.addEventListener('close',()=>hold('teacher',false),{signal});
+  dialog.querySelector('[data-action=apply]').addEventListener('click',()=>{level=dialog.querySelector('[name=level]').value;instant=dialog.querySelector('[name=instant]').checked;earned=false;restart();dialog.close();hold('teacher',false);save();},{signal});
+  function applyFrame(){frame.style.width=reviewFrame==='phone'?'min(390px, 100%)':'100%';root.querySelectorAll('[data-frame]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.frame===reviewFrame)));}
+  root.querySelectorAll('[data-frame]').forEach(b=>b.addEventListener('click',()=>{reviewFrame=b.dataset.frame;applyFrame();save();},{signal}));
+  const visibility=()=>hold('hidden',document.hidden);document.addEventListener('visibilitychange',visibility,{signal});
+  const motion=()=>{if(reduced()&&!holds.size)timeline?.progress(1);};media.addEventListener('change',motion);
+  function restore(data){const p=data?.privateContent;if(p?.version!==2)return;if(['easy','medium','hard'].includes(p.level))level=p.level;instant=!!p.instant;reviewFrame=p.reviewFrame==='phone'?'phone':'desktop';}
+  restore(window.openai?.widgetState);applyFrame();restart();visibility();
+  window.addEventListener('openai:set_globals',event=>{const p=event.detail?.globals?.widgetState?.privateContent;if(!p||p.version!==2||p.level===level&&p.instant===instant&&p.reviewFrame===reviewFrame)return;restore(event.detail.globals.widgetState);applyFrame();restart();},{signal});
+  let tweak;if(globalThis.Tweak){tweak=new Tweak({container:world,onChange:paint});tweak.addSlider(preferences,'seconds',{label:'Journey duration',min:4,max:12,step:1,unit:'s'});}
+  const remove=new MutationObserver(()=>{if(!root.isConnected){alive=false;revision++;timeline?.kill();resize.disconnect();media.removeEventListener('change',motion);abort.abort();tweak?.dispose();remove.disconnect();}});remove.observe(document.body,{childList:true,subtree:true});
+})();
+</script>
+<style>html,body{margin:0;background:transparent;color-scheme:light}#mini-dispatch-review .md-frame{color-scheme:light;width:100%!important}#mini-dispatch-review .md-reviewbar,#mini-dispatch-review .md-head{display:none}#mini-dispatch-review .md-app{background:transparent;border:0;border-radius:0}#mini-dispatch-review .md-main{padding:0;gap:12px}#mini-dispatch-review .md-mission h2{font-size:19px}#mini-dispatch-review .md-world{aspect-ratio:2.1}#mini-dispatch-review{color-scheme:light}@container(max-width:480px){#mini-dispatch-review .md-world{aspect-ratio:1.1}}</style><script>new ResizeObserver(()=>parent.postMessage({type:'transport-review-height',height:document.documentElement.scrollHeight},location.origin)).observe(document.body);</script></body></html>

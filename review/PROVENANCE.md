@@ -1,0 +1,11 @@
+# Local presentation review
+
+This directory is authoring/review material outside site/dist; it is not a new production game package. User selected Miniature World and then rejected the separate boxed shell as inconsistent with the other games. The actual Our Town and Plants Pages endpoints were opened on 8 November: both redirect to ludimi.org/our-town/ and /plants/, embedding /_games/our-town/ and /_games/plants/. Launch, menus and applied-game frames were inspected. The website's Update app notice was not activated; no website/account changes were made.
+
+Layout follows the observed family: full-bleed environment, transparent shared header with individual cream controls, Explore launch, illustrated cream menu cards, direct feature banner, and a full-width cream activity container over the same environment. Standalone local controls retain Full screen; hosted Ludimi integrates its own compact menu.
+
+review/scene.png is a built-in image_gen flattened preproduction composition, source exec-c5c80a99-8dfb-4814-b040-a94b46d71355.png, style reference selected-direction-c.png and composition reference the supplied Plants launch screenshot. Exact prompt is in SCENE-PROMPT.md. It is not the required four final registered planes. Menu and brand pictures reuse existing Transport emoji-codex originals for layout; new Miniature World interface/teaching art awaits approval. No old asset is reclassified as newly approved art.
+
+Explore, feature banner and Games chooser are interactive. The other eleven menu cards are layout previews, not invented playable implementations. Driving remains a distinct planned game with mouse/tap/arrows. Dispatch embeds the schematic movement study within the shared shell and keeps normal/closed-route/school-pickup/reduced-motion controls. Global Teacher opens its settings when Dispatch is active. Home/menu Teacher explains the pending curriculum controls; there is no claim those scopes are implemented.
+
+GSAP and MotionPath are copied byte-for-byte from the accepted Plants vendor files for the local authoring preview; license/version headers remain. No new narration or paid generation job. PNG artwork has no third-party source beyond the user-approved/generated reference chain. No production deployment, Pages setting, public hostname or catalogue pin changed.

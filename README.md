@@ -7,3 +7,5 @@ Run `npm start` to start or reuse the supervised local source preview at http://
 The runtime source is `site/dist/`. This inherited directory name does not imply a separate built copy. Preview tooling injects local live reload only in HTTP responses; files remain static and deployment-ready for a later authorized release. No deployment is authorized by this README.
 
 Repository: https://github.com/Prim0-sudo/transport. Pages project identifier: `transport`; existing public URL remains https://transport-town-7b0.pages.dev/. See [operational identities](docs/HOSTING-AND-NAMING.md).
+
+Shared-shell visual review: http://127.0.0.1:4251/review/ (review-only source outside site/dist; final assets pending approval).

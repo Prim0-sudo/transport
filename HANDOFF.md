@@ -37,3 +37,8 @@ Read docs/UPGRADE-PLAN.md for the current ordered plan and post-push lifecycle e
 
 
 Art direction selected: C · Miniature World. Current creative gate: review DISPATCH-DETAILED-PREVIEW.md and its illustrated/interactive preview; obtain detailed-layout/movement approval before final assets. No runtime art swap or new deployment. Keep the separate interactive driving game on the plan.
+
+
+## Shared-shell correction
+
+After user feedback, actual deployed Our Town and Plants launch/menu/applied-game frames were opened through their Pages URLs (currently redirecting to Ludimi). The prior separate dark/boxed Dispatch frame is superseded as a shell proposal. Local review: http://127.0.0.1:4251/review/. It uses a full-bleed Miniature World concept scene, shared Explore/header/menu/feature structure and a full-width cream Dispatch surface. Existing menu pictures are provisional layout references; final production assets and approval are still pending. site/dist runtime is unchanged; review source lives outside it. Read review/PROVENANCE.md.

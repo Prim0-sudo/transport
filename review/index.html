@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="robots" content="noindex,nofollow"><title>Transport Town — local visual review</title>
+  <link rel="stylesheet" href="/review/style.css">
+</head>
+<body>
+  <div class="world" aria-hidden="true"></div>
+  <header class="header">
+    <button class="brand" id="home" aria-label="Transport Town home"><img src="/images/emoji-codex/bus.png" alt=""><span>Transport Town</span></button>
+    <div class="utilities"><button id="sound" aria-pressed="true">Sound on</button><button id="fullscreen">Full screen</button><button id="teacher">Teacher</button></div>
+  </header>
+  <main id="main">
+    <section class="launch" id="launch" aria-labelledby="launchTitle">
+      <div class="launch-copy"><h1 id="launchTitle">Transport Town</h1><p>Journeys & discoveries</p></div>
+      <button class="explore" id="explore"><img src="/images/emoji-codex/bus.png" alt=""><strong>Explore</strong><small>Choose an activity</small></button>
+    </section>
+    <section class="menu" id="menu" aria-labelledby="menuTitle" hidden>
+      <h1 id="menuTitle">Choose a game</h1>
+      <button class="feature" id="featuredDispatch"><span class="feature-art" aria-hidden="true"><img src="/images/emoji-codex/bus.png" alt=""><img src="/images/emoji-codex/ferry.png" alt=""></span><span><strong>Transport Dispatch</strong><small>Choose a vehicle · plan the journey</small></span></button>
+      <div class="mode-grid" id="modeGrid"></div>
+    </section>
+    <section class="games" id="games" aria-labelledby="gamesTitle" hidden>
+      <button class="back" data-back>Games</button>
+      <div class="surface chooser"><h1 id="gamesTitle">Transport Games</h1><div class="game-choices"><button id="dispatchChoice"><img src="/images/emoji-codex/bus.png" alt=""><strong>Transport Dispatch</strong><span>Choose a vehicle and an open route.</span></button><article><img src="/images/emoji-codex/car.png" alt=""><strong>Driving game</strong><span>Separate planned game: mouse, tap and arrow controls.</span></article></div></div>
+    </section>
+    <section class="activity" id="activity" aria-labelledby="activityTitle" hidden>
+      <div class="activity-nav"><button class="back" data-back>Games</button><span>Transport Games</span></div>
+      <div class="surface dispatch-surface"><h1 id="activityTitle">Transport Dispatch</h1><iframe id="dispatchFrame" title="Dispatch movement and layout preview"></iframe></div>
+    </section>
+  </main>
+  <footer class="review-note">Local presentation review · existing menu pictures retained for layout · final Miniature World assets await approval</footer>
+  <dialog id="teacherPanel" aria-labelledby="teacherTitle"><h2 id="teacherTitle">Teacher</h2><p>The shared Level, Lesson and Collection controls will stay here. Their curriculum implementation remains in the upgrade plan.</p><button id="closeTeacher">Close</button></dialog>
+  <script src="/review/shell.js"></script>
+</body>
+</html>

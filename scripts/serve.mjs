@@ -5,6 +5,7 @@ import { extname, join, normalize, resolve, relative as relativePath } from "nod
 import { fileURLToPath } from "node:url";
 
 const root = resolve(fileURLToPath(new URL("../site/dist/", import.meta.url)));
+const reviewRoot = resolve(root, "../../review");
 const liveClients = new Set();
 const bootId = String(Date.now());
 const liveReload = `<script>
@@ -18,7 +19,8 @@ const liveReload = `<script>
       boot = next;
     });
     changes.addEventListener("change", (event) => {
-      const paths = JSON.parse(event.data);
+      const paths = JSON.parse(event.data).filter(path => path.startsWith("review/") === location.pathname.startsWith("/review/"));
+      if (!paths.length) return;
       if (paths.every(path => path.endsWith(".css"))) {
         for (const path of paths) {
         const sheet = [...document.querySelectorAll('link[rel="stylesheet"]')]
@@ -66,11 +68,14 @@ createServer((request, response) => {
     request.on("close", () => liveClients.delete(response));
     return;
   }
-  const relative = requested === "/" ? "index.html" : requested.replace(/^\/+/, "");
-  const path = normalize(join(root, relative));
+  const isReview = requested === "/review/" || requested.startsWith("/review/");
+  const servingRoot = isReview ? reviewRoot : root;
+  const relative = isReview ? requested.slice("/review/".length) || "index.html" : requested === "/" ? "index.html" : requested.replace(/^\/+/, "");
+  const path = normalize(join(servingRoot, relative));
 
-  const safeRelative = relativePath(root, path).replaceAll("\\", "/");
-  if (!/^(index\.html|(?:app|lifecycle)\.js|styles\.css|transport-town-bg\.png|images\/[^.].*)$/.test(safeRelative) || safeRelative.split("/").some(part => part.startsWith("."))) {
+  const safeRelative = relativePath(servingRoot, path).replaceAll("\\", "/");
+  const allowed = isReview ? /^(index\.html|style\.css|shell\.js|scene\.png|dispatch\.html|gsap\.min\.js|MotionPathPlugin\.min\.js)$/ : /^(index\.html|(?:app|lifecycle)\.js|styles\.css|transport-town-bg\.png|images\/[^.].*)$/;
+  if (!allowed.test(safeRelative) || safeRelative.split("/").some(part => part.startsWith("."))) {
     response.writeHead(403).end("Forbidden");
     return;
   }
@@ -135,4 +140,14 @@ watch(root, { recursive: true }, (_event, filename) => {
     pending.clear();
     for (const client of liveClients) client.write(`event: change\ndata: ${JSON.stringify(paths)}\n\n`);
   }, 250);
+});
+
+// Review-only source has its own URL space; edits never reload the learner app.
+watch(reviewRoot, (_event, filename) => {
+  if (!filename || !/^(index\.html|style\.css|shell\.js|scene\.png|dispatch\.html)$/.test(String(filename))) return;
+  const key = `review/${filename}`;
+  let next; try { const stat = statSync(join(reviewRoot, String(filename))); next = `${stat.mtimeMs}:${stat.size}`; } catch { next = null; }
+  if (signatures.get(key) === next) return;
+  signatures.set(key, next); pending.add(key); clearTimeout(changeTimer);
+  changeTimer = setTimeout(() => { const paths = [...pending]; pending.clear(); for (const client of liveClients) client.write(`event: change\ndata: ${JSON.stringify(paths)}\n\n`); }, 250);
 });
