@@ -303,7 +303,7 @@ function rememberAttempt(release=false) {
     snapshot.wheel.spinning=false;snapshot.wheel.landing=null;snapshot.wheel.pending=null;snapshot.wheel.returning=false;
   }
   if(snapshot.mode==='hangman')for(const round of snapshot.questions){round.sadConeIndex=null;round.winCelebration=false;}
-  const ui={disabledChoiceIds:[...els.answers.querySelectorAll('.answer-btn.wrong')].map(button=>button.dataset.choiceId).filter(Boolean)};
+  const ui={disabledChoiceIds:[...els.answers.querySelectorAll('.answer-btn.wrong')].map(button=>button.dataset.choiceId).filter(Boolean),feedbackText:els.feedback.querySelector('p')?.textContent||''};
   classroom.save(activeSession,{state:snapshot,ui});
   if(release){classroom.release(activeSession.key);activeSession=null;}
 }
@@ -346,6 +346,8 @@ function restoreAttempt(session) {
     }
     if(answered&&mode!=='wheel'){
       els.feedback.replaceChildren();
+      const message=saved.ui?.feedbackText||(mode==='safety'?state.questions[state.round].explain:'');
+      if(message){const p=document.createElement('p');p.textContent=message;els.feedback.append(p);}
       const next=document.createElement('button');next.className='next-btn';next.id='nextBtn';next.textContent=mode==='flip'?'Finish game':'Next';
       next.onclick=mode==='flip'?finishGame:nextQuestion;els.feedback.append(next);
     }

@@ -98,7 +98,7 @@ function renderStandardIdentify(){
   els.question.textContent=pref.identifyTarget?'Which word names this vehicle?':item.definition;
   setVehiclePicture(item);els.stage.style.display=pref.identifyTarget?'':'none';
   document.getElementById('gameCard').classList.toggle('hide-answer-emojis',!pref.identifyAnswers);
-  if(round.choices.length<2){state.practice=true;setVehicle(item,true);els.stage.style.display='';els.question.textContent=`Practise: ${item.name}`;const note=document.createElement('p');note.className='practice-note';note.textContent='Only one distinct picture is available. This is practice.';els.answers.append(note,standardButton('Next word',nextQuestion));return;}
+  if(round.choices.length<2){state.practice=true;setVehicle(item,true);els.stage.style.display=pref.identifyTarget?'':'none';els.question.textContent=`Practise: ${item.name}`;const note=document.createElement('p');note.className='practice-note';note.textContent='Only one distinct picture is available. This is practice.';els.answers.append(note,standardButton('Next word',nextQuestion));return;}
   for(const choice of round.choices)makeAnswer(choice.name,'',choice.id===item.id,`${item.name}. ${item.definition}`,true,pref.identifyAnswers?choice.image:'',choice.id);
   if(!pref.identifyAnswers)for(const icon of els.answers.querySelectorAll('.answer-icon'))icon.hidden=true;
 }
