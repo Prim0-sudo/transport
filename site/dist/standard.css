@@ -2,8 +2,8 @@
 #gameScreen [hidden],.teacher-picture-settings[hidden]{display:none!important}
 .game-screen .game-status,.game-screen .game-card{width:100%;max-width:none}
 .game-screen .game-card{min-height:0;padding:clamp(14px,2.5vw,30px);border-width:2px;border-radius:24px}
-.game-screen .vehicle-stage{flex:none;min-height:0;height:auto;padding:10px 0;gap:8px}
-.game-screen .vehicle-emoji.vehicle-icon-image,.game-screen .vehicle-emoji.vehicle-picture{flex:none;height:clamp(230px,42vh,470px);width:min(100%,800px);max-width:none;background-size:contain!important;background-repeat:no-repeat}
+.game-screen .game-card .vehicle-stage{flex:none;min-height:0;height:auto;padding:10px 0;gap:8px}
+.game-screen .vehicle-emoji.vehicle-icon-image,.game-screen .vehicle-emoji.vehicle-picture{flex:none;height:clamp(230px,42vh,470px);width:min(100%,800px);max-width:none;background-size:contain;background-repeat:no-repeat}
 .game-screen .vehicle-shadow{display:none}.game-screen .vehicle-name:empty{display:none}
 .game-screen .question-helper:empty,.game-screen .feedback:empty{display:none}
 .game-screen .question-helper{display:block;max-width:85ch;line-height:1.5;margin:8px auto 14px}

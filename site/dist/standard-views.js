@@ -2,6 +2,19 @@
  * Uses existing Transport illustrations; no new scenery or asset generation.
  */
 const standardEscape=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
+let teachingFitObserver=null;
+function fitTeachingSubject(element,item){
+  element.dataset.teachingId=item.id;
+  const fit=()=>{
+    const current=vehicles.find(v=>v.id===element.dataset.teachingId),frame=current&&TransportTeachingBounds[current.image];
+    if(!frame)return;const rect=element.getBoundingClientRect(),[x,y,w,h]=frame.crop;if(!rect.width||!rect.height)return;
+    const scale=Math.min(rect.width/w,rect.height/h);
+    element.style.backgroundSize=`${frame.size[0]*scale}px ${frame.size[1]*scale}px`;
+    element.style.backgroundPosition=`${(rect.width-w*scale)/2-x*scale}px ${(rect.height-h*scale)/2-y*scale}px`;
+  };
+  if(!teachingFitObserver){teachingFitObserver=new ResizeObserver(fit);teachingFitObserver.observe(element);}
+  fit();
+}
 function standardPreferences(){return {identifyTarget:true,identifyAnswers:true,safetyQuestion:true,safetyAnswers:true,...classroom.data.preferences};}
 function filteredStandardPool(mode,setup={}){return TransportStandard.poolFor(mode,classroom.pool(mode),setup);}
 function standardSession(mode,setup={}){return classroom.prepare(mode,classroom.scope,TransportStandard.variantFor(mode,setup),filteredStandardPool(mode,setup));}

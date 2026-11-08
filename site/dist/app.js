@@ -632,11 +632,13 @@ function setVehicle(vehicle, showName = true) {
   els.emoji.style.backgroundImage = `url("${vehicleEmojiPath(vehicle)}")`;
   els.emoji.style.backgroundPosition = "center";
   els.emoji.setAttribute('role','img');els.emoji.setAttribute('aria-label',vehicle.alt);
+  fitTeachingSubject(els.emoji,vehicle);
   els.name.textContent = showName ? vehicle.name.toUpperCase() : "?";
   els.stage.dataset.sound = vehicle.sound;
 }
 
 function clearVehiclePicture() {
+  delete els.emoji.dataset.teachingId;els.emoji.style.backgroundSize='';
   els.emoji.removeAttribute('role');els.emoji.removeAttribute('aria-label');
   els.emoji.classList.remove("vehicle-picture", "vehicle-icon-image");
   els.emoji.style.backgroundImage = "";
@@ -649,6 +651,7 @@ function setVehiclePicture(vehicle) {
   els.emoji.style.backgroundImage = `url("${vehicleEmojiPath(vehicle)}")`;
   els.emoji.style.backgroundPosition = "center";
   els.emoji.setAttribute('role','img');els.emoji.setAttribute('aria-label','Transport picture to identify');
+  fitTeachingSubject(els.emoji,vehicle);
   els.name.textContent = "";
   els.stage.dataset.sound = "";
 }

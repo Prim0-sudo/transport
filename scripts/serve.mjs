@@ -76,7 +76,7 @@ createServer((request, response) => {
   const path = normalize(join(servingRoot, relative));
 
   const safeRelative = relativePath(servingRoot, path).replaceAll("\\", "/");
-  const allowed = isAssetReview ? /^(index\.html|manifest\.json|(?:sky|distant-background|middle-ground|foreground|bus|train|train-front|ferry|airplane|cloud)\.png)$/ : isReview ? /^(index\.html|style\.css|shell\.js|scene\.png|dispatch\.html|gsap\.min\.js|MotionPathPlugin\.min\.js)$/ : /^(index\.html|(?:app|lifecycle|landing-scene|curriculum|classroom-core|standard-data|standard-views|detective-model|detective-view)\.js|(?:styles|landing|classroom|standard)\.css|vendor\/(?:gsap|MotionPathPlugin)\.min\.js|transport-town-bg\.png|images\/[^.].*)$/;
+  const allowed = isAssetReview ? /^(index\.html|manifest\.json|(?:sky|distant-background|middle-ground|foreground|bus|train|train-front|ferry|airplane|cloud)\.png)$/ : isReview ? /^(index\.html|style\.css|shell\.js|scene\.png|dispatch\.html|gsap\.min\.js|MotionPathPlugin\.min\.js)$/ : /^(index\.html|(?:app|lifecycle|landing-scene|curriculum|classroom-core|standard-data|standard-views|teaching-bounds|detective-model|detective-view)\.js|(?:styles|landing|classroom|standard)\.css|vendor\/(?:gsap|MotionPathPlugin)\.min\.js|transport-town-bg\.png|images\/[^.].*)$/;
   if (!allowed.test(safeRelative) || safeRelative.split("/").some(part => part.startsWith("."))) {
     response.writeHead(403).end("Forbidden");
     return;
