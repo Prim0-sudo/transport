@@ -19,8 +19,8 @@ Read docs/V6-UPGRADE-2026-11-08.md for inventory, evidence limits and ordered re
 
 Preview: http://127.0.0.1:4251/. Node built-ins only; no npm install/build needed. Hidden supervisor reuses the correct workspace server, recovers a failed child and refuses another service's port. Logs/state are ignored under .preview. Source edits are served fresh; CSS refreshes in place, JS/HTML/image changes reload after debounce. No evidence/docs watcher. No app-state persistence claim.
 
-First batch: existing spelling/Flip fairness and input fixes plus preview tooling. No new art, concept production, paid speech or deployment. Verification runs only after commit/push; results belong in the audit record after that checkpoint.
+First batch implemented and pushed as 1a09ad4, with focused corrections ed8c3f7. Post-push parsing, focused model assertions, bounded Chrome spelling/Flip/accessibility/menu review, simulated phone size and preview reuse/recovery passed. Exact evidence/limits are in the audit. No new art, concept production, paid speech or deployment.
 
 Hosting current production settings/live identity remain unverified. Ludimi pinned source at baseline is untouched; do not update website pins, main, legacy Sites, Pages or account settings without release authorization. Plants remains completed and its port 4250 unchanged.
 
-Next: post-push focused verification, then lifecycle/Teacher/curriculum foundations and the outstanding v6 work. New artwork/applied game follows three concepts -> selection -> detailed preview approval -> assets shown/approved -> implementation. Songs and the shared Phonics/Word Families expansion remain on the series backlog.
+Next: lifecycle/Teacher/curriculum foundations and the outstanding v6 work. Three applied concepts are proposed in docs/APPLIED-CONCEPTS-2026-11-08.md; selection is pending. New artwork/applied game follows three concepts -> selection -> detailed preview approval -> assets shown/approved -> implementation. Songs and the shared Phonics/Word Families expansion remain on the series backlog.
