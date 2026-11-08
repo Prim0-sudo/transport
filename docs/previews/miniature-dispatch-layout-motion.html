@@ -29,7 +29,7 @@
 #mini-dispatch-review .md-actor{position:absolute;left:0;top:0;width:52px;height:25px;margin:-12.5px 0 0 -26px;background:var(--yellow);color:#173457;border:2px solid var(--paper);border-radius:7px;box-shadow:0 3px 5px #0003;display:grid;place-items:center;font-size:11px;font-weight:700;transform-origin:50% 50%;pointer-events:none;z-index:3}
 #mini-dispatch-review .md-actor:after{content:'';position:absolute;right:2px;top:3px;bottom:3px;width:4px;border-radius:2px;background:#173457}
 #mini-dispatch-review .md-person{position:absolute;left:0;top:0;width:12px;height:12px;margin:-6px;background:var(--navy);border:2px solid var(--paper);border-radius:50%;pointer-events:none;z-index:3}
-#mini-dispatch-review .md-onboard{position:absolute;left:25%;top:49%;width:34%;text-align:center;font-size:14px;color:var(--muted)}
+#mini-dispatch-review .md-onboard{font-size:14px;color:var(--muted);margin-top:3px}
 #mini-dispatch-review .md-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 #mini-dispatch-review .md-choices button{display:grid;gap:2px;text-align:left;min-width:0}
 #mini-dispatch-review .md-choices small{font-size:13px}
@@ -44,7 +44,7 @@
 #mini-dispatch-review dialog label{display:grid;gap:6px}
 #mini-dispatch-review dialog label.md-check{display:flex;align-items:center;gap:8px}
 #mini-dispatch-review dialog h3{margin:0}
-@container(max-width:480px){#mini-dispatch-review .md-world{aspect-ratio:1.07}#mini-dispatch-review .md-main{padding:10px;gap:10px}#mini-dispatch-review .md-head{padding:10px}#mini-dispatch-review .md-head strong{font-size:17px}#mini-dispatch-review h2{font-size:18px}#mini-dispatch-review .md-choices button{padding:9px}#mini-dispatch-review .md-routes button{min-width:110px;padding:9px}#mini-dispatch-review .md-actor{width:42px;margin-left:-21px}#mini-dispatch-review .md-place{font-size:12px;padding:4px 6px}#mini-dispatch-review .md-onboard{left:23%;width:39%;font-size:13px}#mini-dispatch-review .md-closed{font-size:11px;left:43%}}
+@container(max-width:480px){#mini-dispatch-review .md-world{aspect-ratio:1.07}#mini-dispatch-review .md-main{padding:10px;gap:10px}#mini-dispatch-review .md-head{padding:10px}#mini-dispatch-review .md-head strong{font-size:17px}#mini-dispatch-review h2{font-size:18px}#mini-dispatch-review .md-choices button{padding:9px}#mini-dispatch-review .md-routes button{min-width:110px;padding:9px}#mini-dispatch-review .md-actor{width:42px;margin-left:-21px}#mini-dispatch-review .md-place{font-size:12px;padding:4px 6px}#mini-dispatch-review .md-onboard{font-size:13px}#mini-dispatch-review .md-closed{font-size:11px;left:43%}}
 </style>
 <div id="mini-dispatch-review">
   <div class="md-reviewbar" aria-label="Preview controls">
@@ -56,7 +56,7 @@
     <section class="md-app" aria-label="Miniature World Dispatch interaction preview">
       <header class="md-head"><strong>Transport Dispatch</strong><button data-action="teacher">Teacher</button></header>
       <main class="md-main">
-        <div class="md-mission"><h2>6 passengers to the station</h2><span class="md-count">Delivery 1 · 0 earned</span></div>
+        <div class="md-mission"><div><h2>6 passengers to the station</h2><div class="md-onboard">6 waiting at the depot</div></div><span class="md-count">Delivery 1 · 0 earned</span></div>
         <div class="md-world" role="group" aria-label="Depot at lower left, station at upper right. Choose the bridge road or the town bypass.">
           <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
             <path d="M72 0 H100 V100 H66 C76 78 53 62 61 42 S72 20 72 0" fill="var(--water)"/>
@@ -71,7 +71,6 @@
           <span class="md-place md-depot">Depot</span><span class="md-place md-station">Station</span><span class="md-place md-school">School</span><span class="md-place md-harbour">Harbour</span>
           <span class="md-closed">Bridge closed</span>
           <div class="md-actor" aria-hidden="true">BUS</div>
-          <div class="md-onboard">6 waiting at the depot</div>
         </div>
         <div class="md-choices" aria-label="Vehicles for this mission">
           <button data-vehicle="bus" aria-pressed="false"><strong>Bus</strong><small>12 seats · road</small></button>
@@ -176,7 +175,7 @@
   root.querySelector('[data-action=restart]').addEventListener('click',()=>{restart();save();},{signal});
   root.querySelector('[data-action=replay]').addEventListener('click',()=>{restart(true);save();},{signal});
   skip.addEventListener('click',()=>{if(!holds.size&&timeline){assisted=true;timeline.progress(1);}}, {signal});
-  root.querySelector('[data-action=teacher]').addEventListener('click',()=>{dialog.elements;dialog.querySelector('[name=level]').value=level;dialog.querySelector('[name=instant]').checked=instant;hold('teacher',true);dialog.showModal();},{signal});
+  root.querySelector('[data-action=teacher]').addEventListener('click',()=>{dialog.querySelector('[name=level]').value=level;dialog.querySelector('[name=instant]').checked=instant;hold('teacher',true);dialog.showModal();},{signal});
   dialog.querySelector('[data-action=close]').addEventListener('click',()=>dialog.close(),{signal});
   dialog.addEventListener('close',()=>hold('teacher',false),{signal});
   dialog.querySelector('form').addEventListener('submit',event=>{event.preventDefault();level=dialog.querySelector('[name=level]').value;instant=dialog.querySelector('[name=instant]').checked;earned=false;restart();dialog.close();save();},{signal});
