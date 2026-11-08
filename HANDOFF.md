@@ -1,5 +1,7 @@
 # Transport Town — current upgrade handoff
 
+Latest user-authorized landing batch: actual Miniature World scenery/vehicle assets are now created and shown for approval, not implemented. Read artwork/landing/miniature-world-v1/README.md, manifest.json and REVIEW.md. Local actual-asset board: http://127.0.0.1:4251/review/landing-assets/. Four genuine aligned planes, separate bus/railcar (two views)/ferry/airplane/cloud. Current gate is asset approval before landing integration; earlier preview-only landing restrictions below are historical. Dispatch and the separate driving game's later gates remain unchanged. Follow AGENTS.md's mandatory blueprint/example-site consultation before every change. No production release.
+
 8 November 2026. Upgrade in progress; no new production release or classroom acceptance.
 
 Repo: https://github.com/Prim0-sudo/transport

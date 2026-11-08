@@ -1,10 +1,11 @@
 {
   "date": "2026-11-08",
   "stage": "Actual production candidates for asset approval; not landing implementation",
+  "staticReview": "2026-11-08: all four planes assembled in the browser; actors hidden to inspect clean backing; individual sprites inspected on checkerboard; no visible train halo. See REVIEW.md. Motion and user acceptance remain pending.",
   "userAuthorization": "Continue with actual layered Transport landing assets and separate vehicles. Show assets before implementing; no disposable mockups.",
   "blueprint": "E:/Projects/Codex/plants-weekly-game/docs/blueprint-v6.0/ART-AND-ANIMATION.md",
   "camera": {
-    "reference": "../../../../review/scene.png",
+    "reference": "../../../review/scene.png",
     "canvas": [
       1672,
       941
@@ -39,7 +40,7 @@
       "purpose": "Independent landing actor",
       "prompt": "Use case: stylized-concept. Production transparent game actor for Transport landing. Input reference is the selected Miniature World town: match its matte hand-painted wooden/resin model textures, soft daylight from upper left, navy/cream palette, elevated three-quarter camera and toy-scale realism, NO vehicle faces. Output a single complete isolated vehicle on genuine alpha transparency, centred with comfortable transparent padding, all parts inside canvas. No text, UI, logos, captions, scenery, track, road, water, landscape, podium, white background or checkerboard. No opaque ground patch or detached cast shadow. Keep wheels/keel/landing gear clearly defined for contact registration. The complete small cream-and-navy single-engine passenger airplane from the distant airfield in the reference. One view: nose facing screen LEFT and slightly toward viewer, tail at RIGHT, slightly elevated three-quarter side view with wings and all three landing wheels fully visible. Small realistic high-wing utility aircraft, NOT airliner or jet. Navy stripe, dark cabin windows, blue tail tip, crisp modest two-blade propeller at the nose in a still pose. Keep the model consistent with the reference runway plane, all wing tips in frame, no ground shadow or sky, no speed lines. Landscape canvas; airplane fills about 80% width.",
       "references": [
-        "../../../../review/scene.png"
+        "../../../review/scene.png"
       ],
       "status": "production candidate; user approval pending",
       "runtimeDerivative": null,
@@ -107,7 +108,7 @@
       "purpose": "Independent landing actor",
       "prompt": "Use case: stylized-concept. Production transparent game actor for Transport landing. Input reference is the selected Miniature World town: match its matte hand-painted wooden/resin model textures, soft daylight from upper left, navy/cream palette, elevated three-quarter camera and toy-scale realism, NO vehicle faces. Output a single complete isolated vehicle on genuine alpha transparency, centred with comfortable transparent padding, all parts inside canvas. No text, UI, logos, captions, scenery, track, road, water, landscape, podium, white background or checkerboard. No opaque ground patch or detached cast shadow. Keep wheels/keel/landing gear clearly defined for contact registration. A warm yellow single-decker town bus matching the yellow bus in the reference. One view only: front three-quarter facing toward screen LEFT and slightly toward the viewer; the front is at the left, long passenger side extends to the right, roof is visible from the reference's modestly elevated camera. Proper two axles, four tyres (visible near-side two), clear grey seats through dark windows, navy window trim and realistic proportionate small mirrors. Complete standalone bus, no depot behind it. Landscape canvas, bus occupies about 80% width, not tiny. Still/rest driving pose, wheels round and aligned. Natural scale, not exaggerated cartoon.",
       "references": [
-        "../../../../review/scene.png"
+        "../../../review/scene.png"
       ],
       "status": "production candidate; user approval pending",
       "runtimeDerivative": null,
@@ -167,7 +168,7 @@
       "purpose": "Independent landing actor",
       "prompt": "Use case: stylized-concept. Production independent cloud sprite for Transport Miniature World landing. Input reference provides its hand-painted matte model-world style and daylight only. Create ONE soft white cumulus cloud, horizontally elongated, softly rounded clumps with subtle cool blue underside, naturally uneven silhouette, generous transparent padding. Genuine alpha transparency all around, soft clean edges; no sky colour rectangle, no ground, no other clouds, text or UI. Landscape canvas, cloud fills about 75% width. Do not imitate a cotton toy with hard plastic edges. It will drift independently over a clear blue sky.",
       "references": [
-        "../../../../review/scene.png"
+        "../../../review/scene.png"
       ],
       "status": "production candidate; user approval pending",
       "runtimeDerivative": null,
@@ -209,7 +210,7 @@
       "purpose": "Shared-camera landing scenery plane",
       "prompt": "Use case: precise-object-edit. Production game scenery layer, NOT a mockup or interface screenshot. Input image 1 is the approved Transport Miniature World composition/camera reference. Preserve its matte hand-painted miniature model materials, warm stone buildings, navy roofs, bright soft daylight, coherent elevated three-quarter perspective, exact shared 16:9 canvas and spatial registration (1672 by 941 reference). No text, UI, logos, people, labels, watermark, white frame or baked checkerboard. Create ONLY the DISTANT BACKGROUND layer: the far green coastal hills and pale cliffs on left, distant blue sea across the centre at the original horizon roughly 32% down, right-side rolling hills and small empty airfield with complete runway and blue-roofed hangar at the reference positions. No plane. All sky above the natural hill silhouette must be genuinely transparent. Remove ALL middle-ground town buildings, station, depot, road, railway, square, quay, nearby harbour details and foreground tree/bushes. Instead extend the distant sea and hillside terrain downwards behind those removed areas all the way to the bottom canvas edge, so this backing has no holes and will be safely overlapped by the separate middle-ground layer. Keep exact horizon/camera/scale of reference; do not move the distant airfield to the front. No vehicles, no clouds, no foreground scene. Full wide 16:9 canvas, no crop.",
       "references": [
-        "../../../../review/scene.png"
+        "../../../review/scene.png"
       ],
       "status": "production candidate; user approval pending",
       "runtimeDerivative": null,
@@ -255,7 +256,7 @@
       "purpose": "Independent landing actor",
       "prompt": "Use case: stylized-concept. Production transparent game actor for Transport landing. Input reference is the selected Miniature World town: match its matte hand-painted wooden/resin model textures, soft daylight from upper left, navy/cream palette, elevated three-quarter camera and toy-scale realism, NO vehicle faces. Output a single complete isolated vehicle on genuine alpha transparency, centred with comfortable transparent padding, all parts inside canvas. No text, UI, logos, captions, scenery, track, road, water, landscape, podium, white background or checkerboard. No opaque ground patch or detached cast shadow. Keep wheels/keel/landing gear clearly defined for contact registration. The complete cream-and-navy passenger ferry from the reference's right harbour, isolated without water, wake or dock. One view: bow faces screen LEFT and slightly toward viewer, stern extends screen RIGHT, elevated three-quarter side view matching the town camera. Rounded cream bow railings, two decks, navy hull, narrow muted red waterline band, compact navy-and-cream funnel, clear small windows. Hull complete below the waterline so a registered water mask can cover it later; no square blue water patch. Do not include its painted shadow or waves. Landscape canvas, generous padding around all rails and mast, ship about 80% width, no cropping.",
       "references": [
-        "../../../../review/scene.png"
+        "../../../review/scene.png"
       ],
       "status": "production candidate; user approval pending",
       "runtimeDerivative": null,
@@ -323,7 +324,7 @@
       "purpose": "Shared-camera landing scenery plane",
       "prompt": "Use case: precise-object-edit. Production game scenery layer, NOT a mockup or interface screenshot. Input image 1 is the approved Transport Miniature World composition/camera reference. Preserve its matte hand-painted miniature model materials, warm stone buildings, navy roofs, bright soft daylight, coherent elevated three-quarter perspective, exact shared 16:9 canvas and spatial registration (1672 by 941 reference). No text, UI, logos, people, labels, watermark, white frame or baked checkerboard. Create ONLY the FOREGROUND OCCLUSION layer on genuine transparency: the original overhanging tree trunk, branches and leaves framing the extreme upper left corner, sparse leaves at extreme upper right, and the original close low bushes at extreme lower left corner and low edge foliage. Preserve their original positions and scale and hand-painted miniature texture. Everything else must be fully transparent including all sky, clouds, buildings, land, roads, harbour, water and central area. Very sparse extreme-edge framing, no new tree across the centre, no ground strip, no rectangular opaque patches. Full 16:9 reference-sized canvas with transparent centre, not a tight foliage crop.",
       "references": [
-        "../../../../review/scene.png"
+        "../../../review/scene.png"
       ],
       "status": "production candidate; user approval pending",
       "runtimeDerivative": null,
@@ -369,7 +370,7 @@
       "purpose": "Shared-camera landing scenery plane",
       "prompt": "Use case: precise-object-edit. Production game scenery layer, NOT a mockup or interface screenshot. Input image 1 is the approved Transport Miniature World composition/camera reference. Preserve its matte hand-painted miniature model materials, warm stone buildings, navy roofs, bright soft daylight, coherent elevated three-quarter perspective, exact shared 16:9 canvas and spatial registration (1672 by 941 reference). No text, UI, logos, people, labels, watermark, white frame or baked checkerboard. Create ONLY the MIDDLE-GROUND stage layer with genuine alpha transparency above its silhouette. Retain the original station and depot at left, central back-row houses, broad curving road, complete empty railway track on left, central quiet sandy square, harbour water and complete quay on right, all lower ground to the bottom edge. REMOVE the train, yellow bus, ferry, airplane and ALL their cast shadows; reconstruct complete unobstructed rail sleepers, asphalt, pavement and water behind them. REMOVE the entire sky, all clouds, distant hills/cliffs/sea beyond the town, distant airfield/runway/hangar (they belong in the separate background layer), overhead foreground branches/leaves and nearest bottom-edge bushes. Those removed upper/background areas must be truly transparent. The remaining middle ground must reach every lower canvas edge as in the reference, except removed foreground foliage is replaced with complete clean ground, never holes in road or water. Keep all buildings, track, road and quay in the reference positions, not isolated floating props, not a newly framed scene. Do not add any vehicle, cloud, foreground branch or distant landscape. Native canvas stays full wide reference frame; do not tightly crop to content.",
       "references": [
-        "../../../../review/scene.png"
+        "../../../review/scene.png"
       ],
       "status": "production candidate; user approval pending",
       "runtimeDerivative": null,
@@ -412,7 +413,7 @@
       "purpose": "Shared-camera landing scenery plane",
       "prompt": "Use case: precise-object-edit. Production game scenery layer, NOT a mockup or interface screenshot. Input image 1 is the approved Transport Miniature World composition/camera reference. Preserve its matte hand-painted miniature model materials, warm stone buildings, navy roofs, bright soft daylight, coherent elevated three-quarter perspective, exact shared 16:9 canvas and spatial registration (1672 by 941 reference). No text, UI, logos, people, labels, watermark, white frame or baked checkerboard. Create ONLY a complete quiet blue SKY BACKPLATE. Match the original cheerful daylight azure with subtle hand-painted tonal variation, slightly paler toward the lower horizon. Fill the ENTIRE wide 16:9 canvas with opaque sky extending behind all later layers. Remove absolutely all clouds, land, water, trees, vehicles, buildings and interface. No sun disc, no birds, no gradients to white edges. This is a clean reusable sky texture with no baked moving objects.",
       "references": [
-        "../../../../review/scene.png"
+        "../../../review/scene.png"
       ],
       "status": "production candidate; user approval pending",
       "runtimeDerivative": null,
@@ -459,7 +460,7 @@
       "prompt": "Use case: stylized-concept. Production transparent game sprite, additional registered view of the SAME single short red-and-cream diesel railcar. Reference 1 is the exact railcar identity (body, navy roof, cream window band, twin round headlamps, railway bogies). Reference 2 is the town CAMERA and curved rail contact reference. Render a much MORE FRONT-ON, FORESHORTENED elevated view: large cab front dominant at lower right, the short body recedes DIAGONALLY toward upper left at roughly 45 degrees in the image. Both near-side railway wheelset contact points must recede along that upper-left/lower-right diagonal, matching the nearer left-hand curve in the town, NOT the mostly horizontal side view of reference 1. Vertical cab edges stay upright; do not rotate a flat side picture. Same matte miniature hand-painted material and upper-left lighting. Complete single railcar on genuine alpha transparency, no rails, floor, cast shadow, glow, backdrop, labels, other vehicles or UI. Generous padding around all parts. One actor, one view, no atlas. Do not add coaches or change livery. This will be the front-quarter asset; the previous side asset is retained for its own view.",
       "references": [
         "train.png",
-        "../../../../review/scene.png"
+        "../../../review/scene.png"
       ],
       "status": "production candidate; user approval pending",
       "runtimeDerivative": null,
@@ -519,7 +520,7 @@
       "purpose": "Superseded railcar source retained for provenance",
       "prompt": "Use case: stylized-concept. Production transparent game actor for Transport landing. Input reference is the selected Miniature World town: match its matte hand-painted wooden/resin model textures, soft daylight from upper left, navy/cream palette, elevated three-quarter camera and toy-scale realism, NO vehicle faces. Output a single complete isolated vehicle on genuine alpha transparency, centred with comfortable transparent padding, all parts inside canvas. No text, UI, logos, captions, scenery, track, road, water, landscape, podium, white background or checkerboard. No opaque ground patch or detached cast shadow. Keep wheels/keel/landing gear clearly defined for contact registration. A single short red-and-cream diesel passenger RAILCAR in the same miniature design as the train at the reference's left station. ONE compact self-propelled passenger car, not a locomotive plus trailing cars: this actor must negotiate the scene's curved track. Front three-quarter view, cab nose facing screen RIGHT and toward the viewer (diagonal down-right), long windowed side extends back to screen LEFT, visible navy roof from the modestly elevated camera. Correct steel train wheelsets/bogies and undercarriage, no road tyres, no track beneath it. Twin round pale headlamps, navy cab glass, cream band through side windows. Entire car in frame on transparent background, landscape canvas, fill about 80% width. No smoke, no steam, no human face.",
       "references": [
-        "../../../../review/scene.png"
+        "../../../review/scene.png"
       ],
       "status": "superseded, not served in asset review",
       "runtimeDerivative": null,
