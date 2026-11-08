@@ -7,10 +7,10 @@ function fitTeachingSubject(element,item){
   element.dataset.teachingId=item.id;
   const fit=()=>{
     const current=vehicles.find(v=>v.id===element.dataset.teachingId),frame=current&&TransportTeachingBounds[current.image];
-    if(!frame)return;const rect=element.getBoundingClientRect(),[x,y,w,h]=frame.crop;if(!rect.width||!rect.height)return;
-    const scale=Math.min(rect.width/w,rect.height/h);
+    if(!frame)return;const width=element.clientWidth,height=element.clientHeight,[x,y,w,h]=frame.crop;if(!width||!height)return;
+    const scale=Math.min(width/w,height/h);
     element.style.backgroundSize=`${frame.size[0]*scale}px ${frame.size[1]*scale}px`;
-    element.style.backgroundPosition=`${(rect.width-w*scale)/2-x*scale}px ${(rect.height-h*scale)/2-y*scale}px`;
+    element.style.backgroundPosition=`${(width-w*scale)/2-x*scale}px ${(height-h*scale)/2-y*scale}px`;
   };
   if(!teachingFitObserver){teachingFitObserver=new ResizeObserver(fit);teachingFitObserver.observe(element);}
   fit();
