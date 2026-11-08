@@ -30,3 +30,7 @@ Next: lifecycle/Teacher/curriculum foundations and the outstanding v6 work. Tran
 Refreshed blueprint/naming read from Plants 355c45f. User-requested Plants fetch/pull completed: clean existing branch already current; source preview 4250 reused, no Plants runtime edit or deployment. Local and live Plants viewed as reference (launch/menu, Patrol/control structure, Teacher, Media/book/films and spelling composition), not a reopened acceptance audit.
 
 Second functional batch: active-time delayed work with independent named holds, hidden-tab animation/speech/effects hold, navigation/round cleanup and mute stopping active effects. Existing CSS art/choreography preserved; this is controller repair, not a new animation concept. Shared GSAP/MotionPath production and approved recorded audio migration remain pending. No tests before its commit/push checkpoint.
+
+## Latest review and upgrade order
+
+Read docs/UPGRADE-PLAN.md for the current ordered plan and post-push lifecycle evidence. The supplied comparison ZIP and its three report/task/start documents are reference evidence; retain their dated snapshots without re-running the same audit. Five focused scheduler tests and bounded Chrome startup/Wheel-exit review passed after 112a006; real Teacher UI/scopes and physical-tab/OS checks remain open. Preview 4251 is restored/current for user inspection. No broader v6-completion claim follows.

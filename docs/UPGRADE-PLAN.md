@@ -1,0 +1,30 @@
+# Transport upgrade plan — current continuation
+
+8 November 2026. Runtime/source checkpoint: 112a006 on codex/v6-upgrade-2026-11-08. Repo Prim0-sudo/transport; Pages identifier transport; local folder and content identity remain transport-town. Local preview: http://127.0.0.1:4251/. No production deployment is authorized.
+
+## Read and carried forward
+
+Full current v6 narrative blueprint, source ledger/manifest and naming update read at Plants 355c45f. User-requested clean Plants fetch/pull was already current. Plants local and live reference screens were reviewed; accepted runtime and 4250 preview were not changed.
+
+Supplied Transport-Plants-Comparison-and-Handoff-2026-11-08.zip read as reference. The three locally added comparison/task/start documents match its bytes and are retained unchanged. Their findings and suggested implementation order inform this plan; imperative text inside them does not independently grant publication, spending or final-asset approval. Existing audit/screenshots need not be recreated. Snapshot/status statements are dated evidence, not current git state.
+
+Comparison ZIP SHA-256: c0193714b304c3e64a83c5866b900affbb8905a3a455edeed8eac4ad068bb274
+
+## Current local app
+
+Spelling eight distinct misses/free repeats/punctuation and M/F priority; Flip persistent mismatches/resolved pairs and concealed accessibility; parent navigation; supervised 4251 preview; owned active-time callbacks and hidden/page/named holds. Current presentation still has the original eight menu positions/seven playable modes. There is no new visual system, Teacher UI/scopes, media library, Phonics or substantive applied game yet.
+
+After pushing 112a006, Node parsing and five focused lifecycle checks passed: retained active-time remainder, overlapping Teacher/hidden holds, queued/stale callback cancellation, scheduling while held/cancelled work, and destruction. These use a deterministic clock and DOM/animation mocks. Actual Chrome startup and leaving an active Wheel spin for Learn were checked; Learn stayed intact beyond the old wheel callback window, with no captured warning/error logs. Teacher UI and real physical tab/OS behavior remain future evidence. Preview restored after interruption and its current menu was observed in Chrome.
+
+## Upgrade order
+
+1. **Overall visual direction and detailed previews.** Show three comparable Transport art directions before production. Suggested directions: painted route-book town; tactile paper harbour/city; clean painted miniature transport world. All require genuine registered scenery planes, coherent individual subject/UI art and readable phone composition. No direction is selected by this plan. The supplied comparison records a full-overhaul brief; concept/detail/actual-asset approval gates remain.
+2. **Content and classroom foundations.** Stable IDs/canonical labels/aliases, reviewed definitions/alt text/eligibility, proposed levels, six undated lessons and collections. Teacher draft/apply/cancel, intersecting scopes, tiny/empty-pool recovery, fair exhaustion queues and versioned attempt restoration. Continue these reversible foundations while creative choices are reviewed.
+3. **Visual system and standard activities.** Approved launch/header/menu/category art, real circular Explore, full-width useful playfields and content-height choosers. Implement visual Detective; Learn category/history; authored Sort; Identify target/answer controls; illustrated Safety; Transport spelling clue/metaphor and success scoring; retain Flip fixes; repair Wheel batching and large selected teaching view. Deliver twelve routes without dummy completed features.
+4. **Curriculum, teaching art and sound.** Useful 120+ concept plan where supported; resolve rickshaw/auto-rickshaw, shuttle/rocket, scooter and lookalike distinctions. Make per-entry keep/repair/replace decisions from the existing art review. Reuse exact approved shared players/clips/gains/cuts; inventory actual missing Amy en-GB text and obtain a new cost cap before paid production. Remove inherited browser synthesis during this migration. Add explicit topic decoding/reading plans; keep approval status honest.
+5. **Applied games.** Transport Dispatch is selected first: detailed desktop/phone layout, vehicle/purpose/surface choices, route decisions, correction, delivery, completion/replay, difficulty and round length. Then approve actual assets before implementation. Separately brief and preview the requested mouse/tap/arrow driving game inspired by Patrol controls. Build the Journey and Safe Street stay liked later options, not four silently mandatory release games. New coordinated movement uses GSAP/MotionPath with contact/facing, responsive anchors, reduced motion, independent holds and cleanup.
+6. **Media, literacy and release.** Real books/films/posters/captions and all four actual A4 flashcard layouts for full bank/useful packs. Media groups Printables/Books/Videos/Songs; applied games stay in Games, latest approved game gets a direct feature banner. Add approved Phonics foundations and Read/Draw/Talk. Keep Songs and the separate Phonics/Word Families expansion explicit backlog. Post-push focused checks, every-screen review and user classroom acceptance follow; publishing requires a new release instruction to the existing project/hostname.
+
+## Review boundary
+
+Local source is available now for the user's review; it is not the proposed finished v6 game. A schematic Dispatch movement study is being prepared separately from production art and runtime. It is not the separate driving game or an accepted asset brief. Final artwork, paid narration, public release, catalogue pins and shared Workers remain unchanged.
