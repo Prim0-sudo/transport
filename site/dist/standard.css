@@ -8,7 +8,7 @@
 .game-screen .vehicle-emoji{animation:none;transform:none}
 .game-screen .question-helper:empty,.game-screen .feedback:empty{display:none}
 .game-screen .question-helper{display:block;max-width:85ch;line-height:1.5;margin:8px auto 14px}
-.game-screen .game-card h2:empty{display:none}
+.game-screen .game-card h2:empty{display:none!important}
 .game-screen .game-card[data-mode=wheel] h2,.game-screen .game-card[data-mode=hangman] h2,.game-screen .game-card[data-mode=flip]:has(.flip-setup) h2{display:block}
 .game-screen .answers{width:100%;margin-top:16px;gap:12px}
 .game-screen .answer-btn{min-height:80px;border-width:2px;border-radius:16px;gap:12px;padding:14px}

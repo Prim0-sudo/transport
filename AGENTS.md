@@ -1,6 +1,6 @@
 # Transport reference requirement
 
-Current user direction: stop landing-page work. Follow docs/UPGRADE-PLAN.md in order. Step 2 content/classroom foundations are now implemented; consult docs/CLASSROOM-FOUNDATIONS.md for evidence and continue with standard activities next. Do not resume landing art/animation as a detour. Consult the blueprint and Plants before changes.
+Current user direction: stop landing-page work. Follow docs/UPGRADE-PLAN.md in order. Step 2 content/classroom foundations and step 3 standard-activity functionality are implemented; consult docs/CLASSROOM-FOUNDATIONS.md and docs/STANDARD-ACTIVITIES.md for evidence. Continue with step 4 curriculum/art/audio preparation; new art remains subject to review. Do not resume landing art/animation as a detour. Consult the blueprint and Plants before changes.
 
 User instruction, 8 November 2026: before any Transport work, consult the relevant blueprint section or one of the two accepted example sites (Plants or Our Town). Do not invent shared structures or behaviours from memory. Record the applicable source in the work notes and check the result against it.
 

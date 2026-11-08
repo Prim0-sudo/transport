@@ -1,6 +1,6 @@
 # Transport Town — current upgrade handoff
 
-Current direction: landing work is stopped by explicit user instruction. Step 2 content/classroom foundations are implemented and verified for the existing 30-word bank. Read docs/CLASSROOM-FOUNDATIONS.md and docs/UPGRADE-PLAN.md before continuing; next is step 3's standard-activity work, not more landing animation. Local actual classroom app: http://127.0.0.1:4251/ (Teacher is available); /review/ and /review/landing-assets/ are earlier authoring/asset reviews. Current checkpoints: f543b7d foundations, 55491aa recovery hardening, ead3441 preview reload correction. Fourteen focused tests pass and actual modal/attempt restoration checks are recorded. Follow AGENTS.md's mandatory blueprint/Plants consultation. No production release.
+Current direction: landing work remains stopped. Step 2 foundations and step 3 standard-activity functionality are implemented for the existing 30-word bank, with 25 focused tests and bounded actual browser/phone-viewport review. Read docs/UPGRADE-PLAN.md, CLASSROOM-FOUNDATIONS.md, STANDARD-ACTIVITIES.md and PROGRESS-REPORT-2026-11-09.md. Next is step 4 curriculum/art/audio preparation; new teaching/menu art still needs review. Local actual app: http://127.0.0.1:4251/. Twelve menu destinations are navigable; four hubs have honest availability, not completed content. Consult AGENTS.md and the relevant Plants blueprint/source before changes. No public release.
 
 Landing history: user approved actual Miniature World scenery/vehicle assets, then authorized integration at 859d8af before subsequently stopping that work. Its animation verification remains incomplete; preserve the current files without further landing work. The approved assets/provenance are under artwork/landing/miniature-world-v1/. Dispatch and the separate driving game remain later planned work, not implemented activities.
 
@@ -21,7 +21,7 @@ Read docs/V6-UPGRADE-2026-11-08.md for inventory, evidence limits and ordered re
     npm start
     npm run preview:status
 
-Preview: http://127.0.0.1:4251/. Node built-ins only; no npm install/build needed. Hidden supervisor reuses the correct workspace server, recovers a failed child and refuses another service's port. Logs/state are ignored under .preview. Source edits are served fresh; CSS refreshes in place, JS/HTML/image changes reload after debounce. No evidence/docs watcher. No app-state persistence claim.
+Preview: http://127.0.0.1:4251/. Node built-ins only; no npm install/build needed. Hidden supervisor reuses the correct workspace server, recovers a failed child and refuses another service's port. Logs/state are ignored under .preview. Source edits are served fresh; CSS refreshes in place, JS/HTML/image changes reload after debounce. No evidence/docs watcher. Versioned browser-local attempt persistence is implemented; see CLASSROOM-FOUNDATIONS.md for its scope.
 
 First batch implemented and pushed as 1a09ad4, with focused corrections ed8c3f7. Post-push parsing, focused model assertions, bounded Chrome spelling/Flip/accessibility/menu review, simulated phone size and preview reuse/recovery passed. Exact evidence/limits are in the audit. No new art, concept production, paid speech or deployment.
 
