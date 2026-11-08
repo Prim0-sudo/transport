@@ -40,3 +40,15 @@ Measure support/tyre contacts, native facing, scale, door, platform endpoints, m
 ## Approval boundary
 
 User is reviewing composition, gameplay sequence, correction, movement pacing, phone arrangement and the proposed difficulty/length split. Approval of this detailed preview permits the next actual-asset production/review stage; it is not final asset approval or deployment permission. Exact actor art and whole-cycle contact will be reviewed again once real assets exist. Songs and Phonics/Word Families expansion remain explicit series backlog.
+
+## Focused review evidence
+
+Preview code/docs were committed and pushed as 3c5b2cc before checks. Spacing correction 3af5183 moved passenger count clear of the route; 86275e4 replaced native form submission (blocked by the review iframe sandbox) with an explicit Apply action. Each correction was pushed before its affected recheck. Runtime site/dist was not changed.
+
+- JavaScript parsing passed. Actual in-app-browser preview exercised Van capacity/Ferry surface correction, six-passenger boarding, closed-bridge correction, bypass dispatch, station stopping and unloading, and one earned delivery in Medium with normal motion.
+- Teacher opened during travel; the actor transform remained unchanged while open. Close resumed the unfinished journey. No real hidden-tab or OS-preference claim follows; those hooks are implemented but not physically certified here.
+- Hard with the explicit reduced-motion preview collected two at school, continued with eight and unloaded all eight. Easy accepted the bridge; a subsequent replay used the alternate bypass and retained one earned delivery without adding another. These are preview interactions, not Transport runtime regression or final sprite acceptance.
+- Phone mode measured 390 CSS px, scrollWidth 390 and zero horizontally overflowing controls. Passenger count no longer overlaps the route. Desktop reset to the initial Medium/normal-motion state. Captured warning/error log was empty after the final review.
+- Preview uses schematic markers and a flattened illustrated composition. Native-facing/contact quality of real directional sprites, four actual planes, complete physical-device checks and production narration remain future gates. No final assets, paid speech or deployment occurred.
+
+Built-in concept/layout prompts and reference/edit chain: artwork/previews/2026-11-08-miniature-world/PROMPTS.md. User approval of the detailed proposal is still pending.
