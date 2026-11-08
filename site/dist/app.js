@@ -894,6 +894,7 @@ function finishGame() {
   const ratio = state.score / total;
   els.stars.textContent = ratio >= .85 ? "⭐⭐⭐" : ratio >= .55 ? "⭐⭐" : "⭐";
   if(state.practice)els.stars.textContent='Practice complete';
+  document.querySelector('.result-score').hidden=Boolean(state.practice);
   els.resultMessage.textContent = state.mode === "safety" ? "You made safe travel choices!" : state.mode === "sort" ? "You know where vehicles travel!" : state.mode === "identify" ? "You identified all the transportation pictures!" : state.mode === "hangman" ? "You built transport words before the ice cream melted!" : state.mode === "flip" ? "You found every vocabulary match!" : state.mode === "wheel" ? "You practised every vocabulary word!" : `You reviewed all ${vehicles.length} transportation words!`;
   showScreen("results");
   speak(`Round complete! You got ${state.score} out of ${total}.`);
@@ -1038,7 +1039,7 @@ document.addEventListener("keydown", e => {
   if (work.held || e.defaultPrevented || e.isComposing || e.ctrlKey || e.altKey || e.metaKey ||
       e.target.closest?.("input, textarea, select, [contenteditable]:not([contenteditable='false'])")) return;
   const active = screens.game.classList.contains("active");
-  if (active && state.mode === "hangman" && /^[a-z]$/i.test(e.key)) {
+  if (active && !state.recovery && state.mode === "hangman" && /^[a-z]$/i.test(e.key)) {
     e.preventDefault();
     chooseHangmanLetter(e.key.toLowerCase());
     return;
@@ -1068,4 +1069,13 @@ document.addEventListener('click',saveAfterInput);
 document.addEventListener('keydown',saveAfterInput);
 window.addEventListener('pagehide',()=>rememberAttempt(true));
 window.addEventListener("pagehide", () => work.setHold("page", true));
-window.addEventListener("pageshow", () => work.setHold("page", false));
+window.addEventListener('pageshow',event=>{
+  if(event.persisted&&!activeSession&&state.sessionKey&&screens.game.classList.contains('active')){
+    const variant=JSON.parse(state.sessionKey)[4];
+    const session=classroom.prepare(state.mode,classroom.scope,variant);
+    const pending=state.questions.map(questionId).filter(id=>!(state.completedIds||[]).includes(id));
+    if(session.key===state.sessionKey&&classroom.claim(session,pending))activeSession=session;
+    else showScopeRecovery(state.mode,'The saved activity changed while this page was away. Choose how to continue.',true);
+  }
+  work.setHold('page',false);
+});

@@ -12,7 +12,7 @@
       this.data={schema:1,revision:curriculum.revision,scope:curriculum.normaliseScope(),cycles:{},attempts:{}};
       try{
         const raw=this.storage?.getItem(this.storageKey);
-        if(raw){const saved=JSON.parse(raw);if(saved.schema===1&&saved.revision===curriculum.revision&&saved.cycles&&saved.attempts&&typeof saved.cycles==='object'&&typeof saved.attempts==='object')this.data=saved;else this.notice='Older saved progress could not be restored. Choose a selection to begin.';}
+        if(raw){const saved=JSON.parse(raw);if(saved.schema===1&&saved.revision===curriculum.revision&&saved.cycles&&saved.attempts&&!Array.isArray(saved.cycles)&&!Array.isArray(saved.attempts)&&typeof saved.cycles==='object'&&typeof saved.attempts==='object')this.data=saved;else this.notice='Older saved progress could not be restored. Choose a selection to begin.';}
       }catch{this.notice='Saved progress could not be read. This tab can still be used.';}
       this.data.scope=curriculum.normaliseScope(this.data.scope);
       // A reload releases reservations. A valid saved attempt will reclaim its exact IDs.
@@ -30,7 +30,7 @@
     prepare(mode,scope=this.scope,variant='default'){
       const pool=this.pool(mode,scope),ids=pool.map(i=>i.id),signature=[...ids].sort().join('|'),key=this.base(mode,scope,variant);
       let cycle=this.data.cycles[key],invalidated=false;
-      const badCycle=cycle&&(!Array.isArray(cycle.remaining)||!Array.isArray(cycle.held)||!Array.isArray(cycle.completed)||[...cycle.remaining,...cycle.held,...cycle.completed].some(id=>!ids.includes(id))||new Set([...cycle.remaining,...cycle.held,...cycle.completed]).size!==ids.length);
+      const badCycle=cycle&&(!Array.isArray(cycle.remaining)||!Array.isArray(cycle.held)||!Array.isArray(cycle.completed)||[...cycle.remaining,...cycle.held,...cycle.completed].some(id=>!ids.includes(id))||cycle.remaining.length+cycle.held.length+cycle.completed.length!==ids.length||new Set([...cycle.remaining,...cycle.held,...cycle.completed]).size!==ids.length);
       if(!cycle||cycle.signature!==signature||badCycle){
         invalidated=Boolean(this.data.attempts[key]);delete this.data.attempts[key];
         cycle=this.data.cycles[key]={signature,remaining:this.shuffle(ids),held:[],completed:[],last:null};

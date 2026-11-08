@@ -65,3 +65,13 @@ test('corrupt or old storage falls back honestly; quota failure retains this-tab
  storage.setItem('transport-town.classroom.v1',JSON.stringify({schema:0}));assert.ok(fixture(storage).game.notice);
  const failing={getItem:()=>null,setItem:()=>{throw Error('quota');}},q=fixture(failing).game;q.apply({level:'2',collection:'farm'});assert.equal(q.persistent,false);assert.equal(q.words().length,1);assert.match(q.notice,/tab only/);
 });
+test('explicit identity survives source order changes',()=>{
+ const legacy={scooter:'scooter',rickshaw:'rickshaw',subway:'subway (metro)'};
+ const entries=[...C.rows].reverse().map(([key,name])=>({name:legacy[key]||name,zone:'land',iconImages:[`images/${key}.png`]}));
+ const questions=Array.from({length:8},()=>({answers:[['A',''],['B',''],['C','']]}));C.prepare(entries,questions);
+ assert.equal(entries[0].id,'vehicle.space-shuttle');assert.equal(entries.at(-1).id,'vehicle.car');
+});
+test('duplicate IDs or missing IDs in a persisted cycle invalidate its attempt',()=>{
+ const {game}=fixture(),s=game.prepare('learn');game.save(s,{round:0});s.cycle.remaining.push(s.cycle.remaining[0]);
+ assert.equal(game.prepare('learn').invalidated,true);assert.equal(game.prepare('learn').cycle.remaining.length,30);
+});

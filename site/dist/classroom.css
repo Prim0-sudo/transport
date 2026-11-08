@@ -1,4 +1,5 @@
 /* Classroom controls stay inside Teacher; no permanent child-facing filter wall. */
+.result-score[hidden]{display:none!important}
 .landing-teacher{max-height:calc(100svh - 28px);overflow-y:auto}
 #teacherScopeFields{display:grid;gap:12px}
 #teacherScopeFields label{display:grid;gap:6px}
