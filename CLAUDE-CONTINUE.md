@@ -19,7 +19,8 @@ Commits made by Claude this round (newest last):
 | d23e839 | Merged Codex's `codex/transport-art-restart` (Painted Field Guide art) into main |
 | (art) | Wired the new art into the app (see below) |
 | 44267de | Media page rebuilt to the Plants layout |
-| (next) | Meet the Words matched to Plants |
+| 7123726 | Meet the Words matched to Plants |
+| (next) | Sort It matched to Plants |
 
 ## Painted Field Guide art (wired in 2026-11-09)
 
@@ -60,6 +61,18 @@ Commit identity: `git -c user.name=Prim0-sudo -c user.email=Prim0-sudo@users.nor
 - Results (all games): Activity complete, Wonderful travelling!, N stars (Plants rule), score / total, message; Learn shows Next session. Bus picture stands in for completion art.
 - Game screen now top-aligned (was centred, left a gap under the top bar); phone header is two rows.
 - Missing art vs Plants: painted All words cover, completion picture, painted group covers (Transport uses single vocabulary pictures), close-up detail insets on part words, painted menu-card art.
+
+## Sort It (matched to Plants 2026-11-09)
+
+- Four rules like Plants: Land/water/air, People/engine power, plus new Rails or road? and People or loads? (notes say what is left out). Session variants now rule:<id> for any rule except surfaces.
+- Rule cards: pictures, title, count, About this rule (description + notes), Play; Change teaching selection button.
+- Rounds: Round n/10 label, Listen text button (all quiz games), no helper line or repeated name under the picture, picture height 30dvh so the round fits a PC screen, picture-over-label answer cards.
+- Feedback (all quiz games): green Correct! <word>: <reason> bar with Next, yellow Not that one. Try again! bar, small confetti on correct.
+- Missing art: none new; vocabulary PNGs have wide transparent margins so small icons look tiny (a trimmed icon set would help).
+
+## Queued by owner (after every activity matches Plants)
+
+- Plants presentation: design a full-topic PPT for the Plants game covering every category (everything the videos cover, plus more), and add a separate Media tab called Presentation for it.
 
 ## Open work (owner decides order)
 

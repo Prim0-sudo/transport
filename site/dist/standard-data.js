@@ -27,6 +27,14 @@
       {id:'people',label:'People power',image:'images/vocabulary/vehicle.bicycle.png',members:ids('bicycle scooter skateboard rickshaw cycle-rickshaw cargo-bicycle rowboat canoe kayak'),explanation:'A person pedals, pushes or pulls it.'},
       {id:'engine',label:'Engine power',image:'images/vocabulary/vehicle.car.png',members:ids('car bus motorcycle train subway taxi truck van tram minibus school-bus police-car ambulance fire-engine tractor ship ferry speedboat jet-ski airplane helicopter motor-scooter auto-rickshaw coach double-decker-bus tow-truck refuse-truck concrete-mixer tipper-truck tugboat'),explanation:'An engine or motor powers it.'},
     ]},
+    {id:'rails',label:'Rails or road?',description:'Does it run on rails, or drive on the road?',notes:'Some trams share the street with cars, but they still run on rails. Bicycles, boats and aircraft are left out of this rule.',prompt:name=>`Does the ${name} run on rails or on the road?`,groups:[
+      {id:'rails',label:'Rails',image:'images/vocabulary/vehicle.train.png',members:ids('train subway tram'),explanation:'It runs on rails.'},
+      {id:'road',label:'Road',image:'images/vocabulary/vehicle.car.png',members:ids('car bus taxi truck van minibus school-bus police-car ambulance fire-engine coach double-decker-bus tow-truck refuse-truck concrete-mixer tipper-truck'),explanation:'It drives on the road.'},
+    ]},
+    {id:'loads',label:'People or loads?',description:'Is it mainly made to carry people, or to carry loads?',notes:'Sort by the main job. Many vehicles can carry both; vehicles with a special job, such as a fire engine, are left out.',prompt:name=>`What does the ${name} mainly carry?`,groups:[
+      {id:'people',label:'People',image:'images/vocabulary/vehicle.bus.png',members:ids('bus taxi minibus school-bus coach double-decker-bus rickshaw auto-rickshaw cycle-rickshaw'),explanation:'It is mainly made to carry people.'},
+      {id:'loads',label:'Loads',image:'images/vocabulary/vehicle.truck.png',members:ids('truck van tow-truck refuse-truck concrete-mixer tipper-truck cargo-bicycle'),explanation:'It is mainly made to carry loads.'},
+    ]},
   ];
   const silhouetteIds=new Set(ids('bicycle scooter helicopter hot-air-balloon skateboard rickshaw tractor'));
   // All 24 scenes are generated into images/teaching-scenes/library.js from the scene ledger.
@@ -66,10 +74,10 @@
     if(mode==='detective')return pool.filter(item=>kind!=='silhouette'||item.silhouetteEligible);
     return pool;
   }
-  const variantFor=(mode,setup={})=>mode==='detective'?`${setup.kind}:${setup.duration}`:mode==='sort'?(setup.rule==='power'?'rule:power':'default'):['learn','wheel'].includes(mode)&&setup.category&&setup.category!=='all'?`category:${setup.category}`:'default';
+  const variantFor=(mode,setup={})=>mode==='detective'?`${setup.kind}:${setup.duration}`:mode==='sort'?(setup.rule&&setup.rule!=='surfaces'?`rule:${setup.rule}`:'default'):['learn','wheel'].includes(mode)&&setup.category&&setup.category!=='all'?`category:${setup.category}`:'default';
   function setupFor(mode,variant='default'){
     if(mode==='detective'){const [kind,duration]=variant.split(':');return {kind,duration:Number(duration)};}
-    if(mode==='sort')return {rule:variant==='rule:power'?'power':'surfaces'};
+    if(mode==='sort')return {rule:variant.startsWith('rule:')?variant.slice(5):'surfaces'};
     return {category:variant.startsWith('category:')?variant.slice(9):'all'};
   }
   function guessSpelling(round,letter){

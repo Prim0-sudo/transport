@@ -346,7 +346,7 @@ function restoreAttempt(session) {
       }
     }
     if(answered&&mode!=='wheel'){
-      els.feedback.replaceChildren();
+      els.feedback.replaceChildren();els.feedback.className='feedback is-correct';
       const message=saved.ui?.feedbackText||(mode==='safety'?state.questions[state.round].explain:'');
       if(message){const p=document.createElement('p');p.textContent=message;els.feedback.append(p);}
       const next=document.createElement('button');next.className='next-btn';next.id='nextBtn';next.textContent=mode==='flip'?'Finish game':'Next';
@@ -394,7 +394,7 @@ function renderQuestion() {
   els.hangmanWin.hidden = true;
   els.hangmanSadRain.hidden = true;
   const longRound = state.mode === "sort" || state.mode === "sound" || state.mode === "identify" || state.mode === "hangman";
-  els.round.textContent = `${state.round + 1}/${total}`;
+  els.round.textContent = `Round ${state.round + 1}/${total}`;
   els.progress.style.width = `${(state.round / total) * 100}%`;
   els.score.textContent = state.score;
   els.answers.innerHTML = "";
@@ -407,7 +407,7 @@ function renderQuestion() {
   const info = modeInfo[state.mode];
   els.modeBadge.textContent = info.badge;
   els.helper.textContent = info.helper;
-  els.listen.textContent = "🔊";
+  els.listen.textContent = "Listen";
   els.emojiToggle.hidden = true;
   els.emojiToggle.textContent = state.identifyEmojis ? "🙈" : "🖼️";
   els.emojiToggle.title = state.identifyEmojis ? "Hide answer pictures" : "Show answer pictures";
@@ -755,8 +755,8 @@ function chooseAnswer(btn, correct, explain, revealVehicle) {
     state.wrongThisRound = true;
     btn.classList.add("wrong");
     btn.disabled = true;
-    els.feedback.className = "feedback";
-    els.feedback.textContent = 'Try another choice.';
+    els.feedback.className = "feedback is-try";
+    els.feedback.textContent = 'Not that one. Try again!';
     tone(180, 0, .18, "sine", .08);
     return;
   }
@@ -776,7 +776,8 @@ function chooseAnswer(btn, correct, explain, revealVehicle) {
     }
   }
   els.feedback.className = "feedback";
-  standardFeedback(explain);
+  standardFeedback(`Correct! ${explain}`);
+  burstConfetti(28);
   els.score.textContent = state.score;
   tone(523, 0, .16); tone(659, .16, .16); tone(784, .32, .28);
   document.getElementById("nextBtn").onclick = nextQuestion;

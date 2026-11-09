@@ -151,14 +151,17 @@ function renderTeachingScenes(){
   focusLandingHeading('questionText');
 }
 function renderStandardSortRules(){
-  renderStandardSetup('sort','Choose a sorting rule','Each rule names exactly what to compare.');els.round.textContent='Sorting rules';
-  const grid=document.createElement('div');grid.className='standard-choice-grid';let available=0;
+  renderStandardSetup('sort','Choose a sorting rule');els.round.textContent='Sorting rules';
+  const grid=document.createElement('div');grid.className='sorting-rules';let available=0;
   for(const rule of TransportStandard.sortRules){const pool=filteredStandardPool('sort',{rule:rule.id}),groups=TransportStandard.availableGroups(rule,pool),valid=groups.length>=2;available+=valid?1:0;
-    const button=standardButton('',()=>startGame('sort',{setup:{rule:rule.id}}),'standard-choice');
-    button.innerHTML=`<span class="rule-pictures">${rule.groups.map(group=>`<img src="${group.image}" alt="">`).join('')}</span><strong>${rule.label}</strong><span>${pool.length} words${valid?'':' · At least two groups needed'}</span><small>${rule.description}</small>`;
-    button.disabled=!valid;grid.append(button);
+    const card=document.createElement('section');card.className='sorting-rule';
+    card.innerHTML=`<span class="rule-pictures">${rule.groups.map(group=>`<img src="${group.image}" alt="">`).join('')}</span><h3>${standardEscape(rule.label)}</h3><p class="sorting-count">${pool.length} words</p><details class="sorting-note"><summary>About this rule</summary><p>${standardEscape(rule.description)}</p><p>${standardEscape(rule.notes)}</p></details>`;
+    const play=standardButton('Play',()=>startGame('sort',{setup:{rule:rule.id}}),'standard-action sorting-play');play.disabled=!valid;card.append(play);
+    if(!valid){const note=document.createElement('p');note.className='sorting-note';note.textContent='Choose words from both groups.';card.append(note);}
+    grid.append(card);
   }
-  els.answers.append(grid);if(!available)standardRecoveryActions(els.answers);
+  const row=document.createElement('div');row.className='standard-actions learn-actions';row.append(standardButton('Change teaching selection',()=>document.getElementById('teacherBtn').click()));
+  els.answers.append(grid,row);
 }
 function renderStandardDetectiveSetup(){
   const pref=classroom.data.preferences?.detective||{kind:'mosaic',duration:45};
@@ -221,8 +224,9 @@ function renderStandardLearn(){
 }
 function renderStandardSort(){
   const item=state.questions[state.round],rule=TransportStandard.ruleFor(state.setup?.rule||'surfaces');
-  els.question.textContent=rule.prompt(item.name);els.helper.textContent=rule.description;setVehicle(item,true);setStandardBack('Sorting rules');
-  for(const group of TransportStandard.availableGroups(rule,activeSession.pool))makeAnswer(group.label,'',group.members.includes(item.id),group.explanation,false,group.image,`${rule.id}.${group.id}`);
+  els.question.textContent=rule.prompt(item.name);els.helper.textContent='';setVehicle(item,true);els.name.textContent='';setStandardBack('Sorting rules');
+  const answer=rule.groups.find(group=>group.members.includes(item.id));
+  for(const group of TransportStandard.availableGroups(rule,activeSession.pool))makeAnswer(group.label,'',group.members.includes(item.id),`${item.name}: ${answer?.explanation||group.explanation}`,false,group.image,`${rule.id}.${group.id}`);
 }
 function renderStandardIdentify(){
   const round=state.questions[state.round],item=round.vehicle,pref=standardPreferences();
@@ -247,7 +251,7 @@ function renderStandardDetective(){
     onSolved:reward=>{state.score+=reward;state.answered=true;completeQuestion(round.vehicle.id);els.score.textContent=state.score;standardFeedback(`${round.vehicle.name}. ${round.vehicle.definition}${reward?'':' This was practice.'}`,nextQuestion);rememberAttempt();},
     onPractice:()=>{state.answered=true;completeQuestion(round.vehicle.id);nextQuestion();},onSave:()=>rememberAttempt()});
 }
-function standardFeedback(text,next=nextQuestion){els.feedback.replaceChildren();const p=document.createElement('p');p.textContent=text;const button=standardButton('Next',next,'next-btn');button.id='nextBtn';els.feedback.append(p,button);}
+function standardFeedback(text,next=nextQuestion,tone='correct'){els.feedback.replaceChildren();els.feedback.className=`feedback is-${tone}`;const p=document.createElement('p');p.textContent=text;const button=standardButton('Next',next,'next-btn');button.id='nextBtn';els.feedback.append(p,button);}
 function renderStandardSpelling(){
   const round=state.questions[state.round],item=round.vehicle,letters=hangmanLetters(item.name),guessed=new Set(round.guessed);
   els.question.textContent='Complete the departure word';els.helper.textContent='Eight different wrong letters are allowed. Repeated guesses are free.';
