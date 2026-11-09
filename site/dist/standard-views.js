@@ -171,8 +171,10 @@ function renderStandardDetectiveSetup(){
   const kind=panel.querySelector('[aria-label="Reveal type"]'),duration=panel.querySelector('[aria-label="Reveal duration"]');
   kind.value=['mosaic','pixel','silhouette'].includes(pref.kind)?pref.kind:'mosaic';duration.value=[30,45,60].includes(pref.duration)?String(pref.duration):'45';
   const start=standardButton('Start Detective',()=>{const setup={kind:kind.value,duration:Number(duration.value)};classroom.data.preferences={...classroom.data.preferences,detective:setup};classroom.persist();startGame('detective',{setup});});
-  const update=()=>{const pool=filteredStandardPool('detective',{kind:kind.value}),count=new Set(pool.map(item=>item.pictureGroup)).size;start.disabled=count<2;panel.querySelector('.setup-availability').textContent=count>=2?`${pool.length} eligible pictures. Guess before a full reveal to earn a star.`:'Choose another reveal type or a selection with at least two distinct pictures.';};
-  kind.onchange=update;duration.onchange=update;panel.append(start);els.answers.append(panel);update();standardRecoveryActions(els.answers);
+  start.classList.add('learn-next');const row=document.createElement('div');row.className='standard-actions learn-actions';row.append(start);
+  const recovery=document.createElement('div');
+  const update=()=>{const pool=filteredStandardPool('detective',{kind:kind.value}),count=new Set(pool.map(item=>item.pictureGroup)).size,ok=count>=2;start.disabled=!ok;const note=panel.querySelector('.setup-availability');note.hidden=ok;note.textContent=ok?'':'Choose another reveal type or a selection with at least two distinct pictures.';recovery.hidden=ok;};
+  kind.onchange=update;duration.onchange=update;panel.classList.add('detective-settings');els.answers.append(panel,row,recovery);standardRecoveryActions(recovery);update();
 }
 function renderStandardHub(mode,groupId=null){
   const hub=TransportStandard.hubs[mode];renderStandardSetup(mode,hub.title,hub.description);state.hubGroup=groupId;els.round.textContent=mode==='games'?'Games':mode==='create'?'Reading cards':mode==='phonics'?'Sounds and words':'Resources';
@@ -245,13 +247,15 @@ function renderStandardSafety(){
   if(!pref.safetyAnswers)for(const icon of els.answers.querySelectorAll('.answer-icon'))icon.hidden=true;
 }
 function renderStandardDetective(){
-  const round=state.questions[state.round];els.question.textContent='What is in the hidden picture?';els.helper.textContent=round.reveal.kind==='silhouette'?'Use the outline. Guess, or reveal the picture for practice.':'Start the reveal, then choose Guess when you are ready.';
+  const round=state.questions[state.round];els.question.textContent='What is in the hidden picture?';els.helper.textContent='';
+  els.round.textContent=`Picture ${state.round+1}/${state.questions.length}`;
   els.stage.style.display='none';els.listen.hidden=true;setStandardBack('Detective setup');
   detectiveView=new TransportDetectiveView({root:els.answers,item:round.vehicle,choices:round.choices,reveal:round.reveal,clock:work,held:work.held,
-    onSolved:reward=>{state.score+=reward;state.answered=true;completeQuestion(round.vehicle.id);els.score.textContent=state.score;standardFeedback(`${round.vehicle.name}. ${round.vehicle.definition}${reward?'':' This was practice.'}`,nextQuestion);rememberAttempt();},
+    onWrong:()=>{els.feedback.className='feedback is-try';els.feedback.textContent='Look again and try another word.';},
+    onSolved:reward=>{state.score+=reward;state.answered=true;completeQuestion(round.vehicle.id);els.score.textContent=state.score;standardFeedback(`${round.vehicle.name}. ${round.vehicle.definition}${reward?'':' This was practice.'}`,nextQuestion,'correct',state.round===state.questions.length-1?'See results':'Next');rememberAttempt();},
     onPractice:()=>{state.answered=true;completeQuestion(round.vehicle.id);nextQuestion();},onSave:()=>rememberAttempt()});
 }
-function standardFeedback(text,next=nextQuestion,tone='correct'){els.feedback.replaceChildren();els.feedback.className=`feedback is-${tone}`;const p=document.createElement('p');p.textContent=text;const button=standardButton('Next',next,'next-btn');button.id='nextBtn';els.feedback.append(p,button);}
+function standardFeedback(text,next=nextQuestion,tone='correct',label='Next'){els.feedback.replaceChildren();els.feedback.className=`feedback is-${tone}`;const p=document.createElement('p');p.textContent=text;const button=standardButton(label,next,'next-btn');button.id='nextBtn';els.feedback.append(p,button);}
 function renderStandardSpelling(){
   const round=state.questions[state.round],item=round.vehicle,letters=hangmanLetters(item.name),guessed=new Set(round.guessed);
   els.question.textContent='Complete the departure word';els.helper.textContent='Eight different wrong letters are allowed. Repeated guesses are free.';

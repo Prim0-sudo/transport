@@ -70,6 +70,14 @@ Commit identity: `git -c user.name=Prim0-sudo -c user.email=Prim0-sudo@users.nor
 - Feedback (all quiz games): green Correct! <word>: <reason> bar with Next, yellow Not that one. Try again! bar, small confetti on correct.
 - Missing art: none new; vocabulary PNGs have wide transparent margins so small icons look tiny (a trimmed icon set would help).
 
+## Detective (matched to Plants 2026-11-09)
+
+- Setup: Reveal and Time side by side with labels inline, navy Start Detective; the warning and Change selection / Games only show when the selection cannot play.
+- Round: Picture n/10 label, left-aligned title, no helper line, Reveal and Time shown (locked) above the picture, picture left with a navy frame, gold control column right (Start reveal toggles to Stop reveal), answers under the buttons.
+- Wrong guess uses the yellow feedback bar; solved shows the green bar with Next, or See results on the last picture.
+- Layout keeps two columns down to 761px (tablet) and fits 768x1024, 1280x800 and 375x812 without scrolling; phone hides the locked settings row.
+- Missing art: none new; the mosaic only covers the vehicle (trimmed to its outline), so wide vehicles show a short grid in a tall frame.
+
 ## Queued by owner (after every activity matches Plants)
 
 - Plants presentation: design a full-topic PPT for the Plants game covering every category (everything the videos cover, plus more), and add a separate Media tab called Presentation for it.

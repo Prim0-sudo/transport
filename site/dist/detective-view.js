@@ -3,10 +3,11 @@
  */
 (() => {
   class TransportDetectiveView {
-    constructor({root,item,choices,reveal,clock,held,onSolved,onPractice,onSave}){
-      Object.assign(this,{root,item,choices,reveal,clock,held,onSolved,onPractice,onSave});
+    constructor({root,item,choices,reveal,clock,held,onSolved,onPractice,onSave,onWrong=()=>{}}){
+      Object.assign(this,{root,item,choices,reveal,clock,held,onSolved,onPractice,onSave,onWrong});
       this.active=true;this.last=null;this.savedSecond=-1;
-      root.innerHTML=`<div class="detective-workspace"><div class="detective-picture" role="img" aria-label="Hidden Transport picture"><canvas aria-hidden="true"></canvas><div class="detective-mosaic" aria-hidden="true"></div></div><div class="detective-controls"><p class="detective-time" aria-live="off"></p><div class="standard-actions"><button data-reveal-start>Start reveal</button><button data-reveal-guess>Guess</button><button data-reveal-full>Reveal picture</button></div><div class="detective-choices" hidden></div><p class="detective-status" role="status"></p><button data-reveal-practice hidden>Next picture · practice</button></div></div>`;
+      const kinds={mosaic:'Mosaic reveal',pixel:'Pixel reveal',silhouette:'Silhouette'};
+      root.innerHTML=`<div class="standard-settings detective-settings detective-round-settings"><label>Reveal <select disabled aria-label="Reveal type"><option>${kinds[reveal.kind]}</option></select></label><label>Time <select disabled aria-label="Reveal duration"><option>${reveal.duration} seconds</option></select></label></div><div class="detective-workspace"><div class="detective-picture" role="img" aria-label="Hidden Transport picture"><canvas aria-hidden="true"></canvas><div class="detective-mosaic" aria-hidden="true"></div></div><div class="detective-controls"><p class="detective-time" aria-live="off"></p><div class="standard-actions learn-actions"><button class="standard-action" data-reveal-start>Start reveal</button><button class="standard-action" data-reveal-guess>Guess</button><button class="standard-action" data-reveal-full>Reveal picture</button></div><div class="detective-choices" hidden></div><p class="detective-status" role="status"></p><button data-reveal-practice hidden>Next picture · practice</button></div></div>`;
       this.picture=root.querySelector('.detective-picture');this.canvas=root.querySelector('canvas');this.grid=root.querySelector('.detective-mosaic');
       for(let i=0;i<120;i++){const tile=document.createElement('i');tile.dataset.cover=i;this.grid.append(tile);}
       const answers=root.querySelector('.detective-choices');
@@ -14,10 +15,10 @@
         if(!this.active||this.held||reveal.complete)return;
         this.halt();
         const correct=choice.id===item.id,reward=TransportReveal.answer(reveal,correct);
-        if(!correct){button.disabled=true;button.classList.add('wrong');reveal.disabledIds.push(choice.id);this.status('Look again and try another word.');this.onSave();return;}
-        this.paint();this.controls();this.onSolved(reward);
+        if(!correct){button.disabled=true;button.classList.add('wrong');reveal.disabledIds.push(choice.id);this.onWrong();this.onSave();return;}
+        this.status('');this.paint();this.controls();this.onSolved(reward);
       };answers.append(button);}
-      root.querySelector('[data-reveal-start]').onclick=()=>{if(this.held||reveal.complete)return;reveal.guessing=false;reveal.running=true;this.start();this.controls();this.onSave();};
+      root.querySelector('[data-reveal-start]').onclick=()=>{if(this.held||reveal.complete)return;if(reveal.running){this.halt();reveal.running=false;}else{reveal.guessing=false;reveal.running=true;this.start();}this.controls();this.onSave();};
       root.querySelector('[data-reveal-guess]').onclick=()=>{if(this.held||reveal.complete)return;this.halt();reveal.running=false;reveal.guessing=true;this.controls();this.onSave();};
       root.querySelector('[data-reveal-full]').onclick=()=>{if(this.held||reveal.complete)return;this.halt();reveal.running=false;reveal.assisted=true;reveal.guessing=true;reveal.elapsed=reveal.duration*1000;this.paint();this.controls();this.status('Picture revealed for practice. No guessing star for this picture.');this.onSave();};
       root.querySelector('[data-reveal-practice]').onclick=()=>{if(this.held||reveal.complete)return;this.halt();reveal.complete=true;reveal.running=false;reveal.assisted=true;this.onPractice();};
@@ -38,7 +39,7 @@
     status(text){this.root.querySelector('.detective-status').textContent=text;}
     controls(){
       const r=this.reveal,full=r.elapsed>=r.duration*1000||r.complete;
-      const start=this.root.querySelector('[data-reveal-start]');start.textContent=r.running?'Revealing…':r.elapsed?'Continue reveal':'Start reveal';start.disabled=r.running||r.complete||full||r.kind==='silhouette'||!this.image?.naturalWidth;
+      const start=this.root.querySelector('[data-reveal-start]');start.textContent=r.running?'Stop reveal':r.elapsed?'Continue reveal':'Start reveal';start.disabled=r.complete||full||r.kind==='silhouette'||!this.image?.naturalWidth;
       this.root.querySelector('[data-reveal-guess]').disabled=r.complete;
       this.root.querySelector('[data-reveal-full]').disabled=r.complete||full;
       this.root.querySelector('.detective-choices').hidden=!r.guessing||r.complete;

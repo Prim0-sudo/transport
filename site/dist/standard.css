@@ -146,3 +146,24 @@ img.result-burst{display:block;width:clamp(90px,14vw,140px);height:auto;margin:0
 .feedback.is-correct p,.feedback.is-try p{margin:0}
 .feedback .next-btn{font-size:1.1rem;padding:8px 20px}
 @media(max-width:640px){.sorting-rules{grid-template-columns:1fr}}
+
+/* Detective, following Plants activities-v5.css and activity-layouts.css. */
+.detective-settings{flex-direction:row;align-items:center;gap:10px 16px;padding:4px 0}
+.detective-settings label{display:flex;align-items:center;gap:8px}
+.detective-settings select{border:2px solid #1d4f73}
+.detective-settings select:disabled{opacity:1;color:#183a51;background:#fffbed}
+.detective-round-settings{justify-content:flex-end;margin:0 0 12px}
+.game-card[data-mode=detective] #questionText{align-self:stretch;text-align:left}
+.game-card[data-mode=detective] .question-helper:empty{display:none}
+.detective-workspace{grid-template-columns:minmax(0,3.5fr) minmax(190px,1fr);gap:clamp(14px,2vw,24px);align-items:stretch;min-height:clamp(300px,calc(100dvh - 460px),760px)}
+.detective-picture{height:100%;min-height:0;border:3px solid #1d4f73;background:#e3eef6}
+.detective-controls{display:flex;flex-direction:column;justify-content:center;gap:18px;min-width:0}
+.detective-time{font-size:1rem;line-height:1.45;text-align:center}
+.detective-controls .learn-actions{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;margin:0}
+.detective-controls .learn-actions .standard-action{width:100%;min-width:0;min-height:48px}
+.detective-choices .answer-btn{min-height:48px;padding:10px;text-align:center;font-size:1.05rem}
+.detective-status:empty{display:none}
+.game-card[data-mode=detective] .feedback:empty{display:none}
+@media(max-width:800px){.detective-workspace{grid-template-columns:minmax(0,3.5fr) minmax(190px,1fr)}.detective-picture{height:100%}.detective-controls .standard-actions{flex-direction:column}}
+@media(max-width:760px){.detective-workspace{grid-template-columns:minmax(0,1fr);min-height:0;gap:12px}.detective-picture{height:auto;aspect-ratio:1}.detective-controls{gap:12px}.detective-controls .learn-actions{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.detective-controls .learn-actions .standard-action{padding:8px 6px;font-size:.9rem}.detective-choices{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:480px){.detective-picture{height:auto;aspect-ratio:4/3}.detective-round-settings{display:none}.game-card[data-mode=detective] #questionText{font-size:1.45rem}.detective-controls{gap:8px}}
