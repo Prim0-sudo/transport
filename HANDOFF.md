@@ -1,48 +1,35 @@
-# Transport Town — current upgrade handoff
+# Transport Town upgrade handoff
 
-Current direction: landing work remains stopped. Step 2 foundations and step 3 standard-activity functionality are implemented for the existing 30-word bank, with 25 focused tests and bounded actual browser/phone-viewport review. Read docs/UPGRADE-PLAN.md, CLASSROOM-FOUNDATIONS.md, STANDARD-ACTIVITIES.md and PROGRESS-REPORT-2026-11-09.md. Next is step 4 curriculum/art/audio preparation; new teaching/menu art still needs review. Local actual app: http://127.0.0.1:4251/. Twelve menu destinations are navigable; four hubs have honest availability, not completed content. Consult AGENTS.md and the relevant Plants blueprint/source before changes. No public release.
+**Read this first at work.** The upgrade branch is `codex/v6-upgrade-2026-11-08` in [Prim0-sudo/transport](https://github.com/Prim0-sudo/transport). Step 2 and step 3 functionality are ready for local review. Step 4 authoring sources and inventory scripts are committed. The [progress report](docs/PROGRESS-REPORT-2026-11-09.md) describes what is playable and what still needs review. Landing work remains stopped by the user's instruction.
 
-Landing history: user approved actual Miniature World scenery/vehicle assets, then authorized integration at 859d8af before subsequently stopping that work. Its animation verification remains incomplete; preserve the current files without further landing work. The approved assets/provenance are under artwork/landing/miniature-world-v1/. Dispatch and the separate driving game remain later planned work, not implemented activities.
+## Pull and preview
 
-8 November 2026. Upgrade in progress; no new production release or classroom acceptance.
+From an existing Transport checkout with a clean working tree, run:
 
-Repo: https://github.com/Prim0-sudo/transport
-Branch: codex/v6-upgrade-2026-11-08
-Standalone checkout: E:/Projects/Codex/transport-town
-Baseline: 379a55b. Current checkpoint is the commit containing this handoff; consult git log.
+```powershell
+git fetch origin
+git switch codex/v6-upgrade-2026-11-08
+git pull --ff-only origin codex/v6-upgrade-2026-11-08
+npm start
+npm run preview:status
+```
 
-Read docs/V6-UPGRADE-2026-11-08.md for inventory, evidence limits and ordered remaining work. HANDOFF-LEGACY.md preserves prior instructions/provenance; current user/v6 directions supersede conflicts. The complete static runtime remains site/dist; preserve suitable originals and topic identity.
+For a new checkout, run `git clone --branch codex/v6-upgrade-2026-11-08 https://github.com/Prim0-sudo/transport.git transport-town`, then run the npm commands inside `transport-town`. The app is at [localhost:4251](http://127.0.0.1:4251/). The preview serves `site/dist` directly with Node built-ins. There is no dependency install or build step. If port 4251 is occupied, identify the owning process before restarting the project's preview. Browser-local attempts belong to the browser profile and do not travel with Git. The earlier `/review/` and `/review/landing-assets/` pages are art and layout references.
 
-## Start/reuse local preview
+## Continue in plan order
 
-    git fetch origin
-    git switch codex/v6-upgrade-2026-11-08
-    git pull --ff-only
-    npm start
-    npm run preview:status
+1. Read [AGENTS.md](AGENTS.md), [UPGRADE-PLAN.md](docs/UPGRADE-PLAN.md), [STANDARD-ACTIVITIES.md](docs/STANDARD-ACTIVITIES.md) and the relevant Plants blueprint/source before making changes. The Plants reference checkout was `../plants-weekly-game` at `355c45f`, branch `codex/targeted-repairs-2026-10-26` from [Prim0-sudo/plants](https://github.com/Prim0-sudo/plants). Open `docs/blueprint-v6.0/START-HERE.md` there. Our Town was `../our-town-game` at `e60a299` on `main` from [Prim0-sudo/our-town](https://github.com/Prim0-sudo/our-town). The preview can run with Transport alone.
+2. The standard-activity review was pushed at `1faa393`. Review the screenshots in `docs/previews/standard-*.png`. New menu, header, category and safety-scenario artwork remains a review item. The 30 existing subjects are pinned to one bank. Landing scene and actors remain as integrated at `859d8af`, with animation verification incomplete. Follow the user's stop instruction for that area.
+3. Step 4 begins with [the 96 concept drafts](content/transport-extension.psv) and [the literacy draft](content/literacy-plan.json). After the preparation commit is pushed, generate the curriculum and art review outputs and check the exact audio inventory with the commands below. The inventory can accept explicit Plants and Our Town checkout paths. The authoring output belongs in `docs/content` and `docs/audio`. None of the draft concepts should enter the live pool before pictures, eligibility, narration and teacher review are ready.
+4. Review the proposed art decisions against the existing 60-variant evidence. Prioritise useful, factual pictures and comparisons. Preserve existing originals and show changed/new assets before integrating them. Review the exact narration list and get a new cap before any paid generation. Port the shared resolver, players, gains, accepted cuts and local recordings before removing browser synthesis. Listening acceptance and teacher approval of lexical plans are separate checks.
+5. Step 5 is [Transport Dispatch](docs/DISPATCH-DETAILED-PREVIEW.md), then the separate driving game inspired by Garden Patrol mouse, tap and arrow controls. Review the detailed layout and movement before final assets. Build the Journey and Safe Street are later options. Step 6 covers actual media, printables, literacy and release review.
 
-Preview: http://127.0.0.1:4251/. Node built-ins only; no npm install/build needed. Hidden supervisor reuses the correct workspace server, recovers a failed child and refuses another service's port. Logs/state are ignored under .preview. Source edits are served fresh; CSS refreshes in place, JS/HTML/image changes reload after debounce. No evidence/docs watcher. Versioned browser-local attempt persistence is implemented; see CLASSROOM-FOUNDATIONS.md for its scope.
+```powershell
+node scripts/prepare-curriculum-plan.mjs
+node scripts/prepare-art-ledger.mjs
+node scripts/inventory-recorded-audio.mjs
+```
 
-First batch implemented and pushed as 1a09ad4, with focused corrections ed8c3f7. Post-push parsing, focused model assertions, bounded Chrome spelling/Flip/accessibility/menu review, simulated phone size and preview reuse/recovery passed. Exact evidence/limits are in the audit. No new art, concept production, paid speech or deployment.
+For different sibling checkout names, pass `node scripts/inventory-recorded-audio.mjs <PlantsPath> <OurTownPath>` with the appropriate paths. Run focused checks after the useful batch is committed and pushed, following the blueprint. The earlier [comparison audit](docs/PLANTS-COMPARISON-AUDIT-2026-11-08.md), [classroom evidence](docs/CLASSROOM-FOUNDATIONS.md), [initial inventory](docs/V6-UPGRADE-2026-11-08.md) and [legacy handoff](HANDOFF-LEGACY.md) retain historical context.
 
-Current Pages project identifier: transport. Existing public URL: https://transport-town-7b0.pages.dev/. Existing Ludimi route: https://ludimi.org/transport/. Naming registry/report confirm the rename preserves hostnames/deployments; use transport for future authorized Wrangler operations, never infer transport.pages.dev. Preserve Git connection, paused deployment settings and shared Ludimi Workers. No new release is authorized. Exact current live runtime/deployment identity remains unverified in this checkout. Ludimi pinned source at baseline is untouched; do not update website pins, main, legacy Sites, Pages or account settings without release authorization. Plants remains completed and its port 4250 unchanged.
-
-Next: lifecycle/Teacher/curriculum foundations and the outstanding v6 work. Transport Dispatch (concept 1) is selected first. User likes the other two ideas for later and additionally requests an interactive driving game with mouse/tap and arrow control like Garden Patrol. Detailed layout/movement and asset approvals are still required. See docs/APPLIED-CONCEPTS-2026-11-08.md. New artwork/applied game follows three concepts -> selection -> detailed preview approval -> assets shown/approved -> implementation. Songs and the shared Phonics/Word Families expansion remain on the series backlog.
-
-## Current continuation
-
-Refreshed blueprint/naming read from Plants 355c45f. User-requested Plants fetch/pull completed: clean existing branch already current; source preview 4250 reused, no Plants runtime edit or deployment. Local and live Plants viewed as reference (launch/menu, Patrol/control structure, Teacher, Media/book/films and spelling composition), not a reopened acceptance audit.
-
-Second functional batch: active-time delayed work with independent named holds, hidden-tab animation/speech/effects hold, navigation/round cleanup and mute stopping active effects. Existing CSS art/choreography preserved; this is controller repair, not a new animation concept. Shared GSAP/MotionPath production and approved recorded audio migration remain pending. No tests before its commit/push checkpoint.
-
-## Latest review and upgrade order
-
-Read docs/UPGRADE-PLAN.md for the current ordered plan and post-push lifecycle evidence. The supplied comparison ZIP and its three report/task/start documents are reference evidence; retain their dated snapshots without re-running the same audit. Five focused scheduler tests and bounded Chrome startup/Wheel-exit review passed after 112a006; real Teacher UI/scopes and physical-tab/OS checks remain open. Preview 4251 is restored/current for user inspection. No broader v6-completion claim follows.
-
-
-Art direction selected: C · Miniature World. Current creative gate: review DISPATCH-DETAILED-PREVIEW.md and its illustrated/interactive preview; obtain detailed-layout/movement approval before final assets. No runtime art swap or new deployment. Keep the separate interactive driving game on the plan.
-
-
-## Shared-shell correction
-
-After user feedback, actual deployed Our Town and Plants launch/menu/applied-game frames were opened through their Pages URLs (currently redirecting to Ludimi). The prior separate dark/boxed Dispatch frame is superseded as a shell proposal. Local review: http://127.0.0.1:4251/review/. It uses a full-bleed Miniature World concept scene, shared Explore/header/menu/feature structure and a full-width cream Dispatch surface. Existing menu pictures are provisional layout references; final production assets and approval are still pending. site/dist runtime is unchanged; review source lives outside it. Read review/PROVENANCE.md.
+The Pages project is `transport` and the existing URL is [Transport Pages](https://transport-town-7b0.pages.dev/). Read [the naming notes](docs/HOSTING-AND-NAMING.md) before deployment work. Production release, Ludimi pins and shared service changes require separate authorization. The work branch is the handoff surface.
