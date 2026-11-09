@@ -59,6 +59,12 @@ button:disabled{cursor:default}.standard-actions button:disabled{opacity:.55}
 .ticket-checks{display:flex;justify-content:center;gap:8px}.ticket-checks span{display:grid;place-items:center;background:#24764d;color:white;width:27px;height:27px;border-radius:50%}.ticket-checks span.used{background:#b94c44}
 .departure-ticket .hangman-keys{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px;margin:18px 0}.departure-ticket .hangman-key{min-width:0;min-height:44px;font-size:18px;padding:4px;border:1px solid #a9b7bb;border-radius:8px}.departure-ticket .hangman-key.correct{background:#bce7c4}.departure-ticket .hangman-key.wrong{background:#ead0ce}
 .game-card[data-mode=wheel] .vocab-wheel{animation:none!important;transition:none!important}.game-card[data-mode=wheel] .wheel-segment-emoji{transform:translate(-50%,-50%);width:16%;height:16%;font-size:0}.wheel-segment-emoji img{width:100%;height:100%;object-fit:contain}
+/* Phonics menu and Listen & Read (matched to Plants 2026-11-10). */
+.phonics-menu{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%}
+.phonics-menu .standard-action{min-height:60px;padding:12px 16px;border:3px solid #e1c26b;border-radius:17px;background:#fff6d2;box-shadow:0 5px 0 #c9a54a;color:#183a51;font-weight:900;text-align:center}
+@media(max-width:719px){.phonics-menu{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}}
+.phonics-reading-sentence{margin:0;font-size:clamp(1.4rem,3vw,2rem);line-height:1.5;text-align:center;font-weight:700;color:#183a51}
+.reading-word.is-reading{background:#ffe58c;border-radius:.18em;box-shadow:0 0 0 .1em #ffe58c}
 /* Transport Games menu (matched to Plants Games 2026-11-10). */
 .transport-game-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(10px,2vw,18px);width:100%}
 .transport-game-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:clamp(10px,2vw,16px);border:3px solid #d8bd7d;border-radius:22px;background:#fffbed;color:#1d4f73;font:inherit;cursor:pointer;box-shadow:0 6px 0 #c9a54a;transition:transform .15s ease}

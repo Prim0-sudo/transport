@@ -92,6 +92,7 @@
     const area = el('div', 'phonics-mount'); root.append(area);
     const mount = () => globalThis.TransportPhonics.mount(area, section, {
       words: classroom.pool('learn'),
+      readingCards: TransportStandard.readingCards,
       categories: [...TransportStandard.categories.filter(c => c.id !== 'all'), ...TransportStandard.teachingCategories],
       settings: { get muted() { return state.muted; } }
     });

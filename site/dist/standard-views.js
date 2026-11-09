@@ -184,6 +184,12 @@ function renderStandardHub(mode,groupId=null){
   const group=hub.groups.find(g=>g[0]===groupId),root=document.createElement('div');root.className='standard-resource';
   if(globalThis.TransportMedia?.render(mode,groupId,root)){if(group)setStandardBack(hub.title);}
   else if(group){setStandardBack(hub.title);const heading=document.createElement('h3');heading.textContent=group[1];const text=document.createElement('p');text.textContent=group[2];root.append(heading,text,standardButton(`Back to ${hub.title}`,()=>renderStandardHub(mode)));}
+  else if(mode==='phonics'){
+    // Plants Phonics menu: one row of plain buttons, no descriptions or helper line.
+    els.helper.textContent='';els.round.textContent='Reading practice';const menu=document.createElement('div');menu.className='phonics-menu';
+    for(const [id,title] of hub.groups)menu.append(standardButton(title,()=>renderStandardHub(mode,id),'standard-action'));
+    root.append(menu);
+  }
   else if(mode==='games'){
     // Plants Games menu: big picture cards, title only, no helper line.
     els.helper.textContent='';const cards=document.createElement('div');cards.className='transport-game-cards';
