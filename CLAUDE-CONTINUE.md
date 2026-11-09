@@ -134,6 +134,12 @@ Commit identity: `git -c user.name=Prim0-sudo -c user.email=Prim0-sudo@users.nor
 - No recorded Transport sentences exist (narration manifest is empty), so it uses the browser en-GB voice; Plants uses recorded Amy clips. Missing audio: 18 sentence recordings.
 - Fits 768x1024; 1280x800 and phone scroll on the reading card like the existing Sound & Blend card does.
 
+## Read, Draw & Talk (matched to Plants 2026-11-10)
+- Layout: picture with the sentence as its caption, beside Draw and Talk sections (stacked on phone); no separate word label; title Read, Draw & Talk, Reading card n/18, score pill = cards explored.
+- Buttons: Previous (off on card 1), Hear sentence, Mark as explored (shows Card explored. Share your idea when you are ready.), navy Next; last card says See results and opens results (You explored this group of reading cards!). No more wrap-around.
+- Also removed the old .reading-word rule, which would have made Listen & Read sentence words uppercase.
+- Fits 768x1024 and 1280x800; phone scrolls ~95px (button row wraps). Missing art: none (uses vehicle pictures; Plants has some own scene pictures).
+
 ## Queued by owner (after every activity matches Plants)
 
 - Plants presentation: design a full-topic PPT for the Plants game covering every category (everything the videos cover, plus more), and add a separate Media tab called Presentation for it.

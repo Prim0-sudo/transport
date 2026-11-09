@@ -835,7 +835,7 @@ function finishGame() {
   const practice = state.practice && !met;
   els.stars.textContent = practice || !state.score ? 'Practice complete' : `${starCount} ${starCount === 1 ? 'star' : 'stars'}`;
   document.querySelector('.result-score').hidden = practice;
-  els.resultMessage.textContent=state.mode==='learn'?'You met this group of Transport words!':state.mode==='hangman'?'You worked on the departure words.':state.mode==='detective'?'You explored the hidden Transport pictures.':state.mode==='safety'?'Talk together about the safe travel choices.':state.mode==='sort'?'You compared vehicles using the chosen rule.':state.mode==='flip'?'You found the matching word pairs.':state.mode==='wheel'?'You read this group of Transport words!':`You explored this set of ${total} words.`;
+  els.resultMessage.textContent=state.mode==='learn'?'You met this group of Transport words!':state.mode==='hangman'?'You worked on the departure words.':state.mode==='detective'?'You explored the hidden Transport pictures.':state.mode==='safety'?'Talk together about the safe travel choices.':state.mode==='sort'?'You compared vehicles using the chosen rule.':state.mode==='flip'?'You found the matching word pairs.':state.mode==='wheel'?'You read this group of Transport words!':state.mode==='create'?'You explored this group of reading cards!':`You explored this set of ${total} words.`;
   document.getElementById('playAgainBtn').textContent = met ? 'Next session' : 'Play Again';
   showScreen("results");
   if (state.mode !== "flip") burstConfetti();

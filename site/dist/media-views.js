@@ -64,25 +64,32 @@
     const cards = readingCards(), explored = readExplored();
     if (!cards.length) { root.append(el('h3', '', 'Reading cards'), el('p', '', 'No reading cards match the words chosen in Teacher. Widen the word choice to see more cards.')); return; }
     readingIndex = Math.min(readingIndex, cards.length - 1);
-    const card = cards[readingIndex], done = explored.has(card.id);
-    els.round.textContent = `Card ${readingIndex + 1} of ${cards.length}`;
-    const view = el('article', 'reading-card');
-    const picture = el('img', 'reading-picture'); picture.src = card.word.image; picture.alt = card.word.name;
-    const sentence = el('p', 'reading-sentence', card.sentence);
+    // Plants Read, Draw & Talk: picture and sentence beside the Draw and Talk prompts, explored count as the score.
+    const card = cards[readingIndex], done = explored.has(card.id), last = readingIndex === cards.length - 1;
+    const count = () => cards.filter(c => explored.has(c.id)).length;
+    els.question.textContent = 'Read, Draw & Talk'; els.helper.textContent = '';
+    els.round.textContent = `Reading card ${readingIndex + 1}/${cards.length}`;
+    document.querySelector('.progress-track').hidden = false; els.progress.style.width = `${readingIndex / cards.length * 100}%`;
+    els.scorePill.hidden = false; els.score.textContent = count();
+    const view = el('div', 'reading-workspace'), figure = el('figure');
+    const picture = el('img', 'reading-picture'); picture.src = card.word.image; picture.alt = card.word.alt || card.word.name;
+    figure.append(picture, el('figcaption', '', card.sentence));
     const prompts = el('div', 'reading-prompts');
-    const draw = el('section', 'reading-prompt'); draw.append(el('h4', '', 'Draw'), el('p', '', card.draw));
-    const talk = el('section', 'reading-prompt'); talk.append(el('h4', '', 'Talk'), el('p', '', card.talk));
-    prompts.append(draw, talk);
-    view.append(el('p', 'reading-word', card.word.name), picture, sentence, prompts);
-    if (done) view.append(el('p', 'reading-done', 'Explored'));
-    const go = step => { readingIndex = (readingIndex + step + cards.length) % cards.length; renderStandardHub('create'); };
-    const actions = el('div', 'standard-actions reading-actions');
-    actions.append(
-      standardButton('Previous', () => go(-1)),
-      standardButton('Hear sentence', () => speak(card.sentence)),
-      standardButton(done ? 'Explored' : 'Mark as explored', () => { explored.add(card.id); saveExplored(explored); renderStandardHub('create'); }),
-      standardButton('Next', () => go(1)));
-    if (done) actions.children[2].disabled = true;
+    for (const [title, text] of [['Draw', card.draw], ['Talk', card.talk]]) { const part = el('section'); part.append(el('h3', '', title), el('p', '', text)); prompts.append(part); }
+    view.append(figure, prompts);
+    const go = step => { readingIndex += step; renderStandardHub('create'); };
+    const actions = el('div', 'learn-actions reading-actions');
+    const previous = standardButton('Previous', () => go(-1)); previous.disabled = readingIndex === 0;
+    const mark = standardButton(done ? 'Explored' : 'Mark as explored', () => {
+      explored.add(card.id); saveExplored(explored); renderStandardHub('create');
+      els.feedback.replaceChildren(el('p', '', 'Card explored. Share your idea when you are ready.')); els.feedback.className = 'feedback is-correct';
+    });
+    mark.disabled = done;
+    const next = standardButton(last ? 'See results' : 'Next', () => {
+      if (!last) { go(1); return; }
+      readingIndex = 0; state.questions = cards; state.score = count(); state.practice = true; finishGame();
+    }, 'standard-action learn-next');
+    actions.append(previous, standardButton('Hear sentence', () => speak(card.sentence)), mark, next);
     root.append(view, actions);
   }
 
