@@ -1,0 +1,4292 @@
+{
+  "schema": 1,
+  "date": "2026-11-09",
+  "status": "Draft curriculum, not an expanded live bank",
+  "sourceSha256": "a0ff5189b5aeba527ea2729943f5b40a336e8cf1331abcc2771aa66a67bf96a5",
+  "activeCount": 30,
+  "proposedAdditionalCount": 96,
+  "plannedTotal": 126,
+  "lessons": [
+    {
+      "id": "everyday",
+      "objective": "Name familiar journeys, places, passengers and vehicle parts."
+    },
+    {
+      "id": "land",
+      "objective": "Compare road and rail vehicles, parts, routes and movement."
+    },
+    {
+      "id": "water",
+      "objective": "Compare watercraft, harbour places, wind and people power."
+    },
+    {
+      "id": "air",
+      "objective": "Compare aircraft and space vehicles, flight parts and take-off/landing."
+    },
+    {
+      "id": "helping",
+      "objective": "Connect vehicles and workers with carrying, repair and helping tasks."
+    },
+    {
+      "id": "safety",
+      "objective": "Recognise adult-supported safe journey choices and equipment."
+    }
+  ],
+  "additionalCollections": [
+    "vehicle-parts",
+    "journey-places",
+    "people-at-work",
+    "journey-actions",
+    "safe-journeys"
+  ],
+  "activeEntries": [
+    {
+      "name": "car",
+      "icon": "🚗",
+      "zone": "land",
+      "sound": "car",
+      "definition": "A vehicle with four wheels that carries a small group of people.",
+      "iconImages": [
+        "images/emoji-codex/car.png"
+      ],
+      "id": "vehicle.car",
+      "canonicalLabel": "car",
+      "legacyName": "car",
+      "aliases": [],
+      "level": 1,
+      "example": "We ride in a car to visit a friend.",
+      "alt": "A car with four wheels.",
+      "category": "land",
+      "lessons": [
+        "everyday",
+        "land",
+        "safety"
+      ],
+      "collections": [
+        "road",
+        "passengers"
+      ],
+      "image": "images/emoji-codex/car.png",
+      "pictureGroup": "car",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "bus",
+      "icon": "🚌",
+      "zone": "land",
+      "sound": "bus",
+      "definition": "A large road vehicle that carries many passengers.",
+      "iconImages": [
+        "images/emoji-codex/bus.png"
+      ],
+      "id": "vehicle.bus",
+      "canonicalLabel": "bus",
+      "legacyName": "bus",
+      "aliases": [],
+      "level": 1,
+      "example": "Passengers wait at the bus stop.",
+      "alt": "A single-decker passenger bus.",
+      "category": "land",
+      "lessons": [
+        "everyday",
+        "land",
+        "helping",
+        "safety"
+      ],
+      "collections": [
+        "road",
+        "passengers"
+      ],
+      "image": "images/emoji-codex/bus.png",
+      "pictureGroup": "bus-examples",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "bicycle",
+      "icon": "🚲",
+      "zone": "land",
+      "sound": "bicycle",
+      "definition": "A vehicle with two wheels that a rider moves by pedalling.",
+      "iconImages": [
+        "images/emoji-codex/bicycle.png"
+      ],
+      "id": "vehicle.bicycle",
+      "canonicalLabel": "bicycle",
+      "legacyName": "bicycle",
+      "aliases": [
+        "bike"
+      ],
+      "level": 1,
+      "example": "The rider pushes the bicycle pedals.",
+      "alt": "A bicycle with two wheels, pedals and handlebars.",
+      "category": "land",
+      "lessons": [
+        "everyday",
+        "land",
+        "safety"
+      ],
+      "collections": [
+        "road",
+        "human-powered"
+      ],
+      "image": "images/emoji-codex/bicycle.png",
+      "pictureGroup": "bicycle",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": true
+    },
+    {
+      "name": "motorcycle",
+      "icon": "🏍️",
+      "zone": "land",
+      "sound": "motorcycle",
+      "definition": "A motor vehicle with two wheels that a rider sits on.",
+      "iconImages": [
+        "images/emoji-codex/motorcycle.png"
+      ],
+      "id": "vehicle.motorcycle",
+      "canonicalLabel": "motorcycle",
+      "legacyName": "motorcycle",
+      "aliases": [
+        "motorbike"
+      ],
+      "level": 2,
+      "example": "The motorcycle rider wears a helmet.",
+      "alt": "A motorcycle with two wheels.",
+      "category": "land",
+      "lessons": [
+        "land",
+        "safety"
+      ],
+      "collections": [
+        "road"
+      ],
+      "image": "images/emoji-codex/motorcycle.png",
+      "pictureGroup": "motorcycle",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "kick scooter",
+      "icon": "🛴",
+      "zone": "land",
+      "sound": "scooter",
+      "definition": "A small vehicle with a standing deck and handlebars, pushed along with one foot.",
+      "iconImages": [
+        "images/emoji-codex/scooter.png"
+      ],
+      "id": "vehicle.scooter",
+      "canonicalLabel": "kick scooter",
+      "legacyName": "scooter",
+      "aliases": [
+        "scooter"
+      ],
+      "level": 2,
+      "example": "Push with one foot to move the kick scooter.",
+      "alt": "A kick scooter with a standing deck and two wheels.",
+      "category": "land",
+      "lessons": [
+        "land",
+        "safety"
+      ],
+      "collections": [
+        "road",
+        "human-powered"
+      ],
+      "image": "images/emoji-codex/scooter.png",
+      "pictureGroup": "scooter",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": true
+    },
+    {
+      "name": "train",
+      "icon": "🚆",
+      "zone": "land",
+      "sound": "train",
+      "definition": "A rail vehicle, or connected rail vehicles, that carries people or goods along tracks.",
+      "iconImages": [
+        "images/emoji-codex/train.png"
+      ],
+      "id": "vehicle.train",
+      "canonicalLabel": "train",
+      "legacyName": "train",
+      "aliases": [],
+      "level": 1,
+      "example": "The train carries passengers along the railway.",
+      "alt": "A passenger train on railway wheels.",
+      "category": "land",
+      "lessons": [
+        "everyday",
+        "land"
+      ],
+      "collections": [
+        "rail",
+        "passengers"
+      ],
+      "image": "images/emoji-codex/train.png",
+      "pictureGroup": "train",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "metro train",
+      "icon": "🚇",
+      "zone": "land",
+      "sound": "subway",
+      "definition": "A city train that often travels through underground tunnels.",
+      "iconImages": [
+        "images/emoji-codex/subway_metro.png"
+      ],
+      "id": "vehicle.subway",
+      "canonicalLabel": "metro train",
+      "legacyName": "subway (metro)",
+      "aliases": [
+        "subway",
+        "metro",
+        "subway (metro)"
+      ],
+      "level": 2,
+      "example": "We take a metro train across the city.",
+      "alt": "A metro train with passenger doors and windows.",
+      "category": "land",
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "rail",
+        "passengers"
+      ],
+      "image": "images/emoji-codex/subway_metro.png",
+      "pictureGroup": "subway",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "taxi",
+      "icon": "🚕",
+      "zone": "land",
+      "sound": "car",
+      "definition": "A car with a driver that passengers pay to take them somewhere.",
+      "iconImages": [
+        "images/emoji-codex/taxi.png"
+      ],
+      "id": "vehicle.taxi",
+      "canonicalLabel": "taxi",
+      "legacyName": "taxi",
+      "aliases": [
+        "cab"
+      ],
+      "level": 1,
+      "example": "The taxi driver takes a passenger to the station.",
+      "alt": "A taxi passenger car.",
+      "category": "land",
+      "lessons": [
+        "everyday",
+        "land",
+        "safety"
+      ],
+      "collections": [
+        "road",
+        "passengers"
+      ],
+      "image": "images/emoji-codex/taxi.png",
+      "pictureGroup": "taxi",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "truck",
+      "icon": "🚚",
+      "zone": "land",
+      "sound": "truck",
+      "definition": "A road vehicle used to carry goods.",
+      "iconImages": [
+        "images/emoji-codex/truck.png"
+      ],
+      "id": "vehicle.truck",
+      "canonicalLabel": "truck",
+      "legacyName": "truck",
+      "aliases": [
+        "lorry"
+      ],
+      "level": 1,
+      "example": "The truck carries boxes to a shop.",
+      "alt": "A truck for carrying goods.",
+      "category": "land",
+      "lessons": [
+        "land",
+        "helping"
+      ],
+      "collections": [
+        "road",
+        "work"
+      ],
+      "image": "images/emoji-codex/truck.png",
+      "pictureGroup": "truck",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "van",
+      "icon": "🚐",
+      "zone": "land",
+      "sound": "car",
+      "definition": "A road vehicle with an enclosed space for goods or passengers.",
+      "iconImages": [
+        "images/emoji-codex/van.png"
+      ],
+      "id": "vehicle.van",
+      "canonicalLabel": "van",
+      "legacyName": "van",
+      "aliases": [],
+      "level": 1,
+      "example": "The van carries parcels to our street.",
+      "alt": "An enclosed road van.",
+      "category": "land",
+      "lessons": [
+        "everyday",
+        "land",
+        "helping",
+        "safety"
+      ],
+      "collections": [
+        "road",
+        "passengers",
+        "work"
+      ],
+      "image": "images/emoji-codex/van.png",
+      "pictureGroup": "small-passenger-van",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "tram",
+      "icon": "🚋",
+      "zone": "land",
+      "sound": "tram",
+      "definition": "A passenger vehicle that runs on rails, often along city streets.",
+      "iconImages": [
+        "images/emoji-codex/tram.png"
+      ],
+      "id": "vehicle.tram",
+      "canonicalLabel": "tram",
+      "legacyName": "tram",
+      "aliases": [
+        "streetcar"
+      ],
+      "level": 2,
+      "example": "The tram follows rails through the city.",
+      "alt": "A tram with passenger windows.",
+      "category": "land",
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "rail",
+        "passengers"
+      ],
+      "image": "images/emoji-codex/tram.png",
+      "pictureGroup": "tram",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "minibus",
+      "icon": "🚐",
+      "zone": "land",
+      "sound": "bus",
+      "definition": "A passenger vehicle that is smaller than a full-sized bus.",
+      "iconImages": [
+        "images/emoji-codex/minibus.png"
+      ],
+      "id": "vehicle.minibus",
+      "canonicalLabel": "minibus",
+      "legacyName": "minibus",
+      "aliases": [],
+      "level": 2,
+      "example": "A small group travels in the minibus.",
+      "alt": "A small passenger bus.",
+      "category": "land",
+      "lessons": [
+        "land",
+        "helping"
+      ],
+      "collections": [
+        "road",
+        "passengers"
+      ],
+      "image": "images/emoji-codex/minibus.png",
+      "pictureGroup": "small-passenger-van",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "school bus",
+      "icon": "🚌",
+      "zone": "land",
+      "sound": "bus",
+      "definition": "A bus used to take children to and from school.",
+      "iconImages": [
+        "images/emoji-codex/school_bus.png"
+      ],
+      "id": "vehicle.school-bus",
+      "canonicalLabel": "school bus",
+      "legacyName": "school bus",
+      "aliases": [],
+      "level": 1,
+      "example": "The school bus takes children to school.",
+      "alt": "A yellow school bus.",
+      "category": "land",
+      "lessons": [
+        "everyday",
+        "land",
+        "safety"
+      ],
+      "collections": [
+        "road",
+        "passengers"
+      ],
+      "image": "images/emoji-codex/school_bus.png",
+      "pictureGroup": "bus-examples",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "police car",
+      "icon": "🚓",
+      "zone": "land",
+      "sound": "police-car",
+      "definition": "A car used by police officers as they do their work.",
+      "iconImages": [
+        "images/emoji-codex/police_car.png"
+      ],
+      "id": "vehicle.police-car",
+      "canonicalLabel": "police car",
+      "legacyName": "police car",
+      "aliases": [],
+      "level": 2,
+      "example": "Police officers travel in the police car.",
+      "alt": "A police car with emergency lights.",
+      "category": "land",
+      "lessons": [
+        "land",
+        "helping"
+      ],
+      "collections": [
+        "road",
+        "emergency",
+        "work"
+      ],
+      "image": "images/emoji-codex/police_car.png",
+      "pictureGroup": "police-car",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "ambulance",
+      "icon": "🚑",
+      "zone": "land",
+      "sound": "ambulance",
+      "definition": "A vehicle equipped to help take ill or injured people for medical care.",
+      "iconImages": [
+        "images/emoji-codex/ambulance.png"
+      ],
+      "id": "vehicle.ambulance",
+      "canonicalLabel": "ambulance",
+      "legacyName": "ambulance",
+      "aliases": [],
+      "level": 2,
+      "example": "The ambulance takes someone for medical care.",
+      "alt": "An ambulance with emergency markings.",
+      "category": "land",
+      "lessons": [
+        "land",
+        "helping"
+      ],
+      "collections": [
+        "road",
+        "emergency",
+        "work"
+      ],
+      "image": "images/emoji-codex/ambulance.png",
+      "pictureGroup": "ambulance",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "fire engine",
+      "icon": "🚒",
+      "zone": "land",
+      "sound": "fire-engine",
+      "definition": "A vehicle that carries firefighters and firefighting equipment.",
+      "iconImages": [
+        "images/emoji-codex/fire_engine.png"
+      ],
+      "id": "vehicle.fire-engine",
+      "canonicalLabel": "fire engine",
+      "legacyName": "fire engine",
+      "aliases": [
+        "fire truck"
+      ],
+      "level": 2,
+      "example": "Firefighters carry their equipment on the fire engine.",
+      "alt": "A fire engine carrying firefighting equipment.",
+      "category": "land",
+      "lessons": [
+        "land",
+        "helping"
+      ],
+      "collections": [
+        "road",
+        "emergency",
+        "work"
+      ],
+      "image": "images/emoji-codex/fire_engine.png",
+      "pictureGroup": "fire-engine",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "tractor",
+      "icon": "🚜",
+      "zone": "land",
+      "sound": "tractor",
+      "definition": "A strong vehicle used to pull farm equipment or loads.",
+      "iconImages": [
+        "images/emoji-codex/tractor.png"
+      ],
+      "id": "vehicle.tractor",
+      "canonicalLabel": "tractor",
+      "legacyName": "tractor",
+      "aliases": [],
+      "level": 2,
+      "example": "The tractor pulls farm equipment.",
+      "alt": "A farm tractor with large rear wheels.",
+      "category": "land",
+      "lessons": [
+        "land",
+        "helping"
+      ],
+      "collections": [
+        "road",
+        "work",
+        "farm"
+      ],
+      "image": "images/emoji-codex/tractor.png",
+      "pictureGroup": "tractor",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": true
+    },
+    {
+      "name": "pulled rickshaw",
+      "icon": "🛺",
+      "zone": "land",
+      "sound": "rickshaw",
+      "definition": "A small passenger cart pulled by a person on foot.",
+      "iconImages": [
+        "images/emoji-codex/rickshaw.png"
+      ],
+      "id": "vehicle.rickshaw",
+      "canonicalLabel": "pulled rickshaw",
+      "legacyName": "rickshaw",
+      "aliases": [
+        "rickshaw"
+      ],
+      "level": 3,
+      "example": "A person pulls the rickshaw using its long handles.",
+      "alt": "A two-wheeled passenger cart with handles for a person to pull.",
+      "category": "land",
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "road",
+        "human-powered",
+        "passengers"
+      ],
+      "image": "images/emoji-codex/rickshaw.png",
+      "pictureGroup": "rickshaw",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": true
+    },
+    {
+      "name": "skateboard",
+      "icon": "🛹",
+      "zone": "land",
+      "sound": "skateboard",
+      "definition": "A board with four small wheels that a rider stands on.",
+      "iconImages": [
+        "images/emoji-codex/skateboard.png"
+      ],
+      "id": "vehicle.skateboard",
+      "canonicalLabel": "skateboard",
+      "legacyName": "skateboard",
+      "aliases": [],
+      "level": 2,
+      "example": "The rider stands on the skateboard.",
+      "alt": "A skateboard with four small wheels.",
+      "category": "land",
+      "lessons": [
+        "land",
+        "safety"
+      ],
+      "collections": [
+        "road",
+        "human-powered"
+      ],
+      "image": "images/emoji-codex/skateboard.png",
+      "pictureGroup": "skateboard",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": true
+    },
+    {
+      "name": "boat",
+      "icon": "🚤",
+      "zone": "water",
+      "sound": "boat",
+      "definition": "A water vehicle used to carry people or things.",
+      "iconImages": [
+        "images/emoji-codex/boat.png"
+      ],
+      "id": "vehicle.boat",
+      "canonicalLabel": "boat",
+      "legacyName": "boat",
+      "aliases": [],
+      "level": 1,
+      "example": "We travel across the water in a boat.",
+      "alt": "A small boat.",
+      "category": "water",
+      "lessons": [
+        "everyday",
+        "water",
+        "safety"
+      ],
+      "collections": [
+        "water",
+        "passengers"
+      ],
+      "image": "images/emoji-codex/boat.png",
+      "pictureGroup": "small-watercraft",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "ship",
+      "icon": "🚢",
+      "zone": "water",
+      "sound": "ship",
+      "definition": "A large water vehicle that carries people or goods.",
+      "iconImages": [
+        "images/emoji-codex/ship.png"
+      ],
+      "id": "vehicle.ship",
+      "canonicalLabel": "ship",
+      "legacyName": "ship",
+      "aliases": [],
+      "level": 2,
+      "example": "The ship carries a large load across the sea.",
+      "alt": "A large ship.",
+      "category": "water",
+      "lessons": [
+        "water",
+        "helping",
+        "safety"
+      ],
+      "collections": [
+        "water",
+        "passengers",
+        "work"
+      ],
+      "image": "images/emoji-codex/ship.png",
+      "pictureGroup": "ship",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "ferry",
+      "icon": "⛴️",
+      "zone": "water",
+      "sound": "ship",
+      "definition": "A boat or ship that carries passengers, and sometimes vehicles, between stopping places.",
+      "iconImages": [
+        "images/emoji-codex/ferry.png"
+      ],
+      "id": "vehicle.ferry",
+      "canonicalLabel": "ferry",
+      "legacyName": "ferry",
+      "aliases": [],
+      "level": 2,
+      "example": "The ferry carries passengers between stopping places.",
+      "alt": "A passenger ferry.",
+      "category": "water",
+      "lessons": [
+        "water",
+        "helping",
+        "safety"
+      ],
+      "collections": [
+        "water",
+        "passengers"
+      ],
+      "image": "images/emoji-codex/ferry.png",
+      "pictureGroup": "small-watercraft",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "speedboat",
+      "icon": "🚤",
+      "zone": "water",
+      "sound": "speedboat",
+      "definition": "A motorboat designed to travel quickly on water.",
+      "iconImages": [
+        "images/emoji-codex/speedboat.png"
+      ],
+      "id": "vehicle.speedboat",
+      "canonicalLabel": "speedboat",
+      "legacyName": "speedboat",
+      "aliases": [],
+      "level": 2,
+      "example": "The speedboat moves quickly across the water.",
+      "alt": "A small motor-powered speedboat.",
+      "category": "water",
+      "lessons": [
+        "water",
+        "safety"
+      ],
+      "collections": [
+        "water"
+      ],
+      "image": "images/emoji-codex/speedboat.png",
+      "pictureGroup": "small-watercraft",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "yacht",
+      "icon": "🛥️",
+      "zone": "water",
+      "sound": "boat",
+      "definition": "A boat used for leisure, powered by sails or an engine.",
+      "iconImages": [
+        "images/emoji-codex/yacht.png"
+      ],
+      "id": "vehicle.yacht",
+      "canonicalLabel": "yacht",
+      "legacyName": "yacht",
+      "aliases": [],
+      "level": 2,
+      "example": "The family takes a leisure trip on a yacht.",
+      "alt": "A leisure yacht.",
+      "category": "water",
+      "lessons": [
+        "water",
+        "safety"
+      ],
+      "collections": [
+        "water"
+      ],
+      "image": "images/emoji-codex/yacht.png",
+      "pictureGroup": "yacht",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "jet ski",
+      "icon": "",
+      "zone": "water",
+      "sound": "jet-ski",
+      "definition": "A small powered watercraft that a rider sits or stands on.",
+      "iconImages": [
+        "images/emoji-codex/jet_ski.png"
+      ],
+      "id": "vehicle.jet-ski",
+      "canonicalLabel": "jet ski",
+      "legacyName": "jet ski",
+      "aliases": [
+        "personal watercraft"
+      ],
+      "level": 3,
+      "example": "A rider steers the jet ski with its handlebars.",
+      "alt": "A personal watercraft with a seat and handlebars.",
+      "category": "water",
+      "lessons": [
+        "water",
+        "safety"
+      ],
+      "collections": [
+        "water"
+      ],
+      "image": "images/emoji-codex/jet_ski.png",
+      "pictureGroup": "jet-ski",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "airplane",
+      "icon": "✈️",
+      "zone": "air",
+      "sound": "airplane",
+      "definition": "An aircraft with fixed wings that is moved through the air by an engine.",
+      "iconImages": [
+        "images/emoji-codex/airplane.png"
+      ],
+      "id": "vehicle.airplane",
+      "canonicalLabel": "airplane",
+      "legacyName": "airplane",
+      "aliases": [
+        "aeroplane",
+        "plane"
+      ],
+      "level": 1,
+      "example": "The airplane uses its wings to fly.",
+      "alt": "A fixed-wing airplane.",
+      "category": "air",
+      "lessons": [
+        "everyday",
+        "air"
+      ],
+      "collections": [
+        "air",
+        "passengers"
+      ],
+      "image": "images/emoji-codex/airplane.png",
+      "pictureGroup": "fixed-wing",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "helicopter",
+      "icon": "🚁",
+      "zone": "air",
+      "sound": "helicopter",
+      "definition": "An aircraft lifted by turning rotor blades above its body.",
+      "iconImages": [
+        "images/emoji-codex/helicopter.png"
+      ],
+      "id": "vehicle.helicopter",
+      "canonicalLabel": "helicopter",
+      "legacyName": "helicopter",
+      "aliases": [],
+      "level": 2,
+      "example": "The helicopter rotor blades turn above the cabin.",
+      "alt": "A helicopter with rotor blades.",
+      "category": "air",
+      "lessons": [
+        "air",
+        "helping"
+      ],
+      "collections": [
+        "air",
+        "passengers",
+        "work"
+      ],
+      "image": "images/emoji-codex/helicopter.png",
+      "pictureGroup": "helicopter",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": true
+    },
+    {
+      "name": "hot air balloon",
+      "icon": "🎈",
+      "zone": "air",
+      "sound": "hot-air-balloon",
+      "definition": "A large balloon lifted by warm air, with a basket underneath.",
+      "iconImages": [
+        "images/emoji-codex/hot_air_balloon.png"
+      ],
+      "id": "vehicle.hot-air-balloon",
+      "canonicalLabel": "hot air balloon",
+      "legacyName": "hot air balloon",
+      "aliases": [],
+      "level": 2,
+      "example": "The basket hangs below the hot air balloon.",
+      "alt": "A hot air balloon with a passenger basket.",
+      "category": "air",
+      "lessons": [
+        "air"
+      ],
+      "collections": [
+        "air",
+        "passengers"
+      ],
+      "image": "images/emoji-codex/hot_air_balloon.png",
+      "pictureGroup": "hot-air-balloon",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": true
+    },
+    {
+      "name": "glider",
+      "icon": "🛩️",
+      "zone": "air",
+      "sound": "wind",
+      "definition": "An aircraft designed to glide through the air without engine power.",
+      "iconImages": [
+        "images/emoji-codex/glider.png"
+      ],
+      "id": "vehicle.glider",
+      "canonicalLabel": "glider",
+      "legacyName": "glider",
+      "aliases": [],
+      "level": 3,
+      "example": "The glider moves through the air without engine power.",
+      "alt": "A glider with long fixed wings.",
+      "category": "air",
+      "lessons": [
+        "air"
+      ],
+      "collections": [
+        "air"
+      ],
+      "image": "images/emoji-codex/glider.png",
+      "pictureGroup": "fixed-wing",
+      "eligibility": {
+        "learn": true,
+        "sort": true,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    },
+    {
+      "name": "space shuttle",
+      "icon": "🚀",
+      "zone": "air",
+      "sound": "rocket",
+      "definition": "A reusable spacecraft whose winged orbiter returned to Earth and landed on a runway.",
+      "iconImages": [
+        "images/emoji-codex/space_shuttle.png"
+      ],
+      "id": "vehicle.space-shuttle",
+      "canonicalLabel": "space shuttle",
+      "legacyName": "space shuttle",
+      "aliases": [
+        "shuttle orbiter"
+      ],
+      "level": 3,
+      "example": "The space shuttle orbiter returned to a runway.",
+      "alt": "A winged space shuttle orbiter.",
+      "category": "space",
+      "lessons": [
+        "air"
+      ],
+      "collections": [
+        "space"
+      ],
+      "image": "images/emoji-codex/space_shuttle.png",
+      "pictureGroup": "space-shuttle",
+      "eligibility": {
+        "learn": true,
+        "sort": false,
+        "identify": true,
+        "hangman": true,
+        "flip": true,
+        "wheel": true,
+        "sound": false,
+        "detective": true
+      },
+      "curriculumReview": "proposed; classroom review pending",
+      "definitionReview": "reviewed for clear meaning in this foundation batch",
+      "imageReview": "existing source illustration retained; style replacement remains in artwork phase",
+      "silhouetteEligible": false
+    }
+  ],
+  "proposals": [
+    {
+      "id": "vehicle.motor-scooter",
+      "label": "motor scooter",
+      "kind": "vehicle",
+      "level": 2,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "road"
+      ],
+      "definition": "A motor vehicle with a seat and a platform for the rider's feet.",
+      "example": "The rider sits on the motor scooter.",
+      "imageBrief": "Whole seated motor scooter; compare with the standing kick scooter, without a rider hiding its shape.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "vehicle.auto-rickshaw",
+      "label": "auto-rickshaw",
+      "kind": "vehicle",
+      "level": 3,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "road"
+      ],
+      "definition": "A small motor vehicle with three wheels that can carry passengers.",
+      "example": "Passengers sit behind the auto-rickshaw driver.",
+      "imageBrief": "Three visible wheels and passenger cabin; distinct from pulled and cycle rickshaws.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "vehicle.cycle-rickshaw",
+      "label": "cycle rickshaw",
+      "kind": "vehicle",
+      "level": 3,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "human-powered"
+      ],
+      "definition": "A passenger vehicle moved by a person pedalling.",
+      "example": "The rider pedals the cycle rickshaw.",
+      "imageBrief": "Complete pedal drive and passenger seat; no engine or pulling handles.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "vehicle.coach",
+      "label": "coach",
+      "kind": "vehicle",
+      "level": 2,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "passengers"
+      ],
+      "definition": "A large passenger vehicle often used for longer road journeys.",
+      "example": "Our group travels to another town by coach.",
+      "imageBrief": "Whole coach with luggage compartment context; compare local bus without implying all buses are identical.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "vehicle.double-decker-bus",
+      "label": "double-decker bus",
+      "kind": "vehicle",
+      "level": 2,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "passengers"
+      ],
+      "definition": "A bus with passenger seats on two levels.",
+      "example": "The double-decker bus has an upper deck.",
+      "imageBrief": "Two clear levels of windows and a small cutaway showing two passenger floors.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "vehicle.tow-truck",
+      "label": "tow truck",
+      "kind": "vehicle",
+      "level": 2,
+      "lessons": [
+        "helping"
+      ],
+      "collections": [
+        "work"
+      ],
+      "definition": "A truck used to carry or pull a vehicle that needs help.",
+      "example": "The tow truck carries a broken-down car.",
+      "imageBrief": "Whole flatbed truck with a secured car; safe roadside context and no child nearby.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "vehicle.refuse-truck",
+      "label": "refuse truck",
+      "kind": "vehicle",
+      "level": 2,
+      "lessons": [
+        "helping"
+      ],
+      "collections": [
+        "work"
+      ],
+      "definition": "A truck that collects and carries rubbish.",
+      "example": "The refuse truck collects rubbish from our street.",
+      "imageBrief": "Clear refuse body and bin lifting equipment at rest; workers away from moving machinery.",
+      "aliases": [
+        "rubbish truck",
+        "garbage truck"
+      ],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "vehicle.concrete-mixer",
+      "label": "concrete mixer truck",
+      "kind": "vehicle",
+      "level": 3,
+      "lessons": [
+        "helping"
+      ],
+      "collections": [
+        "work"
+      ],
+      "definition": "A truck with a turning drum that carries and mixes concrete.",
+      "example": "The concrete mixer truck brings concrete to the building site.",
+      "imageBrief": "Whole truck with an unmistakable large mixing drum.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "vehicle.tipper-truck",
+      "label": "tipper truck",
+      "kind": "vehicle",
+      "level": 3,
+      "lessons": [
+        "helping"
+      ],
+      "collections": [
+        "work"
+      ],
+      "definition": "A truck with a container that can lift to tip out a load.",
+      "example": "The tipper truck unloads a pile of gravel.",
+      "imageBrief": "Paired level and raised container views; no people in unloading area.",
+      "aliases": [
+        "dump truck"
+      ],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "vehicle.rowboat",
+      "label": "rowboat",
+      "kind": "vehicle",
+      "level": 2,
+      "lessons": [
+        "water"
+      ],
+      "collections": [
+        "human-powered"
+      ],
+      "definition": "A small boat moved using oars.",
+      "example": "A person uses oars to move the rowboat.",
+      "imageBrief": "Whole boat and two oars clearly contacting water; lifejacket shown if occupied.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "vehicle.sailboat",
+      "label": "sailboat",
+      "kind": "vehicle",
+      "level": 2,
+      "lessons": [
+        "water"
+      ],
+      "collections": [
+        "water"
+      ],
+      "definition": "A boat that can use wind in its sails to move.",
+      "example": "Wind fills the sailboat's sail.",
+      "imageBrief": "Whole hull, mast and sail; no inference that all yachts are sailboats.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "vehicle.canoe",
+      "label": "canoe",
+      "kind": "vehicle",
+      "level": 3,
+      "lessons": [
+        "water"
+      ],
+      "collections": [
+        "human-powered"
+      ],
+      "definition": "A narrow boat often moved with a single-bladed paddle.",
+      "example": "The paddler moves the canoe across calm water.",
+      "imageBrief": "Open canoe and single-bladed paddle; compare kayak with visible differences.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "vehicle.kayak",
+      "label": "kayak",
+      "kind": "vehicle",
+      "level": 3,
+      "lessons": [
+        "water"
+      ],
+      "collections": [
+        "human-powered"
+      ],
+      "definition": "A narrow boat often paddled with a blade at each end of the paddle.",
+      "example": "The kayaker uses a double-bladed paddle.",
+      "imageBrief": "Seated paddler and double-bladed paddle; appropriate fitted water-safety equipment.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "vehicle.tugboat",
+      "label": "tugboat",
+      "kind": "vehicle",
+      "level": 3,
+      "lessons": [
+        "water"
+      ],
+      "collections": [
+        "work"
+      ],
+      "definition": "A strong boat that helps move other boats or ships.",
+      "example": "The tugboat helps a ship near the harbour.",
+      "imageBrief": "Tug beside a larger ship with safe visible relationship, plus whole-subject inset.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "vehicle.cargo-bicycle",
+      "label": "cargo bicycle",
+      "kind": "vehicle",
+      "level": 3,
+      "lessons": [
+        "helping"
+      ],
+      "collections": [
+        "human-powered"
+      ],
+      "definition": "A bicycle built with space to carry a load.",
+      "example": "The cargo bicycle carries parcels.",
+      "imageBrief": "Complete pedals, wheels and load box; no hidden powered variant.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "vehicle.rocket",
+      "label": "rocket",
+      "kind": "vehicle",
+      "level": 2,
+      "lessons": [
+        "air"
+      ],
+      "collections": [
+        "space"
+      ],
+      "definition": "A vehicle that can use rocket engines to carry a load upwards or into space.",
+      "example": "The rocket lifts away from its launch pad.",
+      "imageBrief": "Recognisable launch rocket and safe distant pad; separate from the winged shuttle orbiter.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "part.wheel",
+      "label": "wheel",
+      "kind": "part",
+      "level": 1,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "vehicle-parts"
+      ],
+      "definition": "A round part that turns to help a vehicle move.",
+      "example": "The car's wheels turn as it moves.",
+      "imageBrief": "One complete wheel highlighted on an intact car; distinguish wheel from tyre.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "part.tyre",
+      "label": "tyre",
+      "kind": "part",
+      "level": 2,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "vehicle-parts"
+      ],
+      "definition": "The outer covering around many vehicle wheels.",
+      "example": "The bicycle tyre touches the ground.",
+      "imageBrief": "Matched wheel and tyre comparison with tyre highlighted; no label-only distinction.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "part.pedal",
+      "label": "pedal",
+      "kind": "part",
+      "level": 1,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "vehicle-parts"
+      ],
+      "definition": "A part that you push with your foot to work a bicycle or another machine.",
+      "example": "The cyclist pushes the bicycle pedals.",
+      "imageBrief": "Bicycle pedal close-up linked to complete bicycle; show foot contact safely.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "part.handlebars",
+      "label": "handlebars",
+      "kind": "part",
+      "level": 2,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "vehicle-parts"
+      ],
+      "definition": "The bars a rider holds to steer a bicycle or similar vehicle.",
+      "example": "The rider holds the handlebars with both hands.",
+      "imageBrief": "Bicycle handlebars highlighted on a complete bicycle.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "part.steering-wheel",
+      "label": "steering wheel",
+      "kind": "part",
+      "level": 2,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "vehicle-parts"
+      ],
+      "definition": "A wheel-shaped control used to steer many vehicles.",
+      "example": "The driver turns the steering wheel.",
+      "imageBrief": "Clearly mounted steering wheel in a parked car; adult driver if shown.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "part.brake",
+      "label": "brake",
+      "kind": "part",
+      "level": 2,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "vehicle-parts"
+      ],
+      "definition": "A part that helps slow or stop a vehicle.",
+      "example": "The bicycle brake helps slow the wheel.",
+      "imageBrief": "Bicycle brake lever connected visually to brake at the wheel; no unexplained loose component.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "part.engine",
+      "label": "engine",
+      "kind": "part",
+      "level": 2,
+      "lessons": [
+        "helping"
+      ],
+      "collections": [
+        "vehicle-parts"
+      ],
+      "definition": "A machine that supplies power to move many vehicles.",
+      "example": "The engine powers the truck.",
+      "imageBrief": "Engine context in a safely parked truck with an explanatory cutaway.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "part.seat",
+      "label": "seat",
+      "kind": "part",
+      "level": 1,
+      "lessons": [
+        "everyday"
+      ],
+      "collections": [
+        "vehicle-parts"
+      ],
+      "definition": "A place made for a person to sit.",
+      "example": "The passenger sits on a bus seat.",
+      "imageBrief": "One bus seat highlighted in a complete cabin view.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "part.seat-belt",
+      "label": "seat belt",
+      "kind": "part",
+      "level": 1,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "safe-journeys"
+      ],
+      "definition": "A strap that helps hold someone in their seat.",
+      "example": "An adult checks the passenger's seat belt.",
+      "imageBrief": "Adult checks restraint in parked vehicle; do not imply an adult belt fits every child.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "part.door",
+      "label": "door",
+      "kind": "part",
+      "level": 1,
+      "lessons": [
+        "everyday"
+      ],
+      "collections": [
+        "vehicle-parts"
+      ],
+      "definition": "A movable part that opens and closes an entrance.",
+      "example": "The bus door opens at the stop.",
+      "imageBrief": "Whole stationary bus and highlighted passenger door; safe pavement boarding side.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "part.window",
+      "label": "window",
+      "kind": "part",
+      "level": 1,
+      "lessons": [
+        "everyday"
+      ],
+      "collections": [
+        "vehicle-parts"
+      ],
+      "definition": "An opening with glass or another clear material that lets us see through.",
+      "example": "We look through the train window.",
+      "imageBrief": "Window highlighted within complete train carriage; seated passenger.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "part.headlight",
+      "label": "headlight",
+      "kind": "part",
+      "level": 2,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "vehicle-parts"
+      ],
+      "definition": "A light on the front of a vehicle that helps light the way.",
+      "example": "The car's headlights shine ahead.",
+      "imageBrief": "Matched front view with clear headlights, no eye-like face treatment.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "part.indicator",
+      "label": "indicator",
+      "kind": "part",
+      "level": 3,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "vehicle-parts"
+      ],
+      "definition": "A flashing vehicle light used to signal a planned turn.",
+      "example": "The driver signals with an indicator before turning.",
+      "imageBrief": "Matched sequence with highlighted lamp; do not teach that a signal guarantees a turn.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "part.mirror",
+      "label": "vehicle mirror",
+      "kind": "part",
+      "level": 2,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "vehicle-parts"
+      ],
+      "definition": "A mirror that helps a driver or rider see around or behind a vehicle.",
+      "example": "The driver checks the vehicle mirror.",
+      "imageBrief": "Side mirror mounted on parked vehicle with believable reflection; no promise of full visibility.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "part.wing",
+      "label": "wing",
+      "kind": "part",
+      "level": 1,
+      "lessons": [
+        "air"
+      ],
+      "collections": [
+        "vehicle-parts"
+      ],
+      "definition": "A shaped part of an aircraft that helps support it in flight.",
+      "example": "The airplane has a wing on each side.",
+      "imageBrief": "Whole airplane and highlighted wing; no face or missing far wing.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "part.rotor",
+      "label": "rotor",
+      "kind": "part",
+      "level": 3,
+      "lessons": [
+        "air"
+      ],
+      "collections": [
+        "vehicle-parts"
+      ],
+      "definition": "A set of turning blades that helps a helicopter fly.",
+      "example": "The helicopter's main rotor turns above its cabin.",
+      "imageBrief": "Whole helicopter with rotor above body, plus still close-up; no unsafe approach.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "part.propeller",
+      "label": "propeller",
+      "kind": "part",
+      "level": 3,
+      "lessons": [
+        "air"
+      ],
+      "collections": [
+        "vehicle-parts"
+      ],
+      "definition": "Turning blades that push air or water to help move a vehicle.",
+      "example": "The airplane's propeller turns at the front.",
+      "imageBrief": "Propeller airplane with complete visible propeller; explain boat propellers separately.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "part.sail",
+      "label": "sail",
+      "kind": "part",
+      "level": 2,
+      "lessons": [
+        "water"
+      ],
+      "collections": [
+        "vehicle-parts"
+      ],
+      "definition": "A large sheet of strong material that catches wind to help move a boat.",
+      "example": "Wind pushes against the sail.",
+      "imageBrief": "Complete sailboat with sail highlighted; show mast and attachment context.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "part.anchor",
+      "label": "anchor",
+      "kind": "part",
+      "level": 3,
+      "lessons": [
+        "water"
+      ],
+      "collections": [
+        "vehicle-parts"
+      ],
+      "definition": "A heavy object lowered from a boat to help hold it in place.",
+      "example": "The boat lowers its anchor.",
+      "imageBrief": "Boat, line and anchor shown together in a simple water cutaway.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "part.carriage",
+      "label": "train carriage",
+      "kind": "part",
+      "level": 2,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "rail"
+      ],
+      "definition": "A connected section of a train that can carry passengers.",
+      "example": "Passengers sit in the train carriage.",
+      "imageBrief": "Passenger carriage connected behind locomotive; no road coach ambiguity.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "place.road",
+      "label": "road",
+      "kind": "place",
+      "level": 1,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "journey-places"
+      ],
+      "definition": "A way made for vehicles to travel along.",
+      "example": "The bus travels along the road.",
+      "imageBrief": "Short road scene with kerbs and pavement; safe separation of pedestrians.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "place.pavement",
+      "label": "pavement",
+      "kind": "place",
+      "level": 1,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "journey-places"
+      ],
+      "definition": "A path beside a road for people to walk along.",
+      "example": "We walk with an adult on the pavement.",
+      "imageBrief": "Clear raised walking path beside road; local terminology alias sidewalk.",
+      "aliases": [
+        "sidewalk"
+      ],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "place.cycle-lane",
+      "label": "cycle lane",
+      "kind": "place",
+      "level": 2,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "journey-places"
+      ],
+      "definition": "A marked part of a route intended for bicycles.",
+      "example": "A cyclist follows the marked cycle lane.",
+      "imageBrief": "Clear cycle marking and route boundaries; no claim every lane is physically protected.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "place.pedestrian-crossing",
+      "label": "pedestrian crossing",
+      "kind": "place",
+      "level": 1,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "safe-journeys"
+      ],
+      "definition": "A place marked for people to cross a road.",
+      "example": "We find a crossing with a trusted adult.",
+      "imageBrief": "Adult and child waiting back from kerb; traffic stopped before crossing; local design review required.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "place.junction",
+      "label": "junction",
+      "kind": "place",
+      "level": 2,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "journey-places"
+      ],
+      "definition": "A place where roads meet.",
+      "example": "The car slows near the road junction.",
+      "imageBrief": "Simple two-road meeting from raised perspective; no ambiguous child route.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "place.roundabout",
+      "label": "roundabout",
+      "kind": "place",
+      "level": 3,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "journey-places"
+      ],
+      "definition": "A road junction where vehicles travel around a central area.",
+      "example": "Vehicles move around the roundabout.",
+      "imageBrief": "Whole central island and connected roads; direction requires locale review before arrows.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "place.bridge",
+      "label": "bridge",
+      "kind": "place",
+      "level": 1,
+      "lessons": [
+        "everyday"
+      ],
+      "collections": [
+        "journey-places"
+      ],
+      "definition": "A structure that carries a route over a gap, water or another route.",
+      "example": "The train crosses the bridge.",
+      "imageBrief": "Rail bridge across river with full supports and approach tracks.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "place.tunnel",
+      "label": "tunnel",
+      "kind": "place",
+      "level": 2,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "journey-places"
+      ],
+      "definition": "A passage through or under something, such as a hill.",
+      "example": "The train goes through a tunnel.",
+      "imageBrief": "Whole entrance and train with continuation inset; no dark featureless hole alone.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "place.railway",
+      "label": "railway",
+      "kind": "place",
+      "level": 2,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "rail"
+      ],
+      "definition": "A route with tracks for trains.",
+      "example": "The train follows the railway tracks.",
+      "imageBrief": "Complete track section with sleepers and train; people kept behind barrier.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "place.station",
+      "label": "train station",
+      "kind": "place",
+      "level": 1,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "rail"
+      ],
+      "definition": "A place where trains stop for passengers to get on or off.",
+      "example": "We wait for our train at the station.",
+      "imageBrief": "Station building, stopped train and platform clearly related.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "place.platform",
+      "label": "platform",
+      "kind": "place",
+      "level": 2,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "rail"
+      ],
+      "definition": "The raised area beside a railway track where passengers wait.",
+      "example": "We wait back from the edge of the platform.",
+      "imageBrief": "Adult and child behind marked safe line, train stationary; no edge play.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "place.bus-stop",
+      "label": "bus stop",
+      "kind": "place",
+      "level": 1,
+      "lessons": [
+        "everyday"
+      ],
+      "collections": [
+        "passengers"
+      ],
+      "definition": "A marked place where buses stop for passengers.",
+      "example": "We wait at the bus stop.",
+      "imageBrief": "Bus-stop pole or shelter with waiting people back from road.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "place.airport",
+      "label": "airport",
+      "kind": "place",
+      "level": 2,
+      "lessons": [
+        "air"
+      ],
+      "collections": [
+        "journey-places"
+      ],
+      "definition": "A place where aircraft take off and land and passengers begin or end flights.",
+      "example": "The family arrives at the airport.",
+      "imageBrief": "Terminal, apron and runway context; no public access onto runway.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "place.runway",
+      "label": "runway",
+      "kind": "place",
+      "level": 2,
+      "lessons": [
+        "air"
+      ],
+      "collections": [
+        "journey-places"
+      ],
+      "definition": "A long prepared strip where aircraft take off or land.",
+      "example": "The airplane lands on the runway.",
+      "imageBrief": "Whole runway and aircraft with clear relationship; no road traffic.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "place.harbour",
+      "label": "harbour",
+      "kind": "place",
+      "level": 2,
+      "lessons": [
+        "water"
+      ],
+      "collections": [
+        "journey-places"
+      ],
+      "definition": "A sheltered area of water where boats and ships can stay.",
+      "example": "The boats rest in the harbour.",
+      "imageBrief": "Sheltered water, harbour entrance and several moored vessels; distinguish from single dock.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "place.dock",
+      "label": "dock",
+      "kind": "place",
+      "level": 3,
+      "lessons": [
+        "water"
+      ],
+      "collections": [
+        "journey-places"
+      ],
+      "definition": "A place beside the water where boats can stop for people or goods.",
+      "example": "The ferry stops beside the dock.",
+      "imageBrief": "Ferry secured beside boarding structure with barrier and adult supervision.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "place.canal",
+      "label": "canal",
+      "kind": "place",
+      "level": 3,
+      "lessons": [
+        "water"
+      ],
+      "collections": [
+        "journey-places"
+      ],
+      "definition": "A waterway made or changed by people for boats or water to pass along.",
+      "example": "The boat travels along the canal.",
+      "imageBrief": "Long narrow managed waterway and boat; walking path separated from water edge.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "place.car-park",
+      "label": "car park",
+      "kind": "place",
+      "level": 1,
+      "lessons": [
+        "everyday"
+      ],
+      "collections": [
+        "journey-places"
+      ],
+      "definition": "An area where vehicles can be parked.",
+      "example": "The driver parks in a marked car-park space.",
+      "imageBrief": "Parked cars and clear walking route with adult and child together.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "place.garage",
+      "label": "garage",
+      "kind": "place",
+      "level": 2,
+      "lessons": [
+        "helping"
+      ],
+      "collections": [
+        "work"
+      ],
+      "definition": "A building where vehicles are kept or repaired.",
+      "example": "The mechanic works in a vehicle garage.",
+      "imageBrief": "Repair garage with stationary vehicle and safe work area; not a petrol station.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "place.fuel-station",
+      "label": "fuel station",
+      "kind": "place",
+      "level": 2,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "journey-places"
+      ],
+      "definition": "A place where vehicles can receive fuel.",
+      "example": "The driver stops at the fuel station.",
+      "imageBrief": "Adult at pump, vehicle stationary, children safely inside; no child refuelling action.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "person.passenger",
+      "label": "passenger",
+      "kind": "person",
+      "level": 1,
+      "lessons": [
+        "everyday"
+      ],
+      "collections": [
+        "passengers"
+      ],
+      "definition": "A person travelling in a vehicle who is not operating it.",
+      "example": "The passenger sits in a bus seat.",
+      "imageBrief": "Passenger seated safely in a bus; diverse people without uniform-based guessing.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "person.driver",
+      "label": "driver",
+      "kind": "person",
+      "level": 1,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "people-at-work"
+      ],
+      "definition": "A person who controls a road vehicle.",
+      "example": "The driver steers the bus.",
+      "imageBrief": "Adult driving position in complete bus context; stationary teaching scene.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "person.cyclist",
+      "label": "cyclist",
+      "kind": "person",
+      "level": 1,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "human-powered"
+      ],
+      "definition": "A person riding a bicycle.",
+      "example": "The cyclist pedals along the path.",
+      "imageBrief": "Whole bicycle and rider with fitted helmet; role visible through action.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "person.pedestrian",
+      "label": "pedestrian",
+      "kind": "person",
+      "level": 2,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "safe-journeys"
+      ],
+      "definition": "A person travelling on foot.",
+      "example": "The pedestrians walk along the pavement.",
+      "imageBrief": "People walking on pavement separated from vehicles; include mobility-aid user in wider scene.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "person.pilot",
+      "label": "pilot",
+      "kind": "person",
+      "level": 2,
+      "lessons": [
+        "air"
+      ],
+      "collections": [
+        "people-at-work"
+      ],
+      "definition": "A person trained to control an aircraft.",
+      "example": "The pilot controls the airplane.",
+      "imageBrief": "Pilot in cockpit with aircraft context; role not inferred only from costume.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "person.boat-captain",
+      "label": "boat captain",
+      "kind": "person",
+      "level": 3,
+      "lessons": [
+        "water"
+      ],
+      "collections": [
+        "people-at-work"
+      ],
+      "definition": "The person in charge of a boat or ship.",
+      "example": "The boat captain guides the ferry.",
+      "imageBrief": "Adult at ferry controls and whole-vessel context; varied gender and ethnicity.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "person.train-conductor",
+      "label": "train conductor",
+      "kind": "person",
+      "level": 3,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "people-at-work"
+      ],
+      "definition": "A railway worker who helps passengers and checks tickets on some trains.",
+      "example": "The train conductor checks a passenger's ticket.",
+      "imageBrief": "Worker checking ticket in carriage; distinguish conductor from train driver and state some trains.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "person.mechanic",
+      "label": "mechanic",
+      "kind": "person",
+      "level": 2,
+      "lessons": [
+        "helping"
+      ],
+      "collections": [
+        "people-at-work"
+      ],
+      "definition": "A person who maintains or repairs machines such as vehicles.",
+      "example": "The mechanic repairs the bicycle.",
+      "imageBrief": "Mechanic at a safe repair stand with bicycle; no child under raised vehicle.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "person.delivery-worker",
+      "label": "delivery worker",
+      "kind": "person",
+      "level": 2,
+      "lessons": [
+        "helping"
+      ],
+      "collections": [
+        "people-at-work"
+      ],
+      "definition": "A person who brings parcels or other goods to people.",
+      "example": "The delivery worker carries a parcel to the door.",
+      "imageBrief": "Worker and parcel beside parked vehicle; safe pavement route.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "person.firefighter",
+      "label": "firefighter",
+      "kind": "person",
+      "level": 2,
+      "lessons": [
+        "helping"
+      ],
+      "collections": [
+        "emergency"
+      ],
+      "definition": "A person trained to help put out fires and rescue people.",
+      "example": "The firefighter takes equipment from the fire engine.",
+      "imageBrief": "Firefighter at parked fire engine in calm scene; no distress or unsafe child imitation.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "action.ride",
+      "label": "ride",
+      "kind": "action",
+      "level": 1,
+      "lessons": [
+        "everyday"
+      ],
+      "collections": [
+        "journey-actions"
+      ],
+      "definition": "To travel on or in a vehicle or on an animal.",
+      "example": "We ride on the bus to school.",
+      "imageBrief": "Two-frame seated bus journey; do not imply passenger controls vehicle.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn-with-context",
+        "read-draw-talk",
+        "applied-context"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "action.drive",
+      "label": "drive",
+      "kind": "action",
+      "level": 1,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "journey-actions"
+      ],
+      "definition": "To control a moving road vehicle.",
+      "example": "The adult drives the car.",
+      "imageBrief": "Adult at controls plus moving vehicle context; no child driving real car.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn-with-context",
+        "read-draw-talk",
+        "applied-context"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "action.balance",
+      "label": "balance",
+      "kind": "action",
+      "level": 2,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "journey-actions"
+      ],
+      "definition": "To keep steady without falling over.",
+      "example": "The rider balances on the bicycle.",
+      "imageBrief": "Supervised rider with helmet in safe practice area; sequence conveys steadiness.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn-with-context",
+        "read-draw-talk",
+        "applied-context"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "action.steer",
+      "label": "steer",
+      "kind": "action",
+      "level": 2,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "journey-actions"
+      ],
+      "definition": "To control the direction a vehicle moves.",
+      "example": "The driver steers around the bend.",
+      "imageBrief": "Paired control and route view with a clear safe change of direction.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn-with-context",
+        "read-draw-talk",
+        "applied-context"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "action.stop",
+      "label": "stop",
+      "kind": "action",
+      "level": 1,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "journey-actions"
+      ],
+      "definition": "To finish moving and stay still.",
+      "example": "The bus stops at the bus stop.",
+      "imageBrief": "Matched moving and fully stopped bus sequence; not only a red symbol.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn-with-context",
+        "read-draw-talk",
+        "applied-context"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "action.start",
+      "label": "start",
+      "kind": "action",
+      "level": 1,
+      "lessons": [
+        "everyday"
+      ],
+      "collections": [
+        "journey-actions"
+      ],
+      "definition": "To begin doing something, such as moving.",
+      "example": "The train starts to move from the station.",
+      "imageBrief": "Two-frame stationary-to-moving train; passengers behind safe line.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn-with-context",
+        "read-draw-talk",
+        "applied-context"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "action.turn",
+      "label": "turn",
+      "kind": "action",
+      "level": 1,
+      "lessons": [
+        "land"
+      ],
+      "collections": [
+        "journey-actions"
+      ],
+      "definition": "To change the direction you are facing or moving.",
+      "example": "The car turns into another road.",
+      "imageBrief": "Two-frame vehicle on clear bend; arrows meaningful and locale reviewed.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn-with-context",
+        "read-draw-talk",
+        "applied-context"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "action.reverse",
+      "label": "reverse",
+      "kind": "action",
+      "level": 2,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "journey-actions"
+      ],
+      "definition": "To move backwards.",
+      "example": "The adult checks carefully before reversing the car.",
+      "imageBrief": "Distant safely separated observer, empty reversing area, sequential position cues.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn-with-context",
+        "read-draw-talk",
+        "applied-context"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "action.park",
+      "label": "park",
+      "kind": "action",
+      "level": 1,
+      "lessons": [
+        "everyday"
+      ],
+      "collections": [
+        "journey-actions"
+      ],
+      "definition": "To stop and leave a vehicle in a suitable place.",
+      "example": "The driver parks in a marked space.",
+      "imageBrief": "Sequence ends fully inside marked space, engine-off rest implied without extra vocabulary count.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn-with-context",
+        "read-draw-talk",
+        "applied-context"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "action.board",
+      "label": "board",
+      "kind": "action",
+      "level": 2,
+      "lessons": [
+        "everyday"
+      ],
+      "collections": [
+        "journey-actions"
+      ],
+      "definition": "To get onto a vehicle for a journey.",
+      "example": "Passengers board the bus when it is safely stopped.",
+      "imageBrief": "Adult-supervised boarding of stationary bus from pavement; clear before and after.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn-with-context",
+        "read-draw-talk",
+        "applied-context"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "action.get-off",
+      "label": "get off",
+      "kind": "action",
+      "level": 1,
+      "lessons": [
+        "everyday"
+      ],
+      "collections": [
+        "journey-actions"
+      ],
+      "definition": "To leave a vehicle at the end of a ride or at a stop.",
+      "example": "We get off the bus with an adult.",
+      "imageBrief": "Stationary bus and safe pavement exit; no road-side stepping.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn-with-context",
+        "read-draw-talk",
+        "applied-context"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "action.load",
+      "label": "load",
+      "kind": "action",
+      "level": 2,
+      "lessons": [
+        "helping"
+      ],
+      "collections": [
+        "journey-actions"
+      ],
+      "definition": "To put things into or onto a vehicle for carrying.",
+      "example": "The worker loads boxes into the van.",
+      "imageBrief": "Worker moves manageable box into parked van; no unsafe lifting.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn-with-context",
+        "read-draw-talk",
+        "applied-context"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "action.unload",
+      "label": "unload",
+      "kind": "action",
+      "level": 2,
+      "lessons": [
+        "helping"
+      ],
+      "collections": [
+        "journey-actions"
+      ],
+      "definition": "To take carried things off or out of a vehicle.",
+      "example": "The worker unloads parcels from the van.",
+      "imageBrief": "Matched load comparison with clear parcel moving out, vehicle stationary.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn-with-context",
+        "read-draw-talk",
+        "applied-context"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "action.take-off",
+      "label": "take off",
+      "kind": "action",
+      "level": 2,
+      "lessons": [
+        "air"
+      ],
+      "collections": [
+        "journey-actions"
+      ],
+      "definition": "To leave the ground and begin flying.",
+      "example": "The airplane takes off from the runway.",
+      "imageBrief": "Three positions from runway to clear air; consistent aircraft and no crowd nearby.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn-with-context",
+        "read-draw-talk",
+        "applied-context"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "action.land",
+      "label": "land",
+      "kind": "action",
+      "level": 2,
+      "lessons": [
+        "air"
+      ],
+      "collections": [
+        "journey-actions"
+      ],
+      "definition": "To return to the ground or another landing surface from flight.",
+      "example": "The helicopter lands on its landing pad.",
+      "imageBrief": "Three-position descent to safe pad; opposite of take-off is visually clear.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn-with-context",
+        "read-draw-talk",
+        "applied-context"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "action.float",
+      "label": "float",
+      "kind": "action",
+      "level": 2,
+      "lessons": [
+        "water"
+      ],
+      "collections": [
+        "journey-actions"
+      ],
+      "definition": "To stay supported on the surface of water or another liquid.",
+      "example": "The boat floats on the water.",
+      "imageBrief": "Waterline cutaway and complete boat; not a sinking comparison with people in danger.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn-with-context",
+        "read-draw-talk",
+        "applied-context"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "safety.helmet",
+      "label": "helmet",
+      "kind": "safety",
+      "level": 1,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "safe-journeys"
+      ],
+      "definition": "A strong covering worn to help protect the head.",
+      "example": "An adult checks the rider's helmet fits.",
+      "imageBrief": "Fitted cycle helmet on rider plus complete helmet; straps visible without claiming zero injury risk.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "safety.life-jacket",
+      "label": "life jacket",
+      "kind": "safety",
+      "level": 1,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "safe-journeys"
+      ],
+      "definition": "Equipment worn to help keep a person afloat in water.",
+      "example": "An adult checks the child's life jacket before the boat trip.",
+      "imageBrief": "Suitable child lifejacket correctly fastened with adult check; RNLI reference and expert review before art acceptance.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "safety.child-car-seat",
+      "label": "child car seat",
+      "kind": "safety",
+      "level": 2,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "safe-journeys"
+      ],
+      "definition": "A seat or restraint made to help protect a child travelling in a car.",
+      "example": "A trusted adult checks the child's car seat.",
+      "imageBrief": "Suitable fitted restraint in parked car with adult checking; no universal age or orientation instruction.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "safety.traffic-light",
+      "label": "traffic light",
+      "kind": "safety",
+      "level": 1,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "safe-journeys"
+      ],
+      "definition": "A set of coloured lights that gives signals to road users.",
+      "example": "The driver stops when the traffic light shows red.",
+      "imageBrief": "Whole mounted vehicle signal with red lit; separate from pedestrian signal and locale review.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "safety.stop-sign",
+      "label": "stop sign",
+      "kind": "safety",
+      "level": 2,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "safe-journeys"
+      ],
+      "definition": "A road sign telling drivers to stop.",
+      "example": "The driver stops at the stop sign.",
+      "imageBrief": "Complete octagonal sign and stationary vehicle in appropriate road context; no invented road rule.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "safety.crossing-signal",
+      "label": "crossing signal",
+      "kind": "safety",
+      "level": 2,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "safe-journeys"
+      ],
+      "definition": "A signal that helps people know when to wait or cross at a crossing.",
+      "example": "We check the crossing signal with an adult.",
+      "imageBrief": "Matched waiting and crossing indications; never imply signal alone removes need to check traffic.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "safety.reflector",
+      "label": "reflector",
+      "kind": "safety",
+      "level": 3,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "safe-journeys"
+      ],
+      "definition": "A surface that sends light back towards its source.",
+      "example": "The bicycle reflector shines in the car's lights.",
+      "imageBrief": "Same bicycle in light and dark with headlights; distinguish passive reflection from a lamp.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "safety.reflective-vest",
+      "label": "reflective vest",
+      "kind": "safety",
+      "level": 2,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "safe-journeys"
+      ],
+      "definition": "A vest with material that reflects light to help someone be seen.",
+      "example": "The worker's reflective vest catches the light.",
+      "imageBrief": "Whole vest and paired headlight scene; no implication of guaranteed visibility.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "safety.bicycle-bell",
+      "label": "bicycle bell",
+      "kind": "safety",
+      "level": 1,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "safe-journeys"
+      ],
+      "definition": "A small bell used by a cyclist to make a warning sound.",
+      "example": "The cyclist rings the bicycle bell.",
+      "imageBrief": "Bell mounted on handlebars; no implication ringing gives priority over pedestrians.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "safety.barrier",
+      "label": "barrier",
+      "kind": "safety",
+      "level": 2,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "safe-journeys"
+      ],
+      "definition": "Something placed to block a route or keep people away from danger.",
+      "example": "We wait behind the closed barrier.",
+      "imageBrief": "Rail crossing barrier with people safely behind it; never depict walking around it.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "safety.handrail",
+      "label": "handrail",
+      "kind": "safety",
+      "level": 1,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "safe-journeys"
+      ],
+      "definition": "A rail that people can hold for support.",
+      "example": "The passenger holds the handrail on the steps.",
+      "imageBrief": "Stationary bus boarding steps and adult hand contact; children supervised.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn",
+        "identify-after-picture-review",
+        "spelling",
+        "matching",
+        "wheel"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "safety.speed-limit",
+      "label": "speed limit",
+      "kind": "safety",
+      "level": 3,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "safe-journeys"
+      ],
+      "definition": "The highest speed allowed on a particular route.",
+      "example": "The driver checks the speed-limit sign.",
+      "imageBrief": "Driver-context sign, no child speed-choice quiz; number and units need locale review.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn-with-context",
+        "read-draw-talk",
+        "applied-context"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "safety.visibility",
+      "label": "visibility",
+      "kind": "safety",
+      "level": 3,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "safe-journeys"
+      ],
+      "definition": "How clearly people or things can be seen.",
+      "example": "Fog can reduce a driver's visibility.",
+      "imageBrief": "Matched clear and foggy route from same viewpoint; no independent picture-identification test.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn-with-context",
+        "read-draw-talk",
+        "applied-context"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    },
+    {
+      "id": "safety.safe-distance",
+      "label": "safe distance",
+      "kind": "safety",
+      "level": 3,
+      "lessons": [
+        "safety"
+      ],
+      "collections": [
+        "safe-journeys"
+      ],
+      "definition": "Enough space to keep away from a possible danger.",
+      "example": "We stay well back from moving vehicles with a trusted adult.",
+      "imageBrief": "Adult and child behind safe boundary with vehicle far away; no invented universal metre value.",
+      "aliases": [],
+      "status": "draft-not-runtime",
+      "image": null,
+      "alt": null,
+      "proposedActivities": [
+        "learn-with-context",
+        "read-draw-talk",
+        "applied-context"
+      ],
+      "sortEligibility": "Requires an authored rule; never inferred from kind or filename.",
+      "detectiveEligibility": "Pending picture and outline review; off by default.",
+      "readingPlanStatus": "Explicit plan and teacher review required.",
+      "factualReview": "Draft meaning; specialist/locale review required where relevant.",
+      "teacherAcceptance": "pending"
+    }
+  ],
+  "activationGate": [
+    "Review useful breadth and meanings with the teacher.",
+    "Create and show approved complete pictures/context/comparisons and meaningful alt text.",
+    "Author exact activity rules, distinct picture groups, sound plans and recorded narration.",
+    "Generalise the vehicle-only runtime adapters before introducing parts, places, people or actions.",
+    "Commit/push and validate all IDs/scopes/coverage before local classroom review."
+  ]
+}
