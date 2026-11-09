@@ -167,3 +167,20 @@ img.result-burst{display:block;width:clamp(90px,14vw,140px);height:auto;margin:0
 @media(max-width:800px){.detective-workspace{grid-template-columns:minmax(0,3.5fr) minmax(190px,1fr)}.detective-picture{height:100%}.detective-controls .standard-actions{flex-direction:column}}
 @media(max-width:760px){.detective-workspace{grid-template-columns:minmax(0,1fr);min-height:0;gap:12px}.detective-picture{height:auto;aspect-ratio:1}.detective-controls{gap:12px}.detective-controls .learn-actions{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.detective-controls .learn-actions .standard-action{padding:8px 6px;font-size:.9rem}.detective-choices{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:480px){.detective-picture{height:auto;aspect-ratio:4/3}.detective-round-settings{display:none}.game-card[data-mode=detective] #questionText{font-size:1.45rem}.detective-controls{gap:8px}}
+
+/* Which One Is It?, following Plants modes.css (.picture-controls, .picture-toggle, .identify-target). */
+.game-card[data-mode=identify] #questionText{align-self:stretch;text-align:left}
+.game-card[data-mode=identify] .question-helper:empty{display:none}
+.picture-controls{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin:0 0 6px}
+.picture-toggle{min-height:42px;padding:7px 14px;border:2px solid #b9cfdf;border-radius:13px;background:#eef5fa;color:#1d4f73;font:inherit;font-weight:900;cursor:pointer}
+.picture-toggle:hover:not(:disabled){background:#e0edf6}
+.picture-toggle:disabled{opacity:.55;cursor:default}
+.game-card[data-mode=identify] .vehicle-stage{width:min(100%,clamp(130px,22dvh,260px));aspect-ratio:1;height:auto;min-height:0;margin:clamp(4px,2dvh,28px) auto;padding:14px;display:block;border:4px solid #fff;border-radius:28px;background:linear-gradient(145deg,#fffdf3,#e3eef6);box-shadow:0 7px 0 #a9c3d6,0 13px 24px #183a5124}
+.game-card[data-mode=identify] .vehicle-stage .vehicle-shadow,.game-card[data-mode=identify] .vehicle-stage .sound-rings{display:none}
+.game-card[data-mode=identify] .vehicle-stage .vehicle-emoji{width:100%;height:100%;max-height:none}
+.game-screen .game-card[data-mode=identify] .vehicle-stage .vehicle-emoji{width:100%;height:100%;background-position:center}
+.game-card[data-mode=identify].hide-identify-target .answers{margin-top:clamp(12px,4dvh,40px)}
+.game-card[data-mode=identify] .answer-btn{min-height:clamp(70px,12dvh,140px)}
+.game-card[data-mode=identify] .answer-image-icon{width:clamp(52px,8vw,96px);height:clamp(52px,8vw,96px)}
+.game-card[data-mode=identify].hide-answer-emojis .answer-icon{display:none}
+@media(max-width:480px){.game-card[data-mode=identify] #questionText{font-size:1.45rem}.game-card[data-mode=identify] .answers{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.game-card[data-mode=identify] .answer-btn{flex-direction:column;gap:4px;min-height:96px;padding:8px 4px;font-size:.9rem}.game-card[data-mode=identify] .answer-image-icon{width:52px;height:52px}.picture-toggle{flex:1 1 0;padding:6px 8px;font-size:.85rem}.game-card[data-mode=identify] .vehicle-stage{width:clamp(110px,16dvh,150px);padding:8px}}

@@ -381,6 +381,7 @@ function showScopeRecovery(mode,message='No eligible content matches this select
 
 function renderQuestion() {
   cancelCurrentWork();
+  document.querySelector('.picture-controls')?.remove();document.getElementById('gameCard').classList.remove('hide-identify-target');
   state.recovery=false;els.stage.style.display='';els.listen.disabled=false;els.scorePill.hidden=false;
   els.listen.hidden=false;document.querySelector('.progress-track').hidden=false;setStandardBack('Games');
   const gameCard = document.getElementById("gameCard");
@@ -778,6 +779,7 @@ function chooseAnswer(btn, correct, explain, revealVehicle) {
   els.feedback.className = "feedback";
   standardFeedback(`Correct! ${explain}`);
   burstConfetti(28);
+  for(const button of document.querySelectorAll('.picture-toggle'))button.disabled=true;
   els.score.textContent = state.score;
   tone(523, 0, .16); tone(659, .16, .16); tone(784, .32, .28);
   document.getElementById("nextBtn").onclick = nextQuestion;
@@ -795,7 +797,7 @@ function currentPrompt() {
   if (state.mode === "safety") return state.questions[state.round].q;
   if (state.mode === "identify") {
     const item = state.questions[state.round];
-    return standardPreferences().identifyTarget?'Which word names this picture?':item.vehicle.definition;
+    return `Find the picture for ${item.vehicle.name}.`;
   }
   if (state.mode === "hangman") return "";
   if (state.mode === "flip") return "";

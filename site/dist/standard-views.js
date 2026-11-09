@@ -18,7 +18,7 @@ function filteredStandardPool(mode,setup={}){return TransportStandard.poolFor(mo
 function standardSession(mode,setup={}){return classroom.prepare(mode,classroom.scope,TransportStandard.variantFor(mode,setup),filteredStandardPool(mode,setup));}
 
 function renderStandardSetup(mode,title,helper=''){
-  cancelCurrentWork();activeSession=null;
+  cancelCurrentWork();activeSession=null;document.querySelector('.picture-controls')?.remove();
   state={...state,mode,questions:[],round:0,score:0,sessionKey:null,recovery:false,choosing:true,hubGroup:null,setup:{}};
   showScreen('game');document.getElementById('gameCard').dataset.mode=mode;
   els.modeBadge.textContent=modeInfo[mode]?.badge||title;els.question.textContent=title;els.helper.textContent=helper;
@@ -232,12 +232,19 @@ function renderStandardSort(){
 }
 function renderStandardIdentify(){
   const round=state.questions[state.round],item=round.vehicle,pref=standardPreferences();
-  els.question.textContent=pref.identifyTarget?'Which word names this picture?':item.definition;
+  els.question.textContent=`Find the picture for ${item.name}.`;els.helper.textContent='';
   setVehiclePicture(item);els.stage.style.display=pref.identifyTarget?'':'none';
-  document.getElementById('gameCard').classList.toggle('hide-answer-emojis',!pref.identifyAnswers);
+  const gameCard=document.getElementById('gameCard');gameCard.classList.toggle('hide-answer-emojis',!pref.identifyAnswers);gameCard.classList.toggle('hide-identify-target',!pref.identifyTarget);
+  // Plants keeps both picture switches in the round; they share the Teacher panel's picture settings.
+  const controls=document.createElement('div');controls.className='picture-controls';
+  const toggle=(key,show,hide)=>{const on=standardPreferences()[key]!==false,button=standardButton(on?hide:show,()=>{const now=standardPreferences()[key]===false;classroom.data.preferences={...classroom.data.preferences,[key]:now};classroom.persist();
+      button.textContent=now?hide:show;button.setAttribute('aria-pressed',String(now));
+      if(key==='identifyTarget'){els.stage.style.display=now?'':'none';gameCard.classList.toggle('hide-identify-target',!now);}else gameCard.classList.toggle('hide-answer-emojis',!now);},'picture-toggle');
+    button.setAttribute('aria-pressed',String(on));button.disabled=state.answered;return button;};
+  controls.append(toggle('identifyAnswers','Show answer pictures','Hide answer pictures'),toggle('identifyTarget','Show middle picture','Hide middle picture'));
+  els.stage.before(controls);
   if(round.choices.length<2){state.practice=true;setVehicle(item,true);els.stage.style.display=pref.identifyTarget?'':'none';els.question.textContent=`Practise: ${item.name}`;const note=document.createElement('p');note.className='practice-note';note.textContent='Only one distinct picture is available. This is practice.';els.answers.append(note,standardButton('Next word',nextQuestion));return;}
-  for(const choice of round.choices)makeAnswer(choice.name,'',choice.id===item.id,`${item.name}. ${item.definition}`,true,pref.identifyAnswers?choice.image:'',choice.id);
-  if(!pref.identifyAnswers)for(const icon of els.answers.querySelectorAll('.answer-icon'))icon.hidden=true;
+  for(const choice of round.choices)makeAnswer(choice.name,'',choice.id===item.id,`${item.name}. ${item.definition}`,false,choice.image,choice.id);
 }
 function renderStandardSafety(){
   const round=state.questions[state.round],pref=standardPreferences(),item=vehicles.find(v=>round.relatedIds.includes(v.id));

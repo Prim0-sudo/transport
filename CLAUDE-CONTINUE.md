@@ -78,6 +78,14 @@ Commit identity: `git -c user.name=Prim0-sudo -c user.email=Prim0-sudo@users.nor
 - Layout keeps two columns down to 761px (tablet) and fits 768x1024, 1280x800 and 375x812 without scrolling; phone hides the locked settings row.
 - Missing art: none new; the mosaic only covers the vehicle (trimmed to its outline), so wide vehicles show a short grid in a tall frame.
 
+## Which One Is It? (matched to Plants 2026-11-09)
+
+- Prompt is Find the picture for <word>. (screen and Listen), left-aligned, no helper.
+- In-round Hide/Show answer pictures and Hide/Show middle picture buttons, shared with the Teacher panel picture settings; locked once answered. Answer pictures are hidden by class, so wrong guesses survive a switch.
+- Middle picture sits in a framed tile; the name no longer pops up under it after a correct answer.
+- Phone: three answer cards across, picture over label. Fits 768x1024, 1280x800 and 375x812 including the feedback bar.
+- Missing art: none new.
+
 ## Queued by owner (after every activity matches Plants)
 
 - Plants presentation: design a full-topic PPT for the Plants game covering every category (everything the videos cover, plus more), and add a separate Media tab called Presentation for it.
