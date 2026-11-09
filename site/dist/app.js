@@ -31,15 +31,6 @@ const vehicles = [
   { name: "space shuttle", icon: "🚀", zone: "air", sound: "rocket", definition: "A spacecraft that launches into space and can return to Earth." }
 ];
 
-const emojiSlug = name => name.replace(/[^a-z0-9]+/gi, "_").replace(/^_|_$/g, "");
-vehicles.forEach(vehicle => {
-  const slug = emojiSlug(vehicle.name);
-  const userSlug = vehicle.name === "space shuttle" ? "rocket_ship" : slug;
-  vehicle.iconImages = [
-    `images/emoji-codex/${slug}.png`,
-    `images/emoji-user/${userSlug}.png`
-  ];
-});
 
 const listeningVehicles = vehicles.filter(vehicle => vehicle.sound);
 
@@ -56,19 +47,16 @@ const safetyQuestions = [
 
 TransportCurriculum.prepare(vehicles, safetyQuestions);
 TransportStandard.prepare(vehicles);
-// All words show their Miniature World teaching picture; the old cut-outs remain for silhouette clues.
-{
-  const pictures=new Set(globalThis.TransportSceneLibrary?.individualIds||[]);
-  for(const vehicle of vehicles)if(pictures.has(vehicle.id)){vehicle.cutout=vehicle.image;vehicle.image=`images/vocabulary/${vehicle.id}.jpg`;}
-}
+// Painted Field Guide pictures are transparent, so the same picture also gives the silhouette clue.
+for(const vehicle of vehicles)vehicle.cutout=vehicle.image;
 const transportWords=[...vehicles,...(globalThis.TransportSceneLibrary?.entries||[])];
 const classroom = new TransportClassroom({entries:transportWords,questions:safetyQuestions,curriculum:TransportCurriculum});
 let activeSession = null;
 
 const zones = [
-  { name: "Land", icon: "🛣️", iconImage: "images/categories/land.png", value: "land" },
-  { name: "Water", icon: "🌊", iconImage: "images/categories/water.png", value: "water" },
-  { name: "Air", icon: "☁️", iconImage: "images/categories/air.png", value: "air" }
+  { name: "Land", icon: "🛣️", iconImage: "images/vocabulary/vehicle.car.png", value: "land" },
+  { name: "Water", icon: "🌊", iconImage: "images/vocabulary/vehicle.boat.png", value: "water" },
+  { name: "Air", icon: "☁️", iconImage: "images/vocabulary/vehicle.airplane.png", value: "air" }
 ];
 
 const modeInfo = {
@@ -929,10 +917,10 @@ document.getElementById('applyTeacherScope').addEventListener('click',()=>{
 refreshTeacherButton();
 
 // Retain the existing playable activities; use their existing illustrations in the shared menu.
-const menuArt = {learn:'bus',sort:'boat',detective:'helicopter',identify:'car',safety:'police_car',hangman:'truck',flip:'train',wheel:'bicycle',media:'ship',games:'car',phonics:'tram',create:'hot_air_balloon'};
+const menuArt = {learn:'bus',sort:'boat',detective:'helicopter',identify:'car',safety:'police-car',hangman:'truck',flip:'train',wheel:'bicycle',media:'ship',games:'taxi',phonics:'tram',create:'hot-air-balloon'};
 for (const card of document.querySelectorAll('.mode-card')) {
   const image = document.createElement('img');
-  image.src = `images/emoji-codex/${menuArt[card.dataset.mode]}.png`;
+  image.src = `images/vocabulary/vehicle.${menuArt[card.dataset.mode]}.png`;
   image.alt = '';
   card.querySelector('.mode-icon').replaceChildren(image);
 }

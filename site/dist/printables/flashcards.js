@@ -8,7 +8,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  121,
         "pageCount":  121,
-        "bytes":  20092689,
+        "bytes":  13402408,
         "path":  "printables/transport-flashcards-all-a4-1.pdf"
     },
     {
@@ -19,7 +19,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  29,
         "pageCount":  29,
-        "bytes":  4569595,
+        "bytes":  3333962,
         "path":  "printables/transport-flashcards-land-a4-1.pdf"
     },
     {
@@ -30,7 +30,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  11,
         "pageCount":  11,
-        "bytes":  1605101,
+        "bytes":  1082651,
         "path":  "printables/transport-flashcards-water-a4-1.pdf"
     },
     {
@@ -41,7 +41,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  4,
         "pageCount":  4,
-        "bytes":  528995,
+        "bytes":  387234,
         "path":  "printables/transport-flashcards-air-a4-1.pdf"
     },
     {
@@ -52,7 +52,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  2,
         "pageCount":  2,
-        "bytes":  285412,
+        "bytes":  192855,
         "path":  "printables/transport-flashcards-space-a4-1.pdf"
     },
     {
@@ -63,7 +63,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  20,
         "pageCount":  20,
-        "bytes":  3283400,
+        "bytes":  2059876,
         "path":  "printables/transport-flashcards-part-a4-1.pdf"
     },
     {
@@ -74,7 +74,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  20,
         "pageCount":  20,
-        "bytes":  3770646,
+        "bytes":  2537462,
         "path":  "printables/transport-flashcards-place-a4-1.pdf"
     },
     {
@@ -85,7 +85,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  10,
         "pageCount":  10,
-        "bytes":  1877352,
+        "bytes":  999035,
         "path":  "printables/transport-flashcards-person-a4-1.pdf"
     },
     {
@@ -96,7 +96,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  14,
         "pageCount":  14,
-        "bytes":  2355610,
+        "bytes":  1651636,
         "path":  "printables/transport-flashcards-action-a4-1.pdf"
     },
     {
@@ -107,7 +107,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  11,
         "pageCount":  11,
-        "bytes":  1819949,
+        "bytes":  1161067,
         "path":  "printables/transport-flashcards-safety-a4-1.pdf"
     },
     {
@@ -118,7 +118,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  121,
         "pageCount":  61,
-        "bytes":  10301099,
+        "bytes":  7849455,
         "path":  "printables/transport-flashcards-all-a4-2.pdf"
     },
     {
@@ -129,7 +129,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  29,
         "pageCount":  15,
-        "bytes":  2384041,
+        "bytes":  1960488,
         "path":  "printables/transport-flashcards-land-a4-2.pdf"
     },
     {
@@ -140,7 +140,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  11,
         "pageCount":  6,
-        "bytes":  832773,
+        "bytes":  647767,
         "path":  "printables/transport-flashcards-water-a4-2.pdf"
     },
     {
@@ -151,7 +151,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  4,
         "pageCount":  2,
-        "bytes":  281179,
+        "bytes":  237615,
         "path":  "printables/transport-flashcards-air-a4-2.pdf"
     },
     {
@@ -162,7 +162,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  2,
         "pageCount":  1,
-        "bytes":  149703,
+        "bytes":  117076,
         "path":  "printables/transport-flashcards-space-a4-2.pdf"
     },
     {
@@ -173,7 +173,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  20,
         "pageCount":  10,
-        "bytes":  1679646,
+        "bytes":  1214403,
         "path":  "printables/transport-flashcards-part-a4-2.pdf"
     },
     {
@@ -184,7 +184,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  20,
         "pageCount":  10,
-        "bytes":  1898362,
+        "bytes":  1437861,
         "path":  "printables/transport-flashcards-place-a4-2.pdf"
     },
     {
@@ -195,7 +195,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  10,
         "pageCount":  5,
-        "bytes":  960572,
+        "bytes":  610089,
         "path":  "printables/transport-flashcards-person-a4-2.pdf"
     },
     {
@@ -206,7 +206,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  14,
         "pageCount":  7,
-        "bytes":  1182032,
+        "bytes":  942508,
         "path":  "printables/transport-flashcards-action-a4-2.pdf"
     },
     {
@@ -217,7 +217,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  11,
         "pageCount":  6,
-        "bytes":  936828,
+        "bytes":  685685,
         "path":  "printables/transport-flashcards-safety-a4-2.pdf"
     },
     {
@@ -228,7 +228,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  121,
         "pageCount":  31,
-        "bytes":  9108546,
+        "bytes":  6730141,
         "path":  "printables/transport-flashcards-all-a4-4.pdf"
     },
     {
@@ -239,7 +239,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  29,
         "pageCount":  8,
-        "bytes":  2106089,
+        "bytes":  1686746,
         "path":  "printables/transport-flashcards-land-a4-4.pdf"
     },
     {
@@ -250,7 +250,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  11,
         "pageCount":  3,
-        "bytes":  729432,
+        "bytes":  548418,
         "path":  "printables/transport-flashcards-water-a4-4.pdf"
     },
     {
@@ -261,7 +261,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  4,
         "pageCount":  1,
-        "bytes":  246491,
+        "bytes":  202407,
         "path":  "printables/transport-flashcards-air-a4-4.pdf"
     },
     {
@@ -272,7 +272,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  2,
         "pageCount":  1,
-        "bytes":  132751,
+        "bytes":  100732,
         "path":  "printables/transport-flashcards-space-a4-4.pdf"
     },
     {
@@ -283,7 +283,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  20,
         "pageCount":  5,
-        "bytes":  1486746,
+        "bytes":  1035208,
         "path":  "printables/transport-flashcards-part-a4-4.pdf"
     },
     {
@@ -294,7 +294,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  20,
         "pageCount":  5,
-        "bytes":  1685891,
+        "bytes":  1240962,
         "path":  "printables/transport-flashcards-place-a4-4.pdf"
     },
     {
@@ -305,7 +305,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  10,
         "pageCount":  3,
-        "bytes":  856854,
+        "bytes":  523200,
         "path":  "printables/transport-flashcards-person-a4-4.pdf"
     },
     {
@@ -316,7 +316,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  14,
         "pageCount":  4,
-        "bytes":  1037821,
+        "bytes":  806454,
         "path":  "printables/transport-flashcards-action-a4-4.pdf"
     },
     {
@@ -327,7 +327,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "portrait",
         "wordCount":  11,
         "pageCount":  3,
-        "bytes":  830804,
+        "bytes":  590346,
         "path":  "printables/transport-flashcards-safety-a4-4.pdf"
     },
     {
@@ -338,7 +338,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "landscape",
         "wordCount":  121,
         "pageCount":  16,
-        "bytes":  5830487,
+        "bytes":  4505249,
         "path":  "printables/transport-flashcards-all-a4-8.pdf"
     },
     {
@@ -349,7 +349,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "landscape",
         "wordCount":  29,
         "pageCount":  4,
-        "bytes":  1362987,
+        "bytes":  1130798,
         "path":  "printables/transport-flashcards-land-a4-8.pdf"
     },
     {
@@ -360,7 +360,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "landscape",
         "wordCount":  11,
         "pageCount":  2,
-        "bytes":  467110,
+        "bytes":  368910,
         "path":  "printables/transport-flashcards-water-a4-8.pdf"
     },
     {
@@ -371,7 +371,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "landscape",
         "wordCount":  4,
         "pageCount":  1,
-        "bytes":  161009,
+        "bytes":  138404,
         "path":  "printables/transport-flashcards-air-a4-8.pdf"
     },
     {
@@ -382,7 +382,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "landscape",
         "wordCount":  2,
         "pageCount":  1,
-        "bytes":  85666,
+        "bytes":  68541,
         "path":  "printables/transport-flashcards-space-a4-8.pdf"
     },
     {
@@ -393,7 +393,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "landscape",
         "wordCount":  20,
         "pageCount":  3,
-        "bytes":  948836,
+        "bytes":  692531,
         "path":  "printables/transport-flashcards-part-a4-8.pdf"
     },
     {
@@ -404,7 +404,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "landscape",
         "wordCount":  20,
         "pageCount":  3,
-        "bytes":  1070168,
+        "bytes":  824263,
         "path":  "printables/transport-flashcards-place-a4-8.pdf"
     },
     {
@@ -415,7 +415,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "landscape",
         "wordCount":  10,
         "pageCount":  2,
-        "bytes":  548787,
+        "bytes":  354296,
         "path":  "printables/transport-flashcards-person-a4-8.pdf"
     },
     {
@@ -426,7 +426,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "landscape",
         "wordCount":  14,
         "pageCount":  2,
-        "bytes":  657515,
+        "bytes":  535450,
         "path":  "printables/transport-flashcards-action-a4-8.pdf"
     },
     {
@@ -437,7 +437,7 @@ globalThis.TransportFlashcards = [
         "orientation":  "landscape",
         "wordCount":  11,
         "pageCount":  2,
-        "bytes":  533289,
+        "bytes":  396935,
         "path":  "printables/transport-flashcards-safety-a4-8.pdf"
     }
 ];

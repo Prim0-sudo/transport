@@ -4,7 +4,7 @@ let teachingFitObserver=null;
 function fitTeachingSubject(element,item){
   element.dataset.teachingId=item.id;
   const fit=()=>{
-    const current=vehicles.find(v=>v.id===element.dataset.teachingId),frame=current&&TransportTeachingBounds[current.image];
+    const current=vehicles.find(v=>v.id===element.dataset.teachingId),frame=current&&globalThis.TransportTeachingBounds?.[current.image];
     if(!frame)return;const width=element.clientWidth,height=element.clientHeight,[x,y,w,h]=frame.crop;if(!width||!height)return;
     const scale=Math.min(width/w,height/h);
     element.style.backgroundSize=`${frame.size[0]*scale}px ${frame.size[1]*scale}px`;
@@ -47,7 +47,7 @@ function renderStandardCategories(mode){
   }
   if(mode==='learn'){
     const scenes=standardButton('',renderTeachingScenes,'standard-choice scene-entry');
-    scenes.innerHTML=`<img src="images/teaching-scenes/street-crossing.jpg" alt=""><strong>Transport Scenes</strong><span>${transportScenes.length} interactive scenes</span>`;
+    scenes.innerHTML=`<img src="images/teaching-scenes/street-crossing.png" alt=""><strong>Transport Scenes</strong><span>${transportScenes.length} interactive scenes</span>`;
     grid.append(scenes);
   }
   els.answers.append(grid);if(!classroom.pool(mode).length)standardRecoveryActions(els.answers);
@@ -55,7 +55,7 @@ function renderStandardCategories(mode){
 const transportScenes=[...TransportStandard.teachingScenes,...(globalThis.TransportSceneLibrary?.scenes||[])];
 const individualTeachingIds=new Set(globalThis.TransportSceneLibrary?.individualIds||[]);
 function individualTeachingImage(id){
-  return individualTeachingIds.has(id)?`images/vocabulary/${id}.jpg`:'';
+  return globalThis.TransportSceneLibrary?.individualImages?.[id]||'';
 }
 function setTeachingPicture(figure,scene){
   const image=figure.querySelector('img');
@@ -107,7 +107,7 @@ function renderTeachingScenes(){
   const description=panel.querySelector('.scene-description');
   let word='';
   const hear=standardButton('Hear label',()=>speak(word));
-  const quickScenes=TransportStandard.teachingScenes.length;
+  const quickScenes=Math.min(3,scenes.length);
   const picker=document.createElement('select');
   picker.setAttribute('aria-label','More transport scenes');
   picker.add(new Option('More scenes…',''));

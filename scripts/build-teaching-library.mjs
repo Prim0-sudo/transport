@@ -12,43 +12,29 @@ const additional = curriculum.proposals.filter(word => !excluded.has(word.id)).m
   return { ...word, ...edits, name: edits.name || word.label };
 });
 const words = new Map([...originals, ...additional].map(word => [word.id, word]));
-const mapped = [...data.pilotIds, ...data.scenes.flatMap(scene => scene.targets.map(target => target[0]))];
+// The 24 Painted Field Guide scenes and their traced highlights come from Codex's scene ledger.
+// Each path is drawn in the scene's own viewBox and filled with the even-odd rule.
+const sceneLedger = JSON.parse(await readFile(file('docs/content/TRANSPORT-FIELD-GUIDE-SCENES.json'), 'utf8'));
+const mapped = sceneLedger.scenes.flatMap(scene => scene.targets.map(target => target.wordId));
 if (words.size !== 121 || mapped.length !== 121 || new Set(mapped).size !== 121 || mapped.some(id => !words.has(id))) {
-  throw new Error('The approved teaching library must map all 121 distinct vocabulary entries.');
-}
-
-function makePath(region) {
-  if (Array.isArray(region[0])) return region.map(makePath).join(' ');
-  if (region.length === 4) {
-    const [left, top, right, bottom] = region;
-    return `M${left} ${top}H${right}V${bottom}H${left}Z`;
-  }
-  if (region.length < 6 || region.length % 2 !== 0) throw new Error('Invalid highlight coordinates');
-  return 'M' + region.join(' ') + 'Z';
+  throw new Error('The scene ledger must highlight all 121 distinct vocabulary entries.');
 }
 
 const scenes = [];
-const installed = new Set(data.pilotIds);
-for (const scene of data.scenes) {
-  // Dimensions come from the full-size original; the app ships the web-sized JPEG copy.
-  const image = scene.id + '.jpg';
-  const path = file('artwork/originals/teaching-scenes/' + scene.id + '.png');
-  let artwork;
-  try {
-    artwork = await readFile(path);
-  } catch (error) {
-    if (error.code !== 'ENOENT') throw error;
-    continue;
-  }
-  const entryIds = scene.targets.map(target => target[0]);
-  const labels = scene.targets.map(([id, region, kind]) => {
-    const word = words.get(id);
-    installed.add(id);
-    const label = word.name[0].toUpperCase() + word.name.slice(1);
-    return [label, word.definition, makePath(region), ...(kind ? [kind] : [])];
+const installed = new Set(mapped);
+for (const scene of sceneLedger.scenes) {
+  const image = scene.id + '.png';
+  const artwork = await readFile(file('site/dist/images/teaching-scenes/' + image));
+  if (artwork.toString('ascii', 12, 16) !== 'IHDR') throw new Error('Invalid PNG: ' + image);
+  const targets = [...scene.targets];
+  const first = targets.findIndex(target => target.wordId === scene.initialTarget);
+  if (first > 0) targets.unshift(...targets.splice(first, 1));
+  scenes.push({
+    id: scene.id, title: scene.title, image, alt: scene.alt,
+    width: artwork.readUInt32BE(16), height: artwork.readUInt32BE(20), viewBox: scene.viewBox,
+    entryIds: targets.map(target => target.wordId),
+    labels: targets.map(target => [target.label, target.note, target.path, ...(target.kind ? [target.kind] : [])]),
   });
-  if (artwork.toString('ascii',12,16) !== 'IHDR') throw new Error('Invalid PNG: ' + image);
-  scenes.push({ title: scene.title, image, alt: scene.alt, width: artwork.readUInt32BE(16), height: artwork.readUInt32BE(20), viewBox: '0 0 1000 1000', entryIds, labels, inscriptions: scene.inscriptions });
 }
 const artFolder = file('site/dist/images/vocabulary/');
 let individualFiles;

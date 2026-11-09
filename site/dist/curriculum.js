@@ -94,10 +94,10 @@
         definition,example:examples[key],alt,category:entry.zone,
         lessons:Object.entries(lessonMembers).filter(([,ids])=>ids.includes(key)).map(([id])=>id),
         collections:Object.entries(collectionMembers).filter(([,ids])=>ids.includes(key)).map(([id])=>id),
-        image:entry.iconImages[0],iconImages:[entry.iconImages[0]],pictureGroup:pictureGroups[key]||key,
+        image:`images/vocabulary/vehicle.${key}.png`,iconImages:[`images/vocabulary/vehicle.${key}.png`],pictureGroup:pictureGroups[key]||key,
         eligibility:{learn:true,sort:key!=='space-shuttle',identify:true,hangman:true,flip:true,wheel:true,sound:false,detective:false},
         curriculumReview:'proposed; classroom review pending',definitionReview:'reviewed for clear meaning in this foundation batch',
-        imageReview:'existing source illustration retained; style replacement remains in artwork phase',
+        imageReview:'Painted Field Guide picture (Codex art ledger)',
       });
     });
     const related = [split('car taxi van'),['bicycle'],collectionMembers.road,collectionMembers.road,collectionMembers.water,split('bus minibus school-bus'),collectionMembers.road,collectionMembers.road];

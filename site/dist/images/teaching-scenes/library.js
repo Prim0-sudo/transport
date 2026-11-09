@@ -15,7 +15,7 @@ globalThis.TransportSceneLibrary = {
       "category": "land",
       "definition": "A motor vehicle with a seat and a platform for the rider's feet.",
       "example": "The rider sits on the motor scooter.",
-      "image": "images/vocabulary/vehicle.motor-scooter.jpg",
+      "image": "images/vocabulary/vehicle.motor-scooter.png",
       "alt": "A picture showing motor scooter.",
       "pictureGroup": "vehicle.motor-scooter",
       "silhouetteEligible": false,
@@ -44,7 +44,7 @@ globalThis.TransportSceneLibrary = {
       "category": "land",
       "definition": "A small motor vehicle with three wheels that can carry passengers.",
       "example": "Passengers sit behind the auto-rickshaw driver.",
-      "image": "images/vocabulary/vehicle.auto-rickshaw.jpg",
+      "image": "images/vocabulary/vehicle.auto-rickshaw.png",
       "alt": "A picture showing auto-rickshaw.",
       "pictureGroup": "vehicle.auto-rickshaw",
       "silhouetteEligible": false,
@@ -73,7 +73,7 @@ globalThis.TransportSceneLibrary = {
       "category": "land",
       "definition": "A passenger vehicle moved by a person pedalling.",
       "example": "The rider pedals the cycle rickshaw.",
-      "image": "images/vocabulary/vehicle.cycle-rickshaw.jpg",
+      "image": "images/vocabulary/vehicle.cycle-rickshaw.png",
       "alt": "A picture showing cycle rickshaw.",
       "pictureGroup": "vehicle.cycle-rickshaw",
       "silhouetteEligible": false,
@@ -102,7 +102,7 @@ globalThis.TransportSceneLibrary = {
       "category": "land",
       "definition": "A large passenger vehicle often used for longer road journeys.",
       "example": "Our group travels to another town by coach.",
-      "image": "images/vocabulary/vehicle.coach.jpg",
+      "image": "images/vocabulary/vehicle.coach.png",
       "alt": "A picture showing coach.",
       "pictureGroup": "vehicle.coach",
       "silhouetteEligible": false,
@@ -131,7 +131,7 @@ globalThis.TransportSceneLibrary = {
       "category": "land",
       "definition": "A bus with passenger seats on two levels.",
       "example": "The double-decker bus has an upper deck.",
-      "image": "images/vocabulary/vehicle.double-decker-bus.jpg",
+      "image": "images/vocabulary/vehicle.double-decker-bus.png",
       "alt": "A picture showing double-decker bus.",
       "pictureGroup": "vehicle.double-decker-bus",
       "silhouetteEligible": false,
@@ -160,7 +160,7 @@ globalThis.TransportSceneLibrary = {
       "category": "land",
       "definition": "A truck used to carry or pull a vehicle that needs help.",
       "example": "The tow truck carries a broken-down car.",
-      "image": "images/vocabulary/vehicle.tow-truck.jpg",
+      "image": "images/vocabulary/vehicle.tow-truck.png",
       "alt": "A picture showing tow truck.",
       "pictureGroup": "vehicle.tow-truck",
       "silhouetteEligible": false,
@@ -192,7 +192,7 @@ globalThis.TransportSceneLibrary = {
       "category": "land",
       "definition": "A truck that collects and carries rubbish.",
       "example": "The refuse truck collects rubbish from our street.",
-      "image": "images/vocabulary/vehicle.refuse-truck.jpg",
+      "image": "images/vocabulary/vehicle.refuse-truck.png",
       "alt": "A picture showing refuse truck.",
       "pictureGroup": "vehicle.refuse-truck",
       "silhouetteEligible": false,
@@ -221,7 +221,7 @@ globalThis.TransportSceneLibrary = {
       "category": "land",
       "definition": "A truck with a turning drum that carries and mixes concrete.",
       "example": "The concrete mixer truck brings concrete to the building site.",
-      "image": "images/vocabulary/vehicle.concrete-mixer.jpg",
+      "image": "images/vocabulary/vehicle.concrete-mixer.png",
       "alt": "A picture showing concrete mixer truck.",
       "pictureGroup": "vehicle.concrete-mixer",
       "silhouetteEligible": false,
@@ -252,7 +252,7 @@ globalThis.TransportSceneLibrary = {
       "category": "land",
       "definition": "A truck with a container that can lift to tip out a load.",
       "example": "The tipper truck unloads a pile of gravel.",
-      "image": "images/vocabulary/vehicle.tipper-truck.jpg",
+      "image": "images/vocabulary/vehicle.tipper-truck.png",
       "alt": "A picture showing tipper truck.",
       "pictureGroup": "vehicle.tipper-truck",
       "silhouetteEligible": false,
@@ -281,7 +281,7 @@ globalThis.TransportSceneLibrary = {
       "category": "water",
       "definition": "A small boat moved using oars.",
       "example": "A person uses oars to move the rowboat.",
-      "image": "images/vocabulary/vehicle.rowboat.jpg",
+      "image": "images/vocabulary/vehicle.rowboat.png",
       "alt": "A picture showing rowboat.",
       "pictureGroup": "vehicle.rowboat",
       "silhouetteEligible": false,
@@ -310,7 +310,7 @@ globalThis.TransportSceneLibrary = {
       "category": "water",
       "definition": "A boat that can use wind in its sails to move.",
       "example": "Wind fills the sailboat's sail.",
-      "image": "images/vocabulary/vehicle.sailboat.jpg",
+      "image": "images/vocabulary/vehicle.sailboat.png",
       "alt": "A picture showing sailboat.",
       "pictureGroup": "vehicle.sailboat",
       "silhouetteEligible": false,
@@ -339,7 +339,7 @@ globalThis.TransportSceneLibrary = {
       "category": "water",
       "definition": "An open boat. This canoe is shown with a paddle that has one blade.",
       "example": "The paddler moves the canoe across calm water.",
-      "image": "images/vocabulary/vehicle.canoe.jpg",
+      "image": "images/vocabulary/vehicle.canoe.png",
       "alt": "A picture showing canoe.",
       "pictureGroup": "vehicle.canoe",
       "silhouetteEligible": false,
@@ -368,7 +368,7 @@ globalThis.TransportSceneLibrary = {
       "category": "water",
       "definition": "A narrow boat with a low seat. This kayak is shown with a paddle that has a blade at each end.",
       "example": "The kayaker uses a double-bladed paddle.",
-      "image": "images/vocabulary/vehicle.kayak.jpg",
+      "image": "images/vocabulary/vehicle.kayak.png",
       "alt": "A picture showing kayak.",
       "pictureGroup": "vehicle.kayak",
       "silhouetteEligible": false,
@@ -397,7 +397,7 @@ globalThis.TransportSceneLibrary = {
       "category": "water",
       "definition": "A strong boat that helps move other boats or ships.",
       "example": "The tugboat helps a ship near the harbour.",
-      "image": "images/vocabulary/vehicle.tugboat.jpg",
+      "image": "images/vocabulary/vehicle.tugboat.png",
       "alt": "A picture showing tugboat.",
       "pictureGroup": "vehicle.tugboat",
       "silhouetteEligible": false,
@@ -426,7 +426,7 @@ globalThis.TransportSceneLibrary = {
       "category": "land",
       "definition": "A bicycle built with space to carry a load.",
       "example": "The cargo bicycle carries parcels.",
-      "image": "images/vocabulary/vehicle.cargo-bicycle.jpg",
+      "image": "images/vocabulary/vehicle.cargo-bicycle.png",
       "alt": "A picture showing cargo bicycle.",
       "pictureGroup": "vehicle.cargo-bicycle",
       "silhouetteEligible": false,
@@ -455,7 +455,7 @@ globalThis.TransportSceneLibrary = {
       "category": "space",
       "definition": "A vehicle whose engines push it upwards and can carry things into space.",
       "example": "The rocket lifts away from its launch pad.",
-      "image": "images/vocabulary/vehicle.rocket.jpg",
+      "image": "images/vocabulary/vehicle.rocket.png",
       "alt": "A picture showing rocket.",
       "pictureGroup": "vehicle.rocket",
       "silhouetteEligible": false,
@@ -484,7 +484,7 @@ globalThis.TransportSceneLibrary = {
       "category": "part",
       "definition": "A round part that turns to help a vehicle move.",
       "example": "The car's wheels turn as it moves.",
-      "image": "images/vocabulary/part.wheel.jpg",
+      "image": "images/vocabulary/part.wheel.png",
       "alt": "A picture showing wheel.",
       "pictureGroup": "part.wheel",
       "silhouetteEligible": false,
@@ -513,7 +513,7 @@ globalThis.TransportSceneLibrary = {
       "category": "part",
       "definition": "The outer covering around many vehicle wheels.",
       "example": "The bicycle tyre touches the ground.",
-      "image": "images/vocabulary/part.tyre.jpg",
+      "image": "images/vocabulary/part.tyre.png",
       "alt": "A picture showing tyre.",
       "pictureGroup": "part.tyre",
       "silhouetteEligible": false,
@@ -542,7 +542,7 @@ globalThis.TransportSceneLibrary = {
       "category": "part",
       "definition": "A part that you push with your foot to work a bicycle or another machine.",
       "example": "The cyclist pushes the bicycle pedals.",
-      "image": "images/vocabulary/part.pedal.jpg",
+      "image": "images/vocabulary/part.pedal.png",
       "alt": "A picture showing pedal.",
       "pictureGroup": "part.pedal",
       "silhouetteEligible": false,
@@ -571,7 +571,7 @@ globalThis.TransportSceneLibrary = {
       "category": "part",
       "definition": "The bars a rider holds to steer a bicycle or similar vehicle.",
       "example": "The rider holds the handlebars with both hands.",
-      "image": "images/vocabulary/part.handlebars.jpg",
+      "image": "images/vocabulary/part.handlebars.png",
       "alt": "A picture showing handlebars.",
       "pictureGroup": "part.handlebars",
       "silhouetteEligible": false,
@@ -600,7 +600,7 @@ globalThis.TransportSceneLibrary = {
       "category": "part",
       "definition": "A wheel-shaped control used to steer many vehicles.",
       "example": "The driver turns the steering wheel.",
-      "image": "images/vocabulary/part.steering-wheel.jpg",
+      "image": "images/vocabulary/part.steering-wheel.png",
       "alt": "A picture showing steering wheel.",
       "pictureGroup": "part.steering-wheel",
       "silhouetteEligible": false,
@@ -629,7 +629,7 @@ globalThis.TransportSceneLibrary = {
       "category": "part",
       "definition": "A brake slows or stops a vehicle. On this bicycle the hand lever operates the brake at the wheel.",
       "example": "The bicycle brake helps slow the wheel.",
-      "image": "images/vocabulary/part.brake.jpg",
+      "image": "images/vocabulary/part.brake.png",
       "alt": "A picture showing brake.",
       "pictureGroup": "part.brake",
       "silhouetteEligible": false,
@@ -658,7 +658,7 @@ globalThis.TransportSceneLibrary = {
       "category": "part",
       "definition": "A machine that supplies power to move many vehicles.",
       "example": "The engine powers the truck.",
-      "image": "images/vocabulary/part.engine.jpg",
+      "image": "images/vocabulary/part.engine.png",
       "alt": "A picture showing engine.",
       "pictureGroup": "part.engine",
       "silhouetteEligible": false,
@@ -687,7 +687,7 @@ globalThis.TransportSceneLibrary = {
       "category": "part",
       "definition": "A place made for a person to sit.",
       "example": "The passenger sits on a bus seat.",
-      "image": "images/vocabulary/part.seat.jpg",
+      "image": "images/vocabulary/part.seat.png",
       "alt": "A picture showing seat.",
       "pictureGroup": "part.seat",
       "silhouetteEligible": false,
@@ -716,7 +716,7 @@ globalThis.TransportSceneLibrary = {
       "category": "part",
       "definition": "A belt that helps hold a person in their seat. An adult checks the right belt or restraint for a child.",
       "example": "An adult checks the passenger's seat belt.",
-      "image": "images/vocabulary/part.seat-belt.jpg",
+      "image": "images/vocabulary/part.seat-belt.png",
       "alt": "A picture showing seat belt.",
       "pictureGroup": "part.seat-belt",
       "silhouetteEligible": false,
@@ -745,7 +745,7 @@ globalThis.TransportSceneLibrary = {
       "category": "part",
       "definition": "A movable part that opens and closes an entrance.",
       "example": "The bus door opens at the stop.",
-      "image": "images/vocabulary/part.door.jpg",
+      "image": "images/vocabulary/part.door.png",
       "alt": "A picture showing door.",
       "pictureGroup": "part.door",
       "silhouetteEligible": false,
@@ -774,7 +774,7 @@ globalThis.TransportSceneLibrary = {
       "category": "part",
       "definition": "An opening with glass or another clear material that lets us see through.",
       "example": "We look through the train window.",
-      "image": "images/vocabulary/part.window.jpg",
+      "image": "images/vocabulary/part.window.png",
       "alt": "A picture showing window.",
       "pictureGroup": "part.window",
       "silhouetteEligible": false,
@@ -803,7 +803,7 @@ globalThis.TransportSceneLibrary = {
       "category": "part",
       "definition": "A light on the front of a vehicle that helps light the way.",
       "example": "The car's headlights shine ahead.",
-      "image": "images/vocabulary/part.headlight.jpg",
+      "image": "images/vocabulary/part.headlight.png",
       "alt": "A picture showing headlight.",
       "pictureGroup": "part.headlight",
       "silhouetteEligible": false,
@@ -832,7 +832,7 @@ globalThis.TransportSceneLibrary = {
       "category": "part",
       "definition": "A light that flashes to tell others a driver intends to turn or change lanes.",
       "example": "The driver signals with an indicator before turning.",
-      "image": "images/vocabulary/part.indicator.jpg",
+      "image": "images/vocabulary/part.indicator.png",
       "alt": "A picture showing indicator.",
       "pictureGroup": "part.indicator",
       "silhouetteEligible": false,
@@ -861,7 +861,7 @@ globalThis.TransportSceneLibrary = {
       "category": "part",
       "definition": "A mirror that helps a driver or rider see around or behind a vehicle.",
       "example": "The driver checks the vehicle mirror.",
-      "image": "images/vocabulary/part.mirror.jpg",
+      "image": "images/vocabulary/part.mirror.png",
       "alt": "A picture showing vehicle mirror.",
       "pictureGroup": "part.mirror",
       "silhouetteEligible": false,
@@ -890,7 +890,7 @@ globalThis.TransportSceneLibrary = {
       "category": "part",
       "definition": "A shaped part of an aircraft that helps support it in flight.",
       "example": "The airplane has a wing on each side.",
-      "image": "images/vocabulary/part.wing.jpg",
+      "image": "images/vocabulary/part.wing.png",
       "alt": "A picture showing wing.",
       "pictureGroup": "part.wing",
       "silhouetteEligible": false,
@@ -919,7 +919,7 @@ globalThis.TransportSceneLibrary = {
       "category": "part",
       "definition": "The set of turning blades above a helicopter that helps lift it.",
       "example": "The helicopter's main rotor turns above its cabin.",
-      "image": "images/vocabulary/part.rotor.jpg",
+      "image": "images/vocabulary/part.rotor.png",
       "alt": "A picture showing rotor.",
       "pictureGroup": "part.rotor",
       "silhouetteEligible": false,
@@ -948,7 +948,7 @@ globalThis.TransportSceneLibrary = {
       "category": "part",
       "definition": "A set of turning blades that push air to move this airplane forwards.",
       "example": "The airplane's propeller turns at the front.",
-      "image": "images/vocabulary/part.propeller.jpg",
+      "image": "images/vocabulary/part.propeller.png",
       "alt": "A picture showing propeller.",
       "pictureGroup": "part.propeller",
       "silhouetteEligible": false,
@@ -977,7 +977,7 @@ globalThis.TransportSceneLibrary = {
       "category": "part",
       "definition": "A large sheet of strong material that catches wind to help move a boat.",
       "example": "Wind pushes against the sail.",
-      "image": "images/vocabulary/part.sail.jpg",
+      "image": "images/vocabulary/part.sail.png",
       "alt": "A picture showing sail.",
       "pictureGroup": "part.sail",
       "silhouetteEligible": false,
@@ -1006,7 +1006,7 @@ globalThis.TransportSceneLibrary = {
       "category": "part",
       "definition": "A heavy object lowered from a boat to help hold it in place.",
       "example": "The boat lowers its anchor.",
-      "image": "images/vocabulary/part.anchor.jpg",
+      "image": "images/vocabulary/part.anchor.png",
       "alt": "A picture showing anchor.",
       "pictureGroup": "part.anchor",
       "silhouetteEligible": false,
@@ -1035,7 +1035,7 @@ globalThis.TransportSceneLibrary = {
       "category": "part",
       "definition": "A connected section of a train that can carry passengers.",
       "example": "Passengers sit in the train carriage.",
-      "image": "images/vocabulary/part.carriage.jpg",
+      "image": "images/vocabulary/part.carriage.png",
       "alt": "A picture showing train carriage.",
       "pictureGroup": "part.carriage",
       "silhouetteEligible": false,
@@ -1064,7 +1064,7 @@ globalThis.TransportSceneLibrary = {
       "category": "place",
       "definition": "A way made for vehicles to travel along.",
       "example": "The bus travels along the road.",
-      "image": "images/vocabulary/place.road.jpg",
+      "image": "images/vocabulary/place.road.png",
       "alt": "A picture showing road.",
       "pictureGroup": "place.road",
       "silhouetteEligible": false,
@@ -1095,7 +1095,7 @@ globalThis.TransportSceneLibrary = {
       "category": "place",
       "definition": "A path beside a road for people to walk along.",
       "example": "We walk with an adult on the pavement.",
-      "image": "images/vocabulary/place.pavement.jpg",
+      "image": "images/vocabulary/place.pavement.png",
       "alt": "A picture showing pavement.",
       "pictureGroup": "place.pavement",
       "silhouetteEligible": false,
@@ -1124,7 +1124,7 @@ globalThis.TransportSceneLibrary = {
       "category": "place",
       "definition": "A marked part of a road or route for people riding bicycles.",
       "example": "A cyclist follows the marked cycle lane.",
-      "image": "images/vocabulary/place.cycle-lane.jpg",
+      "image": "images/vocabulary/place.cycle-lane.png",
       "alt": "A picture showing cycle lane.",
       "pictureGroup": "place.cycle-lane",
       "silhouetteEligible": false,
@@ -1153,7 +1153,7 @@ globalThis.TransportSceneLibrary = {
       "category": "place",
       "definition": "A place marked for people to cross a road.",
       "example": "We find a crossing with a trusted adult.",
-      "image": "images/vocabulary/place.pedestrian-crossing.jpg",
+      "image": "images/vocabulary/place.pedestrian-crossing.png",
       "alt": "A picture showing pedestrian crossing.",
       "pictureGroup": "place.pedestrian-crossing",
       "silhouetteEligible": false,
@@ -1182,7 +1182,7 @@ globalThis.TransportSceneLibrary = {
       "category": "place",
       "definition": "A place where roads meet.",
       "example": "The car slows near the road junction.",
-      "image": "images/vocabulary/place.junction.jpg",
+      "image": "images/vocabulary/place.junction.png",
       "alt": "A picture showing junction.",
       "pictureGroup": "place.junction",
       "silhouetteEligible": false,
@@ -1211,7 +1211,7 @@ globalThis.TransportSceneLibrary = {
       "category": "place",
       "definition": "A road junction where vehicles travel around a central area.",
       "example": "Vehicles move around the roundabout.",
-      "image": "images/vocabulary/place.roundabout.jpg",
+      "image": "images/vocabulary/place.roundabout.png",
       "alt": "A picture showing roundabout.",
       "pictureGroup": "place.roundabout",
       "silhouetteEligible": false,
@@ -1240,7 +1240,7 @@ globalThis.TransportSceneLibrary = {
       "category": "place",
       "definition": "A structure that carries a route over a gap, water or another route.",
       "example": "The train crosses the bridge.",
-      "image": "images/vocabulary/place.bridge.jpg",
+      "image": "images/vocabulary/place.bridge.png",
       "alt": "A picture showing bridge.",
       "pictureGroup": "place.bridge",
       "silhouetteEligible": false,
@@ -1269,7 +1269,7 @@ globalThis.TransportSceneLibrary = {
       "category": "place",
       "definition": "A passage through or under something, such as a hill.",
       "example": "The train goes through a tunnel.",
-      "image": "images/vocabulary/place.tunnel.jpg",
+      "image": "images/vocabulary/place.tunnel.png",
       "alt": "A picture showing tunnel.",
       "pictureGroup": "place.tunnel",
       "silhouetteEligible": false,
@@ -1298,7 +1298,7 @@ globalThis.TransportSceneLibrary = {
       "category": "place",
       "definition": "A route with tracks for trains.",
       "example": "The train follows the railway tracks.",
-      "image": "images/vocabulary/place.railway.jpg",
+      "image": "images/vocabulary/place.railway.png",
       "alt": "A picture showing railway.",
       "pictureGroup": "place.railway",
       "silhouetteEligible": false,
@@ -1327,7 +1327,7 @@ globalThis.TransportSceneLibrary = {
       "category": "place",
       "definition": "A place where trains stop for passengers to get on or off.",
       "example": "We wait for our train at the station.",
-      "image": "images/vocabulary/place.station.jpg",
+      "image": "images/vocabulary/place.station.png",
       "alt": "A picture showing train station.",
       "pictureGroup": "place.station",
       "silhouetteEligible": false,
@@ -1356,7 +1356,7 @@ globalThis.TransportSceneLibrary = {
       "category": "place",
       "definition": "The raised area beside a railway track where passengers wait, get on or get off.",
       "example": "We wait back from the edge of the platform.",
-      "image": "images/vocabulary/place.platform.jpg",
+      "image": "images/vocabulary/place.platform.png",
       "alt": "A picture showing platform.",
       "pictureGroup": "place.platform",
       "silhouetteEligible": false,
@@ -1387,7 +1387,7 @@ globalThis.TransportSceneLibrary = {
       "category": "place",
       "definition": "A marked place where buses stop for passengers.",
       "example": "We wait at the bus stop.",
-      "image": "images/vocabulary/place.bus-stop.jpg",
+      "image": "images/vocabulary/place.bus-stop.png",
       "alt": "A picture showing bus stop.",
       "pictureGroup": "place.bus-stop",
       "silhouetteEligible": false,
@@ -1416,7 +1416,7 @@ globalThis.TransportSceneLibrary = {
       "category": "place",
       "definition": "A place where aircraft take off and land and passengers begin or end flights.",
       "example": "The family arrives at the airport.",
-      "image": "images/vocabulary/place.airport.jpg",
+      "image": "images/vocabulary/place.airport.png",
       "alt": "A picture showing airport.",
       "pictureGroup": "place.airport",
       "silhouetteEligible": false,
@@ -1445,7 +1445,7 @@ globalThis.TransportSceneLibrary = {
       "category": "place",
       "definition": "A long prepared strip where aircraft take off or land.",
       "example": "The airplane lands on the runway.",
-      "image": "images/vocabulary/place.runway.jpg",
+      "image": "images/vocabulary/place.runway.png",
       "alt": "A picture showing runway.",
       "pictureGroup": "place.runway",
       "silhouetteEligible": false,
@@ -1474,7 +1474,7 @@ globalThis.TransportSceneLibrary = {
       "category": "place",
       "definition": "A sheltered area of water where boats and ships can stay.",
       "example": "The boats rest in the harbour.",
-      "image": "images/vocabulary/place.harbour.jpg",
+      "image": "images/vocabulary/place.harbour.png",
       "alt": "A picture showing harbour.",
       "pictureGroup": "place.harbour",
       "silhouetteEligible": false,
@@ -1505,7 +1505,7 @@ globalThis.TransportSceneLibrary = {
       "category": "place",
       "definition": "A place beside the water where a ferry ties up so people can get on or off.",
       "example": "The ferry stops beside the dock.",
-      "image": "images/vocabulary/place.dock.jpg",
+      "image": "images/vocabulary/place.dock.png",
       "alt": "A picture showing ferry dock.",
       "pictureGroup": "place.dock",
       "silhouetteEligible": false,
@@ -1534,7 +1534,7 @@ globalThis.TransportSceneLibrary = {
       "category": "place",
       "definition": "A waterway made or changed by people for boats or water to pass along.",
       "example": "The boat travels along the canal.",
-      "image": "images/vocabulary/place.canal.jpg",
+      "image": "images/vocabulary/place.canal.png",
       "alt": "A picture showing canal.",
       "pictureGroup": "place.canal",
       "silhouetteEligible": false,
@@ -1563,7 +1563,7 @@ globalThis.TransportSceneLibrary = {
       "category": "place",
       "definition": "An area where vehicles can be parked.",
       "example": "The driver parks in a marked car-park space.",
-      "image": "images/vocabulary/place.car-park.jpg",
+      "image": "images/vocabulary/place.car-park.png",
       "alt": "A picture showing car park.",
       "pictureGroup": "place.car-park",
       "silhouetteEligible": false,
@@ -1594,7 +1594,7 @@ globalThis.TransportSceneLibrary = {
       "category": "place",
       "definition": "A place where people repair vehicles.",
       "example": "The mechanic works in a vehicle garage.",
-      "image": "images/vocabulary/place.garage.jpg",
+      "image": "images/vocabulary/place.garage.png",
       "alt": "A picture showing repair garage.",
       "pictureGroup": "place.garage",
       "silhouetteEligible": false,
@@ -1623,7 +1623,7 @@ globalThis.TransportSceneLibrary = {
       "category": "place",
       "definition": "A place where vehicles can receive fuel.",
       "example": "The driver stops at the fuel station.",
-      "image": "images/vocabulary/place.fuel-station.jpg",
+      "image": "images/vocabulary/place.fuel-station.png",
       "alt": "A picture showing fuel station.",
       "pictureGroup": "place.fuel-station",
       "silhouetteEligible": false,
@@ -1652,7 +1652,7 @@ globalThis.TransportSceneLibrary = {
       "category": "person",
       "definition": "A person travelling in a vehicle who is not operating it.",
       "example": "The passenger sits in a bus seat.",
-      "image": "images/vocabulary/person.passenger.jpg",
+      "image": "images/vocabulary/person.passenger.png",
       "alt": "A picture showing passenger.",
       "pictureGroup": "person.passenger",
       "silhouetteEligible": false,
@@ -1681,7 +1681,7 @@ globalThis.TransportSceneLibrary = {
       "category": "person",
       "definition": "A person who controls a road vehicle.",
       "example": "The driver steers the bus.",
-      "image": "images/vocabulary/person.driver.jpg",
+      "image": "images/vocabulary/person.driver.png",
       "alt": "A picture showing driver.",
       "pictureGroup": "person.driver",
       "silhouetteEligible": false,
@@ -1710,7 +1710,7 @@ globalThis.TransportSceneLibrary = {
       "category": "person",
       "definition": "A person riding a bicycle.",
       "example": "The cyclist pedals along the path.",
-      "image": "images/vocabulary/person.cyclist.jpg",
+      "image": "images/vocabulary/person.cyclist.png",
       "alt": "A picture showing cyclist.",
       "pictureGroup": "person.cyclist",
       "silhouetteEligible": false,
@@ -1739,7 +1739,7 @@ globalThis.TransportSceneLibrary = {
       "category": "person",
       "definition": "A person travelling along a route on foot or using a mobility aid.",
       "example": "The pedestrians walk along the pavement.",
-      "image": "images/vocabulary/person.pedestrian.jpg",
+      "image": "images/vocabulary/person.pedestrian.png",
       "alt": "A picture showing pedestrian.",
       "pictureGroup": "person.pedestrian",
       "silhouetteEligible": false,
@@ -1768,7 +1768,7 @@ globalThis.TransportSceneLibrary = {
       "category": "person",
       "definition": "A person trained to control an aircraft.",
       "example": "The pilot controls the airplane.",
-      "image": "images/vocabulary/person.pilot.jpg",
+      "image": "images/vocabulary/person.pilot.png",
       "alt": "A picture showing pilot.",
       "pictureGroup": "person.pilot",
       "silhouetteEligible": false,
@@ -1797,7 +1797,7 @@ globalThis.TransportSceneLibrary = {
       "category": "person",
       "definition": "The person in charge of a boat, such as a ferry.",
       "example": "The boat captain guides the ferry.",
-      "image": "images/vocabulary/person.boat-captain.jpg",
+      "image": "images/vocabulary/person.boat-captain.png",
       "alt": "A picture showing boat captain.",
       "pictureGroup": "person.boat-captain",
       "silhouetteEligible": false,
@@ -1826,7 +1826,7 @@ globalThis.TransportSceneLibrary = {
       "category": "person",
       "definition": "A member of the train crew who helps passengers. On some trains they check tickets.",
       "example": "The train conductor checks a passenger's ticket.",
-      "image": "images/vocabulary/person.train-conductor.jpg",
+      "image": "images/vocabulary/person.train-conductor.png",
       "alt": "A picture showing train conductor.",
       "pictureGroup": "person.train-conductor",
       "silhouetteEligible": false,
@@ -1855,7 +1855,7 @@ globalThis.TransportSceneLibrary = {
       "category": "person",
       "definition": "A person who maintains or repairs machines such as vehicles.",
       "example": "The mechanic repairs the bicycle.",
-      "image": "images/vocabulary/person.mechanic.jpg",
+      "image": "images/vocabulary/person.mechanic.png",
       "alt": "A picture showing mechanic.",
       "pictureGroup": "person.mechanic",
       "silhouetteEligible": false,
@@ -1884,7 +1884,7 @@ globalThis.TransportSceneLibrary = {
       "category": "person",
       "definition": "A person who brings parcels or other goods to people.",
       "example": "The delivery worker carries a parcel to the door.",
-      "image": "images/vocabulary/person.delivery-worker.jpg",
+      "image": "images/vocabulary/person.delivery-worker.png",
       "alt": "A picture showing delivery worker.",
       "pictureGroup": "person.delivery-worker",
       "silhouetteEligible": false,
@@ -1913,7 +1913,7 @@ globalThis.TransportSceneLibrary = {
       "category": "person",
       "definition": "A person trained to help put out fires and rescue people.",
       "example": "The firefighter takes equipment from the fire engine.",
-      "image": "images/vocabulary/person.firefighter.jpg",
+      "image": "images/vocabulary/person.firefighter.png",
       "alt": "A picture showing firefighter.",
       "pictureGroup": "person.firefighter",
       "silhouetteEligible": false,
@@ -1942,7 +1942,7 @@ globalThis.TransportSceneLibrary = {
       "category": "action",
       "definition": "Travel in or on a vehicle. This passenger is riding on a bus.",
       "example": "We ride on the bus to school.",
-      "image": "images/vocabulary/action.ride.jpg",
+      "image": "images/vocabulary/action.ride.png",
       "alt": "A picture showing ride.",
       "pictureGroup": "action.ride",
       "silhouetteEligible": false,
@@ -1971,7 +1971,7 @@ globalThis.TransportSceneLibrary = {
       "category": "action",
       "definition": "To control a moving road vehicle.",
       "example": "The adult drives the car.",
-      "image": "images/vocabulary/action.drive.jpg",
+      "image": "images/vocabulary/action.drive.png",
       "alt": "A picture showing drive.",
       "pictureGroup": "action.drive",
       "silhouetteEligible": false,
@@ -2000,7 +2000,7 @@ globalThis.TransportSceneLibrary = {
       "category": "action",
       "definition": "Control the direction a vehicle travels.",
       "example": "The driver steers around the bend.",
-      "image": "images/vocabulary/action.steer.jpg",
+      "image": "images/vocabulary/action.steer.png",
       "alt": "A picture showing steer.",
       "pictureGroup": "action.steer",
       "silhouetteEligible": false,
@@ -2029,7 +2029,7 @@ globalThis.TransportSceneLibrary = {
       "category": "action",
       "definition": "To finish moving and stay still.",
       "example": "The bus stops at the bus stop.",
-      "image": "images/vocabulary/action.stop.jpg",
+      "image": "images/vocabulary/action.stop.png",
       "alt": "A picture showing stop.",
       "pictureGroup": "action.stop",
       "silhouetteEligible": false,
@@ -2058,7 +2058,7 @@ globalThis.TransportSceneLibrary = {
       "category": "action",
       "definition": "To change the direction you are facing or moving.",
       "example": "The car turns into another road.",
-      "image": "images/vocabulary/action.turn.jpg",
+      "image": "images/vocabulary/action.turn.png",
       "alt": "A picture showing turn.",
       "pictureGroup": "action.turn",
       "silhouetteEligible": false,
@@ -2087,7 +2087,7 @@ globalThis.TransportSceneLibrary = {
       "category": "action",
       "definition": "To move backwards.",
       "example": "The adult checks carefully before reversing the car.",
-      "image": "images/vocabulary/action.reverse.jpg",
+      "image": "images/vocabulary/action.reverse.png",
       "alt": "A picture showing reverse.",
       "pictureGroup": "action.reverse",
       "silhouetteEligible": false,
@@ -2116,7 +2116,7 @@ globalThis.TransportSceneLibrary = {
       "category": "action",
       "definition": "Bring a vehicle to a stop in a place where it can stay.",
       "example": "The driver parks in a marked space.",
-      "image": "images/vocabulary/action.park.jpg",
+      "image": "images/vocabulary/action.park.png",
       "alt": "A picture showing park.",
       "pictureGroup": "action.park",
       "silhouetteEligible": false,
@@ -2148,7 +2148,7 @@ globalThis.TransportSceneLibrary = {
       "category": "action",
       "definition": "Move from the pavement up into a stopped bus.",
       "example": "We wait for the bus to stop before we get on.",
-      "image": "images/vocabulary/action.board.jpg",
+      "image": "images/vocabulary/action.board.png",
       "alt": "A picture showing get on.",
       "pictureGroup": "action.board",
       "silhouetteEligible": false,
@@ -2178,7 +2178,7 @@ globalThis.TransportSceneLibrary = {
       "category": "action",
       "definition": "Leave a vehicle after it has stopped.",
       "example": "We get off the stopped bus onto the pavement.",
-      "image": "images/vocabulary/action.get-off.jpg",
+      "image": "images/vocabulary/action.get-off.png",
       "alt": "A picture showing get off.",
       "pictureGroup": "action.get-off",
       "silhouetteEligible": false,
@@ -2207,7 +2207,7 @@ globalThis.TransportSceneLibrary = {
       "category": "action",
       "definition": "To put things into or onto a vehicle for carrying.",
       "example": "The worker loads boxes into the van.",
-      "image": "images/vocabulary/action.load.jpg",
+      "image": "images/vocabulary/action.load.png",
       "alt": "A picture showing load.",
       "pictureGroup": "action.load",
       "silhouetteEligible": false,
@@ -2236,7 +2236,7 @@ globalThis.TransportSceneLibrary = {
       "category": "action",
       "definition": "To take carried things off or out of a vehicle.",
       "example": "The worker unloads parcels from the van.",
-      "image": "images/vocabulary/action.unload.jpg",
+      "image": "images/vocabulary/action.unload.png",
       "alt": "A picture showing unload.",
       "pictureGroup": "action.unload",
       "silhouetteEligible": false,
@@ -2265,7 +2265,7 @@ globalThis.TransportSceneLibrary = {
       "category": "action",
       "definition": "To leave the ground and begin flying.",
       "example": "The airplane takes off from the runway.",
-      "image": "images/vocabulary/action.take-off.jpg",
+      "image": "images/vocabulary/action.take-off.png",
       "alt": "A picture showing take off.",
       "pictureGroup": "action.take-off",
       "silhouetteEligible": false,
@@ -2294,7 +2294,7 @@ globalThis.TransportSceneLibrary = {
       "category": "action",
       "definition": "To return to the ground or another landing surface from flight.",
       "example": "The helicopter lands on its landing pad.",
-      "image": "images/vocabulary/action.land.jpg",
+      "image": "images/vocabulary/action.land.png",
       "alt": "A picture showing land.",
       "pictureGroup": "action.land",
       "silhouetteEligible": false,
@@ -2323,7 +2323,7 @@ globalThis.TransportSceneLibrary = {
       "category": "action",
       "definition": "Stay at the surface of water. You can see this boat floating at the waterline.",
       "example": "The boat floats on the water.",
-      "image": "images/vocabulary/action.float.jpg",
+      "image": "images/vocabulary/action.float.png",
       "alt": "A picture showing float.",
       "pictureGroup": "action.float",
       "silhouetteEligible": false,
@@ -2352,7 +2352,7 @@ globalThis.TransportSceneLibrary = {
       "category": "safety",
       "definition": "A strong covering worn to help protect the head.",
       "example": "An adult checks the rider's helmet fits.",
-      "image": "images/vocabulary/safety.helmet.jpg",
+      "image": "images/vocabulary/safety.helmet.png",
       "alt": "A picture showing helmet.",
       "pictureGroup": "safety.helmet",
       "silhouetteEligible": false,
@@ -2381,7 +2381,7 @@ globalThis.TransportSceneLibrary = {
       "category": "safety",
       "definition": "A jacket designed to help keep a person afloat in water.",
       "example": "An adult checks the child's life jacket before the boat trip.",
-      "image": "images/vocabulary/safety.life-jacket.jpg",
+      "image": "images/vocabulary/safety.life-jacket.png",
       "alt": "A picture showing life jacket.",
       "pictureGroup": "safety.life-jacket",
       "silhouetteEligible": false,
@@ -2410,7 +2410,7 @@ globalThis.TransportSceneLibrary = {
       "category": "safety",
       "definition": "A seat designed to protect a child travelling in a car. An adult checks the child's restraint.",
       "example": "A trusted adult checks the child's car seat.",
-      "image": "images/vocabulary/safety.child-car-seat.jpg",
+      "image": "images/vocabulary/safety.child-car-seat.png",
       "alt": "A picture showing child car seat.",
       "pictureGroup": "safety.child-car-seat",
       "silhouetteEligible": false,
@@ -2439,7 +2439,7 @@ globalThis.TransportSceneLibrary = {
       "category": "safety",
       "definition": "A set of coloured lights that gives signals to road users.",
       "example": "The driver stops when the traffic light shows red.",
-      "image": "images/vocabulary/safety.traffic-light.jpg",
+      "image": "images/vocabulary/safety.traffic-light.png",
       "alt": "A picture showing traffic light.",
       "pictureGroup": "safety.traffic-light",
       "silhouetteEligible": false,
@@ -2468,7 +2468,7 @@ globalThis.TransportSceneLibrary = {
       "category": "safety",
       "definition": "A road sign telling drivers to stop.",
       "example": "The driver stops at the stop sign.",
-      "image": "images/vocabulary/safety.stop-sign.jpg",
+      "image": "images/vocabulary/safety.stop-sign.png",
       "alt": "A picture showing stop sign.",
       "pictureGroup": "safety.stop-sign",
       "silhouetteEligible": false,
@@ -2497,7 +2497,7 @@ globalThis.TransportSceneLibrary = {
       "category": "safety",
       "definition": "A signal for people crossing the road. This red figure means wait.",
       "example": "We check the crossing signal with an adult.",
-      "image": "images/vocabulary/safety.crossing-signal.jpg",
+      "image": "images/vocabulary/safety.crossing-signal.png",
       "alt": "A picture showing crossing signal.",
       "pictureGroup": "safety.crossing-signal",
       "silhouetteEligible": false,
@@ -2526,7 +2526,7 @@ globalThis.TransportSceneLibrary = {
       "category": "safety",
       "definition": "A piece that sends light back towards where it came from.",
       "example": "The bicycle reflector shines in the car's lights.",
-      "image": "images/vocabulary/safety.reflector.jpg",
+      "image": "images/vocabulary/safety.reflector.png",
       "alt": "A picture showing reflector.",
       "pictureGroup": "safety.reflector",
       "silhouetteEligible": false,
@@ -2555,7 +2555,7 @@ globalThis.TransportSceneLibrary = {
       "category": "safety",
       "definition": "A vest with strips that reflect light and help people see the wearer.",
       "example": "The worker's reflective vest catches the light.",
-      "image": "images/vocabulary/safety.reflective-vest.jpg",
+      "image": "images/vocabulary/safety.reflective-vest.png",
       "alt": "A picture showing reflective vest.",
       "pictureGroup": "safety.reflective-vest",
       "silhouetteEligible": false,
@@ -2584,7 +2584,7 @@ globalThis.TransportSceneLibrary = {
       "category": "safety",
       "definition": "A small bell used by a cyclist to make a warning sound.",
       "example": "The cyclist rings the bicycle bell.",
-      "image": "images/vocabulary/safety.bicycle-bell.jpg",
+      "image": "images/vocabulary/safety.bicycle-bell.png",
       "alt": "A picture showing bicycle bell.",
       "pictureGroup": "safety.bicycle-bell",
       "silhouetteEligible": false,
@@ -2613,7 +2613,7 @@ globalThis.TransportSceneLibrary = {
       "category": "safety",
       "definition": "An arm or fence that closes a route. This barrier closes the road at a railway crossing.",
       "example": "We wait behind the closed barrier.",
-      "image": "images/vocabulary/safety.barrier.jpg",
+      "image": "images/vocabulary/safety.barrier.png",
       "alt": "A picture showing barrier.",
       "pictureGroup": "safety.barrier",
       "silhouetteEligible": false,
@@ -2642,7 +2642,7 @@ globalThis.TransportSceneLibrary = {
       "category": "safety",
       "definition": "A rail that people can hold for support.",
       "example": "The passenger holds the handrail on the steps.",
-      "image": "images/vocabulary/safety.handrail.jpg",
+      "image": "images/vocabulary/safety.handrail.png",
       "alt": "A picture showing handrail.",
       "pictureGroup": "safety.handrail",
       "silhouetteEligible": false,
@@ -2660,12 +2660,163 @@ globalThis.TransportSceneLibrary = {
   ],
   "scenes": [
     {
+      "id": "bicycle-parts",
+      "title": "Bicycle parts",
+      "image": "bicycle-parts.png",
+      "alt": "A blue bicycle with yellow mudguards, a brass bell and a visible amber pedal in a quiet courtyard.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
+      "entryIds": [
+        "safety.bicycle-bell",
+        "vehicle.bicycle",
+        "part.wheel",
+        "part.tyre",
+        "part.pedal",
+        "part.handlebars"
+      ],
+      "labels": [
+        [
+          "Bell",
+          "The bell makes a sound to alert people nearby.",
+          "M598 40 Q597 30 606 23 L611 16 Q619 10 632 14 Q646 13 651 22 L655 26 L668 20 Q674 18 676 22 Q678 26 671 30 L654 37 L652 43 Q640 51 615 49 L604 49 Q598 49 598 40Z"
+        ],
+        [
+          "Bicycle",
+          "You ride a bicycle by pushing its pedals.",
+          "M18 329 Q23 266 59 230 Q103 193 148 195 Q211 188 252 240 L280 211 L266 165 Q238 162 216 153 Q196 141 200 122 Q208 101 239 101 L323 108 Q347 109 356 125 Q363 139 349 143 L306 145 L315 188 L542 144 L544 104 Q522 94 506 66 Q489 55 469 61 L467 73 L405 93 Q390 97 386 82 L385 69 L454 39 L464 46 Q502 29 523 54 L544 73 Q576 87 611 68 L622 54 Q607 53 599 46 L599 32 Q605 15 623 13 Q649 10 653 26 L671 19 L678 25 L671 32 L650 41 L664 40 L679 35 L722 40 Q738 43 731 65 L724 76 L670 66 L662 57 Q646 58 632 73 Q614 91 582 96 L571 112 L572 129 L591 199 Q644 192 672 206 L670 219 Q754 241 776 335 Q793 449 709 503 Q647 533 584 512 Q521 495 499 427 Q489 397 490 370 L478 373 L480 346 Q488 278 529 242 L515 226 L412 333 L395 352 Q408 379 383 412 L400 431 L428 431 Q448 432 447 452 Q449 473 429 474 L379 474 Q365 474 363 463 L368 442 L354 420 L288 409 Q272 473 218 501 Q143 530 82 488 Q27 459 18 403 Q11 357 18 329Z M316 226 L524 173 L384 326 L341 323Z"
+        ],
+        [
+          "Wheel",
+          "The whole wheel includes the hub, spokes, rim and tyre.",
+          "M630 215 C710 211 774 278 776 359 C782 444 720 514 643 520 C562 525 496 462 492 381 C486 300 540 220 619 215Z"
+        ],
+        [
+          "Tyre",
+          "The tyre is the dark rubber ring around the wheel.",
+          "M630 215 C710 211 774 278 776 359 C782 444 720 514 643 520 C562 525 496 462 492 381 C486 300 540 220 619 215Z M631 237 C694 234 747 290 749 362 C755 434 705 488 641 495 C574 500 519 446 516 374 C512 302 560 242 627 237Z",
+          "ring"
+        ],
+        [
+          "Pedal",
+          "Push the pedal with your foot to move the bicycle.",
+          "M372 437 L423 432 Q435 431 446 443 L446 461 Q443 471 430 471 L379 472 Q366 471 364 462 L367 444Z"
+        ],
+        [
+          "Handlebars",
+          "Hold the grips and turn the handlebars to steer.",
+          "M387 67 Q389 61 400 57 L449 40 Q457 36 463 46 Q480 39 495 42 Q508 44 521 56 L538 72 Q548 78 560 77 L582 76 Q604 76 614 63 Q627 48 640 44 L656 39 L668 40 Q672 36 681 37 L722 40 Q732 43 732 53 L729 66 Q727 75 717 74 L674 65 Q666 63 665 56 Q646 53 632 69 Q618 87 603 92 Q593 95 580 95 L575 105 Q567 109 566 126 L549 130 Q545 113 541 107 L541 98 Q530 96 519 85 L502 65 Q488 54 470 60 Q468 70 461 73 L405 93 Q392 97 388 86Z"
+        ]
+      ]
+    },
+    {
+      "id": "bus-at-the-bus-stop",
+      "title": "Bus at the bus stop",
+      "image": "bus-at-the-bus-stop.png",
+      "alt": "A complete yellow and blue bus with its front passenger doors open beside a bus-stop shelter and pictogram sign.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
+      "entryIds": [
+        "safety.handrail",
+        "vehicle.bus",
+        "place.bus-stop",
+        "part.door",
+        "action.board",
+        "action.get-off"
+      ],
+      "labels": [
+        [
+          "Handrail",
+          "Hold the handrail for support when using the steps.",
+          "M439 239 Q447 237 455 239 L455 243 L450 245 L450 353 L455 355 L454 359 H442 L441 355 L446 353 V297 H438 Q432 297 431 304 V331 L426 332 V303 Q427 294 435 292 H446 V246 L440 244Z"
+        ],
+        [
+          "Bus",
+          "A bus carries passengers along roads.",
+          "M50 304 L51 248 Q52 224 61 215 Q69 207 91 207 H507 Q528 208 538 217 Q548 230 552 248 L561 298 Q566 310 566 340 L568 364 Q568 382 551 386 L536 388 Q525 395 511 395 Q489 395 480 389 L239 389 Q229 396 210 395 Q191 395 181 386 L77 384 Q48 382 47 363Z"
+        ],
+        [
+          "Bus stop",
+          "The shelter and bus sign show where passengers wait.",
+          "M585 254 Q589 240 599 232 Q610 224 624 227 L706 229 Q720 233 726 250 L720 254 L718 370 L709 370 L707 257 L628 259 L624 371 L614 371 L613 258 L601 259 L600 364 L591 363 L591 257Z M714 178 H749 Q754 178 754 184 V223 Q754 229 748 230 H739 V385 L742 388 L726 390 L722 387 L728 383 V230 H715 Q710 230 710 224 V183 Q710 178 714 178Z"
+        ],
+        [
+          "Door",
+          "Passengers use the open doorway to get on and off.",
+          "M379 232 L392 231 L400 240 L462 240 L474 230 L479 231 L479 383 L471 390 H386 L378 382Z"
+        ],
+        [
+          "Get on",
+          "Move from the pavement up into the stopped bus.",
+          "M416 409 H426 V375 H438 L421 356 L404 375 H416Z",
+          "direction"
+        ],
+        [
+          "Get off",
+          "Move from the stopped bus down onto the pavement.",
+          "M436 359 H446 V388 H460 L441 410 L422 388 H436Z",
+          "direction"
+        ]
+      ]
+    },
+    {
+      "id": "train-at-the-platform",
+      "title": "Train at the platform",
+      "image": "train-at-the-platform.png",
+      "alt": "A blue passenger carriage is coupled to a red engine beside a raised station platform, with a brick station behind it and rails in the foreground.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
+      "entryIds": [
+        "part.window",
+        "vehicle.train",
+        "part.carriage",
+        "place.railway",
+        "place.station",
+        "place.platform"
+      ],
+      "labels": [
+        [
+          "Window",
+          "Passengers can look outside through this carriage window.",
+          "M210 273 H247 Q251 273 251 277 V297 Q251 301 247 301 H211 Q208 301 208 297 V277 Q208 273 210 273Z"
+        ],
+        [
+          "Train",
+          "The whole train includes the engine and the carriage joined behind it.",
+          "M74 311 L76 268 Q79 248 100 247 L343 247 Q362 246 369 260 L373 312 L379 312 L377 269 Q378 250 396 248 L477 247 L529 247 Q550 248 559 255 Q573 265 580 289 L585 312 L589 337 L569 343 L394 345 L382 336 L366 336 L352 343 L97 345 L81 338 L72 327Z"
+        ],
+        [
+          "Carriage",
+          "The carriage has seats and windows for passengers.",
+          "M79 269 Q79 251 100 248 L343 248 Q361 247 367 260 L370 317 L369 332 L352 342 L97 344 L82 338 L74 327 L75 315 L79 311Z"
+        ],
+        [
+          "Railway",
+          "The railway has rails and sleepers that support the track.",
+          "M0 380 H800 V427 H0Z"
+        ],
+        [
+          "Station",
+          "People come to the station to catch a train.",
+          "M128 155 L156 121 H161 L162 98 L180 98 L182 121 H224 L242 108 L254 121 H306 L307 98 L326 98 L328 121 H367 L399 155 H474 L494 167 L493 176 H459 V240 L449 242 V176 H394 L393 240 H133 L132 160Z"
+        ],
+        [
+          "Platform",
+          "The platform is the raised area where people wait beside the train.",
+          "M590 235 H800 V340 H595 L595 322 L594 296 L590 276Z"
+        ]
+      ]
+    },
+    {
+      "id": "road-vehicles",
       "title": "Road vehicles",
-      "image": "road-vehicles.jpg",
-      "alt": "A car, taxi, motorbike, kick scooter, motor scooter and skateboard arranged in two rows.",
-      "width": 1536,
-      "height": 1024,
-      "viewBox": "0 0 1000 1000",
+      "image": "road-vehicles.png",
+      "alt": "Six road vehicles separated on a museum forecourt.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "vehicle.car",
         "vehicle.taxi",
@@ -2678,42 +2829,43 @@ globalThis.TransportSceneLibrary = {
         [
           "Car",
           "A vehicle with four wheels that carries a small group of people.",
-          "M11 25H322V475H11Z"
+          "M8,236 11,203 66,157 103,139 179,134 231,145 271,177 275,227 253,249 214,252 154,270 23,267Z"
         ],
         [
           "Taxi",
           "A car with a driver that passengers pay to take them somewhere.",
-          "M344 25H656V475H344Z"
+          "M286,229 302,185 326,170 381,145 397,118 449,117 462,136 510,149 538,181 542,230 514,258 431,272 309,265Z"
         ],
         [
           "Motorcycle",
           "A motor vehicle with two wheels that a rider sits on.",
-          "M678 25H989V475H678Z"
+          "M574,161 640,155 679,168 682,145 681,115 700,113 730,139 750,116 764,124 757,147 780,193 796,231 795,256 772,279 744,281 717,258 707,231 675,262 611,275 579,258 570,215Z"
         ],
         [
           "Kick scooter",
           "A small vehicle with a standing deck and handlebars, pushed along with one foot.",
-          "M11 525H322V975H11Z"
+          "M42,460 70,416 89,322 59,316 60,303 145,312 143,325 105,325 87,441 172,444 185,426 215,420 226,432 226,463 210,480 180,475 93,473 73,493 47,490Z"
         ],
         [
           "Motor scooter",
           "A motor vehicle with a seat and a platform for the rider's feet.",
-          "M344 525H656V975H344Z"
+          "M285,428 308,359 326,324 320,308 327,300 348,316 371,322 393,309 409,304 413,317 385,335 408,343 396,352 474,349 493,362 503,406 491,441 480,477 447,479 427,459 356,459 340,486 309,493 287,481 280,456Z"
         ],
         [
           "Skateboard",
           "A board with four small wheels that a rider stands on.",
-          "M678 525H989V975H678Z"
+          "M560,418 581,399 694,375 740,360 771,360 779,375 775,398 757,410 751,441 724,445 709,437 656,445 658,469 642,482 614,475 598,467 582,461 582,444 563,437Z"
         ]
       ]
     },
     {
+      "id": "passenger-vehicles",
       "title": "Passenger vehicles",
-      "image": "passenger-vehicles.jpg",
-      "alt": "Two rows of miniature buses and rail vehicles.",
-      "width": 1536,
-      "height": 1024,
-      "viewBox": "0 0 1000 1000",
+      "image": "passenger-vehicles.png",
+      "alt": "Six passenger vehicles shown together: coach, double-decker, minibus, school bus, tram and metro train.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "vehicle.coach",
         "vehicle.double-decker-bus",
@@ -2726,42 +2878,43 @@ globalThis.TransportSceneLibrary = {
         [
           "Coach",
           "A large passenger vehicle often used for longer road journeys.",
-          "M11 25H322V475H11Z"
+          "M9,197 11,132 26,118 106,96 173,84 232,83 251,91 267,108 279,112 286,121 286,139 278,139 272,124 271,163 274,207 267,225 239,227 228,236 207,237 193,226 168,226 158,237 139,239 131,226 71,225 61,231 29,226 24,221 10,216Z"
         ],
         [
           "Double-decker bus",
           "A bus with passenger seats on two levels.",
-          "M344 25H656V475H344Z"
+          "M306,218 305,145 311,84 319,68 339,61 367,55 397,56 467,72 516,91 530,104 532,212 513,222 508,235 483,238 473,228 441,230 429,240 413,238 405,230 355,232 341,239 323,234 316,227Z"
         ],
         [
           "Minibus",
           "A passenger vehicle that is smaller than a full-sized bus.",
-          "M678 25H989V475H678Z"
+          "M554,208 555,151 560,144 573,120 594,109 632,102 670,103 730,113 777,128 785,146 789,208 781,221 768,226 757,234 738,234 730,221 678,224 668,239 650,238 639,224 597,227 585,236 571,234 560,226Z"
         ],
         [
           "School bus",
           "A bus used to take children to and from school.",
-          "M11 525H322V975H11Z"
+          "M9,417 10,364 15,353 72,339 125,329 172,325 200,331 216,340 221,355 229,363 226,385 245,401 257,416 259,449 250,467 228,474 209,460 169,463 155,479 138,474 130,460 71,454 54,467 39,466 30,445 9,443Z"
         ],
         [
           "Tram",
           "A passenger vehicle that runs on rails, often along city streets.",
-          "M344 525H656V975H344Z"
+          "M279,435 280,373 290,349 313,340 369,339 357,323 355,316 369,299 361,299 361,294 405,291 419,298 415,303 405,302 378,321 397,339 411,345 462,354 495,365 506,374 510,388 510,441 499,450 470,453 420,461 375,463 310,466 290,460 279,450Z"
         ],
         [
           "Metro train",
           "A city train that often travels through underground tunnels.",
-          "M678 525H989V975H678Z"
+          "M534,442 537,371 551,351 575,340 598,335 628,338 677,351 747,373 789,386 797,394 798,428 790,437 758,449 711,459 660,468 625,475 596,478 550,470 536,458Z"
         ]
       ]
     },
     {
+      "id": "rickshaws",
       "title": "Three kinds of rickshaw",
-      "image": "rickshaws.jpg",
-      "alt": "A pulled rickshaw, a pedal-powered rickshaw and a motorised rickshaw shown side by side.",
-      "width": 2172,
-      "height": 724,
-      "viewBox": "0 0 1000 1000",
+      "image": "rickshaws.png",
+      "alt": "A hand-pulled rickshaw, pedal rickshaw and motor tuk-tuk on a plaza.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "vehicle.rickshaw",
         "vehicle.cycle-rickshaw",
@@ -2771,27 +2924,28 @@ globalThis.TransportSceneLibrary = {
         [
           "Pulled rickshaw",
           "A small passenger cart pulled by a person on foot.",
-          "M11 25H322V975H11Z"
+          "M10,313 18,285 34,271 30,248 19,236 20,216 28,191 53,173 79,161 106,160 137,170 157,185 163,200 147,213 123,254 145,263 160,287 168,313 182,322 179,329 232,355 252,372 252,380 246,382 229,370 186,348 153,333 225,377 230,385 224,390 214,385 151,350 140,367 114,372 89,355 78,374 56,386 34,383 19,368 11,341Z"
         ],
         [
           "Cycle rickshaw",
           "A passenger vehicle moved by a person pedalling.",
-          "M344 25H656V975H344Z"
+          "M253,336 259,306 266,282 259,237 249,236 248,220 255,188 278,170 306,159 343,156 376,165 390,180 391,196 379,210 356,259 375,273 397,273 406,266 381,266 379,260 390,251 413,254 414,263 417,271 441,272 438,254 418,248 418,242 436,239 450,245 470,241 473,248 459,252 469,286 491,291 510,307 519,332 516,356 498,375 475,383 451,377 435,356 431,340 418,349 424,356 421,361 407,359 410,344 392,338 378,358 353,366 332,364 322,375 298,380 274,374 258,356Z"
         ],
         [
           "Auto-rickshaw",
           "A small motor vehicle with three wheels that can carry passengers.",
-          "M678 25H989V975H678Z"
+          "M537,326 541,269 549,207 561,186 579,176 613,168 667,168 712,175 742,187 751,205 772,248 776,269 769,280 774,307 786,321 791,332 779,340 787,362 778,374 759,381 740,376 730,362 726,345 659,354 646,368 626,366 614,353 603,351 598,370 578,377 557,371 547,356 545,343 535,340Z"
         ]
       ]
     },
     {
+      "id": "work-vehicles",
       "title": "Vehicles that carry and help",
-      "image": "work-vehicles.jpg",
-      "alt": "A truck, van, tractor, tow truck, refuse truck and concrete mixer truck arranged in two rows.",
-      "width": 1536,
-      "height": 1024,
-      "viewBox": "0 0 1000 1000",
+      "image": "work-vehicles.png",
+      "alt": "Six distinct vehicles in a transport works yard.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "vehicle.truck",
         "vehicle.van",
@@ -2804,42 +2958,43 @@ globalThis.TransportSceneLibrary = {
         [
           "Truck",
           "A road vehicle used to carry goods.",
-          "M11 25H322V475H11Z"
+          "M19,215 20,163 32,130 49,111 84,108 85,82 162,75 282,90 283,195 271,202 272,220 255,228 248,243 224,246 211,229 169,237 148,254 121,256 110,235 46,251 25,237Z"
         ],
         [
           "Van",
           "A road vehicle with an enclosed space for goods or passengers.",
-          "M344 25H656V475H344Z"
+          "M296,204 309,177 321,163 325,147 355,121 378,110 422,107 518,109 532,119 541,157 543,214 529,229 523,241 501,248 482,229 422,235 402,254 378,251 365,233 331,234 314,250 300,238Z"
         ],
         [
           "Tractor",
           "A strong vehicle used to pull farm equipment or loads.",
-          "M678 25H989V475H678Z"
+          "M564,209 578,185 594,175 597,151 618,135 632,134 631,88 641,91 643,130 651,128 651,91 673,86 739,83 753,93 755,136 778,152 788,192 783,223 765,245 722,247 701,228 681,254 645,257 622,233 603,250 578,251 563,234Z"
         ],
         [
           "Tow truck",
           "A truck used to carry or pull a vehicle that needs help.",
-          "M11 525H322V975H11Z"
+          "M10,432 14,396 15,359 31,343 62,336 63,326 118,325 126,331 139,340 145,369 211,345 224,342 230,349 222,361 222,401 232,413 250,421 253,434 215,435 204,455 186,466 169,451 138,453 122,471 96,471 84,454 49,453 42,466 23,465 12,449Z"
         ],
         [
           "Refuse truck",
           "A truck that collects and carries rubbish.",
-          "M344 525H656V975H344Z"
+          "M265,411 266,350 279,331 316,326 318,315 338,311 395,310 414,303 490,305 506,314 516,333 524,380 533,417 532,433 515,449 477,450 458,462 439,467 415,459 395,468 370,459 334,450 314,460 292,462 279,449 265,438Z"
         ],
         [
           "Concrete mixer truck",
           "A truck with a turning drum that carries and mixes concrete.",
-          "M678 525H989V975H678Z"
+          "M550,430 550,376 555,346 571,334 622,327 653,331 671,315 695,304 721,300 758,310 780,307 789,329 789,423 781,450 769,465 747,467 728,458 709,470 684,462 669,472 643,472 628,451 597,452 581,469 557,459Z"
         ]
       ]
     },
     {
+      "id": "emergency-vehicles",
       "title": "Emergency vehicles and tipping loads",
-      "image": "emergency-vehicles.jpg",
-      "alt": "A police car, an ambulance, a fire engine and a tipper truck.",
-      "width": 1536,
-      "height": 1024,
-      "viewBox": "0 0 1000 1000",
+      "image": "emergency-vehicles.png",
+      "alt": "Police car, ambulance, fire engine and a tipper with its raised bed.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "vehicle.police-car",
         "vehicle.ambulance",
@@ -2850,32 +3005,33 @@ globalThis.TransportSceneLibrary = {
         [
           "Police car",
           "A car used by police officers as they do their work.",
-          "M11 25H489V475H11Z"
+          "M47,160 49,129 63,114 96,100 126,80 149,72 146,60 151,52 229,51 247,54 249,65 241,71 264,79 290,96 306,108 319,110 320,120 348,133 363,149 370,177 365,195 350,202 341,211 318,213 307,204 236,207 228,218 203,220 184,204 121,193 106,195 98,207 79,210 65,201 61,182 50,177Z"
         ],
         [
           "Ambulance",
           "A vehicle equipped to help take ill or injured people for medical care.",
-          "M511 25H989V475H511Z"
+          "M420,170 426,146 427,58 431,45 440,40 565,29 587,29 595,22 658,23 675,27 677,37 670,42 698,58 727,92 745,115 767,133 772,165 773,187 761,201 750,204 739,217 721,219 709,207 659,209 650,222 627,225 608,211 508,202 500,215 476,216 462,205 459,190 425,184 419,180Z"
         ],
         [
           "Fire engine",
           "A vehicle that carries firefighters and firefighting equipment.",
-          "M11 525H489V975H11Z"
+          "M22,427 24,346 29,338 38,336 36,310 45,306 55,306 56,295 144,283 230,271 307,258 315,262 337,261 345,270 348,281 336,285 322,281 323,288 283,296 339,295 355,299 357,308 371,318 374,328 388,336 392,357 387,371 391,454 386,466 358,472 347,489 321,493 302,480 260,482 249,496 226,499 206,484 183,475 119,475 109,489 84,494 64,485 62,466 28,457 22,449Z"
         ],
         [
           "Tipper truck",
           "A truck with a container that can lift to tip out a load.",
-          "M511 525H989V975H511Z"
+          "M433,433 436,383 434,355 440,347 453,340 466,327 487,322 558,320 570,330 571,349 583,410 591,415 608,340 555,314 566,274 563,263 646,248 659,263 656,270 771,358 781,367 756,433 746,431 747,465 736,481 724,494 701,493 694,482 684,496 664,498 644,487 619,488 596,481 587,493 572,501 549,500 534,486 502,484 491,495 468,495 454,486 447,466 435,461Z"
         ]
       ]
     },
     {
+      "id": "watercraft",
       "title": "Watercraft comparison",
-      "image": "watercraft.jpg",
-      "alt": "Two rows of miniature boats and ships.",
-      "width": 1536,
-      "height": 1024,
-      "viewBox": "0 0 1000 1000",
+      "image": "watercraft.png",
+      "alt": "Six boats and ships separated on calm water.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "vehicle.boat",
         "vehicle.ship",
@@ -2888,42 +3044,43 @@ globalThis.TransportSceneLibrary = {
         [
           "Boat",
           "A water vehicle used to carry people or things.",
-          "M11 25H322V475H11Z"
+          "M12,217 21,175 36,158 60,158 66,171 129,171 206,156 223,170 214,196 180,221 114,237 36,237Z"
         ],
         [
           "Ship",
           "A large water vehicle that carries people or goods.",
-          "M344 25H656V475H344Z"
+          "M236,180 249,158 245,122 274,91 291,89 291,67 310,61 319,94 335,97 347,122 404,117 478,135 481,101 490,105 496,140 527,151 532,165 497,234 263,234 242,218Z"
         ],
         [
           "Ferry",
           "A boat or ship that carries passengers, and sometimes vehicles, between stopping places.",
-          "M678 25H989V475H678Z"
+          "M550,186 580,169 589,144 635,131 647,101 669,94 688,124 716,128 733,108 750,110 754,141 779,155 791,186 789,218 757,231 643,252 551,251Z"
         ],
         [
           "Speedboat",
           "A motorboat designed to travel quickly on water.",
-          "M11 525H322V975H11Z"
+          "M14,401 31,376 78,372 114,352 160,351 184,366 224,374 246,385 217,416 178,437 47,436 18,427Z"
         ],
         [
           "Yacht",
           "A boat used for leisure, powered by sails or an engine.",
-          "M344 525H656V975H344Z"
+          "M254,421 281,400 298,362 279,362 289,341 293,318 306,313 306,297 324,293 327,310 340,319 341,328 399,330 460,351 546,361 549,373 525,403 489,439 282,442 253,435Z"
         ],
         [
           "Jet ski",
           "A small powered watercraft that a rider sits or stands on.",
-          "M678 525H989V975H678Z"
+          "M565,416 589,397 599,375 617,369 666,378 684,364 656,360 649,353 669,347 705,352 726,365 758,390 778,414 766,434 742,447 594,442 566,433Z"
         ]
       ]
     },
     {
+      "id": "small-boats",
       "title": "Boats and paddles",
-      "image": "small-boats.jpg",
-      "alt": "A rowboat with oars, sailboat, canoe and kayak with their paddles.",
-      "width": 1536,
-      "height": 1024,
-      "viewBox": "0 0 1000 1000",
+      "image": "small-boats.png",
+      "alt": "Rowboat, sailboat, canoe and kayak shown together on a lake.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "vehicle.rowboat",
         "vehicle.sailboat",
@@ -2935,37 +3092,38 @@ globalThis.TransportSceneLibrary = {
         [
           "Rowboat",
           "A small boat moved using oars.",
-          "M11 25H489V475H11Z"
+          "M28,275 37,261 96,218 72,195 64,165 87,149 148,148 236,168 237,157 255,163 305,190 315,211 379,248 386,261 373,266 349,257 326,238 298,220 280,266 216,265 137,253 80,233 55,272 44,282Z"
         ],
         [
           "Sailboat",
           "A boat that can use wind in its sails to move.",
-          "M511 25H989V475H511Z"
+          "M461,209 570,16 576,15 633,55 674,104 718,184 734,209 734,221 715,251 665,262 484,264 470,246Z"
         ],
         [
           "Canoe",
           "An open boat. This canoe is shown with a paddle that has one blade.",
-          "M11 525H489V975H11Z"
+          "M28,410 40,367 52,354 86,366 201,351 202,329 216,324 225,330 220,346 285,337 374,318 385,345 386,366 374,396 317,418 168,428 144,466 130,476 107,472 111,455 125,435 56,437 32,430Z"
         ],
         [
           "Kayak",
           "A narrow boat with a low seat. This kayak is shown with a paddle that has a blade at each end.",
-          "M511 525H989V975H511Z"
+          "M424,414 458,393 514,365 562,346 618,334 689,327 775,322 777,332 755,363 726,393 768,386 776,394 774,406 758,419 723,423 568,454 549,470 500,481 485,472 484,457 505,443 535,438 442,443 430,432Z"
         ],
         [
           "Sail",
           "A large sheet of strong material that catches wind to help move a boat.",
-          "M620 65 760 315 760 324 616 324 645 259Z"
+          "M463,208 569,23 579,16 630,54 663,94 713,183 582,198 489,205Z"
         ]
       ]
     },
     {
+      "id": "aircraft",
       "title": "Aircraft and spacecraft",
-      "image": "aircraft.jpg",
-      "alt": "Two rows of miniature aircraft and spacecraft including a propeller airplane, a helicopter and a rocket.",
-      "width": 1536,
-      "height": 1024,
-      "viewBox": "0 0 1000 1000",
+      "image": "aircraft.png",
+      "alt": "A fixed-wing airplane, helicopter, balloon, glider, shuttle and rocket, with visible wing, rotor and propeller.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "vehicle.airplane",
         "vehicle.helicopter",
@@ -2981,57 +3139,58 @@ globalThis.TransportSceneLibrary = {
         [
           "Airplane",
           "An aircraft with fixed wings that is moved through the air by an engine.",
-          "M11 25H322V475H11Z"
+          "M11,89 48,75 115,88 185,103 228,114 273,116 272,96 280,92 280,107 277,116 321,118 330,127 304,136 274,137 275,153 286,184 282,191 275,184 265,165 250,177 251,201 247,216 233,220 223,210 225,198 214,191 199,187 172,187 153,209 149,218 134,220 127,210 128,194 131,182 54,178 50,171 19,170 18,162 58,158 52,130 64,117 88,150 148,124 91,110 49,102 15,99Z"
         ],
         [
           "Helicopter",
           "An aircraft lifted by turning rotor blades above its body.",
-          "M344 25H656V475H344Z"
+          "M302,55 321,51 418,66 446,73 471,73 593,62 611,67 610,71 488,83 472,89 468,99 497,106 513,122 573,126 591,89 604,89 593,126 607,126 601,147 587,149 589,169 575,169 566,152 526,157 510,174 494,187 507,204 523,208 523,217 466,224 410,221 353,218 349,212 352,205 376,209 383,193 360,184 348,176 349,161 372,135 391,121 436,102 450,95 448,84Z"
         ],
         [
           "Hot air balloon",
           "A large balloon lifted by warm air, with a basket underneath.",
-          "M678 25H989V475H678Z"
+          "M627,83 640,48 670,23 704,17 747,23 774,42 789,77 784,112 769,138 729,176 724,219 709,225 690,220 686,194 674,171 650,144 634,116Z"
         ],
         [
           "Glider",
           "An aircraft designed to glide through the air without engine power.",
-          "M11 525H322V975H11Z"
+          "M8,449 50,426 123,387 51,378 53,331 14,335 10,330 55,323 97,321 105,325 72,331 76,364 143,375 181,363 306,312 332,309 326,316 231,367 255,392 257,404 249,411 201,410 191,417 178,416 173,405 138,402 45,440 19,453Z"
         ],
         [
           "Space shuttle",
           "A reusable spacecraft whose winged orbiter returned to Earth and landed on a runway.",
-          "M344 525H656V975H344Z"
+          "M287,438 312,407 339,384 385,371 485,356 509,316 551,273 578,270 575,282 557,343 568,349 577,358 575,373 586,392 583,409 605,433 612,441 604,449 515,451 516,463 510,474 497,476 485,470 487,454 359,453 355,476 346,482 335,476 331,465 333,455 307,452 291,446Z"
         ],
         [
           "Rocket",
           "A vehicle whose engines push it upwards and can carry things into space.",
-          "M678 525H989V975H678Z"
+          "M649,475 661,448 662,363 670,344 681,354 681,278 696,250 699,237 704,238 708,253 716,272 719,355 726,342 733,354 738,370 737,443 750,474 739,478 739,494 720,496 716,480 711,483 713,494 689,496 686,480 681,481 682,493 660,495 658,488 664,477Z"
         ],
         [
           "Wing",
           "A shaped part of an aircraft that helps support it in flight.",
-          "M240 275 266 276 321 294 319 308 241 297Z"
+          "M11,88 51,74 112,88 184,101 241,116 319,118 329,124 326,131 293,136 220,133 161,126 110,116 61,106 18,100 11,96Z"
         ],
         [
           "Rotor",
           "The set of turning blades above a helicopter that helps lift it.",
-          "M355 214 480 184 496 176 510 185 611 181 612 204 510 202 488 206 357 228Z"
+          "M302,55 321,51 426,67 445,74 460,69 473,73 489,73 591,61 611,65 612,71 488,84 470,85 470,97 449,97 449,84 426,80 304,61Z"
         ],
         [
           "Propeller",
           "A set of turning blades that push air to move this airplane forwards.",
-          "M67 237 88 242 90 364 66 367Z"
+          "M242,136 254,134 268,112 271,98 277,91 281,96 277,117 268,137 272,143 268,151 275,166 284,182 287,188 283,192 276,187 267,170 262,152 251,153 243,148Z"
         ]
       ]
     },
     {
+      "id": "car-cockpit",
       "title": "Inside a parked car",
-      "image": "car-cockpit.jpg",
-      "alt": "Four close views show the steering wheel, engine, seat belt and child car seat.",
-      "width": 1536,
-      "height": 1024,
-      "viewBox": "0 0 1000 1000",
+      "image": "car-cockpit.png",
+      "alt": "A parked car cutaway with a steering wheel, exposed engine, diagonal seat belt and child seat.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "part.steering-wheel",
         "part.engine",
@@ -3042,32 +3201,33 @@ globalThis.TransportSceneLibrary = {
         [
           "Steering wheel",
           "A wheel-shaped control used to steer many vehicles.",
-          "M199 184H237V259H199Z"
+          "M452 282 Q439 276 445 254 Q452 229 476 207 Q487 195 496 199 Q508 204 504 223 Q500 251 477 276 Q463 290 452 282Z"
         ],
         [
           "Engine",
           "A machine that supplies power to move many vehicles.",
-          "M668 217H790V330H668Z"
+          "M578,308 579,267 585,244 606,227 645,222 678,223 705,233 722,237 740,251 749,271 747,308 726,318 703,316 681,316 646,311 615,311Z"
         ],
         [
           "Seat belt",
           "A belt that helps hold a person in their seat. An adult checks the right belt or restraint for a child.",
-          "M367 574 395 601 267 853 343 882 367 939 352 975 316 932 241 900 235 867Z"
+          "M307,215 316,208 328,211 342,229 369,263 398,302 402,314 384,327 370,338 360,355 354,373 336,371 334,363 341,344 350,335 380,307 354,275 330,246Z"
         ],
         [
           "Child car seat",
           "A seat designed to protect a child travelling in a car. An adult checks the child's restraint.",
-          "M677 573H892V952H677Z"
+          "M132,217 135,202 144,192 163,188 192,188 206,193 218,208 223,226 238,244 245,268 257,273 268,287 274,306 272,320 258,330 232,334 193,334 169,327 154,315 145,287 137,263 133,240Z"
         ]
       ]
     },
     {
+      "id": "car-front",
       "title": "Car lights and mirrors",
-      "image": "car-front.jpg",
-      "alt": "A parked miniature car in three-quarter view, showing its lights and side mirrors.",
-      "width": 1536,
-      "height": 1024,
-      "viewBox": "0 0 1000 1000",
+      "image": "car-front.png",
+      "alt": "A blue car with separate detail views of a headlight, amber indicator and side mirror.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "part.headlight",
         "part.indicator",
@@ -3077,27 +3237,28 @@ globalThis.TransportSceneLibrary = {
         [
           "Headlight",
           "A light on the front of a vehicle that helps light the way.",
-          "M333 578H427V730H333Z"
+          "M288,253 324,253 365,268 388,289 398,306 372,303 331,300 312,288Z M541,172 558,136 576,114 578,104 598,105 608,114 661,92 711,80 737,76 744,64 764,64 770,79 785,89 780,115 751,174 742,201 717,205 704,194 650,201 586,200 551,188Z"
         ],
         [
           "Indicator",
           "A light that flashes to tell others a driver intends to turn or change lanes.",
-          "M425 648H468V724H425Z"
+          "M345,309 359,299 380,300 399,306 400,313 377,314Z M600,259 610,249 640,241 718,241 749,246 750,257 739,281 720,303 690,310 619,310 603,301Z"
         ],
         [
           "Vehicle mirror",
           "A mirror that helps a driver or rider see around or behind a vehicle.",
-          "M594 334H713V485H594Z"
+          "M156,207 165,194 195,190 205,195 212,214 221,223 216,234 191,231 159,221Z M575,482 588,433 610,384 628,354 635,358 639,393 664,371 697,364 746,368 772,387 779,414 778,443 763,455 725,463 638,466 584,486Z"
         ]
       ]
     },
     {
+      "id": "cycle-safety",
       "title": "Cycling equipment",
-      "image": "cycle-safety.jpg",
-      "alt": "A stationary cyclist wearing a helmet and reflective vest on a quiet cycle lane.",
-      "width": 1536,
-      "height": 1024,
-      "viewBox": "0 0 1000 1000",
+      "image": "cycle-safety.png",
+      "alt": "A cyclist standing with a blue bicycle, helmet, vest, brake and rear reflector visible.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "person.cyclist",
         "part.brake",
@@ -3109,37 +3270,38 @@ globalThis.TransportSceneLibrary = {
         [
           "Cyclist",
           "A person riding a bicycle.",
-          "M463 85 528 72 584 115 574 205 605 331 615 449 547 938 445 955 384 873 423 807 432 510 503 450 487 362 386 430 359 384 422 322Z"
+          "M291,133 296,101 312,81 306,64 310,37 329,15 357,4 389,9 415,22 426,40 420,50 420,72 415,98 391,116 408,145 421,166 455,183 483,194 513,192 527,201 533,216 523,230 492,232 465,242 439,230 415,221 414,268 399,268 420,402 432,478 471,495 479,509 474,518 407,520 399,513 399,486 381,419 356,352 341,390 314,484 344,501 355,513 354,524 280,525 274,518 277,486 284,391 310,266 314,155 302,145Z"
         ],
         [
           "Brake",
           "A brake slows or stops a vehicle. On this bicycle the hand lever operates the brake at the wheel.",
-          "M376 397H433V463H376Z M282 534H322V645H282Z"
+          "M519,302 526,299 534,304 537,313 550,318 550,326 542,331 552,347 544,356 532,350 527,338 527,323 519,320Z"
         ],
         [
           "Helmet",
           "A strong covering worn to help protect the head.",
-          "M462 87 474 40 505 18 548 18 581 49 588 91 581 133 549 120 502 106Z"
+          "M307,61 312,38 326,21 348,9 366,5 386,9 407,18 422,35 425,44 412,50 388,51 365,58 337,73 324,80 314,77Z"
         ],
         [
           "Reflector",
           "A piece that sends light back towards where it came from.",
-          "M731 658H788V697H731Z"
+          "M310,255 317,222 319,167 319,136 326,120 339,113 355,118 370,135 391,160 395,186 386,183 377,160 364,147 351,132 338,130 331,147 333,167 349,187 376,201 397,208 407,215 415,263 407,270 400,268 394,228 392,265 380,273 323,270 308,264Z"
         ],
         [
           "Reflective vest",
           "A vest with strips that reflect light and help people see the wearer.",
-          "M483 211 544 192 577 217 591 299 610 415 610 444 516 460 486 449 489 383 540 314 567 250 548 221 508 250 485 289Z"
+          "M228,290 237,287 265,289 271,296 270,306 265,313 229,311 226,305Z"
         ]
       ]
     },
     {
+      "id": "street-crossing",
       "title": "Street and crossing",
-      "image": "street-crossing.jpg",
-      "alt": "A model street with a road, pavement, cycle lane, signals and people waiting by a pedestrian crossing.",
-      "width": 1536,
-      "height": 1024,
-      "viewBox": "0 0 1000 1000",
+      "image": "street-crossing.png",
+      "alt": "Road, pavement, protected cycle lane and zebra crossing with separate signs and a waiting pedestrian.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "place.road",
         "place.pavement",
@@ -3154,59 +3316,53 @@ globalThis.TransportSceneLibrary = {
         [
           "Road",
           "A way made for vehicles to travel along.",
-          "M5 565 296 565 296 771 52 771 5 740Z"
+          "M405,276 800,222 800,364 595,428 563,403 524,374 481,345 440,319Z"
         ],
         [
           "Pavement",
           "A path beside a road for people to walk along.",
-          "M65 799 313 798 313 871 394 947 364 991 167 985 96 929Z"
+          "M139,211 302,185 307,209 307,272 282,298 143,310 126,297 130,278Z"
         ],
         [
           "Cycle lane",
           "A marked part of a road or route for people riding bicycles.",
-          "M4 516 296 516 296 560 4 560Z"
+          "M267,532 800,370 800,445 524,533Z"
         ],
         [
           "Pedestrian crossing",
           "A place marked for people to cross a road.",
-          "M401 568 615 568 646 771 559 770 530 745 488 748 479 707 468 677 434 672 413 702 412 767 365 769Z"
+          "M145,327 356,295 585,420 325,491Z"
         ],
         [
           "Pedestrian",
           "A person travelling along a route on foot or using a mobility aid.",
-          "M418 675 473 675 500 813 510 763 550 746 562 790 561 942 417 950Z"
+          "M63,188 66,145 77,130 65,117 69,104 79,89 97,79 113,79 125,86 128,105 121,119 116,126 127,143 132,182 131,207 129,231 119,239 120,253 131,267 122,275 95,274 88,268 85,240 75,235 77,200 66,196Z"
         ],
         [
           "Traffic light",
           "A set of coloured lights that gives signals to road users.",
-          "M297 382 320 372 351 374 365 398 365 567 353 588 305 591 297 566Z"
+          "M456,16 511,10 520,14 520,25 530,31 528,48 516,63 529,75 527,90 516,104 527,117 525,133 516,144 513,153 503,155 502,229 508,234 507,242 493,247 475,247 468,241 469,232 475,229 476,155 461,152 456,147Z"
         ],
         [
           "Stop sign",
           "A road sign telling drivers to stop.",
-          "M838 263 857 236 885 236 905 264 905 306 886 334 857 334 837 307Z"
+          "M610,51 635,27 676,25 697,50 700,87 678,113 659,116 659,207 667,212 666,219 644,220 641,215 647,207 647,115 635,115 610,89Z"
         ],
         [
           "Crossing signal",
           "A signal for people crossing the road. This red figure means wait.",
-          "M653 565 670 558 698 559 712 577 712 646 701 667 666 667 653 649Z"
-        ]
-      ],
-      "inscriptions": [
-        [
-          "STOP",
-          870,
-          286
+          "M306,123 314,117 352,117 360,123 361,166 352,172 333,174 333,200 341,207 340,221 333,230 333,262 340,268 339,278 322,282 313,276 314,267 318,262 318,230 314,224 313,202 318,198 319,174 308,170 304,163Z"
         ]
       ]
     },
     {
+      "id": "route-features",
       "title": "Ways through town",
-      "image": "route-features.jpg",
-      "alt": "Four miniature views show a junction, roundabout, bridge and tunnel.",
-      "width": 1536,
-      "height": 1024,
-      "viewBox": "0 0 1000 1000",
+      "image": "route-features.png",
+      "alt": "Four route features shown as separate dioramas: junction, roundabout, bridge and tunnel.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "place.junction",
         "place.roundabout",
@@ -3217,32 +3373,33 @@ globalThis.TransportSceneLibrary = {
         [
           "Junction",
           "A place where roads meet.",
-          "M110 198 390 198 390 276 314 276 286 309 286 425 214 425 214 309 186 276 110 276Z"
+          "M26,105 370,103 370,165 250,167 242,178 242,253 160,253 158,176 149,168 25,167Z"
         ],
         [
           "Roundabout",
           "A road junction where vehicles travel around a central area.",
-          "M708 121 791 121 851 172 875 256 853 344 786 411 720 409 659 354 626 268 647 182Z M711 195 780 184 812 224 812 283 781 326 725 327 692 292 687 242Z"
+          "M571,11 631,11 633,60 678,94 697,136 702,161 725,179 775,211 746,256 672,221 644,232 603,239 562,235 530,218 455,254 420,211 495,166 504,132 521,102 568,63Z"
         ],
         [
           "Bridge",
           "A structure that carries a route over a gap, water or another route.",
-          "M105 709 163 693 216 659 292 655 368 666 382 702 421 737 428 833 412 895 390 888 335 835 272 829 216 862 182 920 149 925 135 860 105 860Z"
+          "M17,381 65,364 82,358 128,359 194,353 258,353 323,362 370,371 386,388 383,435 333,455 288,472 271,449 256,429 224,415 197,413 160,424 139,443 127,466 101,477 75,461 49,442 17,430Z"
         ],
         [
           "Tunnel",
           "A passage through or under something, such as a hill.",
-          "M648 843 648 758 673 691 705 646 747 614 786 615 821 651 846 705 859 768 859 850 842 854 816 804 766 773 714 799 679 853Z"
+          "M467,519 517,466 500,439 499,412 507,389 524,366 553,346 585,338 615,338 649,351 676,376 693,405 700,432 692,459 728,518Z"
         ]
       ]
     },
     {
+      "id": "parking-and-repair",
       "title": "Parking, repair and refuelling",
-      "image": "parking-and-repair.jpg",
-      "alt": "Four views of a car park, repair garage, fuel station and practice area.",
-      "width": 1536,
-      "height": 1024,
-      "viewBox": "0 0 1000 1000",
+      "image": "parking-and-repair.png",
+      "alt": "A car park, garage, fuel station, a parked car with a person walking away, and a mechanic holding a spanner.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "place.car-park",
         "place.garage",
@@ -3254,38 +3411,38 @@ globalThis.TransportSceneLibrary = {
         [
           "Car park",
           "An area where vehicles can be parked.",
-          "M110 134H474V433H110Z"
+          "M5,187 23,147 43,124 223,124 252,174 254,201 13,203Z"
         ],
         [
           "Repair garage",
           "A place where people repair vehicles.",
-          "M511 25H989V475H511Z"
+          "M274,193 291,178 289,81 280,73 395,25 409,21 532,65 532,74 526,77 526,176 542,194 540,201 274,201Z"
         ],
         [
           "Fuel station",
           "A place where vehicles can receive fuel.",
-          "M11 525H489V975H11Z"
+          "M553,65 555,40 757,27 793,48 794,71 751,80 751,165 774,167 774,177 755,183 597,183 576,180 576,172 602,165 602,79Z"
         ],
         [
           "Park",
           "Bring a vehicle to a stop in a place where it can stay.",
-          "M166 482 183 482 183 427 193 427 175 398 156 427 166 427Z",
-          "direction"
+          "M15,447 51,405 59,369 64,342 83,311 108,295 153,287 219,287 245,291 263,304 268,332 280,332 285,342 278,351 281,385 273,425 256,446 273,450 296,390 317,386 319,348 312,344 312,309 319,286 329,271 341,264 339,255 338,242 349,232 365,232 375,242 373,257 367,268 382,278 386,306 392,330 397,348 394,357 379,360 372,397 381,424 382,433 369,442 362,438 353,418 340,440 339,451 328,457 322,449 318,433 324,407 309,391 271,473 21,475Z"
         ],
         [
           "Mechanic",
           "A person who maintains or repairs machines such as vehicles.",
-          "M780 290 797 277 812 286 811 310 829 317 844 350 848 453 806 454 813 385 782 377 771 359 800 339Z"
+          "M547,304 551,289 567,279 591,271 600,257 590,244 587,234 594,222 608,216 623,219 635,226 637,235 627,240 627,256 618,267 637,277 649,296 654,276 656,270 652,264 654,252 660,249 663,257 668,254 673,251 676,262 670,269 667,283 670,293 666,322 655,331 645,328 642,355 644,393 645,419 642,459 648,479 656,490 658,503 645,507 618,501 613,490 610,461 603,413 599,376 594,409 590,450 589,478 582,500 573,507 557,509 554,504 559,492 564,479 566,454 564,416 566,365 572,352 560,347 552,330Z"
         ]
       ]
     },
     {
+      "id": "harbour-and-canal",
       "title": "Harbour and canal",
-      "image": "harbour-and-canal.jpg",
-      "alt": "A sheltered harbour with a ferry at the dock, a tugboat and a narrow canal.",
-      "width": 1536,
-      "height": 1024,
-      "viewBox": "0 0 1000 1000",
+      "image": "harbour-and-canal.png",
+      "alt": "A sheltered harbour basin with a tug, a separate timber dock, and a narrow canal with a lock gate.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "place.harbour",
         "place.dock",
@@ -3296,32 +3453,33 @@ globalThis.TransportSceneLibrary = {
         [
           "Harbour",
           "A sheltered area of water where boats and ships can stay.",
-          "M18 704 181 702 195 603 326 596 397 548 397 447 293 403 252 351 167 379 155 337 358 321 379 360 527 347 555 383 667 380 718 331 728 451 671 547 565 600 419 682 323 711 227 773 11 823Z"
+          "M0,144 48,122 102,108 173,99 454,97 456,65 459,55 466,46 476,52 481,66 481,100 505,105 531,131 557,141 535,228 515,276 443,286 286,285 287,239 227,225 202,182 187,149 153,142 139,189 91,214 32,247 0,260Z"
         ],
         [
           "Ferry dock",
           "A place beside the water where a ferry ties up so people can get on or off.",
-          "M0 525 42 523 99 542 163 505 180 542 159 580 102 619 173 616 187 631 187 695 144 708 0 705Z"
+          "M167,451 175,416 179,408 198,406 204,419 248,393 249,366 263,365 270,376 304,357 305,336 321,332 325,344 354,326 355,306 367,303 375,310 396,290 400,278 413,276 416,289 472,289 477,282 492,282 494,293 509,294 509,308 503,316 501,375 488,378 483,360 458,374 457,406 445,411 438,392 411,409 411,455 399,460 390,452 389,413 356,436 356,472 341,478 333,477 322,485 310,481 305,470 276,467Z"
         ],
         [
           "Canal",
           "A waterway made or changed by people for boats or water to pass along.",
-          "M769 493 789 457 859 457 849 549 816 536 767 534Z M675 641 716 608 753 603 777 638 796 704 832 834 887 1000 749 1000 736 925 701 838 671 730Z M800 261 835 222 879 183 913 177 882 227 867 262Z"
+          "M514,498 543,406 569,326 589,250 613,203 650,142 675,93 714,93 742,147 771,201 800,257 800,474 762,490 701,512 619,512Z"
         ],
         [
           "Tugboat",
           "A strong boat that helps move other boats or ships.",
-          "M539 330 568 316 584 295 605 289 607 260 618 260 620 295 634 304 639 321 662 325 677 339 671 365 652 374 563 377 541 366Z"
+          "M30,272 44,259 88,247 104,239 117,236 121,213 122,200 141,200 147,220 153,215 156,177 163,172 163,153 172,143 173,178 185,184 180,195 200,201 209,205 221,205 224,222 218,239 221,248 266,245 278,252 285,266 281,280 271,286 264,308 218,315 87,318 49,311 36,298Z"
         ]
       ]
     },
     {
+      "id": "crew-and-passengers",
       "title": "People aboard",
-      "image": "crew-and-passengers.jpg",
-      "alt": "Four cutaway views show people aboard a bus, airplane, ferry and train.",
-      "width": 1536,
-      "height": 1024,
-      "viewBox": "0 0 1000 1000",
+      "image": "crew-and-passengers.png",
+      "alt": "A bus cutaway with its driver, passenger and empty seat, alongside a pilot, boat captain and train conductor.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "person.driver",
         "person.passenger",
@@ -3335,47 +3493,48 @@ globalThis.TransportSceneLibrary = {
         [
           "Driver",
           "A person who controls a road vehicle.",
-          "M235 136 251 101 308 82 341 93 355 142 343 167 348 217 336 260 359 278 394 326 445 322 462 371 421 394 355 387 332 428 243 414 233 345 242 278 269 256 253 203Z"
+          "M281,87 282,76 298,64 319,63 329,69 323,77 324,87 319,103 312,109 333,117 349,114 357,110 367,114 366,120 350,128 344,140 336,150 320,153 315,162 286,159 284,135Z"
         ],
         [
           "Passenger",
           "A person travelling in a vehicle who is not operating it.",
-          "M65 215 72 168 91 142 124 143 140 177 137 228 146 276 156 344 160 464 117 466 106 410 78 374 69 310Z"
+          "M79,102 82,88 96,79 108,79 120,89 116,107 112,116 128,120 139,138 143,151 154,155 164,172 163,186 169,205 174,211 158,213 142,205 130,184 123,178 108,169 89,170 84,153 80,132Z"
         ],
         [
           "Seat",
           "A place made for a person to sit.",
-          "M191 462 191 301 200 279 198 252 208 218 220 200 250 198 253 237 268 260 239 276 229 333 231 408 221 457Z"
+          "M171,119 177,114 202,114 212,118 220,151 233,153 245,163 246,182 231,194 230,213 220,213 218,190 195,190 195,213 185,213 184,189 176,183 174,157Z"
         ],
         [
           "Ride",
           "Travel in or on a vehicle. This passenger is riding on a bus.",
-          "M27 112 165 112 165 466 30 466Z"
+          "M11,217 16,66 26,45 49,31 238,30 246,22 284,22 294,29 366,30 386,42 401,66 410,143 414,198 412,223 354,227 345,241 325,252 302,248 289,228 117,230 108,244 88,251 65,246 50,227 22,225Z"
         ],
         [
           "Pilot",
           "A person trained to control an aircraft.",
-          "M572 145 620 89 673 69 705 132 692 165 694 224 671 266 686 310 772 341 780 420 720 457 619 471 594 424 590 289 613 253 591 216Z"
+          "M481,62 509,37 537,25 555,19 563,34 566,53 555,66 572,83 572,98 559,111 553,120 568,139 580,157 591,157 596,140 605,139 612,145 606,160 613,175 634,199 651,184 654,163 666,158 679,165 674,184 657,208 628,228 595,239 567,244 540,247 513,232 509,187 500,157 501,129 514,116 506,103 497,98 493,78Z"
         ],
         [
           "Boat captain",
           "The person in charge of a boat, such as a ferry.",
-          "M85 600 104 544 158 518 194 533 221 596 211 624 216 686 200 722 224 768 278 804 294 892 273 943 245 947 227 985 99 979 92 814 121 721 103 671Z"
+          "M75,434 80,396 105,366 113,356 101,344 94,331 84,325 87,316 110,286 143,279 155,288 170,302 174,311 159,317 174,333 173,350 158,359 150,368 172,376 199,410 213,393 215,377 226,369 239,376 245,395 231,405 215,420 183,447 173,463 170,516 85,517 76,499Z"
         ],
         [
           "Train conductor",
           "A member of the train crew who helps passengers. On some trains they check tickets.",
-          "M619 570 635 520 695 515 735 552 725 620 703 630 704 668 679 698 688 748 708 778 765 801 777 840 755 861 694 860 694 976 574 978 561 906 570 788 595 708 629 668 624 626Z"
+          "M516,447 516,416 528,382 541,360 547,350 539,333 533,316 535,307 554,293 581,286 596,292 601,303 614,310 613,319 599,324 598,343 593,357 582,365 607,375 617,401 632,399 638,383 640,373 648,352 658,354 665,360 663,375 654,387 649,413 635,438 624,440 627,483 621,522 553,521 539,517 531,485Z"
         ]
       ]
     },
     {
+      "id": "carrying-and-helping",
       "title": "Loading and helping",
-      "image": "carrying-and-helping.jpg",
-      "alt": "A parcel delivery, open van, firefighter and cargo bicycle in separate views.",
-      "width": 1536,
-      "height": 1024,
-      "viewBox": "0 0 1000 1000",
+      "image": "carrying-and-helping.png",
+      "alt": "A parcel delivery, van loading and unloading, firefighter with hose, and cargo bicycle.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "person.delivery-worker",
         "action.load",
@@ -3387,39 +3546,38 @@ globalThis.TransportSceneLibrary = {
         [
           "Delivery worker",
           "A person who brings parcels or other goods to people.",
-          "M174 174 191 164 214 174 217 193 207 222 216 242 221 290 216 317 219 397 178 406 173 329 172 293 155 283 151 268 170 267 182 236 182 214Z"
+          "M41,234 45,195 44,149 51,137 36,124 29,112 30,95 40,72 53,58 59,54 54,43 55,29 63,19 76,13 90,17 98,25 92,34 91,47 82,58 97,61 110,77 112,87 127,93 129,124 124,135 107,141 104,166 106,216 117,233 118,243 101,248 75,244 67,237 57,249 42,247Z"
         ],
         [
           "Load",
           "To put things into or onto a vehicle for carrying.",
-          "M931 415 944 397 836 319 853 297 784 277 813 347 826 328Z",
-          "direction"
+          "M168,187 167,110 173,70 187,46 223,39 349,37 375,45 392,61 422,93 448,111 462,134 466,172 459,189 442,193 431,214 409,221 389,214 375,196 310,198 307,208 293,219 280,216 278,191 254,214 250,232 232,235 221,230 224,214 205,217 190,202Z"
         ],
         [
           "Unload",
           "To take carried things off or out of a vehicle.",
-          "M782 293 794 275 903 354 917 332 943 401 873 382 892 361Z",
-          "direction"
+          "M489,186 491,116 495,79 508,49 528,40 616,36 707,39 727,50 750,81 772,112 787,135 792,175 787,191 776,196 769,213 751,219 726,213 722,231 734,240 727,253 709,257 696,249 690,237 676,210 658,237 662,246 653,254 640,246 636,233 651,208 647,194 576,195 565,212 545,221 524,217 508,202Z"
         ],
         [
           "Firefighter",
           "A person trained to help put out fires and rescue people.",
-          "M33 740 52 710 52 664 68 616 90 612 109 630 110 651 101 675 94 688 118 721 131 756 119 788 112 817 114 910 127 922 126 940 52 939 51 903 57 827 56 790 43 780Z"
+          "M13,493 21,484 48,475 69,477 88,452 101,423 119,399 137,383 118,377 114,363 118,331 127,309 143,306 135,300 140,277 148,262 159,253 176,252 187,261 198,267 201,274 192,285 191,300 183,310 192,321 206,338 239,337 256,332 263,340 266,350 254,361 233,364 218,377 200,380 195,397 210,448 218,488 231,498 234,508 224,515 189,514 184,506 176,479 169,443 155,468 148,504 141,514 120,517 115,511 117,493 124,438 104,466 95,489 68,505 45,510 22,507 13,502Z"
         ],
         [
           "Cargo bicycle",
           "A bicycle built with space to carry a load.",
-          "M557 790 592 749 638 749 669 807 711 840 744 690 761 692 769 717 901 714 915 780 943 796 960 845 952 898 927 920 885 916 866 874 667 873 639 919 592 935 566 918 554 868Z"
+          "M327,434 337,401 348,379 344,366 358,359 402,356 417,338 399,334 400,321 417,315 456,317 458,327 436,337 428,366 487,414 528,418 530,378 522,320 510,311 515,300 483,300 480,292 484,287 525,286 548,294 549,303 536,317 546,352 577,345 641,348 705,355 712,374 722,393 746,402 767,427 777,450 775,474 755,496 729,503 706,493 689,475 683,452 607,453 593,501 575,503 589,452 502,453 486,462 463,458 445,481 419,498 395,503 366,497 345,480 333,458Z"
         ]
       ]
     },
     {
+      "id": "airfield",
       "title": "Airport and runway",
-      "image": "airfield.jpg",
-      "alt": "A small terminal and apron beside a marked runway with a propeller airplane.",
-      "width": 1672,
-      "height": 941,
-      "viewBox": "0 0 1000 1000",
+      "image": "airfield.png",
+      "alt": "A terminal and control tower beside a runway, with one aircraft climbing and another touching down.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "place.airport",
         "place.runway",
@@ -3430,34 +3588,33 @@ globalThis.TransportSceneLibrary = {
         [
           "Airport",
           "A place where aircraft take off and land and passengers begin or end flights.",
-          "M38 315 148 259 157 88 256 88 252 170 348 165 429 240 469 220 506 192 590 187 645 227 652 353 707 370 777 378 456 592 334 618 257 568 208 547 39 510Z"
+          "M0,300 30,299 30,250 26,249 17,221 23,211 28,199 41,199 41,181 44,181 44,198 57,198 57,178 60,178 60,199 78,204 85,212 80,246 69,248 69,297 125,283 166,277 197,279 234,295 232,306 234,320 285,320 288,328 278,330 278,355 0,359Z"
         ],
         [
           "Runway",
           "A long prepared strip where aircraft take off or land.",
-          "M0 858 248 708 259 728 355 761 473 754 537 693 538 621 887 307 998 310 594 997 0 920Z"
+          "M0,401 392,400 448,402 545,415 627,415 694,401 800,400 800,469 0,472Z"
         ],
         [
           "Take off",
           "To leave the ground and begin flying.",
-          "M544 694 561 717 736 423 750 453 787 355 729 387 726 397Z",
-          "direction"
+          "M402,149 435,141 460,137 432,76 449,71 490,102 552,106 639,69 702,45 734,40 759,42 771,51 773,60 754,78 742,86 745,105 745,115 731,116 728,106 733,96 700,110 703,128 690,143 653,146 644,149 646,159 637,165 624,162 620,152 612,152 613,161 600,167 588,161 590,149 544,157 497,165 450,163 441,156Z"
         ],
         [
           "Land",
           "To return to the ground or another landing surface from flight.",
-          "M687 195 669 213 804 470 785 485 842 528 841 432 823 450Z",
-          "direction"
+          "M389,386 428,377 438,375 406,307 422,301 474,329 510,347 560,340 623,316 686,302 723,299 750,302 765,312 769,322 755,338 741,345 736,358 742,370 737,377 723,377 721,369 724,356 679,373 673,387 661,394 622,398 615,405 618,413 610,421 597,420 591,413 581,414 575,423 557,423 549,414 553,402 480,407 427,401 413,394Z"
         ]
       ]
     },
     {
+      "id": "water-safety",
       "title": "A safe trip on the water",
-      "image": "water-safety.jpg",
-      "alt": "A seated person wearing a life jacket and a boat at anchor in a cutaway.",
-      "width": 1774,
-      "height": 887,
-      "viewBox": "0 0 1000 1000",
+      "image": "water-safety.png",
+      "alt": "A person wearing a life jacket sits in a floating rowboat. A separate anchor is visible below the waterline.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "safety.life-jacket",
         "part.anchor",
@@ -3467,27 +3624,28 @@ globalThis.TransportSceneLibrary = {
         [
           "Life jacket",
           "A jacket designed to help keep a person afloat in water.",
-          "M175 377 181 335 201 313 221 322 245 354 255 390 254 341 262 321 275 336 281 376 282 490 278 540 253 551 232 535 207 541 177 557 175 514 185 482Z"
+          "M197,110 201,98 212,89 228,84 246,90 258,105 271,92 281,91 293,102 300,125 301,155 298,179 290,184 265,182 252,190 235,187 226,198 201,198 197,178 199,150Z"
         ],
         [
           "Anchor",
           "A heavy object lowered from a boat to help hold it in place.",
-          "M703 653 720 654 728 683 720 714 721 803 735 808 749 771 765 810 754 822 747 847 719 877 691 874 667 855 653 817 654 787 661 749 679 795 694 815 700 713 689 686 692 668Z"
+          "M471,456 481,440 490,431 497,451 497,459 490,459 498,470 514,482 529,445 539,421 533,416 534,406 541,399 551,396 560,400 565,409 562,420 552,424 534,478 549,478 561,473 558,469 566,463 583,451 586,466 584,481 576,489 572,485 555,497 529,503 507,500 489,488 478,472 475,461Z"
         ],
         [
           "Float",
           "Stay at the surface of water. You can see this boat floating at the waterline.",
-          "M620 257 653 284 699 292 769 291 843 281 909 260 911 322 855 342 791 334 737 326 682 328 624 310Z"
+          "M51,204 69,192 103,185 149,176 189,181 200,190 191,202 235,211 294,209 361,206 412,200 473,187 532,182 565,171 576,179 560,213 544,246 523,275 468,282 377,288 285,287 209,282 141,282 79,271 68,251Z"
         ]
       ]
     },
     {
+      "id": "rail-crossing",
       "title": "Waiting at the railway crossing",
-      "image": "rail-crossing.jpg",
-      "alt": "A closed barrier across the road and a train beyond it, with people waiting well back.",
-      "width": 1536,
-      "height": 1024,
-      "viewBox": "0 0 1000 1000",
+      "image": "rail-crossing.png",
+      "alt": "A lowered railway crossing barrier spans the road, with a passing train behind it.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "safety.barrier"
       ],
@@ -3495,17 +3653,18 @@ globalThis.TransportSceneLibrary = {
         [
           "Barrier",
           "An arm or fence that closes a route. This barrier closes the road at a railway crossing.",
-          "M271 533 280 514 748 513 749 474 758 452 807 450 819 474 820 629 823 679 746 682 739 644 742 571 282 567 271 555Z"
+          "M169,253 174,247 184,247 191,251 690,250 697,248 697,231 707,222 750,222 759,230 761,310 777,320 777,333 761,340 694,339 681,331 679,316 698,312 699,277 687,276 193,276 190,315 199,320 197,329 169,329 164,320 171,315 172,277 168,273Z"
         ]
       ]
     },
     {
+      "id": "driving-actions",
       "title": "Driving and stopping",
-      "image": "driving-actions.jpg",
-      "alt": "Four panels show driving, turning, reversing and a stopped bus.",
-      "width": 1536,
-      "height": 1024,
-      "viewBox": "0 0 1000 1000",
+      "image": "driving-actions.png",
+      "alt": "Four examples show driving, steering, turning, reversing and stopping at a bus shelter.",
+      "width": 1200,
+      "height": 800,
+      "viewBox": "0 0 800 533",
       "entryIds": [
         "action.drive",
         "action.steer",
@@ -3517,29 +3676,27 @@ globalThis.TransportSceneLibrary = {
         [
           "Drive",
           "To control a moving road vehicle.",
-          "M72 382 95 304 169 268 195 185 226 159 340 159 405 174 429 214 438 287 447 348 449 398 423 437 392 449 362 441 343 432 224 455 211 469 175 466 158 432 96 429 74 405Z"
+          "M13,190 18,147 27,119 49,79 72,57 102,49 154,45 206,47 231,56 259,76 285,109 304,119 327,133 340,152 346,173 346,193 340,203 326,205 316,222 296,234 276,230 258,211 96,208 89,221 72,233 51,233 34,222 27,205 16,200Z"
         ],
         [
           "Steer",
           "Control the direction a vehicle travels.",
-          "M228 254H260V299H228Z"
+          "M218 143 Q210 138 215 126 Q221 110 232 98 Q240 91 241 102 Q241 113 235 126 Q228 141 218 143Z"
         ],
         [
           "Turn",
           "To change the direction you are facing or moving.",
-          "M897 249 912 261 920 288 918 322 903 355 867 392 877 410 826 421 852 367 858 382 890 345 905 313 907 286Z",
-          "direction"
+          "M450,188 455,159 463,145 475,132 474,121 481,116 492,114 518,92 540,82 570,77 599,76 622,82 637,94 644,111 652,128 657,148 652,179 640,193 625,197 609,198 591,211 577,215 561,208 488,209 478,215 465,211 456,202Z"
         ],
         [
           "Reverse",
           "To move backwards.",
-          "M294 776 380 776 380 751 419 790 380 829 380 804 294 804Z",
-          "direction"
+          "M30,351 38,346 52,348 60,328 68,311 78,295 96,287 164,283 229,286 246,296 258,316 272,347 292,349 301,356 302,366 291,376 279,375 288,401 298,431 298,474 290,486 286,504 278,516 260,517 251,508 251,483 78,483 78,506 69,516 53,516 43,506 41,479 35,470 35,435 42,409 48,375 37,374 30,368Z"
         ],
         [
           "Stop",
           "To finish moving and stay still.",
-          "M719 787 728 676 739 647 763 629 918 618 950 632 962 658 964 789 950 811 936 829 918 828 910 811 866 824 855 845 831 847 818 832 743 831 720 817Z"
+          "M329,367 335,349 347,346 351,328 365,318 397,309 440,307 485,313 541,318 594,325 651,337 674,349 680,433 675,452 661,464 644,469 633,460 553,469 541,480 524,479 512,467 470,475 374,477 354,472 340,463 337,380 329,380Z"
         ]
       ]
     }
@@ -3666,5 +3823,128 @@ globalThis.TransportSceneLibrary = {
     "vehicle.tugboat",
     "vehicle.van",
     "vehicle.yacht"
-  ]
+  ],
+  "individualImages": {
+    "action.board": "images/vocabulary/action.board.png",
+    "action.drive": "images/vocabulary/action.drive.png",
+    "action.float": "images/vocabulary/action.float.png",
+    "action.get-off": "images/vocabulary/action.get-off.png",
+    "action.land": "images/vocabulary/action.land.png",
+    "action.load": "images/vocabulary/action.load.png",
+    "action.park": "images/vocabulary/action.park.png",
+    "action.reverse": "images/vocabulary/action.reverse.png",
+    "action.ride": "images/vocabulary/action.ride.png",
+    "action.steer": "images/vocabulary/action.steer.png",
+    "action.stop": "images/vocabulary/action.stop.png",
+    "action.take-off": "images/vocabulary/action.take-off.png",
+    "action.turn": "images/vocabulary/action.turn.png",
+    "action.unload": "images/vocabulary/action.unload.png",
+    "part.anchor": "images/vocabulary/part.anchor.png",
+    "part.brake": "images/vocabulary/part.brake.png",
+    "part.carriage": "images/vocabulary/part.carriage.png",
+    "part.door": "images/vocabulary/part.door.png",
+    "part.engine": "images/vocabulary/part.engine.png",
+    "part.handlebars": "images/vocabulary/part.handlebars.png",
+    "part.headlight": "images/vocabulary/part.headlight.png",
+    "part.indicator": "images/vocabulary/part.indicator.png",
+    "part.mirror": "images/vocabulary/part.mirror.png",
+    "part.pedal": "images/vocabulary/part.pedal.png",
+    "part.propeller": "images/vocabulary/part.propeller.png",
+    "part.rotor": "images/vocabulary/part.rotor.png",
+    "part.sail": "images/vocabulary/part.sail.png",
+    "part.seat": "images/vocabulary/part.seat.png",
+    "part.seat-belt": "images/vocabulary/part.seat-belt.png",
+    "part.steering-wheel": "images/vocabulary/part.steering-wheel.png",
+    "part.tyre": "images/vocabulary/part.tyre.png",
+    "part.wheel": "images/vocabulary/part.wheel.png",
+    "part.window": "images/vocabulary/part.window.png",
+    "part.wing": "images/vocabulary/part.wing.png",
+    "person.boat-captain": "images/vocabulary/person.boat-captain.png",
+    "person.cyclist": "images/vocabulary/person.cyclist.png",
+    "person.delivery-worker": "images/vocabulary/person.delivery-worker.png",
+    "person.driver": "images/vocabulary/person.driver.png",
+    "person.firefighter": "images/vocabulary/person.firefighter.png",
+    "person.mechanic": "images/vocabulary/person.mechanic.png",
+    "person.passenger": "images/vocabulary/person.passenger.png",
+    "person.pedestrian": "images/vocabulary/person.pedestrian.png",
+    "person.pilot": "images/vocabulary/person.pilot.png",
+    "person.train-conductor": "images/vocabulary/person.train-conductor.png",
+    "place.airport": "images/vocabulary/place.airport.png",
+    "place.bridge": "images/vocabulary/place.bridge.png",
+    "place.bus-stop": "images/vocabulary/place.bus-stop.png",
+    "place.canal": "images/vocabulary/place.canal.png",
+    "place.car-park": "images/vocabulary/place.car-park.png",
+    "place.cycle-lane": "images/vocabulary/place.cycle-lane.png",
+    "place.dock": "images/vocabulary/place.dock.png",
+    "place.fuel-station": "images/vocabulary/place.fuel-station.png",
+    "place.garage": "images/vocabulary/place.garage.png",
+    "place.harbour": "images/vocabulary/place.harbour.png",
+    "place.junction": "images/vocabulary/place.junction.png",
+    "place.pavement": "images/vocabulary/place.pavement.png",
+    "place.pedestrian-crossing": "images/vocabulary/place.pedestrian-crossing.png",
+    "place.platform": "images/vocabulary/place.platform.png",
+    "place.railway": "images/vocabulary/place.railway.png",
+    "place.road": "images/vocabulary/place.road.png",
+    "place.roundabout": "images/vocabulary/place.roundabout.png",
+    "place.runway": "images/vocabulary/place.runway.png",
+    "place.station": "images/vocabulary/place.station.png",
+    "place.tunnel": "images/vocabulary/place.tunnel.png",
+    "safety.barrier": "images/vocabulary/safety.barrier.png",
+    "safety.bicycle-bell": "images/vocabulary/safety.bicycle-bell.png",
+    "safety.child-car-seat": "images/vocabulary/safety.child-car-seat.png",
+    "safety.crossing-signal": "images/vocabulary/safety.crossing-signal.png",
+    "safety.handrail": "images/vocabulary/safety.handrail.png",
+    "safety.helmet": "images/vocabulary/safety.helmet.png",
+    "safety.life-jacket": "images/vocabulary/safety.life-jacket.png",
+    "safety.reflective-vest": "images/vocabulary/safety.reflective-vest.png",
+    "safety.reflector": "images/vocabulary/safety.reflector.png",
+    "safety.stop-sign": "images/vocabulary/safety.stop-sign.png",
+    "safety.traffic-light": "images/vocabulary/safety.traffic-light.png",
+    "vehicle.airplane": "images/vocabulary/vehicle.airplane.png",
+    "vehicle.ambulance": "images/vocabulary/vehicle.ambulance.png",
+    "vehicle.auto-rickshaw": "images/vocabulary/vehicle.auto-rickshaw.png",
+    "vehicle.bicycle": "images/vocabulary/vehicle.bicycle.png",
+    "vehicle.boat": "images/vocabulary/vehicle.boat.png",
+    "vehicle.bus": "images/vocabulary/vehicle.bus.png",
+    "vehicle.canoe": "images/vocabulary/vehicle.canoe.png",
+    "vehicle.car": "images/vocabulary/vehicle.car.png",
+    "vehicle.cargo-bicycle": "images/vocabulary/vehicle.cargo-bicycle.png",
+    "vehicle.coach": "images/vocabulary/vehicle.coach.png",
+    "vehicle.concrete-mixer": "images/vocabulary/vehicle.concrete-mixer.png",
+    "vehicle.cycle-rickshaw": "images/vocabulary/vehicle.cycle-rickshaw.png",
+    "vehicle.double-decker-bus": "images/vocabulary/vehicle.double-decker-bus.png",
+    "vehicle.ferry": "images/vocabulary/vehicle.ferry.png",
+    "vehicle.fire-engine": "images/vocabulary/vehicle.fire-engine.png",
+    "vehicle.glider": "images/vocabulary/vehicle.glider.png",
+    "vehicle.helicopter": "images/vocabulary/vehicle.helicopter.png",
+    "vehicle.hot-air-balloon": "images/vocabulary/vehicle.hot-air-balloon.png",
+    "vehicle.jet-ski": "images/vocabulary/vehicle.jet-ski.png",
+    "vehicle.kayak": "images/vocabulary/vehicle.kayak.png",
+    "vehicle.minibus": "images/vocabulary/vehicle.minibus.png",
+    "vehicle.motor-scooter": "images/vocabulary/vehicle.motor-scooter.png",
+    "vehicle.motorcycle": "images/vocabulary/vehicle.motorcycle.png",
+    "vehicle.police-car": "images/vocabulary/vehicle.police-car.png",
+    "vehicle.refuse-truck": "images/vocabulary/vehicle.refuse-truck.png",
+    "vehicle.rickshaw": "images/vocabulary/vehicle.rickshaw.png",
+    "vehicle.rocket": "images/vocabulary/vehicle.rocket.png",
+    "vehicle.rowboat": "images/vocabulary/vehicle.rowboat.png",
+    "vehicle.sailboat": "images/vocabulary/vehicle.sailboat.png",
+    "vehicle.school-bus": "images/vocabulary/vehicle.school-bus.png",
+    "vehicle.scooter": "images/vocabulary/vehicle.scooter.png",
+    "vehicle.ship": "images/vocabulary/vehicle.ship.png",
+    "vehicle.skateboard": "images/vocabulary/vehicle.skateboard.png",
+    "vehicle.space-shuttle": "images/vocabulary/vehicle.space-shuttle.png",
+    "vehicle.speedboat": "images/vocabulary/vehicle.speedboat.png",
+    "vehicle.subway": "images/vocabulary/vehicle.subway.png",
+    "vehicle.taxi": "images/vocabulary/vehicle.taxi.png",
+    "vehicle.tipper-truck": "images/vocabulary/vehicle.tipper-truck.png",
+    "vehicle.tow-truck": "images/vocabulary/vehicle.tow-truck.png",
+    "vehicle.tractor": "images/vocabulary/vehicle.tractor.png",
+    "vehicle.train": "images/vocabulary/vehicle.train.png",
+    "vehicle.tram": "images/vocabulary/vehicle.tram.png",
+    "vehicle.truck": "images/vocabulary/vehicle.truck.png",
+    "vehicle.tugboat": "images/vocabulary/vehicle.tugboat.png",
+    "vehicle.van": "images/vocabulary/vehicle.van.png",
+    "vehicle.yacht": "images/vocabulary/vehicle.yacht.png"
+  }
 };

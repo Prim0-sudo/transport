@@ -1,6 +1,6 @@
 # Transport — continuation notes for Claude
 
-Written 2026-11-09 at the end of a Claude session. Read this first, then the existing HANDOFF.md (Codex-era) for background only. Claude is now the main developer; ChatGPT makes the images.
+Written 2026-11-09 at the end of a Claude session. Read this first, then the existing HANDOFF.md (Codex-era) for background only. Claude is now the main developer. Codex produced the Painted Field Guide art.
 
 ## Where things stand
 
@@ -15,7 +15,22 @@ Commits made by Claude this round (newest last):
 | 6bae53f | Transport Dispatch game + featured banner on the activity menu |
 | 177dcc0 | Dispatch v2: random towns in 3 sizes, 3 difficulties, jobs/rounds, stars, best scores |
 | 6e04ee4 | Banner only on the activity menu, not the landing page |
-| (this one) | Printable PDFs + these notes |
+| ffaabb5 | Printable PDFs + these notes |
+| d23e839 | Merged Codex's `codex/transport-art-restart` (Painted Field Guide art) into main |
+| (next) | Wired the new art into the app (see below) |
+
+## Painted Field Guide art (wired in 2026-11-09)
+
+Source: Codex's art ledger `docs/content/TRANSPORT-FIELD-GUIDE-ART-LEDGER.json`, scene ledger `docs/content/TRANSPORT-FIELD-GUIDE-SCENES.json`, and the Blueprint v6.0 ART-AND-ANIMATION.md checks they cite.
+
+- All 121 words use `images/vocabulary/<word-id>.png` (transparent). The 30 original words get it in `curriculum.js`; the same PNG is the Detective silhouette (`cutout`).
+- Menu cards, category cards and Sort group pictures use vocabulary PNGs; teaching-category cards use the new scene PNGs.
+- `scripts/build-teaching-library.mjs` now builds all 24 scenes straight from the scene ledger (its viewBox, labels, notes, paths, initial target first). The 3 hand-traced pilot scenes in `standard-data.js` are gone; the first 3 ledger scenes are the quick buttons.
+- Removed: old emoji/category/ice-cream pictures, `teaching-bounds.js` (crop boxes for the old cut-outs).
+- Kept on purpose: the Miniature World landing layers and `transport-town-bg.png`. Codex's branch deleted them, but nothing replaces them yet and the landing would break.
+- Flashcard PDFs rebuilt from the new originals (40 packs).
+- Checked at 390x844: every picture URL loads, all 24 scenes and 121 highlights sit inside their pictures, all activities open with no broken images or console errors.
+- Size note: the vocabulary PNGs are ~53 MB and the scenes ~50 MB in total; worth compressing (WebP) before release.
 
 Commit identity: `git -c user.name=Prim0-sudo -c user.email=Prim0-sudo@users.noreply.github.com commit ...`, message ending with the Co-Authored-By Claude line.
 
@@ -42,7 +57,7 @@ Commit identity: `git -c user.name=Prim0-sudo -c user.email=Prim0-sudo@users.nor
 2. Media content: books, videos, songs.
 3. **Alphabet sounds: the owner is recording the 26 sounds themself.** Kokoro/Polly attempts were rejected. Do not regenerate; install the recordings when provided.
 4. Paid narration (Polly via AWS console) needs a cost estimate and owner OK first.
-5. New art from ChatGPT: transparent runtime images, replace the 30 cartoon pictures, then rebuild the flashcard PDFs in `site/dist/printables` (they are generated from current art and will be replaced), Dispatch scenery and top-down vehicle sprites.
+5. More art: Dispatch scenery and top-down vehicle sprites (word pictures and scenes are done; see above).
 6. The separate driving game (Garden Patrol-style controls) after Dispatch, per the upgrade plan.
 
 ## Owner's working style (short)
