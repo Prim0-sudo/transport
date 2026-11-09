@@ -1,0 +1,14 @@
+# Departure Signal coastal artwork
+
+All twelve scene PNGs are newly painted for artwork review. The coastal station has limestone walls, a marine blue gantry with brass mounts, and a navy and amber train. See the [assembled scene](review-composite.png) and [gallery](review.html). The gallery opens each separate PNG and shows the ready, four misses, breakdown, and clear-track stills.
+
+Use the twelve files in `rgba/` for the app. The [ledger](manifest.json) records source and export hashes, alpha, and dimensions. [Exact ImageGen prompts](prompts.json) and the untouched paintings in `originals/` preserve how the set was made. The full station painting establishes the camera for the four separately authored scenery planes. Only the sky is opaque across the full canvas.
+
+- **Scenery.** The four planes use a 1536 × 1024 camera. Draw sky, distant coast and station, then track and gantry. Place the moving train over the track and the verge in front. There is clean coast paint behind the gantry and extra gravel behind the grass. The track export already carries the eight new unlit housings. The original stage with bare mounts is also available.
+- **Train and wheels.** Use the [registration file](registration.json) for the eight arch centers in the 1315 × 379 actor frame. The train still stops at scene x200 and draws 1106 units wide. Its vertical origin is now y508.33, so the wheels touch the new rail at y817. Keep the 68-unit visible diameter in actor coordinates and the centered pivot. The horizontal travel limits and distance-to-rotation ratio are unchanged.
+- **Signals.** The same eight scene glass centers, 52-unit display diameter, and normalized 512 × 512 lens crop work with the red and green files. Use the dark housings on the stage beneath the existing lens animation. Standalone unlit artwork is also provided.
+- **Smoke.** The three new 320 × 320 puffs have centered pivots. Their emitter is [1127,13] in the train frame. The gallery uses a compact still plume so the eight red lenses remain readable at phone size. Check the live breakdown plume and reduced-motion still when swapping the files.
+
+The [spelling art brief](../../../art-concepts/spelling-scene/GPT-ART-BRIEF.md), [existing movement preview](../../../art-concepts/spelling-scene/preview/index.html), and [Plants v6 artwork contract](../../../../plants-weekly-game/docs/blueprint-v6.0/ART-AND-ANIMATION.md) are the references. The previous sprite geometry was used to preserve the motion. The measured rail, wheel, and vent offsets above are the art placement updates for wiring.
+
+The art review checked the composited rail and lamp contacts, both scenery joins, cutouts on cream and navy, and breakdown visibility at desktop and in a 375-pixel browser frame. Claude can convert the PNGs to runtime WebP and wire the set using the existing animation and game rules.

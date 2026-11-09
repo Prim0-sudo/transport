@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Departure Signal · coastal artwork review</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#edf5fa;color:#173548;font:16px/1.45 system-ui,sans-serif}
+main{width:min(980px,100%);margin:auto;padding:clamp(14px,4vw,36px)}
+h1,h2{line-height:1.15;margin:.2em 0 .55em}
+p{margin:.6em 0 1em}
+.scene{width:100%;aspect-ratio:3/2;position:relative;isolation:isolate;overflow:hidden;background:#afdcf8;border-radius:12px}
+.scene img,.scene span{position:absolute;display:block;pointer-events:none}
+.scene .plane{inset:0;width:100%;height:100%}
+.scene .lens{overflow:hidden;border-radius:50%}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 26px}
+button{font:inherit;border:1px solid #698698;border-radius:8px;padding:8px 12px;background:#fff;color:#173548;min-height:44px;cursor:pointer}
+button[aria-pressed=true]{background:#173548;color:#fff}
+.assets{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px}
+.asset{background:#fff;border:1px solid #bed1db;border-radius:10px;padding:10px;min-width:0}
+.swatches{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.swatches img{display:block;width:100%;height:90px;object-fit:contain;border-radius:6px;background:#fff8e6}
+.swatches img+img{background:#173548}
+.asset a{display:inline-block;margin-top:.4em;color:#163e5b;overflow-wrap:anywhere}
+</style>
+<main>
+  <h1>Departure Signal · coastal station</h1>
+  <p>These are the separate painted PNGs stacked in their scene positions. The buttons show still states for artwork review.</p>
+  <div class="scene" role="img" aria-label="Painted train stopped at a country station beneath eight green signals"></div>
+  <div class="controls" aria-label="Review states">
+    <button data-state="ready" aria-pressed="true">Ready</button>
+    <button data-state="misses" aria-pressed="false">Four misses</button>
+    <button data-state="lost" aria-pressed="false">Breakdown</button>
+    <button data-state="clear" aria-pressed="false">Track clear</button>
+  </div>
+  <h2>Individual assets</h2>
+  <p>Open any master at full size. Each is shown on cream and navy to make the edges visible.</p>
+  <div class="assets"></div>
+</main>
+<script type="module">
+const scene = document.querySelector('.scene');
+const assets = document.querySelector('.assets');
+const buttons = [...document.querySelectorAll('[data-state]')];
+const art = [
+  ['layer-1-sky', 'Quiet sky'], ['layer-2-background', 'Countryside and station'],
+  ['layer-3-track-and-gantry', 'Platform, track and signal gantry'], ['layer-4-foreground', 'Foreground grass and flowers'],
+  ['train-body', 'Two-carriage train body'], ['wheel', 'Six-spoke train wheel'],
+  ['lamp-unlit', 'Signal unlit'], ['lamp-red', 'Signal red'], ['lamp-green', 'Signal green'], ['smoke-1', 'Fresh smoke puff'], ['smoke-2', 'Expanding smoke puff'], ['smoke-3', 'Dispersing smoke puff']
+];
+const url = name => `rgba/${name}.png`;
+const pct = (n, dimension) => `${100*n/dimension}%`;
+const data = await (await fetch('registration.json')).json();
+const [W,H] = data.canvas;
+function picture(src, parent, styles, className = '') {
+  const img = document.createElement('img');
+  img.src = src;
+  img.alt = '';
+  img.className = className;
+  Object.assign(img.style,styles);
+  parent.append(img);
+  return img;
+}
+function place(src,x,y,w,h) {
+  return picture(src,scene,{left:pct(x,W),top:pct(y,H),width:pct(w,W),height:pct(h,H)});
+}
+function plane(name) { return picture(url(name),scene,{},'plane'); }
+function render(state) {
+  scene.replaceChildren();
+  ['layer-1-sky','layer-2-background','layer-3-track-and-gantry'].forEach(plane);
+  const t = data.train, [x,y] = t.sceneOrigin, s = t.sceneWidth/t.canvas[0];
+  if (state !== 'clear') {
+    const d = t.wheelSpriteWidth*s;
+    const actor = t.wheelCenters.map(([cx,cy]) => place(url('wheel'),x+cx*s-d/2,y+cy*s-d/2,d,d));
+    actor.push(place(url('train-body'),x,y,t.sceneWidth,t.canvas[1]*s));
+    if (state === 'lost') {
+      actor.forEach(img => { img.style.filter = 'brightness(.85) saturate(.85)'; });
+      const [sx,sy] = t.smokeOrigin.map(n=>n*s);
+      const smoke = [[-2,-23,34],[-37,-60,66],[-86,-111,108],[-156,-178,148]];
+      smoke.forEach(([dx,dy,d],i) => {
+        const img = place(url(`smoke-${i%3+1}`),x+sx+dx-d/2,y+sy+dy-d/2,d,d);
+        img.style.objectFit='contain';
+        img.style.opacity = String(.89 - i*.055);
+      });
+    }
+  }
+  const lamps = data.lamps;
+  lamps.centers.forEach(([cx,cy],i) => {
+    const d = lamps.lensDiameter, r = lamps.spriteLensRadius, [lx,ly] = lamps.spriteLensCenter;
+    const wrap = document.createElement('span');
+    wrap.className='lens';
+    Object.assign(wrap.style,{left:pct(cx-d/2,W),top:pct(cy-d/2,H),width:pct(d,W),height:pct(d,H)});
+    scene.append(wrap);
+    const red = state === 'lost' || (state === 'misses' && i < 4);
+    picture(url(red?'lamp-red':'lamp-green'),wrap,{width:pct(512,2*r),height:pct(512,2*r),left:pct(r-lx,2*r),top:pct(r-ly,2*r)});
+  });
+  plane('layer-4-foreground');
+  const descriptions = {
+    ready:'Train stopped under eight green signals.',
+    misses:'Train stopped with four red signals and four green signals.',
+    lost:'Train stopped with smoke above the engine and eight red signals.',
+    clear:'Empty track beneath eight green signals.'
+  };
+  scene.setAttribute('aria-label',descriptions[state]);
+  buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.state===state)));
+}
+buttons.forEach(b=>b.addEventListener('click',()=>render(b.dataset.state)));
+render('ready');
+for(const [name,label] of art) {
+  const card = document.createElement('div'); card.className='asset';
+  const pair = document.createElement('div'); pair.className='swatches';
+  picture(url(name),pair,{}); picture(url(name),pair,{});
+  const link = document.createElement('a'); link.href=url(name); link.textContent=label+' · PNG';
+  card.append(pair,link); assets.append(card);
+}
+</script>

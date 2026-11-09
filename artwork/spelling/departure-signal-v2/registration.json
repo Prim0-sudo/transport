@@ -1,0 +1,105 @@
+{
+  "canvas": [1536,1024],
+  "planeOrder": [
+    "layer-1-sky",
+    "layer-2-background",
+    "layer-3-track-and-gantry",
+    "wheels",
+    "train-body",
+    "smoke",
+    "lamp-lenses",
+    "layer-4-foreground"
+  ],
+  "train": {
+    "canvas": [1315,379],
+    "facing": "right",
+    "sceneOrigin": [200,508.33],
+    "sceneWidth": 1106,
+    "railContactY": 817,
+    "wheelCenters": [
+      [78.2,333],
+      [187.2,333],
+      [423.2,333],
+      [529.7,333],
+      [702.2,333],
+      [810.8,333],
+      [1046,333],
+      [1155.5,333]
+    ],
+    "wheelSpriteWidth": 86.18,
+    "wheelSpritePivot": [256,256],
+    "visibleWheelDiameter": 68,
+    "smokeOrigin": [1127,13],
+    "offscreenActorX": [-1110,1540]
+  },
+  "lamps": {
+    "centers": [
+      [294,218],
+      [406,216],
+      [517,216],
+      [628,214],
+      [740,214],
+      [851,212],
+      [963,212],
+      [1074,210]
+    ],
+    "lensDiameter": 52,
+    "spriteLensCenter": [256,286],
+    "spriteLensRadius": 142,
+    "mountUnlitOnStage": true
+  },
+  "smoke": {
+    "canvas": [320,320],
+    "spritePivot": [160,160],
+    "frames": [
+      "smoke-1",
+      "smoke-2",
+      "smoke-3"
+    ]
+  },
+  "packaging": {
+    "layer-1-sky": {
+      "copy": true
+    },
+    "layer-2-background": {
+      "size": [1536,1024],
+      "destinationRect": [0,4,1536,1024]
+    },
+    "layer-4-foreground": {
+      "copy": true
+    },
+    "train-body": {
+      "size": [1315,379],
+      "destinationRect": [-2.02,-28.55,1339.324,442.25]
+    },
+    "wheel": {
+      "size": [512,512],
+      "destinationRect": [54,54,404,404],
+      "sourceRect": [123,129,1000,1000]
+    },
+    "lamp-unlit": {
+      "size": [512,512],
+      "destinationRect": [3.646,8.086,508.766,508.766]
+    },
+    "lamp-red": {
+      "size": [512,512],
+      "destinationRect": [3.646,8.086,508.766,508.766]
+    },
+    "lamp-green": {
+      "size": [512,512],
+      "destinationRect": [3.646,8.086,508.766,508.766]
+    },
+    "smoke-1": {
+      "size": [320,320],
+      "destinationRect": [-69.142,-68.77,466.088,466.088]
+    },
+    "smoke-2": {
+      "size": [320,320],
+      "destinationRect": [-22.434,-23.161,364.578,364.578]
+    },
+    "smoke-3": {
+      "size": [320,320],
+      "destinationRect": [-26.293,-23.761,373.479,373.479]
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "tool": "Built-in ImageGen",
+  "assets": [
+    {
+      "name": "station-painting",
+      "generationId": "exec-93c88443-a15f-43c5-9b2a-db5ed47e46d6",
+      "references": [
+        "art-concepts/spelling-scene/preview/src/backplate-original.png",
+        "art-concepts/spelling-scene/transport-style-reference.png"
+      ],
+      "transparentBackground": false,
+      "prompt": "Use case: illustration-story. Paint a visibly NEW country railway station artwork, the registration master for four separated game planes. 1536 × 1024 landscape 3:2. Reference 1 sets ONLY the camera, anchor locations and scale, never reuse its actual material art or scenery design. Reference 2 sets the hand-painted coloured-pencil and textured matte gouache Miniature World style. New design: a small coastal railway stop on a bright day. Quiet powder-blue sky, a distant sliver of blue sea between rolling sage coastal hills and a few wind-shaped pine groves, low dry-stone boundary wall. On the far right, a honey limestone station with weathered blue-gray slate roof, brick chimney and sage-green wooden canopy. A painted blue-green iron gantry with restrained warm brass collars and EXACTLY EIGHT DARK signal housings and open X-braced lattice. Change all surface brushwork and colors, only lock the geometry. Clean slate and warm-stone platform on a buff stone retaining wall, two straight, parallel silver railway rails over gravel, a lively low verge of coastal grasses with pale violet and white flowers. Fixed anchors in source pixels: dark round signal glass at [294,218],[406,216],[517,216],[628,214],[740,214],[851,212],[963,212],[1074,210], about 52px across with thin black hoods; gantry legs at x230 and x1135 with footing at y680; platform ledge near y675, far rail top y779, near rail top y812, grass-gravel transition around y883. Keep a clear opening at upper right x1100–1450 y100–360 for a separate clue card. Station stays cropped on the right. Geometry must register to reference 1, no zoom, no perspective shift. Clear edge-to-edge background and foreground. No trains, people, smoke, clouds, logos, text or signs. No interface."
+    },
+    {
+      "name": "train-body",
+      "generationId": "exec-2bc03c29-bdfd-4309-be85-0b9437d00faa",
+      "references": [
+        "artwork/spelling/departure-signal-v1/rgba/train-body.png",
+        "art-concepts/spelling-scene/transport-style-reference.png"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: precise-object-edit. Completely repaint reference 1 as a DISTINCT coastal two-carriage passenger train for Departure Signal. Match the second reference's hand-painted matte gouache and coloured-pencil texture. New paint scheme: deep ink-blue lower body, a broad warm ivory band through the windows, golden amber doors, a thin rust-red waist stripe and a softly weathered slate roof. Warm yellow headlamp. New painted details including modest bolts, riveted side panels and blue-glazed windows; friendly but no face or mouth. Keep the reference 1 completely side-on silhouette, right-facing cab nose, two connected cars, original exact body width and height, wheel arches, four bogies and wheel center spacing, roof line and front roof vent, with the same wide placement and padding. Same empty transparent space under all eight open arches. No wheels at all, no ground or cast shadow, no labels, text, letters or numbers. Single complete sprite on genuine transparency, preserve the very wide shape and negative space."
+    },
+    {
+      "name": "wheel",
+      "generationId": "exec-f16a3a8f-b050-4f87-8e95-2ee3698a5196",
+      "references": [
+        "artwork/spelling/departure-signal-v1/rgba/wheel.png",
+        "art-concepts/spelling-scene/transport-style-reference.png"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: illustration-story. Create one visibly new wheel for the coastal Departure Signal train. Match reference 1's orthographic side view and round footprint, but repaint as a different six-spoke steel railway wheel: dark graphite tyre, six thick tapered old blue-gray steel spokes with a warm copper-gray central hub and one thin bare steel ring. Soft matte painted gouache and pencil in the style of reference 2. Spokes must read at small size; open transparency between all six spokes. Perfect circle, centered face-on, broad clear margin. One single wheel on genuine transparent alpha; no perspective, text, shadow, streak or floor."
+    },
+    {
+      "name": "lamp-unlit",
+      "generationId": "exec-8d91f302-c92d-485f-8293-355fdf72bc32",
+      "references": [
+        "artwork/spelling/departure-signal-v1/rgba/lamp-unlit.png",
+        "art-concepts/spelling-scene/transport-style-reference.png"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: illustration-story. Create a distinct new single face-on vintage railway lamp for the coastal Departure Signal scene. Original reference is shape and lens-registration guidance only. New hardware has a short brushed black hood, a thin weathered marine blue enamel rim with two small brass screw heads at three and nine o'clock, and a softly textured circular dark charcoal glass with two tiny muted sky reflections. Same glass-to-frame proportion and position as first reference. Children's Miniature World painted matte gouache and coloured pencil as in reference 2. Full square centered sprite with genuinely transparent exterior and ample margin. No pedestal or stem, no scenery, no letters or graphics, no halo."
+    },
+    {
+      "name": "layer-1-sky",
+      "generationId": "exec-8e23dbf1-77fb-4830-a6be-149408d8752f",
+      "references": [
+        "artwork/spelling/departure-signal-v2/originals/station-painting.png"
+      ],
+      "transparentBackground": false,
+      "prompt": "Use case: precise-object-edit, production PNG plane from the supplied NEW coastal Departure Signal station painting. Keep exactly the 1536×1024 3:2 original camera, scene registration, positions and pixel scale. Zero reframe, no camera or zoom change. Soft Miniature World matte pencil and gouache. No text, logos or UI. Keep only the powder-blue painted sky, removing every foreground object, hills, sea, rail, gantry and station. Extend that painted sky across the full canvas, with a very subtle lighter tone at bottom and fine diagonal pencil texture. No horizon, objects or clouds. Quiet full bleed blue only."
+    },
+    {
+      "name": "layer-2-background",
+      "generationId": "exec-ce051606-78fa-4e39-8850-e3d25ef9aa44",
+      "references": [
+        "artwork/spelling/departure-signal-v2/originals/station-painting.png"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: precise-object-edit, production PNG plane from the supplied NEW coastal Departure Signal station painting. Keep exactly the 1536×1024 3:2 original camera, scene registration, positions and pixel scale. Zero reframe, no camera or zoom change. Soft Miniature World matte pencil and gouache. No text, logos or UI. Retain only the distant coastal hills, ocean sliver, wind-shaped pine groves, dry-stone wall, and honey-limestone station building including its roof, sage canopy and pillars at the far right. Match their exact positions and widths; station touches right canvas edge and trees touch left edge. Remove sky and the entire gantry and its legs. Fill behind the gantry legs with continuous painted grass, rock wall, trees and sea where appropriate. Remove all platform and rail and foreground verge, leaving true transparency below the scenery cutoff at y680 and everywhere above the actual skyline. Use true transparency wherever no distant scenery remains. No added text, shadows, station signs or objects."
+    },
+    {
+      "name": "layer-3-track-and-gantry",
+      "generationId": "exec-764e5ee4-aae5-4794-9c17-dfe474b713a2",
+      "references": [
+        "artwork/spelling/departure-signal-v2/originals/station-painting.png"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: precise-object-edit, production PNG plane from the supplied NEW coastal Departure Signal station painting. Keep exactly the 1536×1024 3:2 original camera, scene registration, positions and pixel scale. Zero reframe, no camera or zoom change. Soft Miniature World matte pencil and gouache. No text, logos or UI. Extract the marine blue and brass signal gantry with its thin X lattice, the warm stone platform and retaining wall, both railway rails and gravel. Preserve every anchor, including the eight short lamp mounting posts that rise above the beam. Remove the eight ROUND black lamp heads and their hoods completely for independent sprite placement. Leave the short stems attached to their brass mounts. Remove the station and its canopy, trees, ocean, hills, dry-stone wall, grass and sky to genuine transparent alpha; open all the holes in the lattice. Continue platform stone where the removed station used to be. Extend the gravel texture down to about y925 for hidden clean backing under the foreground; no baked grass. Keep platform y675, train rail contact at y812–819, stage runs edge to edge, no zoom or reposition. True transparency outside the retained parts."
+    },
+    {
+      "name": "layer-4-foreground",
+      "generationId": "exec-a085df6e-75e4-42e0-a242-0a1401f7a61a",
+      "references": [
+        "artwork/spelling/departure-signal-v2/originals/station-painting.png"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: precise-object-edit, production PNG plane from the supplied NEW coastal Departure Signal station painting. Keep exactly the 1536×1024 3:2 original camera, scene registration, positions and pixel scale. Zero reframe, no camera or zoom change. Soft Miniature World matte pencil and gouache. No text, logos or UI. Extract only the coastal grass verge with its scattered purple and white wildflowers and small rocks along the bottom, full width and flush with the left, right and bottom canvas edges. Keep the real irregular grass tips and about y860–1024 footprint. Its tallest stalks can begin around y845 and rest of ridge around y880. Remove all rail, gravel, gantry, platform, sky, station and hills, leaving genuine transparency above the grasses. No soft colored cast around the grass. Same framing and scale, no center-cropping."
+    },
+    {
+      "name": "lamp-red",
+      "generationId": "exec-972bd056-38e8-465c-bfe5-9412367125b3",
+      "references": [
+        "artwork/spelling/departure-signal-v2/originals/lamp-unlit.png"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: precise-object-edit. Edit this new coastal Departure Signal lamp sprite. Change only the circular black lens to a clearly illuminated red glass lens. Bright red centre, restrained tonal falloff to a darker edge and two tiny highlights painted in soft matte gouache and colored pencil. Strong and legible at 12px. No glow outside the lens. Keep exact square canvas size, framing, lens centre, geometry, short black hood, thin distressed marine blue enamel rim, both brass screws and transparent background. No text, no extra objects, no environment. This state must align with the supplied unlit art."
+    },
+    {
+      "name": "lamp-green",
+      "generationId": "exec-a056c804-449b-42d4-9acd-5be2f0f61ea3",
+      "references": [
+        "artwork/spelling/departure-signal-v2/originals/lamp-unlit.png"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: precise-object-edit. Edit this new coastal Departure Signal lamp sprite. Change only the circular black lens to a clearly illuminated green glass lens. Bright green centre, restrained tonal falloff to a darker edge and two tiny highlights painted in soft matte gouache and colored pencil. Strong and legible at 12px. No glow outside the lens. Keep exact square canvas size, framing, lens centre, geometry, short black hood, thin distressed marine blue enamel rim, both brass screws and transparent background. No text, no extra objects, no environment. This state must align with the supplied unlit art."
+    },
+    {
+      "name": "smoke-1",
+      "generationId": "exec-31bd29e6-ddd3-42e3-bb44-6d1d2484c6f0",
+      "references": [
+        "art-concepts/spelling-scene/preview/smoke-2.png",
+        "art-concepts/spelling-scene/transport-style-reference.png"
+      ],
+      "transparentBackground": true,
+      "prompt": "Paint a brand-new transparent 2D sprite for the painted children's train spelling game Departure Signal. Image 1 shows the scale and subject of an old sprite; do not copy its outline. Image 2 is the coloured-pencil and matte gouache illustration style, not content. A young compact puff just released by the train vent: a single rounded irregular little knot with three or four fused lobes, darkest on its lower edge, gently softer up top. This is ordinary grey engine smoke, no flames or sparks. Cool charcoal and warm gray, no white rim, no blur beyond the smoke edges, use painted soft transitions. One complete connected puff only, facing no direction, nearly round, centered within a square with wide clean margins on all sides. True transparent alpha around the entire puff. No sky, train, landscape, text, logos, trails or extra smoke pieces."
+    },
+    {
+      "name": "smoke-2",
+      "generationId": "exec-53670fc1-1614-460e-958b-566bf433d044",
+      "references": [
+        "art-concepts/spelling-scene/preview/smoke-2.png",
+        "art-concepts/spelling-scene/transport-style-reference.png"
+      ],
+      "transparentBackground": true,
+      "prompt": "Paint a brand-new transparent 2D sprite for the painted children's train spelling game Departure Signal. Image 1 shows the scale and subject of an old sprite; do not copy its outline. Image 2 is the coloured-pencil and matte gouache illustration style, not content. An expanded mid-age engine puff: one connected softly asymmetrical mass with five or six overlapping lobes. Soft edges and a loose curl in the upper left, dark midtone core. This is ordinary grey engine smoke, no flames or sparks. Cool charcoal and warm gray, no white rim, no blur beyond the smoke edges, use painted soft transitions. One complete connected puff only, facing no direction, nearly round, centered within a square with wide clean margins on all sides. True transparent alpha around the entire puff. No sky, train, landscape, text, logos, trails or extra smoke pieces."
+    },
+    {
+      "name": "smoke-3",
+      "generationId": "exec-eda9a969-a70d-4e70-a965-e9d68ef1c10a",
+      "references": [
+        "art-concepts/spelling-scene/preview/smoke-2.png",
+        "art-concepts/spelling-scene/transport-style-reference.png"
+      ],
+      "transparentBackground": true,
+      "prompt": "Paint a brand-new transparent 2D sprite for the painted children's train spelling game Departure Signal. Image 1 shows the scale and subject of an old sprite; do not copy its outline. Image 2 is the coloured-pencil and matte gouache illustration style, not content. A broad late-stage engine puff: one connected irregular smoky cloud with a more feathered top and a slightly lighter cool-grey outer edge. Keep the interior visibly filled, with painted turbulent curls and a dark enough silhouette to read against bright blue sky. This is ordinary grey engine smoke, no flames or sparks. Cool charcoal and warm gray, no white rim, no blur beyond the smoke edges, use painted soft transitions. One complete connected puff only, facing no direction, nearly round, centered within a square with wide clean margins on all sides. True transparent alpha around the entire puff. No sky, train, landscape, text, logos, trails or extra smoke pieces."
+    }
+  ]
+}

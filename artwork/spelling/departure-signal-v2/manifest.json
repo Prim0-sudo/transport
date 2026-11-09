@@ -1,0 +1,563 @@
+{
+  "batch": "Departure Signal coastal artwork v2",
+  "status": "ready for artwork review",
+  "tool": "Built-in ImageGen",
+  "promptFile": "prompts.json",
+  "registrationFile": "registration.json",
+  "provenance": "Generated for Transport from project-owned references. The twelve exported assets have new artwork. Runtime conversion and integration are pending.",
+  "assets": [
+    {
+      "id": "spelling.departure-signal-v2.station-painting",
+      "generationId": "exec-93c88443-a15f-43c5-9b2a-db5ed47e46d6",
+      "source": {
+        "path": "originals/station-painting.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "alphaRange": [
+          255,
+          255
+        ],
+        "visibleBounds": [
+          0,
+          0,
+          1536,
+          1024
+        ],
+        "sha256": "8902de03a3806cefe059d8588d99c76f3608fb95b2cc7939f07067f9686b5c56"
+      },
+      "status": "ready for artwork review",
+      "use": "Registration reference for the four new painted planes"
+    },
+    {
+      "id": "spelling.departure-signal-v2.train-body",
+      "generationId": "exec-2bc03c29-bdfd-4309-be85-0b9437d00faa",
+      "source": {
+        "path": "originals/train-body.png",
+        "size": [
+          2170,
+          725
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          13,
+          55,
+          2124,
+          583
+        ],
+        "sha256": "3ace752746cc304452ef2104110cea5f601e17e1420bff4e76428b657e3196e6"
+      },
+      "status": "ready for artwork review",
+      "rgba": {
+        "path": "rgba/train-body.png",
+        "size": [
+          1315,
+          379
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          6,
+          5,
+          1309,
+          327
+        ],
+        "sha256": "1f07e3f5ac00c6e42c096273b76fecefdf88d8c2ea549593432c293aeb004731"
+      },
+      "use": "Spelling scene actor or signal"
+    },
+    {
+      "id": "spelling.departure-signal-v2.wheel",
+      "generationId": "exec-f16a3a8f-b050-4f87-8e95-2ee3698a5196",
+      "source": {
+        "path": "originals/wheel.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          123,
+          129,
+          1123,
+          1129
+        ],
+        "sha256": "265d36a098d4059fe088d3c8712e284a7bc6e0db060d8add17308eb1d2553e94"
+      },
+      "status": "ready for artwork review",
+      "rgba": {
+        "path": "rgba/wheel.png",
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          54,
+          54,
+          458,
+          458
+        ],
+        "sha256": "ab728c35d7241bc7bde8259a515e95d6203e84bd6278062e7a65a81897054d4d"
+      },
+      "use": "Spelling scene actor or signal"
+    },
+    {
+      "id": "spelling.departure-signal-v2.lamp-unlit",
+      "generationId": "exec-8d91f302-c92d-485f-8293-355fdf72bc32",
+      "source": {
+        "path": "originals/lamp-unlit.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          212,
+          153,
+          1037,
+          1094
+        ],
+        "sha256": "e9d1457e14517a021072fbf6e1cbc9e8d5706734299727a913b3d5e3fe643adc"
+      },
+      "status": "ready for artwork review",
+      "rgba": {
+        "path": "rgba/lamp-unlit.png",
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          90,
+          70,
+          425,
+          452
+        ],
+        "sha256": "d13e99b59f661e361d13e7b34a1cbd2b24cdd5de70d8eab6c255fcd095bf4283"
+      },
+      "use": "Spelling scene actor or signal"
+    },
+    {
+      "id": "spelling.departure-signal-v2.layer-1-sky",
+      "generationId": "exec-8e23dbf1-77fb-4830-a6be-149408d8752f",
+      "source": {
+        "path": "originals/layer-1-sky.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "alphaRange": [
+          255,
+          255
+        ],
+        "visibleBounds": [
+          0,
+          0,
+          1536,
+          1024
+        ],
+        "sha256": "d8c856f79b6ece8cb8bf6ec9f0112aab047ec0d92e408ffd903ef5c4a9f5d3ab"
+      },
+      "status": "ready for artwork review",
+      "rgba": {
+        "path": "rgba/layer-1-sky.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "alphaRange": [
+          255,
+          255
+        ],
+        "visibleBounds": [
+          0,
+          0,
+          1536,
+          1024
+        ],
+        "sha256": "d8c856f79b6ece8cb8bf6ec9f0112aab047ec0d92e408ffd903ef5c4a9f5d3ab"
+      },
+      "use": "Spelling scene plane"
+    },
+    {
+      "id": "spelling.departure-signal-v2.layer-2-background",
+      "generationId": "exec-ce051606-78fa-4e39-8850-e3d25ef9aa44",
+      "source": {
+        "path": "originals/layer-2-background.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "visibleBounds": [
+          0,
+          244,
+          1536,
+          688
+        ],
+        "sha256": "2de6545d217e07c8a0bc3c4f92e8a905dd03d7897279cbb415cf64384660ab97"
+      },
+      "status": "ready for artwork review",
+      "rgba": {
+        "path": "rgba/layer-2-background.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "visibleBounds": [
+          0,
+          248,
+          1536,
+          692
+        ],
+        "sha256": "043868607f58d0415941d064ca7a487e6690428c0d528ba76f72dd4567799be2"
+      },
+      "use": "Spelling scene plane"
+    },
+    {
+      "id": "spelling.departure-signal-v2.layer-3-track-and-gantry",
+      "generationId": "exec-764e5ee4-aae5-4794-9c17-dfe474b713a2",
+      "source": {
+        "path": "originals/layer-3-track-and-gantry.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "visibleBounds": [
+          0,
+          226,
+          1536,
+          962
+        ],
+        "sha256": "e059730871018482bbc2ce26ec69fc48e3d47134e56d5a1563f015fea3aa42c7"
+      },
+      "status": "ready for artwork review",
+      "rgba": {
+        "path": "rgba/layer-3-track-and-gantry.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          0,
+          170,
+          1536,
+          962
+        ],
+        "sha256": "4a814d53eb22ba6c6899fe1d06bd215181d7bbc730d38ef1855e75f7af41084e"
+      },
+      "use": "Spelling scene plane"
+    },
+    {
+      "id": "spelling.departure-signal-v2.layer-4-foreground",
+      "generationId": "exec-a085df6e-75e4-42e0-a242-0a1401f7a61a",
+      "source": {
+        "path": "originals/layer-4-foreground.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "visibleBounds": [
+          0,
+          855,
+          1536,
+          1024
+        ],
+        "sha256": "c6de27efb30d80da20555bc3adf7aa27d8c1ecc6673c5597756fca42a0bbe615"
+      },
+      "status": "ready for artwork review",
+      "rgba": {
+        "path": "rgba/layer-4-foreground.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "visibleBounds": [
+          0,
+          855,
+          1536,
+          1024
+        ],
+        "sha256": "c6de27efb30d80da20555bc3adf7aa27d8c1ecc6673c5597756fca42a0bbe615"
+      },
+      "use": "Spelling scene plane"
+    },
+    {
+      "id": "spelling.departure-signal-v2.lamp-red",
+      "generationId": "exec-972bd056-38e8-465c-bfe5-9412367125b3",
+      "source": {
+        "path": "originals/lamp-red.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          211,
+          151,
+          1041,
+          1095
+        ],
+        "sha256": "276d057509935163d5ef9a5a2f72d6b4278587d40d8d4b6df7722f7eeefad35c"
+      },
+      "status": "ready for artwork review",
+      "rgba": {
+        "path": "rgba/lamp-red.png",
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          90,
+          69,
+          427,
+          453
+        ],
+        "sha256": "caf955cfe030db129b329ed85f6bc86df2a621ca8eeb1f0fbc42d1fed53eb43a"
+      },
+      "use": "Spelling scene actor or signal"
+    },
+    {
+      "id": "spelling.departure-signal-v2.lamp-green",
+      "generationId": "exec-a056c804-449b-42d4-9acd-5be2f0f61ea3",
+      "source": {
+        "path": "originals/lamp-green.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          210,
+          152,
+          1039,
+          1095
+        ],
+        "sha256": "eb5534aa4dfc3eb955284549dce10a0df0d507b9da6c9de078b99c892e2391cb"
+      },
+      "status": "ready for artwork review",
+      "rgba": {
+        "path": "rgba/lamp-green.png",
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          89,
+          70,
+          426,
+          452
+        ],
+        "sha256": "371f15f732465f763b2f76a3cc45de91b6ea46cfece5f5c66a5112c1f8f2b24e"
+      },
+      "use": "Spelling scene actor or signal"
+    },
+    {
+      "id": "spelling.departure-signal-v2.smoke-1",
+      "generationId": "exec-31bd29e6-ddd3-42e3-bb44-6d1d2484c6f0",
+      "source": {
+        "path": "originals/smoke-1.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          221,
+          232,
+          1012,
+          999
+        ],
+        "sha256": "d8476d6361ebef866e0a25aa5be2948da739341c9699bd147d124408959969bc"
+      },
+      "status": "ready for artwork review",
+      "rgba": {
+        "path": "rgba/smoke-1.png",
+        "size": [
+          320,
+          320
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          13,
+          17,
+          307,
+          303
+        ],
+        "sha256": "b03004b0fa367dedb55a8e33df863dc6e1c29b7f12a0511e98c856b0c51a26b0"
+      },
+      "use": "Breakdown smoke"
+    },
+    {
+      "id": "spelling.departure-signal-v2.smoke-2",
+      "generationId": "exec-53670fc1-1614-460e-958b-566bf433d044",
+      "source": {
+        "path": "originals/smoke-2.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          115,
+          120,
+          1140,
+          1140
+        ],
+        "sha256": "fd8e159c66b4de958153e1592f17066c989dbb361a126030da85e301a6a69347"
+      },
+      "status": "ready for artwork review",
+      "rgba": {
+        "path": "rgba/smoke-2.png",
+        "size": [
+          320,
+          320
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          12,
+          12,
+          310,
+          308
+        ],
+        "sha256": "0496e6de4b05f88be2768ea1cc0fb2e2c209e29f58f748f438c13b4552bc1363"
+      },
+      "use": "Breakdown smoke"
+    },
+    {
+      "id": "spelling.departure-signal-v2.smoke-3",
+      "generationId": "exec-eda9a969-a70d-4e70-a965-e9d68ef1c10a",
+      "source": {
+        "path": "originals/smoke-3.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "visibleBounds": [
+          132,
+          110,
+          1119,
+          1124
+        ],
+        "sha256": "966e72592a9db60ab9982b00565e12cc098ff93d04d01565b6e754aea02a3c13"
+      },
+      "status": "ready for artwork review",
+      "rgba": {
+        "path": "rgba/smoke-3.png",
+        "size": [
+          320,
+          320
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          14,
+          9,
+          308,
+          311
+        ],
+        "sha256": "b35d7b8214b74f4b443f61f037e22535a0a63742f4b8a2dde346873cf4737d9f"
+      },
+      "use": "Breakdown smoke"
+    }
+  ]
+}

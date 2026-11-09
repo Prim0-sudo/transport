@@ -1,13 +1,13 @@
 // Departure Signal: the Transport spelling scene.
-// Art: artwork/spelling/departure-signal-v1 (registration.json). Movement: art-concepts/spelling-scene/preview.
+// Art: artwork/spelling/departure-signal-v2 (coastal set, registration.json). Movement: art-concepts/spelling-scene/preview.
 // Rules follow Plants blueprint v6.0 (theme spelling, ART-AND-ANIMATION): the scene only shows the round's
 // state. Spelling fairness, input and scoring stay in app.js; a late scene callback never touches a later round.
 (() => {
-  const ART = 'images/spelling/departure-signal/';
+  const ART = 'images/spelling/departure-signal-v2/';
   const W = 1536, H = 1024;
-  const TRAIN = {canvas: [1315, 379], origin: [200, 503.3], width: 1106,
-    wheels: [81.5, 189.7, 425.4, 531.5, 703.6, 812.7, 1046.9, 1156], wheelY: 333, wheelSprite: 86.18, wheelDiameter: 68,
-    smoke: [1124, 11], offscreen: [-1110, 1540]};
+  const TRAIN = {canvas: [1315, 379], origin: [200, 508.33], width: 1106,
+    wheels: [78.2, 187.2, 423.2, 529.7, 702.2, 810.8, 1046, 1155.5], wheelY: 333, wheelSprite: 86.18, wheelDiameter: 68,
+    smoke: [1127, 13], offscreen: [-1110, 1540]};
   const LAMPS = {centers: [[294, 218], [406, 216], [517, 216], [628, 214], [740, 214], [851, 212], [963, 212], [1074, 210]],
     lens: 52, spriteCenter: [256, 286], spriteRadius: 142};
   const pct = (n, of) => `${n / of * 100}%`;
