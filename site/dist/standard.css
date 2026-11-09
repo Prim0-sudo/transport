@@ -59,6 +59,15 @@ button:disabled{cursor:default}.standard-actions button:disabled{opacity:.55}
 .ticket-checks{display:flex;justify-content:center;gap:8px}.ticket-checks span{display:grid;place-items:center;background:#24764d;color:white;width:27px;height:27px;border-radius:50%}.ticket-checks span.used{background:#b94c44}
 .departure-ticket .hangman-keys{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px;margin:18px 0}.departure-ticket .hangman-key{min-width:0;min-height:44px;font-size:18px;padding:4px;border:1px solid #a9b7bb;border-radius:8px}.departure-ticket .hangman-key.correct{background:#bce7c4}.departure-ticket .hangman-key.wrong{background:#ead0ce}
 .game-card[data-mode=wheel] .vocab-wheel{animation:none!important;transition:none!important}.game-card[data-mode=wheel] .wheel-segment-emoji{transform:translate(-50%,-50%);width:16%;height:16%;font-size:0}.wheel-segment-emoji img{width:100%;height:100%;object-fit:contain}
+/* Spin the Wheel reading card (matched to Plants 2026-11-10). */
+.game-card:is([data-mode=wheel],[data-mode=learn]):has(.learn-groups) #questionText{align-self:stretch;text-align:left}
+.game-card[data-mode=wheel] .wheel-segment-emoji--small{width:15%;height:15%}
+@media(min-width:600px){.game-card[data-mode=wheel] .vocab-wheel{width:min(78vw,calc(100dvh - 260px),820px)}}
+.wheel-reading-card{width:min(680px,100%);padding:clamp(14px,3vw,28px);border:5px solid #fff;border-radius:30px;background:linear-gradient(145deg,#fffdf3,#e3eef6);box-shadow:0 9px 0 #a9c3d6,0 18px 34px #183a5126}
+.wheel-reading-card img{width:min(100%,340px,38vh)}
+.wheel-reading-card h2{color:#1d4f73;font-size:clamp(1.6rem,5vw,3.2rem);line-height:1}
+.game-card[data-mode=wheel] .wheel-reading-card+.learn-actions{display:flex;justify-content:center;gap:12px;margin-top:16px}
+@media(max-width:560px){.wheel-reading-card img{width:min(100%,240px,30vh)}.wheel-reading-card{padding:12px;gap:8px}}
 .game-card[data-mode=wheel] .vehicle-stage{display:flex}.game-card[data-mode=wheel] .vehicle-definition{max-width:80ch;font-size:21px;line-height:1.5}
 @media(max-width:800px){.detective-workspace{grid-template-columns:1fr}.detective-picture{height:clamp(270px,46vh,480px)}.detective-controls .standard-actions{flex-direction:row}.transport-spelling{grid-template-columns:1fr}.spelling-clue{display:grid;grid-template-columns:120px 1fr;gap:12px}.spelling-clue img{height:125px}.spelling-clue button{grid-column:1/-1;justify-self:center}.game-screen .vehicle-emoji.vehicle-icon-image,.game-screen .vehicle-emoji.vehicle-picture{height:clamp(210px,34vh,340px)}}
 @media(max-width:480px){.game-screen .game-card{padding:14px;border-radius:20px}.game-screen .game-status{gap:8px;grid-template-columns:auto 1fr auto}.game-status .progress-track{grid-column:1/-1;grid-row:2}.standard-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.standard-choice{padding:12px;min-height:175px}.standard-choice>img{width:100%;height:90px}.standard-choice strong{font-size:18px}.rule-pictures img{width:50px;height:55px}.standard-settings{padding:0;gap:12px}.standard-settings label{flex:1;min-width:130px}.standard-settings select{width:100%}.detective-controls .standard-actions button{flex:1}.detective-picture{height:300px}.departure-ticket .hangman-keys{grid-template-columns:repeat(7,minmax(0,1fr))}.departure-ticket .hangman-letter{height:40px;width:27px}.ticket-checks{gap:6px}.ticket-checks span{width:24px;height:24px}}
@@ -96,7 +105,8 @@ button:disabled{cursor:default}.standard-actions button:disabled{opacity:.55}
 /* Meet the Words, following Plants (modes.css learn-category-card, learn-action, next-button). */
 .game-screen{justify-content:flex-start}
 .game-status .round-label{justify-self:start;padding:5px 12px;border-radius:999px;background:#fffbed;color:#183a51;text-shadow:none;font-size:.8rem;text-transform:uppercase;letter-spacing:.02em}
-.standard-choice-grid.learn-groups{grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr))}
+.standard-choice-grid.learn-groups{--cols:5;--gap:14px;display:flex;flex-wrap:wrap;justify-content:center;gap:var(--gap)}
+.learn-groups>.standard-choice{flex:0 0 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));min-width:0}
 .learn-groups .standard-choice{min-height:0;gap:7px;padding:12px;border:4px solid #fff;border-radius:24px;background:linear-gradient(150deg,#fffdf3,#e3eef6);box-shadow:0 8px 0 #a9c3d6,0 14px 24px #183a5126;transition:transform .15s ease,filter .15s ease}
 .learn-groups .standard-choice:nth-child(5n+2){background:linear-gradient(150deg,#fff6d6,#eaf2f8)}
 .learn-groups .standard-choice:nth-child(5n+3){background:linear-gradient(150deg,#e4f1f8,#d6e8f2)}
@@ -118,8 +128,8 @@ button:disabled{cursor:default}.standard-actions button:disabled{opacity:.55}
 .results-card .result-score{font-size:1.5rem;color:#1d4f73}
 .results-card .result-score strong{font-size:1.9rem}
 img.result-burst{display:block;width:clamp(90px,14vw,140px);height:auto;margin:0 auto 6px;animation:pop .5s ease}
-@media(max-width:640px){.standard-choice-grid.learn-groups{grid-template-columns:repeat(2,minmax(0,1fr))}.learn-groups .standard-choice>img{height:clamp(46px,8dvh,76px)}}
-@media(min-width:641px) and (max-width:850px){.standard-choice-grid.learn-groups{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:640px){.standard-choice-grid.learn-groups{--cols:2;--gap:9px}.learn-groups .standard-choice>img{height:clamp(46px,8dvh,76px)}}
+@media(min-width:641px) and (max-width:850px){.standard-choice-grid.learn-groups{--cols:4}}
 @media(max-width:640px){.game-screen .game-status{grid-template-columns:auto 1fr auto}.game-status .back-menu-btn{grid-area:1/1}.game-status .round-label{grid-area:1/2}.game-status .score-pill{grid-area:1/3}.game-status .progress-track{grid-area:2/1/3/-1}}
 
 /* Sort It and answer feedback, following Plants (modes.css answer-button, base.css feedback, sorting-rule). */

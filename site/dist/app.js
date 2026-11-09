@@ -280,7 +280,7 @@ function startGame(mode, {fresh=false,setup=null}={}) {
   if(!fresh&&restoreAttempt(session))return;
   if(fresh)classroom.discard(session.key);
   activeSession=session;
-  const reserved=classroom.reserve(session,mode==='safety'?7:mode==='wheel'?8:mode==='learn'?12:10);
+  const reserved=classroom.reserve(session,mode==='safety'?7:mode==='wheel'?12:mode==='learn'?12:10);
   let questions=reserved;
   if(mode==='identify'||mode==='detective')questions=reserved.map(vehicle=>({vehicle,choices:identifyChoices(vehicle,session.pool),...(mode==='detective'?{reveal:TransportReveal.create(setup.kind,setup.duration,shuffled(Array.from({length:120},(_,i)=>i)))}:{})}));
   if(mode==='hangman')questions=reserved.map(vehicle=>({vehicle,guessed:[],misses:0,sadConeIndex:null,awarded:false,assisted:false}));
@@ -552,7 +552,7 @@ function wheelColors(count) {
 }
 
 function renderWheel() {
-  state.practice=true;setStandardBack('Categories');els.listen.hidden=true;els.scorePill.hidden=true;
+  state.practice=true;setStandardBack('Categories');els.listen.hidden=true;els.scorePill.hidden=false;els.helper.textContent='';
   const game = state.wheel;
   const total = state.questions.length;
   const wordsRead = total - game.remaining.length;
@@ -561,13 +561,12 @@ function renderWheel() {
   els.name.textContent = "";
   els.stage.dataset.sound = "";
   els.question.textContent = "";
-  els.round.textContent = `WORDS ${wordsRead}/${total}`;
+  els.round.textContent = `Words ${wordsRead}/${total}`;
   els.progress.style.width = `${(wordsRead / total) * 100}%`;
   els.score.textContent = wordsRead;
   if(renderStandardWheelSelection())return;
   els.stage.style.display='none';
-  const count = Math.min(8,game.remaining.length);
-  els.helper.textContent=count<game.remaining.length?`This wheel shows ${count} of ${game.remaining.length} remaining words. More words follow.`:'Spin, then explore the selected word.';
+  const count = Math.min(12,game.remaining.length);
   const slice = 360 / count;
   const segmentEmojis = game.remaining.slice(0,count).map((vehicle, index) => {
     const angle = -90 + (index + .5) * slice;
@@ -575,7 +574,7 @@ function renderWheel() {
     const x = 50 + 34 * Math.cos(radians);
     const y = 50 + 34 * Math.sin(radians);
     const rotation = game.spinning ? -(game.rotation || 0) : 0;
-    return `<span class="wheel-segment-emoji" style="--x:${x}%; --y:${y}%; --segment-angle:${angle}deg; --counter-angle:${-angle}deg; --emoji-rotation:${rotation}deg" aria-hidden="true"><img src="${vehicle.image}" alt=""></span>`;
+    return `<span class="wheel-segment-emoji${count>8?' wheel-segment-emoji--small':''}" style="--x:${x}%; --y:${y}%; --segment-angle:${angle}deg; --counter-angle:${-angle}deg; --emoji-rotation:${rotation}deg" aria-hidden="true"><img src="${vehicle.image}" alt=""></span>`;
   }).join("");
   const spinClass = game.spinning ? "spinning" : game.returning ? "returning" : "";
   const landingWord = game.landing ? `<div class="wheel-landing-word">${game.landing.name}</div>` : "";
@@ -586,7 +585,7 @@ function renderWheel() {
 function spinWheel() {
   const game = state.wheel;
   if (game.spinning || !game.remaining.length) return;
-  const count=Math.min(8,game.remaining.length);
+  const count=Math.min(12,game.remaining.length);
   const selectedIndex = Math.floor(Math.random() * count);
   const slice = 360 / count;
   game.pending = game.remaining[selectedIndex];
@@ -836,7 +835,7 @@ function finishGame() {
   const practice = state.practice && !met;
   els.stars.textContent = practice || !state.score ? 'Practice complete' : `${starCount} ${starCount === 1 ? 'star' : 'stars'}`;
   document.querySelector('.result-score').hidden = practice;
-  els.resultMessage.textContent=state.mode==='learn'?'You met this group of Transport words!':state.mode==='hangman'?'You worked on the departure words.':state.mode==='detective'?'You explored the hidden Transport pictures.':state.mode==='safety'?'Talk together about the safe travel choices.':state.mode==='sort'?'You compared vehicles using the chosen rule.':state.mode==='flip'?'You found the matching word pairs.':`You explored this set of ${total} words.`;
+  els.resultMessage.textContent=state.mode==='learn'?'You met this group of Transport words!':state.mode==='hangman'?'You worked on the departure words.':state.mode==='detective'?'You explored the hidden Transport pictures.':state.mode==='safety'?'Talk together about the safe travel choices.':state.mode==='sort'?'You compared vehicles using the chosen rule.':state.mode==='flip'?'You found the matching word pairs.':state.mode==='wheel'?'You read this group of Transport words!':`You explored this set of ${total} words.`;
   document.getElementById('playAgainBtn').textContent = met ? 'Next session' : 'Play Again';
   showScreen("results");
   if (state.mode !== "flip") burstConfetti();

@@ -117,6 +117,13 @@ Commit identity: `git -c user.name=Prim0-sudo -c user.email=Prim0-sudo@users.nor
 - Fits 768x1024 (all sizes), 1280x800 (all sizes; 20-tile board capped at 790px), phone 4/5/6 columns (20-tile board scrolls ~55px, like Plants).
 - Missing art: none new.
 
+## Spin the Wheel (matched to Plants 2026-11-10)
+- Groups page: "Which words shall we spin?" (left), no subtitle, Meet the Words group cards, Groups 0/N and score pill; unfinished last row centred (also on Meet the Words).
+- Wheel: up to 12 words a session (was 8), no helper line, Words n/12, score pill shown; pictures 15% on 12-word wheels; wheel capped by screen height so 1280x800 no longer scrolls.
+- Reading card: picture, uppercase name, meaning box, gold Hear the word and navy Next (was Hear word / Hear meaning / Next word over the old stage).
+- Finish: You read this group of Transport words!
+- Fits 768x1024, 1280x800 and 375x812. Missing art: none new.
+
 ## Queued by owner (after every activity matches Plants)
 
 - Plants presentation: design a full-topic PPT for the Plants game covering every category (everything the videos cover, plus more), and add a separate Media tab called Presentation for it.

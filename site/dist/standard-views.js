@@ -37,8 +37,9 @@ function markLearnGroupMet(id){const met=learnGroupsMet();met.add(id);try{localS
 const wordModes=new Set(['learn','wheel']);
 function renderStandardCategories(mode){
   const learn=mode==='learn';
-  renderStandardSetup(mode,learn?'Which words shall we meet?':'Choose words to explore',learn?'':'Your Teacher selection still applies.');els.round.textContent='Categories';
-  const grid=document.createElement('div');grid.className='standard-choice-grid'+(learn?' learn-groups':'');
+  const wheel=mode==='wheel';
+  renderStandardSetup(mode,learn?'Which words shall we meet?':wheel?'Which words shall we spin?':'Choose words to explore',learn||wheel?'':'Your Teacher selection still applies.');els.round.textContent='Categories';
+  const grid=document.createElement('div');grid.className='standard-choice-grid'+(learn||wheel?' learn-groups':'');
   const categories=wordModes.has(mode)?[...TransportStandard.categories,...TransportStandard.teachingCategories]:TransportStandard.categories;
   const covers={all:'vehicle.bus',land:'vehicle.car',water:'vehicle.ferry',air:'vehicle.airplane',space:'vehicle.space-shuttle'};
   for(const category of categories){const pool=filteredStandardPool(mode,{category:category.id});
@@ -55,6 +56,8 @@ function renderStandardCategories(mode){
     els.round.textContent=`Groups ${met}/${shown}`;document.querySelector('.progress-track').hidden=false;els.progress.style.width=`${shown?met/shown*100:0}%`;
     els.scorePill.hidden=false;els.score.textContent="0";
   }
+  // Plants wheel groups page: same cards as Meet the Words, header counts the groups.
+  if(wheel){const shown=grid.querySelectorAll('.standard-choice').length;els.round.textContent=`Groups 0/${shown}`;document.querySelector('.progress-track').hidden=false;els.progress.style.width='0%';els.scorePill.hidden=false;els.score.textContent='0';}
   if(mode==='learn'){
     const scenes=standardButton('',renderTeachingScenes,'standard-choice scene-entry');
     scenes.innerHTML=`<img src="images/teaching-scenes/street-crossing.png" alt=""><strong>Transport Scenes</strong><span>${transportScenes.length} interactive scenes</span>`;
@@ -303,9 +306,15 @@ function illustrateFlipChoices(){
 }
 function renderStandardWheelSelection(){
   const game=state.wheel,item=game.selected;if(!item)return false;
-  els.question.textContent=item.name;els.stage.style.display='';setVehicle(item,true);els.name.textContent='';
-  els.definition.textContent=item.definition;els.definition.classList.add('visible');
-  const row=document.createElement('div');row.className='standard-actions';row.append(standardButton('Hear word',()=>speak(item.name)),standardButton('Hear meaning',()=>speak(item.definition)),standardButton('Next word',nextWheelWord));els.answers.replaceChildren(row);return true;
+  // Plants wheel reading card: picture, name, meaning, Hear the word and Next.
+  els.question.textContent='';els.stage.style.display='none';els.definition.classList.remove('visible');
+  const card=document.createElement('div');card.className='learn-word-card wheel-reading-card';
+  const image=document.createElement('img');image.src=individualTeachingImage(item.id)||item.image;image.alt=item.alt||`Miniature illustration of ${item.name}.`;
+  const title=document.createElement('h2');title.textContent=item.name;
+  const meaning=document.createElement('p');meaning.className='learn-meaning';meaning.textContent=item.definition;
+  card.append(image,title,meaning);
+  const row=document.createElement('div');row.className='learn-actions';row.append(standardButton('Hear the word',()=>speak(item.name)),standardButton('Next',nextWheelWord,'standard-action learn-next'));
+  els.answers.replaceChildren(card,row);return true;
 }
 function renderStandardTeacher(){
   const pref=standardPreferences();for(const key of ['identifyTarget','identifyAnswers','safetyQuestion','safetyAnswers'])document.querySelector(`[data-picture-setting="${key}"]`).checked=pref[key]!==false;
