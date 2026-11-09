@@ -17,7 +17,8 @@ Commits made by Claude this round (newest last):
 | 6e04ee4 | Banner only on the activity menu, not the landing page |
 | ffaabb5 | Printable PDFs + these notes |
 | d23e839 | Merged Codex's `codex/transport-art-restart` (Painted Field Guide art) into main |
-| (next) | Wired the new art into the app (see below) |
+| (art) | Wired the new art into the app (see below) |
+| (next) | Media page rebuilt to the Plants layout |
 
 ## Painted Field Guide art (wired in 2026-11-09)
 
@@ -53,7 +54,7 @@ Commit identity: `git -c user.name=Prim0-sudo -c user.email=Prim0-sudo@users.nor
 
 ## Open work (owner decides order)
 
-1. **Media page layout is wrong** (owner flagged it). It must match Plants: tabs Printables / Books / Videos / Songs, picture rows with Open / Download buttons, and a "Print layout" dropdown. Transport currently uses big card buttons for layout and plain list cards. Copy the Plants Media page structure (`C:\Users\User\Documents\Claude\plants`).
+1. Media page now matches Plants (2026-11-09): Printables / Books / Videos / Songs tabs (from hubs.media.groups), "Print layout" dropdown (default 4 per sheet), picture rows with Open and Download. Books, Videos and Songs show "No … yet." until content exists.
 2. Media content: books, videos, songs.
 3. **Alphabet sounds: the owner is recording the 26 sounds themself.** Kokoro/Polly attempts were rejected. Do not regenerate; install the recordings when provided.
 4. Paid narration (Polly via AWS console) needs a cost estimate and owner OK first.

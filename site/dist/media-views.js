@@ -1,37 +1,58 @@
 // Media printables and Read, Draw & Talk, following the Plants blueprint.
 // renderStandardHub asks TransportMedia.render first; false means "show the placeholder".
 (() => {
-  const layouts = [[1, 'One card', 'Full A4 sheet'], [2, 'Two cards', 'Cut on the dashed midline'], [4, 'Four cards', 'Trim on the dashed edges'], [8, 'Eight cards', 'Landscape, trim on the dashed edges']];
-  let cardsPerSheet = 1, readingIndex = 0;
+  // Same layout labels as Plants.
+  const layouts = [[1, 'A4 · 1 large card'], [2, 'A4 · 2 horizontal A5 cards'], [4, 'A4 · 4 cards'], [8, 'A4 landscape · 8 cards']];
+  const sections = () => TransportStandard.hubs.media.groups.map(([id, label]) => [id, label]);
+  let cardsPerSheet = 4, mediaSection = 'printables', readingIndex = 0;
   const exploredKey = 'transport-reading-explored';
   const el = (tag, className, text) => { const node = document.createElement(tag); if (className) node.className = className; if (text != null) node.textContent = text; return node; };
-  const megabytes = bytes => `${(bytes / 1048576).toFixed(bytes < 10485760 ? 1 : 0)} MB`;
+  const fileSize = bytes => bytes < 1048576 ? `${Math.round(bytes / 1024)} KB` : `${(bytes / 1048576).toFixed(1)} MB`;
   function readExplored() { try { return new Set(JSON.parse(localStorage.getItem(exploredKey) || '[]')); } catch { return new Set(); } }
   function saveExplored(set) { try { localStorage.setItem(exploredKey, JSON.stringify([...set])); } catch {} }
 
+  function mediaLibrary(root) {
+    els.helper.textContent = '';
+    els.round.textContent = 'Media library';
+    const nav = el('nav', 'media-sections'); nav.setAttribute('aria-label', 'Media type');
+    for (const [id, label] of sections()) {
+      const button = el('button', 'media-tab', label); button.type = 'button'; button.dataset.mediaSection = id;
+      button.setAttribute('aria-pressed', String(id === mediaSection));
+      button.onclick = () => { mediaSection = id; renderStandardHub('media'); document.querySelector(`[data-media-section="${id}"]`)?.focus(); };
+      nav.append(button);
+    }
+    root.append(nav);
+    if (mediaSection === 'printables') printables(root);
+    else { const empty = el('section', 'media-empty'); empty.setAttribute('aria-live', 'polite'); empty.append(el('p', '', `No ${mediaSection} yet.`)); root.append(empty); }
+  }
+
   function printables(root) {
     const packs = globalThis.TransportFlashcards;
-    root.append(el('h3', '', 'Printable flashcards'));
-    if (!Array.isArray(packs) || !packs.length) { root.append(el('p', '', 'Printable cards are being prepared. Check back soon.')); return; }
-    root.append(el('p', '', 'Choose how many cards go on each A4 sheet, then open or download a pack. Print at actual size.'));
-    const picker = el('div', 'print-layouts'); picker.setAttribute('role', 'group'); picker.setAttribute('aria-label', 'Cards per sheet');
-    for (const [count, label, hint] of layouts) {
-      const button = el('button', 'print-layout'); button.type = 'button'; button.setAttribute('aria-pressed', String(count === cardsPerSheet));
-      button.append(el('strong', '', label), el('span', '', hint));
-      button.onclick = () => { cardsPerSheet = count; renderStandardHub('media', 'printables'); document.querySelector(`.print-layout[aria-pressed="true"]`)?.focus(); };
-      picker.append(button);
-    }
-    const list = el('div', 'print-packs');
+    const library = el('section', 'printables-library');
+    const toolbar = el('div', 'printables-toolbar');
+    const label = el('label', '', 'Print layout ');
+    const select = el('select'); select.dataset.mediaPrintLayout = '';
+    for (const [count, text] of layouts) select.add(new Option(text, String(count)));
+    select.value = String(cardsPerSheet);
+    select.onchange = () => { cardsPerSheet = Number(select.value); renderStandardHub('media'); document.querySelector('[data-media-print-layout]')?.focus(); };
+    label.append(select); toolbar.append(el('h3', '', 'Vocabulary flashcards'), label); library.append(toolbar);
+    if (!Array.isArray(packs) || !packs.length) { library.append(el('p', 'printables-hint', 'Printable cards are being prepared. Check back soon.')); root.append(library); return; }
+    library.append(el('p', 'printables-hint', `Print on A4${cardsPerSheet === 8 ? ' in landscape' : ''} at actual size (100%). ${cardsPerSheet === 2 ? 'Cut along the centre guide.' : cardsPerSheet >= 4 ? 'Trim along the dashed card edges.' : ''}`));
+    // Each row shows its group's picture; the full pack uses the menu bus.
+    const art = new Map([...TransportStandard.categories, ...TransportStandard.teachingCategories].map(group => [group.id, group.image]));
+    const grid = el('div', 'printables-grid');
     for (const pack of packs.filter(p => p.cardsPerSheet === cardsPerSheet)) {
-      const card = el('article', 'print-pack');
-      card.append(el('h4', '', pack.title), el('p', '', `${pack.wordCount} words · ${pack.pageCount} ${pack.pageCount === 1 ? 'page' : 'pages'} · ${megabytes(pack.bytes)}`));
-      const links = el('div', 'print-links');
-      const open = el('a', 'standard-action', 'Open'); open.href = pack.path; open.target = '_blank'; open.rel = 'noopener';
-      const save = el('a', 'standard-action', 'Download'); save.href = pack.path; save.download = pack.path.split('/').pop();
-      open.setAttribute('aria-label', `Open ${pack.title}, ${cardsPerSheet} per sheet`); save.setAttribute('aria-label', `Download ${pack.title}, ${cardsPerSheet} per sheet`);
-      links.append(open, save); card.append(links); list.append(card);
+      const row = el('article', 'printable-card' + (pack.scopeId === 'all' ? ' printable-card--complete' : ''));
+      const picture = el('img'); picture.src = art.get(pack.scopeId) || art.get('all'); picture.alt = ''; picture.loading = 'lazy';
+      const details = el('div', 'printable-details');
+      details.append(el('h4', '', pack.title), el('p', '', `${pack.wordCount} words · ${pack.pageCount} ${pack.pageCount === 1 ? 'page' : 'pages'} · ${fileSize(pack.bytes)}`));
+      const actions = el('div', 'printable-actions');
+      const open = el('a', '', 'Open'); open.href = pack.path; open.target = '_blank'; open.rel = 'noopener';
+      const save = el('a', '', 'Download'); save.href = pack.path; save.download = pack.path.split('/').pop();
+      open.setAttribute('aria-label', `Open ${pack.title} PDF (A4), new tab`); save.setAttribute('aria-label', `Download ${pack.title} PDF (A4)`);
+      actions.append(open, save); row.append(picture, details, actions); grid.append(row);
     }
-    root.append(picker, list);
+    library.append(grid); root.append(library);
   }
 
   function readingCards() {
@@ -81,7 +102,7 @@
 
   globalThis.TransportMedia = {
     render(mode, groupId, root) {
-      if (mode === 'media' && groupId === 'printables') { printables(root); return true; }
+      if (mode === 'media') { mediaLibrary(root); return true; }
       if (mode === 'create') { reading(root); return true; }
       if (mode === 'phonics' && groupId) { phonics(root, groupId); return true; }
       if (mode === 'games' && groupId === 'dispatch' && globalThis.TransportDispatch) { TransportDispatch.mount(root); return true; }
