@@ -28,7 +28,7 @@ Source: Codex's art ledger `docs/content/TRANSPORT-FIELD-GUIDE-ART-LEDGER.json`,
 - `scripts/build-teaching-library.mjs` now builds all 24 scenes straight from the scene ledger (its viewBox, labels, notes, paths, initial target first). The 3 hand-traced pilot scenes in `standard-data.js` are gone; the first 3 ledger scenes are the quick buttons.
 - Removed: old emoji/category/ice-cream pictures, `teaching-bounds.js` (crop boxes for the old cut-outs).
 - Kept on purpose: the Miniature World landing layers and `transport-town-bg.png`. Codex's branch deleted them, but nothing replaces them yet and the landing would break.
-- Flashcard PDFs rebuilt from the new originals (40 packs).
+- Flashcard PDFs rebuilt from the new originals (40 packs), owner-chosen style 2 (2026-11-09): word in the navy band (no category), picture fitted by its visible outline into a large cream circle with a navy ring, definition underneath. `create-flashcards.ps1 -PreviewDir <dir>` renders sample cards in all three styles.
 - Checked at 390x844: every picture URL loads, all 24 scenes and 121 highlights sit inside their pictures, all activities open with no broken images or console errors.
 - Size note: the vocabulary PNGs are ~53 MB and the scenes ~50 MB in total; worth compressing (WebP) before release.
 

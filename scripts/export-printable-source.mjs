@@ -24,10 +24,10 @@ for (const word of context.words) {
   const original = file(`artwork/originals/vocabulary/${word.id}.png`);
   const image = await exists(original) ? original : file(`site/dist/${word.image}`);
   if (!await exists(image)) throw Error(`Missing picture for ${word.id}.`);
-  words.push({id: word.id, name: word.name, categoryId: word.category, image: decodeURIComponent(image.pathname.replace(/^\/([A-Za-z]:)/, '$1'))});
+  words.push({id: word.id, name: word.name, definition: word.definition || '', categoryId: word.category, image: decodeURIComponent(image.pathname.replace(/^\/([A-Za-z]:)/, '$1'))});
 }
 const usedGroups = groups.filter(group => words.some(word => word.categoryId === group.id)).map(({id, label}) => ({id, label}));
-const contentHash = createHash('sha256').update(JSON.stringify(words.map(({id, name, categoryId}) => [id, name, categoryId]))).digest('hex');
+const contentHash = createHash('sha256').update(JSON.stringify(words.map(({id, name, definition, categoryId}) => [id, name, definition, categoryId]))).digest('hex');
 const out = process.argv[2];
 if (!out) throw Error('Usage: node scripts/export-printable-source.mjs <out.json>');
 await writeFile(out, JSON.stringify({contentHash, categories: usedGroups, words}, null, 2));
