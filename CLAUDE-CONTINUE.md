@@ -8,6 +8,8 @@ The user approved all twelve Miniature World activity illustrations and the sepa
 
 The first Dispatch scenery and sprite batch was approved separately. Its [asset handoff](artwork/dispatch/miniature-world-pilot-v1/REVIEW.md) and [production brief](docs/DISPATCH-ART-PRODUCTION-BRIEF.md) record bridge joins, road clipping, sprite facing and the proposed water-side ferry berth contacts. Keep the procedural road graph and the existing dispatch actions.
 
+The full ten-vehicle overhead fleet is approved for integration. The [fleet handoff](artwork/dispatch/miniature-world-fleet-v1/REVIEW.md) and [asset ledger](artwork/dispatch/miniature-world-fleet-v1/manifest.json) map Dispatch IDs to the seven new PNGs and the existing school bus, taxi, and ferry. Use the recorded pivots, proposed phone sizes, and boarding or loading contacts as starting points. Check stopped alignment and the full turning footprint, especially for the tractor and trailer, on the dense 5 × 5 map. Keep the ferry on its water route and the bicycle as a choice card. The artwork is approved; map and movement checks follow wiring.
+
 ## Where things stand
 
 Branch `main` on github.com/Prim0-sudo/transport, pushed and in sync. Work on `main` and push to `main`: the owner does not want work left on side branches (the old `codex/v6-upgrade-2026-11-08` branch is fully merged and kept only as history).
