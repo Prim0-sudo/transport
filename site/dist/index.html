@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="classroom.css">
   <link rel="stylesheet" href="standard.css">
   <link rel="stylesheet" href="phonics/phonics.css">
+  <link rel="stylesheet" href="dispatch.css">
 </head>
 <body data-transport-shell data-screen="launch">
   <div class="backdrop" aria-hidden="true"></div>
@@ -39,6 +40,7 @@
         <small>Choose an activity</small>
       </button>
       <h1 class="menu-title" id="menuTitle">Choose a game</h1>
+      <button class="featured-game" id="featuredDispatch" type="button" aria-label="Play Transport Dispatch. Choose the right vehicle and deliver everyone."><span class="featured-game__art" aria-hidden="true"><svg viewBox="0 0 150 100"><path d="M88 0h22c-2 30 4 60 18 100H92c-8-34-8-66-4-100z" fill="#8ec8de"/><path d="M10 82C40 82 60 64 84 52s40-16 58-30" fill="none" stroke="#a5a9a9" stroke-width="12" stroke-linecap="round"/><path d="M10 82C40 82 60 64 84 52s40-16 58-30" fill="none" stroke="#fff4ce" stroke-width="1.4" stroke-dasharray="5 5"/><rect x="44" y="56" width="36" height="18" rx="5" fill="#f4c453" stroke="#fffaf0" stroke-width="2" transform="rotate(-24 62 65)"/><circle cx="18" cy="94" r="4" fill="#1d4f73"/><circle cx="28" cy="94" r="4" fill="#1d4f73"/><circle cx="128" cy="14" r="4" fill="#1d4f73"/></svg></span><span class="featured-game__copy"><strong>Transport Dispatch</strong><span>Choose the right vehicle · deliver everyone</span></span></button>
       <div class="mode-grid">
         <button class="mode-card yellow" data-mode="learn">
           <span class="mode-icon">🚌</span>
@@ -170,6 +172,7 @@
   <script src="standard-views.js"></script>
   <script src="printables/flashcards.js"></script>
   <script src="media-views.js"></script>
+  <script src="dispatch-view.js"></script>
   <script type="module" src="phonics/src/transport-phonics.js"></script>
   <script src="app.js?v=20260917-hangman"></script>
 </body>

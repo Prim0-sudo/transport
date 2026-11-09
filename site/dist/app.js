@@ -113,6 +113,7 @@ const activeEffects = new Set();
 const landingScene = new TransportLanding(document.querySelector('.backdrop'));
 const work = new TransportLifecycle({ onHold: held => {
   globalThis.TransportPhonics?.setPaused(held);
+  globalThis.TransportDispatch?.setHeld(held);
   detectiveView?.setHeld(held);
   wheelTween?.paused(held);
   landingScene.setHold('activity', held);
@@ -131,6 +132,7 @@ const work = new TransportLifecycle({ onHold: held => {
 
 function cancelCurrentWork() {
   globalThis.TransportPhonics?.destroy();
+  globalThis.TransportDispatch?.destroy();
   detectiveView?.destroy();detectiveView=null;
   wheelTween?.kill();wheelTween=null;
   work.cancel();
@@ -937,6 +939,7 @@ for (const card of document.querySelectorAll('.mode-card')) {
 landingScene.setActive(true);
 
 document.querySelectorAll(".mode-card").forEach(btn => btn.addEventListener("click", () => startGame(btn.dataset.mode)));
+document.getElementById('featuredDispatch')?.addEventListener('click', () => { startGame('games'); renderStandardHub('games', 'dispatch'); });
 document.getElementById("homeBtn").addEventListener("click", goHome);
 document.getElementById("openGamesBtn").addEventListener("click", openGameMenu);
 document.getElementById("backMenuBtn").addEventListener("click", standardBack);

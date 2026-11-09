@@ -84,6 +84,7 @@
       if (mode === 'media' && groupId === 'printables') { printables(root); return true; }
       if (mode === 'create') { reading(root); return true; }
       if (mode === 'phonics' && groupId) { phonics(root, groupId); return true; }
+      if (mode === 'games' && groupId === 'dispatch' && globalThis.TransportDispatch) { TransportDispatch.mount(root); return true; }
       return false;
     }
   };

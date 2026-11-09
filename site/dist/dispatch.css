@@ -1,0 +1,65 @@
+/* Transport Dispatch (dispatch-view.js) and the featured banner. Navy, gold and cream to match the app. */
+.featured-game{display:flex;align-items:center;gap:clamp(12px,2vw,24px);width:min(1120px,100%);margin:0 auto 14px;min-width:0;min-height:112px;padding:10px clamp(12px,2.5vw,26px);border:2px solid #d8bd7d;border-radius:18px;background:#1d4f73;color:#fffaf0;text-align:left;font:inherit;cursor:pointer;box-shadow:0 4px 0 #13354e;transition:background-color .18s,transform .18s;box-sizing:border-box}
+.featured-game:hover{background:#245d86;transform:translateY(-2px)}
+.featured-game:focus-visible{outline:4px solid #f4c453;outline-offset:4px}
+.featured-game__art{flex:0 0 132px;height:88px;border-radius:12px;overflow:hidden;background:#efe6cc}
+.featured-game__art svg{display:block;width:100%;height:100%}
+.featured-game__copy{display:grid;gap:6px;min-width:0}
+.featured-game__copy strong{font-size:clamp(1.35rem,3vw,2rem);line-height:1.15}
+.featured-game__copy>span{font-size:clamp(.9rem,1.5vw,1.05rem);line-height:1.4}
+@media(max-width:520px){.featured-game{min-height:92px;gap:12px;padding:8px 12px}.featured-game__art{flex-basis:96px;height:68px}}
+
+.dispatch,.dispatch-setup{display:grid;gap:10px;width:100%;min-width:0;grid-column:1/-1;container-type:inline-size;color:#183a51}
+.dispatch *,.dispatch-setup *{box-sizing:border-box}
+.dispatch [hidden]{display:none!important}
+.dispatch-setup{padding:14px;border:1px solid #d8bd7d;border-radius:16px;background:#fffbed;text-align:center}
+.dispatch-setup h3{margin:0;font-size:24px}.dispatch-setup>p{margin:0;line-height:1.5}
+.dispatch-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:8px;text-align:left}
+.dispatch-options h4{grid-column:1/-1;margin:6px 0 0;font-size:16px}
+.dispatch-option{display:grid;gap:3px;padding:10px 12px;border:1px solid #d8bd7d;border-radius:12px;background:#fff;color:#183a51;font:inherit;cursor:pointer;text-align:left}
+.dispatch-option strong{font-size:17px}.dispatch-option span{font-size:14px;line-height:1.35}
+.dispatch-option[aria-pressed="true"]{background:#1d4f73;border-color:#1d4f73;color:#fff}
+.dispatch-primary,.dispatch-secondary,.dispatch-route,.dispatch-vehicle{font:inherit;min-height:48px;border-radius:12px;cursor:pointer;color:#183a51}
+.dispatch-primary{padding:10px 18px;border:2px solid #b8932f;background:#f4c453;font-weight:800}
+.dispatch-secondary{padding:10px 16px;border:1px solid #d8bd7d;background:#fffbed;font-weight:700}
+.dispatch button:disabled,.dispatch-setup button:disabled{opacity:.5;cursor:default}
+.dispatch button:focus-visible,.dispatch-setup button:focus-visible{outline:3px solid #f4c453;outline-offset:3px}
+.dispatch-done-score{font-size:28px;font-weight:800;color:#1d4f73}
+.dispatch-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dispatch-title{margin:0;font-size:20px;line-height:1.25}
+.dispatch-sub{margin:2px 0 0;font-size:14px;color:#4c6273}
+.dispatch-count{flex:none;font-size:13px;font-weight:700;color:#4c6273;padding-top:4px}
+.dispatch-world{position:relative;aspect-ratio:1.7;background:#efe6cc;border:1px solid #d8bd7d;border-radius:14px;overflow:hidden}
+.dispatch-world>svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.dw-water{fill:#a9d4e2}.dw-island{fill:#e4dcbc;stroke:#c9bd94;stroke-width:.4}
+.dw-lane{fill:none;stroke:#fffaf0;stroke-width:.7;stroke-dasharray:2 1.6;opacity:.9}
+.dw-road{fill:none;stroke:#a3a7a7;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
+.dw-under{stroke:#c9c2ab;stroke-dasharray:3 2}
+.dw-deck{fill:none;stroke:#7d6a4a;stroke-width:8;stroke-linecap:butt;opacity:.55}
+.dw-centre{fill:none;stroke:#fff4ce;stroke-width:.4;stroke-dasharray:1.6 1.6}
+.dw-portal{fill:#3b4650}
+.dw-platform{fill:#fffaf0;stroke:#183a51;stroke-opacity:.15;stroke-width:.3}
+.dw-place,.dw-road-name{position:absolute;z-index:2;padding:3px 7px;border-radius:7px;background:#fffaf0;font-size:12px;font-weight:700;white-space:nowrap;box-shadow:0 1px 3px #0003;pointer-events:none}
+.dw-road-name{background:#183a51;color:#fffaf0;font-weight:600;font-size:11px}
+.dw-closed{position:absolute;z-index:2;padding:2px 6px;border:2px dashed #b3261e;border-radius:6px;background:#fff;color:#b3261e;font-size:11px;font-weight:800;transform:rotate(-12deg);pointer-events:none}
+.dw-actor{position:absolute;left:0;top:0;z-index:3;width:56px;height:24px;margin:-12px 0 0 -28px;display:grid;place-items:center;border:2px solid #183a51;border-radius:7px;font-size:10px;font-weight:800;letter-spacing:.02em;color:#183a51;box-shadow:0 3px 5px #0003;pointer-events:none;transform-origin:50% 50%}
+.dw-actor:after{content:'';position:absolute;right:2px;top:3px;bottom:3px;width:4px;border-radius:2px;background:#183a51}
+.dw-actor.is-reversed:after{right:auto;left:2px}
+.dw-load{position:absolute;left:0;top:0;z-index:3;width:11px;height:11px;margin:-5.5px;border:2px solid #fffaf0;border-radius:50%;background:#1d4f73;pointer-events:none}
+.dw-load--cargo{border-radius:2px;background:#b5583b}
+.dw-load--patient{background:#fff;border-color:#c62828;box-shadow:inset 0 0 0 2px #c62828}
+.dispatch-vehicles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.dispatch-vehicle{display:grid;justify-items:center;gap:2px;padding:8px 6px;border:2px solid #d8bd7d;background:#fff;text-align:center;min-width:0}
+.dispatch-vehicle img{width:100%;max-width:92px;aspect-ratio:1;object-fit:contain;border-radius:8px}
+.dispatch-vehicle strong{font-size:16px}.dispatch-vehicle small{font-size:12px;line-height:1.3}
+.dispatch-vehicle[aria-pressed="true"]{border-color:#1d4f73;background:#e7f0f7;box-shadow:0 0 0 2px #1d4f73}
+.dispatch-vehicle.is-wrong{border-color:#c98a2b;background:#fff5e2}
+.dispatch .dispatch-vehicle:disabled{opacity:.65}
+.dispatch .dispatch-vehicle[aria-pressed="true"]:disabled{opacity:1}
+.dispatch-routes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.dispatch-route{padding:8px 10px;border:1px solid #d8bd7d;background:#fffbed;font-weight:700}
+.dispatch-route[aria-pressed="true"]{background:#1d4f73;color:#fff;border-color:#1d4f73}
+.dispatch-status{margin:0;min-height:44px;line-height:1.45;font-size:15px}
+.dispatch-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.dispatch-actions>button{flex:1 1 150px}
+@container(max-width:520px){.dispatch-world{aspect-ratio:1.02}.dispatch-title{font-size:17px}.dw-place{font-size:10px;padding:2px 5px}.dw-road-name{font-size:9px;padding:2px 5px}.dw-actor{width:44px;height:20px;margin:-10px 0 0 -22px;font-size:8px}.dw-load{width:9px;height:9px;margin:-4.5px}.dispatch-vehicle img{max-width:70px}.dispatch-count{font-size:12px}}
