@@ -1,0 +1,11 @@
+# Spelling scene concepts (stage 1 of the blueprint art workflow), 2026-11-09
+
+Source: Figma generate_image, model gpt-image-2.5-flare, 1536x1024, file https://www.figma.com/design/ulluzst4Ky3u6xuDpI2XOG (nodes 1:2, 1:3, 1:4).
+Rule: plants-weekly-game/docs/blueprint-v6.0/ART-AND-ANIMATION.md (three concepts, then a chosen movement preview, then layered assets).
+Status: concept stills only. They are flat paintings, not the 4-layer production assets.
+
+Shared style lead: "Children's picture-book illustration in soft coloured-pencil and gouache texture, bright cheerful colours, clean outlines, gentle shading, bright blue sky with a few soft white clouds, side-on flat camera."
+
+- a-departure-signal.png: style lead + "Scene: a small country railway station. A friendly red-and-cream passenger train waits on the rails beside a brick platform. Above the track stands a tall dark-green signal gantry holding a neat row of exactly eight large round signal lamps in a horizontal line: the first three lamps glow red, the other five glow green. Quiet pale-blue sky above, distant soft green hills and trees, foreground strip of grass. Plenty of calm empty sky around the lamps so they read clearly. No people, no text, no letters, no numbers, no signs with writing."
+- b-harbour-boat.png: style lead + "Scene: a sunny little harbour. A small friendly blue-and-white cargo boat floats on calm turquoise water beside a wooden dock. On its deck sit exactly five colourful wooden crates in a tidy row (red, yellow, green, orange, purple), and three more crates are bobbing in the water behind the boat with small splashes. A quayside crane on the dock, distant hills and a lighthouse on the far shore. Clear calm areas of water and sky so the crates read clearly. No people, no text, no letters, no numbers."
+- c-traffic-jam.png: style lead + "Scene: a quiet town road seen from the side. On the right a traffic light on a pole glows red. Waiting in front of it on the road is a short queue of exactly three small friendly cars (red, yellow, blue) nose to tail, with plenty of empty road behind them on the left where more cars could join. Pavement with a low hedge, small houses and trees in the background, grass verge in the foreground. Calm open road and sky so each car reads clearly. No people, no text, no letters, no numbers, no road markings with writing."
