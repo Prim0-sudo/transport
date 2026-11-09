@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transport Dispatch fleet artwork</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: #eee5d0; color: #193548; font: 15px/1.35 system-ui, sans-serif; min-height: 100vh; }
+main { max-width: 1140px; padding: 20px 24px 26px; margin: auto; }
+header { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 13px; }
+h1 { font: 700 clamp(29px, 4vw, 42px)/1.04 Georgia, serif; margin: 0 0 5px; }
+header p { color: #496370; }
+p, h2 { margin: 0; }
+h2 { margin: 13px 0 7px; font-size: 17px; }
+button { background: #fffbee; border: 1px solid #c6ad75; border-radius: 9px; color: #193548; font: inherit; font-weight: 650; padding: 7px 10px; min-height: 40px; }
+button[aria-pressed=true] { background: #214e69; color: #fff9e9; }
+a:focus-visible, button:focus-visible { outline: 3px solid #236bb9; outline-offset: 3px; }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.vehicle { display: grid; grid-template-rows: 108px auto; min-width: 0; border: 1px solid #d6c6a3; border-radius: 13px; overflow: hidden; color: inherit; text-decoration: none; background: #fffaf0; }
+.art { display: grid; place-items: center; padding: 13px 14px; background: linear-gradient(147deg, #fffaf0 55%, #dbe5de); }
+.art svg { display: block; width: 100%; height: 100%; max-height: 82px; }
+.navy .art { background: #203a4e; }
+.label { display: grid; gap: 2px; padding: 7px 10px 9px; border-top: 1px solid #e6dcc4; }
+.label small { color: #496370; font-size: 12px; }
+.scale { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 6px; }
+.scale-item { display: grid; grid-template-rows: 18px auto; align-items: center; justify-items: center; gap: 5px; background: #526367; color: #fffaf0; padding: 8px 4px; border-radius: 7px; text-align: center; font-size: 11px; }
+.scale-item.water { background: #467889; }
+.scale-item svg { display: block; }
+@media(max-width: 720px) {
+  main { padding: 16px 14px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .scale { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+@media(max-width: 430px) {
+  .vehicle { grid-template-rows: 84px auto; }
+  .art { padding: 10px; }
+  .art svg { max-height: 64px; }
+}
+</style>
+<main>
+  <header>
+    <div><h1>Transport Dispatch · fleet</h1><p>Miniature World · approved overhead fleet</p></div>
+    <button type="button" id="navy" aria-pressed="false">Check on navy</button>
+  </header>
+  <div class="grid" id="new-fleet" aria-label="Seven new Dispatch vehicle originals"></div>
+  <h2>All ten moving vehicles at proposed phone map scale</h2>
+  <div class="scale" id="phone-scale" aria-label="Full fleet scaled to proposed phone lengths"></div>
+</main>
+<script type="application/json" id="fleet-data">[{"mode":"bus","label":"City bus","file":"bus.png","visibleBounds":[72,118,2100,602],"size":[2172,724],"phoneLengthPx":36,"newArt":true,"cue":"Flat front · teal transit livery"},{"mode":"van","label":"Parcel van","file":"van.png","visibleBounds":[257,115,1606,721],"size":[1881,836],"phoneLengthPx":29,"newArt":true,"cue":"Terracotta roof · squared cargo body"},{"mode":"truck","label":"Brick lorry","file":"truck.png","visibleBounds":[201,96,2005,635],"size":[2204,713],"phoneLengthPx":34,"newArt":true,"cue":"Green cab · two secured brick loads"},{"mode":"tractor","label":"Tractor and trailer","file":"tractor.png","visibleBounds":[303,109,1835,620],"size":[2172,724],"phoneLengthPx":37,"newArt":true,"cue":"Olive tractor · hitched produce trailer"},{"mode":"ambulance","label":"Ambulance","file":"ambulance.png","visibleBounds":[192,112,1594,774],"size":[1774,887],"phoneLengthPx":30,"newArt":true,"cue":"Ivory body · blue medical marking"},{"mode":"fire-engine","label":"Fire engine","file":"fire-engine.png","visibleBounds":[186,115,1987,609],"size":[2172,724],"phoneLengthPx":35,"newArt":true,"cue":"Red body · stowed roof ladder"},{"mode":"police-car","label":"Police car","file":"police-car.png","visibleBounds":[231,87,1547,798],"size":[1774,887],"phoneLengthPx":27,"newArt":true,"cue":"Blue and ivory · roof light bar"},{"mode":"school-bus","label":"School bus","file":"../miniature-world-pilot-v1/school-bus-v2.png","visibleBounds":[68,117,2104,608],"size":[2172,724],"phoneLengthPx":36,"newArt":false,"cue":""},{"mode":"taxi","label":"Taxi","file":"../miniature-world-pilot-v1/taxi-v2.png","visibleBounds":[246,74,1571,791],"size":[1817,866],"phoneLengthPx":28,"newArt":false,"cue":""},{"mode":"ferry","label":"Ferry","file":"../miniature-world-pilot-v1/ferry.png","visibleBounds":[34,101,1987,711],"size":[2041,770],"phoneLengthPx":32,"newArt":false,"cue":""}]</script>
+<script>
+const assets = JSON.parse(document.getElementById('fleet-data').textContent);
+const svgNamespace = 'http://www.w3.org/2000/svg';
+function sprite(asset, phone = false) {
+  const svg = document.createElementNS(svgNamespace, 'svg');
+  const image = document.createElementNS(svgNamespace, 'image');
+  const [left, top, right, bottom] = asset.visibleBounds;
+  const width = right - left;
+  const height = bottom - top;
+  svg.setAttribute('viewBox', [left, top, width, height].join(' '));
+  svg.setAttribute('role', 'img');
+  svg.setAttribute('aria-label', phone ? asset.label + ', ' + asset.phoneLengthPx + ' pixels long' : 'Overhead ' + asset.label.toLowerCase() + ', front points right');
+  if (phone) {
+    svg.setAttribute('width', asset.phoneLengthPx);
+    svg.setAttribute('height', (asset.phoneLengthPx * height / width).toFixed(2));
+  }
+  image.setAttribute('href', asset.file);
+  image.setAttribute('width', asset.size[0]);
+  image.setAttribute('height', asset.size[1]);
+  svg.append(image);
+  return svg;
+}
+for (const asset of assets) {
+  if (asset.newArt) {
+    const link = document.createElement('a');
+    const artwork = document.createElement('div');
+    const label = document.createElement('div');
+    const name = document.createElement('strong');
+    const cue = document.createElement('small');
+    link.className = 'vehicle';
+    link.href = asset.file;
+    artwork.className = 'art';
+    label.className = 'label';
+    name.textContent = asset.label;
+    cue.textContent = asset.cue;
+    artwork.append(sprite(asset));
+    label.append(name, cue);
+    link.append(artwork, label);
+    document.getElementById('new-fleet').append(link);
+  }
+  const cell = document.createElement('div');
+  const name = document.createElement('span');
+  cell.className = asset.mode === 'ferry' ? 'scale-item water' : 'scale-item';
+  name.textContent = asset.label + ' · ' + asset.phoneLengthPx + ' px';
+  cell.append(sprite(asset, true), name);
+  document.getElementById('phone-scale').append(cell);
+}
+const toggle = document.getElementById('navy');
+toggle.addEventListener('click', () => {
+  toggle.setAttribute('aria-pressed', String(document.body.classList.toggle('navy')));
+});
+</script>
+</html>

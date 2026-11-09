@@ -1,0 +1,349 @@
+{
+  "batch": "Dispatch Miniature World fleet v1",
+  "status": "All ten overhead sprites approved for integration",
+  "coordinateNotes": "Visible bounds use source pixel coordinates with exclusive right and bottom edges at alpha greater than 32. Pivot is the visible-box centre. Display lengths and contact regions are pilot proposals; verify swept footprint on actual generated roads.",
+  "assets": [
+    {
+      "mode": "bus",
+      "label": "City bus",
+      "phoneLengthPx": 36,
+      "cue": "Flat front · teal transit livery",
+      "contact": "Kerb-side front door, just behind the windshield",
+      "prompt": "Create a NEW vehicle sprite by transforming the supplied approved Dispatch sprite as a camera, outline and paint-style reference. Preserve true orthographic plan view, as a camera pointing directly down from overhead: EAST is RIGHT, the bonnet or front and paired headlights must point RIGHT, rear points LEFT. Roof and horizontal top surfaces only, never a side panel or round wheel face. Both sides read symmetrically from overhead, with only narrow dark wheel tabs. Full vehicle, centred on a wide canvas with complete uncut silhouette and an even clear margin. Real transparent RGBA outside the vehicle, no cast shadow, no white matte, no road, no scenery, no separate objects. Same hand-painted Miniature World matte gouache, subtle paper tooth, crisp restrained dark navy contour, warm brass colour accents, deep blue glazing. Broad contrasting identification cues for a displayed sprite 26–37px long. No words, labels, logos, or extra views. Change the school bus into a modern low-floor CITY TRANSIT BUS with a flat, almost flush right/front, no protruding bonnet. Broad rounded ivory roof with deep petrol-teal side strips and a warm amber destination band with NO characters. Right edge blue windshield and distinct small headlamps; left edge squared rear with small red corner lamps. One neat roof vent, not a taxi roof sign. Long rectangular approximately 3.4:1 footprint. The soft teal-and-ivory block and flat nose distinguish this from the yellow school bus.",
+      "styleReference": "../miniature-world-pilot-v1/school-bus-v2.png",
+      "id": "dispatch.sprite.bus",
+      "file": "bus.png",
+      "sha256": "f3129ec38e00f8efcd4977e153d0d77881d8f795c5b79023c34c6c2128a748ee",
+      "generationId": "exec-aa5bafcc-c3ae-488f-a921-bfafea12194d",
+      "size": [
+        2172,
+        724
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "maxBorderAlpha": 1,
+      "visibleBounds": [
+        72,
+        118,
+        2100,
+        602
+      ],
+      "pivotSourcePx": [
+        1086.0,
+        360.0
+      ],
+      "phoneBeamPx": 8.6,
+      "facing": "east",
+      "status": "approved by user on 2026-11-09",
+      "newArt": true
+    },
+    {
+      "mode": "van",
+      "label": "Parcel van",
+      "phoneLengthPx": 29,
+      "cue": "Terracotta roof · squared cargo body",
+      "contact": "Kerb-side cargo access near the rear",
+      "prompt": "Create a NEW vehicle sprite by transforming the supplied approved Dispatch sprite as a camera, outline and paint-style reference. Preserve true orthographic plan view, as a camera pointing directly down from overhead: EAST is RIGHT, the bonnet or front and paired headlights must point RIGHT, rear points LEFT. Roof and horizontal top surfaces only, never a side panel or round wheel face. Both sides read symmetrically from overhead, with only narrow dark wheel tabs. Full vehicle, centred on a wide canvas with complete uncut silhouette and an even clear margin. Real transparent RGBA outside the vehicle, no cast shadow, no white matte, no road, no scenery, no separate objects. Same hand-painted Miniature World matte gouache, subtle paper tooth, crisp restrained dark navy contour, warm brass colour accents, deep blue glazing. Broad contrasting identification cues for a displayed sprite 26–37px long. No words, labels, logos, or extra views. Replace the taxi completely with a compact terracotta parcel delivery panel van. One broad continuous rust-red rectangular cargo roof to the LEFT, squared rear edge with twin small dark rear-door seams and red tail lamps, short stubby bonnet and navy windscreen to the RIGHT. No taxi sign, rear passenger glass or siren. Simple small ivory inset roof rib and an auburn lower side-edge seam. About 2.25:1 visible footprint, completely roof-down.",
+      "styleReference": "../miniature-world-pilot-v1/taxi-v2.png",
+      "id": "dispatch.sprite.van",
+      "file": "van.png",
+      "sha256": "fc6088a2929f1bfa10e9ad8c6c670d98e51a97b1b72313ae1d400746ae054c34",
+      "generationId": "exec-0e11d27b-5dc1-4362-b068-b91b00247c3f",
+      "size": [
+        1881,
+        836
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "maxBorderAlpha": 1,
+      "visibleBounds": [
+        257,
+        115,
+        1606,
+        721
+      ],
+      "pivotSourcePx": [
+        931.5,
+        418.0
+      ],
+      "phoneBeamPx": 13.0,
+      "facing": "east",
+      "status": "approved by user on 2026-11-09",
+      "newArt": true
+    },
+    {
+      "mode": "truck",
+      "label": "Brick lorry",
+      "phoneLengthPx": 34,
+      "cue": "Green cab · two secured brick loads",
+      "contact": "Cargo bed edge, just behind its midpoint",
+      "prompt": "Create a NEW vehicle sprite by transforming the supplied approved Dispatch sprite as a camera, outline and paint-style reference. Preserve true orthographic plan view, as a camera pointing directly down from overhead: EAST is RIGHT, the bonnet or front and paired headlights must point RIGHT, rear points LEFT. Roof and horizontal top surfaces only, never a side panel or round wheel face. Both sides read symmetrically from overhead, with only narrow dark wheel tabs. Full vehicle, centred on a wide canvas with complete uncut silhouette and an even clear margin. Real transparent RGBA outside the vehicle, no cast shadow, no white matte, no road, no scenery, no separate objects. Same hand-painted Miniature World matte gouache, subtle paper tooth, crisp restrained dark navy contour, warm brass colour accents, deep blue glazing. Broad contrasting identification cues for a displayed sprite 26–37px long. No words, labels, logos, or extra views. Replace the bus with a heavy two-axle flatbed lorry carrying bricks. A distinct dark moss-green cab at RIGHT with a broad windshield and squared right-facing grille, separate rectangular flat timber cargo bed behind it on the LEFT. On the bed show two low, neatly strapped stacks of muted brick-red blocks, visibly secured; do not fill the bed with loose bricks. The cab and bed each have clear edges. Compact rigid lorry, approximately 3.1:1 visible footprint. No bus body, no trailer, no emergency light.",
+      "styleReference": "../miniature-world-pilot-v1/school-bus-v2.png",
+      "id": "dispatch.sprite.truck",
+      "file": "truck.png",
+      "sha256": "99bf1a32561f887c7dc23d15cb03b4feec531c42ddae3a0d40defe71f0a1cceb",
+      "generationId": "exec-9f92c91b-1ec3-48f5-a06f-6058434ef499",
+      "size": [
+        2204,
+        713
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "maxBorderAlpha": 1,
+      "visibleBounds": [
+        201,
+        96,
+        2005,
+        635
+      ],
+      "pivotSourcePx": [
+        1103.0,
+        365.5
+      ],
+      "phoneBeamPx": 10.2,
+      "facing": "east",
+      "status": "approved by user on 2026-11-09",
+      "newArt": true
+    },
+    {
+      "mode": "tractor",
+      "label": "Tractor and trailer",
+      "phoneLengthPx": 37,
+      "cue": "Olive tractor · hitched produce trailer",
+      "contact": "Centre of the trailer load area, approached from the kerb side",
+      "prompt": "Create a NEW vehicle sprite by transforming the supplied approved Dispatch sprite as a camera, outline and paint-style reference. Preserve true orthographic plan view, as a camera pointing directly down from overhead: EAST is RIGHT, the bonnet or front and paired headlights must point RIGHT, rear points LEFT. Roof and horizontal top surfaces only, never a side panel or round wheel face. Both sides read symmetrically from overhead, with only narrow dark wheel tabs. Full vehicle, centred on a wide canvas with complete uncut silhouette and an even clear margin. Real transparent RGBA outside the vehicle, no cast shadow, no white matte, no road, no scenery, no separate objects. Same hand-painted Miniature World matte gouache, subtle paper tooth, crisp restrained dark navy contour, warm brass colour accents, deep blue glazing. Broad contrasting identification cues for a displayed sprite 26–37px long. No words, labels, logos, or extra views. Replace the bus with one small olive-green farm tractor towing a compact low-sided wooden vegetable trailer. Tractor on RIGHT, unmistakable short olive engine bonnet and front lights pointing RIGHT, very small front wheels, much larger rear black tyre treads alongside the compact enclosed tan cab. Compact trailer on LEFT connected by one short clearly visible dark hitch, one axle, holding three simplified green produce crates. Straight aligned combination, approximately 3.5:1 overall, full footprint and fully visible. Show tread strips only from overhead, never round wheel faces. No driver, detached trailer, extra machinery, ground or soil.",
+      "styleReference": "../miniature-world-pilot-v1/school-bus-v2.png",
+      "id": "dispatch.sprite.tractor",
+      "file": "tractor.png",
+      "sha256": "289b719c6bc70a776a920e5e46a22c37e4bc2341af469ce701a1a1bddec3a614",
+      "generationId": "exec-f81af405-df0b-47cf-a7d7-ceead024470f",
+      "size": [
+        2172,
+        724
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "maxBorderAlpha": 1,
+      "visibleBounds": [
+        303,
+        109,
+        1835,
+        620
+      ],
+      "pivotSourcePx": [
+        1069.0,
+        364.5
+      ],
+      "phoneBeamPx": 12.3,
+      "facing": "east",
+      "status": "approved by user on 2026-11-09",
+      "newArt": true
+    },
+    {
+      "mode": "ambulance",
+      "label": "Ambulance",
+      "phoneLengthPx": 30,
+      "cue": "Ivory body · blue medical marking",
+      "contact": "Rear centre doors on the left end",
+      "prompt": "Create a NEW vehicle sprite by transforming the supplied approved Dispatch sprite as a camera, outline and paint-style reference. Preserve true orthographic plan view, as a camera pointing directly down from overhead: EAST is RIGHT, the bonnet or front and paired headlights must point RIGHT, rear points LEFT. Roof and horizontal top surfaces only, never a side panel or round wheel face. Both sides read symmetrically from overhead, with only narrow dark wheel tabs. Full vehicle, centred on a wide canvas with complete uncut silhouette and an even clear margin. Real transparent RGBA outside the vehicle, no cast shadow, no white matte, no road, no scenery, no separate objects. Same hand-painted Miniature World matte gouache, subtle paper tooth, crisp restrained dark navy contour, warm brass colour accents, deep blue glazing. Broad contrasting identification cues for a displayed sprite 26–37px long. No words, labels, logos, or extra views. Replace the taxi completely with a clean ivory emergency ambulance van. The long tall box of the patient compartment is LEFT with squared rear access and twin tail lamps; short cab, dark blue windscreen, paired headlights at RIGHT. A large readable blue six-point medical star on the ivory roof, plus one short cobalt emergency light bar directly behind the front windscreen, small amber hi-vis edges. No red cross, lettering, red taxi sign, siren motion or person. About 2.5:1 footprint. Distinct white medical silhouette.",
+      "styleReference": "../miniature-world-pilot-v1/taxi-v2.png",
+      "id": "dispatch.sprite.ambulance",
+      "file": "ambulance.png",
+      "sha256": "9a266113cf56c292266e1850c41e303617ac74d072e70baf99b918e871c68c15",
+      "generationId": "exec-d886264d-8cdd-4690-9070-cc226c5b4bc8",
+      "size": [
+        1774,
+        887
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "maxBorderAlpha": 1,
+      "visibleBounds": [
+        192,
+        112,
+        1594,
+        774
+      ],
+      "pivotSourcePx": [
+        893.0,
+        443.0
+      ],
+      "phoneBeamPx": 14.2,
+      "facing": "east",
+      "status": "approved by user on 2026-11-09",
+      "newArt": true
+    },
+    {
+      "mode": "fire-engine",
+      "label": "Fire engine",
+      "phoneLengthPx": 35,
+      "cue": "Red body · stowed roof ladder",
+      "contact": "Kerb-side crew access just behind the cab",
+      "prompt": "Create a NEW vehicle sprite by transforming the supplied approved Dispatch sprite as a camera, outline and paint-style reference. Preserve true orthographic plan view, as a camera pointing directly down from overhead: EAST is RIGHT, the bonnet or front and paired headlights must point RIGHT, rear points LEFT. Roof and horizontal top surfaces only, never a side panel or round wheel face. Both sides read symmetrically from overhead, with only narrow dark wheel tabs. Full vehicle, centred on a wide canvas with complete uncut silhouette and an even clear margin. Real transparent RGBA outside the vehicle, no cast shadow, no white matte, no road, no scenery, no separate objects. Same hand-painted Miniature World matte gouache, subtle paper tooth, crisp restrained dark navy contour, warm brass colour accents, deep blue glazing. Broad contrasting identification cues for a displayed sprite 26–37px long. No words, labels, logos, or extra views. Replace the bus completely with a compact bright brick-red fire engine. Front cabin and windshield face RIGHT; short rigid red truck body extending left. A single prominent broad silver-grey stowed telescopic ladder runs neatly along the length of the roof, with a few wide rungs readable at tiny scale, and one pair of small cobalt beacon blocks on the cabin. A couple of cream utility panels at the rear, no text. Keep the ladder inside the vehicle outline. All equipment closed, no fire, hoses trailing, or people. About 3.0:1 visible footprint.",
+      "styleReference": "../miniature-world-pilot-v1/school-bus-v2.png",
+      "id": "dispatch.sprite.fire-engine",
+      "file": "fire-engine.png",
+      "sha256": "effe0d559ab09ee654b9ad040df1e9331e995efbd79346042eb1011ff137858a",
+      "generationId": "exec-444c82cd-404f-4b3b-b747-d76748a42a6b",
+      "size": [
+        2172,
+        724
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "maxBorderAlpha": 1,
+      "visibleBounds": [
+        186,
+        115,
+        1987,
+        609
+      ],
+      "pivotSourcePx": [
+        1086.5,
+        362.0
+      ],
+      "phoneBeamPx": 9.6,
+      "facing": "east",
+      "status": "approved by user on 2026-11-09",
+      "newArt": true
+    },
+    {
+      "mode": "police-car",
+      "label": "Police car",
+      "phoneLengthPx": 27,
+      "cue": "Blue and ivory · roof light bar",
+      "contact": "Kerb-side passenger door behind the light bar",
+      "prompt": "Create a NEW vehicle sprite by transforming the supplied approved Dispatch sprite as a camera, outline and paint-style reference. Preserve true orthographic plan view, as a camera pointing directly down from overhead: EAST is RIGHT, the bonnet or front and paired headlights must point RIGHT, rear points LEFT. Roof and horizontal top surfaces only, never a side panel or round wheel face. Both sides read symmetrically from overhead, with only narrow dark wheel tabs. Full vehicle, centred on a wide canvas with complete uncut silhouette and an even clear margin. Real transparent RGBA outside the vehicle, no cast shadow, no white matte, no road, no scenery, no separate objects. Same hand-painted Miniature World matte gouache, subtle paper tooth, crisp restrained dark navy contour, warm brass colour accents, deep blue glazing. Broad contrasting identification cues for a displayed sprite 26–37px long. No words, labels, logos, or extra views. Replace the yellow taxi with an ivory police patrol hatchback with deep navy bonnet and boot accents and simple two broad cobalt flank panels, no checkered taxi pattern and no lettering. Low-profile compact car proportions. Broad unmistakable rectangular cobalt-blue emergency light bar across the white central roof, fixed lights shown unlit, front dark windscreen and paired headlights on the RIGHT, paired red tail lights on the LEFT. Blue/ivory contrast and clean police light bar are the principal cues. About 2.0:1 visible footprint including mirrors.",
+      "styleReference": "../miniature-world-pilot-v1/taxi-v2.png",
+      "id": "dispatch.sprite.police-car",
+      "file": "police-car.png",
+      "sha256": "5eaf3996f6a302078af1768c5e43b0ce8e6556a98c2fe0bbe7b492f1d530fb86",
+      "generationId": "exec-5b307e2d-8864-4faf-a8ed-bed8c3d4c559",
+      "size": [
+        1774,
+        887
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "maxBorderAlpha": 1,
+      "visibleBounds": [
+        231,
+        87,
+        1547,
+        798
+      ],
+      "pivotSourcePx": [
+        889.0,
+        442.5
+      ],
+      "phoneBeamPx": 14.6,
+      "facing": "east",
+      "status": "approved by user on 2026-11-09",
+      "newArt": true
+    },
+    {
+      "id": "dispatch.sprite.school-bus",
+      "prompt": "Correct the camera of this school-bus game sprite to a TRUE ORTHOGRAPHIC TOP VIEW like a floor-plan drawing viewed by a drone pointing straight down. Rotate the CAMERA, never rotate the existing side-profile drawing in 2D. On a plan from above, I should see the large yellow ROOF spanning nearly the entire length, the hood at RIGHT, rear at LEFT, dark front windshield immediately behind the hood, and symmetrical very thin dark window edges on both long sides. Tires at most small dark tabs: never visible circular wheel faces. Do not show the side door face, side windows as rectangles, or vertical body panels; only a small door-position seam along the lower silhouette behind the front axle. North and south outlines are symmetric aside from that tiny door seam. East-pointing nose, whole bus, long narrow 3:1 footprint. Same matte paper-painted yellow and navy vehicle palette as the original, clear blue glazing. Transparent RGBA, centered, all edges visible, no cast shadow, scenery, words, border or labels. Only one bus and only the overhead view.",
+      "file": "../miniature-world-pilot-v1/school-bus-v2.png",
+      "sha256": "b0d8971a28847f81884c730272bef5317dd4e8e5e7ff6da9333276613cf41d6b",
+      "size": [
+        2172,
+        724
+      ],
+      "mode": "school-bus",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        68,
+        117,
+        2104,
+        608
+      ],
+      "status": "user approved for app handoff, 2026-11-09",
+      "generationId": "exec-ed40b548-4d61-43bb-8235-2a228c977569",
+      "reference": "school-bus.png",
+      "label": "School bus",
+      "phoneLengthPx": 36,
+      "newArt": false,
+      "facing": "east"
+    },
+    {
+      "id": "dispatch.sprite.taxi",
+      "prompt": "Correct the camera on this taxi sprite to a TRUE ORTHOGRAPHIC PLAN VIEW from a camera pointed directly downward. The roof and blank taxi sign are central, the bonnet and FRONT are on the RIGHT, trunk and rear are on the LEFT. The top and bottom sides are mirror-symmetrical except for a tiny lower rear door contact seam. I must see the top of both mirrors and both headlights. Do not show side door faces, side panels, or circular wheel faces. Dark windshield bands ahead of and behind the yellow roof, compact distinct car plan silhouette length about 2.1 times width, less long than a bus. Preserve paper-painted matte yellow/navy style. A blank small roof taxi sign, no readable text, no ground, shadow, road, other objects, or fake background; real transparent RGBA. Whole car, centered, all edges visible.",
+      "file": "../miniature-world-pilot-v1/taxi-v2.png",
+      "sha256": "553bddec1b2f46b681925fabb0aeed6541c44866dcef67c8e1fc3a40c06f1317",
+      "size": [
+        1817,
+        866
+      ],
+      "mode": "taxi",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        246,
+        74,
+        1571,
+        791
+      ],
+      "status": "user approved for app handoff, 2026-11-09",
+      "generationId": "exec-ffaba254-e8fd-46f7-83e1-868d76f02c34",
+      "reference": "taxi.png",
+      "label": "Taxi",
+      "phoneLengthPx": 28,
+      "newArt": false,
+      "facing": "east"
+    },
+    {
+      "id": "dispatch.sprite.ferry",
+      "prompt": "Production game sprite for Transport Dispatch, an illustrated tactile Miniature World. True orthographic bird’s-eye (90 degrees down), exact EAST-facing front at the RIGHT, never front three-quarter. Matte hand-painted miniature on paper, muted dimensional shading within silhouette, crisp dark navy contours, simple large high-contrast details that still read at 30–36 screen pixels. Subject completely visible, centred horizontally and vertically, tight horizontal composition with about 8% clear margin along the long axis. Transparent RGBA canvas, no background, cast shadow, road, water, wake, border, text, logos, labels, or extra objects. One sprite only. A small passenger ferry viewed exactly from overhead, pointed bow to the RIGHT and squared stern to the left, broad ivory hull, clean dark navy rim, teal deck, compact rectangular cream passenger cabin with deep blue windows, small boarding opening along the UPPER edge near the aft half. The shape reads as a real boat, with no road vehicle elements. Silhouette about 2.65 to 1.",
+      "file": "../miniature-world-pilot-v1/ferry.png",
+      "sha256": "af4fd76010aed4eeabcfd949bf1f1c2354684b4841f8f30be544cac8805a832d",
+      "size": [
+        2041,
+        770
+      ],
+      "mode": "ferry",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        34,
+        101,
+        1987,
+        711
+      ],
+      "status": "user approved for app handoff, 2026-11-09",
+      "generationId": "exec-450518dd-f12c-4279-81a8-99e33e8eebc6",
+      "label": "Ferry",
+      "phoneLengthPx": 32,
+      "newArt": false,
+      "facing": "east"
+    }
+  ]
+}
