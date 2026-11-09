@@ -1,0 +1,1285 @@
+{
+  "direction": "A — Painted field guide",
+  "stage": "Artwork and highlight handoff for all 24 Transport Scenes",
+  "references": [
+    "Blueprint v6.0 ART-AND-ANIMATION.md",
+    "Approved Transport vocabulary Direction A",
+    "Existing Transport scene target lists"
+  ],
+  "integration": "Overlay each path in its scene viewBox using fill-rule evenodd. The direction paths are filled arrows on separate selections, kept out of the raster art.",
+  "previewEvidence": {
+    "browserScenes": 24,
+    "uniqueWordHighlights": 121,
+    "clearControlVerifiedInEveryScene": true,
+    "appIntegration": "Pending"
+  },
+  "scenes": [
+    {
+      "id": "bicycle-parts",
+      "title": "Bicycle parts",
+      "width": 1536,
+      "height": 1024,
+      "alt": "A blue bicycle with yellow mudguards, a brass bell and a visible amber pedal in a quiet courtyard.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "safety.bicycle-bell",
+      "targets": [
+        {
+          "wordId": "vehicle.bicycle",
+          "label": "Bicycle",
+          "note": "You ride a bicycle by pushing its pedals.",
+          "path": "M18 329 Q23 266 59 230 Q103 193 148 195 Q211 188 252 240 L280 211 L266 165 Q238 162 216 153 Q196 141 200 122 Q208 101 239 101 L323 108 Q347 109 356 125 Q363 139 349 143 L306 145 L315 188 L542 144 L544 104 Q522 94 506 66 Q489 55 469 61 L467 73 L405 93 Q390 97 386 82 L385 69 L454 39 L464 46 Q502 29 523 54 L544 73 Q576 87 611 68 L622 54 Q607 53 599 46 L599 32 Q605 15 623 13 Q649 10 653 26 L671 19 L678 25 L671 32 L650 41 L664 40 L679 35 L722 40 Q738 43 731 65 L724 76 L670 66 L662 57 Q646 58 632 73 Q614 91 582 96 L571 112 L572 129 L591 199 Q644 192 672 206 L670 219 Q754 241 776 335 Q793 449 709 503 Q647 533 584 512 Q521 495 499 427 Q489 397 490 370 L478 373 L480 346 Q488 278 529 242 L515 226 L412 333 L395 352 Q408 379 383 412 L400 431 L428 431 Q448 432 447 452 Q449 473 429 474 L379 474 Q365 474 363 463 L368 442 L354 420 L288 409 Q272 473 218 501 Q143 530 82 488 Q27 459 18 403 Q11 357 18 329Z M316 226 L524 173 L384 326 L341 323Z"
+        },
+        {
+          "wordId": "part.wheel",
+          "label": "Wheel",
+          "note": "The whole wheel includes the hub, spokes, rim and tyre.",
+          "path": "M630 215 C710 211 774 278 776 359 C782 444 720 514 643 520 C562 525 496 462 492 381 C486 300 540 220 619 215Z"
+        },
+        {
+          "wordId": "part.tyre",
+          "label": "Tyre",
+          "note": "The tyre is the dark rubber ring around the wheel.",
+          "kind": "ring",
+          "path": "M630 215 C710 211 774 278 776 359 C782 444 720 514 643 520 C562 525 496 462 492 381 C486 300 540 220 619 215Z M631 237 C694 234 747 290 749 362 C755 434 705 488 641 495 C574 500 519 446 516 374 C512 302 560 242 627 237Z"
+        },
+        {
+          "wordId": "part.pedal",
+          "label": "Pedal",
+          "note": "Push the pedal with your foot to move the bicycle.",
+          "path": "M372 437 L423 432 Q435 431 446 443 L446 461 Q443 471 430 471 L379 472 Q366 471 364 462 L367 444Z"
+        },
+        {
+          "wordId": "part.handlebars",
+          "label": "Handlebars",
+          "note": "Hold the grips and turn the handlebars to steer.",
+          "path": "M387 67 Q389 61 400 57 L449 40 Q457 36 463 46 Q480 39 495 42 Q508 44 521 56 L538 72 Q548 78 560 77 L582 76 Q604 76 614 63 Q627 48 640 44 L656 39 L668 40 Q672 36 681 37 L722 40 Q732 43 732 53 L729 66 Q727 75 717 74 L674 65 Q666 63 665 56 Q646 53 632 69 Q618 87 603 92 Q593 95 580 95 L575 105 Q567 109 566 126 L549 130 Q545 113 541 107 L541 98 Q530 96 519 85 L502 65 Q488 54 470 60 Q468 70 461 73 L405 93 Q392 97 388 86Z"
+        },
+        {
+          "wordId": "safety.bicycle-bell",
+          "label": "Bell",
+          "note": "The bell makes a sound to alert people nearby.",
+          "path": "M598 40 Q597 30 606 23 L611 16 Q619 10 632 14 Q646 13 651 22 L655 26 L668 20 Q674 18 676 22 Q678 26 671 30 L654 37 L652 43 Q640 51 615 49 L604 49 Q598 49 598 40Z"
+        }
+      ],
+      "sourcePath": "originals/bicycle-parts.png",
+      "originalPath": "artwork/originals/teaching-scenes/bicycle-parts.png",
+      "sourceSha256": "60efa3f76c599ca805ce3d001ce100b9322b91a044955e0b613d60064c47be9c",
+      "exactPrompt": "Create one connected landscape teaching illustration in 3:2 format. Full-bleed scenic background, no lettering, numbers, labels, legends, painted highlights, arrows, inset boxes, multiple panels, border, or cutaway diagrams. Clear silhouettes and a simple background allow the app to highlight the actual parts with separate vector paths. Style: Children's educational field-guide illustration in hand-painted opaque gouache, like a premium illustrated primary science app. Saturated natural local colours, subtly visible dry brush within shapes, dark coloured contour accents, simplified factual geometry, crisp silhouettes and modest hand-rendered shading. Predominantly matte and brush-painted. Background quieter and paler than teaching targets. Crisp focal details stay readable when the whole scene is viewed on a phone.\n\nOne complete cobalt-blue and golden-yellow city bicycle, same painted field-guide appearance as a blue bicycle vocabulary cutout, in a quiet paved school courtyard with a low hedge and muted sage plants. Make the bicycle fill most of the wide picture with 8% clear breathing room. It faces right and is seen almost side-on, with the camera just enough toward its front to show a complete gently curved handlebar with two dark grips. Put a distinct brass bell with visible thumb lever high on the handlebar, separated from the frame and set against light negative space. Show two round spoked wheels with visibly thick dark rubber tyres, open interiors, clearly drawn rims and hubs; the front wheel on the right is completely unobstructed except where its fork meets the hub. One amber near-side pedal is large, horizontally exposed just below the crank and well between the wheels. No people, basket, rack cargo, signs or other bicycles. Render mechanically plausible fork, frame, seat and pedals.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/bicycle-parts.png",
+      "runtimeSha256": "5454f8e75294a74eb737848f231ded768c742656f25bd584fdf6f77cd972cd4e",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "bus-at-the-bus-stop",
+      "title": "Bus at the bus stop",
+      "width": 1536,
+      "height": 1024,
+      "alt": "A complete yellow and blue bus with its front passenger doors open beside a bus-stop shelter and pictogram sign.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "safety.handrail",
+      "targets": [
+        {
+          "wordId": "vehicle.bus",
+          "label": "Bus",
+          "note": "A bus carries passengers along roads.",
+          "path": "M50 304 L51 248 Q52 224 61 215 Q69 207 91 207 H507 Q528 208 538 217 Q548 230 552 248 L561 298 Q566 310 566 340 L568 364 Q568 382 551 386 L536 388 Q525 395 511 395 Q489 395 480 389 L239 389 Q229 396 210 395 Q191 395 181 386 L77 384 Q48 382 47 363Z"
+        },
+        {
+          "wordId": "place.bus-stop",
+          "label": "Bus stop",
+          "note": "The shelter and bus sign show where passengers wait.",
+          "path": "M585 254 Q589 240 599 232 Q610 224 624 227 L706 229 Q720 233 726 250 L720 254 L718 370 L709 370 L707 257 L628 259 L624 371 L614 371 L613 258 L601 259 L600 364 L591 363 L591 257Z M714 178 H749 Q754 178 754 184 V223 Q754 229 748 230 H739 V385 L742 388 L726 390 L722 387 L728 383 V230 H715 Q710 230 710 224 V183 Q710 178 714 178Z"
+        },
+        {
+          "wordId": "part.door",
+          "label": "Door",
+          "note": "Passengers use the open doorway to get on and off.",
+          "path": "M379 232 L392 231 L400 240 L462 240 L474 230 L479 231 L479 383 L471 390 H386 L378 382Z"
+        },
+        {
+          "wordId": "safety.handrail",
+          "label": "Handrail",
+          "note": "Hold the handrail for support when using the steps.",
+          "path": "M439 239 Q447 237 455 239 L455 243 L450 245 L450 353 L455 355 L454 359 H442 L441 355 L446 353 V297 H438 Q432 297 431 304 V331 L426 332 V303 Q427 294 435 292 H446 V246 L440 244Z"
+        },
+        {
+          "wordId": "action.board",
+          "label": "Get on",
+          "note": "Move from the pavement up into the stopped bus.",
+          "kind": "direction",
+          "path": "M416 409 H426 V375 H438 L421 356 L404 375 H416Z"
+        },
+        {
+          "wordId": "action.get-off",
+          "label": "Get off",
+          "note": "Move from the stopped bus down onto the pavement.",
+          "kind": "direction",
+          "path": "M436 359 H446 V388 H460 L441 410 L422 388 H436Z"
+        }
+      ],
+      "sourcePath": "originals/bus-at-the-bus-stop.png",
+      "originalPath": "artwork/originals/teaching-scenes/bus-at-the-bus-stop.png",
+      "sourceSha256": "fc581ad579bce3e6e77f52e47c4ce2ec36acdce343b5ce20a775d93dc1fbf598",
+      "exactPrompt": "Use the supplied draft as a style and subject reference. Redraw the same scene with a camera pulled back about 30%, in a landscape 3:2 frame. Show the ENTIRE stopped yellow and navy city bus on the road, including its rear bumper and front bumper, both wheels, and the complete bus-stop shelter and sign. The back of the bus begins near 8% from the left edge and the front ends near 68% of frame width. Its right-facing front passenger doors remain open and the near side remains broad enough to distinguish the two doors, steps and golden-yellow handrail. Show the wheel contact patches on charcoal asphalt, immediately beside a distinct raised pale sidewalk and curb; the blue bus-stop shelter is on the sidewalk at right. The doorway leads directly from the curb into the bus. Keep the schoolbook gouache paint, blue shelter, bus pictogram, and quiet trees, with no letters, annotations, arrows or people. Do not crop any part of the bus. Maintain visible negative space around both ends.",
+      "background": "Full painted scene",
+      "priorDraft": {
+        "exactPrompt": "Create one connected landscape teaching illustration in 3:2 format. Full-bleed scenic background, no lettering, numbers, labels, legends, painted highlights, arrows, inset boxes, multiple panels, border, or cutaway diagrams. Clear silhouettes and a simple background allow the app to highlight the actual parts with separate vector paths. Style: Children's educational field-guide illustration in hand-painted opaque gouache, like a premium illustrated primary science app. Saturated natural local colours, subtly visible dry brush within shapes, dark coloured contour accents, simplified factual geometry, crisp silhouettes and modest hand-rendered shading. Predominantly matte and brush-painted. Background quieter and paler than teaching targets. Crisp focal details stay readable when the whole scene is viewed on a phone.\n\nOne yellow and navy single-deck city bus stopped beside an accessible raised curb at a small blue-roof bus shelter. It faces right. Show its near side almost broadside with just a little front, filling the left two thirds of the image; the shelter and a clear blue sign with only a white bus pictogram sit on the right, physically on the same sidewalk. The open front passenger doorway on the near side is unobstructed, tall and wide, around the centre of the picture, with two easy-to-see steps at curb height. A single large golden-yellow boarding handrail inside the opening contrasts strongly against a dark blue interior, and the open door leaves frame the opening. Keep the part silhouettes distinct. Leave a clear length of pavement immediately below the doorway to accommodate later overlaid boarding and alighting arrows. No passengers, drivers, other vehicles or signs. Make the bus parallel to the curb in one coherent perspective.",
+        "sha256": "790e3e8954d9ee410cd34293da14bda9d2f13feecf87223713bbbe742c625952",
+        "reviewNote": "Initial draft cropped the vehicle at the left edge."
+      },
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/bus-at-the-bus-stop.png",
+      "runtimeSha256": "576a67a318a1d9c28b7a56bd161b6bfb17c31c95c7816b0956c028955541b966",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "train-at-the-platform",
+      "title": "Train at the platform",
+      "width": 1536,
+      "height": 1024,
+      "alt": "A blue passenger carriage is coupled to a red engine beside a raised station platform, with a brick station behind it and rails in the foreground.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "part.window",
+      "targets": [
+        {
+          "wordId": "vehicle.train",
+          "label": "Train",
+          "note": "The whole train includes the engine and the carriage joined behind it.",
+          "path": "M74 311 L76 268 Q79 248 100 247 L343 247 Q362 246 369 260 L373 312 L379 312 L377 269 Q378 250 396 248 L477 247 L529 247 Q550 248 559 255 Q573 265 580 289 L585 312 L589 337 L569 343 L394 345 L382 336 L366 336 L352 343 L97 345 L81 338 L72 327Z"
+        },
+        {
+          "wordId": "part.carriage",
+          "label": "Carriage",
+          "note": "The carriage has seats and windows for passengers.",
+          "path": "M79 269 Q79 251 100 248 L343 248 Q361 247 367 260 L370 317 L369 332 L352 342 L97 344 L82 338 L74 327 L75 315 L79 311Z"
+        },
+        {
+          "wordId": "part.window",
+          "label": "Window",
+          "note": "Passengers can look outside through this carriage window.",
+          "path": "M210 273 H247 Q251 273 251 277 V297 Q251 301 247 301 H211 Q208 301 208 297 V277 Q208 273 210 273Z"
+        },
+        {
+          "wordId": "place.railway",
+          "label": "Railway",
+          "note": "The railway has rails and sleepers that support the track.",
+          "path": "M0 380 H800 V427 H0Z"
+        },
+        {
+          "wordId": "place.station",
+          "label": "Station",
+          "note": "People come to the station to catch a train.",
+          "path": "M128 155 L156 121 H161 L162 98 L180 98 L182 121 H224 L242 108 L254 121 H306 L307 98 L326 98 L328 121 H367 L399 155 H474 L494 167 L493 176 H459 V240 L449 242 V176 H394 L393 240 H133 L132 160Z"
+        },
+        {
+          "wordId": "place.platform",
+          "label": "Platform",
+          "note": "The platform is the raised area where people wait beside the train.",
+          "path": "M590 235 H800 V340 H595 L595 322 L594 296 L590 276Z"
+        }
+      ],
+      "sourcePath": "originals/train-at-the-platform.png",
+      "originalPath": "artwork/originals/teaching-scenes/train-at-the-platform.png",
+      "sourceSha256": "c4ec3325345cbe3b40f2be7fd009c392786bbc4626ccdeb86cf97c0ef699764f",
+      "exactPrompt": "Use the supplied draft as a style and subject reference. Reframe this same view with a camera pulled back about 28%, as a landscape 3:2 field-guide teaching scene. The entire blue and cream passenger carriage begins near 8% from the left of the image, including its complete rear end and both bogies. Its coupler joins one complete red right-facing engine, ending about 77% across the image, with clear space beyond its front. Keep the row of carriage windows, visible wheels on rails, full brick station under a green canopy, raised platform with a yellow tactile strip and bench, and a clear, wide unobstructed foreground rail bed with sleepers. Paint in the exact same gouache visual direction. No lettering, graphics, people or arrows. Do not crop the back of the carriage, the train nose, or station roof.",
+      "background": "Full painted scene",
+      "priorDraft": {
+        "exactPrompt": "Create one connected landscape teaching illustration in 3:2 format. Full-bleed scenic background, no lettering, numbers, labels, legends, painted highlights, arrows, inset boxes, multiple panels, border, or cutaway diagrams. Clear silhouettes and a simple background allow the app to highlight the actual parts with separate vector paths. Style: Children's educational field-guide illustration in hand-painted opaque gouache, like a premium illustrated primary science app. Saturated natural local colours, subtly visible dry brush within shapes, dark coloured contour accents, simplified factual geometry, crisp silhouettes and modest hand-rendered shading. Predominantly matte and brush-painted. Background quieter and paler than teaching targets. Crisp focal details stay readable when the whole scene is viewed on a phone.\n\nOne stopped passenger train consisting of a single cobalt-and-cream passenger carriage on the LEFT, visibly joined by a dark coupler gap to a red and cream engine on the RIGHT, both seen almost side-on with a little front of the right-facing engine. A complete modest brick station building with a muted green canopy sits in the background upper left, with a distinctly visible roof and entry. A broad raised station platform with a yellow tactile edge and one small bench runs continuously beside the train on the far side of the tracks; show a substantial visible empty stretch of platform to the right of the train. In front of and beneath the train, leave a long clear band showing TWO parallel steel rails and repeated sleepers so the railway can be separately highlighted. The single carriage has several separated, large blue-grey rectangular passenger windows with simple individual frames. Make all six targets clear, with no figures, labels or extra trains.",
+        "sha256": "d91a3ffd21d2cc521194993f46812fa6d6acedc1a95a90f061fe05c2fa5ba4c1",
+        "reviewNote": "Initial draft cropped the vehicle at the left edge."
+      },
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/train-at-the-platform.png",
+      "runtimeSha256": "3ef2179bcd208fb72f0b31724faad04f34dbd3996adc7badca9d293b9e970746",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "road-vehicles",
+      "title": "Road vehicles",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Six road vehicles separated on a museum forecourt.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "vehicle.car",
+      "targets": [
+        {
+          "wordId": "vehicle.car",
+          "label": "Car",
+          "note": "A vehicle with four wheels that carries a small group of people.",
+          "path": "M8,236 11,203 66,157 103,139 179,134 231,145 271,177 275,227 253,249 214,252 154,270 23,267Z"
+        },
+        {
+          "wordId": "vehicle.taxi",
+          "label": "Taxi",
+          "note": "A car with a driver that passengers pay to take them somewhere.",
+          "path": "M286,229 302,185 326,170 381,145 397,118 449,117 462,136 510,149 538,181 542,230 514,258 431,272 309,265Z"
+        },
+        {
+          "wordId": "vehicle.motorcycle",
+          "label": "Motorcycle",
+          "note": "A motor vehicle with two wheels that a rider sits on.",
+          "path": "M574,161 640,155 679,168 682,145 681,115 700,113 730,139 750,116 764,124 757,147 780,193 796,231 795,256 772,279 744,281 717,258 707,231 675,262 611,275 579,258 570,215Z"
+        },
+        {
+          "wordId": "vehicle.scooter",
+          "label": "Kick scooter",
+          "note": "A small vehicle with a standing deck and handlebars, pushed along with one foot.",
+          "path": "M42,460 70,416 89,322 59,316 60,303 145,312 143,325 105,325 87,441 172,444 185,426 215,420 226,432 226,463 210,480 180,475 93,473 73,493 47,490Z"
+        },
+        {
+          "wordId": "vehicle.motor-scooter",
+          "label": "Motor scooter",
+          "note": "A motor vehicle with a seat and a platform for the rider's feet.",
+          "path": "M285,428 308,359 326,324 320,308 327,300 348,316 371,322 393,309 409,304 413,317 385,335 408,343 396,352 474,349 493,362 503,406 491,441 480,477 447,479 427,459 356,459 340,486 309,493 287,481 280,456Z"
+        },
+        {
+          "wordId": "vehicle.skateboard",
+          "label": "Skateboard",
+          "note": "A board with four small wheels that a rider stands on.",
+          "path": "M560,418 581,399 694,375 740,360 771,360 779,375 775,398 757,410 751,441 724,445 709,437 656,445 658,469 642,482 614,475 598,467 582,461 582,444 563,437Z"
+        }
+      ],
+      "sourcePath": "originals/road-vehicles.png",
+      "originalPath": "artwork/originals/teaching-scenes/road-vehicles.png",
+      "sourceSha256": "e69e1303d90746c8973eb145c37ed6107350041113166c91ee0d3bb3d7ef0e09",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nQuiet museum forecourt, exactly six whole separated items in two rows. Top left to right cobalt car, yellow roof-light taxi, red motorcycle. Bottom left to right blue kick scooter, turquoise seated motor scooter, ochre skateboard.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/road-vehicles.png",
+      "runtimeSha256": "34efc0c51421a548d4a66c9984b0c69fb50f0dc764e83b692086a066696744a9",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "passenger-vehicles",
+      "title": "Passenger vehicles",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Six passenger vehicles shown together: coach, double-decker, minibus, school bus, tram and metro train.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "vehicle.coach",
+      "targets": [
+        {
+          "wordId": "vehicle.coach",
+          "label": "Coach",
+          "note": "A large passenger vehicle often used for longer road journeys.",
+          "path": "M9,197 11,132 26,118 106,96 173,84 232,83 251,91 267,108 279,112 286,121 286,139 278,139 272,124 271,163 274,207 267,225 239,227 228,236 207,237 193,226 168,226 158,237 139,239 131,226 71,225 61,231 29,226 24,221 10,216Z"
+        },
+        {
+          "wordId": "vehicle.double-decker-bus",
+          "label": "Double-decker bus",
+          "note": "A bus with passenger seats on two levels.",
+          "path": "M306,218 305,145 311,84 319,68 339,61 367,55 397,56 467,72 516,91 530,104 532,212 513,222 508,235 483,238 473,228 441,230 429,240 413,238 405,230 355,232 341,239 323,234 316,227Z"
+        },
+        {
+          "wordId": "vehicle.minibus",
+          "label": "Minibus",
+          "note": "A passenger vehicle that is smaller than a full-sized bus.",
+          "path": "M554,208 555,151 560,144 573,120 594,109 632,102 670,103 730,113 777,128 785,146 789,208 781,221 768,226 757,234 738,234 730,221 678,224 668,239 650,238 639,224 597,227 585,236 571,234 560,226Z"
+        },
+        {
+          "wordId": "vehicle.school-bus",
+          "label": "School bus",
+          "note": "A bus used to take children to and from school.",
+          "path": "M9,417 10,364 15,353 72,339 125,329 172,325 200,331 216,340 221,355 229,363 226,385 245,401 257,416 259,449 250,467 228,474 209,460 169,463 155,479 138,474 130,460 71,454 54,467 39,466 30,445 9,443Z"
+        },
+        {
+          "wordId": "vehicle.tram",
+          "label": "Tram",
+          "note": "A passenger vehicle that runs on rails, often along city streets.",
+          "path": "M279,435 280,373 290,349 313,340 369,339 357,323 355,316 369,299 361,299 361,294 405,291 419,298 415,303 405,302 378,321 397,339 411,345 462,354 495,365 506,374 510,388 510,441 499,450 470,453 420,461 375,463 310,466 290,460 279,450Z"
+        },
+        {
+          "wordId": "vehicle.subway",
+          "label": "Metro train",
+          "note": "A city train that often travels through underground tunnels.",
+          "path": "M534,442 537,371 551,351 575,340 598,335 628,338 677,351 747,373 789,386 797,394 798,428 790,437 758,449 711,459 660,468 625,475 596,478 550,470 536,458Z"
+        }
+      ],
+      "sourcePath": "originals/passenger-vehicles.png",
+      "originalPath": "artwork/originals/teaching-scenes/passenger-vehicles.png",
+      "sourceSha256": "72ec9833fa84cdfe217ebb625aff02495c5f487ff53a6518daa8b7eb6118843e",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nTransit exhibition yard, exactly six separated whole vehicles in two rows. Top navy long-distance coach, red double-decker bus, cream-blue minibus. Bottom yellow school bus, teal tram with pantograph, silver-blue metro train.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/passenger-vehicles.png",
+      "runtimeSha256": "df6eab14f5a3c98ea9da19aaa47e520594621fd0ae40f45216f05b0a717f744a",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "rickshaws",
+      "title": "Three kinds of rickshaw",
+      "width": 1536,
+      "height": 1024,
+      "alt": "A hand-pulled rickshaw, pedal rickshaw and motor tuk-tuk on a plaza.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "vehicle.rickshaw",
+      "targets": [
+        {
+          "wordId": "vehicle.rickshaw",
+          "label": "Pulled rickshaw",
+          "note": "A small passenger cart pulled by a person on foot.",
+          "path": "M10,313 18,285 34,271 30,248 19,236 20,216 28,191 53,173 79,161 106,160 137,170 157,185 163,200 147,213 123,254 145,263 160,287 168,313 182,322 179,329 232,355 252,372 252,380 246,382 229,370 186,348 153,333 225,377 230,385 224,390 214,385 151,350 140,367 114,372 89,355 78,374 56,386 34,383 19,368 11,341Z"
+        },
+        {
+          "wordId": "vehicle.cycle-rickshaw",
+          "label": "Cycle rickshaw",
+          "note": "A passenger vehicle moved by a person pedalling.",
+          "path": "M253,336 259,306 266,282 259,237 249,236 248,220 255,188 278,170 306,159 343,156 376,165 390,180 391,196 379,210 356,259 375,273 397,273 406,266 381,266 379,260 390,251 413,254 414,263 417,271 441,272 438,254 418,248 418,242 436,239 450,245 470,241 473,248 459,252 469,286 491,291 510,307 519,332 516,356 498,375 475,383 451,377 435,356 431,340 418,349 424,356 421,361 407,359 410,344 392,338 378,358 353,366 332,364 322,375 298,380 274,374 258,356Z"
+        },
+        {
+          "wordId": "vehicle.auto-rickshaw",
+          "label": "Auto-rickshaw",
+          "note": "A small motor vehicle with three wheels that can carry passengers.",
+          "path": "M537,326 541,269 549,207 561,186 579,176 613,168 667,168 712,175 742,187 751,205 772,248 776,269 769,280 774,307 786,321 791,332 779,340 787,362 778,374 759,381 740,376 730,362 726,345 659,354 646,368 626,366 614,353 603,351 598,370 578,377 557,371 547,356 545,343 535,340Z"
+        }
+      ],
+      "sourcePath": "originals/rickshaws.png",
+      "originalPath": "artwork/originals/teaching-scenes/rickshaws.png",
+      "sourceSha256": "30d21c3b3e48eb491d8aa6bff8cdff3293ef3e107ff704e3160380cdcb49d327",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nThree whole rickshaws separated on one plaza, all facing right: left two-wheel hand-pulled cart with long paired shafts, middle pedal cycle rickshaw with bicycle front, right green-yellow motor tuk-tuk. No people.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/rickshaws.png",
+      "runtimeSha256": "1f91e89f1fd7131f665533e0e727b8402e766378ffaa9820c8a00cd7601a049c",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "work-vehicles",
+      "title": "Vehicles that carry and help",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Six distinct vehicles in a transport works yard.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "vehicle.truck",
+      "targets": [
+        {
+          "wordId": "vehicle.truck",
+          "label": "Truck",
+          "note": "A road vehicle used to carry goods.",
+          "path": "M19,215 20,163 32,130 49,111 84,108 85,82 162,75 282,90 283,195 271,202 272,220 255,228 248,243 224,246 211,229 169,237 148,254 121,256 110,235 46,251 25,237Z"
+        },
+        {
+          "wordId": "vehicle.van",
+          "label": "Van",
+          "note": "A road vehicle with an enclosed space for goods or passengers.",
+          "path": "M296,204 309,177 321,163 325,147 355,121 378,110 422,107 518,109 532,119 541,157 543,214 529,229 523,241 501,248 482,229 422,235 402,254 378,251 365,233 331,234 314,250 300,238Z"
+        },
+        {
+          "wordId": "vehicle.tractor",
+          "label": "Tractor",
+          "note": "A strong vehicle used to pull farm equipment or loads.",
+          "path": "M564,209 578,185 594,175 597,151 618,135 632,134 631,88 641,91 643,130 651,128 651,91 673,86 739,83 753,93 755,136 778,152 788,192 783,223 765,245 722,247 701,228 681,254 645,257 622,233 603,250 578,251 563,234Z"
+        },
+        {
+          "wordId": "vehicle.tow-truck",
+          "label": "Tow truck",
+          "note": "A truck used to carry or pull a vehicle that needs help.",
+          "path": "M10,432 14,396 15,359 31,343 62,336 63,326 118,325 126,331 139,340 145,369 211,345 224,342 230,349 222,361 222,401 232,413 250,421 253,434 215,435 204,455 186,466 169,451 138,453 122,471 96,471 84,454 49,453 42,466 23,465 12,449Z"
+        },
+        {
+          "wordId": "vehicle.refuse-truck",
+          "label": "Refuse truck",
+          "note": "A truck that collects and carries rubbish.",
+          "path": "M265,411 266,350 279,331 316,326 318,315 338,311 395,310 414,303 490,305 506,314 516,333 524,380 533,417 532,433 515,449 477,450 458,462 439,467 415,459 395,468 370,459 334,450 314,460 292,462 279,449 265,438Z"
+        },
+        {
+          "wordId": "vehicle.concrete-mixer",
+          "label": "Concrete mixer truck",
+          "note": "A truck with a turning drum that carries and mixes concrete.",
+          "path": "M550,430 550,376 555,346 571,334 622,327 653,331 671,315 695,304 721,300 758,310 780,307 789,329 789,423 781,450 769,465 747,467 728,458 709,470 684,462 669,472 643,472 628,451 597,452 581,469 557,459Z"
+        }
+      ],
+      "sourcePath": "originals/work-vehicles.png",
+      "originalPath": "artwork/originals/teaching-scenes/work-vehicles.png",
+      "sourceSha256": "722fd6c1326fd07401032070a88f8908e2694a68a4c376acdfa5092998569617",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nTransport works yard, exactly six whole distinct vehicles in two rows. Top blue cab-over box truck, orange panel van, green farm tractor. Bottom blue tow truck with wheel-lift, green refuse truck with rear compactor, red and cream concrete mixer truck. No overlap.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/work-vehicles.png",
+      "runtimeSha256": "288eed4b3f4bcbe182c99e2ea49a03671a15ab0d903ca95d7e960d09ba4dfd71",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "emergency-vehicles",
+      "title": "Emergency vehicles and tipping loads",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Police car, ambulance, fire engine and a tipper with its raised bed.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "vehicle.police-car",
+      "targets": [
+        {
+          "wordId": "vehicle.police-car",
+          "label": "Police car",
+          "note": "A car used by police officers as they do their work.",
+          "path": "M47,160 49,129 63,114 96,100 126,80 149,72 146,60 151,52 229,51 247,54 249,65 241,71 264,79 290,96 306,108 319,110 320,120 348,133 363,149 370,177 365,195 350,202 341,211 318,213 307,204 236,207 228,218 203,220 184,204 121,193 106,195 98,207 79,210 65,201 61,182 50,177Z"
+        },
+        {
+          "wordId": "vehicle.ambulance",
+          "label": "Ambulance",
+          "note": "A vehicle equipped to help take ill or injured people for medical care.",
+          "path": "M420,170 426,146 427,58 431,45 440,40 565,29 587,29 595,22 658,23 675,27 677,37 670,42 698,58 727,92 745,115 767,133 772,165 773,187 761,201 750,204 739,217 721,219 709,207 659,209 650,222 627,225 608,211 508,202 500,215 476,216 462,205 459,190 425,184 419,180Z"
+        },
+        {
+          "wordId": "vehicle.fire-engine",
+          "label": "Fire engine",
+          "note": "A vehicle that carries firefighters and firefighting equipment.",
+          "path": "M22,427 24,346 29,338 38,336 36,310 45,306 55,306 56,295 144,283 230,271 307,258 315,262 337,261 345,270 348,281 336,285 322,281 323,288 283,296 339,295 355,299 357,308 371,318 374,328 388,336 392,357 387,371 391,454 386,466 358,472 347,489 321,493 302,480 260,482 249,496 226,499 206,484 183,475 119,475 109,489 84,494 64,485 62,466 28,457 22,449Z"
+        },
+        {
+          "wordId": "vehicle.tipper-truck",
+          "label": "Tipper truck",
+          "note": "A truck with a container that can lift to tip out a load.",
+          "path": "M433,433 436,383 434,355 440,347 453,340 466,327 487,322 558,320 570,330 571,349 583,410 591,415 608,340 555,314 566,274 563,263 646,248 659,263 656,270 771,358 781,367 756,433 746,431 747,465 736,481 724,494 701,493 694,482 684,496 664,498 644,487 619,488 596,481 587,493 572,501 549,500 534,486 502,484 491,495 468,495 454,486 447,466 435,461Z"
+        }
+      ],
+      "sourcePath": "originals/emergency-vehicles.png",
+      "originalPath": "artwork/originals/teaching-scenes/emergency-vehicles.png",
+      "sourceSha256": "19c70866f4c222860ed71d8c6da8680047abe4af7f56f7b2d2bde879bf26563a",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nEquipment yard, exactly four separated vehicles. Top left white police car with blue lights, top right white-teal ambulance with blue Star of Life; bottom left red fire engine with ladder, bottom right mustard tipper truck with bed raised.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/emergency-vehicles.png",
+      "runtimeSha256": "5c9e128353a2f6e016f0dea8d7d348e3fb256f8399662df1bf2f2c8e6b757436",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "watercraft",
+      "title": "Watercraft comparison",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Six boats and ships separated on calm water.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "vehicle.boat",
+      "targets": [
+        {
+          "wordId": "vehicle.boat",
+          "label": "Boat",
+          "note": "A water vehicle used to carry people or things.",
+          "path": "M12,217 21,175 36,158 60,158 66,171 129,171 206,156 223,170 214,196 180,221 114,237 36,237Z"
+        },
+        {
+          "wordId": "vehicle.ship",
+          "label": "Ship",
+          "note": "A large water vehicle that carries people or goods.",
+          "path": "M236,180 249,158 245,122 274,91 291,89 291,67 310,61 319,94 335,97 347,122 404,117 478,135 481,101 490,105 496,140 527,151 532,165 497,234 263,234 242,218Z"
+        },
+        {
+          "wordId": "vehicle.ferry",
+          "label": "Ferry",
+          "note": "A boat or ship that carries passengers, and sometimes vehicles, between stopping places.",
+          "path": "M550,186 580,169 589,144 635,131 647,101 669,94 688,124 716,128 733,108 750,110 754,141 779,155 791,186 789,218 757,231 643,252 551,251Z"
+        },
+        {
+          "wordId": "vehicle.speedboat",
+          "label": "Speedboat",
+          "note": "A motorboat designed to travel quickly on water.",
+          "path": "M14,401 31,376 78,372 114,352 160,351 184,366 224,374 246,385 217,416 178,437 47,436 18,427Z"
+        },
+        {
+          "wordId": "vehicle.yacht",
+          "label": "Yacht",
+          "note": "A boat used for leisure, powered by sails or an engine.",
+          "path": "M254,421 281,400 298,362 279,362 289,341 293,318 306,313 306,297 324,293 327,310 340,319 341,328 399,330 460,351 546,361 549,373 525,403 489,439 282,442 253,435Z"
+        },
+        {
+          "wordId": "vehicle.jet-ski",
+          "label": "Jet ski",
+          "note": "A small powered watercraft that a rider sits or stands on.",
+          "path": "M565,416 589,397 599,375 617,369 666,378 684,364 656,360 649,353 669,347 705,352 726,365 758,390 778,414 766,434 742,447 594,442 566,433Z"
+        }
+      ],
+      "sourcePath": "originals/watercraft.png",
+      "originalPath": "artwork/originals/teaching-scenes/watercraft.png",
+      "sourceSha256": "46e63fedd5b8cc4379833058636fbd009bf88b6f2c387bfeafc6ff13aa416927",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nCalm coastal marina, six complete and clearly separated vessels in two rows. Top blue open motorboat, large cargo container ship, broad yellow-and-blue ferry with bow ramp; bottom red speedboat, white luxury motor yacht, yellow-blue jet ski. No overlaps.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/watercraft.png",
+      "runtimeSha256": "36d39a8b7a82fa8f831e85a54ba7df226b102b9083970d763acdb093fb5464eb",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "small-boats",
+      "title": "Boats and paddles",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Rowboat, sailboat, canoe and kayak shown together on a lake.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "vehicle.rowboat",
+      "targets": [
+        {
+          "wordId": "vehicle.rowboat",
+          "label": "Rowboat",
+          "note": "A small boat moved using oars.",
+          "path": "M28,275 37,261 96,218 72,195 64,165 87,149 148,148 236,168 237,157 255,163 305,190 315,211 379,248 386,261 373,266 349,257 326,238 298,220 280,266 216,265 137,253 80,233 55,272 44,282Z"
+        },
+        {
+          "wordId": "vehicle.sailboat",
+          "label": "Sailboat",
+          "note": "A boat that can use wind in its sails to move.",
+          "path": "M461,209 570,16 576,15 633,55 674,104 718,184 734,209 734,221 715,251 665,262 484,264 470,246Z"
+        },
+        {
+          "wordId": "vehicle.canoe",
+          "label": "Canoe",
+          "note": "An open boat. This canoe is shown with a paddle that has one blade.",
+          "path": "M28,410 40,367 52,354 86,366 201,351 202,329 216,324 225,330 220,346 285,337 374,318 385,345 386,366 374,396 317,418 168,428 144,466 130,476 107,472 111,455 125,435 56,437 32,430Z"
+        },
+        {
+          "wordId": "vehicle.kayak",
+          "label": "Kayak",
+          "note": "A narrow boat with a low seat. This kayak is shown with a paddle that has a blade at each end.",
+          "path": "M424,414 458,393 514,365 562,346 618,334 689,327 775,322 777,332 755,363 726,393 768,386 776,394 774,406 758,419 723,423 568,454 549,470 500,481 485,472 484,457 505,443 535,438 442,443 430,432Z"
+        },
+        {
+          "wordId": "part.sail",
+          "label": "Sail",
+          "note": "A large sheet of strong material that catches wind to help move a boat.",
+          "path": "M463,208 569,23 579,16 630,54 663,94 713,183 582,198 489,205Z"
+        }
+      ],
+      "sourcePath": "originals/small-boats.png",
+      "originalPath": "artwork/originals/teaching-scenes/small-boats.png",
+      "sourceSha256": "b9514a60413a7e3aa91d16bec3979ea6e25a2b214a04aca1ad3c530ce7be523a",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nQuiet lakeside display from slightly above, four separated boats. Upper left wooden rowboat and attached oars, upper right blue sailboat with large cream sail; lower left ochre canoe with single-blade paddle, lower right blue kayak with double-bladed paddle. No people.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/small-boats.png",
+      "runtimeSha256": "c2f5455921a7f2575016eeba1d2b083fc13ca3f3f78c088f707af6370d95bea7",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "aircraft",
+      "title": "Aircraft and spacecraft",
+      "width": 1536,
+      "height": 1024,
+      "alt": "A fixed-wing airplane, helicopter, balloon, glider, shuttle and rocket, with visible wing, rotor and propeller.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "vehicle.airplane",
+      "targets": [
+        {
+          "wordId": "vehicle.airplane",
+          "label": "Airplane",
+          "note": "An aircraft with fixed wings that is moved through the air by an engine.",
+          "path": "M11,89 48,75 115,88 185,103 228,114 273,116 272,96 280,92 280,107 277,116 321,118 330,127 304,136 274,137 275,153 286,184 282,191 275,184 265,165 250,177 251,201 247,216 233,220 223,210 225,198 214,191 199,187 172,187 153,209 149,218 134,220 127,210 128,194 131,182 54,178 50,171 19,170 18,162 58,158 52,130 64,117 88,150 148,124 91,110 49,102 15,99Z"
+        },
+        {
+          "wordId": "vehicle.helicopter",
+          "label": "Helicopter",
+          "note": "An aircraft lifted by turning rotor blades above its body.",
+          "path": "M302,55 321,51 418,66 446,73 471,73 593,62 611,67 610,71 488,83 472,89 468,99 497,106 513,122 573,126 591,89 604,89 593,126 607,126 601,147 587,149 589,169 575,169 566,152 526,157 510,174 494,187 507,204 523,208 523,217 466,224 410,221 353,218 349,212 352,205 376,209 383,193 360,184 348,176 349,161 372,135 391,121 436,102 450,95 448,84Z"
+        },
+        {
+          "wordId": "vehicle.hot-air-balloon",
+          "label": "Hot air balloon",
+          "note": "A large balloon lifted by warm air, with a basket underneath.",
+          "path": "M627,83 640,48 670,23 704,17 747,23 774,42 789,77 784,112 769,138 729,176 724,219 709,225 690,220 686,194 674,171 650,144 634,116Z"
+        },
+        {
+          "wordId": "vehicle.glider",
+          "label": "Glider",
+          "note": "An aircraft designed to glide through the air without engine power.",
+          "path": "M8,449 50,426 123,387 51,378 53,331 14,335 10,330 55,323 97,321 105,325 72,331 76,364 143,375 181,363 306,312 332,309 326,316 231,367 255,392 257,404 249,411 201,410 191,417 178,416 173,405 138,402 45,440 19,453Z"
+        },
+        {
+          "wordId": "vehicle.space-shuttle",
+          "label": "Space shuttle",
+          "note": "A reusable spacecraft whose winged orbiter returned to Earth and landed on a runway.",
+          "path": "M287,438 312,407 339,384 385,371 485,356 509,316 551,273 578,270 575,282 557,343 568,349 577,358 575,373 586,392 583,409 605,433 612,441 604,449 515,451 516,463 510,474 497,476 485,470 487,454 359,453 355,476 346,482 335,476 331,465 333,455 307,452 291,446Z"
+        },
+        {
+          "wordId": "vehicle.rocket",
+          "label": "Rocket",
+          "note": "A vehicle whose engines push it upwards and can carry things into space.",
+          "path": "M649,475 661,448 662,363 670,344 681,354 681,278 696,250 699,237 704,238 708,253 716,272 719,355 726,342 733,354 738,370 737,443 750,474 739,478 739,494 720,496 716,480 711,483 713,494 689,496 686,480 681,481 682,493 660,495 658,488 664,477Z"
+        },
+        {
+          "wordId": "part.wing",
+          "label": "Wing",
+          "note": "A shaped part of an aircraft that helps support it in flight.",
+          "path": "M11,88 51,74 112,88 184,101 241,116 319,118 329,124 326,131 293,136 220,133 161,126 110,116 61,106 18,100 11,96Z"
+        },
+        {
+          "wordId": "part.rotor",
+          "label": "Rotor",
+          "note": "The set of turning blades above a helicopter that helps lift it.",
+          "path": "M302,55 321,51 426,67 445,74 460,69 473,73 489,73 591,61 611,65 612,71 488,84 470,85 470,97 449,97 449,84 426,80 304,61Z"
+        },
+        {
+          "wordId": "part.propeller",
+          "label": "Propeller",
+          "note": "A set of turning blades that push air to move this airplane forwards.",
+          "path": "M242,136 254,134 268,112 271,98 277,91 281,96 277,117 268,137 272,143 268,151 275,166 284,182 287,188 283,192 276,187 267,170 262,152 251,153 243,148Z"
+        }
+      ],
+      "sourcePath": "originals/aircraft.png",
+      "originalPath": "artwork/originals/teaching-scenes/aircraft.png",
+      "sourceSha256": "eb6dbae9ecd47333b9d8002888fb9259348db3681b06d89744027bc682e7dbb6",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nAir museum display, six COMPLETE separated aircraft in two tiers. Top cream fixed-wing airplane with visible wing and separate nose propeller, red helicopter with clearly distinct long rotor, colourful hot air balloon. Bottom left long-wing sailplane glider, middle cream-black space shuttle orbiter, right vertical rocket. All parts within frame.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/aircraft.png",
+      "runtimeSha256": "cc5aacc195aba0a7c0f5b40376374d5cf31ab9b2c2383810d77868e0767e8020",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "car-cockpit",
+      "title": "Inside a parked car",
+      "width": 1536,
+      "height": 1024,
+      "alt": "A parked car cutaway with a steering wheel, exposed engine, diagonal seat belt and child seat.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "part.steering-wheel",
+      "targets": [
+        {
+          "wordId": "part.steering-wheel",
+          "label": "Steering wheel",
+          "note": "A wheel-shaped control used to steer many vehicles.",
+          "path": "M452 282 Q439 276 445 254 Q452 229 476 207 Q487 195 496 199 Q508 204 504 223 Q500 251 477 276 Q463 290 452 282Z"
+        },
+        {
+          "wordId": "part.engine",
+          "label": "Engine",
+          "note": "A machine that supplies power to move many vehicles.",
+          "path": "M578,308 579,267 585,244 606,227 645,222 678,223 705,233 722,237 740,251 749,271 747,308 726,318 703,316 681,316 646,311 615,311Z"
+        },
+        {
+          "wordId": "part.seat-belt",
+          "label": "Seat belt",
+          "note": "A belt that helps hold a person in their seat. An adult checks the right belt or restraint for a child.",
+          "path": "M307,215 316,208 328,211 342,229 369,263 398,302 402,314 384,327 370,338 360,355 354,373 336,371 334,363 341,344 350,335 380,307 354,275 330,246Z"
+        },
+        {
+          "wordId": "safety.child-car-seat",
+          "label": "Child car seat",
+          "note": "A seat designed to protect a child travelling in a car. An adult checks the child's restraint.",
+          "path": "M132,217 135,202 144,192 163,188 192,188 206,193 218,208 223,226 238,244 245,268 257,273 268,287 274,306 272,320 258,330 232,334 193,334 169,327 154,315 145,287 137,263 133,240Z"
+        }
+      ],
+      "sourcePath": "originals/car-cockpit.png",
+      "originalPath": "artwork/originals/teaching-scenes/car-cockpit.png",
+      "sourceSha256": "df5f1b4368090a0ab13cead683d45e6b8050be6f54764809062831626a592725",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nSingle parked blue family car with front to right, broad side cutaway. Front bonnet open, engine clearly exposed. Inside the cutaway show an unobstructed black steering wheel forward of the front seat, a diagonal dark seat belt across that empty front seat, and a distinct blue child restraint in the back seat. No people.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/car-cockpit.png",
+      "runtimeSha256": "ef21621e27286dc76a64ebaf4be93a48af10df3b1a0c474e7c81ec9836b027dd",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "car-front",
+      "title": "Car lights and mirrors",
+      "width": 1536,
+      "height": 1024,
+      "alt": "A blue car with separate detail views of a headlight, amber indicator and side mirror.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "part.headlight",
+      "targets": [
+        {
+          "wordId": "part.headlight",
+          "label": "Headlight",
+          "note": "A light on the front of a vehicle that helps light the way.",
+          "path": "M288,253 324,253 365,268 388,289 398,306 372,303 331,300 312,288Z M541,172 558,136 576,114 578,104 598,105 608,114 661,92 711,80 737,76 744,64 764,64 770,79 785,89 780,115 751,174 742,201 717,205 704,194 650,201 586,200 551,188Z"
+        },
+        {
+          "wordId": "part.indicator",
+          "label": "Indicator",
+          "note": "A light that flashes to tell others a driver intends to turn or change lanes.",
+          "path": "M345,309 359,299 380,300 399,306 400,313 377,314Z M600,259 610,249 640,241 718,241 749,246 750,257 739,281 720,303 690,310 619,310 603,301Z"
+        },
+        {
+          "wordId": "part.mirror",
+          "label": "Vehicle mirror",
+          "note": "A mirror that helps a driver or rider see around or behind a vehicle.",
+          "path": "M156,207 165,194 195,190 205,195 212,214 221,223 216,234 191,231 159,221Z M575,482 588,433 610,384 628,354 635,358 639,393 664,371 697,364 746,368 772,387 779,414 778,443 763,455 725,463 638,466 584,486Z"
+        }
+      ],
+      "sourcePath": "originals/car-front.png",
+      "originalPath": "artwork/originals/teaching-scenes/car-front.png",
+      "sourceSha256": "3ac8f345f321b388d475e4e57b04f8c6ee285ab0198d564ea803611d9ca1b4b1",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nComplete blue compact car parked in right-facing front three-quarter view. One isolated silver headlight, a separate amber indicator below it, and the near-side mirror clearly visible against pale background.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/car-front.png",
+      "runtimeSha256": "f1c04fa7bac923de433dd55ab6ea307c8f46fcd01abcf005edd914bce14b6caa",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "cycle-safety",
+      "title": "Cycling equipment",
+      "width": 1536,
+      "height": 1024,
+      "alt": "A cyclist standing with a blue bicycle, helmet, vest, brake and rear reflector visible.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "person.cyclist",
+      "targets": [
+        {
+          "wordId": "person.cyclist",
+          "label": "Cyclist",
+          "note": "A person riding a bicycle.",
+          "path": "M291,133 296,101 312,81 306,64 310,37 329,15 357,4 389,9 415,22 426,40 420,50 420,72 415,98 391,116 408,145 421,166 455,183 483,194 513,192 527,201 533,216 523,230 492,232 465,242 439,230 415,221 414,268 399,268 420,402 432,478 471,495 479,509 474,518 407,520 399,513 399,486 381,419 356,352 341,390 314,484 344,501 355,513 354,524 280,525 274,518 277,486 284,391 310,266 314,155 302,145Z"
+        },
+        {
+          "wordId": "part.brake",
+          "label": "Brake",
+          "note": "A brake slows or stops a vehicle. On this bicycle the hand lever operates the brake at the wheel.",
+          "path": "M519,302 526,299 534,304 537,313 550,318 550,326 542,331 552,347 544,356 532,350 527,338 527,323 519,320Z"
+        },
+        {
+          "wordId": "safety.helmet",
+          "label": "Helmet",
+          "note": "A strong covering worn to help protect the head.",
+          "path": "M307,61 312,38 326,21 348,9 366,5 386,9 407,18 422,35 425,44 412,50 388,51 365,58 337,73 324,80 314,77Z"
+        },
+        {
+          "wordId": "safety.reflector",
+          "label": "Reflector",
+          "note": "A piece that sends light back towards where it came from.",
+          "path": "M310,255 317,222 319,167 319,136 326,120 339,113 355,118 370,135 391,160 395,186 386,183 377,160 364,147 351,132 338,130 331,147 333,167 349,187 376,201 397,208 407,215 415,263 407,270 400,268 394,228 392,265 380,273 323,270 308,264Z"
+        },
+        {
+          "wordId": "safety.reflective-vest",
+          "label": "Reflective vest",
+          "note": "A vest with strips that reflect light and help people see the wearer.",
+          "path": "M228,290 237,287 265,289 271,296 270,306 265,313 229,311 226,305Z"
+        }
+      ],
+      "sourcePath": "originals/cycle-safety.png",
+      "originalPath": "artwork/originals/teaching-scenes/cycle-safety.png",
+      "sourceSha256": "8025971057701b8f112227e8d67ac470d114d156c52fa27368c049485d0bce29",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nStationary cyclist straddling a blue bike in right-facing side view. Clear yellow vented helmet, separate fluorescent vest with silver strips, rectangular amber rear reflector and conspicuous dark-red front rim brake below fork crown. Both feet planted, all visible.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/cycle-safety.png",
+      "runtimeSha256": "552ddef4727fe2d5993e3e6856c550767673d1699a18fd9a9eb38d3b1b03fbbf",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "street-crossing",
+      "title": "Street and crossing",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Road, pavement, protected cycle lane and zebra crossing with separate signs and a waiting pedestrian.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "place.road",
+      "targets": [
+        {
+          "wordId": "place.road",
+          "label": "Road",
+          "note": "A way made for vehicles to travel along.",
+          "path": "M405,276 800,222 800,364 595,428 563,403 524,374 481,345 440,319Z"
+        },
+        {
+          "wordId": "place.pavement",
+          "label": "Pavement",
+          "note": "A path beside a road for people to walk along.",
+          "path": "M139,211 302,185 307,209 307,272 282,298 143,310 126,297 130,278Z"
+        },
+        {
+          "wordId": "place.cycle-lane",
+          "label": "Cycle lane",
+          "note": "A marked part of a road or route for people riding bicycles.",
+          "path": "M267,532 800,370 800,445 524,533Z"
+        },
+        {
+          "wordId": "place.pedestrian-crossing",
+          "label": "Pedestrian crossing",
+          "note": "A place marked for people to cross a road.",
+          "path": "M145,327 356,295 585,420 325,491Z"
+        },
+        {
+          "wordId": "person.pedestrian",
+          "label": "Pedestrian",
+          "note": "A person travelling along a route on foot or using a mobility aid.",
+          "path": "M63,188 66,145 77,130 65,117 69,104 79,89 97,79 113,79 125,86 128,105 121,119 116,126 127,143 132,182 131,207 129,231 119,239 120,253 131,267 122,275 95,274 88,268 85,240 75,235 77,200 66,196Z"
+        },
+        {
+          "wordId": "safety.traffic-light",
+          "label": "Traffic light",
+          "note": "A set of coloured lights that gives signals to road users.",
+          "path": "M456,16 511,10 520,14 520,25 530,31 528,48 516,63 529,75 527,90 516,104 527,117 525,133 516,144 513,153 503,155 502,229 508,234 507,242 493,247 475,247 468,241 469,232 475,229 476,155 461,152 456,147Z"
+        },
+        {
+          "wordId": "safety.stop-sign",
+          "label": "Stop sign",
+          "note": "A road sign telling drivers to stop.",
+          "path": "M610,51 635,27 676,25 697,50 700,87 678,113 659,116 659,207 667,212 666,219 644,220 641,215 647,207 647,115 635,115 610,89Z"
+        },
+        {
+          "wordId": "safety.crossing-signal",
+          "label": "Crossing signal",
+          "note": "A signal for people crossing the road. This red figure means wait.",
+          "path": "M306,123 314,117 352,117 360,123 361,166 352,172 333,174 333,200 341,207 340,221 333,230 333,262 340,268 339,278 322,282 313,276 314,267 318,262 318,230 314,224 313,202 318,198 319,174 308,170 304,163Z"
+        }
+      ],
+      "sourcePath": "originals/street-crossing.png",
+      "originalPath": "artwork/originals/teaching-scenes/street-crossing.png",
+      "sourceSha256": "0990a04a9f9cbce0600287bc4ae6fefecd65c9d98e346091d363a026f84af0ea",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nOne child-friendly street from elevated oblique viewpoint. Broad grey road with zebra crossing, raised pale sidewalk with one waiting adult well back, separate green lane with bicycle pictogram. Distinct road traffic light, blank red octagonal stop sign, smaller pedestrian crossing signal with person pictogram. All three separated.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/street-crossing.png",
+      "runtimeSha256": "76c7e3473a0743ccdf8a5511b283c9c2cfd6ece8c92c029f438da4ee736cbab8",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "route-features",
+      "title": "Ways through town",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Four route features shown as separate dioramas: junction, roundabout, bridge and tunnel.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "place.junction",
+      "targets": [
+        {
+          "wordId": "place.junction",
+          "label": "Junction",
+          "note": "A place where roads meet.",
+          "path": "M26,105 370,103 370,165 250,167 242,178 242,253 160,253 158,176 149,168 25,167Z"
+        },
+        {
+          "wordId": "place.roundabout",
+          "label": "Roundabout",
+          "note": "A road junction where vehicles travel around a central area.",
+          "path": "M571,11 631,11 633,60 678,94 697,136 702,161 725,179 775,211 746,256 672,221 644,232 603,239 562,235 530,218 455,254 420,211 495,166 504,132 521,102 568,63Z"
+        },
+        {
+          "wordId": "place.bridge",
+          "label": "Bridge",
+          "note": "A structure that carries a route over a gap, water or another route.",
+          "path": "M17,381 65,364 82,358 128,359 194,353 258,353 323,362 370,371 386,388 383,435 333,455 288,472 271,449 256,429 224,415 197,413 160,424 139,443 127,466 101,477 75,461 49,442 17,430Z"
+        },
+        {
+          "wordId": "place.tunnel",
+          "label": "Tunnel",
+          "note": "A passage through or under something, such as a hill.",
+          "path": "M467,519 517,466 500,439 499,412 507,389 524,366 553,346 585,338 615,338 649,351 676,376 693,405 700,432 692,459 728,518Z"
+        }
+      ],
+      "sourcePath": "originals/route-features.png",
+      "originalPath": "artwork/originals/teaching-scenes/route-features.png",
+      "sourceSha256": "74f7de3be5cbc45eea2b99594a0c3c31917fcdadca6c7a9162fa529dc558d71a",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nFour separate gouache dioramas with whitespace, two by two. Upper left T junction, upper right three-exit roundabout with planted central island and no arrows. Lower left stone arch bridge over stream, lower right road tunnel through hill.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/route-features.png",
+      "runtimeSha256": "ca99533f56136a0609c2773f8ed040b2f3c8a832cd4cc55d4c6a81573fca14cf",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "parking-and-repair",
+      "title": "Parking, repair and refuelling",
+      "width": 1536,
+      "height": 1024,
+      "alt": "A car park, garage, fuel station, a parked car with a person walking away, and a mechanic holding a spanner.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "place.car-park",
+      "targets": [
+        {
+          "wordId": "place.car-park",
+          "label": "Car park",
+          "note": "An area where vehicles can be parked.",
+          "path": "M5,187 23,147 43,124 223,124 252,174 254,201 13,203Z"
+        },
+        {
+          "wordId": "place.garage",
+          "label": "Repair garage",
+          "note": "A place where people repair vehicles.",
+          "path": "M274,193 291,178 289,81 280,73 395,25 409,21 532,65 532,74 526,77 526,176 542,194 540,201 274,201Z"
+        },
+        {
+          "wordId": "place.fuel-station",
+          "label": "Fuel station",
+          "note": "A place where vehicles can receive fuel.",
+          "path": "M553,65 555,40 757,27 793,48 794,71 751,80 751,165 774,167 774,177 755,183 597,183 576,180 576,172 602,165 602,79Z"
+        },
+        {
+          "wordId": "action.park",
+          "label": "Park",
+          "note": "Bring a vehicle to a stop in a place where it can stay.",
+          "path": "M15,447 51,405 59,369 64,342 83,311 108,295 153,287 219,287 245,291 263,304 268,332 280,332 285,342 278,351 281,385 273,425 256,446 273,450 296,390 317,386 319,348 312,344 312,309 319,286 329,271 341,264 339,255 338,242 349,232 365,232 375,242 373,257 367,268 382,278 386,306 392,330 397,348 394,357 379,360 372,397 381,424 382,433 369,442 362,438 353,418 340,440 339,451 328,457 322,449 318,433 324,407 309,391 271,473 21,475Z"
+        },
+        {
+          "wordId": "person.mechanic",
+          "label": "Mechanic",
+          "note": "A person who maintains or repairs machines such as vehicles.",
+          "path": "M547,304 551,289 567,279 591,271 600,257 590,244 587,234 594,222 608,216 623,219 635,226 637,235 627,240 627,256 618,267 637,277 649,296 654,276 656,270 652,264 654,252 660,249 663,257 668,254 673,251 676,262 670,269 667,283 670,293 666,322 655,331 645,328 642,355 644,393 645,419 642,459 648,479 656,490 658,503 645,507 618,501 613,490 610,461 603,413 599,376 594,409 590,450 589,478 582,500 573,507 557,509 554,504 559,492 564,479 566,454 564,416 566,365 572,352 560,347 552,330Z"
+        }
+      ],
+      "sourcePath": "originals/parking-and-repair.png",
+      "originalPath": "artwork/originals/teaching-scenes/parking-and-repair.png",
+      "sourceSha256": "9141ff4255191d8b3d429b3cd157b328551cbf11c3d24ae53cb47253a238b79e",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nFive distinct small scenes with clear space. Top: marked car park with blank bays, repair garage, fuel station with pumps. Bottom: adult walking away from a parked car inside a marked bay, and a full-length mechanic holding a silver spanner.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/parking-and-repair.png",
+      "runtimeSha256": "36018617b2623d4d0ea5451feaa5c7bd595eba827cbe4d2abefa97186a3e4fa3",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "harbour-and-canal",
+      "title": "Harbour and canal",
+      "width": 1536,
+      "height": 1024,
+      "alt": "A sheltered harbour basin with a tug, a separate timber dock, and a narrow canal with a lock gate.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "place.harbour",
+      "targets": [
+        {
+          "wordId": "place.harbour",
+          "label": "Harbour",
+          "note": "A sheltered area of water where boats and ships can stay.",
+          "path": "M0,144 48,122 102,108 173,99 454,97 456,65 459,55 466,46 476,52 481,66 481,100 505,105 531,131 557,141 535,228 515,276 443,286 286,285 287,239 227,225 202,182 187,149 153,142 139,189 91,214 32,247 0,260Z"
+        },
+        {
+          "wordId": "place.dock",
+          "label": "Ferry dock",
+          "note": "A place beside the water where a ferry ties up so people can get on or off.",
+          "path": "M167,451 175,416 179,408 198,406 204,419 248,393 249,366 263,365 270,376 304,357 305,336 321,332 325,344 354,326 355,306 367,303 375,310 396,290 400,278 413,276 416,289 472,289 477,282 492,282 494,293 509,294 509,308 503,316 501,375 488,378 483,360 458,374 457,406 445,411 438,392 411,409 411,455 399,460 390,452 389,413 356,436 356,472 341,478 333,477 322,485 310,481 305,470 276,467Z"
+        },
+        {
+          "wordId": "place.canal",
+          "label": "Canal",
+          "note": "A waterway made or changed by people for boats or water to pass along.",
+          "path": "M514,498 543,406 569,326 589,250 613,203 650,142 675,93 714,93 742,147 771,201 800,257 800,474 762,490 701,512 619,512Z"
+        },
+        {
+          "wordId": "vehicle.tugboat",
+          "label": "Tugboat",
+          "note": "A strong boat that helps move other boats or ships.",
+          "path": "M30,272 44,259 88,247 104,239 117,236 121,213 122,200 141,200 147,220 153,215 156,177 163,172 163,153 172,143 173,178 185,184 180,195 200,201 209,205 221,205 224,222 218,239 221,248 266,245 278,252 285,266 281,280 271,286 264,308 218,315 87,318 49,311 36,298Z"
+        }
+      ],
+      "sourcePath": "originals/harbour-and-canal.png",
+      "originalPath": "artwork/originals/teaching-scenes/harbour-and-canal.png",
+      "sourceSha256": "d1dffe8dbe747346a3ba2d6dd3e35f04cb5a25ce119983eee4bdea71c1adbd30",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nConnected waterfront from mildly elevated view. Left wide sheltered harbour basin with enclosing breakwater; timber dock prominent at lower middle; complete tugboat with black fenders in basin to left. At right narrow straight engineered canal with stone banks and visible lock gate. All targets separate.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/harbour-and-canal.png",
+      "runtimeSha256": "f18fbc207f203ed10de7364ac8dca754707192abcc35bba1ce3ad0a1119de99d",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "crew-and-passengers",
+      "title": "People aboard",
+      "width": 1536,
+      "height": 1024,
+      "alt": "A bus cutaway with its driver, passenger and empty seat, alongside a pilot, boat captain and train conductor.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "person.driver",
+      "targets": [
+        {
+          "wordId": "person.driver",
+          "label": "Driver",
+          "note": "A person who controls a road vehicle.",
+          "path": "M281,87 282,76 298,64 319,63 329,69 323,77 324,87 319,103 312,109 333,117 349,114 357,110 367,114 366,120 350,128 344,140 336,150 320,153 315,162 286,159 284,135Z"
+        },
+        {
+          "wordId": "person.passenger",
+          "label": "Passenger",
+          "note": "A person travelling in a vehicle who is not operating it.",
+          "path": "M79,102 82,88 96,79 108,79 120,89 116,107 112,116 128,120 139,138 143,151 154,155 164,172 163,186 169,205 174,211 158,213 142,205 130,184 123,178 108,169 89,170 84,153 80,132Z"
+        },
+        {
+          "wordId": "part.seat",
+          "label": "Seat",
+          "note": "A place made for a person to sit.",
+          "path": "M171,119 177,114 202,114 212,118 220,151 233,153 245,163 246,182 231,194 230,213 220,213 218,190 195,190 195,213 185,213 184,189 176,183 174,157Z"
+        },
+        {
+          "wordId": "action.ride",
+          "label": "Ride",
+          "note": "Travel in or on a vehicle. This passenger is riding on a bus.",
+          "path": "M11,217 16,66 26,45 49,31 238,30 246,22 284,22 294,29 366,30 386,42 401,66 410,143 414,198 412,223 354,227 345,241 325,252 302,248 289,228 117,230 108,244 88,251 65,246 50,227 22,225Z"
+        },
+        {
+          "wordId": "person.pilot",
+          "label": "Pilot",
+          "note": "A person trained to control an aircraft.",
+          "path": "M481,62 509,37 537,25 555,19 563,34 566,53 555,66 572,83 572,98 559,111 553,120 568,139 580,157 591,157 596,140 605,139 612,145 606,160 613,175 634,199 651,184 654,163 666,158 679,165 674,184 657,208 628,228 595,239 567,244 540,247 513,232 509,187 500,157 501,129 514,116 506,103 497,98 493,78Z"
+        },
+        {
+          "wordId": "person.boat-captain",
+          "label": "Boat captain",
+          "note": "The person in charge of a boat, such as a ferry.",
+          "path": "M75,434 80,396 105,366 113,356 101,344 94,331 84,325 87,316 110,286 143,279 155,288 170,302 174,311 159,317 174,333 173,350 158,359 150,368 172,376 199,410 213,393 215,377 226,369 239,376 245,395 231,405 215,420 183,447 173,463 170,516 85,517 76,499Z"
+        },
+        {
+          "wordId": "person.train-conductor",
+          "label": "Train conductor",
+          "note": "A member of the train crew who helps passengers. On some trains they check tickets.",
+          "path": "M516,447 516,416 528,382 541,360 547,350 539,333 533,316 535,307 554,293 581,286 596,292 601,303 614,310 613,319 599,324 598,343 593,357 582,365 607,375 617,401 632,399 638,383 640,373 648,352 658,354 665,360 663,375 654,387 649,413 635,438 624,440 627,483 621,522 553,521 539,517 531,485Z"
+        }
+      ],
+      "sourcePath": "originals/crew-and-passengers.png",
+      "originalPath": "artwork/originals/teaching-scenes/crew-and-passengers.png",
+      "sourceSha256": "05f923e0d2f2e0a58e3fbc8da266faa8a7e09dc4286f381410bbe8b26a808e23",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nFour spaced vehicle cutaway vignettes in two rows. Upper left open-sided bus with driver at wheel, seated passenger separate from driver, one visibly empty seat, whole bus representing ride. Upper right airline pilot at controls. Lower left ferry captain with ship's wheel. Lower right train conductor holding a ticket and punch at a railway carriage doorway.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/crew-and-passengers.png",
+      "runtimeSha256": "bad53b4ed6ba8f42642351cc68b1dfd790c2f90a213bad84330180e0139c70b6",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "carrying-and-helping",
+      "title": "Loading and helping",
+      "width": 1536,
+      "height": 1024,
+      "alt": "A parcel delivery, van loading and unloading, firefighter with hose, and cargo bicycle.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "person.delivery-worker",
+      "targets": [
+        {
+          "wordId": "person.delivery-worker",
+          "label": "Delivery worker",
+          "note": "A person who brings parcels or other goods to people.",
+          "path": "M41,234 45,195 44,149 51,137 36,124 29,112 30,95 40,72 53,58 59,54 54,43 55,29 63,19 76,13 90,17 98,25 92,34 91,47 82,58 97,61 110,77 112,87 127,93 129,124 124,135 107,141 104,166 106,216 117,233 118,243 101,248 75,244 67,237 57,249 42,247Z"
+        },
+        {
+          "wordId": "action.load",
+          "label": "Load",
+          "note": "To put things into or onto a vehicle for carrying.",
+          "path": "M168,187 167,110 173,70 187,46 223,39 349,37 375,45 392,61 422,93 448,111 462,134 466,172 459,189 442,193 431,214 409,221 389,214 375,196 310,198 307,208 293,219 280,216 278,191 254,214 250,232 232,235 221,230 224,214 205,217 190,202Z"
+        },
+        {
+          "wordId": "action.unload",
+          "label": "Unload",
+          "note": "To take carried things off or out of a vehicle.",
+          "path": "M489,186 491,116 495,79 508,49 528,40 616,36 707,39 727,50 750,81 772,112 787,135 792,175 787,191 776,196 769,213 751,219 726,213 722,231 734,240 727,253 709,257 696,249 690,237 676,210 658,237 662,246 653,254 640,246 636,233 651,208 647,194 576,195 565,212 545,221 524,217 508,202Z"
+        },
+        {
+          "wordId": "person.firefighter",
+          "label": "Firefighter",
+          "note": "A person trained to help put out fires and rescue people.",
+          "path": "M13,493 21,484 48,475 69,477 88,452 101,423 119,399 137,383 118,377 114,363 118,331 127,309 143,306 135,300 140,277 148,262 159,253 176,252 187,261 198,267 201,274 192,285 191,300 183,310 192,321 206,338 239,337 256,332 263,340 266,350 254,361 233,364 218,377 200,380 195,397 210,448 218,488 231,498 234,508 224,515 189,514 184,506 176,479 169,443 155,468 148,504 141,514 120,517 115,511 117,493 124,438 104,466 95,489 68,505 45,510 22,507 13,502Z"
+        },
+        {
+          "wordId": "vehicle.cargo-bicycle",
+          "label": "Cargo bicycle",
+          "note": "A bicycle built with space to carry a load.",
+          "path": "M327,434 337,401 348,379 344,366 358,359 402,356 417,338 399,334 400,321 417,315 456,317 458,327 436,337 428,366 487,414 528,418 530,378 522,320 510,311 515,300 483,300 480,292 484,287 525,286 548,294 549,303 536,317 546,352 577,345 641,348 705,355 712,374 722,393 746,402 767,427 777,450 775,474 755,496 729,503 706,493 689,475 683,452 607,453 593,501 575,503 589,452 502,453 486,462 463,458 445,481 419,498 395,503 366,497 345,480 333,458Z"
+        }
+      ],
+      "sourcePath": "originals/carrying-and-helping.png",
+      "originalPath": "artwork/originals/teaching-scenes/carrying-and-helping.png",
+      "sourceSha256": "cb6b40164b18e02666b520066b008d67179218a832282851adaed5fd29d32953",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nFive separated vignettes. Top left full delivery worker with parcel; top middle worker visibly walking IN toward the open van side door, holding box; top right worker visibly stepping OUT away from open van door with box. Bottom left firefighter holding hose, bottom right unoccupied cargo bicycle with load box.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/carrying-and-helping.png",
+      "runtimeSha256": "ddb38008f17137268f2fce80c0441ed7bebf6fee1680f83beda52cfce6ca2964",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "airfield",
+      "title": "Airport and runway",
+      "width": 1536,
+      "height": 1024,
+      "alt": "A terminal and control tower beside a runway, with one aircraft climbing and another touching down.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "place.airport",
+      "targets": [
+        {
+          "wordId": "place.airport",
+          "label": "Airport",
+          "note": "A place where aircraft take off and land and passengers begin or end flights.",
+          "path": "M0,300 30,299 30,250 26,249 17,221 23,211 28,199 41,199 41,181 44,181 44,198 57,198 57,178 60,178 60,199 78,204 85,212 80,246 69,248 69,297 125,283 166,277 197,279 234,295 232,306 234,320 285,320 288,328 278,330 278,355 0,359Z"
+        },
+        {
+          "wordId": "place.runway",
+          "label": "Runway",
+          "note": "A long prepared strip where aircraft take off or land.",
+          "path": "M0,401 392,400 448,402 545,415 627,415 694,401 800,400 800,469 0,472Z"
+        },
+        {
+          "wordId": "action.take-off",
+          "label": "Take off",
+          "note": "To leave the ground and begin flying.",
+          "path": "M402,149 435,141 460,137 432,76 449,71 490,102 552,106 639,69 702,45 734,40 759,42 771,51 773,60 754,78 742,86 745,105 745,115 731,116 728,106 733,96 700,110 703,128 690,143 653,146 644,149 646,159 637,165 624,162 620,152 612,152 613,161 600,167 588,161 590,149 544,157 497,165 450,163 441,156Z"
+        },
+        {
+          "wordId": "action.land",
+          "label": "Land",
+          "note": "To return to the ground or another landing surface from flight.",
+          "path": "M389,386 428,377 438,375 406,307 422,301 474,329 510,347 560,340 623,316 686,302 723,299 750,302 765,312 769,322 755,338 741,345 736,358 742,370 737,377 723,377 721,369 724,356 679,373 673,387 661,394 622,398 615,405 618,413 610,421 597,420 591,413 581,414 575,423 557,423 549,414 553,402 480,407 427,401 413,394Z"
+        }
+      ],
+      "sourcePath": "originals/airfield.png",
+      "originalPath": "artwork/originals/teaching-scenes/airfield.png",
+      "sourceSha256": "36f95b9ec4fc7d3ca8810fa4e764b5299b4e30418d647ee74813623c2efaa14a",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nTerminal and control tower far left. Broad marked runway in foreground. Upper right full aircraft climbing nose-up with gap below wheels; lower right different aircraft with main wheels touching runway and nosewheel still raised. Clearly separate the two action examples.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/airfield.png",
+      "runtimeSha256": "64397d445a80c55114b1b02e3f039b36e85e29058ada2b04b5ea5d79d2091d59",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "water-safety",
+      "title": "A safe trip on the water",
+      "width": 1536,
+      "height": 1024,
+      "alt": "A person wearing a life jacket sits in a floating rowboat. A separate anchor is visible below the waterline.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "safety.life-jacket",
+      "targets": [
+        {
+          "wordId": "safety.life-jacket",
+          "label": "Life jacket",
+          "note": "A jacket designed to help keep a person afloat in water.",
+          "path": "M197,110 201,98 212,89 228,84 246,90 258,105 271,92 281,91 293,102 300,125 301,155 298,179 290,184 265,182 252,190 235,187 226,198 201,198 197,178 199,150Z"
+        },
+        {
+          "wordId": "part.anchor",
+          "label": "Anchor",
+          "note": "A heavy object lowered from a boat to help hold it in place.",
+          "path": "M471,456 481,440 490,431 497,451 497,459 490,459 498,470 514,482 529,445 539,421 533,416 534,406 541,399 551,396 560,400 565,409 562,420 552,424 534,478 549,478 561,473 558,469 566,463 583,451 586,466 584,481 576,489 572,485 555,497 529,503 507,500 489,488 478,472 475,461Z"
+        },
+        {
+          "wordId": "action.float",
+          "label": "Float",
+          "note": "Stay at the surface of water. You can see this boat floating at the waterline.",
+          "path": "M51,204 69,192 103,185 149,176 189,181 200,190 191,202 235,211 294,209 361,206 412,200 473,187 532,182 565,171 576,179 560,213 544,246 523,275 468,282 377,288 285,287 209,282 141,282 79,271 68,251Z"
+        }
+      ],
+      "sourcePath": "originals/water-safety.png",
+      "originalPath": "artwork/originals/teaching-scenes/water-safety.png",
+      "sourceSha256": "77369ff7bb8c707f075dd44203873363951fdfff91279a878e91978bd3fb7284",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nOne simple waterside cutaway. An adult sits in a complete rowboat wearing clearly visible orange life jacket. The boat is visibly supported by the water. Nearby dark metal anchor on rope is separately visible underwater on a small seabed patch.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/water-safety.png",
+      "runtimeSha256": "9894169c238fe099d247ce6834655b9f9a00363899ed7d5bbe3f88f72f2cac80",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "rail-crossing",
+      "title": "Waiting at the railway crossing",
+      "width": 1536,
+      "height": 1024,
+      "alt": "A lowered railway crossing barrier spans the road, with a passing train behind it.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "safety.barrier",
+      "targets": [
+        {
+          "wordId": "safety.barrier",
+          "label": "Barrier",
+          "note": "An arm or fence that closes a route. This barrier closes the road at a railway crossing.",
+          "path": "M169,253 174,247 184,247 191,251 690,250 697,248 697,231 707,222 750,222 759,230 761,310 777,320 777,333 761,340 694,339 681,331 679,316 698,312 699,277 687,276 193,276 190,315 199,320 197,329 169,329 164,320 171,315 172,277 168,273Z"
+        }
+      ],
+      "sourcePath": "originals/rail-crossing.png",
+      "originalPath": "artwork/originals/teaching-scenes/rail-crossing.png",
+      "sourceSha256": "11ad452050aea8bf3abb3eaa2b935b14a5b9054b1433309422ecf77a5c52f3d1",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nLarge lowered red-white striped barrier spans the near road, separated from the passing train behind and the waiting adult well back. Slightly elevated viewpoint, whole barrier in view, no lettering.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/rail-crossing.png",
+      "runtimeSha256": "5e63a0378113a63b3668168d252b57856c582524f5d24ac9fcac06e20783e6f8",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    },
+    {
+      "id": "driving-actions",
+      "title": "Driving and stopping",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Four examples show driving, steering, turning, reversing and stopping at a bus shelter.",
+      "viewBox": "0 0 800 533",
+      "initialTarget": "action.drive",
+      "targets": [
+        {
+          "wordId": "action.drive",
+          "label": "Drive",
+          "note": "To control a moving road vehicle.",
+          "path": "M13,190 18,147 27,119 49,79 72,57 102,49 154,45 206,47 231,56 259,76 285,109 304,119 327,133 340,152 346,173 346,193 340,203 326,205 316,222 296,234 276,230 258,211 96,208 89,221 72,233 51,233 34,222 27,205 16,200Z"
+        },
+        {
+          "wordId": "action.steer",
+          "label": "Steer",
+          "note": "Control the direction a vehicle travels.",
+          "path": "M218 143 Q210 138 215 126 Q221 110 232 98 Q240 91 241 102 Q241 113 235 126 Q228 141 218 143Z"
+        },
+        {
+          "wordId": "action.turn",
+          "label": "Turn",
+          "note": "To change the direction you are facing or moving.",
+          "path": "M450,188 455,159 463,145 475,132 474,121 481,116 492,114 518,92 540,82 570,77 599,76 622,82 637,94 644,111 652,128 657,148 652,179 640,193 625,197 609,198 591,211 577,215 561,208 488,209 478,215 465,211 456,202Z"
+        },
+        {
+          "wordId": "action.reverse",
+          "label": "Reverse",
+          "note": "To move backwards.",
+          "path": "M30,351 38,346 52,348 60,328 68,311 78,295 96,287 164,283 229,286 246,296 258,316 272,347 292,349 301,356 302,366 291,376 279,375 288,401 298,431 298,474 290,486 286,504 278,516 260,517 251,508 251,483 78,483 78,506 69,516 53,516 43,506 41,479 35,470 35,435 42,409 48,375 37,374 30,368Z"
+        },
+        {
+          "wordId": "action.stop",
+          "label": "Stop",
+          "note": "To finish moving and stay still.",
+          "path": "M329,367 335,349 347,346 351,328 365,318 397,309 440,307 485,313 541,318 594,325 651,337 674,349 680,433 675,452 661,464 644,469 633,460 553,469 541,480 524,479 512,467 470,475 374,477 354,472 340,463 337,380 329,380Z"
+        }
+      ],
+      "sourcePath": "originals/driving-actions.png",
+      "originalPath": "artwork/originals/teaching-scenes/driving-actions.png",
+      "sourceSha256": "3b52ac2147575d2425ee8ef27114e545174ef1b316824177d77cdeed8ad37ecb",
+      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nFour separated vignettes in two rows. Upper left compact car cutaway with visible adult driving and a distinguishable steering wheel. Upper right car following a curved road. Lower left rear-view car with reverse lamps and adult looking back. Lower right bus stopped at its shelter with open doors.",
+      "background": "Full painted scene",
+      "pngHasAlphaChannel": false,
+      "runtimePath": "site/dist/images/teaching-scenes/driving-actions.png",
+      "runtimeSha256": "bd5022bf9f3cd2ab6ec969bcb1be090bee41550e2127791ec5ca43398e04fe4a",
+      "runtimeWidth": 1200,
+      "runtimeHeight": 800,
+      "status": "Reviewed in standalone preview; app integration pending"
+    }
+  ]
+}
