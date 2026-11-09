@@ -59,6 +59,15 @@ button:disabled{cursor:default}.standard-actions button:disabled{opacity:.55}
 .ticket-checks{display:flex;justify-content:center;gap:8px}.ticket-checks span{display:grid;place-items:center;background:#24764d;color:white;width:27px;height:27px;border-radius:50%}.ticket-checks span.used{background:#b94c44}
 .departure-ticket .hangman-keys{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px;margin:18px 0}.departure-ticket .hangman-key{min-width:0;min-height:44px;font-size:18px;padding:4px;border:1px solid #a9b7bb;border-radius:8px}.departure-ticket .hangman-key.correct{background:#bce7c4}.departure-ticket .hangman-key.wrong{background:#ead0ce}
 .game-card[data-mode=wheel] .vocab-wheel{animation:none!important;transition:none!important}.game-card[data-mode=wheel] .wheel-segment-emoji{transform:translate(-50%,-50%);width:16%;height:16%;font-size:0}.wheel-segment-emoji img{width:100%;height:100%;object-fit:contain}
+/* Transport Games menu (matched to Plants Games 2026-11-10). */
+.transport-game-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(10px,2vw,18px);width:100%}
+.transport-game-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:clamp(10px,2vw,16px);border:3px solid #d8bd7d;border-radius:22px;background:#fffbed;color:#1d4f73;font:inherit;cursor:pointer;box-shadow:0 6px 0 #c9a54a;transition:transform .15s ease}
+.transport-game-card:hover:not(:disabled){transform:translateY(-4px)}
+.transport-game-card img{width:100%;height:clamp(150px,30vh,280px);object-fit:contain}
+.transport-game-card strong{font-size:clamp(1.3rem,3vw,1.8rem)}
+.transport-game-card:disabled{cursor:default;opacity:.7;box-shadow:none}
+.transport-game-soon{padding:4px 10px;border-radius:999px;background:#1d4f73;color:#fff;font-size:.75rem;font-weight:900;text-transform:uppercase}
+@media(max-width:420px){.transport-game-cards{grid-template-columns:1fr}.transport-game-card img{height:150px}}
 /* Spin the Wheel reading card (matched to Plants 2026-11-10). */
 .game-card:is([data-mode=wheel],[data-mode=learn]):has(.learn-groups) #questionText{align-self:stretch;text-align:left}
 .game-card[data-mode=wheel] .wheel-segment-emoji--small{width:15%;height:15%}

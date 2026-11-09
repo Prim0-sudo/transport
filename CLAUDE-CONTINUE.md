@@ -124,6 +124,10 @@ Commit identity: `git -c user.name=Prim0-sudo -c user.email=Prim0-sudo@users.nor
 - Finish: You read this group of Transport words!
 - Fits 768x1024, 1280x800 and 375x812. Missing art: none new.
 
+## Transport Games (matched to Plants Games 2026-11-10)
+- Menu: big cream picture cards with the title only (was text buttons with descriptions), no helper line. Dispatch uses dispatch-banner.webp; Driving game is a disabled card marked Coming soon, using transport-games.webp until it has its own art.
+- Fits 1280x800, 768x1024 and 375x812 (phone stacks the cards). Missing art: a Driving game card picture.
+
 ## Queued by owner (after every activity matches Plants)
 
 - Plants presentation: design a full-topic PPT for the Plants game covering every category (everything the videos cover, plus more), and add a separate Media tab called Presentation for it.
