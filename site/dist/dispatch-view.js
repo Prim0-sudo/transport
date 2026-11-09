@@ -37,6 +37,12 @@
     ferry:{word:'vehicle.ferry', label:'Ferry', info:'Many seats · water', color:'#6cb4dc'},
     bicycle:{word:'vehicle.bicycle', label:'Bicycle', info:'1 rider · road', color:'#b9d98c'}
   };
+  // Miniature World overhead sprites (artwork/dispatch/miniature-world-fleet-v1, approved 2026-11-09).
+  // [phone length px, height/length, contact along the body: -1 rear end, 0 pivot, 1 front end]
+  const SPRITES = {
+    bus:[36, .2387, .7], 'school-bus':[36, .2412, .7], taxi:[28, .5411, .1], van:[29, .4492, -.7], truck:[34, .2988, -.15],
+    tractor:[37, .3336, -.45], ambulance:[30, .4722, -1], 'fire-engine':[35, .2743, .35], 'police-car':[27, .5403, .05], ferry:[32, .3123, -.55]
+  };
   const ON_WATER = 'The ferry travels on water. This trip is by road.';
   const FARM_ONLY = 'The tractor has one seat. It works on farms.';
   const TEMPLATES = [
@@ -268,8 +274,9 @@
         svgEl('path', {class: 'dw-water', d: 'M0 82 C20 80 40 83 60 81 S90 80 100 82 V100 H0 Z'}),
         svgEl('ellipse', {class: 'dw-island', cx: ISLAND[0], cy: ISLAND[1], rx: 10, ry: 6}));
       const dock = t.nodes[t.placeNode.dock];
-      this.ferryPath = [[dock.x, dock.y], [dock.x, 84], [dock.x + 8, 91], [ISLAND[0] - 8, ISLAND[1]], ISLAND];
-      svg.append(svgEl('path', {class: 'dw-road dw-pier', d: smooth([[dock.x, dock.y], [dock.x, 84]])}), svgEl('path', {class: 'dw-lane', d: smooth(this.ferryPath.slice(1), 6)}));
+      // The ferry stays on the water: it waits at the end of the pier and stops at the island's shore.
+      this.ferryPath = [[dock.x, 84], [dock.x + 8, 91], [ISLAND[0] - 15, ISLAND[1] + 1], [ISLAND[0] - 9, ISLAND[1]]];
+      svg.append(svgEl('path', {class: 'dw-road dw-pier', d: smooth([[dock.x, dock.y], [dock.x, 84]])}), svgEl('path', {class: 'dw-lane', d: smooth(this.ferryPath, 6)}));
       const xy = id => [t.nodes[id].x, t.nodes[id].y];
       for (const e of t.edges.values()) if (e.bridge) svg.append(svgEl('path', {class: 'dw-deck', d: smooth([xy(e.a), xy(e.b)])}));
       for (const e of t.edges.values()) svg.append(svgEl('path', {class: 'dw-road', d: smooth([xy(e.a), xy(e.b)])}));
@@ -295,7 +302,7 @@
       const isle = el('span', 'dw-node dw-node--place dw-node--island'); isle.style.left = ISLAND[0] + '%'; isle.style.top = ISLAND[1] + '%';
       isle.append(el('span', 'dw-emoji', PLACES.island[1]), el('span', 'dw-label', PLACES.island[0])); world.append(isle); this.islandEl = isle;
       this.fireEl = el('span', 'dw-fire', '🔥'); this.fireEl.hidden = true; this.fireEl.setAttribute('aria-hidden', 'true'); world.append(this.fireEl);
-      this.actor = el('div', 'dw-actor'); this.actor.setAttribute('aria-hidden', 'true'); world.append(this.actor);
+      this.actor = el('div', 'dw-actor'); this.actor.setAttribute('aria-hidden', 'true'); this.actorImg = el('img'); this.actorImg.alt = ''; this.actorImg.decoding = 'async'; this.actor.append(this.actorImg); world.append(this.actor);
       this.loads = Array.from({length: 12}, () => { const m = el('i', 'dw-load'); m.setAttribute('aria-hidden', 'true'); world.append(m); return {el: m, x: 0, y: 0, a: 0, active: false}; });
       this.choicesEl = el('div', 'dispatch-vehicles'); this.choicesEl.setAttribute('role', 'group'); this.choicesEl.setAttribute('aria-label', 'Vehicles');
       this.toolsEl = el('div', 'dispatch-tools');
@@ -312,6 +319,8 @@
       this.size = {w: 1, h: 1};
       this.resize = new ResizeObserver(([entry]) => { this.size = {w: entry.contentRect.width, h: entry.contentRect.height}; this.paint(); });
       this.resize.observe(world);
+      // Measure now too: the observer can be late in a background tab, and sprite sizes depend on it.
+      this.size = {w: world.clientWidth || 1, h: world.clientHeight || 1};
     }
 
     point(place) { if (place === 'island') return ISLAND; const n = this.town.nodes[this.town.placeNode[place]]; return [n.x, n.y]; }
@@ -334,7 +343,9 @@
       this.phase = 'choose'; this.vehicle = null;
       if (!restart) { this.firstTry = true; this.blocked = false; }
       this.plan = [this.startNode]; this.onboard = 0; this.viaDone = false;
-      const [sx, sy] = this.point(job.from); this.pos = {x: sx, y: sy, rotation: job.t.sea ? 90 : 0};
+      const [sx, sy] = this.point(job.from);
+      this.pos = job.t.sea ? {x: this.ferryPath[0][0], y: this.ferryPath[0][1], rotation: Math.atan2(7, 8) * 180 / Math.PI} : {x: sx, y: sy, rotation: 0};
+      if (!job.t.sea) this.pos = this.parkAt(this.startNode);
       const total = job.count + job.extra;
       this.loads.forEach((p, i) => {
         const atVia = i >= job.count && i < total, active = i < total;
@@ -442,17 +453,22 @@
     }
 
     board(items, finish) {
-      this.run(tl => items.forEach((p, i) => tl.to(p, {x: this.pos.x, y: this.pos.y, a: 0, duration: .4, ease: 'power1.inOut', onUpdate: () => this.paint()}, i * .14)),
+      const c = this.contact();
+      this.run(tl => items.forEach((p, i) => tl.to(p, {x: c.x, y: c.y, a: 0, duration: .4, ease: 'power1.inOut', onUpdate: () => this.paint()}, i * .14)),
         () => { items.forEach(p => { p.a = 0; }); this.onboard += items.length; finish(); });
     }
 
     travel(points, stop) {
       this.phase = 'travelling'; this.say(`On the way to the ${name(stop)}.`);
+      // Road trips start from the parked spot and end parked beside the place, not on top of its sign.
+      const road = !this.job.t.sea, endNode = road ? this.plan.find(id => this.town.nodes[id].x === points[points.length - 1][0] && this.town.nodes[id].y === points[points.length - 1][1]) : null;
+      const parked = road && endNode ? this.parkAt(endNode, points[points.length - 2]) : null;
+      if (road) points = [[this.pos.x, this.pos.y], ...points.slice(0, -1), [parked.x, parked.y]];
       const end = points[points.length - 1], prev = points[points.length - 2];
       const seconds = Math.min(9, Math.max(2.2, (points.length - 1) * .9));
       this.run(tl => tl.to(this.pos, {duration: seconds, ease: 'power1.inOut', motionPath: {path: smooth(points), autoRotate: true}, onUpdate: () => this.paint()}),
         () => {
-          this.pos = {x: end[0], y: end[1], rotation: Math.atan2(end[1] - prev[1], end[0] - prev[0]) * 180 / Math.PI};
+          this.pos = parked || {x: end[0], y: end[1], rotation: Math.atan2(end[1] - prev[1], end[0] - prev[0]) * 180 / Math.PI};
           if (this.job.via && stop === this.job.via && !this.viaDone) { this.phase = 'checkpoint'; this.say(`Stopped at the ${name(stop)}. Collect the ${this.job.extra} waiting there.`); }
           else { this.phase = 'arrived'; this.say(`Stopped safely at the ${name(stop)}. ${this.job.t.unload} when ready.`); }
         });
@@ -461,7 +477,7 @@
     unload() {
       const job = this.job, items = this.loads.filter(p => p.active), [qx, qy] = this.point(job.to);
       this.phase = 'unloading'; this.say(job.t.id === 'fire' ? 'The crew sprays water on the fire.' : 'Unloading at the stop.');
-      items.forEach(p => { p.x = this.pos.x; p.y = this.pos.y; p.a = 0; });
+      const c = this.contact(); items.forEach(p => { p.x = c.x; p.y = c.y; p.a = 0; });
       const spot = i => ({x: qx - 4 + (i % 5) * 2.2, y: qy < 25 ? qy + 10 + Math.floor(i / 5) * 2.6 : qy - 7 - Math.floor(i / 5) * 2.6});
       this.run(tl => items.forEach((p, i) => tl.to(p, {...spot(i), a: 1, duration: .4, ease: 'power1.inOut', onUpdate: () => this.paint()}, i * .11)),
         () => {
@@ -541,10 +557,9 @@
       this.fuelEl.textContent = this.budget === Infinity ? `Route: ${used} ${used === 1 ? 'road' : 'roads'}` : `Fuel: ${this.budget - used} of ${this.budget} roads left`;
       this.fuelEl.classList.toggle('is-low', this.budget !== Infinity && this.budget - used <= 1);
       this.undoBtn.disabled = this.held || this.plan.length < 2; this.clearBtn.disabled = this.held || this.plan.length < 2;
-      const v = VEHICLES[this.vehicle || job.t.answer];
-      this.actor.textContent = this.vehicle ? v.label.toUpperCase() : '';
+      const id = this.vehicle || job.t.answer, src = `images/dispatch/${id}.webp`;
+      if (this.actorId !== id) { this.actorId = id; this.actorImg.src = src; }
       this.actor.hidden = !this.vehicle && this.phase === 'choose';
-      this.actor.style.background = v.color;
       const labels = {choose: job.t.load, boarding: 'Loading…', route: 'Plan the route', ready: 'Dispatch', travelling: 'Travelling…', checkpoint: `Collect ${job.extra} more`, pickup: 'Collecting…', continue: `Continue to the ${name(job.to)}`, arrived: job.t.unload, unloading: 'Unloading…', done: this.index + 1 >= this.jobs.length ? (this.round + 1 >= this.setup.rounds ? 'See results' : 'Finish this town') : 'Next job'};
       this.primary.textContent = labels[this.phase];
       this.primary.disabled = this.held || this.busy() || this.phase === 'route' || (this.phase === 'choose' && !this.vehicle);
@@ -552,13 +567,43 @@
       this.paint();
     }
 
+    // One scale per board: phone lengths grow with the map, but the longest vehicle (the tractor
+    // and trailer, 37) always fits inside the shortest street of this map, with room to turn.
+    scale() {
+      const {w, h} = this.size, S = this.town.S, street = Math.min(w * .76, h * .62) / (S - 1);
+      return Math.max(.6, Math.min(Math.min(w, h) / 340, street * .68 / 37, 2.2));
+    }
+    // Stopped pose: on the road next to a place, clear of its sign. Arriving, it stops short on the
+    // road it came in on, facing the place; at the start it waits on a neighbouring open road, facing out.
+    parkAt(id, from) {
+      const t = this.town, n = t.nodes[id], {w, h} = this.size;
+      let dir;
+      if (from) dir = [from[0] - n.x, from[1] - n.y];
+      else {
+        const near = [[n.c + 1, n.r], [n.c - 1, n.r], [n.c, n.r + 1], [n.c, n.r - 1]].map(([c, r]) => `${c}-${r}`).filter(o => t.edges.has(edgeKey(id, o)));
+        const o = near.find(k => !this.closed.has(edgeKey(id, k))) || near[0];
+        dir = o ? [t.nodes[o].x - n.x, t.nodes[o].y - n.y] : [1, 0];
+      }
+      const px = [dir[0] * w / 100, dir[1] * h / 100], len = Math.hypot(...px) || 1, sp = SPRITES[this.vehicle || this.job.t.answer] || [30];
+      const sign = this.nodeEls?.[id]?.querySelector('.dw-emoji'), d = Math.min(len * .7, (sign ? sign.offsetWidth / 2 : 14) + sp[0] * this.scale() / 2 + 3);
+      const x = n.x + px[0] / len * d / w * 100, y = n.y + px[1] / len * d / h * 100;
+      const heading = from ? [n.x - from[0], n.y - from[1]] : dir;
+      return {x, y, rotation: Math.atan2(heading[1], heading[0]) * 180 / Math.PI};
+    }
+    screenAngle() { const {w, h} = this.size, r = this.pos.rotation * Math.PI / 180; return Math.atan2(Math.sin(r) * h, Math.cos(r) * w); }
+    // Where passengers and loads meet the stopped vehicle (its door, ramp or cargo bed), in map %.
+    contact() {
+      const sp = SPRITES[this.vehicle || this.job.t.answer]; if (!sp) return {x: this.pos.x, y: this.pos.y};
+      const {w, h} = this.size, a = this.screenAngle(), d = sp[2] * sp[0] * this.scale() / 2;
+      return {x: this.pos.x + Math.cos(a) * d / w * 100, y: this.pos.y + Math.sin(a) * d / h * 100};
+    }
+
     paint() {
       if (!this.actor) return;
-      const {w, h} = this.size, r = this.pos.rotation * Math.PI / 180;
-      const angle = Math.atan2(Math.sin(r) * h, Math.cos(r) * w) * 180 / Math.PI;
-      const flip = Math.abs(angle) > 90; // keep the label upright
-      this.actor.style.transform = `translate(${w * this.pos.x / 100}px,${h * this.pos.y / 100}px) rotate(${flip ? angle + 180 : angle}deg)`;
-      this.actor.classList.toggle('is-reversed', flip);
+      const {w, h} = this.size, sp = SPRITES[this.actorId];
+      // Plan-view sprites turn with the road in screen space; no flipping, so the kerb side stays true.
+      if (sp) this.actor.style.width = sp[0] * this.scale() + 'px';
+      this.actor.style.transform = `translate(${w * this.pos.x / 100}px,${h * this.pos.y / 100}px) translate(-50%,-50%) rotate(${this.screenAngle() * 180 / Math.PI}deg)`;
       for (const p of this.loads) { p.el.hidden = !p.active; p.el.style.opacity = p.a; p.el.style.transform = `translate(${w * p.x / 100}px,${h * p.y / 100}px)`; }
     }
 

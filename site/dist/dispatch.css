@@ -63,9 +63,9 @@
 @keyframes dw-pulse{50%{transform:scale(1.25)}}
 @keyframes dw-shake{25%{transform:translate(-50%,-50%) scale(1.6) rotate(-12deg)}75%{transform:translate(-50%,-50%) scale(1.6) rotate(12deg)}}
 @media(prefers-reduced-motion:reduce){.dw-node.is-next:before,.dw-node.is-next .dw-emoji,.dw-fire,.dw-works.is-flash{animation:none}}
-.dw-actor{position:absolute;left:0;top:0;z-index:3;width:56px;height:24px;margin:-12px 0 0 -28px;display:grid;place-items:center;border:2px solid #183a51;border-radius:7px;font-size:10px;font-weight:800;letter-spacing:.02em;color:#183a51;box-shadow:0 3px 5px #0003;pointer-events:none;transform-origin:50% 50%}
-.dw-actor:after{content:'';position:absolute;right:2px;top:3px;bottom:3px;width:4px;border-radius:2px;background:#183a51}
-.dw-actor.is-reversed:after{right:auto;left:2px}
+/* Miniature World plan-view sprite; the pivot is the centre of its visible body. */
+.dw-actor{position:absolute;left:0;top:0;z-index:3;width:36px;pointer-events:none;transform-origin:50% 50%;filter:drop-shadow(0 1.5px 1.5px #0004)}
+.dw-actor img{display:block;width:100%;height:auto}
 .dw-load{position:absolute;left:0;top:0;z-index:3;width:11px;height:11px;margin:-5.5px;border:2px solid #fffaf0;border-radius:50%;background:#1d4f73;pointer-events:none}
 .dw-load--cargo{border-radius:2px;background:#b5583b}
 .dw-load--patient{background:#fff;border-color:#c62828;box-shadow:inset 0 0 0 2px #c62828}
@@ -87,4 +87,4 @@
 .dispatch-status{margin:0;min-height:44px;line-height:1.45;font-size:15px}
 .dispatch-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
 .dispatch-actions>button{flex:1 1 150px}
-@container(max-width:520px){.dispatch-world{aspect-ratio:.95}.dispatch-title{font-size:17px}.dw-label{font-size:9px;top:30px;padding:0 3px}.dw-emoji{width:26px;height:26px;font-size:14px}.dw-node{width:36px;height:36px;margin:-18px 0 0 -18px}.dw-works{font-size:13px}.dw-actor{width:44px;height:20px;margin:-10px 0 0 -22px;font-size:8px}.dw-load{width:8px;height:8px;margin:-4px}.dispatch-vehicle img{max-width:64px}.dispatch-count{font-size:12px}.is-size-large .dw-label{display:none}.is-size-large .dw-emoji{width:24px;height:24px;font-size:13px}}
+@container(max-width:520px){.dispatch-world{aspect-ratio:.95}.dispatch-title{font-size:17px}.dw-label{font-size:9px;top:30px;padding:0 3px}.dw-emoji{width:26px;height:26px;font-size:14px}.dw-node{width:36px;height:36px;margin:-18px 0 0 -18px}.dw-works{font-size:13px}.dw-load{width:8px;height:8px;margin:-4px}.dispatch-vehicle img{max-width:64px}.dispatch-count{font-size:12px}.is-size-large .dw-label{display:none}.is-size-large .dw-emoji{width:24px;height:24px;font-size:13px}}
