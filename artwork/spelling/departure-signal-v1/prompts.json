@@ -1,0 +1,89 @@
+{
+  "tool": "Built-in ImageGen",
+  "assets": [
+    {
+      "name": "layer-1-sky",
+      "generationId": "exec-d3605dd2-12d5-4714-b5a2-c69d9e0358b6",
+      "references": [
+        "spelling-scene/preview/src/backplate-original.png",
+        "spelling-scene/transport-style-reference.png"
+      ],
+      "transparent_background": false,
+      "prompt": "Production raster layer for Departure Signal, a children's spelling game. Soft coloured-pencil texture and opaque gouache, exactly the existing painted camera and palette. No text, signage, lettering, or numbers. Reference 1 is the registration master; reference 2 is the rendering style only. Edit reference 1 to keep only its quiet clear blue sky with subtle paper grain, gently lighter toward the bottom, throughout the whole frame. Match the original sky's hues and texture. Absolutely no clouds, sun, scenery, lamps, frame or horizon. Keep landscape 3:2 canvas, 1536×1024 composition."
+    },
+    {
+      "name": "layer-2-background",
+      "generationId": "exec-47d5d42a-3e92-4773-81af-1adf54002eb6",
+      "references": [
+        "spelling-scene/preview/src/backplate-original.png",
+        "spelling-scene/transport-style-reference.png"
+      ],
+      "transparent_background": true,
+      "prompt": "Production raster layer for Departure Signal, a children's spelling game. Soft coloured-pencil texture and opaque gouache, exactly the existing painted camera and palette. No text, signage, lettering, or numbers. Reference 1 is the registration master; reference 2 is the rendering style only. Edit reference 1 into only the distant countryside hills, trees, fence, and the brick station building including canopy on the far right. Remove every green gantry strut, every signal lamp, platform, track, gravel, foreground grass and sky. Fill the holes where both gantry legs formerly crossed trees, shrubs or fence with continuous matching painted foliage and fence. Station chimney peak remains near x1485 y245, left canopy edge x1267 y455, baseline near y681. Preserve all relative shapes, especially the skyline and camera. All pixels above the irregular skyline and all former stage and foreground below must be genuine transparent alpha. Landscape 3:2 canvas, 1536×1024 composition; no content recentering. The trees reach the left edge and the station reaches the right edge."
+    },
+    {
+      "name": "layer-3-track-and-gantry",
+      "generationId": "exec-2fbaa12c-fea7-4256-a5f9-564710c05aed",
+      "references": [
+        "spelling-scene/preview/src/backplate-original.png",
+        "spelling-scene/transport-style-reference.png"
+      ],
+      "transparent_background": true,
+      "prompt": "Production raster layer for Departure Signal, a children's spelling game. Soft coloured-pencil texture and opaque gouache, exactly the existing painted camera and palette. No text, signage, lettering, or numbers. Reference 1 is the registration master; reference 2 is the rendering style only. Extract only green lattice gantry, its eight unlit hooded lamps, full width stone platform, red brick platform wall, two rails and their gravel. Paint out the station and canopy, fence, background plants, hills and sky to real transparency, including every hole within the lattice. Replace the thin covered portions of platform behind the removed station with continuous platform stone; extend clean gravel about 30 px downward beneath the future foreground, no baked grass. Keep 1536×1024 camera and every rail y and gantry lamp center unchanged; avoid shifting, zooming, stretching or cropping. The eight original lenses are at approximately x294,406,517,628,740,851,963,1074 with y217 declining to y208. Keep exactly eight; never redraw into a different layout. Platform ledge starts at y675, upper rail y780, lower y817, gravel ends about y916. Canvas edges stay in the same location. All space outside retained surfaces is truly transparent."
+    },
+    {
+      "name": "layer-4-foreground",
+      "generationId": "exec-d8147cd3-2250-4520-86a6-ee8dc8027333",
+      "references": [
+        "spelling-scene/preview/src/backplate-original.png",
+        "spelling-scene/transport-style-reference.png"
+      ],
+      "transparent_background": true,
+      "prompt": "Production raster layer for Departure Signal, a children's spelling game. Soft coloured-pencil texture and opaque gouache, exactly the existing painted camera and palette. No text, signage, lettering, or numbers. Reference 1 is the registration master; reference 2 is the rendering style only. Extract the bottom grassy verge with the small wildflowers as a standalone foreground occlusion layer. Preserve exact 3:2 camera framing, full width, and original grass touching the left, right and bottom edges; field must occupy only the bottom 15% of the frame. Keep the existing sparse natural painted flowers; add a few taller uneven grass blades along the upper edge, with tops no higher than source y853 and main grassy ridge near y882. Above the actual grass there is only genuine transparency, no track, no gravel, no sky, no other shapes. Do not center the grass patch or change the aspect ratio."
+    },
+    {
+      "name": "train-body",
+      "generationId": "exec-bc22a697-24b1-41fb-9bc4-bd11a62c088c",
+      "references": [
+        "spelling-scene/preview/train.png",
+        "spelling-scene/transport-style-reference.png"
+      ],
+      "transparent_background": true,
+      "prompt": "Use case: precise-object-edit. Children's painted spelling game sprite. Repaint reference 1 in the subtle soft pencil and gouache of reference 2, retaining the reference 1 EXACT stretched two-carriage side elevation with front to the right, red-and-cream passenger livery, blue windows, two roof vents and central flexible bellows. Keep the silhouette, longitudinal spacing, relative length/height, roof contour, doors, and exact four pairs of wheel positions. Remove all eight wheels completely, retaining only the existing four dark bogie frames and empty wheel arch spaces at the same height; open real transparency below the frames. Design so separate wheels can be drawn underneath the body. The full body fits very wide left to right, minimal clear margins, no perspective, no floor, shadow, text, labels or logos. Real transparent alpha in place of all magenta, no pink pixels."
+    },
+    {
+      "name": "wheel",
+      "generationId": "exec-246afa97-b73f-4dce-8447-ca5d1194ee72",
+      "references": [],
+      "transparent_background": true,
+      "prompt": "Use case: illustration-story. Production sprite for children's painted country station: one single side-on steel train wheel, circular silhouette with near-black charcoal tyre, dark pewter body, exactly six broad softly highlighted spokes and a warm gray metal hub, giving clear visible rotation at 20px scale. Soft coloured pencil and gouache on steel, navy shadows, restrained outlines, no gradient outside wheel. Perfectly face on, perfectly round, centred symmetrically on a square with even clear margin, true transparency outside, no extra object, contact shadow, ground, text or motion blur."
+    },
+    {
+      "name": "lamp-unlit",
+      "generationId": "exec-e07c237f-9927-43b4-8276-0f2f775a3c8c",
+      "references": [
+        "spelling-scene/preview/src/backplate-original.png"
+      ],
+      "transparent_background": true,
+      "prompt": "Use case: background-extraction. Produce one single standalone vintage railway signal lamp sprite, matching the eight lamps of the reference station, not the station. Straight on, dark circular charcoal glass lens with soft pencilled highlights, dark slightly bluish metal circular rim and short black curved hood at twelve o'clock. No mount stem, no scenery, no text. Symmetric frontal round lens, centred horizontally and vertically on square canvas with generous clear margin around the lamp. Tactile soft coloured-pencil and gouache. Real transparent background, no glow."
+    },
+    {
+      "name": "lamp-red",
+      "generationId": "exec-0599fe3e-e9be-47ef-a174-1476cb6667fa",
+      "references": [
+        "originals/lamp-unlit.png"
+      ],
+      "transparent_background": true,
+      "prompt": "Use case: precise-object-edit. Edit the attached painted railway signal lamp sprite. Change only the charcoal glass lens from unlit to bright red backlit glass with a softly glowing painted highlight, a darker red edge, and a restrained inner glow. The outer black metal hood, metal rim, screws, camera and exact glass centre, diameter, silhouette, position, margins and square framing must stay identical in pixel geometry so these are seamless sprite states. Keep the glow inside the glass, without a diffuse halo on the transparent area. Soft coloured-pencil and gouache, no letters, no text, true alpha outside. One lamp only."
+    },
+    {
+      "name": "lamp-green",
+      "generationId": "exec-2ef80da8-16ad-46b7-ab00-7e6af9f9fcb2",
+      "references": [
+        "originals/lamp-unlit.png"
+      ],
+      "transparent_background": true,
+      "prompt": "Use case: precise-object-edit. Edit the attached painted railway signal lamp sprite. Change only the charcoal glass lens from unlit to bright green backlit glass with a softly glowing painted highlight, a darker green edge, and a restrained inner glow. The outer black metal hood, metal rim, screws, camera and exact glass centre, diameter, silhouette, position, margins and square framing must stay identical in pixel geometry so these are seamless sprite states. Keep the glow inside the glass, without a diffuse halo on the transparent area. Soft coloured-pencil and gouache, no letters, no text, true alpha outside. One lamp only."
+    }
+  ]
+}

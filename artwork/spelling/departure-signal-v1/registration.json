@@ -1,0 +1,28 @@
+{
+  "canvas": [1536, 1024],
+  "planeOrder": ["layer-1-sky", "layer-2-background", "layer-3-track-and-gantry", "wheels", "train-body", "layer-4-foreground"],
+  "train": {
+    "canvas": [1315, 379],
+    "facing": "right",
+    "sceneOrigin": [200, 503.3],
+    "sceneWidth": 1106,
+    "railContactY": 812,
+    "wheelCenters": [[81.5,333],[189.7,333],[425.4,333],[531.5,333],[703.6,333],[812.7,333],[1046.9,333],[1156,333]],
+    "wheelSpriteWidth": 86.18,
+    "wheelSpritePivot": [256,256],
+    "visibleWheelDiameter": 68,
+    "smokeOrigin": [1124,11],
+    "offscreenActorX": [-1110,1540]
+  },
+  "lamps": {
+    "centers": [[294,218],[406,216],[517,216],[628,214],[740,214],[851,212],[963,212],[1074,210]],
+    "lensDiameter": 52,
+    "spriteLensCenter": [256,286],
+    "spriteLensRadius": 142,
+    "states": {
+      "unlit": {"sourceSize":[1254,1254],"sourceLensCenter":[619,713],"sourceLensRadius":299},
+      "red": {"sourceSize":[1254,1254],"sourceLensCenter":[619,713],"sourceLensRadius":299},
+      "green": {"sourceSize":[1254,1254],"sourceLensCenter":[619,713],"sourceLensRadius":299}
+    }
+  }
+}

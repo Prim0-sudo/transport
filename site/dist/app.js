@@ -96,6 +96,7 @@ let promptTask;
 let confettiTask;
 let speechHeld = false;
 let detectiveView=null;
+let spellingScene=null;
 let wheelTween=null;
 const activeEffects = new Set();
 const landingScene = new TransportLanding(document.querySelector('.backdrop'));
@@ -103,6 +104,7 @@ const work = new TransportLifecycle({ onHold: held => {
   globalThis.TransportPhonics?.setPaused(held);
   globalThis.TransportDispatch?.setHeld(held);
   detectiveView?.setHeld(held);
+  spellingScene?.setHeld(held);
   wheelTween?.paused(held);
   landingScene.setHold('activity', held);
   if ("speechSynthesis" in window) {
@@ -122,6 +124,7 @@ function cancelCurrentWork() {
   globalThis.TransportPhonics?.destroy();
   globalThis.TransportDispatch?.destroy();
   detectiveView?.destroy();detectiveView=null;
+  spellingScene?.destroy();spellingScene=null;
   wheelTween?.kill();wheelTween=null;
   work.cancel();
   wheelTickTimers = [];

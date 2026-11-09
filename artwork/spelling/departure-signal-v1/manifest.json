@@ -1,0 +1,584 @@
+{
+  "batch": "Departure Signal v1",
+  "status": "pending artwork approval",
+  "promptFile": "prompts.json",
+  "registrationFile": "registration.json",
+  "rightsNote": "Generated for Transport from project-owned visual references; no third-party art imported for this batch.",
+  "assets": [
+    {
+      "id": "spelling.departure-signal.layer-1-sky",
+      "generationId": "exec-d3605dd2-12d5-4714-b5a2-c69d9e0358b6",
+      "source": {
+        "path": "originals/layer-1-sky.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "alphaRange": [
+          255,
+          255
+        ],
+        "visibleBounds": [
+          0,
+          0,
+          1536,
+          1024
+        ],
+        "sha256": "bfa739e01fe3cd1214485ec96b2538eec7cbbf36e65d6fc1dd293b78fa35dc74"
+      },
+      "rgba": {
+        "path": "rgba/layer-1-sky.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "alphaRange": [
+          255,
+          255
+        ],
+        "visibleBounds": [
+          0,
+          0,
+          1536,
+          1024
+        ],
+        "sha256": "bfa739e01fe3cd1214485ec96b2538eec7cbbf36e65d6fc1dd293b78fa35dc74"
+      },
+      "magenta": {
+        "path": "magenta/layer-1-sky.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "alphaRange": [
+          255,
+          255
+        ],
+        "visibleBounds": [
+          0,
+          0,
+          1536,
+          1024
+        ],
+        "sha256": "bfa739e01fe3cd1214485ec96b2538eec7cbbf36e65d6fc1dd293b78fa35dc74"
+      },
+      "status": "pending artwork approval"
+    },
+    {
+      "id": "spelling.departure-signal.layer-2-background",
+      "generationId": "exec-47d5d42a-3e92-4773-81af-1adf54002eb6",
+      "source": {
+        "path": "originals/layer-2-background.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "visibleBounds": [
+          0,
+          244,
+          1536,
+          681
+        ],
+        "sha256": "e5850fe45196bae838e6f101e47598f90d28d87540b4e5ed8adb4fe995b6667e"
+      },
+      "rgba": {
+        "path": "rgba/layer-2-background.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "visibleBounds": [
+          0,
+          244,
+          1536,
+          681
+        ],
+        "sha256": "e5850fe45196bae838e6f101e47598f90d28d87540b4e5ed8adb4fe995b6667e"
+      },
+      "magenta": {
+        "path": "magenta/layer-2-background.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          255,
+          255
+        ],
+        "visibleBounds": [
+          0,
+          0,
+          1536,
+          1024
+        ],
+        "sha256": "d9efc17064d6192a3887df75e9290269cfa868c6890088bfb7d76c4530857bb9"
+      },
+      "status": "pending artwork approval"
+    },
+    {
+      "id": "spelling.departure-signal.layer-3-track-and-gantry",
+      "generationId": "exec-2fbaa12c-fea7-4256-a5f9-564710c05aed",
+      "source": {
+        "path": "originals/layer-3-track-and-gantry.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "visibleBounds": [
+          0,
+          161,
+          1536,
+          898
+        ],
+        "sha256": "1d5b49325f4f2d6041925794663365764f85febc8025ec1c78e30e5a7e5c7609"
+      },
+      "rgba": {
+        "path": "rgba/layer-3-track-and-gantry.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "visibleBounds": [
+          0,
+          161,
+          1536,
+          898
+        ],
+        "sha256": "1d5b49325f4f2d6041925794663365764f85febc8025ec1c78e30e5a7e5c7609"
+      },
+      "magenta": {
+        "path": "magenta/layer-3-track-and-gantry.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          255,
+          255
+        ],
+        "visibleBounds": [
+          0,
+          0,
+          1536,
+          1024
+        ],
+        "sha256": "42c7a2e457897b5858c3f780f0fdb1325696e29a7f67364af06d40d1b62403d9"
+      },
+      "status": "pending artwork approval"
+    },
+    {
+      "id": "spelling.departure-signal.layer-4-foreground",
+      "generationId": "exec-d8147cd3-2250-4520-86a6-ee8dc8027333",
+      "source": {
+        "path": "originals/layer-4-foreground.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          254
+        ],
+        "visibleBounds": [
+          0,
+          862,
+          1536,
+          1024
+        ],
+        "sha256": "5ace04ab790cb84b674c2422f159cb71fbb6358037058aa6d91de64100adbeb7"
+      },
+      "rgba": {
+        "path": "rgba/layer-4-foreground.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          0,
+          850,
+          1536,
+          1024
+        ],
+        "sha256": "153a3b662286feba643edb31f0403b7348a3e983d0d0d76afe931939dc012c19"
+      },
+      "magenta": {
+        "path": "magenta/layer-4-foreground.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          255,
+          255
+        ],
+        "visibleBounds": [
+          0,
+          0,
+          1536,
+          1024
+        ],
+        "sha256": "e6ffed864dc6ac6c4e55fd51168e04fc7289233744f01664eda08775ea602f51"
+      },
+      "status": "pending artwork approval"
+    },
+    {
+      "id": "spelling.departure-signal.train-body",
+      "generationId": "exec-bc22a697-24b1-41fb-9bc4-bd11a62c088c",
+      "source": {
+        "path": "originals/train-body.png",
+        "size": [
+          2170,
+          725
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          11,
+          53,
+          2158,
+          613
+        ],
+        "sha256": "dadd370c3b870e1e812acf7b479658bde7d33a2c6c50a717e300d970bf16c6f9"
+      },
+      "rgba": {
+        "path": "rgba/train-body.png",
+        "size": [
+          1315,
+          379
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          6,
+          4,
+          1308,
+          329
+        ],
+        "sha256": "b64a087dec6da94c37242dd1896bb111efd81f64e55e143c380f9a274f1b901b"
+      },
+      "magenta": {
+        "path": "magenta/train-body.png",
+        "size": [
+          1315,
+          379
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          255,
+          255
+        ],
+        "visibleBounds": [
+          0,
+          0,
+          1315,
+          379
+        ],
+        "sha256": "7fc21b0f41a3b1ae4aa69b8b9d6fdf983947738243af7872804c297be48e3f18"
+      },
+      "status": "pending artwork approval"
+    },
+    {
+      "id": "spelling.departure-signal.wheel",
+      "generationId": "exec-246afa97-b73f-4dce-8447-ca5d1194ee72",
+      "source": {
+        "path": "originals/wheel.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          71,
+          84,
+          1170,
+          1207
+        ],
+        "sha256": "bbe1df2a6f323dd24be9326ab6c667b17008f85d96e706633f3bfff3a33c0e3a"
+      },
+      "rgba": {
+        "path": "rgba/wheel.png",
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          54,
+          54,
+          458,
+          458
+        ],
+        "sha256": "ebf426c7a8e09a4977715488b82da7b3abf59ed4c5f21006b60c00cb107cabc0"
+      },
+      "magenta": {
+        "path": "magenta/wheel.png",
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          255,
+          255
+        ],
+        "visibleBounds": [
+          0,
+          0,
+          512,
+          512
+        ],
+        "sha256": "a8d3ae45cff2dadd4b0eafe7cc07965f274daed61d0172cb78aca8c2a92dcf87"
+      },
+      "status": "pending artwork approval"
+    },
+    {
+      "id": "spelling.departure-signal.lamp-unlit",
+      "generationId": "exec-e07c237f-9927-43b4-8276-0f2f775a3c8c",
+      "source": {
+        "path": "originals/lamp-unlit.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          241,
+          221,
+          1005,
+          1080
+        ],
+        "sha256": "c60ff558a60f3416fed7531145c9e0a9c8249578feb6fb0afed38f653a38f138"
+      },
+      "rgba": {
+        "path": "rgba/lamp-unlit.png",
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          76,
+          52,
+          439,
+          461
+        ],
+        "sha256": "d7e532e8eb952c2e68119dc35eec4f848228f66d152d4220831dfafc3449c598"
+      },
+      "magenta": {
+        "path": "magenta/lamp-unlit.png",
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          255,
+          255
+        ],
+        "visibleBounds": [
+          0,
+          0,
+          512,
+          512
+        ],
+        "sha256": "9d985c936bbf59817418b4142354346789cb6a36b122bbfa1ca5fb3e47313104"
+      },
+      "status": "pending artwork approval"
+    },
+    {
+      "id": "spelling.departure-signal.lamp-red",
+      "generationId": "exec-0599fe3e-e9be-47ef-a174-1476cb6667fa",
+      "source": {
+        "path": "originals/lamp-red.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          240,
+          220,
+          1007,
+          1080
+        ],
+        "sha256": "54c8049a6bd0ac33579460563320b4fa5be73a01fe151aa4fdbe932fd7561aaa"
+      },
+      "rgba": {
+        "path": "rgba/lamp-red.png",
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          76,
+          52,
+          441,
+          461
+        ],
+        "sha256": "03525143915626e6ee8fe8f7e6a17a7b8af66f3a63021d9685cf34334e004039"
+      },
+      "magenta": {
+        "path": "magenta/lamp-red.png",
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          255,
+          255
+        ],
+        "visibleBounds": [
+          0,
+          0,
+          512,
+          512
+        ],
+        "sha256": "e1bda53e0d3436d1aa3c8247c544e0c91bc9e45afc4d8e85a45d677e8369f147"
+      },
+      "status": "pending artwork approval"
+    },
+    {
+      "id": "spelling.departure-signal.lamp-green",
+      "generationId": "exec-2ef80da8-16ad-46b7-ab00-7e6af9f9fcb2",
+      "source": {
+        "path": "originals/lamp-green.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          240,
+          220,
+          1006,
+          1082
+        ],
+        "sha256": "18ef25c11d5b515466fc5ad88c6c1d4b0bdeb529edb2331ad3c88d3fc1100754"
+      },
+      "rgba": {
+        "path": "rgba/lamp-green.png",
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "visibleBounds": [
+          76,
+          52,
+          440,
+          461
+        ],
+        "sha256": "d67e9ebb84634b118acabc39ac05236966c82be010f0b41a2adb95fba82e6113"
+      },
+      "magenta": {
+        "path": "magenta/lamp-green.png",
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alphaRange": [
+          255,
+          255
+        ],
+        "visibleBounds": [
+          0,
+          0,
+          512,
+          512
+        ],
+        "sha256": "434025757a1f229c2616db017343d13a5c083757b74d679769198a57cadca39d"
+      },
+      "status": "pending artwork approval"
+    }
+  ],
+  "reused": [
+    {
+      "path": "art-concepts/spelling-scene/preview/smoke-1.png",
+      "sha256": "0bb0160ea312285f944a1829ac4adf4bf4d04373d87be4bf9d3c9e423977d4a5",
+      "use": "Existing movement-preview smoke, reused as-is"
+    },
+    {
+      "path": "art-concepts/spelling-scene/preview/smoke-2.png",
+      "sha256": "b5678f9bff4c52bf98e8020177fc5f807f4ba7e3b79a3c61d975c4b6f8109a57",
+      "use": "Existing movement-preview smoke, reused as-is"
+    },
+    {
+      "path": "art-concepts/spelling-scene/preview/smoke-3.png",
+      "sha256": "c042ab7d1a3748814367f6fe2f761c8feaf55adaa31b5dc657517316ecfb187b",
+      "use": "Existing movement-preview smoke, reused as-is"
+    }
+  ]
+}

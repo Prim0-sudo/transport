@@ -275,8 +275,25 @@ function renderStandardSpelling(){
   els.stage.style.display='none';els.listen.hidden=true;
   const words=item.name.split(' ').map(word=>`<span class="spelling-word">${[...word].map(c=>`<span class="hangman-letter">${!/^[a-z]$/i.test(c)||guessed.has(c.toLowerCase())||state.answered?standardEscape(c):''}</span>`).join('')}</span>`).join('');
   const keys=[...'abcdefghijklmnopqrstuvwxyz'].map(letter=>`<button class="hangman-key ${guessed.has(letter)?letters.includes(letter)?'correct':'wrong':''}" data-letter="${letter}" ${guessed.has(letter)||state.answered?'disabled':''}>${letter.toUpperCase()}</button>`).join('');
-  els.answers.innerHTML=`<div class="transport-spelling spelling-board"><div class="spelling-clue"><img src="${item.image}" alt="${state.answered?standardEscape(item.alt):'Transport picture clue'}"><button class="spelling-hear" data-hear-spelling aria-label="Hear the word">🔊</button></div><div class="hangman-word" aria-label="${state.answered?standardEscape(item.name):'Hidden spelling word'}">${words}</div><div class="ticket-checks" aria-label="${8-round.misses} of 8 wrong guesses left">${Array.from({length:8},(_,i)=>`<span class="${i<round.misses?'used':''}" aria-hidden="true">${i<round.misses?'×':'•'}</span>`).join('')}</div><p class="spelling-attempts">${round.misses} / 8 wrong guesses</p><div class="hangman-keys" aria-label="Letter keyboard">${keys}</div></div>`;
-  els.answers.querySelector('[data-hear-spelling]').onclick=()=>speak(item.name);
+  // Departure Signal scene (Plants Dandelion Drift pattern): built once per round, then updated in place
+  // so its animations carry on between guesses. The eight signal lamps replace the old ticket dots.
+  const wordLabel=state.answered?item.name:'Hidden spelling word',attempts=`${round.misses} / 8 wrong guesses`;
+  const continuing=spellingScene&&spellingScene.round===round&&spellingScene.scene.isConnected;
+  const keyboardFocused=els.answers.querySelector('.hangman-keys')?.contains(document.activeElement);
+  if(continuing){
+    const board=els.answers.querySelector('.departure-board'),word=board.querySelector('.hangman-word');
+    word.innerHTML=words;word.setAttribute('aria-label',wordLabel);
+    board.querySelector('.spelling-attempts').textContent=attempts;
+    board.querySelector('.hangman-keys').innerHTML=keys;
+    board.querySelector('.spelling-clue img').alt=state.answered?item.alt:'Transport picture clue';
+    spellingScene.update(round);
+  }else{
+    spellingScene?.destroy();
+    els.answers.innerHTML=`<div class="transport-spelling spelling-board departure-board"><div class="departure-stage"><div class="spelling-clue"><img src="${item.image}" alt="${state.answered?standardEscape(item.alt):'Transport picture clue'}"><button class="spelling-hear" data-hear-spelling aria-label="Hear the word">🔊</button></div></div><div class="hangman-word" aria-label="${standardEscape(wordLabel)}">${words}</div><p class="spelling-attempts">${attempts}</p><div class="hangman-keys" aria-label="Letter keyboard">${keys}</div></div>`;
+    els.answers.querySelector('[data-hear-spelling]').onclick=()=>speak(item.name);
+    spellingScene=new TransportSpellingScene(els.answers.querySelector('.departure-stage'),round,{held:work.held});
+  }
+  if(keyboardFocused&&!state.answered)els.answers.querySelector('.hangman-key:not(:disabled)')?.focus({preventScroll:true});
   for(const button of els.answers.querySelectorAll('[data-letter]'))button.onclick=()=>chooseHangmanLetter(button.dataset.letter);
 }
 function illustrateFlipChoices(){

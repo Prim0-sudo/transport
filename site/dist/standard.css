@@ -213,3 +213,22 @@ img.result-burst{display:block;width:clamp(90px,14vw,140px);height:auto;margin:0
 .spelling-board .hangman-key.correct{border-color:#218c51;background:#d7f5d6;color:#183a51}
 .spelling-board .hangman-key.wrong{border-color:#e0a77e;background:#ffe1ca;color:#183a51;opacity:.6}
 @media(max-width:480px){.spelling-board.transport-spelling{gap:6px}.spelling-board .spelling-clue{width:clamp(100px,17dvh,150px);padding:8px}.spelling-board .hangman-keys{grid-template-columns:repeat(9,minmax(0,1fr));gap:5px}.spelling-board .hangman-key{min-height:42px;padding:0;font-size:.9rem}.spelling-board .ticket-checks span{width:18px;height:18px}}
+
+/* Departure Signal spelling scene (artwork/spelling/departure-signal-v1). Plants Dandelion Drift layout:
+   the scene leads, the clue is a small card in its quiet top-right sky, clear of the lamps and the train. */
+.departure-board .departure-stage{position:relative;width:min(100%,calc((100dvh - var(--departure-room,485px))*1.5));min-width:min(100%,300px);aspect-ratio:3/2;border-radius:20px;border:4px solid #fff;box-shadow:0 7px 0 #a9c3d6,0 13px 24px #183a5124;overflow:hidden;background:#a8d2ef}
+.departure-scene{position:absolute;inset:0;overflow:hidden;isolation:isolate}
+.departure-scene img{position:absolute;display:block;max-width:none;pointer-events:none;user-select:none}
+.departure-scene .ds-plane{inset:0;width:100%;height:100%}
+.departure-scene .ds-train{position:absolute;will-change:transform}
+.departure-scene .ds-body{position:relative;width:100%;height:auto}
+.departure-scene .ds-wheel{height:auto;transform-origin:50% 50%}
+.departure-scene .ds-smoke{position:absolute;width:15%;height:0}
+.departure-scene .ds-puff{left:0;top:0;width:100%;margin:-50% 0 0 -50%;transform-origin:50% 50%;opacity:0;will-change:transform,opacity}
+.departure-scene .ds-lens{position:absolute;aspect-ratio:1;border-radius:50%;overflow:hidden}
+.departure-scene .ds-lens img{height:auto}
+.departure-board .departure-stage .spelling-clue{position:absolute;z-index:2;right:2%;top:3%;width:clamp(78px,22%,220px);aspect-ratio:1;padding:6px;border:3px solid #fff;border-radius:16px;background:#fffdf3;box-shadow:0 4px 10px #183a5133}
+.departure-board .departure-stage .spelling-hear{right:-6px;bottom:-6px;min-height:40px;width:40px;font-size:1.05rem}
+@media(max-width:480px){.departure-board .departure-stage{border-width:3px;border-radius:14px}.departure-board .departure-stage .spelling-clue{padding:4px;border-width:2px;border-radius:12px}}
+/* Phone: the result message and Next share one row so Next stays on screen under the scene. */
+@media(max-width:480px){.game-card[data-mode=hangman] .feedback.is-correct:has(.next-btn),.game-card[data-mode=hangman] .feedback.is-try:has(.next-btn){display:flex;align-items:center;gap:10px;text-align:left}.game-card[data-mode=hangman] .feedback:has(.next-btn) p{flex:1;margin:0}.game-card[data-mode=hangman] .feedback .next-btn{flex:none;margin:0}.departure-board .hangman-key{min-height:42px}}
