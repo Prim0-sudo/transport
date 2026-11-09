@@ -876,7 +876,19 @@ function openGameMenu() {
   document.body.dataset.screen = 'menu';
   screens.home.setAttribute('aria-labelledby', 'menuTitle');
   landingScene.setActive(false);
+  markContinuingModes();
   focusLandingHeading('menuTitle');
+}
+
+// Plants menu: a small Continue tag on any activity with a saved, unfinished attempt for the current word choice.
+function markContinuingModes() {
+  const base = mode => JSON.parse(classroom.base(mode)).slice(0, 4).join('|');
+  const saved = new Set(Object.keys(classroom.data.attempts || {}).map(key => { try { return JSON.parse(key).slice(0, 4).join('|'); } catch { return ''; } }));
+  for (const card of document.querySelectorAll('.mode-card')) {
+    const text = card.querySelector('.mode-text');
+    text.querySelector('.mode-card__status')?.remove();
+    if (saved.has(base(card.dataset.mode))) { const tag = document.createElement('small'); tag.className = 'mode-card__status'; tag.textContent = 'Continue'; text.append(tag); }
+  }
 }
 
 function focusLandingHeading(id) {

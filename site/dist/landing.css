@@ -39,6 +39,7 @@ body[data-transport-shell] .mode-icon{display:block;background:none;width:min(10
 @media(max-width:560px){body[data-transport-shell] .mode-card{min-height:140px;padding:10px 8px}body[data-transport-shell] .mode-icon{height:84px}}
 body[data-transport-shell] .mode-icon img{display:block;width:100%;height:100%;object-fit:contain}
 body[data-transport-shell] .mode-text strong{font-size:17px}
+body[data-transport-shell] .mode-card{position:relative}body[data-transport-shell] .mode-text .mode-card__status{display:block;position:absolute;top:8px;right:8px;padding:2px 9px;border-radius:999px;background:#1d4f73;color:#fff;font-size:.7rem;font-weight:900;text-transform:uppercase;letter-spacing:.03em}
 body[data-transport-shell] .home-parade{display:none!important}
 body[data-screen=launch][data-transport-shell]{height:100svh;overflow:hidden}
 body[data-screen=launch][data-transport-shell] .shell{min-height:100svh}

@@ -140,6 +140,11 @@ Commit identity: `git -c user.name=Prim0-sudo -c user.email=Prim0-sudo@users.nor
 - Also removed the old .reading-word rule, which would have made Listen & Read sentence words uppercase.
 - Fits 768x1024 and 1280x800; phone scrolls ~95px (button row wraps). Missing art: none (uses vehicle pictures; Plants has some own scene pictures).
 
+## Menu (matched to Plants 2026-11-10)
+- Order, title, featured game banner and picture cards already matched Plants.
+- Added the Plants Continue tag: a small navy pill in the top-right corner of any card with a saved unfinished attempt for the current word choice (refreshed each time the menu opens). Card size unchanged.
+- Naming left for the owner: Plants calls its spelling game after its scene (Dandelion Drift) and uses plain Detective; Transport keeps Transport Spelling and Transport Detective.
+
 ## Queued by owner (after every activity matches Plants)
 
 - Plants presentation: design a full-topic PPT for the Plants game covering every category (everything the videos cover, plus more), and add a separate Media tab called Presentation for it.
