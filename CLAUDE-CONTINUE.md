@@ -101,6 +101,13 @@ Commit identity: `git -c user.name=Prim0-sudo -c user.email=Prim0-sudo@users.nor
 - Missing art: painted answer pictures (answers are still emoji; Plants uses painted pictures), a red-only traffic light (current art shows all three lights), scene art for seat, life jacket and reversing questions.
 - Plants plays 10 of 10 questions; Transport plays 7 of 8 (left as is).
 
+## Spelling (matched to Plants 2026-11-09)
+- Header "Word n/10"; title and helper hidden; big framed clue picture with a round 🔊 button.
+- Letter slots, 8 lights, "n / 8 wrong guesses", 9-column keyboard (green right, faded orange wrong).
+- "Great letter!" on a right letter; win "You spelled “X”!", lose "The word was “X”. Let’s try another word!"; button Next word / Finish.
+- Removed the definition text and "Reveal word for practice" (Plants has neither).
+- Missing: an animated hero scene like Plants' dandelion (owner to pick from variations).
+
 ## Queued by owner (after every activity matches Plants)
 
 - Plants presentation: design a full-topic PPT for the Plants game covering every category (everything the videos cover, plus more), and add a separate Media tab called Presentation for it.

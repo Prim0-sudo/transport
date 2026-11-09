@@ -730,10 +730,13 @@ function chooseHangmanLetter(letter) {
     state.answered=true;completeQuestion(round.vehicle.id);
     state.score+=result.reward;
     renderHangman();els.score.textContent=state.score;
-    standardFeedback(result.won?'Ready to depart. '+round.vehicle.name:round.vehicle.name+'. This word was revealed for practice.');
+    const last=state.round===state.questions.length-1;
+    standardFeedback(result.won?`You spelled “${round.vehicle.name}”!`:`The word was “${round.vehicle.name}”. Let’s try another word!`,nextQuestion,result.won?'correct':'try',last?'Finish':'Next word');
     if(result.won)tone(659,0,.18);rememberAttempt();return;
   }
   renderHangman();rememberAttempt();
+  // Plants cheers a correct letter in the feedback bar; a wrong letter shows on the keyboard and the lights.
+  if(round.guessed.at(-1)&&hangmanLetters(round.vehicle.name).includes(round.guessed.at(-1))){els.feedback.className='feedback is-correct';els.feedback.textContent='Great letter!';}else{els.feedback.className='feedback';els.feedback.textContent='';}
 }
 
 function makeAnswer(label, icon, correct, explain, revealVehicle = false, imagePath = "",choiceId=label) {

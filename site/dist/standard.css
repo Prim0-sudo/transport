@@ -196,3 +196,20 @@ img.result-burst{display:block;width:clamp(90px,14vw,140px);height:auto;margin:0
 .game-card[data-mode=safety] .answer-btn{min-height:clamp(70px,12dvh,140px)}
 .game-screen .game-card[data-mode=safety] .vehicle-emoji.vehicle-icon-image{height:clamp(140px,26dvh,420px)}
 @media(max-width:480px){.game-screen .game-card[data-mode=safety] .vehicle-emoji.vehicle-icon-image{height:clamp(90px,14dvh,140px)}.game-card[data-mode=safety] .answers{gap:8px}.game-card[data-mode=safety] .answer-btn{min-height:56px;padding:6px 12px;font-size:1rem}.game-card[data-mode=safety] .answer-icon{font-size:1.6rem}.game-card[data-mode=safety] #questionText{font-size:1.4rem}.knowledge-picture-options{flex-wrap:nowrap;gap:0 10px}.knowledge-picture-options label{gap:5px;font-size:.78rem;white-space:nowrap}.knowledge-picture-options input{width:17px;height:17px}}
+
+/* Spelling, following Plants modes.css (.meltdown-board, .spelling-letter, .letter-keys). */
+.game-screen .game-card[data-mode=hangman] #questionText,.game-card[data-mode=hangman] .question-helper{display:none}
+.game-card[data-mode=hangman] .feedback:empty{display:none}
+.spelling-board.transport-spelling{display:flex;flex-direction:column;align-items:center;gap:clamp(6px,1.4dvh,14px)}
+.spelling-board .spelling-clue{position:relative;display:block;width:min(100%,clamp(150px,min(36dvh,calc(100dvh - 600px)),400px));aspect-ratio:1;padding:12px;border:4px solid #fff;border-radius:28px;background:linear-gradient(145deg,#fffdf3,#e3eef6);box-shadow:0 7px 0 #a9c3d6,0 13px 24px #183a5124}
+.spelling-board .spelling-clue img{width:100%;height:100%;object-fit:contain}
+.spelling-board .spelling-hear{position:absolute;right:-10px;bottom:-10px;min-height:48px;width:48px;padding:0;border-radius:50%;font-size:1.3rem;background:#fffbed}
+.spelling-board .hangman-word{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;margin:clamp(4px,1dvh,12px) 0 0}
+.spelling-board .hangman-letter{display:inline-flex;align-items:center;justify-content:center;width:clamp(27px,4vw,42px);height:clamp(37px,5vw,48px);border-bottom:4px solid #1d4f73;color:#183a51;font-size:clamp(1rem,2.6vw,1.65rem);font-weight:1000;text-transform:uppercase}
+.spelling-board .ticket-checks{display:flex;justify-content:center;gap:8px}.spelling-board .ticket-checks span{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#24764d;color:#fff;font-size:.8rem}.spelling-board .ticket-checks span.used{background:#b94c44}
+.spelling-attempts{margin:0;color:#183a51;font-weight:700}
+.spelling-board .hangman-keys{width:min(800px,100%);grid-template-columns:repeat(9,minmax(0,1fr));gap:6px}
+.spelling-board .hangman-key{min-height:44px;border:2px solid #b9cfdf;border-bottom-width:4px;border-radius:10px;font-size:clamp(.9rem,1.6vw,1.1rem)}
+.spelling-board .hangman-key.correct{border-color:#218c51;background:#d7f5d6;color:#183a51}
+.spelling-board .hangman-key.wrong{border-color:#e0a77e;background:#ffe1ca;color:#183a51;opacity:.6}
+@media(max-width:480px){.spelling-board.transport-spelling{gap:6px}.spelling-board .spelling-clue{width:clamp(100px,17dvh,150px);padding:8px}.spelling-board .hangman-keys{grid-template-columns:repeat(9,minmax(0,1fr));gap:5px}.spelling-board .hangman-key{min-height:42px;padding:0;font-size:.9rem}.spelling-board .ticket-checks span{width:18px;height:18px}}
