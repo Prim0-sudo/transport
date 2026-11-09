@@ -648,7 +648,7 @@ function setVehicle(vehicle, showName = true) {
 function clearVehiclePicture() {
   delete els.emoji.dataset.teachingId;els.emoji.style.backgroundSize='';
   els.emoji.removeAttribute('role');els.emoji.removeAttribute('aria-label');
-  els.emoji.classList.remove("vehicle-picture", "vehicle-icon-image");
+  els.emoji.classList.remove("vehicle-picture", "vehicle-icon-image", "safety-scene");
   els.emoji.style.backgroundImage = "";
   els.emoji.style.backgroundPosition = "";
 }

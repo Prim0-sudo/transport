@@ -147,6 +147,14 @@ Commit identity: `git -c user.name=Prim0-sudo -c user.email=Prim0-sudo@users.nor
 - Added the Plants Continue tag: a small navy pill in the top-right corner of any card with a saved unfinished attempt for the current word choice (refreshed each time the menu opens). Card size unchanged.
 - Naming left for the owner: Plants calls its spelling game after its scene (Dandelion Drift) and uses plain Detective; Transport keeps Transport Spelling and Transport Detective.
 
+## Classroom and Dispatch art (wired 2026-11-10)
+
+- Source: Codex packs artwork/classroom/miniature-world-v1 and artwork/dispatch/miniature-world-map-v1 (guide docs/ARTWORK-REPORT-2026-11-10.md).
+- Runtime WebP exports: site/dist/images/classroom/ (41 + runtime-manifest.json) and site/dist/images/dispatch-map/ (16 + runtime-manifest.json); transparent art cropped to visibleBounds + 3%.
+- Classroom: category covers (standard-data.js), Scenes cover, Driving card, completion medal, Safety question scenes + per-choice-ID answer pictures (four reused vocabulary pictures), part insets (SVG crop + original highlight, images/classroom/part-insets.json).
+- Dispatch: land texture on the board, water texture via board-space SVG pattern clipped to .dw-water (fitTextures keeps tiles square), painted landmark per PLACES ID inside the marker circle, roadworks barrier art for closures. Roads, closures, paths and hit areas unchanged.
+- Checked at 768x1024, 1280x800, 390x844: no overflow, all images load, ferry job runs to completion.
+
 ## Queued by owner (after every activity matches Plants)
 
 - Plants presentation: design a full-topic PPT for the Plants game covering every category (everything the videos cover, plus more), and add a separate Media tab called Presentation for it.

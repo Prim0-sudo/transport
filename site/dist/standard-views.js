@@ -41,12 +41,10 @@ function renderStandardCategories(mode){
   renderStandardSetup(mode,learn?'Which words shall we meet?':wheel?'Which words shall we spin?':'Choose words to explore',learn||wheel?'':'Your Teacher selection still applies.');els.round.textContent='Categories';
   const grid=document.createElement('div');grid.className='standard-choice-grid'+(learn||wheel?' learn-groups':'');
   const categories=wordModes.has(mode)?[...TransportStandard.categories,...TransportStandard.teachingCategories]:TransportStandard.categories;
-  const covers={all:'vehicle.bus',land:'vehicle.car',water:'vehicle.ferry',air:'vehicle.airplane',space:'vehicle.space-shuttle'};
   for(const category of categories){const pool=filteredStandardPool(mode,{category:category.id});
     if(wordModes.has(mode)&&TransportStandard.teachingCategories.includes(category)&&!pool.length)continue;
     const button=standardButton('',()=>startGame(mode,{setup:{category:category.id}}),'standard-choice');
-    const cover=wordModes.has(mode)&&individualTeachingImage(covers[category.id]||pool[0]?.id);
-    const source=cover||category.image;
+    const source=category.image;
     button.innerHTML=`<img src="${source}" alt=""><strong>${category.label}</strong><span>${pool.length} ${pool.length===1?'word':'words'}</span>`;
     if(learn&&learnGroupsMet().has(category.id))button.dataset.met='true';
     button.disabled=!pool.length;grid.append(button);
@@ -60,7 +58,7 @@ function renderStandardCategories(mode){
   if(wheel){const shown=grid.querySelectorAll('.standard-choice').length;els.round.textContent=`Groups 0/${shown}`;document.querySelector('.progress-track').hidden=false;els.progress.style.width='0%';els.scorePill.hidden=false;els.score.textContent='0';}
   if(mode==='learn'){
     const scenes=standardButton('',renderTeachingScenes,'standard-choice scene-entry');
-    scenes.innerHTML=`<img src="images/teaching-scenes/street-crossing.png" alt=""><strong>Transport Scenes</strong><span>${transportScenes.length} interactive scenes</span>`;
+    scenes.innerHTML=`<img src="images/classroom/cover-scenes.webp" alt=""><strong>Transport Scenes</strong><span>${transportScenes.length} interactive scenes</span>`;
     grid.append(scenes);
   }
   els.answers.append(grid);if(!classroom.pool(mode).length)standardRecoveryActions(els.answers);
@@ -193,7 +191,7 @@ function renderStandardHub(mode,groupId=null){
   else if(mode==='games'){
     // Plants Games menu: big picture cards, title only, no helper line.
     els.helper.textContent='';const cards=document.createElement('div');cards.className='transport-game-cards';
-    const art={dispatch:'images/menu/dispatch-banner.webp',driving:'images/menu/transport-games.webp'};
+    const art={dispatch:'images/menu/dispatch-banner.webp',driving:'images/classroom/driving-card.webp'};
     for(const [id,title] of hub.groups){const soon=id==='driving';const button=standardButton('',()=>renderStandardHub(mode,id),'transport-game-card');button.disabled=soon;
       button.innerHTML=`<img src="${art[id]}" alt=""><strong>${title}</strong>${soon?'<span class="transport-game-soon">Coming soon</span>':''}`;cards.append(button);}
     root.append(cards);
@@ -213,6 +211,18 @@ function standardBack(){
   goMenu();
 }
 
+// Vehicle part insets (artwork/classroom/miniature-world-v1/part-insets.json): the part's own teaching scene,
+// cropped to the inset viewBox, with the original highlight drawn in the same SVG space so it stays on the part.
+let partInsets=null;
+fetch('images/classroom/part-insets.json').then(r=>r.ok?r.json():null).then(data=>{partInsets=data?.entries||{};if(state.mode==='learn'&&!state.choosing&&state.questions[state.round]?.id?.startsWith('part.'))renderQuestion();}).catch(()=>{partInsets={};});
+function partInset(item){
+  const inset=partInsets?.[item.id];if(!inset)return null;
+  const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg'),[,,w,h]=inset.sceneViewBox;
+  svg.setAttribute('viewBox',inset.insetViewBox.join(' '));svg.setAttribute('class','learn-part-inset');svg.setAttribute('role','img');svg.setAttribute('aria-label',`Where the ${item.name} is in a bigger picture`);
+  const image=document.createElementNS(ns,'image');image.setAttribute('href',inset.scene);image.setAttribute('width',w);image.setAttribute('height',h);image.setAttribute('preserveAspectRatio','none');
+  const mark=document.createElementNS(ns,'path');mark.setAttribute('d',inset.path);mark.setAttribute('fill-rule',inset.fillRule||'nonzero');mark.setAttribute('class','learn-part-mark');
+  svg.append(image,mark);return svg;
+}
 function renderStandardLearn(){
   const item=state.questions[state.round];
   state.practice=true;
@@ -226,7 +236,8 @@ function renderStandardLearn(){
     const image=document.createElement('img');
     image.src=source;
     image.alt=item.alt||`Miniature illustration of ${item.name}.`;
-    panel.append(image);
+    const inset=partInset(item);
+    if(inset){const pair=document.createElement('div');pair.className='learn-picture-pair';pair.append(image,inset);panel.append(pair);}else panel.append(image);
   }
   const title=document.createElement('h2');
   title.textContent=item.name;
@@ -264,17 +275,18 @@ function renderStandardIdentify(){
   for(const choice of round.choices)makeAnswer(choice.name,'',choice.id===item.id,`${item.name}. ${item.definition}`,false,choice.image,choice.id);
 }
 // Like Plants, the question picture shows the scene the question is about where Transport has painted art for it.
-const safetyQuestionPictures={'safety.red-light':'safety.traffic-light','safety.road-crossing':'safety.crossing-signal','safety.crossing-place':'place.road'};
+const safetyReusedChoices={'safety.car-restraint.choice-1':'part.seat-belt','safety.cycle-helmet.choice-1':'safety.helmet','safety.life-jacket.choice-1':'safety.life-jacket','safety.crossing-place.choice-1':'place.pedestrian-crossing'};
+const safetyChoiceImage=id=>safetyReusedChoices[id]?`images/vocabulary/${safetyReusedChoices[id]}.png`:`images/classroom/answer-${id.slice(7).replace('.choice-','-')}.webp`;
 function renderStandardSafety(){
-  const round=state.questions[state.round],pref=standardPreferences(),scene=TransportSceneLibrary.entries.find(e=>e.id===safetyQuestionPictures[round.id]),item=scene||vehicles.find(v=>round.relatedIds.includes(v.id));
+  const round=state.questions[state.round],pref=standardPreferences(),item={id:round.id,name:round.q,image:`images/classroom/question-${round.id.slice(7)}.webp`,alt:round.q};
   els.question.textContent=round.q;els.helper.textContent='';els.round.textContent=`Question ${state.round+1}/${state.questions.length}`;
-  if(item)setVehicle(item,false);else clearVehiclePicture();els.name.textContent='';
+  setVehicle(item,false);els.name.textContent='';els.emoji.classList.add('safety-scene');
   const gameCard=document.getElementById('gameCard'),apply=()=>{const now=standardPreferences();els.stage.style.display=now.safetyQuestion!==false&&item?'':'none';gameCard.classList.toggle('hide-answer-emojis',now.safetyAnswers===false);gameCard.classList.toggle('hide-identify-target',now.safetyQuestion===false);};
   // Plants' two checkboxes, sharing the Teacher panel's picture settings.
   const options=document.createElement('div');options.className='picture-controls knowledge-picture-options';
   for(const [key,label] of [['safetyQuestion','Show question picture'],['safetyAnswers','Show answer pictures']]){const row=document.createElement('label'),box=document.createElement('input');box.type='checkbox';box.checked=pref[key]!==false;box.onchange=()=>{classroom.data.preferences={...classroom.data.preferences,[key]:box.checked};classroom.persist();apply();};row.append(box,` ${label}`);options.append(row);}
   els.stage.before(options);apply();
-  for(const id of round.answerOrder){const i=round.answerIds.indexOf(id),a=round.answers[i];makeAnswer(a[0],a[1],i===round.correct,round.explain,false,'',id);}
+  for(const id of round.answerOrder){const i=round.answerIds.indexOf(id),a=round.answers[i];makeAnswer(a[0],a[1],i===round.correct,round.explain,false,safetyChoiceImage(id),id);}
 }
 function renderStandardDetective(){
   const round=state.questions[state.round];els.question.textContent='What is in the hidden picture?';els.helper.textContent='';

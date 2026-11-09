@@ -32,9 +32,9 @@
 .dispatch-title{margin:0;font-size:20px;line-height:1.25}
 .dispatch-sub{margin:2px 0 0;font-size:14px;color:#4c6273}
 .dispatch-count{flex:none;font-size:13px;font-weight:700;color:#4c6273;padding-top:4px}
-.dispatch-world{position:relative;aspect-ratio:1.7;background:#efe6cc;border:1px solid #d8bd7d;border-radius:14px;overflow:hidden}
+.dispatch-world{position:relative;aspect-ratio:1.7;background:#efe6cc url(images/dispatch-map/land-texture.webp) center/340px;border:1px solid #d8bd7d;border-radius:14px;overflow:hidden}
 .dispatch-world>svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.dw-water{fill:#a9d4e2}.dw-island{fill:#e4dcbc;stroke:#c9bd94;stroke-width:.4}
+.dw-water{fill:#a9d4e2;fill:url(#dw-water-fill)}.dw-island{fill:#e4dcbc;fill:url(#dw-land-fill);stroke:#c9bd94;stroke-width:.4}
 .dw-lane{fill:none;stroke:#fffaf0;stroke-width:.7;stroke-dasharray:2 1.6;opacity:.9}
 .dw-road{fill:none;stroke:#a3a7a7;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
 .dw-under{stroke:#c9c2ab;stroke-dasharray:3 2}
@@ -57,7 +57,8 @@
 .dw-node.is-dest .dw-emoji{border:3px solid #c2410c;box-shadow:0 0 0 4px #f4c45399}
 .dw-node.is-via .dw-emoji{border:3px dashed #b8932f;box-shadow:0 0 0 4px #fff4ce}
 .dw-node--island{pointer-events:none}
-.dw-works{position:absolute;z-index:2;font-size:16px;line-height:1;transform:translate(-50%,-50%);pointer-events:none;filter:drop-shadow(0 1px 1px #0005)}
+.dw-landmark{overflow:hidden;padding:1px;box-sizing:border-box}.dw-landmark img,.dw-works img{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none}.dw-works img{height:auto}
+.dw-works{position:absolute;z-index:2;width:30px;line-height:0;transform:translate(-50%,-50%);pointer-events:none;filter:drop-shadow(0 1px 1px #0005)}
 .dw-works.is-flash{animation:dw-shake .5s}
 .dw-fire{position:absolute;z-index:3;font-size:20px;transform:translate(-50%,-50%);pointer-events:none;animation:dw-pulse 1s ease-in-out infinite}
 @keyframes dw-pulse{50%{transform:scale(1.25)}}
@@ -87,4 +88,4 @@
 .dispatch-status{margin:0;min-height:44px;line-height:1.45;font-size:15px}
 .dispatch-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
 .dispatch-actions>button{flex:1 1 150px}
-@container(max-width:520px){.dispatch-world{aspect-ratio:.95}.dispatch-title{font-size:17px}.dw-label{font-size:9px;top:30px;padding:0 3px}.dw-emoji{width:26px;height:26px;font-size:14px}.dw-node{width:36px;height:36px;margin:-18px 0 0 -18px}.dw-works{font-size:13px}.dw-load{width:8px;height:8px;margin:-4px}.dispatch-vehicle img{max-width:64px}.dispatch-count{font-size:12px}.is-size-large .dw-label{display:none}.is-size-large .dw-emoji{width:24px;height:24px;font-size:13px}}
+@container(max-width:520px){.dispatch-world{aspect-ratio:.95}.dispatch-title{font-size:17px}.dw-label{font-size:9px;top:30px;padding:0 3px}.dw-emoji{width:26px;height:26px;font-size:14px}.dw-node{width:36px;height:36px;margin:-18px 0 0 -18px}.dw-works{width:24px}.dw-load{width:8px;height:8px;margin:-4px}.dispatch-vehicle img{max-width:64px}.dispatch-count{font-size:12px}.is-size-large .dw-label{display:none}.is-size-large .dw-emoji{width:24px;height:24px;font-size:13px}}

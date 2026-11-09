@@ -18,6 +18,9 @@
     fire:['Fire station', '🚒'], building:['Building site', '🏗️'], farm:['Farm', '🌾'], shop:['Shop', '🏪'], houses:['Houses', '🏘️'],
     police:['Police station', '🚓'], park:['Park', '🌳'], island:['Island', '🏝️']
   };
+  // Painted destination landmarks and the roadworks barrier replace the old emoji markers; the label and aria stay on the button.
+  const art = name => { const i = document.createElement('img'); i.src = 'images/dispatch-map/' + name + '.webp'; i.alt = ''; i.decoding = 'async'; i.draggable = false; return i; };
+  const landmark = place => { const s = el('span', 'dw-emoji dw-landmark'); s.append(art('landmark-' + place)); return s; };
   const TOWN_PLACES = {
     small:['depot', 'school', 'station', 'hospital', 'dock'],
     medium:['depot', 'school', 'station', 'hospital', 'dock', 'fire', 'building', 'farm', 'shop', 'houses'],
@@ -269,6 +272,13 @@
       const world = el('div', 'dispatch-world'); world.setAttribute('role', 'group'); this.world = world;
       const svg = svgEl('svg', {viewBox: '0 0 100 100', preserveAspectRatio: 'none', 'aria-hidden': 'true'}); this.svg = svg;
       const rx = t.riverX;
+      // Painted map fills (artwork/dispatch/miniature-world-map-v1): one board-space sample each, kept square by fitTextures().
+      const defs = svgEl('defs');
+      this.texturePatterns = ['land', 'water'].map(kind => {
+        const p = svgEl('pattern', {id: `dw-${kind}-fill`, patternUnits: 'userSpaceOnUse', width: 34, height: 34});
+        p.append(svgEl('image', {href: 'images/dispatch-map/' + kind + '-texture.webp', width: 34, height: 34, preserveAspectRatio: 'none'})); defs.append(p); return p;
+      });
+      svg.append(defs);
       svg.append(
         svgEl('path', {class: 'dw-water', d: `M${rx - 3.4} 0 H${rx + 3.4} C${rx + 4.5} 30 ${rx + 2} 55 ${rx + 3.4} 82 H${rx - 3.4} C${rx - 2} 55 ${rx - 4.5} 30 ${rx - 3.4} 0 Z`}),
         svgEl('path', {class: 'dw-water', d: 'M0 82 C20 80 40 83 60 81 S90 80 100 82 V100 H0 Z'}),
@@ -286,7 +296,7 @@
       world.append(svg);
       this.worksEls = {};
       for (const e of t.edges.values()) {
-        const [a, b] = [t.nodes[e.a], t.nodes[e.b]], w = el('span', 'dw-works', '🚧');
+        const [a, b] = [t.nodes[e.a], t.nodes[e.b]], w = el('span', 'dw-works'); w.append(art('roadworks-marker'));
         w.style.left = (a.x + b.x) / 2 + '%'; w.style.top = (a.y + b.y) / 2 + '%'; w.hidden = true; w.setAttribute('aria-hidden', 'true');
         this.worksEls[e.key] = w; world.append(w);
       }
@@ -295,12 +305,12 @@
         const b = el('button', n.place ? 'dw-node dw-node--place' : 'dw-node'); b.type = 'button';
         b.style.left = n.x + '%'; b.style.top = n.y + '%';
         b.setAttribute('aria-label', n.place ? PLACES[n.place][0] : `Crossing ${n.r + 1}-${n.c + 1}`);
-        if (n.place) { b.append(el('span', 'dw-emoji', PLACES[n.place][1])); b.append(el('span', 'dw-label', PLACES[n.place][0])); }
+        if (n.place) { b.append(landmark(n.place)); b.append(el('span', 'dw-label', PLACES[n.place][0])); }
         b.onclick = () => this.tapNode(n.id);
         this.nodeEls[n.id] = b; world.append(b);
       }
       const isle = el('span', 'dw-node dw-node--place dw-node--island'); isle.style.left = ISLAND[0] + '%'; isle.style.top = ISLAND[1] + '%';
-      isle.append(el('span', 'dw-emoji', PLACES.island[1]), el('span', 'dw-label', PLACES.island[0])); world.append(isle); this.islandEl = isle;
+      isle.append(landmark('island'), el('span', 'dw-label', PLACES.island[0])); world.append(isle); this.islandEl = isle;
       this.fireEl = el('span', 'dw-fire', '🔥'); this.fireEl.hidden = true; this.fireEl.setAttribute('aria-hidden', 'true'); world.append(this.fireEl);
       this.actor = el('div', 'dw-actor'); this.actor.setAttribute('aria-hidden', 'true'); this.actorImg = el('img'); this.actorImg.alt = ''; this.actorImg.decoding = 'async'; this.actor.append(this.actorImg); world.append(this.actor);
       this.loads = Array.from({length: 12}, () => { const m = el('i', 'dw-load'); m.setAttribute('aria-hidden', 'true'); world.append(m); return {el: m, x: 0, y: 0, a: 0, active: false}; });
@@ -317,10 +327,16 @@
       actions.append(this.primary, this.restartBtn);
       shell.append(head, world, this.choicesEl, this.toolsEl, this.statusEl, actions); r.append(shell);
       this.size = {w: 1, h: 1};
-      this.resize = new ResizeObserver(([entry]) => { this.size = {w: entry.contentRect.width, h: entry.contentRect.height}; this.paint(); });
+      this.resize = new ResizeObserver(([entry]) => { this.size = {w: entry.contentRect.width, h: entry.contentRect.height}; this.fitTextures(); this.paint(); });
       this.resize.observe(world);
       // Measure now too: the observer can be late in a background tab, and sprite sizes depend on it.
-      this.size = {w: world.clientWidth || 1, h: world.clientHeight || 1};
+      this.size = {w: world.clientWidth || 1, h: world.clientHeight || 1}; this.fitTextures();
+    }
+
+    // The board SVG stretches 100x100 to the world's shape, so squash each texture tile back to square pixels.
+    fitTextures() {
+      const hw = 34 * this.size.w / Math.max(1, this.size.h);
+      for (const p of this.texturePatterns || []) { p.setAttribute('height', hw); p.firstChild.setAttribute('height', hw); }
     }
 
     point(place) { if (place === 'island') return ISLAND; const n = this.town.nodes[this.town.placeNode[place]]; return [n.x, n.y]; }

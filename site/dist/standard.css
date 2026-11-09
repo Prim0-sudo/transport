@@ -23,6 +23,11 @@ button:disabled{cursor:default}.standard-actions button:disabled{opacity:.55}
 .learn-word-card{display:grid;justify-items:center;gap:12px;width:100%;margin-inline:auto}
 .learn-word-card img{display:block;width:min(100%,380px,50vh);height:auto;aspect-ratio:1;object-fit:contain;border:2px solid #fff;border-radius:20px;background:#fcf1da;box-shadow:0 6px 18px #183a5120}
 .learn-word-card h2{margin:0;text-transform:uppercase}
+/* Part picture beside its place in a bigger scene. */
+.learn-picture-pair{display:flex;align-items:center;justify-content:center;gap:clamp(10px,2vw,20px);width:100%}
+.learn-picture-pair>img{width:min(48%,340px,42vh)}
+.learn-part-inset{width:min(48%,340px,42vh);height:auto;aspect-ratio:1;border:4px solid #fff;border-radius:20px;background:#fcf1da;box-shadow:0 6px 18px #183a5120}
+.learn-part-mark{fill:#ffd54a55;stroke:#e6a92a;stroke-width:4;vector-effect:non-scaling-stroke}
 .learn-meaning{margin:0;width:min(100%,720px);padding:12px 18px;border:1px solid #e4cf9d;border-radius:14px;background:#fffbed;color:#183a51;line-height:1.5;text-align:center}
 .teaching-scenes{grid-column:1/-1;width:min(100%,820px);margin-inline:auto;display:grid;gap:12px}
 .teaching-scene-picture{position:relative;margin:0;overflow:hidden;border-radius:14px;background:#fcf1da}
@@ -148,7 +153,7 @@ button:disabled{cursor:default}.standard-actions button:disabled{opacity:.55}
 .results-card .big-stars{font-size:clamp(2.4rem,5vw,3.4rem);color:#183a51;letter-spacing:0;margin:10px 0 4px}
 .results-card .result-score{font-size:1.5rem;color:#1d4f73}
 .results-card .result-score strong{font-size:1.9rem}
-img.result-burst{display:block;width:clamp(90px,14vw,140px);height:auto;margin:0 auto 6px;animation:pop .5s ease}
+img.result-burst{display:block;width:clamp(130px,22vw,220px);height:auto;margin:0 auto 6px;animation:pop .5s ease}
 @media(max-width:640px){.standard-choice-grid.learn-groups{--cols:2;--gap:9px}.learn-groups .standard-choice>img{height:clamp(46px,8dvh,76px)}}
 @media(min-width:641px) and (max-width:850px){.standard-choice-grid.learn-groups{--cols:4}}
 @media(max-width:640px){.game-screen .game-status{grid-template-columns:auto 1fr auto}.game-status .back-menu-btn{grid-area:1/1}.game-status .round-label{grid-area:1/2}.game-status .score-pill{grid-area:1/3}.game-status .progress-track{grid-area:2/1/3/-1}}
@@ -224,6 +229,8 @@ img.result-burst{display:block;width:clamp(90px,14vw,140px);height:auto;margin:0
 .game-card[data-mode=safety].hide-identify-target .answers{margin-top:clamp(12px,4dvh,40px)}
 .game-card[data-mode=safety] .answer-btn{min-height:clamp(70px,12dvh,140px)}
 .game-screen .game-card[data-mode=safety] .vehicle-emoji.vehicle-icon-image{height:clamp(140px,26dvh,420px)}
+/* Painted question scenes are full pictures: rounded frame, no cut-out fitting. */
+.game-screen .game-card[data-mode=safety] .vehicle-emoji.safety-scene{width:auto;aspect-ratio:3/2;max-width:100%;margin-inline:auto;background-size:cover!important;border:4px solid #fff;border-radius:20px;box-shadow:0 6px 18px #183a5126}
 @media(max-width:480px){.game-screen .game-card[data-mode=safety] .vehicle-emoji.vehicle-icon-image{height:clamp(90px,14dvh,140px)}.game-card[data-mode=safety] .answers{gap:8px}.game-card[data-mode=safety] .answer-btn{min-height:56px;padding:6px 12px;font-size:1rem}.game-card[data-mode=safety] .answer-icon{font-size:1.6rem}.game-card[data-mode=safety] #questionText{font-size:1.4rem}.knowledge-picture-options{flex-wrap:nowrap;gap:0 10px}.knowledge-picture-options label{gap:5px;font-size:.78rem;white-space:nowrap}.knowledge-picture-options input{width:17px;height:17px}}
 
 /* Spelling, following Plants modes.css (.meltdown-board, .spelling-letter, .letter-keys). */

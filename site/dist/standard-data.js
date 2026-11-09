@@ -4,18 +4,18 @@
 (() => {
   const ids=text=>text.split(' ').map(id=>`vehicle.${id}`);
   const categories=[
-    {id:'all',label:'All words',image:'images/vocabulary/vehicle.bus.png'},
-    {id:'land',label:'Land travel',image:'images/vocabulary/vehicle.car.png'},
-    {id:'water',label:'Water travel',image:'images/vocabulary/vehicle.boat.png'},
-    {id:'air',label:'Air travel',image:'images/vocabulary/vehicle.airplane.png'},
-    {id:'space',label:'Space travel',image:'images/vocabulary/vehicle.rocket.png'},
+    {id:'all',label:'All words',image:'images/classroom/cover-all.webp'},
+    {id:'land',label:'Land travel',image:'images/classroom/cover-land.webp'},
+    {id:'water',label:'Water travel',image:'images/classroom/cover-water.webp'},
+    {id:'air',label:'Air travel',image:'images/classroom/cover-air.webp'},
+    {id:'space',label:'Space travel',image:'images/classroom/cover-space.webp'},
   ];
   const teachingCategories=[
-    {id:'part',label:'Vehicle parts',image:'images/teaching-scenes/bicycle-parts.png'},
-    {id:'place',label:'Journey places',image:'images/teaching-scenes/train-at-the-platform.png'},
-    {id:'person',label:'People and roles',image:'images/teaching-scenes/crew-and-passengers.png'},
-    {id:'action',label:'Journey actions',image:'images/teaching-scenes/driving-actions.png'},
-    {id:'safety',label:'Safe journeys',image:'images/teaching-scenes/cycle-safety.png'},
+    {id:'part',label:'Vehicle parts',image:'images/classroom/cover-part.webp'},
+    {id:'place',label:'Journey places',image:'images/classroom/cover-place.webp'},
+    {id:'person',label:'People and roles',image:'images/classroom/cover-person.webp'},
+    {id:'action',label:'Journey actions',image:'images/classroom/cover-action.webp'},
+    {id:'safety',label:'Safe journeys',image:'images/classroom/cover-safety.webp'},
   ];
   const sortRules=[
     {id:'surfaces',label:'Land, water or air?',description:'Group each pictured vehicle by where it travels.',notes:'Spacecraft are outside this rule.',prompt:name=>`Where does the ${name} travel?`,groups:[

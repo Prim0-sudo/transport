@@ -1,0 +1,214 @@
+{
+ "from": "artwork/dispatch/miniature-world-map-v1/manifest.json",
+ "note": "Cropped to visibleBounds plus 3% margin (transparent art), WebP q86",
+ "assets": [
+  {
+   "id": "land-texture",
+   "name": "land-texture",
+   "group": "material",
+   "file": "land-texture.webp",
+   "size": [
+    1024,
+    1024
+   ],
+   "source": "artwork/dispatch/miniature-world-map-v1/originals/land-texture.png",
+   "sha256": "ae78c134e45960239ec88ab8793bb6d270348e34c3c44519f8a4fd4e75b1121b",
+   "bytes": 80012
+  },
+  {
+   "id": "water-texture",
+   "name": "water-texture",
+   "group": "material",
+   "file": "water-texture.webp",
+   "size": [
+    1024,
+    1024
+   ],
+   "source": "artwork/dispatch/miniature-world-map-v1/originals/water-texture.png",
+   "sha256": "7e434b95f8a66996b6d1d56e964c32739b16d53082fde088825f85125fe03522",
+   "bytes": 43110
+  },
+  {
+   "id": "depot",
+   "name": "landmark-depot",
+   "group": "landmark",
+   "file": "landmark-depot.webp",
+   "size": [
+    288,
+    275
+   ],
+   "source": "artwork/dispatch/miniature-world-map-v1/originals/landmark-depot.png",
+   "sha256": "8e32cd25277a2745c661b89c5fd7981cc6c143e1cb232d258a37a150f44b72cb",
+   "bytes": 23906
+  },
+  {
+   "id": "school",
+   "name": "landmark-school",
+   "group": "landmark",
+   "file": "landmark-school.webp",
+   "size": [
+    287,
+    288
+   ],
+   "source": "artwork/dispatch/miniature-world-map-v1/originals/landmark-school.png",
+   "sha256": "309a4d74fe235679e389a6877139af3c0a5eba559ff07c3ee30d081d74d7e216",
+   "bytes": 34240
+  },
+  {
+   "id": "station",
+   "name": "landmark-station",
+   "group": "landmark",
+   "file": "landmark-station.webp",
+   "size": [
+    288,
+    240
+   ],
+   "source": "artwork/dispatch/miniature-world-map-v1/originals/landmark-station.png",
+   "sha256": "dc4b57a7035370a8aca6d28036fa0cdab7dd4d9e074e0e037d771ff8b294935b",
+   "bytes": 29418
+  },
+  {
+   "id": "hospital",
+   "name": "landmark-hospital",
+   "group": "landmark",
+   "file": "landmark-hospital.webp",
+   "size": [
+    286,
+    288
+   ],
+   "source": "artwork/dispatch/miniature-world-map-v1/originals/landmark-hospital.png",
+   "sha256": "689884e8dac0ed4648e548bec956090c5d344274f359add05fd6d2cfa78d47c8",
+   "bytes": 25838
+  },
+  {
+   "id": "fire",
+   "name": "landmark-fire",
+   "group": "landmark",
+   "file": "landmark-fire.webp",
+   "size": [
+    288,
+    273
+   ],
+   "source": "artwork/dispatch/miniature-world-map-v1/originals/landmark-fire.png",
+   "sha256": "6221d31c9cdea647d30e9bb68538fe1cd41713b1214dd1146bf518cc7b9f29f8",
+   "bytes": 27698
+  },
+  {
+   "id": "building",
+   "name": "landmark-building",
+   "group": "landmark",
+   "file": "landmark-building.webp",
+   "size": [
+    288,
+    216
+   ],
+   "source": "artwork/dispatch/miniature-world-map-v1/originals/landmark-building.png",
+   "sha256": "36650481bb534e8f97755223d6330157b8931506257f22be8e3ed8e26af85257",
+   "bytes": 20348
+  },
+  {
+   "id": "farm",
+   "name": "landmark-farm",
+   "group": "landmark",
+   "file": "landmark-farm.webp",
+   "size": [
+    288,
+    283
+   ],
+   "source": "artwork/dispatch/miniature-world-map-v1/originals/landmark-farm.png",
+   "sha256": "1dc019d55dba6e6cda733c6e1fbab3a9f044e58d70e9ef8e5977b785e420975a",
+   "bytes": 33872
+  },
+  {
+   "id": "shop",
+   "name": "landmark-shop",
+   "group": "landmark",
+   "file": "landmark-shop.webp",
+   "size": [
+    265,
+    288
+   ],
+   "source": "artwork/dispatch/miniature-world-map-v1/originals/landmark-shop.png",
+   "sha256": "5a4266d10aa3fa4e831e0452018c5e9934a6f88356fd0a65f5f6688f3a90f6d5",
+   "bytes": 22640
+  },
+  {
+   "id": "houses",
+   "name": "landmark-houses",
+   "group": "landmark",
+   "file": "landmark-houses.webp",
+   "size": [
+    288,
+    262
+   ],
+   "source": "artwork/dispatch/miniature-world-map-v1/originals/landmark-houses.png",
+   "sha256": "8173671042f2ffd44968dd1bf95a44a675a69aed1ea5cffed3e0651aef0985a6",
+   "bytes": 29588
+  },
+  {
+   "id": "police",
+   "name": "landmark-police",
+   "group": "landmark",
+   "file": "landmark-police.webp",
+   "size": [
+    288,
+    236
+   ],
+   "source": "artwork/dispatch/miniature-world-map-v1/originals/landmark-police.png",
+   "sha256": "582c71ea1fff73af5990fa522dafe799d97b22b707165fada89e2c144769c827",
+   "bytes": 23518
+  },
+  {
+   "id": "park",
+   "name": "landmark-park",
+   "group": "landmark",
+   "file": "landmark-park.webp",
+   "size": [
+    288,
+    252
+   ],
+   "source": "artwork/dispatch/miniature-world-map-v1/originals/landmark-park.png",
+   "sha256": "4cdd4ca3c533669b28f91ac1dab966194cd856ac8c3cfb06ba80264db1418ebe",
+   "bytes": 21072
+  },
+  {
+   "id": "island",
+   "name": "landmark-island",
+   "group": "landmark",
+   "file": "landmark-island.webp",
+   "size": [
+    288,
+    232
+   ],
+   "source": "artwork/dispatch/miniature-world-map-v1/originals/landmark-island.png",
+   "sha256": "a77b1f346f2b7e3291deb1a403e2a422db222289ef924c0c829c8390feca36bc",
+   "bytes": 22430
+  },
+  {
+   "id": "dock",
+   "name": "landmark-dock",
+   "group": "landmark",
+   "file": "landmark-dock.webp",
+   "size": [
+    261,
+    288
+   ],
+   "source": "artwork/dispatch/miniature-world-map-v1/originals/landmark-dock.png",
+   "sha256": "0ddc18341db4dd378d5e883fb3772b87830c162bbd96662820a5c63b84d45527",
+   "bytes": 32408
+  },
+  {
+   "id": "roadworks-marker",
+   "name": "roadworks-marker",
+   "group": "marker",
+   "file": "roadworks-marker.webp",
+   "size": [
+    200,
+    96
+   ],
+   "source": "artwork/dispatch/miniature-world-map-v1/originals/roadworks-marker.png",
+   "sha256": "c24706a5f6ac09778350db186f1aa1b5d64927da5b9d5e2f581df0c302c6c55e",
+   "bytes": 6030
+  }
+ ]
+}

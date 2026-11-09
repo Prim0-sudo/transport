@@ -1,0 +1,559 @@
+{
+ "from": "artwork/classroom/miniature-world-v1/manifest.json",
+ "note": "Cropped to visibleBounds plus 3% margin (transparent art), WebP q86",
+ "assets": [
+  {
+   "id": "all",
+   "name": "cover-all",
+   "group": "category",
+   "file": "cover-all.webp",
+   "size": [
+    640,
+    593
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/cover-all.png",
+   "sha256": "6e33bfe8c25ac80221dacf12d45faeb4fd4a8e57f898062b62fe4ba13b429404",
+   "bytes": 116912
+  },
+  {
+   "id": "land",
+   "name": "cover-land",
+   "group": "category",
+   "file": "cover-land.webp",
+   "size": [
+    640,
+    426
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/cover-land.png",
+   "sha256": "bb56c3a6f91bbedacfb043cb635e007159bc2c4ce1c5ce7d359196574a3205ad",
+   "bytes": 103366
+  },
+  {
+   "id": "water",
+   "name": "cover-water",
+   "group": "category",
+   "file": "cover-water.webp",
+   "size": [
+    640,
+    480
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/cover-water.png",
+   "sha256": "5fb1802049695807741130d7563c7f6b1e1e889d599f8ab7a091b35277f2c2d1",
+   "bytes": 96532
+  },
+  {
+   "id": "air",
+   "name": "cover-air",
+   "group": "category",
+   "file": "cover-air.webp",
+   "size": [
+    640,
+    547
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/cover-air.png",
+   "sha256": "84804b8319bd3adbdf4d0f7278003131debe35a595c0fdca3ebf210f1469fe75",
+   "bytes": 101046
+  },
+  {
+   "id": "space",
+   "name": "cover-space",
+   "group": "category",
+   "file": "cover-space.webp",
+   "size": [
+    514,
+    640
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/cover-space.png",
+   "sha256": "b970a90c98c0deef1e098e8d5371c4b2f19ba66d1eefe95281e639400ff3574b",
+   "bytes": 79906
+  },
+  {
+   "id": "part",
+   "name": "cover-part",
+   "group": "category",
+   "file": "cover-part.webp",
+   "size": [
+    640,
+    480
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/cover-part.png",
+   "sha256": "78f668182c4ae36d029b21b3a8559f2e00610ac0495b46b6bcacaf0a6763a763",
+   "bytes": 90796
+  },
+  {
+   "id": "place",
+   "name": "cover-place",
+   "group": "category",
+   "file": "cover-place.webp",
+   "size": [
+    640,
+    455
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/cover-place.png",
+   "sha256": "e4fe459320b448e3878b909d3f04cd7276fcc171a4b9c42dddb08f3d7606cfcf",
+   "bytes": 109636
+  },
+  {
+   "id": "person",
+   "name": "cover-person",
+   "group": "category",
+   "file": "cover-person.webp",
+   "size": [
+    575,
+    640
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/cover-person.png",
+   "sha256": "c41c37bbfbd04fa4a1db80525179cfdd2dc3b180c4679b871f2394397b702a8a",
+   "bytes": 119752
+  },
+  {
+   "id": "action",
+   "name": "cover-action",
+   "group": "category",
+   "file": "cover-action.webp",
+   "size": [
+    640,
+    480
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/cover-action.png",
+   "sha256": "a2acef6d469884c1c98f480a42394ef8a57bc68a37c75d4e088dc75daa85759e",
+   "bytes": 105394
+  },
+  {
+   "id": "safety",
+   "name": "cover-safety",
+   "group": "category",
+   "file": "cover-safety.webp",
+   "size": [
+    640,
+    517
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/cover-safety.png",
+   "sha256": "1bc17302f1f7001e9bfd5fc6f838941570cff2fdb77ee249dc8b8bf436b23afc",
+   "bytes": 91876
+  },
+  {
+   "id": "activity.complete",
+   "name": "completion",
+   "group": "completion",
+   "file": "completion.webp",
+   "size": [
+    510,
+    640
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/completion.png",
+   "sha256": "6fac752c123c77469f12e635a8175d0f4b2334ece0dc69e8fa177cd4afcee6bb",
+   "bytes": 122360
+  },
+  {
+   "id": "scenes",
+   "name": "cover-scenes",
+   "group": "category",
+   "file": "cover-scenes.webp",
+   "size": [
+    640,
+    453
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/cover-scenes.png",
+   "sha256": "c08c2483abb61da8aeb9e911868d066cc611863269513a1ffa476a67f9429322",
+   "bytes": 96804
+  },
+  {
+   "id": "driving",
+   "name": "driving-card",
+   "group": "game-card",
+   "file": "driving-card.webp",
+   "size": [
+    900,
+    589
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/driving-card.png",
+   "sha256": "c198accd66a2c65970fe046181126f5d946ea907f593f081dc3be73a6cf6994f",
+   "bytes": 172136
+  },
+  {
+   "id": "safety.car-restraint",
+   "name": "question-car-restraint",
+   "group": "question",
+   "file": "question-car-restraint.webp",
+   "size": [
+    1100,
+    733
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/question-car-restraint.png",
+   "sha256": "940117ef877f964349730df4ab3d7e924d71d0afc4bb9f13d0b3717d25ad4af8",
+   "bytes": 169452
+  },
+  {
+   "id": "safety.cycle-helmet",
+   "name": "question-cycle-helmet",
+   "group": "question",
+   "file": "question-cycle-helmet.webp",
+   "size": [
+    1100,
+    733
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/question-cycle-helmet.png",
+   "sha256": "2f0aed3544cf6f1a8054c7e85c0eccb9639069723de54926b75eabc867111a44",
+   "bytes": 201962
+  },
+  {
+   "id": "safety.red-light",
+   "name": "question-red-light",
+   "group": "question",
+   "file": "question-red-light.webp",
+   "size": [
+    1100,
+    733
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/question-red-light.png",
+   "sha256": "3f125645b41f09e3f31fa5903bd98f29bf4622873ab8408c3a9e4454ba54c0a0",
+   "bytes": 141086
+  },
+  {
+   "id": "safety.road-crossing",
+   "name": "question-road-crossing",
+   "group": "question",
+   "file": "question-road-crossing.webp",
+   "size": [
+    1100,
+    733
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/question-road-crossing.png",
+   "sha256": "f0b5aa6258d5792c594f7c562a7d47e7f59efd4ace643eb48a8d2bc12a344250",
+   "bytes": 191394
+  },
+  {
+   "id": "safety.life-jacket",
+   "name": "question-life-jacket",
+   "group": "question",
+   "file": "question-life-jacket.webp",
+   "size": [
+    1100,
+    733
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/question-life-jacket.png",
+   "sha256": "c6c27ce5f2ce772e52d72ce2575b8f3214615d0b5c23ae8ee41d6f853204e437",
+   "bytes": 187408
+  },
+  {
+   "id": "safety.bus-seat",
+   "name": "question-bus-seat",
+   "group": "question",
+   "file": "question-bus-seat.webp",
+   "size": [
+    1100,
+    733
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/question-bus-seat.png",
+   "sha256": "02c7262c3a9031922fd18ad84faf1c9e794d065d08da01bac0b61a852d907493",
+   "bytes": 177078
+  },
+  {
+   "id": "safety.reversing-vehicle",
+   "name": "question-reversing-vehicle",
+   "group": "question",
+   "file": "question-reversing-vehicle.webp",
+   "size": [
+    1100,
+    733
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/question-reversing-vehicle.png",
+   "sha256": "67fd97d539357c2867d90a589e4b56b66cc92a499fc543d99c09f49fa4d60d6f",
+   "bytes": 184160
+  },
+  {
+   "id": "safety.crossing-place",
+   "name": "question-crossing-place",
+   "group": "question",
+   "file": "question-crossing-place.webp",
+   "size": [
+    1100,
+    733
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/question-crossing-place.png",
+   "sha256": "3f01498b72cf349aac33ac9825f9c2922a60044cfba0a7862a1407658d6a9deb",
+   "bytes": 204120
+  },
+  {
+   "id": "safety.car-restraint.choice-2",
+   "name": "answer-car-restraint-2",
+   "group": "answer",
+   "file": "answer-car-restraint-2.webp",
+   "size": [
+    420,
+    354
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/answer-car-restraint-2.png",
+   "sha256": "6aee07ff5a816ba7d190bca8f0f2ed94b2de30cab627e5a7fab65738f15f668f",
+   "bytes": 37768
+  },
+  {
+   "id": "safety.car-restraint.choice-3",
+   "name": "answer-car-restraint-3",
+   "group": "answer",
+   "file": "answer-car-restraint-3.webp",
+   "size": [
+    420,
+    388
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/answer-car-restraint-3.png",
+   "sha256": "2bc3d5582b2f1be466ee3f3af9795b782270b7b13c41705f9048eb6828964e9a",
+   "bytes": 54752
+  },
+  {
+   "id": "safety.cycle-helmet.choice-2",
+   "name": "answer-cycle-helmet-2",
+   "group": "answer",
+   "file": "answer-cycle-helmet-2.webp",
+   "size": [
+    276,
+    420
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/answer-cycle-helmet-2.png",
+   "sha256": "d5eaa867355a048a97781b2804e10d105bd7b29f133b4c46826e530df3f8b9a1",
+   "bytes": 28662
+  },
+  {
+   "id": "safety.cycle-helmet.choice-3",
+   "name": "answer-cycle-helmet-3",
+   "group": "answer",
+   "file": "answer-cycle-helmet-3.webp",
+   "size": [
+    420,
+    291
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/answer-cycle-helmet-3.png",
+   "sha256": "16be48422f59ab714a208950db99a51e9c271b4bdcc05309e99b59234c1b1b9e",
+   "bytes": 37770
+  },
+  {
+   "id": "safety.red-light.choice-1",
+   "name": "answer-red-light-1",
+   "group": "answer",
+   "file": "answer-red-light-1.webp",
+   "size": [
+    420,
+    394
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/answer-red-light-1.png",
+   "sha256": "5c5eb38de3891840265443b49fcea0f2eb39c3d9c471ade5ffa5009158ce74e1",
+   "bytes": 59608
+  },
+  {
+   "id": "safety.red-light.choice-2",
+   "name": "answer-red-light-2",
+   "group": "answer",
+   "file": "answer-red-light-2.webp",
+   "size": [
+    420,
+    359
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/answer-red-light-2.png",
+   "sha256": "bc0ac8535f34003be87e7263f74e180871c078ac7b3b4d99d139a8c5ef7ef71c",
+   "bytes": 57230
+  },
+  {
+   "id": "safety.red-light.choice-3",
+   "name": "answer-red-light-3",
+   "group": "answer",
+   "file": "answer-red-light-3.webp",
+   "size": [
+    276,
+    420
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/answer-red-light-3.png",
+   "sha256": "f10a3993f5b74ebf8770ecd9efb01f65a2f00b08153a149e510aa2772ad13b20",
+   "bytes": 31022
+  },
+  {
+   "id": "safety.road-crossing.choice-1",
+   "name": "answer-road-crossing-1",
+   "group": "answer",
+   "file": "answer-road-crossing-1.webp",
+   "size": [
+    420,
+    417
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/answer-road-crossing-1.png",
+   "sha256": "cad53fbe52941097e5737236b2e68bf5fece0112a5707a88f2648e7a6ee55acd",
+   "bytes": 67272
+  },
+  {
+   "id": "safety.road-crossing.choice-2",
+   "name": "answer-road-crossing-2",
+   "group": "answer",
+   "file": "answer-road-crossing-2.webp",
+   "size": [
+    420,
+    420
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/answer-road-crossing-2.png",
+   "sha256": "08fd287f8d60743ea2556b5fecdde85bdc62b14a3747023b6211f47924690244",
+   "bytes": 63618
+  },
+  {
+   "id": "safety.road-crossing.choice-3",
+   "name": "answer-road-crossing-3",
+   "group": "answer",
+   "file": "answer-road-crossing-3.webp",
+   "size": [
+    398,
+    420
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/answer-road-crossing-3.png",
+   "sha256": "5945622d94934d2b9c563ddd4452db2780ce1db6051d9efa32f5f71fb2839380",
+   "bytes": 46392
+  },
+  {
+   "id": "safety.life-jacket.choice-2",
+   "name": "answer-life-jacket-2",
+   "group": "answer",
+   "file": "answer-life-jacket-2.webp",
+   "size": [
+    420,
+    386
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/answer-life-jacket-2.png",
+   "sha256": "c36ba2fad468aef93aa2dc18db59d162eabeb2bd911d8e0fb140c8824f6fdd43",
+   "bytes": 61492
+  },
+  {
+   "id": "safety.life-jacket.choice-3",
+   "name": "answer-life-jacket-3",
+   "group": "answer",
+   "file": "answer-life-jacket-3.webp",
+   "size": [
+    360,
+    420
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/answer-life-jacket-3.png",
+   "sha256": "b618e20f0e38d935024916d0845ae95dc27fe66e38456df6cddbbfde956559e6",
+   "bytes": 52606
+  },
+  {
+   "id": "safety.bus-seat.choice-1",
+   "name": "answer-bus-seat-1",
+   "group": "answer",
+   "file": "answer-bus-seat-1.webp",
+   "size": [
+    370,
+    420
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/answer-bus-seat-1.png",
+   "sha256": "84fe9494549b589e0ebaaab57da0ba811efaef167d34f226a20b4044a6b4c131",
+   "bytes": 61000
+  },
+  {
+   "id": "safety.bus-seat.choice-2",
+   "name": "answer-bus-seat-2",
+   "group": "answer",
+   "file": "answer-bus-seat-2.webp",
+   "size": [
+    420,
+    410
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/answer-bus-seat-2.png",
+   "sha256": "3c63bf3c2370142fa698d7be70859da8e51a9aefa686a899acaab283f251245c",
+   "bytes": 58714
+  },
+  {
+   "id": "safety.bus-seat.choice-3",
+   "name": "answer-bus-seat-3",
+   "group": "answer",
+   "file": "answer-bus-seat-3.webp",
+   "size": [
+    420,
+    394
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/answer-bus-seat-3.png",
+   "sha256": "3f44e33731dc005f6d5ccce781b875caced9cdd3484f7a4d08168812989f5326",
+   "bytes": 51252
+  },
+  {
+   "id": "safety.reversing-vehicle.choice-1",
+   "name": "answer-reversing-vehicle-1",
+   "group": "answer",
+   "file": "answer-reversing-vehicle-1.webp",
+   "size": [
+    420,
+    420
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/answer-reversing-vehicle-1.png",
+   "sha256": "6130f7685f1daf5d84b947a65da71a1b984ec5ab04b52cc33bfb6cccb938a645",
+   "bytes": 65486
+  },
+  {
+   "id": "safety.reversing-vehicle.choice-2",
+   "name": "answer-reversing-vehicle-2",
+   "group": "answer",
+   "file": "answer-reversing-vehicle-2.webp",
+   "size": [
+    420,
+    370
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/answer-reversing-vehicle-2.png",
+   "sha256": "c0d5a9de7c6c6765ad194be0149e7bccf7d5365ef7e5a26fe98061b14a5a8c71",
+   "bytes": 56014
+  },
+  {
+   "id": "safety.reversing-vehicle.choice-3",
+   "name": "answer-reversing-vehicle-3",
+   "group": "answer",
+   "file": "answer-reversing-vehicle-3.webp",
+   "size": [
+    420,
+    391
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/answer-reversing-vehicle-3.png",
+   "sha256": "81bf2f1a6bfc105d1a18be3133aa39d1efe43760889d14d64f6f17c49dc8a879",
+   "bytes": 64250
+  },
+  {
+   "id": "safety.crossing-place.choice-2",
+   "name": "answer-crossing-place-2",
+   "group": "answer",
+   "file": "answer-crossing-place-2.webp",
+   "size": [
+    420,
+    340
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/answer-crossing-place-2.png",
+   "sha256": "a145c476318df39f82afff01f565dcd397951b89c5bfc0934353efb9adeed159",
+   "bytes": 55294
+  },
+  {
+   "id": "safety.crossing-place.choice-3",
+   "name": "answer-crossing-place-3",
+   "group": "answer",
+   "file": "answer-crossing-place-3.webp",
+   "size": [
+    420,
+    350
+   ],
+   "source": "artwork/classroom/miniature-world-v1/originals/answer-crossing-place-3.png",
+   "sha256": "a1e4a956a794717abe5aa316a6050acf178c5f8e76b6f008226faac5d1f43034",
+   "bytes": 55994
+  },
+  {
+   "id": "safety.car-restraint.choice-1",
+   "reused": true,
+   "path": "images/vocabulary/part.seat-belt.png"
+  },
+  {
+   "id": "safety.cycle-helmet.choice-1",
+   "reused": true,
+   "path": "images/vocabulary/safety.helmet.png"
+  },
+  {
+   "id": "safety.life-jacket.choice-1",
+   "reused": true,
+   "path": "images/vocabulary/safety.life-jacket.png"
+  },
+  {
+   "id": "safety.crossing-place.choice-1",
+   "reused": true,
+   "path": "images/vocabulary/place.pedestrian-crossing.png"
+  }
+ ]
+}
