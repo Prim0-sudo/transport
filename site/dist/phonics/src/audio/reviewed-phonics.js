@@ -1,0 +1,761 @@
+// Explicit user choices override generated phonics. Names and sentence practice stay separate.
+export const REVIEWED_ALPHABET_SOUNDS={
+  "B": {
+    "path": "assets/audio/recorded-phonemes/308539a86372308ed2fd9a1cdac5222c770a7974bb07d19d6736a272fa8fba28.wav",
+    "sha256": "308539a86372308ed2fd9a1cdac5222c770a7974bb07d19d6736a272fa8fba28",
+    "key": "reviewed:308539a86372308ed2fd9a1cdac5222c770a7974bb07d19d6736a272fa8fba28",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.14,
+    "sampleRate": 24000,
+    "bytes": 6764,
+    "sourceSha256": "308539a86372308ed2fd9a1cdac5222c770a7974bb07d19d6736a272fa8fba28",
+    "sourcePath": "review/phonics-choices/clips/308539a86372308ed2fd9a1cdac5222c770a7974bb07d19d6736a272fa8fba28.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 3360
+    },
+    "selectionDate": "2026-11-01T07:20:29.943Z",
+    "label": "Revised alphabet sound"
+  },
+  "D": {
+    "path": "assets/audio/recorded-phonemes/c9eb593113a6c30ceac154995aecc16bf6a944043882923ef3611ddd3afb6cff.wav",
+    "sha256": "c9eb593113a6c30ceac154995aecc16bf6a944043882923ef3611ddd3afb6cff",
+    "key": "reviewed:c9eb593113a6c30ceac154995aecc16bf6a944043882923ef3611ddd3afb6cff",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.2,
+    "sampleRate": 24000,
+    "bytes": 9644,
+    "sourceSha256": "c9eb593113a6c30ceac154995aecc16bf6a944043882923ef3611ddd3afb6cff",
+    "sourcePath": "review/phonics-choices/clips/c9eb593113a6c30ceac154995aecc16bf6a944043882923ef3611ddd3afb6cff.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 4800
+    },
+    "selectionDate": "2026-11-01T07:22:23.497Z",
+    "label": "Phase 2 — isolated d recording"
+  },
+  "G": {
+    "path": "assets/audio/recorded-phonemes/2237f30041ddf7ac3d85a754c5b4d55f04a1b355dee31b5e418a377b0ac826f4.wav",
+    "sha256": "2237f30041ddf7ac3d85a754c5b4d55f04a1b355dee31b5e418a377b0ac826f4",
+    "key": "reviewed:2237f30041ddf7ac3d85a754c5b4d55f04a1b355dee31b5e418a377b0ac826f4",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.205,
+    "sampleRate": 24000,
+    "bytes": 9884,
+    "sourceSha256": "2237f30041ddf7ac3d85a754c5b4d55f04a1b355dee31b5e418a377b0ac826f4",
+    "sourcePath": "review/phonics-choices/clips/2237f30041ddf7ac3d85a754c5b4d55f04a1b355dee31b5e418a377b0ac826f4.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 4920
+    },
+    "selectionDate": "2026-11-01T07:22:29.078Z",
+    "label": "Phase 2 — isolated g recording"
+  },
+  "H": {
+    "path": "assets/audio/recorded-phonemes/62e30aeeae87fe22bd748374d974faed6ee63bc819a024fd3fdcc586e754c83d.wav",
+    "sha256": "62e30aeeae87fe22bd748374d974faed6ee63bc819a024fd3fdcc586e754c83d",
+    "key": "reviewed:62e30aeeae87fe22bd748374d974faed6ee63bc819a024fd3fdcc586e754c83d",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.27,
+    "sampleRate": 24000,
+    "bytes": 13004,
+    "sourceSha256": "62e30aeeae87fe22bd748374d974faed6ee63bc819a024fd3fdcc586e754c83d",
+    "sourcePath": "review/phonics-choices/clips/62e30aeeae87fe22bd748374d974faed6ee63bc819a024fd3fdcc586e754c83d.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 6480
+    },
+    "selectionDate": "2026-11-01T07:23:28.486Z",
+    "label": "Phase 2 — isolated h recording"
+  },
+  "L": {
+    "path": "assets/audio/recorded-phonemes/34241492fa439546679fe01a8fe3b5f1540bc14a4e1729c0daca312210c1bfa2.wav",
+    "sha256": "34241492fa439546679fe01a8fe3b5f1540bc14a4e1729c0daca312210c1bfa2",
+    "key": "reviewed:34241492fa439546679fe01a8fe3b5f1540bc14a4e1729c0daca312210c1bfa2",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.5537083333333334,
+    "sampleRate": 24000,
+    "bytes": 26622,
+    "sourceSha256": "34241492fa439546679fe01a8fe3b5f1540bc14a4e1729c0daca312210c1bfa2",
+    "sourcePath": "review/phonics-choices/clips/34241492fa439546679fe01a8fe3b5f1540bc14a4e1729c0daca312210c1bfa2.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 13289
+    },
+    "selectionDate": "2026-11-01T07:23:45.811Z",
+    "label": "44 sounds pack — earlier automatic trim"
+  },
+  "M": {
+    "path": "assets/audio/recorded-phonemes/1ab0bfc961a781cc7e3ae779757b1241f8d5f5903e2fa3bcc1db831a5cdad432.wav",
+    "sha256": "1ab0bfc961a781cc7e3ae779757b1241f8d5f5903e2fa3bcc1db831a5cdad432",
+    "key": "reviewed:1ab0bfc961a781cc7e3ae779757b1241f8d5f5903e2fa3bcc1db831a5cdad432",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.9493333333333334,
+    "sampleRate": 24000,
+    "bytes": 45612,
+    "sourceSha256": "1ab0bfc961a781cc7e3ae779757b1241f8d5f5903e2fa3bcc1db831a5cdad432",
+    "sourcePath": "review/phonics-choices/clips/1ab0bfc961a781cc7e3ae779757b1241f8d5f5903e2fa3bcc1db831a5cdad432.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 22784
+    },
+    "selectionDate": "2026-11-01T07:24:42.610Z",
+    "label": "44 sounds pack — earlier automatic trim"
+  },
+  "N": {
+    "path": "assets/audio/recorded-phonemes/45586c99226171c26115b071fca460995eec1d00ba54b628eee63f31e0bf8099.wav",
+    "sha256": "45586c99226171c26115b071fca460995eec1d00ba54b628eee63f31e0bf8099",
+    "key": "reviewed:45586c99226171c26115b071fca460995eec1d00ba54b628eee63f31e0bf8099",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.385,
+    "sampleRate": 24000,
+    "bytes": 18524,
+    "sourceSha256": "45586c99226171c26115b071fca460995eec1d00ba54b628eee63f31e0bf8099",
+    "sourcePath": "review/phonics-choices/clips/45586c99226171c26115b071fca460995eec1d00ba54b628eee63f31e0bf8099.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 9240
+    },
+    "selectionDate": "2026-11-01T07:25:26.301Z",
+    "label": "Phase 2 — isolated n recording"
+  },
+  "Q": {
+    "path": "assets/audio/recorded-phonemes/bfb9eedcfe9257f753bd71ae80fe6076a82fbcf2312f39e0fa51d232d1defbe3.wav",
+    "sha256": "bfb9eedcfe9257f753bd71ae80fe6076a82fbcf2312f39e0fa51d232d1defbe3",
+    "key": "reviewed:bfb9eedcfe9257f753bd71ae80fe6076a82fbcf2312f39e0fa51d232d1defbe3",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.305,
+    "sampleRate": 24000,
+    "bytes": 14684,
+    "sourceSha256": "bfb9eedcfe9257f753bd71ae80fe6076a82fbcf2312f39e0fa51d232d1defbe3",
+    "sourcePath": "review/phonics-choices/clips/bfb9eedcfe9257f753bd71ae80fe6076a82fbcf2312f39e0fa51d232d1defbe3.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 7320
+    },
+    "selectionDate": "2026-11-01T07:26:04.000Z",
+    "label": "Phase 3 — isolated qu recording"
+  },
+  "R": {
+    "path": "assets/audio/recorded-phonemes/9a18253d1e59e400b8934a3486138d6e6e9b38d3593571b267e98e271650988b.wav",
+    "sha256": "9a18253d1e59e400b8934a3486138d6e6e9b38d3593571b267e98e271650988b",
+    "key": "reviewed:9a18253d1e59e400b8934a3486138d6e6e9b38d3593571b267e98e271650988b",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.555,
+    "sampleRate": 24000,
+    "bytes": 26684,
+    "sourceSha256": "9a18253d1e59e400b8934a3486138d6e6e9b38d3593571b267e98e271650988b",
+    "sourcePath": "review/phonics-choices/clips/9a18253d1e59e400b8934a3486138d6e6e9b38d3593571b267e98e271650988b.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 13320
+    },
+    "selectionDate": "2026-11-01T07:26:45.163Z",
+    "label": "Phase 2 — isolated r recording"
+  },
+  "U": {
+    "path": "assets/audio/recorded-phonemes/5d140dac24cb7b8b40379735f44735efd66da1ef57485b3d820c4272a733c55b.wav",
+    "sha256": "5d140dac24cb7b8b40379735f44735efd66da1ef57485b3d820c4272a733c55b",
+    "key": "reviewed:5d140dac24cb7b8b40379735f44735efd66da1ef57485b3d820c4272a733c55b",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.305,
+    "sampleRate": 24000,
+    "bytes": 14684,
+    "sourceSha256": "5d140dac24cb7b8b40379735f44735efd66da1ef57485b3d820c4272a733c55b",
+    "sourcePath": "review/phonics-choices/clips/5d140dac24cb7b8b40379735f44735efd66da1ef57485b3d820c4272a733c55b.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 7320
+    },
+    "selectionDate": "2026-11-01T07:27:58.203Z",
+    "label": "Phase 2 — isolated u recording"
+  },
+  "V": {
+    "path": "assets/audio/recorded-phonemes/92833017396d9ea8db5bfc954a918af35082f042bbedda78585d61ee15ee6d5a.wav",
+    "sha256": "92833017396d9ea8db5bfc954a918af35082f042bbedda78585d61ee15ee6d5a",
+    "key": "reviewed:92833017396d9ea8db5bfc954a918af35082f042bbedda78585d61ee15ee6d5a",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.54,
+    "sampleRate": 24000,
+    "bytes": 25964,
+    "sourceSha256": "92833017396d9ea8db5bfc954a918af35082f042bbedda78585d61ee15ee6d5a",
+    "sourcePath": "review/phonics-choices/clips/92833017396d9ea8db5bfc954a918af35082f042bbedda78585d61ee15ee6d5a.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 12960
+    },
+    "selectionDate": "2026-11-01T07:28:21.544Z",
+    "label": "Phase 3 — isolated v recording"
+  },
+  "Z": {
+    "path": "assets/audio/recorded-phonemes/19aaaeeb5a0babf7e7206a9474aa160938db52e36f6efc515ddb2d0aa8d86be5.wav",
+    "sha256": "19aaaeeb5a0babf7e7206a9474aa160938db52e36f6efc515ddb2d0aa8d86be5",
+    "key": "reviewed:19aaaeeb5a0babf7e7206a9474aa160938db52e36f6efc515ddb2d0aa8d86be5",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.44,
+    "sampleRate": 24000,
+    "bytes": 21164,
+    "sourceSha256": "19aaaeeb5a0babf7e7206a9474aa160938db52e36f6efc515ddb2d0aa8d86be5",
+    "sourcePath": "review/phonics-choices/clips/19aaaeeb5a0babf7e7206a9474aa160938db52e36f6efc515ddb2d0aa8d86be5.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 10560
+    },
+    "selectionDate": "2026-11-01T07:29:07.179Z",
+    "label": "Phase 3 — isolated z recording"
+  }
+};
+export const REVIEWED_SOUNDS={
+  "b": {
+    "path": "assets/audio/recorded-phonemes/308539a86372308ed2fd9a1cdac5222c770a7974bb07d19d6736a272fa8fba28.wav",
+    "sha256": "308539a86372308ed2fd9a1cdac5222c770a7974bb07d19d6736a272fa8fba28",
+    "key": "reviewed:308539a86372308ed2fd9a1cdac5222c770a7974bb07d19d6736a272fa8fba28",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.14,
+    "sampleRate": 24000,
+    "bytes": 6764,
+    "sourceSha256": "308539a86372308ed2fd9a1cdac5222c770a7974bb07d19d6736a272fa8fba28",
+    "sourcePath": "review/phonics-choices/clips/308539a86372308ed2fd9a1cdac5222c770a7974bb07d19d6736a272fa8fba28.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 3360
+    },
+    "selectionDate": "2026-11-01T07:20:29.943Z",
+    "label": "Revised alphabet sound"
+  },
+  "alphabet-b": {
+    "path": "assets/audio/recorded-phonemes/308539a86372308ed2fd9a1cdac5222c770a7974bb07d19d6736a272fa8fba28.wav",
+    "sha256": "308539a86372308ed2fd9a1cdac5222c770a7974bb07d19d6736a272fa8fba28",
+    "key": "reviewed:308539a86372308ed2fd9a1cdac5222c770a7974bb07d19d6736a272fa8fba28",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.14,
+    "sampleRate": 24000,
+    "bytes": 6764,
+    "sourceSha256": "308539a86372308ed2fd9a1cdac5222c770a7974bb07d19d6736a272fa8fba28",
+    "sourcePath": "review/phonics-choices/clips/308539a86372308ed2fd9a1cdac5222c770a7974bb07d19d6736a272fa8fba28.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 3360
+    },
+    "selectionDate": "2026-11-01T07:20:29.943Z",
+    "label": "Revised alphabet sound"
+  },
+  "d": {
+    "path": "assets/audio/recorded-phonemes/c9eb593113a6c30ceac154995aecc16bf6a944043882923ef3611ddd3afb6cff.wav",
+    "sha256": "c9eb593113a6c30ceac154995aecc16bf6a944043882923ef3611ddd3afb6cff",
+    "key": "reviewed:c9eb593113a6c30ceac154995aecc16bf6a944043882923ef3611ddd3afb6cff",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.2,
+    "sampleRate": 24000,
+    "bytes": 9644,
+    "sourceSha256": "c9eb593113a6c30ceac154995aecc16bf6a944043882923ef3611ddd3afb6cff",
+    "sourcePath": "review/phonics-choices/clips/c9eb593113a6c30ceac154995aecc16bf6a944043882923ef3611ddd3afb6cff.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 4800
+    },
+    "selectionDate": "2026-11-01T07:22:23.497Z",
+    "label": "Phase 2 — isolated d recording"
+  },
+  "alphabet-d": {
+    "path": "assets/audio/recorded-phonemes/c9eb593113a6c30ceac154995aecc16bf6a944043882923ef3611ddd3afb6cff.wav",
+    "sha256": "c9eb593113a6c30ceac154995aecc16bf6a944043882923ef3611ddd3afb6cff",
+    "key": "reviewed:c9eb593113a6c30ceac154995aecc16bf6a944043882923ef3611ddd3afb6cff",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.2,
+    "sampleRate": 24000,
+    "bytes": 9644,
+    "sourceSha256": "c9eb593113a6c30ceac154995aecc16bf6a944043882923ef3611ddd3afb6cff",
+    "sourcePath": "review/phonics-choices/clips/c9eb593113a6c30ceac154995aecc16bf6a944043882923ef3611ddd3afb6cff.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 4800
+    },
+    "selectionDate": "2026-11-01T07:22:23.497Z",
+    "label": "Phase 2 — isolated d recording"
+  },
+  "g": {
+    "path": "assets/audio/recorded-phonemes/2237f30041ddf7ac3d85a754c5b4d55f04a1b355dee31b5e418a377b0ac826f4.wav",
+    "sha256": "2237f30041ddf7ac3d85a754c5b4d55f04a1b355dee31b5e418a377b0ac826f4",
+    "key": "reviewed:2237f30041ddf7ac3d85a754c5b4d55f04a1b355dee31b5e418a377b0ac826f4",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.205,
+    "sampleRate": 24000,
+    "bytes": 9884,
+    "sourceSha256": "2237f30041ddf7ac3d85a754c5b4d55f04a1b355dee31b5e418a377b0ac826f4",
+    "sourcePath": "review/phonics-choices/clips/2237f30041ddf7ac3d85a754c5b4d55f04a1b355dee31b5e418a377b0ac826f4.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 4920
+    },
+    "selectionDate": "2026-11-01T07:22:29.078Z",
+    "label": "Phase 2 — isolated g recording"
+  },
+  "alphabet-g": {
+    "path": "assets/audio/recorded-phonemes/2237f30041ddf7ac3d85a754c5b4d55f04a1b355dee31b5e418a377b0ac826f4.wav",
+    "sha256": "2237f30041ddf7ac3d85a754c5b4d55f04a1b355dee31b5e418a377b0ac826f4",
+    "key": "reviewed:2237f30041ddf7ac3d85a754c5b4d55f04a1b355dee31b5e418a377b0ac826f4",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.205,
+    "sampleRate": 24000,
+    "bytes": 9884,
+    "sourceSha256": "2237f30041ddf7ac3d85a754c5b4d55f04a1b355dee31b5e418a377b0ac826f4",
+    "sourcePath": "review/phonics-choices/clips/2237f30041ddf7ac3d85a754c5b4d55f04a1b355dee31b5e418a377b0ac826f4.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 4920
+    },
+    "selectionDate": "2026-11-01T07:22:29.078Z",
+    "label": "Phase 2 — isolated g recording"
+  },
+  "h": {
+    "path": "assets/audio/recorded-phonemes/62e30aeeae87fe22bd748374d974faed6ee63bc819a024fd3fdcc586e754c83d.wav",
+    "sha256": "62e30aeeae87fe22bd748374d974faed6ee63bc819a024fd3fdcc586e754c83d",
+    "key": "reviewed:62e30aeeae87fe22bd748374d974faed6ee63bc819a024fd3fdcc586e754c83d",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.27,
+    "sampleRate": 24000,
+    "bytes": 13004,
+    "sourceSha256": "62e30aeeae87fe22bd748374d974faed6ee63bc819a024fd3fdcc586e754c83d",
+    "sourcePath": "review/phonics-choices/clips/62e30aeeae87fe22bd748374d974faed6ee63bc819a024fd3fdcc586e754c83d.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 6480
+    },
+    "selectionDate": "2026-11-01T07:23:28.486Z",
+    "label": "Phase 2 — isolated h recording"
+  },
+  "alphabet-h": {
+    "path": "assets/audio/recorded-phonemes/62e30aeeae87fe22bd748374d974faed6ee63bc819a024fd3fdcc586e754c83d.wav",
+    "sha256": "62e30aeeae87fe22bd748374d974faed6ee63bc819a024fd3fdcc586e754c83d",
+    "key": "reviewed:62e30aeeae87fe22bd748374d974faed6ee63bc819a024fd3fdcc586e754c83d",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.27,
+    "sampleRate": 24000,
+    "bytes": 13004,
+    "sourceSha256": "62e30aeeae87fe22bd748374d974faed6ee63bc819a024fd3fdcc586e754c83d",
+    "sourcePath": "review/phonics-choices/clips/62e30aeeae87fe22bd748374d974faed6ee63bc819a024fd3fdcc586e754c83d.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 6480
+    },
+    "selectionDate": "2026-11-01T07:23:28.486Z",
+    "label": "Phase 2 — isolated h recording"
+  },
+  "l": {
+    "path": "assets/audio/recorded-phonemes/34241492fa439546679fe01a8fe3b5f1540bc14a4e1729c0daca312210c1bfa2.wav",
+    "sha256": "34241492fa439546679fe01a8fe3b5f1540bc14a4e1729c0daca312210c1bfa2",
+    "key": "reviewed:34241492fa439546679fe01a8fe3b5f1540bc14a4e1729c0daca312210c1bfa2",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.5537083333333334,
+    "sampleRate": 24000,
+    "bytes": 26622,
+    "sourceSha256": "34241492fa439546679fe01a8fe3b5f1540bc14a4e1729c0daca312210c1bfa2",
+    "sourcePath": "review/phonics-choices/clips/34241492fa439546679fe01a8fe3b5f1540bc14a4e1729c0daca312210c1bfa2.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 13289
+    },
+    "selectionDate": "2026-11-01T07:23:45.811Z",
+    "label": "44 sounds pack — earlier automatic trim"
+  },
+  "alphabet-l": {
+    "path": "assets/audio/recorded-phonemes/34241492fa439546679fe01a8fe3b5f1540bc14a4e1729c0daca312210c1bfa2.wav",
+    "sha256": "34241492fa439546679fe01a8fe3b5f1540bc14a4e1729c0daca312210c1bfa2",
+    "key": "reviewed:34241492fa439546679fe01a8fe3b5f1540bc14a4e1729c0daca312210c1bfa2",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.5537083333333334,
+    "sampleRate": 24000,
+    "bytes": 26622,
+    "sourceSha256": "34241492fa439546679fe01a8fe3b5f1540bc14a4e1729c0daca312210c1bfa2",
+    "sourcePath": "review/phonics-choices/clips/34241492fa439546679fe01a8fe3b5f1540bc14a4e1729c0daca312210c1bfa2.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 13289
+    },
+    "selectionDate": "2026-11-01T07:23:45.811Z",
+    "label": "44 sounds pack — earlier automatic trim"
+  },
+  "m": {
+    "path": "assets/audio/recorded-phonemes/1ab0bfc961a781cc7e3ae779757b1241f8d5f5903e2fa3bcc1db831a5cdad432.wav",
+    "sha256": "1ab0bfc961a781cc7e3ae779757b1241f8d5f5903e2fa3bcc1db831a5cdad432",
+    "key": "reviewed:1ab0bfc961a781cc7e3ae779757b1241f8d5f5903e2fa3bcc1db831a5cdad432",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.9493333333333334,
+    "sampleRate": 24000,
+    "bytes": 45612,
+    "sourceSha256": "1ab0bfc961a781cc7e3ae779757b1241f8d5f5903e2fa3bcc1db831a5cdad432",
+    "sourcePath": "review/phonics-choices/clips/1ab0bfc961a781cc7e3ae779757b1241f8d5f5903e2fa3bcc1db831a5cdad432.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 22784
+    },
+    "selectionDate": "2026-11-01T07:24:42.610Z",
+    "label": "44 sounds pack — earlier automatic trim"
+  },
+  "alphabet-m": {
+    "path": "assets/audio/recorded-phonemes/1ab0bfc961a781cc7e3ae779757b1241f8d5f5903e2fa3bcc1db831a5cdad432.wav",
+    "sha256": "1ab0bfc961a781cc7e3ae779757b1241f8d5f5903e2fa3bcc1db831a5cdad432",
+    "key": "reviewed:1ab0bfc961a781cc7e3ae779757b1241f8d5f5903e2fa3bcc1db831a5cdad432",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.9493333333333334,
+    "sampleRate": 24000,
+    "bytes": 45612,
+    "sourceSha256": "1ab0bfc961a781cc7e3ae779757b1241f8d5f5903e2fa3bcc1db831a5cdad432",
+    "sourcePath": "review/phonics-choices/clips/1ab0bfc961a781cc7e3ae779757b1241f8d5f5903e2fa3bcc1db831a5cdad432.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 22784
+    },
+    "selectionDate": "2026-11-01T07:24:42.610Z",
+    "label": "44 sounds pack — earlier automatic trim"
+  },
+  "n": {
+    "path": "assets/audio/recorded-phonemes/45586c99226171c26115b071fca460995eec1d00ba54b628eee63f31e0bf8099.wav",
+    "sha256": "45586c99226171c26115b071fca460995eec1d00ba54b628eee63f31e0bf8099",
+    "key": "reviewed:45586c99226171c26115b071fca460995eec1d00ba54b628eee63f31e0bf8099",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.385,
+    "sampleRate": 24000,
+    "bytes": 18524,
+    "sourceSha256": "45586c99226171c26115b071fca460995eec1d00ba54b628eee63f31e0bf8099",
+    "sourcePath": "review/phonics-choices/clips/45586c99226171c26115b071fca460995eec1d00ba54b628eee63f31e0bf8099.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 9240
+    },
+    "selectionDate": "2026-11-01T07:25:26.301Z",
+    "label": "Phase 2 — isolated n recording"
+  },
+  "alphabet-n": {
+    "path": "assets/audio/recorded-phonemes/45586c99226171c26115b071fca460995eec1d00ba54b628eee63f31e0bf8099.wav",
+    "sha256": "45586c99226171c26115b071fca460995eec1d00ba54b628eee63f31e0bf8099",
+    "key": "reviewed:45586c99226171c26115b071fca460995eec1d00ba54b628eee63f31e0bf8099",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.385,
+    "sampleRate": 24000,
+    "bytes": 18524,
+    "sourceSha256": "45586c99226171c26115b071fca460995eec1d00ba54b628eee63f31e0bf8099",
+    "sourcePath": "review/phonics-choices/clips/45586c99226171c26115b071fca460995eec1d00ba54b628eee63f31e0bf8099.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 9240
+    },
+    "selectionDate": "2026-11-01T07:25:26.301Z",
+    "label": "Phase 2 — isolated n recording"
+  },
+  "qu": {
+    "path": "assets/audio/recorded-phonemes/bfb9eedcfe9257f753bd71ae80fe6076a82fbcf2312f39e0fa51d232d1defbe3.wav",
+    "sha256": "bfb9eedcfe9257f753bd71ae80fe6076a82fbcf2312f39e0fa51d232d1defbe3",
+    "key": "reviewed:bfb9eedcfe9257f753bd71ae80fe6076a82fbcf2312f39e0fa51d232d1defbe3",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.305,
+    "sampleRate": 24000,
+    "bytes": 14684,
+    "sourceSha256": "bfb9eedcfe9257f753bd71ae80fe6076a82fbcf2312f39e0fa51d232d1defbe3",
+    "sourcePath": "review/phonics-choices/clips/bfb9eedcfe9257f753bd71ae80fe6076a82fbcf2312f39e0fa51d232d1defbe3.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 7320
+    },
+    "selectionDate": "2026-11-01T07:26:04.000Z",
+    "label": "Phase 3 — isolated qu recording"
+  },
+  "alphabet-q": {
+    "path": "assets/audio/recorded-phonemes/bfb9eedcfe9257f753bd71ae80fe6076a82fbcf2312f39e0fa51d232d1defbe3.wav",
+    "sha256": "bfb9eedcfe9257f753bd71ae80fe6076a82fbcf2312f39e0fa51d232d1defbe3",
+    "key": "reviewed:bfb9eedcfe9257f753bd71ae80fe6076a82fbcf2312f39e0fa51d232d1defbe3",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.305,
+    "sampleRate": 24000,
+    "bytes": 14684,
+    "sourceSha256": "bfb9eedcfe9257f753bd71ae80fe6076a82fbcf2312f39e0fa51d232d1defbe3",
+    "sourcePath": "review/phonics-choices/clips/bfb9eedcfe9257f753bd71ae80fe6076a82fbcf2312f39e0fa51d232d1defbe3.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 7320
+    },
+    "selectionDate": "2026-11-01T07:26:04.000Z",
+    "label": "Phase 3 — isolated qu recording"
+  },
+  "r": {
+    "path": "assets/audio/recorded-phonemes/9a18253d1e59e400b8934a3486138d6e6e9b38d3593571b267e98e271650988b.wav",
+    "sha256": "9a18253d1e59e400b8934a3486138d6e6e9b38d3593571b267e98e271650988b",
+    "key": "reviewed:9a18253d1e59e400b8934a3486138d6e6e9b38d3593571b267e98e271650988b",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.555,
+    "sampleRate": 24000,
+    "bytes": 26684,
+    "sourceSha256": "9a18253d1e59e400b8934a3486138d6e6e9b38d3593571b267e98e271650988b",
+    "sourcePath": "review/phonics-choices/clips/9a18253d1e59e400b8934a3486138d6e6e9b38d3593571b267e98e271650988b.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 13320
+    },
+    "selectionDate": "2026-11-01T07:26:45.163Z",
+    "label": "Phase 2 — isolated r recording"
+  },
+  "alphabet-r": {
+    "path": "assets/audio/recorded-phonemes/9a18253d1e59e400b8934a3486138d6e6e9b38d3593571b267e98e271650988b.wav",
+    "sha256": "9a18253d1e59e400b8934a3486138d6e6e9b38d3593571b267e98e271650988b",
+    "key": "reviewed:9a18253d1e59e400b8934a3486138d6e6e9b38d3593571b267e98e271650988b",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.555,
+    "sampleRate": 24000,
+    "bytes": 26684,
+    "sourceSha256": "9a18253d1e59e400b8934a3486138d6e6e9b38d3593571b267e98e271650988b",
+    "sourcePath": "review/phonics-choices/clips/9a18253d1e59e400b8934a3486138d6e6e9b38d3593571b267e98e271650988b.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 13320
+    },
+    "selectionDate": "2026-11-01T07:26:45.163Z",
+    "label": "Phase 2 — isolated r recording"
+  },
+  "short-u": {
+    "path": "assets/audio/recorded-phonemes/5d140dac24cb7b8b40379735f44735efd66da1ef57485b3d820c4272a733c55b.wav",
+    "sha256": "5d140dac24cb7b8b40379735f44735efd66da1ef57485b3d820c4272a733c55b",
+    "key": "reviewed:5d140dac24cb7b8b40379735f44735efd66da1ef57485b3d820c4272a733c55b",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.305,
+    "sampleRate": 24000,
+    "bytes": 14684,
+    "sourceSha256": "5d140dac24cb7b8b40379735f44735efd66da1ef57485b3d820c4272a733c55b",
+    "sourcePath": "review/phonics-choices/clips/5d140dac24cb7b8b40379735f44735efd66da1ef57485b3d820c4272a733c55b.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 7320
+    },
+    "selectionDate": "2026-11-01T07:27:58.203Z",
+    "label": "Phase 2 — isolated u recording"
+  },
+  "alphabet-u": {
+    "path": "assets/audio/recorded-phonemes/5d140dac24cb7b8b40379735f44735efd66da1ef57485b3d820c4272a733c55b.wav",
+    "sha256": "5d140dac24cb7b8b40379735f44735efd66da1ef57485b3d820c4272a733c55b",
+    "key": "reviewed:5d140dac24cb7b8b40379735f44735efd66da1ef57485b3d820c4272a733c55b",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.305,
+    "sampleRate": 24000,
+    "bytes": 14684,
+    "sourceSha256": "5d140dac24cb7b8b40379735f44735efd66da1ef57485b3d820c4272a733c55b",
+    "sourcePath": "review/phonics-choices/clips/5d140dac24cb7b8b40379735f44735efd66da1ef57485b3d820c4272a733c55b.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 7320
+    },
+    "selectionDate": "2026-11-01T07:27:58.203Z",
+    "label": "Phase 2 — isolated u recording"
+  },
+  "v": {
+    "path": "assets/audio/recorded-phonemes/92833017396d9ea8db5bfc954a918af35082f042bbedda78585d61ee15ee6d5a.wav",
+    "sha256": "92833017396d9ea8db5bfc954a918af35082f042bbedda78585d61ee15ee6d5a",
+    "key": "reviewed:92833017396d9ea8db5bfc954a918af35082f042bbedda78585d61ee15ee6d5a",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.54,
+    "sampleRate": 24000,
+    "bytes": 25964,
+    "sourceSha256": "92833017396d9ea8db5bfc954a918af35082f042bbedda78585d61ee15ee6d5a",
+    "sourcePath": "review/phonics-choices/clips/92833017396d9ea8db5bfc954a918af35082f042bbedda78585d61ee15ee6d5a.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 12960
+    },
+    "selectionDate": "2026-11-01T07:28:21.544Z",
+    "label": "Phase 3 — isolated v recording"
+  },
+  "alphabet-v": {
+    "path": "assets/audio/recorded-phonemes/92833017396d9ea8db5bfc954a918af35082f042bbedda78585d61ee15ee6d5a.wav",
+    "sha256": "92833017396d9ea8db5bfc954a918af35082f042bbedda78585d61ee15ee6d5a",
+    "key": "reviewed:92833017396d9ea8db5bfc954a918af35082f042bbedda78585d61ee15ee6d5a",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.54,
+    "sampleRate": 24000,
+    "bytes": 25964,
+    "sourceSha256": "92833017396d9ea8db5bfc954a918af35082f042bbedda78585d61ee15ee6d5a",
+    "sourcePath": "review/phonics-choices/clips/92833017396d9ea8db5bfc954a918af35082f042bbedda78585d61ee15ee6d5a.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 12960
+    },
+    "selectionDate": "2026-11-01T07:28:21.544Z",
+    "label": "Phase 3 — isolated v recording"
+  },
+  "z": {
+    "path": "assets/audio/recorded-phonemes/19aaaeeb5a0babf7e7206a9474aa160938db52e36f6efc515ddb2d0aa8d86be5.wav",
+    "sha256": "19aaaeeb5a0babf7e7206a9474aa160938db52e36f6efc515ddb2d0aa8d86be5",
+    "key": "reviewed:19aaaeeb5a0babf7e7206a9474aa160938db52e36f6efc515ddb2d0aa8d86be5",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.44,
+    "sampleRate": 24000,
+    "bytes": 21164,
+    "sourceSha256": "19aaaeeb5a0babf7e7206a9474aa160938db52e36f6efc515ddb2d0aa8d86be5",
+    "sourcePath": "review/phonics-choices/clips/19aaaeeb5a0babf7e7206a9474aa160938db52e36f6efc515ddb2d0aa8d86be5.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 10560
+    },
+    "selectionDate": "2026-11-01T07:29:07.179Z",
+    "label": "Phase 3 — isolated z recording"
+  },
+  "alphabet-z": {
+    "path": "assets/audio/recorded-phonemes/19aaaeeb5a0babf7e7206a9474aa160938db52e36f6efc515ddb2d0aa8d86be5.wav",
+    "sha256": "19aaaeeb5a0babf7e7206a9474aa160938db52e36f6efc515ddb2d0aa8d86be5",
+    "key": "reviewed:19aaaeeb5a0babf7e7206a9474aa160938db52e36f6efc515ddb2d0aa8d86be5",
+    "provider": "user-selected recording",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.44,
+    "sampleRate": 24000,
+    "bytes": 21164,
+    "sourceSha256": "19aaaeeb5a0babf7e7206a9474aa160938db52e36f6efc515ddb2d0aa8d86be5",
+    "sourcePath": "review/phonics-choices/clips/19aaaeeb5a0babf7e7206a9474aa160938db52e36f6efc515ddb2d0aa8d86be5.wav",
+    "selection": {
+      "startFrame": 0,
+      "endFrame": 10560
+    },
+    "selectionDate": "2026-11-01T07:29:07.179Z",
+    "label": "Phase 3 — isolated z recording"
+  }
+};

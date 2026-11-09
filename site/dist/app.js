@@ -112,6 +112,7 @@ let wheelTween=null;
 const activeEffects = new Set();
 const landingScene = new TransportLanding(document.querySelector('.backdrop'));
 const work = new TransportLifecycle({ onHold: held => {
+  globalThis.TransportPhonics?.setPaused(held);
   detectiveView?.setHeld(held);
   wheelTween?.paused(held);
   landingScene.setHold('activity', held);
@@ -129,6 +130,7 @@ const work = new TransportLifecycle({ onHold: held => {
 } });
 
 function cancelCurrentWork() {
+  globalThis.TransportPhonics?.destroy();
   detectiveView?.destroy();detectiveView=null;
   wheelTween?.kill();wheelTween=null;
   work.cancel();
@@ -951,6 +953,7 @@ els.emojiToggle.addEventListener("click", () => {
 
 els.sound.addEventListener("click", () => {
   state.muted = !state.muted;
+  window.dispatchEvent(new Event('plants-sound'));
   els.sound.textContent = state.muted ? "Sound off" : "Sound on";
   els.sound.setAttribute('aria-pressed', String(!state.muted));
   els.sound.title = state.muted ? "Sound off (M)" : "Sound on (M)";

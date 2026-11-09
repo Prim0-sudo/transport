@@ -1,0 +1,39 @@
+/* Phonics & Sight Words, adapted from the Plants phonics styles in Transport navy and gold. */
+.phonics-mount{display:grid;gap:12px;min-width:0}
+.phonics-area{display:grid;gap:10px;min-width:0}
+.foundation-search{box-sizing:border-box;width:100%;margin:0 0 10px;padding:8px 12px;min-height:48px;font:inherit;border:2px solid #1d4f73;border-radius:12px;background:#fff;color:#183a51}
+.foundation-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:10px}
+.foundation-card{padding:12px;background:#fffbed;border:2px solid #d8bd7d;border-radius:18px;overflow-wrap:anywhere;max-width:100%}
+.foundation-card .foundation-glyph{font-size:2.5rem;text-align:center;margin:6px 0;color:#183a51}
+.foundation-card .foundation-ipa{text-align:center;margin:4px 0}
+.foundation-card .actions,.foundation-variants{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:10px 0}
+.foundation-card button{min-height:44px;padding:8px 12px;border:2px solid #1d4f73;border-radius:12px;background:#fff;color:#183a51;font:inherit;font-weight:700;cursor:pointer;min-width:0;white-space:normal}
+.foundation-card button:disabled{opacity:.6;cursor:default}
+.foundation-card button[aria-pressed="true"],.foundation-card.is-playing{background:#fbefc8}
+.foundation-status{min-height:1.5em;font-weight:700;text-align:center;margin:0}
+.foundation-card .fine{font-size:14px;line-height:1.45}
+.foundation-credits{padding:0;line-height:1.5;font-size:14px}
+.foundation-credits summary{cursor:pointer;font-weight:700;color:#1d4f73}
+.phonics-word-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0;align-items:end}
+.phonics-word-filters label{display:grid;gap:6px;font-weight:700;min-width:0;color:#183a51}
+.phonics-word-filters .foundation-search{margin:0}
+.phonics-word-filters select{font:inherit;min-height:48px;padding:8px;border:2px solid #1d4f73;border-radius:12px;background:#fff;color:#183a51;width:100%}
+.phonics-word-card{display:grid;gap:8px;padding:12px;border:1px solid #d8bd7d;border-radius:16px;background:#fffbed;min-width:0;max-width:100%}
+.phonics-word-position{text-align:center;font-weight:700;margin:0}
+.phonics-word-picture{display:block;width:min(260px,100%);height:200px;object-fit:contain;margin:0 auto;border-radius:14px}
+.plants-word-reader .wheel-word{display:flex;flex-wrap:wrap;justify-content:center;gap:.04em;font-size:clamp(1.7rem,8vw,3rem);margin:4px 0;color:#183a51}
+.wheel-letter{display:inline-block;padding:4px 1px;border-bottom:4px solid transparent}
+.wheel-letter.is-active{background:#f6e29b;border-color:#1d4f73;border-radius:5px}
+.wheel-letter.is-silent{color:#6a7884;border-bottom-style:dotted}
+.wheel-separator{white-space:pre;min-width:.3em}
+.plants-word-reader .actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.plants-word-reader button{font:inherit;min-height:46px;padding:8px 10px;border:2px solid #1d4f73;border-radius:12px;background:#fff;color:#183a51;font-weight:700;cursor:pointer;flex:1 1 40%;min-width:0;white-space:normal}
+.plants-word-reader button.text-button{border-color:#d8bd7d}
+.plants-word-reader button:disabled{opacity:.5;cursor:default}
+.plants-word-reader .fine{text-align:center;font-size:14px;margin:4px 0}
+.wheel-reading-status{text-align:center;min-height:1.5em;line-height:1.5;margin:4px 0}
+.reading-spacing{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin:4px 0}
+.reading-spacing input{width:min(180px,100%);accent-color:#1d4f73}
+.phonics-word-definition{text-align:center;margin:0;line-height:1.5}
+.phonics-word-card .standard-actions>button{flex:1 1 0}
+.phonics-word-card .empty-selection{text-align:center}

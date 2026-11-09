@@ -65,10 +65,25 @@
     root.append(view, actions);
   }
 
+  function phonics(root, section) {
+    const group = TransportStandard.hubs.phonics.groups.find(g => g[0] === section);
+    root.append(el('h3', '', group ? group[1] : 'Phonics'));
+    const area = el('div', 'phonics-mount'); root.append(area);
+    const mount = () => globalThis.TransportPhonics.mount(area, section, {
+      words: classroom.pool('learn'),
+      categories: [...TransportStandard.categories.filter(c => c.id !== 'all'), ...TransportStandard.teachingCategories],
+      settings: { get muted() { return state.muted; } }
+    });
+    if (globalThis.TransportPhonics) { mount(); return; }
+    area.textContent = 'Loading letter sounds…';
+    window.addEventListener('transport-phonics-ready', () => { if (area.isConnected) { area.replaceChildren(); mount(); } }, { once: true });
+  }
+
   globalThis.TransportMedia = {
     render(mode, groupId, root) {
       if (mode === 'media' && groupId === 'printables') { printables(root); return true; }
       if (mode === 'create') { reading(root); return true; }
+      if (mode === 'phonics' && groupId) { phonics(root, groupId); return true; }
       return false;
     }
   };

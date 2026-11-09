@@ -1,0 +1,281 @@
+// Latest explicitly approved sentence cuts; earlier selected recordings remain preserved.
+export const SENTENCE_ALPHABET_SOUNDS={
+  "A": {
+    "path": "assets/audio/recorded-phonemes/452ae121e1fa9094e1bed640160e61f046ca44459f4ac5d53abffe091e92018e.wav",
+    "sha256": "452ae121e1fa9094e1bed640160e61f046ca44459f4ac5d53abffe091e92018e",
+    "key": "reviewed:452ae121e1fa9094e1bed640160e61f046ca44459f4ac5d53abffe091e92018e",
+    "provider": "user-selected Polly sentence cut",
+    "voice": "Amy",
+    "engine": "neural",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.113125,
+    "sampleRate": 24000,
+    "bytes": 5474,
+    "sourceSha256": "8ab2a85ba9a53fbafddcf73b86a3add18b530585424080e7f87cb54db711f33e",
+    "sourcePath": "review/sentence-phonics/clips/8ab2a85ba9a53fbafddcf73b86a3add18b530585424080e7f87cb54db711f33e.wav",
+    "selection": {
+      "startFrame": 37221,
+      "endFrame": 39936
+    },
+    "selectionDate": "2026-11-03T02:48:58.117Z",
+    "label": "A sound from apple"
+  },
+  "D": {
+    "path": "assets/audio/recorded-phonemes/e8f15e39b4d586d38f03f15ac696702694ba9654687fa3d6c6f897a9126e75a6.wav",
+    "sha256": "e8f15e39b4d586d38f03f15ac696702694ba9654687fa3d6c6f897a9126e75a6",
+    "key": "reviewed:e8f15e39b4d586d38f03f15ac696702694ba9654687fa3d6c6f897a9126e75a6",
+    "provider": "user-selected Polly sentence cut",
+    "voice": "Amy",
+    "engine": "neural",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.093125,
+    "sampleRate": 24000,
+    "bytes": 4514,
+    "sourceSha256": "cf4cbd6f8c775b1c85865c656a9ec3283ff748f5f8f83fd7a4ceed5d0f99ceb4",
+    "sourcePath": "review/sentence-phonics/clips/cf4cbd6f8c775b1c85865c656a9ec3283ff748f5f8f83fd7a4ceed5d0f99ceb4.wav",
+    "selection": {
+      "startFrame": 37005,
+      "endFrame": 39240
+    },
+    "selectionDate": "2026-11-03T02:45:40.742Z",
+    "label": "D sound from dog"
+  },
+  "M": {
+    "path": "assets/audio/recorded-phonemes/0d767a29de19c78e3ff8785afbfda71f75cddd386c2a068e1cf1d47deb67cfbb.wav",
+    "sha256": "0d767a29de19c78e3ff8785afbfda71f75cddd386c2a068e1cf1d47deb67cfbb",
+    "key": "reviewed:0d767a29de19c78e3ff8785afbfda71f75cddd386c2a068e1cf1d47deb67cfbb",
+    "provider": "user-selected Polly sentence cut",
+    "voice": "Amy",
+    "engine": "neural",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.07383333333333333,
+    "sampleRate": 24000,
+    "bytes": 3588,
+    "sourceSha256": "d09b2eceacab9c478e3b8d38ee2a098823f494a2d5a143329a340eafaee5cd86",
+    "sourcePath": "review/sentence-phonics/clips/d09b2eceacab9c478e3b8d38ee2a098823f494a2d5a143329a340eafaee5cd86.wav",
+    "selection": {
+      "startFrame": 36353,
+      "endFrame": 38125
+    },
+    "selectionDate": "2026-11-03T02:47:12.846Z",
+    "label": "M sound from map"
+  },
+  "R": {
+    "path": "assets/audio/recorded-phonemes/9f843922336c5b7d861fc44586e7980c058f178aed5c7bf7404d15d3789c71bb.wav",
+    "sha256": "9f843922336c5b7d861fc44586e7980c058f178aed5c7bf7404d15d3789c71bb",
+    "key": "reviewed:9f843922336c5b7d861fc44586e7980c058f178aed5c7bf7404d15d3789c71bb",
+    "provider": "user-selected Polly sentence cut",
+    "voice": "Amy",
+    "engine": "neural",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.13275,
+    "sampleRate": 24000,
+    "bytes": 6416,
+    "sourceSha256": "8fa74a54db779b5aeded13782a0bba87333d53c6a76ed9eb733cd89363c8f33f",
+    "sourcePath": "review/sentence-phonics/clips/8fa74a54db779b5aeded13782a0bba87333d53c6a76ed9eb733cd89363c8f33f.wav",
+    "selection": {
+      "startFrame": 36769,
+      "endFrame": 39955
+    },
+    "selectionDate": "2026-11-03T02:48:38.093Z",
+    "label": "R sound from red"
+  }
+};
+export const SENTENCE_SOUNDS={
+  "alphabet-a": {
+    "path": "assets/audio/recorded-phonemes/452ae121e1fa9094e1bed640160e61f046ca44459f4ac5d53abffe091e92018e.wav",
+    "sha256": "452ae121e1fa9094e1bed640160e61f046ca44459f4ac5d53abffe091e92018e",
+    "key": "reviewed:452ae121e1fa9094e1bed640160e61f046ca44459f4ac5d53abffe091e92018e",
+    "provider": "user-selected Polly sentence cut",
+    "voice": "Amy",
+    "engine": "neural",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.113125,
+    "sampleRate": 24000,
+    "bytes": 5474,
+    "sourceSha256": "8ab2a85ba9a53fbafddcf73b86a3add18b530585424080e7f87cb54db711f33e",
+    "sourcePath": "review/sentence-phonics/clips/8ab2a85ba9a53fbafddcf73b86a3add18b530585424080e7f87cb54db711f33e.wav",
+    "selection": {
+      "startFrame": 37221,
+      "endFrame": 39936
+    },
+    "selectionDate": "2026-11-03T02:48:58.117Z",
+    "label": "A sound from apple"
+  },
+  "short-a": {
+    "path": "assets/audio/recorded-phonemes/452ae121e1fa9094e1bed640160e61f046ca44459f4ac5d53abffe091e92018e.wav",
+    "sha256": "452ae121e1fa9094e1bed640160e61f046ca44459f4ac5d53abffe091e92018e",
+    "key": "reviewed:452ae121e1fa9094e1bed640160e61f046ca44459f4ac5d53abffe091e92018e",
+    "provider": "user-selected Polly sentence cut",
+    "voice": "Amy",
+    "engine": "neural",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.113125,
+    "sampleRate": 24000,
+    "bytes": 5474,
+    "sourceSha256": "8ab2a85ba9a53fbafddcf73b86a3add18b530585424080e7f87cb54db711f33e",
+    "sourcePath": "review/sentence-phonics/clips/8ab2a85ba9a53fbafddcf73b86a3add18b530585424080e7f87cb54db711f33e.wav",
+    "selection": {
+      "startFrame": 37221,
+      "endFrame": 39936
+    },
+    "selectionDate": "2026-11-03T02:48:58.117Z",
+    "label": "A sound from apple"
+  },
+  "alphabet-d": {
+    "path": "assets/audio/recorded-phonemes/e8f15e39b4d586d38f03f15ac696702694ba9654687fa3d6c6f897a9126e75a6.wav",
+    "sha256": "e8f15e39b4d586d38f03f15ac696702694ba9654687fa3d6c6f897a9126e75a6",
+    "key": "reviewed:e8f15e39b4d586d38f03f15ac696702694ba9654687fa3d6c6f897a9126e75a6",
+    "provider": "user-selected Polly sentence cut",
+    "voice": "Amy",
+    "engine": "neural",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.093125,
+    "sampleRate": 24000,
+    "bytes": 4514,
+    "sourceSha256": "cf4cbd6f8c775b1c85865c656a9ec3283ff748f5f8f83fd7a4ceed5d0f99ceb4",
+    "sourcePath": "review/sentence-phonics/clips/cf4cbd6f8c775b1c85865c656a9ec3283ff748f5f8f83fd7a4ceed5d0f99ceb4.wav",
+    "selection": {
+      "startFrame": 37005,
+      "endFrame": 39240
+    },
+    "selectionDate": "2026-11-03T02:45:40.742Z",
+    "label": "D sound from dog"
+  },
+  "d": {
+    "path": "assets/audio/recorded-phonemes/e8f15e39b4d586d38f03f15ac696702694ba9654687fa3d6c6f897a9126e75a6.wav",
+    "sha256": "e8f15e39b4d586d38f03f15ac696702694ba9654687fa3d6c6f897a9126e75a6",
+    "key": "reviewed:e8f15e39b4d586d38f03f15ac696702694ba9654687fa3d6c6f897a9126e75a6",
+    "provider": "user-selected Polly sentence cut",
+    "voice": "Amy",
+    "engine": "neural",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.093125,
+    "sampleRate": 24000,
+    "bytes": 4514,
+    "sourceSha256": "cf4cbd6f8c775b1c85865c656a9ec3283ff748f5f8f83fd7a4ceed5d0f99ceb4",
+    "sourcePath": "review/sentence-phonics/clips/cf4cbd6f8c775b1c85865c656a9ec3283ff748f5f8f83fd7a4ceed5d0f99ceb4.wav",
+    "selection": {
+      "startFrame": 37005,
+      "endFrame": 39240
+    },
+    "selectionDate": "2026-11-03T02:45:40.742Z",
+    "label": "D sound from dog"
+  },
+  "alphabet-m": {
+    "path": "assets/audio/recorded-phonemes/0d767a29de19c78e3ff8785afbfda71f75cddd386c2a068e1cf1d47deb67cfbb.wav",
+    "sha256": "0d767a29de19c78e3ff8785afbfda71f75cddd386c2a068e1cf1d47deb67cfbb",
+    "key": "reviewed:0d767a29de19c78e3ff8785afbfda71f75cddd386c2a068e1cf1d47deb67cfbb",
+    "provider": "user-selected Polly sentence cut",
+    "voice": "Amy",
+    "engine": "neural",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.07383333333333333,
+    "sampleRate": 24000,
+    "bytes": 3588,
+    "sourceSha256": "d09b2eceacab9c478e3b8d38ee2a098823f494a2d5a143329a340eafaee5cd86",
+    "sourcePath": "review/sentence-phonics/clips/d09b2eceacab9c478e3b8d38ee2a098823f494a2d5a143329a340eafaee5cd86.wav",
+    "selection": {
+      "startFrame": 36353,
+      "endFrame": 38125
+    },
+    "selectionDate": "2026-11-03T02:47:12.846Z",
+    "label": "M sound from map"
+  },
+  "m": {
+    "path": "assets/audio/recorded-phonemes/0d767a29de19c78e3ff8785afbfda71f75cddd386c2a068e1cf1d47deb67cfbb.wav",
+    "sha256": "0d767a29de19c78e3ff8785afbfda71f75cddd386c2a068e1cf1d47deb67cfbb",
+    "key": "reviewed:0d767a29de19c78e3ff8785afbfda71f75cddd386c2a068e1cf1d47deb67cfbb",
+    "provider": "user-selected Polly sentence cut",
+    "voice": "Amy",
+    "engine": "neural",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.07383333333333333,
+    "sampleRate": 24000,
+    "bytes": 3588,
+    "sourceSha256": "d09b2eceacab9c478e3b8d38ee2a098823f494a2d5a143329a340eafaee5cd86",
+    "sourcePath": "review/sentence-phonics/clips/d09b2eceacab9c478e3b8d38ee2a098823f494a2d5a143329a340eafaee5cd86.wav",
+    "selection": {
+      "startFrame": 36353,
+      "endFrame": 38125
+    },
+    "selectionDate": "2026-11-03T02:47:12.846Z",
+    "label": "M sound from map"
+  },
+  "alphabet-r": {
+    "path": "assets/audio/recorded-phonemes/9f843922336c5b7d861fc44586e7980c058f178aed5c7bf7404d15d3789c71bb.wav",
+    "sha256": "9f843922336c5b7d861fc44586e7980c058f178aed5c7bf7404d15d3789c71bb",
+    "key": "reviewed:9f843922336c5b7d861fc44586e7980c058f178aed5c7bf7404d15d3789c71bb",
+    "provider": "user-selected Polly sentence cut",
+    "voice": "Amy",
+    "engine": "neural",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.13275,
+    "sampleRate": 24000,
+    "bytes": 6416,
+    "sourceSha256": "8fa74a54db779b5aeded13782a0bba87333d53c6a76ed9eb733cd89363c8f33f",
+    "sourcePath": "review/sentence-phonics/clips/8fa74a54db779b5aeded13782a0bba87333d53c6a76ed9eb733cd89363c8f33f.wav",
+    "selection": {
+      "startFrame": 36769,
+      "endFrame": 39955
+    },
+    "selectionDate": "2026-11-03T02:48:38.093Z",
+    "label": "R sound from red"
+  },
+  "r": {
+    "path": "assets/audio/recorded-phonemes/9f843922336c5b7d861fc44586e7980c058f178aed5c7bf7404d15d3789c71bb.wav",
+    "sha256": "9f843922336c5b7d861fc44586e7980c058f178aed5c7bf7404d15d3789c71bb",
+    "key": "reviewed:9f843922336c5b7d861fc44586e7980c058f178aed5c7bf7404d15d3789c71bb",
+    "provider": "user-selected Polly sentence cut",
+    "voice": "Amy",
+    "engine": "neural",
+    "kind": "recording",
+    "active": true,
+    "reviewed": true,
+    "reviewStatus": "user-approved",
+    "seconds": 0.13275,
+    "sampleRate": 24000,
+    "bytes": 6416,
+    "sourceSha256": "8fa74a54db779b5aeded13782a0bba87333d53c6a76ed9eb733cd89363c8f33f",
+    "sourcePath": "review/sentence-phonics/clips/8fa74a54db779b5aeded13782a0bba87333d53c6a76ed9eb733cd89363c8f33f.wav",
+    "selection": {
+      "startFrame": 36769,
+      "endFrame": 39955
+    },
+    "selectionDate": "2026-11-03T02:48:38.093Z",
+    "label": "R sound from red"
+  }
+};
