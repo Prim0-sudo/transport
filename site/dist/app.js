@@ -277,7 +277,7 @@ function startGame(mode, {fresh=false,setup=null}={}) {
   if(!fresh&&restoreAttempt(session))return;
   if(fresh)classroom.discard(session.key);
   activeSession=session;
-  const reserved=classroom.reserve(session,mode==='safety'?7:mode==='wheel'?8:10);
+  const reserved=classroom.reserve(session,mode==='safety'?7:mode==='wheel'?8:mode==='learn'?12:10);
   let questions=reserved;
   if(mode==='identify'||mode==='detective')questions=reserved.map(vehicle=>({vehicle,choices:identifyChoices(vehicle,session.pool),...(mode==='detective'?{reveal:TransportReveal.create(setup.kind,setup.duration,shuffled(Array.from({length:120},(_,i)=>i)))}:{})}));
   if(mode==='hangman')questions=reserved.map(vehicle=>({vehicle,guessed:[],misses:0,sadConeIndex:null,awarded:false,assisted:false}));
@@ -800,7 +800,7 @@ function currentPrompt() {
   if (state.mode === "flip") return "";
   if (state.mode === "wheel") return "";
   const v = state.questions[state.round];
-  if (state.mode === "learn") return v.name;
+  if (state.mode === "learn") return v.example || v.name;
   if (state.mode === "sort") return TransportStandard.ruleFor(state.setup?.rule).prompt(v.name);
   return "Listen carefully. Which vehicle makes this sound?";
 }
@@ -819,10 +819,14 @@ function finishGame() {
   els.progress.style.width = "100%";
   els.finalScore.textContent = state.score;
   els.totalQuestions.textContent = total;
-  const ratio = state.score / total;
-  els.stars.textContent=state.practice||!state.score?'Practice complete':`${state.score} ${state.score===1?'star':'stars'} earned`;
-  document.querySelector('.result-score').hidden=Boolean(state.practice);
-  els.resultMessage.textContent=state.mode==='hangman'?'You worked on the departure words.':state.mode==='detective'?'You explored the hidden Transport pictures.':state.mode==='safety'?'Talk together about the safe travel choices.':state.mode==='sort'?'You compared vehicles using the chosen rule.':state.mode==='flip'?'You found the matching word pairs.':`You explored this set of ${total} words.`;
+  const met = state.mode === 'learn';
+  if (met) markLearnGroupMet(state.setup?.category || 'all');
+  const ratio = total ? state.score / total : 0, starCount = ratio >= .85 ? 3 : ratio >= .55 ? 2 : 1;
+  const practice = state.practice && !met;
+  els.stars.textContent = practice || !state.score ? 'Practice complete' : `${starCount} ${starCount === 1 ? 'star' : 'stars'}`;
+  document.querySelector('.result-score').hidden = practice;
+  els.resultMessage.textContent=state.mode==='learn'?'You met this group of Transport words!':state.mode==='hangman'?'You worked on the departure words.':state.mode==='detective'?'You explored the hidden Transport pictures.':state.mode==='safety'?'Talk together about the safe travel choices.':state.mode==='sort'?'You compared vehicles using the chosen rule.':state.mode==='flip'?'You found the matching word pairs.':`You explored this set of ${total} words.`;
+  document.getElementById('playAgainBtn').textContent = met ? 'Next session' : 'Play Again';
   showScreen("results");
   if (state.mode !== "flip") burstConfetti();
 }

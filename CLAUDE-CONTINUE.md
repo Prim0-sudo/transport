@@ -18,7 +18,8 @@ Commits made by Claude this round (newest last):
 | ffaabb5 | Printable PDFs + these notes |
 | d23e839 | Merged Codex's `codex/transport-art-restart` (Painted Field Guide art) into main |
 | (art) | Wired the new art into the app (see below) |
-| (next) | Media page rebuilt to the Plants layout |
+| 44267de | Media page rebuilt to the Plants layout |
+| (next) | Meet the Words matched to Plants |
 
 ## Painted Field Guide art (wired in 2026-11-09)
 
@@ -51,6 +52,14 @@ Commit identity: `git -c user.name=Prim0-sudo -c user.email=Prim0-sudo@users.nor
 - Medium/Hard: roadworks closure on the shortest route. Hard: extra round closures, fuel limit (shortest + 2) and an extra "via" stop (dashed gold ring).
 - Stars: right vehicle first time, no closed roads tried, shortest route.
 - Automated play of all 9 size/level combos (189 jobs) all reached 3 stars; route length grows from ~2 roads (small easy) to ~6.4 (large hard).
+
+## Meet the Words (matched to Plants 2026-11-09)
+
+- Groups page: "Which words shall we meet?", Groups met/total tracker (localStorage transport-learn-groups-met), tinted cards with pill word counts, 4 columns on tablet. Transport Scenes card kept (Transport extra).
+- Word page: 12 words per set, Listen button (reads the example sentence), score shown, definition only on the card, gold 3D buttons with navy Next word / Finish.
+- Results (all games): Activity complete, Wonderful travelling!, N stars (Plants rule), score / total, message; Learn shows Next session. Bus picture stands in for completion art.
+- Game screen now top-aligned (was centred, left a gap under the top bar); phone header is two rows.
+- Missing art vs Plants: painted All words cover, completion picture, painted group covers (Transport uses single vocabulary pictures), close-up detail insets on part words, painted menu-card art.
 
 ## Open work (owner decides order)
 

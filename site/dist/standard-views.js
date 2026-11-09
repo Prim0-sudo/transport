@@ -31,10 +31,14 @@ function setStandardBack(label){const button=document.getElementById('backMenuBt
 function standardButton(label,action,className='standard-action'){const button=document.createElement('button');button.className=className;button.textContent=label;button.onclick=action;return button;}
 function standardRecoveryActions(root){const row=document.createElement('div');row.className='standard-actions';row.append(standardButton('Change selection',()=>document.getElementById('teacherBtn').click()),standardButton('Games',goMenu));root.append(row);}
 
+const learnGroupsKey='transport-learn-groups-met';
+function learnGroupsMet(){try{return new Set(JSON.parse(localStorage.getItem(learnGroupsKey)||'[]'));}catch{return new Set();}}
+function markLearnGroupMet(id){const met=learnGroupsMet();met.add(id);try{localStorage.setItem(learnGroupsKey,JSON.stringify([...met]));}catch{}}
 const wordModes=new Set(['learn','wheel']);
 function renderStandardCategories(mode){
-  renderStandardSetup(mode,'Choose words to explore','Your Teacher selection still applies.');els.round.textContent='Categories';
-  const grid=document.createElement('div');grid.className='standard-choice-grid';
+  const learn=mode==='learn';
+  renderStandardSetup(mode,learn?'Which words shall we meet?':'Choose words to explore',learn?'':'Your Teacher selection still applies.');els.round.textContent='Categories';
+  const grid=document.createElement('div');grid.className='standard-choice-grid'+(learn?' learn-groups':'');
   const categories=wordModes.has(mode)?[...TransportStandard.categories,...TransportStandard.teachingCategories]:TransportStandard.categories;
   const covers={all:'vehicle.bus',land:'vehicle.car',water:'vehicle.ferry',air:'vehicle.airplane',space:'vehicle.space-shuttle'};
   for(const category of categories){const pool=filteredStandardPool(mode,{category:category.id});
@@ -43,7 +47,13 @@ function renderStandardCategories(mode){
     const cover=wordModes.has(mode)&&individualTeachingImage(covers[category.id]||pool[0]?.id);
     const source=cover||category.image;
     button.innerHTML=`<img src="${source}" alt=""><strong>${category.label}</strong><span>${pool.length} ${pool.length===1?'word':'words'}</span>`;
+    if(learn&&learnGroupsMet().has(category.id))button.dataset.met='true';
     button.disabled=!pool.length;grid.append(button);
+  }
+  if(learn){
+    const shown=grid.querySelectorAll('.standard-choice').length,met=grid.querySelectorAll('[data-met]').length;
+    els.round.textContent=`Groups ${met}/${shown}`;document.querySelector('.progress-track').hidden=false;els.progress.style.width=`${shown?met/shown*100:0}%`;
+    els.scorePill.hidden=false;els.score.textContent="0";
   }
   if(mode==='learn'){
     const scenes=standardButton('',renderTeachingScenes,'standard-choice scene-entry');
@@ -186,7 +196,7 @@ function renderStandardLearn(){
   state.practice=true;
   els.question.textContent='';
   els.stage.style.display='none';
-  els.round.textContent=`Word ${state.round+1}/${state.questions.length}`;
+  els.round.textContent=`Word ${state.round+1}/${state.questions.length}`;els.progress.style.width=`${state.round/state.questions.length*100}%`;
   const panel=document.createElement('div');
   panel.className='learn-word-card';
   const source=individualTeachingImage(item.id)||item.image;
@@ -200,13 +210,13 @@ function renderStandardLearn(){
   title.textContent=item.name;
   const meaning=document.createElement('p');
   meaning.className='learn-meaning';
-  meaning.innerHTML=`${standardEscape(item.definition)}<span class="standard-example">${standardEscape(item.example)}</span>`;
+  meaning.textContent=item.definition;
   panel.append(title,meaning);
   els.answers.append(panel);
-  els.scorePill.hidden=true;els.listen.hidden=true;setStandardBack('Categories');
+  els.scorePill.hidden=false;els.score.textContent=String(state.score);els.listen.hidden=false;els.listen.disabled=false;els.listen.textContent='Listen';setStandardBack('Categories');
   const row=document.createElement('div');row.className='standard-actions learn-actions';
   const previous=standardButton('Previous',()=>{if(!state.round)return;state.round--;renderQuestion();rememberAttempt();});previous.disabled=state.round===0;
-  row.append(previous,standardButton(`Say “${item.name}”`,()=>speak(item.name)),standardButton('Hear the meaning',()=>speak(item.definition)),standardButton(state.round===state.questions.length-1?'Finish this set':'Next word',()=>{if(!(state.completedIds||[]).includes(item.id))state.score++;nextQuestion();}));
+  row.append(previous,standardButton(`Say “${item.name}”`,()=>speak(item.name)),standardButton('Hear the meaning',()=>speak(item.definition)),standardButton(state.round===state.questions.length-1?'Finish':'Next word',()=>{if(!(state.completedIds||[]).includes(item.id))state.score++;nextQuestion();},'standard-action learn-next'));
   els.answers.append(row);
 }
 function renderStandardSort(){
