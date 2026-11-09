@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dispatch · first asset review</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#eee5d0;color:#193548;font:15px/1.35 system-ui,sans-serif}
+main{max-width:1160px;padding:24px 26px;margin:auto}
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:16px}
+h1{font:700 clamp(28px,4vw,39px)/1.05 Georgia,serif;margin:0 0 4px}
+p,h2,h3{margin:0}header p{color:#496370}
+h2{font-size:18px;margin:12px 0 7px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.vehicles{grid-template-columns:repeat(3,minmax(0,1fr))}
+figure{margin:0;border:1px solid #d6c6a3;border-radius:13px;background:#fffaf0;overflow:hidden}
+.art{height:126px;display:grid;place-items:center;background:linear-gradient(135deg,#fffaf0 64%,#e9ddc0);padding:9px 12px}
+.vehicles .art{height:126px;background:linear-gradient(160deg,#fffaf0 57%,#dbe5de)}
+.art img{display:block;width:100%;height:100%;max-height:108px;object-fit:contain}
+.road-swatch{width:100%;height:78px;background:url(road-surface.png) center/170px;position:relative;border:3px solid #c8b898;border-radius:4px}
+.road-swatch::after{position:absolute;content:"";inset:50% 0 auto;border-top:2px dashed #f4e5bd}
+figcaption{padding:8px 12px;border-top:1px solid #e6dcc4}
+figcaption a{font-weight:700;color:inherit;text-decoration:none}
+figcaption a:hover{text-decoration:underline}
+figcaption p{color:#496370;font-size:13px}
+.scale{display:flex;flex-wrap:wrap;gap:10px}
+.sample{flex:1 1 240px;display:flex;align-items:center;justify-content:center;gap:14px;min-height:54px;border-radius:9px;color:white;background:url(road-surface.png) center/170px;font-size:13px}
+.sample.water{background:#467889}
+.sample svg{display:block;flex:none}
+.status{white-space:nowrap;color:#194c54;font-weight:700;font-size:13px}
+@media(max-width:720px){main{padding:16px}header{align-items:flex-start;flex-direction:column;gap:4px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.vehicles{grid-template-columns:repeat(3,minmax(0,1fr))}.vehicles .art{height:94px}}
+@media(max-width:460px){.vehicles{grid-template-columns:1fr}.art{height:104px}figcaption{padding:6px 8px}}
+</style>
+<main>
+  <header>
+    <div><h1>Transport Dispatch</h1><p>Miniature World · first scenery and sprite batch</p></div>
+    <span class="status">Artwork for approval</span>
+  </header>
+  <h2>Generated map pieces</h2>
+  <div class="grid">
+    <figure><div class="art"><div class="road-swatch" role="img" aria-label="Painted slate road surface with separate cream lane marking"></div></div><figcaption><a href="road-surface.png">Road surface</a><p>Texture under live kerbs and lane marks</p></figcaption></figure>
+    <figure><div class="art"><img src="bridge-deck-v2.png" alt="Overhead road bridge with timber rails and open ends"></div><figcaption><a href="bridge-deck-v2.png">Bridge deck</a><p>Open road connections at both ends</p></figcaption></figure>
+    <figure><div class="art"><img src="dock-pier.png" alt="Wooden pier with two cleats at the water end"></div><figcaption><a href="dock-pier.png">Dock pier</a><p>Shore at top · boarding at bottom</p></figcaption></figure>
+    <figure><div class="art"><img src="island-berth.png" alt="Timber gangway connected to a sandstone landing pad"></div><figcaption><a href="island-berth.png">Island berth</a><p>Water at left · shore pad at right</p></figcaption></figure>
+  </div>
+  <h2>Overhead vehicle sprites</h2>
+  <div class="grid vehicles">
+    <figure><div class="art"><img src="school-bus-v2.png" alt="Top-down yellow school bus, nose to the right"></div><figcaption><a href="school-bus-v2.png">School bus</a><p>Long cabin · kerb-side boarding</p></figcaption></figure>
+    <figure><div class="art"><img src="taxi-v2.png" alt="Top-down yellow taxi with a roof sign, nose to the right"></div><figcaption><a href="taxi-v2.png">Taxi</a><p>Short body · distinctive roof sign</p></figcaption></figure>
+    <figure><div class="art"><img src="ferry.png" alt="Top-down cream and teal ferry with a bow to the right"></div><figcaption><a href="ferry.png">Passenger ferry</a><p>Teal deck · upper-side boarding gap</p></figcaption></figure>
+  </div>
+  <h2>Proposed phone map scale</h2>
+  <div class="scale">
+    <div class="sample"><svg role="img" aria-label="School bus with 36 pixel visible length" width="36" height="8.7" viewBox="68 117 2036 491"><image href="school-bus-v2.png" width="2172" height="724"/></svg><span>School bus · 36 px</span></div>
+    <div class="sample"><svg role="img" aria-label="Taxi with 28 pixel visible length" width="28" height="15.2" viewBox="246 74 1325 717"><image href="taxi-v2.png" width="1817" height="866"/></svg><span>Taxi · 28 px</span></div>
+    <div class="sample water"><svg role="img" aria-label="Ferry with 32 pixel visible length" width="32" height="10" viewBox="34 101 1953 610"><image href="ferry.png" width="2041" height="770"/></svg><span>Ferry · 32 px</span></div>
+  </div>
+</main>
+</html>

@@ -1,0 +1,235 @@
+{
+  "batch": "Dispatch Miniature World pilot v1",
+  "assets": [
+    {
+      "id": "road-surface",
+      "prompt": "Production raster game art for Transport Dispatch, the same hand-painted tactile Miniature World. True bird’s-eye orthographic 90 degrees down. Restrained matte paper-and-painted-wood rendering, subtle natural texture, clear crisp outer edges, muted colour suitable under route cues, no words or logos. One square repeatable material swatch of smooth slate grey-green painted miniature asphalt. Edge-to-edge flat even slate gray with extremely fine subtle gravel, paper grain, tonal range within about 8%. Deliberately plain so cream markings and gold route overlays are immediately readable. No edges, border, pavement, curb, lane marks, objects, stains, cracks, perspective or light direction. This is the road fill clipped inside generated lanes. Opaque full bleed, square, tiling-friendly.",
+      "file": "road-surface.png",
+      "sha256": "d208204f888ec5a31893bfb2a0019e7f3db7255fa870b884410b09572a874357",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "alphaRange": null,
+      "visibleBounds": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "status": "user approved for app handoff, 2026-11-09",
+      "generationId": "exec-54b8a061-6a9d-437f-abe7-5e0b2e4a607c"
+    },
+    {
+      "id": "bridge-deck",
+      "prompt": "Production raster game art for Transport Dispatch, the same hand-painted tactile Miniature World. True bird’s-eye orthographic 90 degrees down. Restrained matte paper-and-painted-wood rendering, subtle natural texture, clear crisp outer edges, muted colour suitable under route cues, no words or logos. One modular short straight road bridge viewed exactly overhead, long axis horizontal, west entrance at left and east exit at right, same full road width from end to end, simple straight grey slate asphalt deck framed by two narrow low warm timber rails on the TOP and BOTTOM edges only, subtle painted stone abutment at either end. Both roadway ends flat and open edge-to-edge, no end railing or gate. Width to height roughly 2.1:1. Sharp separate silhouette; evenly shaded deck, no lane markings, no background, no water, no land, no shadow beyond the shape, no vehicles, no perspective. Center one piece on real transparent RGBA.",
+      "file": "bridge-deck.png",
+      "sha256": "389c2e8b95f15d4389bc51484fc9cf9aee54aed3facb33c687392ae3750fff49",
+      "size": [
+        1817,
+        866
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        56,
+        161,
+        1761,
+        704
+      ],
+      "status": "superseded draft, preserve original",
+      "generationId": "exec-3a72d620-6cb9-4d4d-b6e5-111d95245702"
+    },
+    {
+      "id": "dock-pier",
+      "prompt": "Production raster game art for Transport Dispatch, the same hand-painted tactile Miniature World. True bird’s-eye orthographic 90 degrees down. Restrained matte paper-and-painted-wood rendering, subtle natural texture, clear crisp outer edges, muted colour suitable under route cues, no words or logos. One narrow rectangular wooden ferry pier tile, top shore entrance toward NORTH at the TOP, boarding end toward SOUTH at BOTTOM. A muted warm honey timber deck with broad straight cross-planks, two small charcoal mooring cleats along edges near the south tip and no rail across the clear walkable path. Tiny muted side curbs, simple blunt end, stable straight profile. Long axis vertical, proportion around 1 wide to 2.6 long. NO boat, people, sea, shore, land, buildings, rope, external cast shadow, or signage. One whole piece centered on true transparent RGBA, with clear edge margin.",
+      "file": "dock-pier.png",
+      "sha256": "d0096c5d42f9b13cfb3a91c4b14cc7c36858d6bf5afe62c1c92ee306760e17ee",
+      "size": [
+        778,
+        2022
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        74,
+        59,
+        701,
+        1961
+      ],
+      "status": "user approved for app handoff, 2026-11-09",
+      "generationId": "exec-8dbc6e44-062a-4d5d-bbed-dd941f7bdb9c"
+    },
+    {
+      "id": "island-berth",
+      "prompt": "Production raster game art for Transport Dispatch, the same hand-painted tactile Miniature World. True bird’s-eye orthographic 90 degrees down. Restrained matte paper-and-painted-wood rendering, subtle natural texture, clear crisp outer edges, muted colour suitable under route cues, no words or logos. One compact horizontal island ferry landing module, top-down orthographic. WEST water end at left, EAST shore end at right. Short narrow muted honey timber gangway across to a slightly broader small pale sandstone landing pad at right; two discreet charcoal mooring cleats at the narrow LEFT end; clear unobstructed walkway with no railing across either connection. Overall horizontal 2.3 to 1. This transparent cutout attaches to the edge of a separate generated island; NO island, grass, water, land, boat, characters, signage or external shadow. Center one whole piece on true transparent RGBA.",
+      "file": "island-berth.png",
+      "sha256": "803cb3140087dd296c6308ce2e61125e49535133a1cef36efd82e1217d1b9e5b",
+      "size": [
+        1900,
+        828
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        117,
+        167,
+        1784,
+        655
+      ],
+      "status": "user approved for app handoff, 2026-11-09",
+      "generationId": "exec-1d59e23d-b1de-45c3-8ad6-9d6320247301"
+    },
+    {
+      "id": "school-bus",
+      "prompt": "Production game sprite for Transport Dispatch, an illustrated tactile Miniature World. True orthographic bird’s-eye (90 degrees down), exact EAST-facing front at the RIGHT, never front three-quarter. Matte hand-painted miniature on paper, muted dimensional shading within silhouette, crisp dark navy contours, simple large high-contrast details that still read at 30–36 screen pixels. Subject completely visible, centred horizontally and vertically, tight horizontal composition with about 8% clear margin along the long axis. Transparent RGBA canvas, no background, cast shadow, road, water, wake, border, text, logos, labels, or extra objects. One sprite only. A classic compact yellow school bus with a long squared passenger cabin, short rounded nose and dark front windscreen at right, black rubber tyres, dark narrow strips of side windows, a readable boarding-door seam on its lower screen edge immediately behind the front axle. Golden yellow, deep blue glazing. Long and narrow about 3.1 to 1.",
+      "file": "school-bus.png",
+      "sha256": "6f4063b96585da56fcbeae3bb462679aeda1a5636c506dc9bf8762be9dd84757",
+      "size": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        73,
+        36,
+        2087,
+        711
+      ],
+      "status": "superseded draft, preserve original",
+      "generationId": "exec-4b3cce7d-1b30-48d0-a2dc-99a40123f9fd"
+    },
+    {
+      "id": "taxi",
+      "prompt": "Production game sprite for Transport Dispatch, an illustrated tactile Miniature World. True orthographic bird’s-eye (90 degrees down), exact EAST-facing front at the RIGHT, never front three-quarter. Matte hand-painted miniature on paper, muted dimensional shading within silhouette, crisp dark navy contours, simple large high-contrast details that still read at 30–36 screen pixels. Subject completely visible, centred horizontally and vertically, tight horizontal composition with about 8% clear margin along the long axis. Transparent RGBA canvas, no background, cast shadow, road, water, wake, border, text, logos, labels, or extra objects. One sprite only. A compact yellow taxi car with distinct roof sign (blank gold and dark top), roof, dark front windscreen and bonnet at right, two dark side window strips and four wheels, a clear kerb-side rear door seam on the lower screen edge. Use subdued checker accents only if readable. Car silhouette about 2.25 to 1, noticeably shorter than a bus, not a van.",
+      "file": "taxi.png",
+      "sha256": "59bd46177199ece756bc299fa3dec650e381bf224c870e7b8e31f468d05198ad",
+      "size": [
+        1881,
+        836
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        285,
+        54,
+        1595,
+        801
+      ],
+      "status": "superseded draft, preserve original",
+      "generationId": "exec-6cf25df1-55c0-4729-957b-e95ae87db094"
+    },
+    {
+      "id": "ferry",
+      "prompt": "Production game sprite for Transport Dispatch, an illustrated tactile Miniature World. True orthographic bird’s-eye (90 degrees down), exact EAST-facing front at the RIGHT, never front three-quarter. Matte hand-painted miniature on paper, muted dimensional shading within silhouette, crisp dark navy contours, simple large high-contrast details that still read at 30–36 screen pixels. Subject completely visible, centred horizontally and vertically, tight horizontal composition with about 8% clear margin along the long axis. Transparent RGBA canvas, no background, cast shadow, road, water, wake, border, text, logos, labels, or extra objects. One sprite only. A small passenger ferry viewed exactly from overhead, pointed bow to the RIGHT and squared stern to the left, broad ivory hull, clean dark navy rim, teal deck, compact rectangular cream passenger cabin with deep blue windows, small boarding opening along the UPPER edge near the aft half. The shape reads as a real boat, with no road vehicle elements. Silhouette about 2.65 to 1.",
+      "file": "ferry.png",
+      "sha256": "af4fd76010aed4eeabcfd949bf1f1c2354684b4841f8f30be544cac8805a832d",
+      "size": [
+        2041,
+        770
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        34,
+        101,
+        1987,
+        711
+      ],
+      "status": "user approved for app handoff, 2026-11-09",
+      "generationId": "exec-450518dd-f12c-4279-81a8-99e33e8eebc6"
+    },
+    {
+      "id": "school-bus-v2",
+      "prompt": "Correct the camera of this school-bus game sprite to a TRUE ORTHOGRAPHIC TOP VIEW like a floor-plan drawing viewed by a drone pointing straight down. Rotate the CAMERA, never rotate the existing side-profile drawing in 2D. On a plan from above, I should see the large yellow ROOF spanning nearly the entire length, the hood at RIGHT, rear at LEFT, dark front windshield immediately behind the hood, and symmetrical very thin dark window edges on both long sides. Tires at most small dark tabs: never visible circular wheel faces. Do not show the side door face, side windows as rectangles, or vertical body panels; only a small door-position seam along the lower silhouette behind the front axle. North and south outlines are symmetric aside from that tiny door seam. East-pointing nose, whole bus, long narrow 3:1 footprint. Same matte paper-painted yellow and navy vehicle palette as the original, clear blue glazing. Transparent RGBA, centered, all edges visible, no cast shadow, scenery, words, border or labels. Only one bus and only the overhead view.",
+      "file": "school-bus-v2.png",
+      "sha256": "b0d8971a28847f81884c730272bef5317dd4e8e5e7ff6da9333276613cf41d6b",
+      "size": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        68,
+        117,
+        2104,
+        608
+      ],
+      "status": "user approved for app handoff, 2026-11-09",
+      "generationId": "exec-ed40b548-4d61-43bb-8235-2a228c977569",
+      "reference": "school-bus.png"
+    },
+    {
+      "id": "taxi-v2",
+      "prompt": "Correct the camera on this taxi sprite to a TRUE ORTHOGRAPHIC PLAN VIEW from a camera pointed directly downward. The roof and blank taxi sign are central, the bonnet and FRONT are on the RIGHT, trunk and rear are on the LEFT. The top and bottom sides are mirror-symmetrical except for a tiny lower rear door contact seam. I must see the top of both mirrors and both headlights. Do not show side door faces, side panels, or circular wheel faces. Dark windshield bands ahead of and behind the yellow roof, compact distinct car plan silhouette length about 2.1 times width, less long than a bus. Preserve paper-painted matte yellow/navy style. A blank small roof taxi sign, no readable text, no ground, shadow, road, other objects, or fake background; real transparent RGBA. Whole car, centered, all edges visible.",
+      "file": "taxi-v2.png",
+      "sha256": "553bddec1b2f46b681925fabb0aeed6541c44866dcef67c8e1fc3a40c06f1317",
+      "size": [
+        1817,
+        866
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        246,
+        74,
+        1571,
+        791
+      ],
+      "status": "user approved for app handoff, 2026-11-09",
+      "generationId": "exec-ffaba254-e8fd-46f7-83e1-868d76f02c34",
+      "reference": "taxi.png"
+    },
+    {
+      "id": "bridge-deck-v2",
+      "prompt": "Edit this exact overhead horizontal game bridge. Keep the slate asphalt deck, warm timber rails on the upper and lower long edges, matte painted material, transparent background, and strict top-down camera. REMOVE the two continuous stone bars spanning the SHORT left and right entrances. The driving surface must reach the absolute left and right visible boundaries and meet adjoining asphalt directly without a step, kerb, bar, border, stripe, gate or barrier across either end. Four modest stone post caps only, one at each outside corner aligned with the long timber rails, never in the driveable area. The roadway remains full width through both exits. One asset, full piece in frame, no water, ground, objects, shadow or labels. Crisp clean alpha edge.",
+      "file": "bridge-deck-v2.png",
+      "sha256": "914d4d0f155aad33b0f4c6d9fdb1902d225580848b13f0a1dd7d764feba42253",
+      "size": [
+        1816,
+        866
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        53,
+        159,
+        1763,
+        706
+      ],
+      "status": "user approved for app handoff, 2026-11-09",
+      "generationId": "exec-fdb1eb95-3df2-4475-bc46-868c7cf58e74",
+      "reference": "bridge-deck.png"
+    }
+  ]
+}

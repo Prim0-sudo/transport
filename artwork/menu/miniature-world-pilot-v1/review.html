@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transport Town · menu artwork review</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#e9e3d3;color:#193548;font:15px/1.35 system-ui,sans-serif}
+main{max-width:1230px;margin:0 auto;padding:26px}
+header{margin-bottom:20px}
+h1{font:700 clamp(28px,4vw,42px)/1.08 Georgia,serif;margin:0 0 5px}
+header p{margin:0;color:#4c6270}
+.compare{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,366px);align-items:start;gap:24px}
+h2{font-size:16px;margin:0 0 8px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.phone{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.tile{display:grid;grid-template-rows:126px auto;align-items:center;justify-items:center;gap:4px;min-width:0;min-height:174px;background:#fffbee;border:1px solid #e0d0a7;border-radius:18px;text-decoration:none;color:#173746;padding:9px 7px 10px;box-shadow:0 2px 0 #baa986}
+.tile:focus-visible{outline:3px solid #19569b;outline-offset:3px}
+.tile svg{display:block;width:100%;height:100%;max-width:83%;overflow:visible}
+.tile strong{font-size:16px;text-align:center}
+.phone .tile{min-height:144px;grid-template-rows:100px auto;border-radius:14px}
+.phone .tile strong{font-size:14px}
+.phone .tile svg{max-width:88%}
+.edge{margin-top:20px}
+.dark{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;background:#1b3849;border-radius:15px;padding:13px}
+.dark svg{width:100%;height:100px;display:block}
+@media(max-width:900px){.compare{grid-template-columns:1fr}.phone{max-width:366px}.grid{max-width:760px}}
+@media(max-width:510px){main{padding:16px}.grid:not(.phone){grid-template-columns:repeat(2,minmax(0,1fr))}.tile{grid-template-rows:100px auto;min-height:145px}.tile strong{font-size:14px}.dark svg{height:70px}}
+</style>
+<main>
+  <header><h1>Transport Town · menu art</h1><p>Miniature World pilot · three activity illustrations</p></header>
+  <div class="compare">
+    <section aria-labelledby="desktop-label">
+      <h2 id="desktop-label">Desktop tiles</h2>
+      <div class="grid" data-layout="desktop"></div>
+      <section class="edge" aria-labelledby="edge-label">
+        <h2 id="edge-label">Transparent edges on navy</h2>
+        <div class="dark" data-layout="dark"></div>
+      </section>
+    </section>
+    <section aria-labelledby="phone-label">
+      <h2 id="phone-label">Two-column phone tiles · 390 px viewport</h2>
+      <div class="grid phone" data-layout="phone"></div>
+    </section>
+  </div>
+</main>
+<script>
+const assets = [
+  { file: 'meet-the-words.png', label: 'Meet the Words', size: [1536, 1024], box: [2, 80, 1532, 916], alt: 'Open painted transport field guide with a bus, a ferry and an airplane' },
+  { file: 'transport-detective.png', label: 'Transport Detective', size: [1482, 1062], box: [15, 38, 1435, 1006], alt: 'Brass magnifying glass over a train clue with teal mosaic covers' },
+  { file: 'spin-the-wheel.png', label: 'Spin the Wheel', size: [1312, 1199], box: [163, 7, 986, 1181], alt: 'Wooden spinner with a gold pointer and five painted transport wedges' }
+];
+const svgNS = 'http://www.w3.org/2000/svg';
+function illustration(asset) {
+  const svg = document.createElementNS(svgNS, 'svg');
+  const image = document.createElementNS(svgNS, 'image');
+  svg.setAttribute('viewBox', asset.box.join(' '));
+  svg.setAttribute('role', 'img');
+  svg.setAttribute('aria-label', asset.alt);
+  image.setAttribute('href', asset.file);
+  image.setAttribute('width', asset.size[0]);
+  image.setAttribute('height', asset.size[1]);
+  svg.append(image);
+  return svg;
+}
+for (const region of document.querySelectorAll('[data-layout]')) {
+  for (const asset of assets) {
+    const picture = illustration(asset);
+    if (region.dataset.layout === 'dark') {
+      region.append(picture);
+      continue;
+    }
+    const tile = document.createElement('a');
+    const label = document.createElement('strong');
+    tile.className = 'tile';
+    tile.href = asset.file;
+    label.textContent = asset.label;
+    tile.append(picture, label);
+    region.append(tile);
+  }
+}
+</script>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transport Town · full menu art review</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(158deg,#c7e1e2,#f1e4c8 57%,#e7d2ad);color:#193548;font:15px/1.35 system-ui,sans-serif;min-height:100vh}
+main{max-width:1160px;margin:auto;padding:18px 24px 28px}
+header{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+h1{font:700 clamp(30px,4vw,43px)/1.02 Georgia,serif;margin:0 0 4px}
+p{margin:0}
+header p{color:#49636c}
+.controls{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+button{font:inherit;font-weight:650;color:#193548;background:#fffbee;border:1px solid #c6ad75;border-radius:9px;padding:7px 10px;min-height:40px;cursor:pointer}
+button[aria-pressed=true]{color:#fff9e9;background:#214e69}
+a:focus-visible,button:focus-visible{outline:3px solid #236bb9;outline-offset:3px}
+.feature{display:grid;grid-template-columns:clamp(110px,21vw,204px) 1fr;gap:13px;align-items:center;background:#194765;color:#fff7df;border:2px solid #c9a454;border-radius:17px;box-shadow:0 3px 0 #a7894d;padding:8px 14px;margin-bottom:12px;text-decoration:none}
+.feature svg{width:100%;height:82px;display:block}
+.feature strong{display:block;font:700 clamp(22px,3vw,34px)/1.08 Georgia,serif;margin-bottom:4px}
+.feature small{font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.tile{background:#fffbee;border:1px solid #d4bd89;border-radius:16px;min-width:0;min-height:144px;padding:7px 9px 10px;display:grid;grid-template-rows:108px auto;align-items:center;justify-items:center;gap:3px;text-decoration:none;color:#193548;box-shadow:0 2px 0 #baa779}
+.tile svg{display:block;width:82%;height:100%}
+.tile strong{font-size:15px;text-align:center;line-height:1.2}
+.dark .tile{background:#203c4f;color:#fff8e3}
+.phone .stage{max-width:366px;margin:0 auto}
+.phone .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.phone .tile{min-height:130px;grid-template-rows:91px auto}
+.phone .feature{grid-template-columns:98px 1fr;padding:7px 10px}
+.phone .feature svg{height:63px}
+.phone .feature strong{font-size:22px}
+.phone .feature small{font-size:12px}
+@media(max-width:660px){
+  main{padding:14px 12px 20px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .tile{min-height:130px;grid-template-rows:91px auto}
+  .tile strong{font-size:14px}
+  .feature{grid-template-columns:98px 1fr;padding:7px 10px}
+  .feature svg{height:63px}
+  .feature small{font-size:12px}
+}
+</style>
+<main>
+  <header>
+    <div><h1>Choose a game</h1><p>Transport Town · Miniature World artwork review</p></div>
+    <div class="controls">
+      <button type="button" id="phone" aria-pressed="false">Phone layout</button>
+      <button type="button" id="dark" aria-pressed="false">Check on navy</button>
+    </div>
+  </header>
+  <div class="stage">
+    <a class="feature" id="feature" aria-label="Open full-size Transport Dispatch banner artwork"><div id="feature-art"></div><span><strong>Transport Dispatch</strong><small>Choose the right vehicle · deliver everyone</small></span></a>
+    <div class="grid" id="tiles" aria-label="Twelve illustrated activity tiles"></div>
+  </div>
+</main>
+<script type="application/json" id="art-data">[{"mode":"learn","file":"../miniature-world-pilot-v1/meet-the-words.png","size":[1536,1024],"visibleBounds":[2,80,1534,996],"label":"Meet the Words"},{"mode":"sort","file":"sort-it.png","size":[1510,1041],"visibleBounds":[2,111,1506,929],"label":"Sort It"},{"mode":"detective","file":"../miniature-world-pilot-v1/transport-detective.png","size":[1482,1062],"visibleBounds":[15,38,1450,1044],"label":"Transport Detective"},{"mode":"identify","file":"which-one-is-it.png","size":[1511,1041],"visibleBounds":[31,8,1481,1031],"label":"Which One Is It?"},{"mode":"safety","file":"knowledge-and-safety.png","size":[1511,1041],"visibleBounds":[23,18,1504,1036],"label":"Knowledge & Safety"},{"mode":"hangman","file":"transport-spelling.png","size":[1510,1041],"visibleBounds":[28,89,1466,1014],"label":"Transport Spelling"},{"mode":"flip","file":"flip-the-tiles.png","size":[1510,1041],"visibleBounds":[7,15,1497,1009],"label":"Flip the Tiles"},{"mode":"wheel","file":"../miniature-world-pilot-v1/spin-the-wheel.png","size":[1312,1199],"visibleBounds":[163,7,1149,1188],"label":"Spin the Wheel"},{"mode":"media","file":"media.png","size":[1510,1041],"visibleBounds":[40,7,1484,1019],"label":"Media"},{"mode":"games","file":"transport-games.png","size":[1510,1041],"visibleBounds":[8,55,1491,969],"label":"Transport Games"},{"mode":"phonics","file":"phonics-and-sight-words.png","size":[1510,1041],"visibleBounds":[19,14,1501,1024],"label":"Phonics & Sight Words"},{"mode":"create","file":"read-draw-and-talk.png","size":[1511,1041],"visibleBounds":[10,11,1499,1025],"label":"Read, Draw & Talk"},{"mode":"featuredDispatch","file":"dispatch-banner.png","size":[1536,1024],"visibleBounds":[5,141,1532,937],"label":"Transport Dispatch"}]</script>
+<script>
+const art = JSON.parse(document.getElementById('art-data').textContent);
+const svgNS = 'http://www.w3.org/2000/svg';
+function picture(asset) {
+  const svg = document.createElementNS(svgNS, 'svg');
+  const image = document.createElementNS(svgNS, 'image');
+  const [x,y,right,bottom] = asset.visibleBounds;
+  svg.setAttribute('viewBox', [x,y,right-x,bottom-y].join(' '));
+  svg.setAttribute('aria-hidden', 'true');
+  image.setAttribute('href', asset.file);
+  image.setAttribute('width', asset.size[0]);
+  image.setAttribute('height', asset.size[1]);
+  svg.append(image);
+  return svg;
+}
+const feature = art.find(asset => asset.mode === 'featuredDispatch');
+document.getElementById('feature').href = feature.file;
+document.getElementById('feature-art').append(picture(feature));
+const grid = document.getElementById('tiles');
+for (const asset of art.filter(asset => asset.mode !== 'featuredDispatch')) {
+  const tile = document.createElement('a');
+  const label = document.createElement('strong');
+  tile.className = 'tile';
+  tile.href = asset.file;
+  tile.setAttribute('aria-label', 'Open full-size ' + asset.label + ' artwork');
+  label.textContent = asset.label;
+  tile.append(picture(asset), label);
+  grid.append(tile);
+}
+for (const id of ['phone','dark']) {
+  const button = document.getElementById(id);
+  button.addEventListener('click', () => {
+    const on = document.body.classList.toggle(id);
+    button.setAttribute('aria-pressed', String(on));
+  });
+}
+</script>
+</html>

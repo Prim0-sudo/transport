@@ -1,0 +1,82 @@
+{
+  "batch": "Transport Miniature World menu pilot v1",
+  "reference": "Plants illustrated menu, modes learn, detective and wheel, used as composition reference only",
+  "status": "User approved on 2026-11-09",
+  "assets": [
+    {
+      "id": "meet-the-words",
+      "mode": "learn",
+      "prompt": "A finished, individual transparent menu illustration for a children’s Transport Town learning game. Miniature World: detailed hand-painted gouache and subtle grain on tactile painted wooden and paper objects, softly shaded volume, restrained dark navy outlines, ivory paper, warm brass/gold trim, petrol blue and teal accents, yellow and red vehicle accents. Picture-led like a beautifully illustrated children's field guide, rich but readable, neither generic vector icon nor glossy 3D. One clear activity object with supporting pieces composing a single clustered silhouette. Full subject centred, all edges in frame, artwork fills about 82–88% of the long canvas dimension. Preserve clear negative space around perimeter. Real transparent RGBA background. No type, lettering, title, menu card, enclosing rectangle, interface, watermark, hard outside shadow, or landscape behind the cutout. The live menu adds its own cream card and title. Use a slightly elevated three-quarter overhead view of one wide open illustrated transport field guide, with visible navy cloth binding and ochre trim, warm cream spread, and a short red bookmark ribbon. Left page: one large sunny yellow miniature bus illustration and a small diagram of a road. Right page: a readable cream-and-teal ferry on a little painted blue patch and a small bright red-and-ivory airplane study. Images painted onto the book pages, no text or scribble lines, no extra book. The open book is the dominant shape. A balanced wide silhouette with roughly 1.5:1 visible proportions; book reaches close to both sides. Rich layered miniature craft like an illustrated museum guide.",
+      "file": "meet-the-words.png",
+      "sha256": "df394e31329028c7c9ee4e7a9b3b1871c92688309ba8862d2f67792d5270be09",
+      "size": [
+        1536,
+        1024
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "maxBorderAlpha": 15,
+      "visibleBounds": [
+        2,
+        80,
+        1534,
+        996
+      ],
+      "status": "user approved on 2026-11-09",
+      "generationId": "exec-bc3b557a-02d8-4d4b-8426-a122635e7889"
+    },
+    {
+      "id": "transport-detective",
+      "mode": "detective",
+      "prompt": "A finished, individual transparent menu illustration for a children’s Transport Town learning game. Miniature World: detailed hand-painted gouache and subtle grain on tactile painted wooden and paper objects, softly shaded volume, restrained dark navy outlines, ivory paper, warm brass/gold trim, petrol blue and teal accents, yellow and red vehicle accents. Picture-led like a beautifully illustrated children's field guide, rich but readable, neither generic vector icon nor glossy 3D. One clear activity object with supporting pieces composing a single clustered silhouette. Full subject centred, all edges in frame, artwork fills about 82–88% of the long canvas dimension. Preserve clear negative space around perimeter. Real transparent RGBA background. No type, lettering, title, menu card, enclosing rectangle, interface, watermark, hard outside shadow, or landscape behind the cutout. The live menu adds its own cream card and title. One large warmly painted brass-rimmed magnifying glass with deep blue enamel grip angled toward lower right, looking through a round lens at an ivory picture card underneath. The card shows a painted green locomotive with a yellow front, partially hidden by a handful of clearly visible square mosaic covers in slate teal; the lens reveals a coherent, slightly enlarged portion of the same locomotive, not a second vehicle. Keep visible mosaic tiles at upper left and along one edge; the thick brass ring, clear lens and brown-blue handle are the dominant shape and instantly mean detective. A wide 1.4:1 visible silhouette, compact and full. No question marks, labels, extra cards, detached props, or arbitrary second picture.",
+      "file": "transport-detective.png",
+      "sha256": "f7876531e4afe89bee6a66d129b07b82d1445c5f25e3666cab4c076e73e966da",
+      "size": [
+        1482,
+        1062
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "maxBorderAlpha": 1,
+      "visibleBounds": [
+        15,
+        38,
+        1450,
+        1044
+      ],
+      "status": "user approved on 2026-11-09",
+      "generationId": "exec-22a4e35a-0c83-4018-a3a8-2a2da21de0ad"
+    },
+    {
+      "id": "spin-the-wheel",
+      "mode": "wheel",
+      "prompt": "A finished, individual transparent menu illustration for a children’s Transport Town learning game. Miniature World: detailed hand-painted gouache and subtle grain on tactile painted wooden and paper objects, softly shaded volume, restrained dark navy outlines, ivory paper, warm brass/gold trim, petrol blue and teal accents, yellow and red vehicle accents. Picture-led like a beautifully illustrated children's field guide, rich but readable, neither generic vector icon nor glossy 3D. One clear activity object with supporting pieces composing a single clustered silhouette. Full subject centred, all edges in frame, artwork fills about 82–88% of the long canvas dimension. Preserve clear negative space around perimeter. Real transparent RGBA background. No type, lettering, title, menu card, enclosing rectangle, interface, watermark, hard outside shadow, or landscape behind the cutout. The live menu adds its own cream card and title. A cheerful hand-painted wooden tabletop prize spinner, seen almost front-on from slightly above with subtle right-side depth, an almost round wheel with a clearly visible fixed golden pointer centered at twelve o’clock, brass hub, warm timber rim and sturdy low navy and wood foot. Five large coloured wedges in muted turquoise, cream, warm yellow, brick red and sky blue. Simple painted vignettes inside wedges: road bus, boat, small airplane, bicycle and train; all support the big wheel silhouette. No letters, numbers or title. The round spinner is clearly a game wheel on a stand, not a vehicle tyre. A broad stable base; one compact full object, no landscape or loose decorations.",
+      "file": "spin-the-wheel.png",
+      "sha256": "2cb9b12825e622b3608cd1d994468b9bc74c983f20bf847a23363247f66dabd7",
+      "size": [
+        1312,
+        1199
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "maxBorderAlpha": 6,
+      "visibleBounds": [
+        163,
+        7,
+        1149,
+        1188
+      ],
+      "status": "user approved on 2026-11-09",
+      "generationId": "exec-cabc5d0e-355f-4b77-afb7-01ba102a0c68"
+    }
+  ]
+}

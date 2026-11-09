@@ -2,6 +2,12 @@
 
 Written 2026-11-09 at the end of a Claude session. Read this first, then the existing HANDOFF.md (Codex-era) for background only. Claude is now the main developer. Codex produced the Painted Field Guide art.
 
+## Approved menu and Dispatch artwork
+
+The user approved all twelve Miniature World activity illustrations and the separate Dispatch feature banner. Start with [the menu art handoff](artwork/menu/miniature-world-v1/REVIEW.md) and its [mode-to-image ledger](artwork/menu/miniature-world-v1/manifest.json). The three approved pilot originals stay in their original folder and are referenced by the ledger. Wire the images into the existing native menu buttons and banner, retain direct Dispatch navigation, and check the actual desktop and 390 × 844 phone menu. The artwork review's sizing and edge checks are already recorded.
+
+The first Dispatch scenery and sprite batch was approved separately. Its [asset handoff](artwork/dispatch/miniature-world-pilot-v1/REVIEW.md) and [production brief](docs/DISPATCH-ART-PRODUCTION-BRIEF.md) record bridge joins, road clipping, sprite facing and the proposed water-side ferry berth contacts. Keep the procedural road graph and the existing dispatch actions.
+
 ## Where things stand
 
 Branch `main` on github.com/Prim0-sudo/transport, pushed and in sync. Work on `main` and push to `main`: the owner does not want work left on side branches (the old `codex/v6-upgrade-2026-11-08` branch is fully merged and kept only as history).

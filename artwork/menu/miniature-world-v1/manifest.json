@@ -1,0 +1,349 @@
+{
+  "batch": "Transport Miniature World menu set v1",
+  "references": [
+    "Approved three-asset menu pilot",
+    "Plants illustrated menu",
+    "TRANSPORT-MENU-ART-BRIEF.md"
+  ],
+  "status": "User approved all twelve activity illustrations and Dispatch banner for Claude integration on 2026-11-09",
+  "assets": [
+    {
+      "mode": "learn",
+      "id": "meet-the-words",
+      "label": "Meet the Words",
+      "prompt": "A finished, individual transparent menu illustration for a children’s Transport Town learning game. Miniature World: detailed hand-painted gouache and subtle grain on tactile painted wooden and paper objects, softly shaded volume, restrained dark navy outlines, ivory paper, warm brass/gold trim, petrol blue and teal accents, yellow and red vehicle accents. Picture-led like a beautifully illustrated children's field guide, rich but readable, neither generic vector icon nor glossy 3D. One clear activity object with supporting pieces composing a single clustered silhouette. Full subject centred, all edges in frame, artwork fills about 82–88% of the long canvas dimension. Preserve clear negative space around perimeter. Real transparent RGBA background. No type, lettering, title, menu card, enclosing rectangle, interface, watermark, hard outside shadow, or landscape behind the cutout. The live menu adds its own cream card and title. Use a slightly elevated three-quarter overhead view of one wide open illustrated transport field guide, with visible navy cloth binding and ochre trim, warm cream spread, and a short red bookmark ribbon. Left page: one large sunny yellow miniature bus illustration and a small diagram of a road. Right page: a readable cream-and-teal ferry on a little painted blue patch and a small bright red-and-ivory airplane study. Images painted onto the book pages, no text or scribble lines, no extra book. The open book is the dominant shape. A balanced wide silhouette with roughly 1.5:1 visible proportions; book reaches close to both sides. Rich layered miniature craft like an illustrated museum guide.",
+      "file": "../miniature-world-pilot-v1/meet-the-words.png",
+      "sha256": "df394e31329028c7c9ee4e7a9b3b1871c92688309ba8862d2f67792d5270be09",
+      "size": [
+        1536,
+        1024
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "maxBorderAlpha": 15,
+      "visibleBounds": [
+        2,
+        80,
+        1534,
+        996
+      ],
+      "status": "user approved on 2026-11-09",
+      "generationId": "exec-bc3b557a-02d8-4d4b-8426-a122635e7889"
+    },
+    {
+      "mode": "sort",
+      "id": "sort-it",
+      "label": "Sort It",
+      "prompt": "Finished, individually authored transparent activity menu illustration for Transport Town. Match the approved Miniature World menu art family: tactile hand-painted gouache on paper and painted wooden props, subtle paper tooth, soft dimensional shading, fine restrained dark navy outlines, ivory/cream paper, aged warm brass trim, petrol blue and teal, yellow and brick red transport accents. Children's illustrated field guide look, richly painted and still readable at a 140-pixel menu illustration size. One strong clustered silhouette, centered and completely inside frame with clean margin, slight elevated three-quarter overhead unless specified. Real transparent RGBA outside the entire composition, no scene background, text labels, title, cream UI tile, cast shadow outside silhouette, logos, or watermark. Landscape asset with a compact width-to-height ratio about 1.45. Title and card will be added by the app. The activity is sorting. Three small adjacent wooden sorting trays, visibly separate but arranged as one compact group: muted petrol blue tray for water with a painted boat card and wave symbol, gold-ochre tray for land with road stripes and a yellow bus card, pale sky-blue tray for air with a red plane card and cloud symbol. One cream card with a small plane rests diagonally halfway into the sky tray, showing the act of placing a card. Prominent full tray shapes and painted vehicle cards, no hands, no unrelated props. All three trays clearly visible.",
+      "file": "sort-it.png",
+      "sha256": "ae3de2eaead1e0dcef66404222e2fc64cf1a04baf26431b1c087fe612aac07fb",
+      "size": [
+        1510,
+        1041
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "maxBorderAlpha": 8,
+      "visibleBounds": [
+        2,
+        111,
+        1506,
+        929
+      ],
+      "generationId": "exec-8e788e86-41a7-4cdb-b296-ea555417ae56",
+      "status": "user approved on 2026-11-09"
+    },
+    {
+      "mode": "detective",
+      "id": "transport-detective",
+      "label": "Transport Detective",
+      "prompt": "A finished, individual transparent menu illustration for a children’s Transport Town learning game. Miniature World: detailed hand-painted gouache and subtle grain on tactile painted wooden and paper objects, softly shaded volume, restrained dark navy outlines, ivory paper, warm brass/gold trim, petrol blue and teal accents, yellow and red vehicle accents. Picture-led like a beautifully illustrated children's field guide, rich but readable, neither generic vector icon nor glossy 3D. One clear activity object with supporting pieces composing a single clustered silhouette. Full subject centred, all edges in frame, artwork fills about 82–88% of the long canvas dimension. Preserve clear negative space around perimeter. Real transparent RGBA background. No type, lettering, title, menu card, enclosing rectangle, interface, watermark, hard outside shadow, or landscape behind the cutout. The live menu adds its own cream card and title. One large warmly painted brass-rimmed magnifying glass with deep blue enamel grip angled toward lower right, looking through a round lens at an ivory picture card underneath. The card shows a painted green locomotive with a yellow front, partially hidden by a handful of clearly visible square mosaic covers in slate teal; the lens reveals a coherent, slightly enlarged portion of the same locomotive, not a second vehicle. Keep visible mosaic tiles at upper left and along one edge; the thick brass ring, clear lens and brown-blue handle are the dominant shape and instantly mean detective. A wide 1.4:1 visible silhouette, compact and full. No question marks, labels, extra cards, detached props, or arbitrary second picture.",
+      "file": "../miniature-world-pilot-v1/transport-detective.png",
+      "sha256": "f7876531e4afe89bee6a66d129b07b82d1445c5f25e3666cab4c076e73e966da",
+      "size": [
+        1482,
+        1062
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "maxBorderAlpha": 1,
+      "visibleBounds": [
+        15,
+        38,
+        1450,
+        1044
+      ],
+      "status": "user approved on 2026-11-09",
+      "generationId": "exec-22a4e35a-0c83-4018-a3a8-2a2da21de0ad"
+    },
+    {
+      "mode": "identify",
+      "id": "which-one-is-it",
+      "label": "Which One Is It?",
+      "prompt": "Finished, individually authored transparent activity menu illustration for Transport Town. Match the approved Miniature World menu art family: tactile hand-painted gouache on paper and painted wooden props, subtle paper tooth, soft dimensional shading, fine restrained dark navy outlines, ivory/cream paper, aged warm brass trim, petrol blue and teal, yellow and brick red transport accents. Children's illustrated field guide look, richly painted and still readable at a 140-pixel menu illustration size. One strong clustered silhouette, centered and completely inside frame with clean margin, slight elevated three-quarter overhead unless specified. Real transparent RGBA outside the entire composition, no scene background, text labels, title, cream UI tile, cast shadow outside silhouette, logos, or watermark. Landscape asset with a compact width-to-height ratio about 1.45. Title and card will be added by the app. The activity is choosing the matching picture. One large cream clue card slightly behind and at upper left, showing an unmistakable mustard yellow bus with navy windows. In front, exactly three smaller fanned illustrated answer cards: teal ferry, red airplane and the matching mustard yellow bus. A simple clear gold selection ring and green check next to the smaller matching bus card. Maintain strong visual hierarchy and ample cream space around each distinct picture; focus on the act of choosing, no extra loose props.",
+      "file": "which-one-is-it.png",
+      "sha256": "df111e28fbada49ed17c3a7db5883549168f8d26badafa355833246903a579c4",
+      "size": [
+        1511,
+        1041
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "maxBorderAlpha": 3,
+      "visibleBounds": [
+        31,
+        8,
+        1481,
+        1031
+      ],
+      "generationId": "exec-44acc112-87e0-4f07-bc5b-384da4e90b30",
+      "status": "user approved on 2026-11-09"
+    },
+    {
+      "mode": "safety",
+      "id": "knowledge-and-safety",
+      "label": "Knowledge & Safety",
+      "prompt": "Finished, individually authored transparent activity menu illustration for Transport Town. Match the approved Miniature World menu art family: tactile hand-painted gouache on paper and painted wooden props, subtle paper tooth, soft dimensional shading, fine restrained dark navy outlines, ivory/cream paper, aged warm brass trim, petrol blue and teal, yellow and brick red transport accents. Children's illustrated field guide look, richly painted and still readable at a 140-pixel menu illustration size. One strong clustered silhouette, centered and completely inside frame with clean margin, slight elevated three-quarter overhead unless specified. Real transparent RGBA outside the entire composition, no scene background, text labels, title, cream UI tile, cast shadow outside silhouette, logos, or watermark. Landscape asset with a compact width-to-height ratio about 1.45. Title and card will be added by the app. A compact open navy-bound road-safety guide with warm ivory pages. One large simple zebra pedestrian crossing diagram with painted white stripes across slate road and safe waiting pavement, drawn on the left page; right page a simple red octagonal stop sign silhouette WITHOUT text and a warm green check. A neatly fitted-looking child-sized blue cycling helmet with clearly visible straps rests beside and partly in front of the book, not on a person. Quiet minimal prop cluster with the readable crossing and helmet as the focus. No pedestrians, crashes, alerts, or writing.",
+      "file": "knowledge-and-safety.png",
+      "sha256": "dccc4c9c46668d320517db559a9f56a57636d7a574d44cbafb8d0174eb0ddc3e",
+      "size": [
+        1511,
+        1041
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "maxBorderAlpha": 3,
+      "visibleBounds": [
+        23,
+        18,
+        1504,
+        1036
+      ],
+      "generationId": "exec-24b4963b-f09f-40a1-8baa-991c9afd40ae",
+      "status": "user approved on 2026-11-09"
+    },
+    {
+      "mode": "hangman",
+      "id": "transport-spelling",
+      "label": "Transport Spelling",
+      "prompt": "Finished, individually authored transparent activity menu illustration for Transport Town. Match the approved Miniature World menu art family: tactile hand-painted gouache on paper and painted wooden props, subtle paper tooth, soft dimensional shading, fine restrained dark navy outlines, ivory/cream paper, aged warm brass trim, petrol blue and teal, yellow and brick red transport accents. Children's illustrated field guide look, richly painted and still readable at a 140-pixel menu illustration size. One strong clustered silhouette, centered and completely inside frame with clean margin, slight elevated three-quarter overhead unless specified. Real transparent RGBA outside the entire composition, no scene background, text labels, title, cream UI tile, cast shadow outside silhouette, logos, or watermark. Landscape asset with a compact width-to-height ratio about 1.45. Title and card will be added by the app. Main object is a vintage cream and brass-edged departure ticket on a compact navy wooden holder, featuring a small illustrated red rail carriage on the left and three big empty outlined letter spaces on the right. Three large separate painted wooden alphabet pieces sit neatly in front, reading exactly B, U, S from left to right, one bold letter per piece, clear clean typographic forms. The only lettering is B U S on these blocks. Make the letter slots and the loose letters obviously separate so it reads as a word-building game. Keep all pieces inside the tight silhouette, no extra paper or sound marks.",
+      "file": "transport-spelling.png",
+      "sha256": "88b3aca1d0124e3109b9c9798df9346f470f479353c9b204ae645ef1652b436f",
+      "size": [
+        1510,
+        1041
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "maxBorderAlpha": 1,
+      "visibleBounds": [
+        28,
+        89,
+        1466,
+        1014
+      ],
+      "generationId": "exec-fd0f5f1e-d3c5-4bea-851a-bf9fb10966be",
+      "status": "user approved on 2026-11-09"
+    },
+    {
+      "mode": "flip",
+      "id": "flip-the-tiles",
+      "label": "Flip the Tiles",
+      "prompt": "Finished, individually authored transparent activity menu illustration for Transport Town. Match the approved Miniature World menu art family: tactile hand-painted gouache on paper and painted wooden props, subtle paper tooth, soft dimensional shading, fine restrained dark navy outlines, ivory/cream paper, aged warm brass trim, petrol blue and teal, yellow and brick red transport accents. Children's illustrated field guide look, richly painted and still readable at a 140-pixel menu illustration size. One strong clustered silhouette, centered and completely inside frame with clean margin, slight elevated three-quarter overhead unless specified. Real transparent RGBA outside the entire composition, no scene background, text labels, title, cream UI tile, cast shadow outside silhouette, logos, or watermark. Landscape asset with a compact width-to-height ratio about 1.45. Title and card will be added by the app. A memory matching game: exactly two cream square cards face-up with the SAME cheerful illustrated teal-and-cream ferry with red life ring and wave, same orientation and same motif on both cards. One separate navy card facing down behind them, with bold simple gold geometric railway-inspired line pattern, no letters. Fan the three cards so both matching ferry illustrations remain complete and unmistakable. Strong readable card edges, warm brass trim. Only the three cards, no check, selection ring, book, or human hands.",
+      "file": "flip-the-tiles.png",
+      "sha256": "24b5fdcd96eeaa33551e637776dd4503e453837c689689828411f33ba540341a",
+      "size": [
+        1510,
+        1041
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "maxBorderAlpha": 4,
+      "visibleBounds": [
+        7,
+        15,
+        1497,
+        1009
+      ],
+      "generationId": "exec-b66ebff0-31ca-4179-8438-0b329272586d",
+      "status": "user approved on 2026-11-09"
+    },
+    {
+      "mode": "wheel",
+      "id": "spin-the-wheel",
+      "label": "Spin the Wheel",
+      "prompt": "A finished, individual transparent menu illustration for a children’s Transport Town learning game. Miniature World: detailed hand-painted gouache and subtle grain on tactile painted wooden and paper objects, softly shaded volume, restrained dark navy outlines, ivory paper, warm brass/gold trim, petrol blue and teal accents, yellow and red vehicle accents. Picture-led like a beautifully illustrated children's field guide, rich but readable, neither generic vector icon nor glossy 3D. One clear activity object with supporting pieces composing a single clustered silhouette. Full subject centred, all edges in frame, artwork fills about 82–88% of the long canvas dimension. Preserve clear negative space around perimeter. Real transparent RGBA background. No type, lettering, title, menu card, enclosing rectangle, interface, watermark, hard outside shadow, or landscape behind the cutout. The live menu adds its own cream card and title. A cheerful hand-painted wooden tabletop prize spinner, seen almost front-on from slightly above with subtle right-side depth, an almost round wheel with a clearly visible fixed golden pointer centered at twelve o’clock, brass hub, warm timber rim and sturdy low navy and wood foot. Five large coloured wedges in muted turquoise, cream, warm yellow, brick red and sky blue. Simple painted vignettes inside wedges: road bus, boat, small airplane, bicycle and train; all support the big wheel silhouette. No letters, numbers or title. The round spinner is clearly a game wheel on a stand, not a vehicle tyre. A broad stable base; one compact full object, no landscape or loose decorations.",
+      "file": "../miniature-world-pilot-v1/spin-the-wheel.png",
+      "sha256": "2cb9b12825e622b3608cd1d994468b9bc74c983f20bf847a23363247f66dabd7",
+      "size": [
+        1312,
+        1199
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "maxBorderAlpha": 6,
+      "visibleBounds": [
+        163,
+        7,
+        1149,
+        1188
+      ],
+      "status": "user approved on 2026-11-09",
+      "generationId": "exec-cabc5d0e-355f-4b77-afb7-01ba102a0c68"
+    },
+    {
+      "mode": "media",
+      "id": "media",
+      "label": "Media",
+      "prompt": "Finished, individually authored transparent activity menu illustration for Transport Town. Match the approved Miniature World menu art family: tactile hand-painted gouache on paper and painted wooden props, subtle paper tooth, soft dimensional shading, fine restrained dark navy outlines, ivory/cream paper, aged warm brass trim, petrol blue and teal, yellow and brick red transport accents. Children's illustrated field guide look, richly painted and still readable at a 140-pixel menu illustration size. One strong clustered silhouette, centered and completely inside frame with clean margin, slight elevated three-quarter overhead unless specified. Real transparent RGBA outside the entire composition, no scene background, text labels, title, cream UI tile, cast shadow outside silhouette, logos, or watermark. Landscape asset with a compact width-to-height ratio about 1.45. Title and card will be added by the app. A cohesive trio of teaching resources: one upright closed navy cloth book with a simple large painted yellow bus embossed on the cover, a compact stack of cream vehicle flashcards with a top blue ferry picture, and a short visible photographic-style film strip with chunky sprocket holes and one clear red circular play medallion with a white triangle. Compose a broad balanced cluster. No written title, QR, giant isolated vehicle, screen, or duplicated books.",
+      "file": "media.png",
+      "sha256": "535c8c54b9c68893500abdba43072a8e85f6f3a1006209dcf1eac75f05684157",
+      "size": [
+        1510,
+        1041
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "maxBorderAlpha": 4,
+      "visibleBounds": [
+        40,
+        7,
+        1484,
+        1019
+      ],
+      "generationId": "exec-b38236b0-f0a5-4ff5-a73f-2c33ce7d05ad",
+      "status": "user approved on 2026-11-09"
+    },
+    {
+      "mode": "games",
+      "id": "transport-games",
+      "label": "Transport Games",
+      "prompt": "Finished, individually authored transparent activity menu illustration for Transport Town. Match the approved Miniature World menu art family: tactile hand-painted gouache on paper and painted wooden props, subtle paper tooth, soft dimensional shading, fine restrained dark navy outlines, ivory/cream paper, aged warm brass trim, petrol blue and teal, yellow and brick red transport accents. Children's illustrated field guide look, richly painted and still readable at a 140-pixel menu illustration size. One strong clustered silhouette, centered and completely inside frame with clean margin, slight elevated three-quarter overhead unless specified. Real transparent RGBA outside the entire composition, no scene background, text labels, title, cream UI tile, cast shadow outside silhouette, logos, or watermark. Landscape asset with a compact width-to-height ratio about 1.45. Title and card will be added by the app. A folded miniature town route map in tactile ivory paper, deep teal river and slate street diagram, two clearly visible small brass-red destination pins connected by a single dashed navy-and-ochre route. A little yellow model bus is parked at the near end of the route. Use a lightly three-quarter overhead view, broad map fills the silhouette. This is the hub illustration, not an overhead screenshot and not the banner: visible map folds, smaller road graphics, two distinct pins, no bridge hero shot, no numbers or text.",
+      "file": "transport-games.png",
+      "sha256": "f31466ec203eda323fd96541655579165139906fad67083716b1aeef3e2baa82",
+      "size": [
+        1510,
+        1041
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "maxBorderAlpha": 4,
+      "visibleBounds": [
+        8,
+        55,
+        1491,
+        969
+      ],
+      "generationId": "exec-33b90e01-9fbb-44b3-b2e0-795c5eb39e9b",
+      "status": "user approved on 2026-11-09"
+    },
+    {
+      "mode": "phonics",
+      "id": "phonics-and-sight-words",
+      "label": "Phonics & Sight Words",
+      "prompt": "Finished, individually authored transparent activity menu illustration for Transport Town. Match the approved Miniature World menu art family: tactile hand-painted gouache on paper and painted wooden props, subtle paper tooth, soft dimensional shading, fine restrained dark navy outlines, ivory/cream paper, aged warm brass trim, petrol blue and teal, yellow and brick red transport accents. Children's illustrated field guide look, richly painted and still readable at a 140-pixel menu illustration size. One strong clustered silhouette, centered and completely inside frame with clean margin, slight elevated three-quarter overhead unless specified. Real transparent RGBA outside the entire composition, no scene background, text labels, title, cream UI tile, cast shadow outside silhouette, logos, or watermark. Landscape asset with a compact width-to-height ratio about 1.45. Title and card will be added by the app. A small open navy-and-cream illustrated transport reader with a miniature painted bus on the open page. In the foreground three large wooden letter blocks, lowercase letters exactly b, u, s from left to right, one legible letter per block in navy on muted ochre, teal and red block faces. At right a distinct petrol-blue round wooden token with a clear cream loudspeaker shape and two expanding sound arcs. The sound token and blocks are dominant and immediately distinguish this from a departure-ticket spelling activity. The only letters are b u s on the blocks, no other type.",
+      "file": "phonics-and-sight-words.png",
+      "sha256": "34847958a108dff58b59e0d759c8b037c6f98e5943e87af824b2327ddde1e9f7",
+      "size": [
+        1510,
+        1041
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "maxBorderAlpha": 1,
+      "visibleBounds": [
+        19,
+        14,
+        1501,
+        1024
+      ],
+      "generationId": "exec-150a8730-05ac-46f4-9d39-ff726801ad7b",
+      "status": "user approved on 2026-11-09"
+    },
+    {
+      "mode": "create",
+      "id": "read-draw-and-talk",
+      "label": "Read, Draw & Talk",
+      "prompt": "Finished, individually authored transparent activity menu illustration for Transport Town. Match the approved Miniature World menu art family: tactile hand-painted gouache on paper and painted wooden props, subtle paper tooth, soft dimensional shading, fine restrained dark navy outlines, ivory/cream paper, aged warm brass trim, petrol blue and teal, yellow and brick red transport accents. Children's illustrated field guide look, richly painted and still readable at a 140-pixel menu illustration size. One strong clustered silhouette, centered and completely inside frame with clean margin, slight elevated three-quarter overhead unless specified. Real transparent RGBA outside the entire composition, no scene background, text labels, title, cream UI tile, cast shadow outside silhouette, logos, or watermark. Landscape asset with a compact width-to-height ratio about 1.45. Title and card will be added by the app. A cream open spiral-bound workbook with navy cloth cover, lying slightly diagonal. Left page has one small richly painted red-and-cream airplane picture. Right page has a partial charcoal-and-coloured-pencil sketch of the same airplane with some unfinished line work. A single warm red drawing pencil lies across the lower outside corner. Above right page, one small blank brass-edged ivory speech bubble with three simple dots, integrated into the composition. Strong workbook silhouette with both pages visible. No written text, extra letters, sound token, or route map.",
+      "file": "read-draw-and-talk.png",
+      "sha256": "da4bc1818626919e1e07c032af26e113816812839a545066790e8c1bd6ef51d6",
+      "size": [
+        1511,
+        1041
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "maxBorderAlpha": 2,
+      "visibleBounds": [
+        10,
+        11,
+        1499,
+        1025
+      ],
+      "generationId": "exec-c1296c4e-c6b8-4462-89d4-02ce87464bff",
+      "status": "user approved on 2026-11-09"
+    },
+    {
+      "mode": "featuredDispatch",
+      "id": "dispatch-banner",
+      "label": "Transport Dispatch",
+      "prompt": "Finished wide transparent illustration for the left artwork slot of the Transport Dispatch featured banner. Same Transport Town Miniature World hand-painted gouache, tactile matte paper-and-wood grain, fine navy contour, ivory edges, aged brass, muted teal, warm painted slate and bright school-bus yellow. A compact horizontal top-down diorama with one clear large yellow school bus facing RIGHT, travelling on an open slate bridge with timber rails across a soft blue-green river. A short cream dashed route comes from the left and ends at one clear red-and-gold destination pin at the right on a little cream shore platform. Viewed nearly directly overhead, close and full; water and tiny grassy banks are contained within the single shaped cutout, transparent outside, no rectangle, no background plane, no busy buildings, no second vehicle. Bus, bridge and route read at 132 by 88 screen pixels. Wide visible silhouette about 2:1 with generous clear perimeter, no lettering, title, UI, watermark or text; the app places the title to its right.",
+      "file": "dispatch-banner.png",
+      "sha256": "1e4e59191f8ddfa897480b1eeb0cac87c13208f1454b451c06cdb2d917233ca6",
+      "size": [
+        1536,
+        1024
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "maxBorderAlpha": 4,
+      "visibleBounds": [
+        5,
+        141,
+        1532,
+        937
+      ],
+      "generationId": "exec-2389ddd6-5e14-4852-b0a0-b1e186f652ef",
+      "status": "user approved on 2026-11-09"
+    }
+  ]
+}
