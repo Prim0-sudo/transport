@@ -86,6 +86,15 @@ Commit identity: `git -c user.name=Prim0-sudo -c user.email=Prim0-sudo@users.nor
 - Phone: three answer cards across, picture over label. Fits 768x1024, 1280x800 and 375x812 including the feedback bar.
 - Missing art: none new.
 
+## Knowledge & Safety (matched to Plants 2026-11-09)
+
+- Question n/7 label, left-aligned question, no helper line.
+- In-round Show question picture / Show answer pictures checkboxes, shared with the Teacher panel picture settings.
+- Question pictures: traffic light, crossing signal and road art for the three road questions (was a generic vehicle); others keep their vehicle.
+- Fits 768x1024 and 1280x800 with feedback; phone fits before answering, the long reversing-car feedback scrolls about 100px.
+- Missing art: painted answer pictures (answers are still emoji; Plants uses painted pictures), a red-only traffic light (current art shows all three lights), scene art for seat, life jacket and reversing questions.
+- Plants plays 10 of 10 questions; Transport plays 7 of 8 (left as is).
+
 ## Queued by owner (after every activity matches Plants)
 
 - Plants presentation: design a full-topic PPT for the Plants game covering every category (everything the videos cover, plus more), and add a separate Media tab called Presentation for it.

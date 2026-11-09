@@ -246,12 +246,18 @@ function renderStandardIdentify(){
   if(round.choices.length<2){state.practice=true;setVehicle(item,true);els.stage.style.display=pref.identifyTarget?'':'none';els.question.textContent=`Practise: ${item.name}`;const note=document.createElement('p');note.className='practice-note';note.textContent='Only one distinct picture is available. This is practice.';els.answers.append(note,standardButton('Next word',nextQuestion));return;}
   for(const choice of round.choices)makeAnswer(choice.name,'',choice.id===item.id,`${item.name}. ${item.definition}`,false,choice.image,choice.id);
 }
+// Like Plants, the question picture shows the scene the question is about where Transport has painted art for it.
+const safetyQuestionPictures={'safety.red-light':'safety.traffic-light','safety.road-crossing':'safety.crossing-signal','safety.crossing-place':'place.road'};
 function renderStandardSafety(){
-  const round=state.questions[state.round],pref=standardPreferences(),item=vehicles.find(v=>round.relatedIds.includes(v.id));
-  els.question.textContent=round.q;els.helper.textContent='Choose the safe action. You can correct a mistake.';
-  if(item)setVehicle(item,false);else clearVehiclePicture();els.name.textContent='';els.stage.style.display=pref.safetyQuestion&&item?'':'none';
-  for(const id of round.answerOrder){const i=round.answerIds.indexOf(id),a=round.answers[i];makeAnswer(a[0],pref.safetyAnswers?a[1]:'',i===round.correct,round.explain,false,'',id);}
-  if(!pref.safetyAnswers)for(const icon of els.answers.querySelectorAll('.answer-icon'))icon.hidden=true;
+  const round=state.questions[state.round],pref=standardPreferences(),scene=TransportSceneLibrary.entries.find(e=>e.id===safetyQuestionPictures[round.id]),item=scene||vehicles.find(v=>round.relatedIds.includes(v.id));
+  els.question.textContent=round.q;els.helper.textContent='';els.round.textContent=`Question ${state.round+1}/${state.questions.length}`;
+  if(item)setVehicle(item,false);else clearVehiclePicture();els.name.textContent='';
+  const gameCard=document.getElementById('gameCard'),apply=()=>{const now=standardPreferences();els.stage.style.display=now.safetyQuestion!==false&&item?'':'none';gameCard.classList.toggle('hide-answer-emojis',now.safetyAnswers===false);gameCard.classList.toggle('hide-identify-target',now.safetyQuestion===false);};
+  // Plants' two checkboxes, sharing the Teacher panel's picture settings.
+  const options=document.createElement('div');options.className='picture-controls knowledge-picture-options';
+  for(const [key,label] of [['safetyQuestion','Show question picture'],['safetyAnswers','Show answer pictures']]){const row=document.createElement('label'),box=document.createElement('input');box.type='checkbox';box.checked=pref[key]!==false;box.onchange=()=>{classroom.data.preferences={...classroom.data.preferences,[key]:box.checked};classroom.persist();apply();};row.append(box,` ${label}`);options.append(row);}
+  els.stage.before(options);apply();
+  for(const id of round.answerOrder){const i=round.answerIds.indexOf(id),a=round.answers[i];makeAnswer(a[0],a[1],i===round.correct,round.explain,false,'',id);}
 }
 function renderStandardDetective(){
   const round=state.questions[state.round];els.question.textContent='What is in the hidden picture?';els.helper.textContent='';
