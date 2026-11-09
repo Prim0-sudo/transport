@@ -4,7 +4,7 @@ Written 2026-11-09 at the end of a Claude session. Read this first, then the exi
 
 ## Where things stand
 
-Branch `codex/v6-upgrade-2026-11-08` on github.com/Prim0-sudo/transport, pushed and in sync.
+Branch `main` on github.com/Prim0-sudo/transport, pushed and in sync. Work on `main` and push to `main`: the owner does not want work left on side branches (the old `codex/v6-upgrade-2026-11-08` branch is fully merged and kept only as history).
 
 Commits made by Claude this round (newest last):
 
