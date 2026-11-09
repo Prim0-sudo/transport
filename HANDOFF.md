@@ -1,8 +1,20 @@
 # Transport Town upgrade handoff
 
-**Read this first at work.** The upgrade branch is `codex/v6-upgrade-2026-11-08` in [Prim0-sudo/transport](https://github.com/Prim0-sudo/transport). Step 2 and step 3 functionality are ready for local review. Step 4 authoring sources, curriculum and art ledgers, literacy drafts and the exact audio inventory are included. The [progress report](docs/PROGRESS-REPORT-2026-11-09.md) describes what is playable and what still needs review. Landing work remains stopped by the user's instruction.
+**Current art handoff, 9 November 2026.** The `codex/transport-art-restart` branch in [Prim0-sudo/transport](https://github.com/Prim0-sudo/transport) contains 121 transparent Painted Field Guide vocabulary pictures and all 24 matching interactive scenes. The three approved scene originals were reused byte for byte. The scene review verified all 121 highlight selections and clearing in each scene in a standalone browser. This is art and highlight evidence. App integration and the 390 × 844 app pass are pending.
 
-## Pull and preview
+From the Transport checkout at home:
+
+```powershell
+git fetch origin
+git switch codex/transport-art-restart
+git pull --ff-only origin codex/transport-art-restart
+```
+
+Full-size PNGs live under `artwork/originals/`. Web PNGs live under `site/dist/images/`. The [vocabulary ledger](docs/content/TRANSPORT-FIELD-GUIDE-ART-LEDGER.json) and [scene ledger](docs/content/TRANSPORT-FIELD-GUIDE-SCENES.json) give the paths, hashes, exact prompts and review state. For each scene use its new `viewBox`, then apply each SVG path by `wordId` with the even-odd fill rule. The app owner needs to update the existing JPEG and legacy scene lookups and retire the old coordinates. Keep the word cards available separately, then verify all activities and printables with the shared PNG set. Verify that All words can reach the advertised 121 cards and check the scenes at 390 × 844.
+
+The [canonical Blueprint v6.0 art guide](https://github.com/Prim0-sudo/plants/blob/codex/targeted-repairs-2026-10-26/docs/blueprint-v6.0/ART-AND-ANIMATION.md) now carries the approval, transparency and highlight checks. The shared app development branch is `codex/v6-upgrade-2026-11-08`. The notes below record the earlier app checkpoint.
+
+## Earlier shared app preview
 
 From an existing Transport checkout with a clean working tree, run:
 
