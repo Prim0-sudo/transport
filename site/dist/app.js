@@ -244,9 +244,12 @@ function scheduleWheelTicks(duration = 4200) {
   });
 }
 
+// Part, place and action pictures often show a whole vehicle, so choices come from the same kind of word first.
+const wordKind=item=>['land','water','air','space'].includes(item.category)?'vehicle':item.category;
 function identifyChoices(vehicle,pool=classroom.pool('identify')) {
   const choices = [vehicle];
-  for (const candidate of shuffled(pool)) {
+  const kind=wordKind(vehicle),mixed=shuffled(pool);
+  for (const candidate of [...mixed.filter(item=>wordKind(item)===kind),...mixed.filter(item=>wordKind(item)!==kind)]) {
     if(choices.length===3)break;
     if(choices.every(choice=>choice.id!==candidate.id&&choice.pictureGroup!==candidate.pictureGroup))choices.push(candidate);
   }
@@ -799,7 +802,7 @@ function currentPrompt() {
   if (state.mode === "safety") return state.questions[state.round].q;
   if (state.mode === "identify") {
     const item = state.questions[state.round];
-    return standardPreferences().identifyTarget?'Which word names this vehicle?':item.vehicle.definition;
+    return standardPreferences().identifyTarget?'Which word names this picture?':item.vehicle.definition;
   }
   if (state.mode === "hangman") return "";
   if (state.mode === "flip") return "";

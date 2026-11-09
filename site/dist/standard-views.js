@@ -31,15 +31,16 @@ function setStandardBack(label){const button=document.getElementById('backMenuBt
 function standardButton(label,action,className='standard-action'){const button=document.createElement('button');button.className=className;button.textContent=label;button.onclick=action;return button;}
 function standardRecoveryActions(root){const row=document.createElement('div');row.className='standard-actions';row.append(standardButton('Change selection',()=>document.getElementById('teacherBtn').click()),standardButton('Games',goMenu));root.append(row);}
 
+const wordModes=new Set(['learn','wheel']);
 function renderStandardCategories(mode){
   renderStandardSetup(mode,'Choose words to explore','Your Teacher selection still applies.');els.round.textContent='Categories';
   const grid=document.createElement('div');grid.className='standard-choice-grid';
-  const categories=mode==='learn'?[...TransportStandard.categories,...TransportStandard.teachingCategories]:TransportStandard.categories;
+  const categories=wordModes.has(mode)?[...TransportStandard.categories,...TransportStandard.teachingCategories]:TransportStandard.categories;
   const covers={all:'vehicle.bus',land:'vehicle.car',water:'vehicle.ferry',air:'vehicle.airplane',space:'vehicle.space-shuttle'};
   for(const category of categories){const pool=filteredStandardPool(mode,{category:category.id});
-    if(mode==='learn'&&TransportStandard.teachingCategories.includes(category)&&!pool.length)continue;
+    if(wordModes.has(mode)&&TransportStandard.teachingCategories.includes(category)&&!pool.length)continue;
     const button=standardButton('',()=>startGame(mode,{setup:{category:category.id}}),'standard-choice');
-    const cover=mode==='learn'&&individualTeachingImage(covers[category.id]||pool[0]?.id);
+    const cover=wordModes.has(mode)&&individualTeachingImage(covers[category.id]||pool[0]?.id);
     const source=cover||category.image;
     button.innerHTML=`<img src="${source}" alt=""><strong>${category.label}</strong><span>${pool.length} ${pool.length===1?'word':'words'}</span>`;
     button.disabled=!pool.length;grid.append(button);
@@ -214,7 +215,7 @@ function renderStandardSort(){
 }
 function renderStandardIdentify(){
   const round=state.questions[state.round],item=round.vehicle,pref=standardPreferences();
-  els.question.textContent=pref.identifyTarget?'Which word names this vehicle?':item.definition;
+  els.question.textContent=pref.identifyTarget?'Which word names this picture?':item.definition;
   setVehiclePicture(item);els.stage.style.display=pref.identifyTarget?'':'none';
   document.getElementById('gameCard').classList.toggle('hide-answer-emojis',!pref.identifyAnswers);
   if(round.choices.length<2){state.practice=true;setVehicle(item,true);els.stage.style.display=pref.identifyTarget?'':'none';els.question.textContent=`Practise: ${item.name}`;const note=document.createElement('p');note.className='practice-note';note.textContent='Only one distinct picture is available. This is practice.';els.answers.append(note,standardButton('Next word',nextQuestion));return;}
