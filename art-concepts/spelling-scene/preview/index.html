@@ -19,7 +19,10 @@
   .lamp .red{background:radial-gradient(circle at 38% 34%,#ffecec 0 12%,#ff6a5c 30%,#d8261b 62%,#8b130c 100%);box-shadow:0 0 1.2vw .3vw #ff5a4a99;opacity:0}
   .lamp .flash{inset:-45%;border:.35vw solid #ff7a6b;opacity:0}
   .train{position:absolute;left:13%;top:48.9%;width:72%;will-change:transform}
-  .train img{width:100%;display:block}
+  .train>img{width:100%;display:block}
+  /* smoke source: the engine roof, measured on train.png (about 85% across, 3% down) */
+  .smoke{position:absolute;left:83%;top:2%;width:15%;height:0}
+  .puff{position:absolute;left:0;top:0;width:100%;margin:-50% 0 0 -50%;transform-origin:50% 50%;opacity:0;pointer-events:none;will-change:transform,opacity}
   .controls{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
   button{font:inherit;font-weight:800;color:var(--ink);min-height:46px;padding:10px 16px;border:2px solid var(--line);border-bottom-width:4px;border-radius:12px;background:#fff;cursor:pointer}
   button.primary{background:#2c9b5a;border-color:#1f7744;color:#fff}
@@ -35,7 +38,7 @@
   <p class="note">Movement preview only. The backplate and train are draft paintings; final art gets separate layers, turning wheels and painted lamps.</p>
   <div class="scene" id="scene" role="img" aria-label="Train waiting under eight signal lamps">
     <img class="backplate" src="backplate.webp" alt="">
-    <div class="train" id="train"><img src="train.png" alt=""></div>
+    <div class="train" id="train"><img src="train.png" alt=""><div class="smoke" id="smoke" aria-hidden="true"></div></div>
   </div>
   <p class="status" id="status" aria-live="polite">0 / 8 wrong guesses</p>
   <div class="controls">
@@ -49,7 +52,7 @@
 <script>
 // Lamp centres measured from backplate.webp (1536 x 1024): x 295..1075, y 196..202, 71 px across.
 const LAMPS=[[295,201],[407,202],[518,201],[629,200],[741,200],[851,198],[963,197],[1075,196]];
-const scene=document.getElementById('scene'),trainEl=document.getElementById('train'),statusEl=document.getElementById('status');
+const scene=document.getElementById('scene'),trainEl=document.getElementById('train'),smokeEl=document.getElementById('smoke'),statusEl=document.getElementById('status');
 const buttons={wrong:document.getElementById('wrong'),win:document.getElementById('win'),next:document.getElementById('next')};
 const reduceBox=document.getElementById('reduce'),mq=matchMedia('(prefers-reduced-motion: reduce)');
 reduceBox.checked=mq.matches;
@@ -58,7 +61,7 @@ const lamps=LAMPS.map(([x,y])=>{const el=document.createElement('div');el.classN
 let misses=0,state='play',ctx=gsap.context(()=>{},scene);
 
 function setLamp(l,red){gsap.set(l.red,{opacity:red?1:0,scale:1});gsap.set(l.green,{opacity:red?0:1,scale:1});}
-function refresh(){statusEl.textContent=state==='won'?'Spelled! The train departs.':state==='lost'?'8 / 8 wrong guesses. The train stays.':`${misses} / 8 wrong guesses`;buttons.wrong.disabled=buttons.win.disabled=state!=='play';}
+function refresh(){statusEl.textContent=state==='won'?'Spelled! The train departs.':state==='lost'?'8 / 8 wrong guesses. The train has broken down.':`${misses} / 8 wrong guesses`;buttons.wrong.disabled=buttons.win.disabled=state!=='play';}
 
 function wrongGuess(){
   if(state!=='play')return;const l=lamps[misses++];
@@ -87,17 +90,38 @@ function win(){
       .to(trainEl,{xPercent:140,duration:1.6,ease:'power2.in'});
   });
 }
+// Breakdown smoke: painted puffs rise from the engine roof and drift back over the carriages.
+const SMOKE_SRC=['smoke-1.png','smoke-2.png','smoke-3.png'];
+function makePuff(i){const img=document.createElement('img');img.src=SMOKE_SRC[i%3];img.alt='';img.className='puff';smokeEl.append(img);return img;}
+function startSmoke(){
+  smokeEl.replaceChildren();
+  if(reduced()){
+    // one still plume says the same thing without movement
+    [[0,-10,-55,.8],[1,-55,-115,1],[2,-120,-170,1.15]].forEach(([i,x,y,s])=>gsap.set(makePuff(i),{xPercent:x,yPercent:y,scale:s,opacity:.92}));
+    return;
+  }
+  for(let i=0;i<9;i++){
+    const p=makePuff(i),drift=gsap.utils.random(-240,-150),lift=gsap.utils.random(-260,-190);
+    gsap.timeline({repeat:-1,delay:i*.34})
+      .fromTo(p,{xPercent:0,yPercent:0,scale:.25,opacity:0,rotation:gsap.utils.random(-20,20)},
+        {xPercent:drift,yPercent:lift,scale:gsap.utils.random(1.2,1.8),rotation:'+=30',duration:2.9,ease:'sine.out'})
+      .to(p,{opacity:.95,duration:.35,ease:'power1.out'},0)
+      .to(p,{opacity:0,duration:1.2,ease:'power1.in'},1.7);
+  }
+}
 function lose(){
   state='lost';
   ctx.add(()=>{
-    if(reduced())return;
-    // every lamp pulses red together; the train settles back, staying at the platform
+    if(reduced()){gsap.set(trainEl,{filter:'brightness(.82) saturate(.8)'});startSmoke();return;}
+    // every lamp pulses red together; the engine judders, dims and starts smoking at the platform
     gsap.timeline({delay:.4}).to(lamps.map(l=>l.red),{scale:1.15,duration:.25,yoyo:true,repeat:1,ease:'sine.inOut'})
-      .to(trainEl,{x:0,duration:.2},'<');
+      .fromTo(trainEl,{y:0},{y:'-1.2%',duration:.07,repeat:5,yoyo:true,ease:'sine.inOut'},'<')
+      .to(trainEl,{filter:'brightness(.82) saturate(.8)',duration:.6},'<.3')
+      .add(startSmoke,'<.1');
   });
 }
 function nextWord(){
-  ctx.revert();ctx=gsap.context(()=>{},scene);
+  ctx.revert();ctx=gsap.context(()=>{},scene);smokeEl.replaceChildren();gsap.set(trainEl,{filter:'none',y:0});
   misses=0;state='play';lamps.forEach(l=>{setLamp(l,false);gsap.set(l.flash,{opacity:0});});
   gsap.set(trainEl,{x:0,xPercent:0,opacity:1});refresh();
   ctx.add(()=>{
@@ -108,7 +132,7 @@ function nextWord(){
 }
 buttons.wrong.onclick=wrongGuess;buttons.win.onclick=win;buttons.next.onclick=nextWord;
 // Switching reduced motion mid-move jumps running motion to its end state.
-const settle=()=>{if(reduced())ctx.getTweens().forEach(t=>t.progress(1));};
+const settle=()=>{if(!reduced())return;ctx.getTweens().forEach(t=>{if(t.repeat()!==-1&&!t.parent?.repeat?.())t.progress(1);});if(state==='lost')ctx.add(()=>startSmoke());};
 reduceBox.onchange=settle;
 mq.addEventListener('change',e=>{reduceBox.checked=e.matches;settle();});
 // Hidden tab hold: freeze, then resume without catching up.
