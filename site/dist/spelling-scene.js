@@ -7,7 +7,8 @@
   const W = 1536, H = 1024;
   const TRAIN = {canvas: [1315, 379], origin: [200, 508.33], width: 1106,
     wheels: [78.2, 187.2, 423.2, 529.7, 702.2, 810.8, 1046, 1155.5], wheelY: 333, wheelSprite: 86.18, wheelDiameter: 68,
-    smoke: [1127, 13], offscreen: [-1110, 1540]};
+    // Exhaust: the engine roof vent (registration.json) and the rear end, so it reads as a broken-down diesel, not steam.
+    smoke: [[1127, 13], [40, 36]], offscreen: [-1110, 1540]};
   const LAMPS = {centers: [[294, 218], [406, 216], [517, 216], [628, 214], [740, 214], [851, 212], [963, 212], [1074, 210]],
     lens: 52, spriteCenter: [256, 286], spriteRadius: 142};
   const pct = (n, of) => `${n / of * 100}%`;
@@ -24,22 +25,22 @@
       this.pos = {x: 0}; // actor offset on the scene canvas, in canvas units
       const scene = this.scene = document.createElement('div');
       scene.className = 'departure-scene';
-      const plane = name => `<img class="ds-plane" src="${ART}${name}.webp" alt="" draggable="false">`;
+      const plane = (name, extra = '') => `<img class="ds-plane${extra}" src="${ART}${name}.webp" alt="" draggable="false">`;
       const [tw, th] = TRAIN.canvas, d = TRAIN.wheelSprite;
       scene.innerHTML = `${plane('layer-1-sky')}${plane('layer-2-background')}${plane('layer-3-track-and-gantry')}
         <div class="ds-train" style="left:${pct(TRAIN.origin[0], W)};top:${pct(TRAIN.origin[1], H)};width:${pct(TRAIN.width, W)};aspect-ratio:${tw}/${th}">
           ${TRAIN.wheels.map(cx => `<img class="ds-wheel" src="${ART}wheel.webp" alt="" draggable="false" style="left:${pct(cx - d / 2, tw)};top:${pct(TRAIN.wheelY - d / 2, th)};width:${pct(d, tw)}">`).join('')}
           <img class="ds-body" src="${ART}train-body.webp" alt="" draggable="false">
-          <div class="ds-smoke" style="left:${pct(TRAIN.smoke[0], tw)};top:${pct(TRAIN.smoke[1], th)}"></div>
+          ${TRAIN.smoke.map(([x, y]) => `<div class="ds-smoke" style="left:${pct(x, tw)};top:${pct(y, th)}"></div>`).join('')}
         </div>
         ${LAMPS.centers.map(([cx, cy]) => { const {lens, spriteRadius: r, spriteCenter: [lx, ly]} = LAMPS, lens2 = img => `<img class="ds-${img}" src="${ART}lamp-${img}.webp" alt="" draggable="false" style="width:${pct(512, 2 * r)};left:${pct(r - lx, 2 * r)};top:${pct(r - ly, 2 * r)}">`;
           return `<span class="ds-lens" style="left:${pct(cx - lens / 2, W)};top:${pct(cy - lens / 2, H)};width:${pct(lens, W)}">${lens2('green')}${lens2('red')}</span>`; }).join('')}
-        ${plane('layer-4-foreground')}`;
+        ${plane('layer-4-foreground', ' ds-fore')}`;
       scene.setAttribute('aria-hidden', 'true');
       slot.append(scene);
       this.train = scene.querySelector('.ds-train');
       this.wheels = [...scene.querySelectorAll('.ds-wheel')];
-      this.smoke = scene.querySelector('.ds-smoke');
+      this.smokes = [...scene.querySelectorAll('.ds-smoke')];
       this.lamps = [...scene.querySelectorAll('.ds-lens')].map(el => ({green: el.querySelector('.ds-green'), red: el.querySelector('.ds-red')}));
       this.ctx = gsap.context(() => {}, scene);
       this.onMotion = () => { if (this.media.matches) this.settle(); };
@@ -114,19 +115,23 @@
         .add(() => this.puffs(false), '<.1'));
     }
 
+    // Smoke sits in front of the gantry but stays low and trails back along the roof, so it never covers a lamp.
     puffs(still) {
-      const make = i => { const img = document.createElement('img'); img.src = `${ART}smoke-${i % 3 + 1}.webp`; img.alt = ''; img.className = 'ds-puff'; this.smoke.append(img); return img; };
-      this.smoke.replaceChildren();
+      const make = (emitter, i) => { const img = document.createElement('img'); img.src = `${ART}smoke-${i % 3 + 1}.webp`; img.alt = ''; img.className = 'ds-puff'; this.smokes[emitter].append(img); return img; };
+      this.smokes.forEach(s => s.replaceChildren());
       if (still || this.reduced()) {
-        // one still plume says the same thing without movement
-        [[0, -10, -55, .8], [1, -55, -115, 1], [2, -120, -170, 1.15]].forEach(([i, x, y, sc]) => gsap.set(make(i), {xPercent: x, yPercent: y, scale: sc, opacity: .92}));
+        // one still plume per vent says the same thing without movement
+        [[0, 0, -10, -40, .75], [0, 1, -70, -78, .95], [0, 2, -140, -100, 1.1], [1, 0, -15, -35, .7], [1, 1, -70, -70, .9]]
+          .forEach(([e, i, x, y, sc]) => gsap.set(make(e, i), {xPercent: x, yPercent: y, scale: sc, opacity: .92}));
         return;
       }
-      for (let i = 0; i < 9; i++) {
-        const p = make(i), drift = gsap.utils.random(-240, -150), lift = gsap.utils.random(-260, -190);
-        this.add(() => gsap.timeline({repeat: -1, delay: i * .34})
+      // nine puffs from the engine vent, five smaller ones from the rear
+      for (let n = 0; n < 14; n++) {
+        const rear = n >= 9, i = rear ? n - 9 : n, p = make(rear ? 1 : 0, i);
+        const drift = rear ? gsap.utils.random(-170, -110) : gsap.utils.random(-260, -160), lift = rear ? gsap.utils.random(-95, -65) : gsap.utils.random(-110, -75);
+        this.add(() => gsap.timeline({repeat: -1, delay: i * (rear ? .55 : .34) + (rear ? .2 : 0)})
           .fromTo(p, {xPercent: 0, yPercent: 0, scale: .25, opacity: 0, rotation: gsap.utils.random(-20, 20)},
-            {xPercent: drift, yPercent: lift, scale: gsap.utils.random(1.2, 1.8), rotation: '+=30', duration: 2.9, ease: 'sine.out'})
+            {xPercent: drift, yPercent: lift, scale: rear ? gsap.utils.random(.9, 1.2) : gsap.utils.random(1, 1.4), rotation: '+=30', duration: 2.9, ease: 'sine.out'})
           .to(p, {opacity: .95, duration: .35, ease: 'power1.out'}, 0)
           .to(p, {opacity: 0, duration: 1.2, ease: 'power1.in'}, 1.7));
       }
@@ -137,7 +142,7 @@
       if (!this.alive) return;
       this.ctx.revert(); this.ctx = gsap.context(() => {}, this.scene);
       gsap.set(this.train, {clearProps: 'filter,x,y'});
-      this.smoke.replaceChildren();
+      this.smokes.forEach(s => s.replaceChildren());
       this.start();
     }
 

@@ -220,7 +220,8 @@ img.result-burst{display:block;width:clamp(90px,14vw,140px);height:auto;margin:0
 .departure-scene{position:absolute;inset:0;overflow:hidden;isolation:isolate}
 .departure-scene img{position:absolute;display:block;max-width:none;pointer-events:none;user-select:none}
 .departure-scene .ds-plane{inset:0;width:100%;height:100%}
-.departure-scene .ds-train{position:absolute;will-change:transform}
+.departure-scene .ds-train{position:absolute;z-index:2;will-change:transform}
+.departure-scene .ds-fore{z-index:3}
 .departure-scene .ds-body{position:relative;width:100%;height:auto}
 .departure-scene .ds-wheel{height:auto;transform-origin:50% 50%}
 .departure-scene .ds-smoke{position:absolute;width:15%;height:0}
