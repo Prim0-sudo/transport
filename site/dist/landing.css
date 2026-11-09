@@ -35,8 +35,9 @@ body[data-transport-shell] .home-screen.menu-open{align-items:stretch;padding-to
 body[data-transport-shell] .home-screen.menu-open .menu-title{display:block;font:700 clamp(32px,4.4vw,56px)/1.1 Georgia,serif;margin:0 0 6px}
 body[data-transport-shell] .mode-grid{width:100%;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 body[data-transport-shell] .mode-card{display:flex;flex-direction:column;justify-content:center;min-height:160px;text-align:center;gap:8px;border:1px solid #dbc995;border-radius:20px;background:#fffbed;box-shadow:var(--shadow);color:#183a51}
-body[data-transport-shell] .mode-icon{background:none;width:110px;height:94px;border-radius:0}
-body[data-transport-shell] .mode-icon img{width:100%;height:100%;object-fit:contain}
+body[data-transport-shell] .mode-icon{display:block;background:none;width:min(100%,220px);height:118px;border-radius:0}
+@media(max-width:560px){body[data-transport-shell] .mode-card{min-height:140px;padding:10px 8px}body[data-transport-shell] .mode-icon{height:84px}}
+body[data-transport-shell] .mode-icon img{display:block;width:100%;height:100%;object-fit:contain}
 body[data-transport-shell] .mode-text strong{font-size:17px}
 body[data-transport-shell] .home-parade{display:none!important}
 body[data-screen=launch][data-transport-shell]{height:100svh;overflow:hidden}

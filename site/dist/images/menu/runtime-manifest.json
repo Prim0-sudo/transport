@@ -1,0 +1,162 @@
+{
+ "from": "artwork/menu/miniature-world-v1/manifest.json",
+ "note": "Cropped to visibleBounds, 480px wide WebP q86",
+ "assets": [
+  {
+   "mode": "learn",
+   "file": "meet-the-words.webp",
+   "size": [
+    480,
+    287
+   ],
+   "source": "../miniature-world-pilot-v1/meet-the-words.png",
+   "sourceSha256": "df394e31329028c7c9ee4e7a9b3b1871c92688309ba8862d2f67792d5270be09",
+   "sha256": "1c98fdca5ce059772d6f15c6b28dff8914564e39dcd43ec0d059dc3a75d3c555",
+   "bytes": 56826
+  },
+  {
+   "mode": "sort",
+   "file": "sort-it.webp",
+   "size": [
+    480,
+    261
+   ],
+   "source": "sort-it.png",
+   "sourceSha256": "ae3de2eaead1e0dcef66404222e2fc64cf1a04baf26431b1c087fe612aac07fb",
+   "sha256": "9c15fbc1bee2f3cf3c8808f60444c9bfb07c9c116ea2d6d0f878e8af3f8115f1",
+   "bytes": 43976
+  },
+  {
+   "mode": "detective",
+   "file": "transport-detective.webp",
+   "size": [
+    480,
+    337
+   ],
+   "source": "../miniature-world-pilot-v1/transport-detective.png",
+   "sourceSha256": "f7876531e4afe89bee6a66d129b07b82d1445c5f25e3666cab4c076e73e966da",
+   "sha256": "9fe31e675db673f3f423bcefaaa3cba373332169b64867c6b8283c9114090e22",
+   "bytes": 53452
+  },
+  {
+   "mode": "identify",
+   "file": "which-one-is-it.webp",
+   "size": [
+    480,
+    339
+   ],
+   "source": "which-one-is-it.png",
+   "sourceSha256": "df111e28fbada49ed17c3a7db5883549168f8d26badafa355833246903a579c4",
+   "sha256": "71c7540bdda4f38537f8c90eb874dfdea611bc766d61b2be55f832e30acfdd69",
+   "bytes": 49924
+  },
+  {
+   "mode": "safety",
+   "file": "knowledge-and-safety.webp",
+   "size": [
+    480,
+    330
+   ],
+   "source": "knowledge-and-safety.png",
+   "sourceSha256": "dccc4c9c46668d320517db559a9f56a57636d7a574d44cbafb8d0174eb0ddc3e",
+   "sha256": "9d58db3b37e8a7dbb6bb8db0af974bee35ca017b226040163cea62a1e007583d",
+   "bytes": 49474
+  },
+  {
+   "mode": "hangman",
+   "file": "transport-spelling.webp",
+   "size": [
+    480,
+    309
+   ],
+   "source": "transport-spelling.png",
+   "sourceSha256": "88b3aca1d0124e3109b9c9798df9346f470f479353c9b204ae645ef1652b436f",
+   "sha256": "409902330b926db34b4a83a3c0a91de9797fef0e8019a4d1c312e65e4e4809ef",
+   "bytes": 50818
+  },
+  {
+   "mode": "flip",
+   "file": "flip-the-tiles.webp",
+   "size": [
+    480,
+    320
+   ],
+   "source": "flip-the-tiles.png",
+   "sourceSha256": "24b5fdcd96eeaa33551e637776dd4503e453837c689689828411f33ba540341a",
+   "sha256": "17bf533a4c621c76339e68004af4748e543a5094fa56b465c8e34d5f5b828095",
+   "bytes": 57048
+  },
+  {
+   "mode": "wheel",
+   "file": "spin-the-wheel.webp",
+   "size": [
+    480,
+    575
+   ],
+   "source": "../miniature-world-pilot-v1/spin-the-wheel.png",
+   "sourceSha256": "2cb9b12825e622b3608cd1d994468b9bc74c983f20bf847a23363247f66dabd7",
+   "sha256": "510fffaa3c9152c9a11dd15d65fcdcfc32075aa304c1508556772b619ab673bf",
+   "bytes": 92004
+  },
+  {
+   "mode": "media",
+   "file": "media.webp",
+   "size": [
+    480,
+    336
+   ],
+   "source": "media.png",
+   "sourceSha256": "535c8c54b9c68893500abdba43072a8e85f6f3a1006209dcf1eac75f05684157",
+   "sha256": "008e4e63ec90d1c2b7c1e044cb0600016e4c95103939a5fec89e409c15947ba3",
+   "bytes": 53154
+  },
+  {
+   "mode": "games",
+   "file": "transport-games.webp",
+   "size": [
+    480,
+    296
+   ],
+   "source": "transport-games.png",
+   "sourceSha256": "f31466ec203eda323fd96541655579165139906fad67083716b1aeef3e2baa82",
+   "sha256": "3b7b7641c9b361c029e7005433c8596a0d62c07187f290907130410fb8007c9b",
+   "bytes": 65702
+  },
+  {
+   "mode": "phonics",
+   "file": "phonics-and-sight-words.webp",
+   "size": [
+    480,
+    327
+   ],
+   "source": "phonics-and-sight-words.png",
+   "sourceSha256": "34847958a108dff58b59e0d759c8b037c6f98e5943e87af824b2327ddde1e9f7",
+   "sha256": "6087cbfb78efef97cfdf83866acf1a274bf934a84c97039b8e78bd859c36fe8b",
+   "bytes": 56698
+  },
+  {
+   "mode": "create",
+   "file": "read-draw-and-talk.webp",
+   "size": [
+    480,
+    327
+   ],
+   "source": "read-draw-and-talk.png",
+   "sourceSha256": "da4bc1818626919e1e07c032af26e113816812839a545066790e8c1bd6ef51d6",
+   "sha256": "c586b921df391754bb349b54fe005da7c461b84db629674f63c705fa03ccaed4",
+   "bytes": 51252
+  },
+  {
+   "mode": "featuredDispatch",
+   "file": "dispatch-banner.webp",
+   "size": [
+    480,
+    250
+   ],
+   "source": "dispatch-banner.png",
+   "sourceSha256": "1e4e59191f8ddfa897480b1eeb0cac87c13208f1454b451c06cdb2d917233ca6",
+   "sha256": "3c184bae11bd5f304b6b0105f5447e59533a035ea12effa2ba8d1a97eeb14367",
+   "bytes": 49998
+  }
+ ]
+}

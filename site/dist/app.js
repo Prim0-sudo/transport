@@ -929,11 +929,12 @@ document.getElementById('applyTeacherScope').addEventListener('click',()=>{
 });
 refreshTeacherButton();
 
-// Retain the existing playable activities; use their existing illustrations in the shared menu.
-const menuArt = {learn:'bus',sort:'boat',detective:'helicopter',identify:'car',safety:'police-car',hangman:'truck',flip:'train',wheel:'bicycle',media:'ship',games:'taxi',phonics:'tram',create:'hot-air-balloon'};
+// Miniature World menu tiles (artwork/menu/miniature-world-v1, approved 2026-11-09), runtime copies in images/menu.
+const menuArt = {learn:'meet-the-words',sort:'sort-it',detective:'transport-detective',identify:'which-one-is-it',safety:'knowledge-and-safety',hangman:'transport-spelling',flip:'flip-the-tiles',wheel:'spin-the-wheel',media:'media',games:'transport-games',phonics:'phonics-and-sight-words',create:'read-draw-and-talk'};
 for (const card of document.querySelectorAll('.mode-card')) {
   const image = document.createElement('img');
-  image.src = `images/vocabulary/vehicle.${menuArt[card.dataset.mode]}.png`;
+  image.src = `images/menu/${menuArt[card.dataset.mode]}.webp`;
+  image.draggable = false;
   image.alt = '';
   card.querySelector('.mode-icon').replaceChildren(image);
 }
