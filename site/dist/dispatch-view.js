@@ -1,63 +1,205 @@
-// Transport Dispatch: choose a suitable vehicle, load, plan an open route, deliver, unload.
-// Follows docs/DISPATCH-DETAILED-PREVIEW.md. The town is drawn in code for now; painted Miniature World
-// planes and directional vehicle sprites replace the drawing and the markers later without changing the rules.
+// Transport Dispatch: choose a suitable vehicle, load, plan an open route crossing by crossing, deliver, unload.
+// Every round builds a fresh town (small 3x3, medium 4x4, large 5x5 crossings) with a river, bridges, a ferry
+// to an island, random places and roadworks. Difficulty changes the vehicle choices, roadworks, hints, fuel and stops.
+// The town is drawn in code for now; painted planes and directional vehicle sprites can replace it later.
 (() => {
-  const N = {depot:[14,80],w1:[7,62],w2:[7,30],nw:[15,21],school:[32,21],tw:[49,21],te:[71,21],e:[80,32],station:[90,19],hospital:[89,55],
-    bw:[30,71],b1:[50,52],b2:[70,47],dock:[46,90],sea:[66,96],island:[85,86]};
-  const ROAD = {tunnel:['depot','w1','w2','nw','school','tw','te','e'], bridge:['depot','bw','b1','b2','e']};
-  const STOPS = {
-    depot:{queue:[[6,90],3,0], label:[4,93]}, dock:{queue:[[28,95],3,0], label:[27,85]},
-    school:{queue:[[25,13],3,0], label:[23,4]}, station:{queue:[[80,10],3,0], label:[78,1]},
-    hospital:{queue:[[80,64],3,0], label:[78,68]}, island:{queue:[[78,79],3,0], label:[76,93]}
+  const SIZES = {small:['Small town', '9 crossings', 3], medium:['Medium town', '16 crossings', 4], large:['Big city', '25 crossings', 5]};
+  const LEVELS = {
+    easy:['Easy', 'Route hint · 2 vehicles to choose from'],
+    medium:['Medium', 'Roadworks block the quickest way · 3 vehicles'],
+    hard:['Hard', 'More roadworks, limited fuel, extra stops · 4 vehicles']
   };
-  const PLACE_NAMES = {depot:'Depot',dock:'Ferry dock',school:'School',station:'Station',hospital:'Hospital',island:'Island harbour'};
+  const JOBS = [3, 5, 7];
+  const ROUNDS = [1, 3, 5];
+  const CHOICES = {easy:2, medium:3, hard:4};
+  const KEY = 'transport-dispatch-setup', BEST = 'transport-dispatch-best';
+  const PLACES = {
+    depot:['Depot', '🏢'], school:['School', '🏫'], station:['Station', '🚉'], hospital:['Hospital', '🏥'], dock:['Ferry dock', '⚓'],
+    fire:['Fire station', '🚒'], building:['Building site', '🏗️'], farm:['Farm', '🌾'], shop:['Shop', '🏪'], houses:['Houses', '🏘️'],
+    police:['Police station', '🚓'], park:['Park', '🌳'], island:['Island', '🏝️']
+  };
+  const TOWN_PLACES = {
+    small:['depot', 'school', 'station', 'hospital', 'dock'],
+    medium:['depot', 'school', 'station', 'hospital', 'dock', 'fire', 'building', 'farm', 'shop', 'houses'],
+    large:['depot', 'school', 'station', 'hospital', 'dock', 'fire', 'building', 'farm', 'shop', 'houses', 'police', 'park']
+  };
+  const SMALL_EXTRAS = ['fire', 'building', 'farm', 'shop', 'houses', 'police', 'park'];
   const VEHICLES = {
-    bus:{word:'vehicle.bus',label:'Bus',info:'12 seats · road',color:'#f4c453'},
-    van:{word:'vehicle.van',label:'Van',info:'2 seats · road',color:'#ef8f6e'},
-    ferry:{word:'vehicle.ferry',label:'Ferry',info:'Many seats · water',color:'#6cb4dc'},
-    truck:{word:'vehicle.truck',label:'Truck',info:'Heavy loads · road',color:'#9cc97a'},
-    tractor:{word:'vehicle.tractor',label:'Tractor',info:'1 seat · farm work',color:'#c7a04e'},
-    ambulance:{word:'vehicle.ambulance',label:'Ambulance',info:'Medical help · road',color:'#fdfdfd'}
+    bus:{word:'vehicle.bus', label:'Bus', info:'12 seats · road', color:'#f4c453'},
+    'school-bus':{word:'vehicle.school-bus', label:'School bus', info:'A whole class · road', color:'#f6b81f'},
+    taxi:{word:'vehicle.taxi', label:'Taxi', info:'4 seats · road', color:'#ffe066'},
+    van:{word:'vehicle.van', label:'Van', info:'Parcels · road', color:'#ef8f6e'},
+    truck:{word:'vehicle.truck', label:'Truck', info:'Heavy loads · road', color:'#9cc97a'},
+    tractor:{word:'vehicle.tractor', label:'Tractor', info:'Pulls a trailer · farm', color:'#c7a04e'},
+    ambulance:{word:'vehicle.ambulance', label:'Ambulance', info:'Medical help · road', color:'#fdfdfd'},
+    'fire-engine':{word:'vehicle.fire-engine', label:'Fire engine', info:'Hoses and ladders · road', color:'#e5533d'},
+    'police-car':{word:'vehicle.police-car', label:'Police car', info:'Police help · road', color:'#8fb3e0'},
+    ferry:{word:'vehicle.ferry', label:'Ferry', info:'Many seats · water', color:'#6cb4dc'},
+    bicycle:{word:'vehicle.bicycle', label:'Bicycle', info:'1 rider · road', color:'#b9d98c'}
   };
-  const MISSIONS = [
-    {id:'crowd', start:'depot', dest:'station', count:6, kind:'people', answer:'bus', choices:['bus','van','ferry'], pickup:2,
-      title:n=>`Take ${n} passengers to the station`, load:'Load passengers', unload:'Unload passengers',
-      right:'The bus has 12 seats, enough for everyone.', wrong:{van:'The van has only 2 seats. Six passengers need more seats.', ferry:'The ferry travels on water. This journey goes by road.'}},
-    {id:'pair', start:'depot', dest:'school', count:2, kind:'people', answer:'van', choices:['tractor','van','ferry'],
-      title:()=>'Take 2 passengers to the school', load:'Load passengers', unload:'Unload passengers',
-      right:'The van has 2 seats, just right for two passengers.', wrong:{tractor:'The tractor has one seat, just for the driver. It works on farms.', ferry:'The ferry travels on water. The school is by road.'}},
-    {id:'bricks', start:'depot', dest:'station', count:4, kind:'cargo', answer:'truck', choices:['bus','van','truck'],
-      title:()=>'Take a heavy load of bricks to the station', load:'Load the bricks', unload:'Unload the bricks',
-      right:'The truck is built to carry heavy loads.', wrong:{bus:'Buses carry passengers, not heavy loads of bricks.', van:'The van is too small for a heavy load of bricks.'}},
-    {id:'island', start:'dock', dest:'island', count:8, kind:'people', answer:'ferry', choices:['bus','ferry','van'], sea:true,
-      title:()=>'Take 8 passengers across the water to the island', load:'Load passengers', unload:'Unload passengers',
-      right:'The ferry carries passengers across the water.', wrong:{bus:'Buses drive on roads. The island is across the water.', van:'Vans drive on roads. The island is across the water.'}},
-    {id:'unwell', start:'depot', dest:'hospital', count:1, kind:'patient', answer:'ambulance', choices:['tractor','ferry','ambulance'],
-      title:()=>'Someone feels very unwell. Take them to the hospital', load:'Help them aboard', unload:'Help them inside',
-      right:'The ambulance has medical help on board.', wrong:{tractor:'The tractor is for farm work. Someone unwell needs medical help on the way.', ferry:'The ferry travels on water. The hospital is by road.'}}
+  const ON_WATER = 'The ferry travels on water. This trip is by road.';
+  const FARM_ONLY = 'The tractor has one seat. It works on farms.';
+  const TEMPLATES = [
+    {id:'crowd', kind:'people', answer:'bus', from:['depot', 'station', 'houses', 'park'], to:['station', 'school', 'park', 'shop', 'houses'], count:[5, 8], via:2,
+      title:j => `Take ${j.count} passengers from the ${name(j.from)} to the ${name(j.to)}`, load:'Load passengers', unload:'Unload passengers', done:'Everyone arrived safely.',
+      right:'The bus has 12 seats, enough for everyone.',
+      wrong:{taxi:'A taxi has 4 seats. There are too many passengers.', van:'The van carries parcels and has only 2 seats.', bicycle:'A bicycle carries just one rider.', ferry:ON_WATER, tractor:FARM_ONLY}},
+    {id:'class', kind:'people', answer:'school-bus', from:['houses', 'park', 'station', 'depot'], to:['school'], count:[6, 9],
+      title:j => `Take ${j.count} children from the ${name(j.from)} to school`, load:'Load the children', unload:'Help them off', done:'The whole class reached school.',
+      right:'The school bus is made for taking a class to school.',
+      wrong:{ambulance:'The ambulance is for people who are unwell or hurt.', tractor:FARM_ONLY, 'fire-engine':'The fire engine is for putting out fires.', taxi:'A taxi has 4 seats. A class needs many more.', ferry:ON_WATER}},
+    {id:'taxi', kind:'people', answer:'taxi', from:['station', 'houses', 'shop'], to:['houses', 'station', 'hospital', 'park', 'shop'], count:[2, 2], via:1,
+      title:j => `Take ${j.count} travellers with suitcases from the ${name(j.from)} to the ${name(j.to)}`, load:'Load passengers', unload:'Unload passengers', done:'The travellers arrived with their bags.',
+      right:'A taxi has 4 seats, just right for a small group.',
+      wrong:{tractor:FARM_ONLY, ferry:ON_WATER, truck:'The truck carries heavy loads, not passengers.', 'fire-engine':'The fire engine is for putting out fires.', 'police-car':'The police car is for police work.'}},
+    {id:'parcels', kind:'parcel', answer:'van', from:['depot', 'station'], to:['shop', 'houses', 'school'], count:[4, 6], via:2,
+      title:j => `Deliver ${j.count} parcels from the ${name(j.from)} to the ${name(j.to)}`, load:'Load the parcels', unload:'Unload the parcels', done:'All the parcels arrived.',
+      right:'The van has room for all the parcels.',
+      wrong:{bicycle:'A bicycle cannot carry this many parcels.', ambulance:'The ambulance is for people who need medical help.', bus:'Buses carry passengers, not parcels.', 'police-car':'The police car is for police work.', ferry:ON_WATER}},
+    {id:'bricks', kind:'cargo', answer:'truck', from:['depot', 'station'], to:['building'], count:[4, 4],
+      title:j => `Take a heavy load of bricks from the ${name(j.from)} to the building site`, load:'Load the bricks', unload:'Unload the bricks', done:'The builders have their bricks.',
+      right:'The truck is built to carry heavy loads.',
+      wrong:{van:'The van is too small for a heavy load of bricks.', bus:'Buses carry passengers, not bricks.', taxi:'A taxi carries passengers, not heavy bricks.', bicycle:'Bricks are far too heavy for a bicycle.', ferry:ON_WATER}},
+    {id:'patient', kind:'patient', answer:'ambulance', from:['houses', 'school', 'park', 'shop', 'farm', 'station'], to:['hospital'], count:[1, 1],
+      title:j => `Someone at the ${name(j.from)} feels very unwell. Take them to the hospital`, load:'Help them aboard', unload:'Help them inside', done:'The doctors can help now.',
+      right:'The ambulance has medical help on board.',
+      wrong:{tractor:'The tractor is for farm work. Someone unwell needs medical help.', ferry:ON_WATER, truck:'The truck carries loads. Someone unwell needs medical help.', taxi:'A taxi has no medical help on board.', 'fire-engine':'The fire engine puts out fires. Someone unwell needs an ambulance.'}},
+    {id:'fire', kind:'crew', answer:'fire-engine', from:['fire'], to:['farm', 'shop', 'houses', 'school', 'park', 'building'], count:[3, 3],
+      title:j => `There is a fire at the ${name(j.to)}! Send help from the fire station`, load:'Crew aboard', unload:'Put out the fire', done:'The fire is out.',
+      right:'The fire engine carries water hoses and ladders.',
+      wrong:{ambulance:'The ambulance helps unwell people. It has no water hose.', 'police-car':'The police car has no hose or ladder.', van:'The van carries parcels. It has no water hose.', bus:'The bus carries passengers. It has no water hose.'}},
+    {id:'veg', kind:'veg', answer:'tractor', from:['farm'], to:['shop', 'depot'], count:[4, 4],
+      title:j => `Pull a trailer of vegetables from the farm to the ${name(j.to)}`, load:'Load the trailer', unload:'Unload the vegetables', done:'Fresh vegetables arrived.',
+      right:'The tractor pulls the farm trailer.',
+      wrong:{taxi:'A taxi carries passengers, not a trailer of vegetables.', ambulance:'The ambulance is for people who need medical help.', bicycle:'A bicycle cannot pull a heavy farm trailer.', bus:'Buses carry passengers, not vegetables.'}},
+    {id:'island', kind:'people', answer:'ferry', from:['dock'], to:['island'], count:[5, 8], sea:true, max:1,
+      title:j => `Take ${j.count} passengers across the water to the island`, load:'Load passengers', unload:'Unload passengers', done:'Everyone reached the island.',
+      right:'The ferry carries passengers across the water.',
+      wrong:{bus:'Buses drive on roads. The island is across the water.', van:'Vans drive on roads. The island is across the water.', taxi:'Taxis drive on roads. The island is across the water.', truck:'Trucks drive on roads. The island is across the water.'}},
+    {id:'police', kind:'crew', answer:'police-car', from:['police'], to:['station', 'shop', 'school', 'park'], count:[2, 2],
+      title:j => `The traffic lights broke near the ${name(j.to)}. Send police to help`, load:'Officers aboard', unload:'Help the traffic', done:'The traffic is moving safely again.',
+      right:'Police officers help keep traffic safe.',
+      wrong:{tractor:FARM_ONLY, ambulance:'The ambulance is for people who are unwell.', 'school-bus':'The school bus takes children to school.', ferry:ON_WATER}}
   ];
-  const LEVELS = {easy:['Easy','Both roads open'], medium:['Medium','The bridge is closed'], hard:['Hard','A road is closed and some trips stop at the school']};
-  const LENGTHS = [3,5,7];
-  const KEY = 'transport-dispatch-setup';
-  const SECONDS = 6;
+  const ISLAND = [84, 91];
 
+  const name = id => PLACES[id][0].toLowerCase();
   const el = (tag, className, text) => { const n = document.createElement(tag); if (className) n.className = className; if (text != null) n.textContent = text; return n; };
   const svgEl = (tag, attrs) => { const n = document.createElementNS('http://www.w3.org/2000/svg', tag); for (const k in attrs) n.setAttribute(k, attrs[k]); return n; };
-  function smooth(points, r = 5) {
-    const p = points.map(id => typeof id === 'string' ? N[id] : id);
+  const rand = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
+  const shuffle = list => { const a = [...list]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  const pick = list => list[Math.floor(Math.random() * list.length)];
+  const wordFor = id => (typeof transportWords !== 'undefined' ? transportWords : []).find(w => w.id === id);
+  function smooth(p, r = 3) {
     let d = `M${p[0][0]} ${p[0][1]}`;
     for (let i = 1; i < p.length - 1; i++) {
       const [a, b, c] = [p[i - 1], p[i], p[i + 1]];
-      const la = Math.hypot(b[0] - a[0], b[1] - a[1]), lc = Math.hypot(c[0] - b[0], c[1] - b[1]), k = Math.min(r, la / 2, lc / 2);
+      const la = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1, lc = Math.hypot(c[0] - b[0], c[1] - b[1]) || 1, k = Math.min(r, la / 2, lc / 2);
       const s = [b[0] - (b[0] - a[0]) / la * k, b[1] - (b[1] - a[1]) / la * k], t = [b[0] + (c[0] - b[0]) / lc * k, b[1] + (c[1] - b[1]) / lc * k];
-      d += ` L${s[0].toFixed(2)} ${s[1].toFixed(2)} Q${b[0]} ${b[1]} ${t[0].toFixed(2)} ${t[1].toFixed(2)}`;
+      d += ` L${s[0].toFixed(2)} ${s[1].toFixed(2)} Q${b[0].toFixed(2)} ${b[1].toFixed(2)} ${t[0].toFixed(2)} ${t[1].toFixed(2)}`;
     }
-    const last = p[p.length - 1]; return d + ` L${last[0]} ${last[1]}`;
+    const last = p[p.length - 1]; return d + ` L${last[0].toFixed(2)} ${last[1].toFixed(2)}`;
   }
-  const readSetup = () => { try { const s = JSON.parse(localStorage.getItem(KEY) || '{}'); return {level: LEVELS[s.level] ? s.level : 'medium', length: LENGTHS.includes(s.length) ? s.length : 5}; } catch { return {level:'medium', length:5}; } };
-  const saveSetup = s => { try { localStorage.setItem(KEY, JSON.stringify(s)); } catch {} };
-  const shuffle = list => { const a = [...list]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
-  const wordFor = id => (typeof transportWords !== 'undefined' ? transportWords : []).find(w => w.id === id);
+  const readJSON = (key, fallback) => { try { return JSON.parse(localStorage.getItem(key) || 'null') || fallback; } catch { return fallback; } };
+  const writeJSON = (key, value) => { try { localStorage.setItem(key, JSON.stringify(value)); } catch {} };
+  function readSetup() {
+    const s = readJSON(KEY, {});
+    return {size: SIZES[s.size] ? s.size : 'small', level: LEVELS[s.level] ? s.level : 'easy', jobs: JOBS.includes(s.jobs) ? s.jobs : 5, rounds: ROUNDS.includes(s.rounds) ? s.rounds : 3};
+  }
+  const setupKey = s => `${s.size}-${s.level}-${s.jobs}-${s.rounds}`;
+
+  // ---------- Town generation ----------
+  const edgeKey = (a, b) => a < b ? `${a}|${b}` : `${b}|${a}`;
+  function makeTown(size) {
+    const S = SIZES[size][2], rc = Math.floor((S - 1) / 2), j = S > 3 ? 1.6 : 1;
+    const nodes = {}, edges = new Map();
+    for (let c = 0; c < S; c++) for (let r = 0; r < S; r++) {
+      const id = `${c}-${r}`;
+      nodes[id] = {id, c, r, x: 12 + c * 76 / (S - 1) + (Math.random() * 2 - 1) * j, y: 10 + r * 62 / (S - 1) + (Math.random() * 2 - 1) * j, place: null};
+    }
+    const add = (a, b, bridge = false) => edges.set(edgeKey(a, b), {key: edgeKey(a, b), a, b, bridge});
+    const bridgeRows = shuffle([...Array(S).keys()]).slice(0, S === 5 ? 3 : 2);
+    for (let c = 0; c < S; c++) for (let r = 0; r < S; r++) {
+      if (c < S - 1 && (c !== rc || bridgeRows.includes(r))) add(`${c}-${r}`, `${c + 1}-${r}`, c === rc);
+      if (r < S - 1) add(`${c}-${r}`, `${c}-${r + 1}`);
+    }
+    const town = {size, S, rc, nodes, edges, riverX: (nodes[`${rc}-0`].x + nodes[`${rc + 1}-0`].x) / 2};
+    // Knock out a few ordinary streets on bigger maps so the grid is less regular.
+    let remove = {small: 0, medium: 2, large: 4}[size];
+    for (const e of shuffle([...edges.values()].filter(e => !e.bridge))) {
+      if (!remove) break;
+      if (degree(town, e.a) <= 2 || degree(town, e.b) <= 2) continue;
+      edges.delete(e.key);
+      if (connected(town, new Set())) remove--; else edges.set(e.key, e);
+    }
+    // Places: the dock sits on the bottom row left of the river, the rest anywhere.
+    const list = [...TOWN_PLACES[size]];
+    if (size === 'small') list.push(...shuffle(SMALL_EXTRAS).slice(0, 2));
+    const dockNode = nodes[`${rand(0, rc)}-${S - 1}`]; dockNode.place = 'dock';
+    const free = shuffle(Object.values(nodes).filter(n => !n.place));
+    for (const p of list) if (p !== 'dock' && free.length) free.pop().place = p;
+    town.placeNode = {}; for (const n of Object.values(nodes)) if (n.place) town.placeNode[n.place] = n.id;
+    return town;
+  }
+  const degree = (town, id) => [...town.edges.values()].filter(e => e.a === id || e.b === id).length;
+  function neighbours(town, id, closed) {
+    const out = [];
+    for (const e of town.edges.values()) if (!closed.has(e.key)) { if (e.a === id) out.push(e.b); else if (e.b === id) out.push(e.a); }
+    return out;
+  }
+  function shortest(town, from, to, closed, avoid) {
+    const prev = {[from]: null}, queue = [from];
+    if (avoid) prev[avoid] = undefined;
+    while (queue.length) {
+      const n = queue.shift(); if (n === to) break;
+      for (const m of shuffle(neighbours(town, n, closed))) if (!(m in prev)) { prev[m] = n; queue.push(m); }
+    }
+    if (!(to in prev) || to === avoid) return null;
+    const path = []; for (let n = to; n != null; n = prev[n]) path.unshift(n); return path;
+  }
+  function connected(town, closed) {
+    const ids = Object.keys(town.nodes), seen = new Set([ids[0]]), queue = [ids[0]];
+    while (queue.length) for (const m of neighbours(town, queue.shift(), closed)) if (!seen.has(m)) { seen.add(m); queue.push(m); }
+    return seen.size === ids.length;
+  }
+  const pathEdges = path => path.slice(1).map((n, i) => edgeKey(path[i], n));
+  function closeSome(town, closed, count, prefer) {
+    const pool = prefer ? shuffle(prefer) : shuffle([...town.edges.keys()]);
+    for (const key of pool) {
+      if (!count) break;
+      if (closed.has(key)) continue;
+      const e = town.edges.get(key);
+      if (e.bridge && [...town.edges.values()].filter(x => x.bridge && !closed.has(x.key)).length <= 1) continue;
+      closed.add(key);
+      if (connected(town, closed)) count--; else closed.delete(key);
+    }
+  }
+  function makeJobs(town, count, level) {
+    const present = new Set(Object.keys(town.placeNode)); present.add('island');
+    const usable = TEMPLATES.map(t => ({t, from: t.from.filter(p => present.has(p)), to: t.to.filter(p => present.has(p))})).filter(x => x.from.length && x.to.length && (x.from.length > 1 || x.to.length > 1 || x.from[0] !== x.to[0]));
+    const used = {}, jobs = [];
+    while (jobs.length < count) {
+      const options = usable.filter(x => (used[x.t.id] || 0) < (x.t.max || 2) && x.t.id !== jobs[jobs.length - 1]?.t.id);
+      const {t, from, to} = pick(options.length ? options : usable);
+      const start = pick(from), dest = pick(to.filter(p => p !== start));
+      if (!dest) continue;
+      used[t.id] = (used[t.id] || 0) + 1;
+      const job = {t, from: start, to: dest, count: rand(...t.count), via: null, extra: 0};
+      if (level === 'hard' && t.via && !t.sea) {
+        // Prefer a stop close to the way, so the extra stop is a short detour rather than a tour of the town.
+        const a = town.placeNode[start], b = town.placeNode[dest], none = new Set();
+        const stops = [...present].filter(p => !['island', 'dock', start, dest].includes(p)).map(p => {
+          const v = town.placeNode[p], one = shortest(town, a, v, none, b), two = shortest(town, v, b, none);
+          return {p, len: one && two ? one.length + two.length : Infinity};
+        }).filter(s => s.len < Infinity).sort((x, y) => x.len - y.len).slice(0, 2);
+        if (stops.length) { job.via = pick(stops).p; job.extra = t.via; }
+      }
+      const wrong = shuffle(Object.keys(t.wrong)).slice(0, CHOICES[level] - 1);
+      job.choices = shuffle([t.answer, ...wrong]);
+      jobs.push(job);
+    }
+    return jobs;
+  }
 
   let view = null;
 
@@ -74,114 +216,153 @@
       this.stopMotion(); this.resize?.disconnect();
       els.round.textContent = 'Transport Dispatch';
       const box = el('section', 'dispatch-setup');
-      box.append(el('h3', '', 'Transport Dispatch'), el('p', '', 'Choose the right vehicle, plan an open road and deliver everyone safely.'));
-      const group = (title, items, current, pick) => {
+      box.append(el('h3', '', 'Transport Dispatch'), el('p', '', 'Choose the right vehicle, plan a road that is open and deliver everyone safely. Every round is a new town.'));
+      const group = (title, items, key) => {
         const wrap = el('div', 'dispatch-options'); wrap.setAttribute('role', 'group'); wrap.setAttribute('aria-label', title);
         wrap.append(el('h4', '', title));
         for (const [value, label, hint] of items) {
-          const b = el('button', 'dispatch-option'); b.type = 'button'; b.setAttribute('aria-pressed', String(value === current));
+          const b = el('button', 'dispatch-option'); b.type = 'button'; b.setAttribute('aria-pressed', String(value === this.setup[key]));
           b.append(el('strong', '', label)); if (hint) b.append(el('span', '', hint));
-          b.onclick = () => { pick(value); for (const o of wrap.querySelectorAll('button')) o.setAttribute('aria-pressed', String(o === b)); };
+          b.onclick = () => { this.setup[key] = value; for (const o of wrap.querySelectorAll('button')) o.setAttribute('aria-pressed', String(o === b)); showBest(); };
           wrap.append(b);
         }
         return wrap;
       };
+      const best = el('p', 'dispatch-best');
+      const showBest = () => { const b = readJSON(BEST, {})[setupKey(this.setup)]; best.textContent = b ? `Best for this setup: ${b.stars} of ${b.max} stars` : 'No best score for this setup yet.'; };
       box.append(
-        group('Difficulty', Object.entries(LEVELS).map(([k, [l, h]]) => [k, l, h]), this.setup.level, v => this.setup.level = v),
-        group('Deliveries', LENGTHS.map(n => [n, `${n} deliveries`, n === 3 ? 'Short round' : n === 5 ? 'Medium round' : 'Long round']), this.setup.length, v => this.setup.length = v));
+        group('Map size', Object.entries(SIZES).map(([k, [l, h]]) => [k, l, h]), 'size'),
+        group('Difficulty', Object.entries(LEVELS).map(([k, [l, h]]) => [k, l, h]), 'level'),
+        group('Jobs in each round', JOBS.map(n => [n, `${n} jobs`, n === 3 ? 'Quick' : n === 5 ? 'Standard' : 'Long']), 'jobs'),
+        group('Rounds', ROUNDS.map(n => [n, n === 1 ? '1 round' : `${n} rounds`, n === 1 ? 'One town' : `${n} different towns`]), 'rounds'),
+        best);
+      showBest();
       const start = el('button', 'dispatch-primary', 'Start dispatching'); start.type = 'button';
-      start.onclick = () => { if (this.held) return; saveSetup(this.setup); this.startRound(); };
+      start.onclick = () => { if (this.held) return; writeJSON(KEY, this.setup); this.startGame(); };
       box.append(start);
       this.root.replaceChildren(box);
     }
 
+    startGame() { this.round = 0; this.totalStars = 0; this.roundScores = []; this.startRound(); }
+
     startRound() {
-      const base = shuffle(MISSIONS); const list = [...base];
-      while (list.length < this.setup.length) { const pick = shuffle(MISSIONS).find(m => m !== list[list.length - 1]); list.push(pick); }
-      this.missions = list.slice(0, this.setup.length); this.index = 0; this.earned = 0; this.fixes = 0;
-      this.buildBoard(); this.startMission();
+      const {size, level, jobs} = this.setup;
+      this.town = makeTown(size);
+      this.roadworks = new Set();
+      closeSome(this.town, this.roadworks, {easy: {small: 0, medium: 0, large: 0}, medium: {small: 0, medium: 1, large: 2}, hard: {small: 1, medium: 2, large: 4}}[level][size]);
+      this.jobs = makeJobs(this.town, jobs, level);
+      this.index = 0; this.stars = 0;
+      this.buildBoard(); this.startJob();
     }
 
     buildBoard() {
-      const r = this.root; r.replaceChildren();
-      const shell = el('section', 'dispatch'); this.shell = shell;
+      const r = this.root, t = this.town; r.replaceChildren();
+      const shell = el('section', `dispatch is-size-${t.size}`); this.shell = shell;
       const head = el('div', 'dispatch-head'); this.titleEl = el('h3', 'dispatch-title'); this.subEl = el('p', 'dispatch-sub'); this.countEl = el('span', 'dispatch-count');
       const words = el('div'); words.append(this.titleEl, this.subEl); head.append(words, this.countEl);
-      const world = el('div', 'dispatch-world'); world.setAttribute('role', 'img'); this.world = world;
-      const svg = svgEl('svg', {viewBox:'0 0 100 100', preserveAspectRatio:'none', 'aria-hidden':'true'}); this.svg = svg;
+      const world = el('div', 'dispatch-world'); world.setAttribute('role', 'group'); this.world = world;
+      const svg = svgEl('svg', {viewBox: '0 0 100 100', preserveAspectRatio: 'none', 'aria-hidden': 'true'}); this.svg = svg;
+      const rx = t.riverX;
       svg.append(
-        svgEl('path', {class:'dw-water', d:'M54 0 H66 C66 28 67 52 71 68 C80 72 90 72 100 71 V100 H54 C57 88 57 72 56 56 C55 36 54 18 54 0 Z'}),
-        svgEl('ellipse', {class:'dw-island', cx:86, cy:86, rx:11, ry:8}),
-        svgEl('path', {class:'dw-lane', d:smooth(['dock','sea','island'], 8)}),
-        svgEl('path', {class:'dw-road', d:smooth(ROAD.tunnel.slice(0, 6))}),
-        svgEl('path', {class:'dw-road dw-under', d:smooth(['tw','te'])}),
-        svgEl('path', {class:'dw-road', d:smooth(['te','e'])}),
-        svgEl('path', {class:'dw-road', d:smooth(ROAD.bridge)}),
-        svgEl('path', {class:'dw-road', d:smooth(['e','station'])}),
-        svgEl('path', {class:'dw-road', d:smooth(['e','hospital'])}),
-        svgEl('path', {class:'dw-road', d:smooth(['depot',[30,86],'dock'])}),
-        svgEl('path', {class:'dw-deck', d:smooth(['b1','b2'])}),
-        svgEl('path', {class:'dw-centre', d:smooth(ROAD.tunnel.slice(0, 6))}),
-        svgEl('path', {class:'dw-centre', d:smooth(['te','e'])}),
-        svgEl('path', {class:'dw-centre', d:smooth(ROAD.bridge)}),
-        svgEl('path', {class:'dw-centre', d:smooth(['e','station'])}),
-        svgEl('path', {class:'dw-centre', d:smooth(['e','hospital'])}),
-        svgEl('rect', {class:'dw-portal', x:47.5, y:17.5, width:3, height:7, rx:1.4}),
-        svgEl('rect', {class:'dw-portal', x:69.5, y:17.5, width:3, height:7, rx:1.4}));
-      for (const [id, s] of Object.entries(STOPS)) {
-        const [[x, y]] = s.queue; svg.append(svgEl('rect', {class:'dw-platform', x:x - 2, y:y - 3, width:16, height:6, rx:1.5}));
-        const label = el('span', 'dw-place', PLACE_NAMES[id]); label.style.left = s.label[0] + '%'; label.style.top = s.label[1] + '%'; world.append(label);
+        svgEl('path', {class: 'dw-water', d: `M${rx - 3.4} 0 H${rx + 3.4} C${rx + 4.5} 30 ${rx + 2} 55 ${rx + 3.4} 82 H${rx - 3.4} C${rx - 2} 55 ${rx - 4.5} 30 ${rx - 3.4} 0 Z`}),
+        svgEl('path', {class: 'dw-water', d: 'M0 82 C20 80 40 83 60 81 S90 80 100 82 V100 H0 Z'}),
+        svgEl('ellipse', {class: 'dw-island', cx: ISLAND[0], cy: ISLAND[1], rx: 10, ry: 6}));
+      const dock = t.nodes[t.placeNode.dock];
+      this.ferryPath = [[dock.x, dock.y], [dock.x, 84], [dock.x + 8, 91], [ISLAND[0] - 8, ISLAND[1]], ISLAND];
+      svg.append(svgEl('path', {class: 'dw-road dw-pier', d: smooth([[dock.x, dock.y], [dock.x, 84]])}), svgEl('path', {class: 'dw-lane', d: smooth(this.ferryPath.slice(1), 6)}));
+      const xy = id => [t.nodes[id].x, t.nodes[id].y];
+      for (const e of t.edges.values()) if (e.bridge) svg.append(svgEl('path', {class: 'dw-deck', d: smooth([xy(e.a), xy(e.b)])}));
+      for (const e of t.edges.values()) svg.append(svgEl('path', {class: 'dw-road', d: smooth([xy(e.a), xy(e.b)])}));
+      for (const e of t.edges.values()) svg.append(svgEl('path', {class: 'dw-centre', d: smooth([xy(e.a), xy(e.b)])}));
+      this.hintEl = svgEl('path', {class: 'dw-hint', d: ''}); this.planEl = svgEl('path', {class: 'dw-plan', d: ''});
+      svg.append(this.hintEl, this.planEl);
+      world.append(svg);
+      this.worksEls = {};
+      for (const e of t.edges.values()) {
+        const [a, b] = [t.nodes[e.a], t.nodes[e.b]], w = el('span', 'dw-works', '🚧');
+        w.style.left = (a.x + b.x) / 2 + '%'; w.style.top = (a.y + b.y) / 2 + '%'; w.hidden = true; w.setAttribute('aria-hidden', 'true');
+        this.worksEls[e.key] = w; world.append(w);
       }
-      const roadLabel = (text, x, y) => { const l = el('span', 'dw-road-name', text); l.style.left = x + '%'; l.style.top = y + '%'; world.append(l); return l; };
-      roadLabel('Tunnel', 56, 12); roadLabel('Bridge', 54, 56);
-      this.closedEl = { bridge: el('span', 'dw-closed', 'Bridge closed'), tunnel: el('span', 'dw-closed', 'Tunnel closed') };
-      Object.assign(this.closedEl.bridge.style, {left:'47%', top:'42%'}); Object.assign(this.closedEl.tunnel.style, {left:'50%', top:'26%'});
-      world.prepend(svg); world.append(this.closedEl.bridge, this.closedEl.tunnel);
+      this.nodeEls = {};
+      for (const n of Object.values(t.nodes)) {
+        const b = el('button', n.place ? 'dw-node dw-node--place' : 'dw-node'); b.type = 'button';
+        b.style.left = n.x + '%'; b.style.top = n.y + '%';
+        b.setAttribute('aria-label', n.place ? PLACES[n.place][0] : `Crossing ${n.r + 1}-${n.c + 1}`);
+        if (n.place) { b.append(el('span', 'dw-emoji', PLACES[n.place][1])); b.append(el('span', 'dw-label', PLACES[n.place][0])); }
+        b.onclick = () => this.tapNode(n.id);
+        this.nodeEls[n.id] = b; world.append(b);
+      }
+      const isle = el('span', 'dw-node dw-node--place dw-node--island'); isle.style.left = ISLAND[0] + '%'; isle.style.top = ISLAND[1] + '%';
+      isle.append(el('span', 'dw-emoji', PLACES.island[1]), el('span', 'dw-label', PLACES.island[0])); world.append(isle); this.islandEl = isle;
+      this.fireEl = el('span', 'dw-fire', '🔥'); this.fireEl.hidden = true; this.fireEl.setAttribute('aria-hidden', 'true'); world.append(this.fireEl);
       this.actor = el('div', 'dw-actor'); this.actor.setAttribute('aria-hidden', 'true'); world.append(this.actor);
-      this.loads = Array.from({length: 10}, () => { const m = el('i', 'dw-load'); m.setAttribute('aria-hidden', 'true'); world.append(m); return {el: m, x: 0, y: 0, a: 0}; });
+      this.loads = Array.from({length: 12}, () => { const m = el('i', 'dw-load'); m.setAttribute('aria-hidden', 'true'); world.append(m); return {el: m, x: 0, y: 0, a: 0, active: false}; });
       this.choicesEl = el('div', 'dispatch-vehicles'); this.choicesEl.setAttribute('role', 'group'); this.choicesEl.setAttribute('aria-label', 'Vehicles');
-      this.routesEl = el('div', 'dispatch-routes'); this.routesEl.setAttribute('role', 'group'); this.routesEl.setAttribute('aria-label', 'Roads');
-      this.routeButtons = {};
-      for (const id of ['bridge', 'tunnel']) { const b = el('button', 'dispatch-route'); b.type = 'button'; b.onclick = () => this.pickRoute(id); this.routeButtons[id] = b; this.routesEl.append(b); }
+      this.toolsEl = el('div', 'dispatch-tools');
+      this.fuelEl = el('span', 'dispatch-fuel');
+      this.undoBtn = el('button', 'dispatch-secondary', 'Undo'); this.undoBtn.type = 'button'; this.undoBtn.onclick = () => this.undo();
+      this.clearBtn = el('button', 'dispatch-secondary', 'Clear route'); this.clearBtn.type = 'button'; this.clearBtn.onclick = () => this.clearRoute();
+      this.toolsEl.append(this.fuelEl, this.undoBtn, this.clearBtn);
       this.statusEl = el('p', 'dispatch-status'); this.statusEl.setAttribute('role', 'status'); this.statusEl.setAttribute('aria-live', 'polite');
       const actions = el('div', 'dispatch-actions');
       this.primary = el('button', 'dispatch-primary'); this.primary.type = 'button'; this.primary.onclick = () => this.advance();
-      this.restartBtn = el('button', 'dispatch-secondary', 'Restart delivery'); this.restartBtn.type = 'button'; this.restartBtn.onclick = () => { if (!this.held) this.startMission(true); };
+      this.restartBtn = el('button', 'dispatch-secondary', 'Restart job'); this.restartBtn.type = 'button'; this.restartBtn.onclick = () => { if (!this.held) this.startJob(true); };
       actions.append(this.primary, this.restartBtn);
-      shell.append(head, world, this.choicesEl, this.routesEl, this.statusEl, actions); r.append(shell);
+      shell.append(head, world, this.choicesEl, this.toolsEl, this.statusEl, actions); r.append(shell);
       this.size = {w: 1, h: 1};
       this.resize = new ResizeObserver(([entry]) => { this.size = {w: entry.contentRect.width, h: entry.contentRect.height}; this.paint(); });
       this.resize.observe(world);
     }
 
-    startMission(restart = false) {
+    point(place) { if (place === 'island') return ISLAND; const n = this.town.nodes[this.town.placeNode[place]]; return [n.x, n.y]; }
+
+    startJob(restart = false) {
       this.stopMotion();
-      const m = this.mission = this.missions[this.index];
-      const level = this.setup.level;
-      this.count = m.count; this.pickup = level === 'hard' && m.pickup ? m.pickup : 0;
-      this.closed = level === 'easy' || m.sea ? null : level === 'medium' || this.pickup || m.dest === 'school' ? 'bridge' : (restart && this.closed) || (Math.random() < .5 ? 'bridge' : 'tunnel');
-      this.phase = 'choose'; this.vehicle = null; this.route = null; this.onboard = 0; this.schoolDone = false; this.mistakes = this.mistakes && restart ? this.mistakes : 0;
-      const [sx, sy] = N[m.start]; this.pos = {x: sx, y: sy, rotation: m.sea ? 20 : 0};
-      const [[qx, qy]] = STOPS[m.start].queue;
+      const job = this.job = this.jobs[this.index], t = this.town, level = this.setup.level;
+      if (!restart) {
+        // Medium and hard put roadworks on the quickest way so the obvious route is blocked.
+        this.closed = new Set(this.roadworks);
+        if (level !== 'easy' && !job.t.sea) {
+          const route = this.fullShortest(this.closed);
+          if (route) closeSome(t, this.closed, 1, pathEdges(route));
+        }
+        this.mistakes = 0;
+      }
+      this.startNode = t.placeNode[job.from]; this.destNode = job.to === 'island' ? null : t.placeNode[job.to]; this.viaNode = job.via ? t.placeNode[job.via] : null;
+      this.best = job.t.sea ? null : this.fullShortest(this.closed);
+      this.budget = level === 'hard' && this.best ? this.best.length - 1 + 2 : Infinity;
+      this.phase = 'choose'; this.vehicle = null;
+      if (!restart) { this.firstTry = true; this.blocked = false; }
+      this.plan = [this.startNode]; this.onboard = 0; this.viaDone = false;
+      const [sx, sy] = this.point(job.from); this.pos = {x: sx, y: sy, rotation: job.t.sea ? 90 : 0};
+      const total = job.count + job.extra;
       this.loads.forEach((p, i) => {
-        const school = i >= m.count && i < m.count + this.pickup;
-        const active = i < m.count || school;
-        const [bx, by] = school ? STOPS.school.queue[0] : [qx, qy];
-        const k = school ? i - m.count : i;
-        Object.assign(p, {x: bx + (k % 6) * 2.4, y: by + Math.floor(k / 6) * 3, a: active ? 1 : 0, active});
-        p.el.className = `dw-load dw-load--${m.kind}`;
+        const atVia = i >= job.count && i < total, active = i < total;
+        const [bx, by] = atVia ? this.point(job.via) : [sx, sy], k = atVia ? i - job.count : i;
+        Object.assign(p, {x: bx - 4 + (k % 5) * 2.2, y: by < 25 ? by + 10 + Math.floor(k / 5) * 2.6 : by - 7 - Math.floor(k / 5) * 2.6, a: active ? 1 : 0, active});
+        p.el.className = `dw-load dw-load--${job.t.kind}`;
       });
-      this.titleEl.textContent = this.pickup ? `Collect ${this.pickup} at the school, then take ${m.count + this.pickup} passengers to the station` : m.title(m.count);
-      this.world.setAttribute('aria-label', `Town map. ${PLACE_NAMES[m.start]} to ${PLACE_NAMES[m.dest]}.${this.closed ? ` The ${this.closed} is closed.` : ''}`);
+      this.titleEl.textContent = job.t.title(job) + (job.via ? `. Collect ${job.extra} more at the ${name(job.via)} on the way.` : '.');
+      this.world.setAttribute('aria-label', `Town map. From the ${name(job.from)} to the ${name(job.to)}. Tap crossings to plan the route.`);
       this.choicesEl.replaceChildren();
-      for (const id of m.choices) {
+      for (const id of job.choices) {
         const v = VEHICLES[id], word = wordFor(v.word), b = el('button', 'dispatch-vehicle'); b.type = 'button'; b.dataset.vehicle = id;
         if (word?.image) { const img = el('img'); img.src = word.image; img.alt = ''; b.append(img); }
         b.append(el('strong', '', v.label), el('small', '', v.info));
         b.onclick = () => this.pickVehicle(id); this.choicesEl.append(b);
       }
-      this.say(m.sea ? 'Choose a vehicle for a trip across the water.' : `Choose a vehicle for this ${m.kind === 'cargo' ? 'load' : 'trip'}.`);
+      this.choicesEl.style.gridTemplateColumns = `repeat(${job.choices.length === 4 ? 2 : job.choices.length},minmax(0,1fr))`;
+      this.say(job.t.sea ? 'Choose a vehicle for a trip across the water.' : 'Choose the right vehicle for this job.');
       this.update();
+    }
+
+    fullShortest(closed) {
+      const t = this.town, job = this.job;
+      if (job.t.sea) return null;
+      const a = t.placeNode[job.from], b = t.placeNode[job.to];
+      if (!job.via) return shortest(t, a, b, closed);
+      const v = t.placeNode[job.via], one = shortest(t, a, v, closed), two = shortest(t, v, b, closed);
+      return one && two ? [...one, ...two.slice(1)] : null;
     }
 
     say(text) { this.statusEl.textContent = text; }
@@ -189,43 +370,66 @@
 
     pickVehicle(id) {
       if (this.held || this.phase !== 'choose') return;
-      const m = this.mission;
-      if (id !== m.answer) { this.mistakes++; this.vehicle = null; this.say(m.wrong[id]); this.update(id); return; }
-      this.vehicle = id; this.say(`${m.right} ${m.load} when ready.`); this.update();
+      const job = this.job;
+      if (id !== job.t.answer) { this.mistakes++; this.firstTry = false; this.vehicle = null; this.say(job.t.wrong[id]); this.update(id); return; }
+      this.vehicle = id; this.say(`${job.t.right} ${job.t.load} when ready.`); this.update();
     }
 
-    pickRoute(id) {
+    tapNode(id) {
       if (this.held || !['route', 'ready'].includes(this.phase)) return;
-      const m = this.mission;
-      if (m.dest === 'school' && id === 'bridge') { this.mistakes++; this.say('The bridge road crosses the river. The school is on the tunnel road, on this side.'); return; }
-      if (id === this.closed) { this.mistakes++; this.say(`The ${id} is closed today. Keep the ${VEHICLES[this.vehicle].label.toLowerCase()} at the depot and choose the other road.`); return; }
-      this.route = id; this.phase = 'ready';
-      this.say(this.pickup ? 'The tunnel road passes the school first. Dispatch when ready.' : `The ${id} road is open. Dispatch when ready.`);
+      const t = this.town, plan = this.plan, last = plan[plan.length - 1];
+      if (plan.length > 1 && id === plan[plan.length - 2] && last !== this.viaNode) { this.undo(); return; }
+      if (this.phase === 'ready') { this.say('The route already reaches the destination. Undo to change it, or dispatch.'); return; }
+      if (id === last) return;
+      const key = edgeKey(last, id);
+      if (!t.edges.has(key)) { this.say('Tap a crossing joined by a road to the end of your route. The glowing dots show where you can go.'); return; }
+      if (this.closed.has(key)) { this.mistakes++; this.blocked = true; this.say('Roadworks! That road is closed. Find another way round.'); this.flash(key); return; }
+      if (plan.length - 1 >= this.budget) { this.say(`Not enough fuel to go further. You have fuel for ${this.budget} roads. Undo and find a shorter way.`); return; }
+      plan.push(id); this.afterPlanChange();
+    }
+
+    afterPlanChange() {
+      const last = this.plan[this.plan.length - 1], job = this.job;
+      if (last === this.destNode && (!this.viaNode || this.plan.includes(this.viaNode))) {
+        this.phase = 'ready';
+        const extra = this.plan.length - this.best.length;
+        this.say(extra <= 0 ? 'Route planned. That is the shortest way. Dispatch when ready.' : `Route planned, ${extra} ${extra === 1 ? 'road' : 'roads'} longer than the shortest way. Dispatch, or undo to try a shorter way.`);
+      } else {
+        this.phase = 'route';
+        this.say(last === this.destNode ? `This is the ${name(job.to)}, but first collect at the ${name(job.via)}. Keep going.` : this.plan.length === 1 ? `Tap the glowing crossings to drive from the ${name(job.from)} to the ${name(job.to)}.` : this.viaNode && last === this.viaNode ? `The route reaches the ${name(job.via)}. Now head to the ${name(job.to)}.` : 'Keep going. Tap the next crossing.');
+      }
       this.update();
     }
+    undo() { if (this.held || !['route', 'ready'].includes(this.phase) || this.plan.length < 2) return; this.plan.pop(); this.afterPlanChange(); }
+    clearRoute() { if (this.held || !['route', 'ready'].includes(this.phase)) return; this.plan = [this.startNode]; this.afterPlanChange(); }
+    flash(key) { const w = this.worksEls[key]; if (!w) return; w.classList.remove('is-flash'); void w.offsetWidth; w.classList.add('is-flash'); }
 
     advance() {
       if (this.held || this.primary.disabled) return;
-      const m = this.mission;
+      const job = this.job;
       if (this.phase === 'choose') {
-        this.phase = 'boarding'; this.say(m.kind === 'cargo' ? 'The bricks are loaded beside the stopped truck.' : 'Everyone climbs aboard while the vehicle is stopped.');
-        this.board(this.loads.slice(0, m.count), () => {
-          if (m.sea) { this.route = 'sea'; this.phase = 'ready'; this.say('All aboard. The ferry lane is open. Dispatch when ready.'); }
-          else { this.phase = 'route'; this.say(m.dest === 'school' ? 'All aboard. Which road goes to the school?' : 'All aboard. Choose an open road.'); }
+        this.phase = 'boarding'; this.say('Loading while the vehicle is stopped.');
+        this.board(this.loads.slice(0, job.count), () => {
+          if (job.t.sea) { this.phase = 'ready'; this.say('All aboard. The ferry lane is open. Dispatch when ready.'); }
+          else this.afterPlanChange();
         });
       } else if (this.phase === 'ready') {
-        const path = m.sea ? ['dock', 'sea', 'island'] : m.dest === 'school' ? ROAD.tunnel.slice(0, 5) : this.pickup ? ROAD.tunnel.slice(0, 5) : [...ROAD[this.route], m.dest];
-        this.travel(path, Boolean(this.pickup && !this.schoolDone) ? 'school' : m.dest);
+        if (job.t.sea) { this.travel(this.ferryPath, 'island'); }
+        else {
+          const cut = this.viaNode ? this.plan.indexOf(this.viaNode) : -1;
+          this.legs = cut > 0 ? [this.plan.slice(0, cut + 1), this.plan.slice(cut)] : [this.plan];
+          this.travel(this.legs[0].map(id => [this.town.nodes[id].x, this.town.nodes[id].y]), cut > 0 ? job.via : job.to);
+        }
       } else if (this.phase === 'checkpoint') {
-        this.phase = 'pickup'; this.say('Two more passengers climb aboard at the school.');
-        this.board(this.loads.slice(m.count, m.count + this.pickup), () => { this.schoolDone = true; this.phase = 'continue'; this.say(`${this.onboard} passengers aboard. Continue to the station.`); });
+        this.phase = 'pickup'; this.say(`${job.extra} more climb aboard at the ${name(job.via)}.`);
+        this.board(this.loads.slice(job.count, job.count + job.extra), () => { this.viaDone = true; this.phase = 'continue'; this.say(`Everyone aboard. Continue to the ${name(job.to)}.`); });
       } else if (this.phase === 'continue') {
-        this.travel(['school', 'tw', 'te', 'e', m.dest], m.dest, .55);
+        this.travel(this.legs[1].map(id => [this.town.nodes[id].x, this.town.nodes[id].y]), job.to);
       } else if (this.phase === 'arrived') {
         this.unload();
       } else if (this.phase === 'done') {
         this.index++;
-        if (this.index >= this.missions.length) this.finish(); else this.startMission();
+        if (this.index >= this.jobs.length) this.finishRound(); else this.startJob();
       }
       this.update();
     }
@@ -238,79 +442,120 @@
     }
 
     board(items, finish) {
-      const door = () => ({x: this.pos.x, y: this.pos.y + 1});
-      this.run(tl => items.forEach((p, i) => tl.to(p, {x: door().x, y: door().y, a: 0, duration: .45, ease: 'power1.inOut', onUpdate: () => this.paint()}, i * .17)),
+      this.run(tl => items.forEach((p, i) => tl.to(p, {x: this.pos.x, y: this.pos.y, a: 0, duration: .4, ease: 'power1.inOut', onUpdate: () => this.paint()}, i * .14)),
         () => { items.forEach(p => { p.a = 0; }); this.onboard += items.length; finish(); });
     }
 
-    travel(points, stop, share = 1) {
-      this.phase = 'travelling';
-      this.say(stop === 'school' && this.pickup ? 'Driving through town to the school.' : `On the way to the ${PLACE_NAMES[stop].toLowerCase()}.`);
-      const end = N[stop];
-      this.run(tl => tl.to(this.pos, {duration: SECONDS * share, ease: 'power1.inOut', motionPath: {path: smooth(points), autoRotate: true}, onUpdate: () => this.paint()}),
+    travel(points, stop) {
+      this.phase = 'travelling'; this.say(`On the way to the ${name(stop)}.`);
+      const end = points[points.length - 1], prev = points[points.length - 2];
+      const seconds = Math.min(9, Math.max(2.2, (points.length - 1) * .9));
+      this.run(tl => tl.to(this.pos, {duration: seconds, ease: 'power1.inOut', motionPath: {path: smooth(points), autoRotate: true}, onUpdate: () => this.paint()}),
         () => {
-          const [a, b] = [points[points.length - 2], points[points.length - 1]].map(p => typeof p === 'string' ? N[p] : p);
-          this.pos = {x: end[0], y: end[1], rotation: Math.atan2(b[1] - a[1], b[0] - a[0]) * 180 / Math.PI};
-          if (stop === 'school' && this.pickup && !this.schoolDone) { this.phase = 'checkpoint'; this.say('Stopped beside the school. Collect the two passengers waiting there.'); }
-          else { this.phase = 'arrived'; this.say(`Stopped safely at the ${PLACE_NAMES[stop].toLowerCase()}. ${this.mission.unload} when ready.`); }
+          this.pos = {x: end[0], y: end[1], rotation: Math.atan2(end[1] - prev[1], end[0] - prev[0]) * 180 / Math.PI};
+          if (this.job.via && stop === this.job.via && !this.viaDone) { this.phase = 'checkpoint'; this.say(`Stopped at the ${name(stop)}. Collect the ${this.job.extra} waiting there.`); }
+          else { this.phase = 'arrived'; this.say(`Stopped safely at the ${name(stop)}. ${this.job.t.unload} when ready.`); }
         });
     }
 
     unload() {
-      const m = this.mission, items = this.loads.filter(p => p.active), [[qx, qy]] = STOPS[m.dest].queue;
-      this.phase = 'unloading'; this.say(m.kind === 'cargo' ? 'The bricks are lifted off onto the platform.' : 'Everyone steps off onto the platform.');
-      items.forEach(p => { p.x = this.pos.x; p.y = this.pos.y + 1; p.a = 0; });
-      const spot = i => ({x: qx + (i % 6) * 2.4, y: qy + Math.floor(i / 6) * 3});
-      this.run(tl => items.forEach((p, i) => tl.to(p, {...spot(i), a: 1, duration: .45, ease: 'power1.inOut', onUpdate: () => this.paint()}, i * .13)),
+      const job = this.job, items = this.loads.filter(p => p.active), [qx, qy] = this.point(job.to);
+      this.phase = 'unloading'; this.say(job.t.id === 'fire' ? 'The crew sprays water on the fire.' : 'Unloading at the stop.');
+      items.forEach(p => { p.x = this.pos.x; p.y = this.pos.y; p.a = 0; });
+      const spot = i => ({x: qx - 4 + (i % 5) * 2.2, y: qy < 25 ? qy + 10 + Math.floor(i / 5) * 2.6 : qy - 7 - Math.floor(i / 5) * 2.6});
+      this.run(tl => items.forEach((p, i) => tl.to(p, {...spot(i), a: 1, duration: .4, ease: 'power1.inOut', onUpdate: () => this.paint()}, i * .11)),
         () => {
           items.forEach((p, i) => Object.assign(p, spot(i), {a: 1}));
-          this.onboard = 0; this.phase = 'done'; this.earned++; this.fixes += this.mistakes;
-          this.say(m.kind === 'cargo' ? 'Delivery complete. The bricks reached the station.' : m.kind === 'patient' ? 'Delivery complete. The doctors can help now.' : 'Delivery complete. Everyone arrived safely.');
+          this.onboard = 0; this.phase = 'done';
+          const shortestRoute = job.t.sea || this.plan.length <= this.best.length;
+          const got = [this.firstTry, !this.blocked, shortestRoute].filter(Boolean).length;
+          this.jobStars = got; this.stars += got;
+          const notes = [this.firstTry ? 'right vehicle first time' : 'vehicle changed', this.blocked ? 'tried a closed road' : 'no closed roads', shortestRoute ? 'shortest route' : 'a longer route'];
+          this.say(`${job.t.done} ${'⭐'.repeat(got)}${got < 3 ? '' : ' Perfect!'} (${notes.join(', ')})`);
           if (typeof tone === 'function') { tone(523, 0, .12); tone(659, .12, .12); tone(784, .24, .18); }
         });
     }
 
-    finish() {
+    finishRound() {
       this.stopMotion(); this.resize?.disconnect();
-      els.round.textContent = 'Round complete';
+      const max = this.jobs.length * 3, last = this.round + 1 >= this.setup.rounds;
+      this.roundScores.push(this.stars); this.totalStars += this.stars;
       const box = el('section', 'dispatch-setup dispatch-done');
-      box.append(el('h3', '', 'Dispatch complete'), el('p', 'dispatch-done-score', `${this.earned} ${this.earned === 1 ? 'delivery' : 'deliveries'} made`),
-        el('p', '', this.fixes ? `You changed ${this.fixes} ${this.fixes === 1 ? 'choice' : 'choices'} along the way and still got everyone there.` : 'Every vehicle and road was right first time.'));
-      const again = el('button', 'dispatch-primary', 'Play again'); again.type = 'button'; again.onclick = () => { if (!this.held) this.startRound(); };
-      const change = el('button', 'dispatch-secondary', 'Change settings'); change.type = 'button'; change.onclick = () => { if (!this.held) this.renderSetup(); };
-      const row = el('div', 'dispatch-actions'); row.append(again, change); box.append(row);
+      if (!last) {
+        els.round.textContent = `Round ${this.round + 1} complete`;
+        box.append(el('h3', '', `Round ${this.round + 1} of ${this.setup.rounds} complete`), el('p', 'dispatch-done-score', `${this.stars} of ${max} ⭐`),
+          el('p', '', this.stars === max ? 'A perfect town! The next town is waiting.' : 'Every job was delivered. The next town has new roads and new jobs.'));
+        const next = el('button', 'dispatch-primary', 'Next town'); next.type = 'button';
+        next.onclick = () => { if (this.held) return; this.round++; this.startRound(); };
+        const row = el('div', 'dispatch-actions'); row.append(next); box.append(row);
+      } else {
+        els.round.textContent = 'Dispatch complete';
+        const all = this.setup.rounds * max, key = setupKey(this.setup), bests = readJSON(BEST, {}), prev = bests[key];
+        const record = !prev || this.totalStars > prev.stars;
+        if (record) { bests[key] = {stars: this.totalStars, max: all}; writeJSON(BEST, bests); }
+        box.append(el('h3', '', 'Dispatch complete'), el('p', 'dispatch-done-score', `${this.totalStars} of ${all} ⭐`));
+        if (this.setup.rounds > 1) box.append(el('p', '', this.roundScores.map((s, i) => `Town ${i + 1}: ${s}`).join(' · ')));
+        box.append(el('p', '', record ? (prev ? `New best! Your old best was ${prev.stars}.` : 'Your first score for this setup.') : `Best for this setup: ${prev.stars} of ${prev.max}.`));
+        if (this.setup.level !== 'hard' && this.totalStars >= all * .85) box.append(el('p', 'dispatch-tip', `Great dispatching. Try ${this.setup.level === 'easy' ? 'Medium' : 'Hard'} for roadworks${this.setup.level === 'easy' ? '' : ', fuel and extra stops'}.`));
+        else if (this.setup.size !== 'large' && this.totalStars >= all * .85) box.append(el('p', 'dispatch-tip', `Ready for more? Try a ${this.setup.size === 'small' ? 'medium town' : 'big city'}.`));
+        const again = el('button', 'dispatch-primary', 'Play again'); again.type = 'button'; again.onclick = () => { if (!this.held) this.startGame(); };
+        const change = el('button', 'dispatch-secondary', 'Change settings'); change.type = 'button'; change.onclick = () => { if (!this.held) this.renderSetup(); };
+        const row = el('div', 'dispatch-actions'); row.append(again, change); box.append(row);
+        if (typeof burstConfetti === 'function') burstConfetti();
+      }
       this.root.replaceChildren(box);
-      if (typeof burstConfetti === 'function') burstConfetti();
     }
 
     update(wrongId) {
       if (!this.shell?.isConnected) return;
-      const m = this.mission, total = m.count + this.pickup;
-      this.countEl.textContent = `Delivery ${this.index + 1} of ${this.missions.length} · ${this.earned} done`;
-      els.round.textContent = `Delivery ${this.index + 1} of ${this.missions.length}`;
-      this.subEl.textContent = this.phase === 'done' ? `${total} delivered` : this.onboard ? `${this.onboard} aboard` : m.kind === 'cargo' ? 'Bricks waiting at the depot' : `${m.count} waiting at the ${PLACE_NAMES[m.start].toLowerCase()}${this.pickup ? ` · ${this.pickup} at the school` : ''}`;
+      const job = this.job, t = this.town, routing = ['route', 'ready'].includes(this.phase) && !job.t.sea;
+      const roundText = this.setup.rounds > 1 ? `Town ${this.round + 1} of ${this.setup.rounds} · ` : '';
+      this.countEl.textContent = `${roundText}Job ${this.index + 1} of ${this.jobs.length} · ⭐ ${this.stars}`;
+      els.round.textContent = `${roundText}Job ${this.index + 1} of ${this.jobs.length}`;
+      const total = job.count + job.extra;
+      this.subEl.textContent = this.phase === 'done' ? `${total} delivered` : this.onboard ? `${this.onboard} aboard` : `Waiting at the ${name(job.from)}${job.via ? ` · ${job.extra} more at the ${name(job.via)}` : ''}`;
       for (const b of this.choicesEl.children) { b.disabled = this.phase !== 'choose' || this.held; b.setAttribute('aria-pressed', String(b.dataset.vehicle === this.vehicle)); b.classList.toggle('is-wrong', b.dataset.vehicle === wrongId); }
-      this.routesEl.hidden = Boolean(m.sea);
-      for (const [id, b] of Object.entries(this.routeButtons)) {
-        b.textContent = `${id === 'bridge' ? 'Bridge road' : 'Tunnel road'} · ${this.closed === id ? 'closed' : 'open'}`;
-        b.disabled = !['route', 'ready'].includes(this.phase) || this.held; b.setAttribute('aria-pressed', String(this.route === id));
+      this.choicesEl.hidden = this.phase !== 'choose' && this.phase !== 'boarding';
+      // Map state
+      for (const [key, w] of Object.entries(this.worksEls)) w.hidden = !this.closed.has(key);
+      const last = this.plan[this.plan.length - 1];
+      const next = routing && this.phase === 'route' ? new Set(neighbours(t, last, new Set())) : new Set();
+      for (const [id, b] of Object.entries(this.nodeEls)) {
+        b.classList.toggle('is-start', id === this.startNode);
+        b.classList.toggle('is-dest', id === this.destNode);
+        b.classList.toggle('is-via', id === this.viaNode && !this.viaDone);
+        b.classList.toggle('is-route', routing && this.plan.includes(id));
+        b.classList.toggle('is-next', next.has(id) && (id !== this.plan[this.plan.length - 2] || last === this.viaNode));
+        b.disabled = this.held || !routing;
       }
-      for (const [id, n] of Object.entries(this.closedEl)) n.hidden = this.closed !== id;
-      const v = VEHICLES[this.vehicle || m.answer];
+      this.islandEl.classList.toggle('is-dest', job.to === 'island');
+      const xy = id => [t.nodes[id].x, t.nodes[id].y];
+      this.planEl.setAttribute('d', routing && this.plan.length > 1 ? smooth(this.plan.map(xy)) : '');
+      this.hintEl.setAttribute('d', this.setup.level === 'easy' && routing && this.best ? smooth(this.best.map(xy)) : '');
+      const fire = job.t.id === 'fire' && this.phase !== 'done';
+      this.fireEl.hidden = !fire;
+      if (fire) { const [fx, fy] = this.point(job.to); this.fireEl.style.left = fx + 3 + '%'; this.fireEl.style.top = fy - 6 + '%'; }
+      // Route tools
+      this.toolsEl.hidden = !routing;
+      const used = this.plan.length - 1;
+      this.fuelEl.textContent = this.budget === Infinity ? `Route: ${used} ${used === 1 ? 'road' : 'roads'}` : `Fuel: ${this.budget - used} of ${this.budget} roads left`;
+      this.fuelEl.classList.toggle('is-low', this.budget !== Infinity && this.budget - used <= 1);
+      this.undoBtn.disabled = this.held || this.plan.length < 2; this.clearBtn.disabled = this.held || this.plan.length < 2;
+      const v = VEHICLES[this.vehicle || job.t.answer];
       this.actor.textContent = this.vehicle ? v.label.toUpperCase() : '';
       this.actor.hidden = !this.vehicle && this.phase === 'choose';
       this.actor.style.background = v.color;
-      const labels = {choose: m.load, boarding: 'Loading…', route: 'Dispatch', ready: 'Dispatch', travelling: 'Travelling…', checkpoint: `Collect ${this.pickup} passengers`, pickup: 'Collecting…', continue: 'Continue to the station', arrived: m.unload, unloading: 'Unloading…', done: this.index + 1 >= this.missions.length ? 'See results' : 'Next delivery'};
+      const labels = {choose: job.t.load, boarding: 'Loading…', route: 'Plan the route', ready: 'Dispatch', travelling: 'Travelling…', checkpoint: `Collect ${job.extra} more`, pickup: 'Collecting…', continue: `Continue to the ${name(job.to)}`, arrived: job.t.unload, unloading: 'Unloading…', done: this.index + 1 >= this.jobs.length ? (this.round + 1 >= this.setup.rounds ? 'See results' : 'Finish this town') : 'Next job'};
       this.primary.textContent = labels[this.phase];
       this.primary.disabled = this.held || this.busy() || this.phase === 'route' || (this.phase === 'choose' && !this.vehicle);
-      this.restartBtn.disabled = this.held || this.phase === 'done';
+      this.restartBtn.disabled = this.held || this.phase === 'done' || this.busy();
       this.paint();
     }
 
     paint() {
       if (!this.actor) return;
       const {w, h} = this.size, r = this.pos.rotation * Math.PI / 180;
-      let angle = Math.atan2(Math.sin(r) * h, Math.cos(r) * w) * 180 / Math.PI;
+      const angle = Math.atan2(Math.sin(r) * h, Math.cos(r) * w) * 180 / Math.PI;
       const flip = Math.abs(angle) > 90; // keep the label upright
       this.actor.style.transform = `translate(${w * this.pos.x / 100}px,${h * this.pos.y / 100}px) rotate(${flip ? angle + 180 : angle}deg)`;
       this.actor.classList.toggle('is-reversed', flip);
@@ -321,7 +566,7 @@
     setHeld(held) {
       this.held = held;
       if (held) this.timeline?.pause(); else if (this.media.matches) this.timeline?.progress(1); else this.timeline?.resume();
-      if (this.shell?.isConnected && this.mission) this.update();
+      if (this.shell?.isConnected && this.job) this.update();
     }
     destroy() { this.alive = false; this.stopMotion(); this.resize?.disconnect(); }
   }
@@ -329,6 +574,7 @@
   globalThis.TransportDispatch = {
     mount(root) { this.destroy(); view = new DispatchView(root); if (globalThis.__dispatchHeld) view.setHeld(true); },
     setHeld(held) { globalThis.__dispatchHeld = held; view?.setHeld(held); },
-    destroy() { view?.destroy(); view = null; }
+    destroy() { view?.destroy(); view = null; },
+    _view: () => view
   };
 })();
