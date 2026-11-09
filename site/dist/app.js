@@ -56,7 +56,13 @@ const safetyQuestions = [
 
 TransportCurriculum.prepare(vehicles, safetyQuestions);
 TransportStandard.prepare(vehicles);
-const classroom = new TransportClassroom({entries:vehicles,questions:safetyQuestions,curriculum:TransportCurriculum});
+// All words show their Miniature World teaching picture; the old cut-outs remain for silhouette clues.
+{
+  const pictures=new Set(globalThis.TransportSceneLibrary?.individualIds||[]);
+  for(const vehicle of vehicles)if(pictures.has(vehicle.id)){vehicle.cutout=vehicle.image;vehicle.image=`images/vocabulary/${vehicle.id}.jpg`;}
+}
+const transportWords=[...vehicles,...(globalThis.TransportSceneLibrary?.entries||[])];
+const classroom = new TransportClassroom({entries:transportWords,questions:safetyQuestions,curriculum:TransportCurriculum});
 let activeSession = null;
 
 const zones = [
@@ -66,9 +72,9 @@ const zones = [
 ];
 
 const modeInfo = {
-  learn: { badge: "VOCABULARY", title: "What vehicle is this?", helper: "" },
+  learn: { badge: "VOCABULARY", title: "What is this?", helper: "" },
   sort: { badge: "SORTING", title: "Where does the {vehicle} travel?", helper: "" },
-  detective: { badge: "TRANSPORT DETECTIVE", title: "What vehicle is hidden?", helper: "" },
+  detective: { badge: "TRANSPORT DETECTIVE", title: "What is in the hidden picture?", helper: "" },
   identify: { badge: "WHICH ONE IS IT?", title: "", helper: "" },
   safety: { badge: "ROAD SAFETY", title: "", helper: "" },
   hangman: { badge: "TRANSPORT SPELLING", title: "", helper: "" },
@@ -297,7 +303,7 @@ function completeQuestion(id=questionId(state.questions[state.round])) {
 function rememberAttempt(release=false) {
   if(!activeSession||!screens.game.classList.contains('active')||state.recovery)return;
   detectiveView?.flush();
-  const snapshot=JSON.parse(JSON.stringify(state,(_key,value)=>value?.id?.startsWith('vehicle.')&&value.eligibility?{$vehicle:value.id}:value));
+  const snapshot=JSON.parse(JSON.stringify(state,(_key,value)=>value?.id&&value.eligibility?{$vehicle:value.id}:value));
   if(snapshot.wheel){
     snapshot.wheel.selected=snapshot.wheel.selected||snapshot.wheel.landing||snapshot.wheel.pending||null;
     snapshot.wheel.spinning=false;snapshot.wheel.landing=null;snapshot.wheel.pending=null;snapshot.wheel.returning=false;
@@ -311,7 +317,7 @@ function rememberAttempt(release=false) {
 function restoreAttempt(session) {
   const saved=classroom.restore(session);if(!saved)return false;
   try{
-    const map=new Map(vehicles.map(item=>[item.id,item]));
+    const map=new Map(transportWords.map(item=>[item.id,item]));
     const restored=JSON.parse(JSON.stringify(saved.state),(_key,value)=>{
       if(value&&Object.hasOwn(value,'$vehicle')){if(!map.has(value.$vehicle))throw Error('Unknown word');return map.get(value.$vehicle);}return value;
     });
@@ -434,7 +440,7 @@ function renderQuestion() {
 
 function renderFlipSetup() {
   const pool=classroom.pool('flip');
-  if(pool.length<2){showScopeRecovery('flip','Matching needs at least two different words. Change the selection or practise these words in Meet the Vehicles.');return;}
+  if(pool.length<2){showScopeRecovery('flip','Matching needs at least two different words. Change the selection or practise these words in Meet the Words.');return;}
   clearVehiclePicture();
   els.emoji.textContent = "🃏";
   els.name.textContent = "MATCHING GAME";
@@ -799,7 +805,7 @@ function currentPrompt() {
   if (state.mode === "flip") return "";
   if (state.mode === "wheel") return "";
   const v = state.questions[state.round];
-  if (state.mode === "learn") return `This is a ${v.name}.`;
+  if (state.mode === "learn") return v.name;
   if (state.mode === "sort") return TransportStandard.ruleFor(state.setup?.rule).prompt(v.name);
   return "Listen carefully. Which vehicle makes this sound?";
 }

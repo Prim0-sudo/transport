@@ -1,6 +1,4 @@
-/* Standard activity views over the step-2 classroom/session model.
- * Uses existing Transport illustrations; no new scenery or asset generation.
- */
+/* Standard activity views over the classroom/session model. */
 const standardEscape=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
 let teachingFitObserver=null;
 function fitTeachingSubject(element,item){
@@ -36,12 +34,110 @@ function standardRecoveryActions(root){const row=document.createElement('div');r
 function renderStandardCategories(mode){
   renderStandardSetup(mode,'Choose words to explore','Your Teacher selection still applies.');els.round.textContent='Categories';
   const grid=document.createElement('div');grid.className='standard-choice-grid';
-  for(const category of TransportStandard.categories){const pool=filteredStandardPool(mode,{category:category.id});
+  const categories=mode==='learn'?[...TransportStandard.categories,...TransportStandard.teachingCategories]:TransportStandard.categories;
+  const covers={all:'vehicle.bus',land:'vehicle.car',water:'vehicle.ferry',air:'vehicle.airplane',space:'vehicle.space-shuttle'};
+  for(const category of categories){const pool=filteredStandardPool(mode,{category:category.id});
+    if(mode==='learn'&&TransportStandard.teachingCategories.includes(category)&&!pool.length)continue;
     const button=standardButton('',()=>startGame(mode,{setup:{category:category.id}}),'standard-choice');
-    button.innerHTML=`<img src="${category.image}" alt=""><strong>${category.label}</strong><span>${pool.length} ${pool.length===1?'word':'words'}</span>`;
+    const cover=mode==='learn'&&individualTeachingImage(covers[category.id]||pool[0]?.id);
+    const source=cover||category.image;
+    button.innerHTML=`<img src="${source}" alt=""><strong>${category.label}</strong><span>${pool.length} ${pool.length===1?'word':'words'}</span>`;
     button.disabled=!pool.length;grid.append(button);
   }
+  if(mode==='learn'){
+    const scenes=standardButton('',renderTeachingScenes,'standard-choice scene-entry');
+    scenes.innerHTML=`<img src="images/teaching-scenes/street-crossing.jpg" alt=""><strong>Transport Scenes</strong><span>${transportScenes.length} interactive scenes</span>`;
+    grid.append(scenes);
+  }
   els.answers.append(grid);if(!classroom.pool(mode).length)standardRecoveryActions(els.answers);
+}
+const transportScenes=[...TransportStandard.teachingScenes,...(globalThis.TransportSceneLibrary?.scenes||[])];
+const individualTeachingIds=new Set(globalThis.TransportSceneLibrary?.individualIds||[]);
+function individualTeachingImage(id){
+  return individualTeachingIds.has(id)?`images/vocabulary/${id}.jpg`:'';
+}
+function setTeachingPicture(figure,scene){
+  const image=figure.querySelector('img');
+  const overlay=figure.querySelector('svg');
+  overlay.setAttribute('viewBox',scene.viewBox||`0 0 ${scene.width} ${scene.height}`);
+  const inscriptions=overlay.querySelector('g');
+  inscriptions.replaceChildren();
+  for(const [label,x,y] of scene.inscriptions||[]){
+    const text=document.createElementNS('http://www.w3.org/2000/svg','text');
+    text.setAttribute('x',x);
+    text.setAttribute('y',y);
+    text.textContent=label;
+    inscriptions.append(text);
+  }
+  image.width=scene.width;
+  image.height=scene.height;
+  image.alt=scene.alt;
+  image.src=`images/teaching-scenes/${scene.image}`;
+}
+function highlightTeachingPicture(figure,[,,path,kind]){
+  const highlight=figure.querySelector('path');
+  highlight.setAttribute('d',path);
+  highlight.classList.toggle('scene-direction',kind==='direction');
+}
+const teachingFigureMarkup=`
+  <figure class="teaching-scene-picture">
+    <img>
+    <svg aria-hidden="true" preserveAspectRatio="none"><path fill-rule="evenodd"></path><g></g></svg>
+  </figure>
+`;
+function renderTeachingScenes(){
+  renderStandardSetup('teaching-scenes','Explore transport scenes','Choose a label to highlight it in the picture.');
+  els.modeBadge.textContent='TRANSPORT SCENES';
+  els.round.textContent='Scene explorer';
+  setStandardBack('Categories');
+
+  const panel=document.createElement('div');
+  panel.className='teaching-scenes';
+  panel.innerHTML=`
+    <div class="standard-actions scene-choices" role="group" aria-label="Choose a scene"></div>
+    ${teachingFigureMarkup}
+    <div class="standard-actions scene-labels" role="group" aria-label="Picture labels"></div>
+    <p class="scene-description" role="status"></p>
+  `;
+  const scenes=transportScenes;
+  const sceneChoices=panel.querySelector('.scene-choices');
+  const labels=panel.querySelector('.scene-labels');
+  const figure=panel.querySelector('figure');
+  const description=panel.querySelector('.scene-description');
+  let word='';
+  const hear=standardButton('Hear label',()=>speak(word));
+  const quickScenes=TransportStandard.teachingScenes.length;
+  const picker=document.createElement('select');
+  picker.setAttribute('aria-label','More transport scenes');
+  picker.add(new Option('More scenes…',''));
+  picker.options[0].disabled=true;
+  picker.onchange=()=>{if(picker.value)selectScene(Number(picker.value));};
+
+  function selectScene(index){
+    const scene=scenes[index];
+    [...sceneChoices.querySelectorAll('button')].forEach((button,i)=>button.setAttribute('aria-pressed',String(i===index)));
+    picker.value=index<quickScenes?'':String(index);
+    setTeachingPicture(figure,scene);
+    const buttons=scene.labels.map(([label],i)=>standardButton(label,()=>selectLabel(i)));
+    function selectLabel(selected){
+      const entry=scene.labels[selected];
+      const [label,meaning]=entry;
+      word=label;
+      highlightTeachingPicture(figure,entry);
+      description.textContent=`${label}. ${meaning}`;
+      for(const [i,button] of buttons.entries())button.setAttribute('aria-pressed',String(i===selected));
+    }
+    labels.replaceChildren(...buttons,hear);
+    selectLabel(0);
+  }
+  for(const [i,scene] of scenes.entries()){
+    if(i<quickScenes)sceneChoices.append(standardButton(scene.title,()=>selectScene(i)));
+    else picker.add(new Option(scene.title,String(i)));
+  }
+  if(scenes.length>quickScenes)sceneChoices.append(picker);
+  els.answers.append(panel);
+  selectScene(0);
+  focusLandingHeading('questionText');
 }
 function renderStandardSortRules(){
   renderStandardSetup('sort','Choose a sorting rule','Each rule names exactly what to compare.');els.round.textContent='Sorting rules';
@@ -72,6 +168,11 @@ function renderStandardHub(mode,groupId=null){
   els.answers.append(root);
 }
 function standardBack(){
+  if(state.mode==='teaching-scenes'){
+    startGame('learn');
+    els.answers.querySelector('.scene-entry').focus();
+    return;
+  }
   if(TransportStandard.hubs[state.mode]){if(state.hubGroup)renderStandardHub(state.mode);else goMenu();return;}
   if(state.choosing||state.recovery){goMenu();return;}
   if(['learn','wheel','sort','detective','flip'].includes(state.mode)){startGame(state.mode);return;}
@@ -79,13 +180,31 @@ function standardBack(){
 }
 
 function renderStandardLearn(){
-  const item=state.questions[state.round];state.practice=true;
-  els.question.textContent=item.name;setVehicle(item,true);els.name.textContent='';
-  els.definition.innerHTML=`${standardEscape(item.definition)}<span class="standard-example">${standardEscape(item.example)}</span>`;els.definition.classList.add('visible');
+  const item=state.questions[state.round];
+  state.practice=true;
+  els.question.textContent='';
+  els.stage.style.display='none';
+  els.round.textContent=`Word ${state.round+1}/${state.questions.length}`;
+  const panel=document.createElement('div');
+  panel.className='learn-word-card';
+  const source=individualTeachingImage(item.id)||item.image;
+  if(source){
+    const image=document.createElement('img');
+    image.src=source;
+    image.alt=item.alt||`Miniature illustration of ${item.name}.`;
+    panel.append(image);
+  }
+  const title=document.createElement('h2');
+  title.textContent=item.name;
+  const meaning=document.createElement('p');
+  meaning.className='learn-meaning';
+  meaning.innerHTML=`${standardEscape(item.definition)}<span class="standard-example">${standardEscape(item.example)}</span>`;
+  panel.append(title,meaning);
+  els.answers.append(panel);
   els.scorePill.hidden=true;els.listen.hidden=true;setStandardBack('Categories');
   const row=document.createElement('div');row.className='standard-actions learn-actions';
   const previous=standardButton('Previous',()=>{if(!state.round)return;state.round--;renderQuestion();rememberAttempt();});previous.disabled=state.round===0;
-  row.append(previous,standardButton('Hear word',()=>speak(item.name)),standardButton('Hear meaning',()=>speak(item.definition)),standardButton(state.round===state.questions.length-1?'Finish this set':'Next',()=>{if(!(state.completedIds||[]).includes(item.id))state.score++;nextQuestion();}));
+  row.append(previous,standardButton(`Say “${item.name}”`,()=>speak(item.name)),standardButton('Hear the meaning',()=>speak(item.definition)),standardButton(state.round===state.questions.length-1?'Finish this set':'Next word',()=>{if(!(state.completedIds||[]).includes(item.id))state.score++;nextQuestion();}));
   els.answers.append(row);
 }
 function renderStandardSort(){
@@ -110,7 +229,7 @@ function renderStandardSafety(){
   if(!pref.safetyAnswers)for(const icon of els.answers.querySelectorAll('.answer-icon'))icon.hidden=true;
 }
 function renderStandardDetective(){
-  const round=state.questions[state.round];els.question.textContent='What vehicle is hidden?';els.helper.textContent=round.reveal.kind==='silhouette'?'Use the outline. Guess, or reveal the picture for practice.':'Start the reveal, then choose Guess when you are ready.';
+  const round=state.questions[state.round];els.question.textContent='What is in the hidden picture?';els.helper.textContent=round.reveal.kind==='silhouette'?'Use the outline. Guess, or reveal the picture for practice.':'Start the reveal, then choose Guess when you are ready.';
   els.stage.style.display='none';els.listen.hidden=true;setStandardBack('Detective setup');
   detectiveView=new TransportDetectiveView({root:els.answers,item:round.vehicle,choices:round.choices,reveal:round.reveal,clock:work,held:work.held,
     onSolved:reward=>{state.score+=reward;state.answered=true;completeQuestion(round.vehicle.id);els.score.textContent=state.score;standardFeedback(`${round.vehicle.name}. ${round.vehicle.definition}${reward?'':' This was practice.'}`,nextQuestion);rememberAttempt();},

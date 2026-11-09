@@ -20,6 +20,23 @@
 .standard-action,.standard-actions button,.standard-settings button,.spelling-clue button,.departure-ticket>button{font:inherit;font-weight:800;color:#183a51;border:1px solid #d8bd7d;border-radius:12px;min-height:46px;padding:10px 16px;background:#fffbed;cursor:pointer}
 button:disabled{cursor:default}.standard-actions button:disabled{opacity:.55}
 .standard-choice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:14px;width:100%;grid-column:1/-1}
+.learn-word-card{display:grid;justify-items:center;gap:12px;width:100%;margin-inline:auto}
+.learn-word-card img{display:block;width:min(100%,380px,50vh);height:auto;aspect-ratio:1;object-fit:contain;border:2px solid #fff;border-radius:20px;background:#fcf1da;box-shadow:0 6px 18px #183a5120}
+.learn-word-card h2{margin:0;text-transform:uppercase}
+.learn-meaning{margin:0;width:min(100%,720px);padding:12px 18px;border:1px solid #e4cf9d;border-radius:14px;background:#fffbed;color:#183a51;line-height:1.5;text-align:center}
+.teaching-scenes{grid-column:1/-1;width:min(100%,820px);margin-inline:auto;display:grid;gap:12px}
+.teaching-scene-picture{position:relative;margin:0;overflow:hidden;border-radius:14px;background:#fcf1da}
+.teaching-scene-picture img{display:block;width:100%;height:auto}
+.teaching-scene-picture svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.teaching-scene-picture path{fill:#ffe34d;fill-opacity:.29;stroke:#ffdc34;stroke-width:3;stroke-linejoin:round;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 1px #172e46) drop-shadow(0 0 1px #172e46)}
+.teaching-scene-picture .scene-direction{fill-opacity:.92;stroke:#20354a;stroke-width:2}
+.teaching-scene-picture text{fill:white;font:900 22px system-ui;text-anchor:middle;dominant-baseline:central}
+.teaching-scenes button[aria-pressed="true"]{color:#fff;background:#183a51;border-color:#183a51}
+.teaching-scenes button:focus-visible{outline:3px solid #135c9b;outline-offset:3px}
+.scene-choices select{max-width:100%;min-height:46px;padding:8px 12px;font:inherit;color:#183a51;background:#fffbed;border:1px solid #d8bd7d;border-radius:12px}
+.learn-word-card+.learn-actions{margin-top:12px}
+.scene-description{margin:0;text-align:center;color:#183a51;font-size:clamp(1rem,2vw,1.25rem);line-height:1.5}
+@media(max-width:480px){.teaching-scenes .standard-actions{gap:6px}.teaching-scenes .standard-action{padding:8px 10px}}
 .standard-choice{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#fffbed;border:1px solid #d8bd7d;border-radius:18px;padding:18px;font:inherit;color:#183a51;cursor:pointer;min-height:200px}
 .standard-choice>img{width:150px;height:110px;object-fit:contain}.standard-choice strong{font-size:22px}.standard-choice small{line-height:1.5;max-width:45ch}.standard-choice:disabled{opacity:.6}
 .rule-pictures{display:flex;gap:6px}.rule-pictures img{width:80px;height:80px;object-fit:contain}

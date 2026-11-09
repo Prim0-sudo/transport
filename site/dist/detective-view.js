@@ -24,7 +24,7 @@
       this.image=new Image();
       this.image.onload=()=>{if(!this.active)return;this.measureCrop();this.paint();this.controls();if(reveal.running)this.start();};
       this.image.onerror=()=>{if(!this.active)return;this.halt();reveal.running=false;reveal.assisted=true;reveal.elapsed=reveal.duration*1000;this.status('The picture could not load. Skip this picture for practice.');this.controls();this.onSave();};
-      this.image.src=item.image;
+      this.image.src=(reveal.kind==='silhouette'&&item.cutout)||item.image;
       this.resize=new ResizeObserver(()=>{if(this.active)this.paint();});this.resize.observe(this.picture);
       this.controls();this.paint();
     }

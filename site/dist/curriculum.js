@@ -29,6 +29,10 @@
     space:['space-shuttle'],
   };
   const collectionLabels = {road:'Road vehicles',rail:'Rail journeys',water:'Water travel',air:'Air travel',emergency:'Emergency helpers','human-powered':'People power',passengers:'Carrying passengers',work:'Vehicles at work',farm:'On the farm',space:'Space travel'};
+  Object.assign(collectionLabels,{
+    'vehicle-parts':'Vehicle parts','journey-places':'Journey places','people-at-work':'People at work',
+    'journey-actions':'Journey actions','safe-journeys':'Safe journeys',
+  });
   const collections = Object.entries(collectionLabels).map(([id,label])=>({id,label}));
   const lessonMembers = {
     everyday:split('car bus bicycle taxi van train school-bus boat airplane'),
