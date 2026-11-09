@@ -110,6 +110,13 @@ Commit identity: `git -c user.name=Prim0-sudo -c user.email=Prim0-sudo@users.nor
 - Removed the definition text and "Reveal word for practice" (Plants has neither).
 - Missing: an animated hero scene like Plants' dandelion (owner to pick from variations).
 
+## Flip the Tiles (matched to Plants 2026-11-10)
+- Setup: "Choose your matching game" (left), no subtitle or Choose chip; cream cards with a navy face-down tile behind a gold-framed picture tile, Up to N words, N tiles. Phone stacks them as rows like Plants.
+- Board: numbered navy tiles (Tile n for screen readers), bigger pictures, Score pill and Matches n/N, Turns counter under the board.
+- Finish: green bar You found every matching pair! with See results (was a bare Finish game button).
+- Fits 768x1024 (all sizes), 1280x800 (all sizes; 20-tile board capped at 790px), phone 4/5/6 columns (20-tile board scrolls ~55px, like Plants).
+- Missing art: none new.
+
 ## Queued by owner (after every activity matches Plants)
 
 - Plants presentation: design a full-topic PPT for the Plants game covering every category (everything the videos cover, plus more), and add a separate Media tab called Presentation for it.

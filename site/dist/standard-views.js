@@ -296,8 +296,10 @@ function renderStandardSpelling(){
   if(keyboardFocused&&!state.answered)els.answers.querySelector('.hangman-key:not(:disabled)')?.focus({preventScroll:true});
   for(const button of els.answers.querySelectorAll('[data-letter]'))button.onclick=()=>chooseHangmanLetter(button.dataset.letter);
 }
+// Plants Flip setup art: a face-down tile behind a face-up picture tile, a different word per choice.
 function illustrateFlipChoices(){
-  const pool=classroom.pool('flip');for(const button of els.answers.querySelectorAll('.flip-choice')){const art=document.createElement('span');art.className='flip-choice-art';for(const item of pool.slice(0,3)){const image=document.createElement('img');image.src=item.image;image.alt='';art.append(image);}button.prepend(art);}
+  const pool=classroom.pool('flip'),buttons=[...els.answers.querySelectorAll('.flip-choice')];
+  buttons.forEach((button,index)=>{const item=pool[Math.min(pool.length-1,Math.floor(index*pool.length/buttons.length))];const art=document.createElement('span');art.className='flip-choice-art';art.setAttribute('aria-hidden','true');art.innerHTML='<span class="flip-choice-back"></span><span class="flip-choice-picture"><img alt=""></span>';art.querySelector('img').src=item.image;button.prepend(art);});
 }
 function renderStandardWheelSelection(){
   const game=state.wheel,item=game.selected;if(!item)return false;

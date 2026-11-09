@@ -444,17 +444,19 @@ function renderFlipSetup() {
   els.emoji.textContent = "🃏";
   els.name.textContent = "MATCHING GAME";
   els.stage.dataset.sound = "";
-  els.question.textContent = "How many vocabulary words would you like?";
-  els.round.textContent = "CHOOSE";
+  els.question.textContent = "Choose your matching game";
+  els.round.textContent = "";
   els.scorePill.hidden=true;els.listen.hidden=true;els.stage.style.display='none';document.querySelector('.progress-track').hidden=true;setStandardBack('Games');
   els.progress.style.width = "0%";
-  els.answers.innerHTML = `<div class="flip-setup"><p>Each word has two matching tiles.</p><div class="flip-choice-row"><button class="flip-choice" data-count="10">10 words<span>20 tiles</span></button><button class="flip-choice" data-count="20">20 words<span>40 tiles</span></button><button class="flip-choice" data-count="30">30 words<span>60 tiles</span></button></div></div>`;
+  els.answers.innerHTML = `<div class="flip-setup"><div class="flip-choice-row"><button class="flip-choice" data-count="10">10 words<span>20 tiles</span></button><button class="flip-choice" data-count="20">20 words<span>40 tiles</span></button><button class="flip-choice" data-count="30">30 words<span>60 tiles</span></button></div></div>`;
   els.answers.querySelectorAll("[data-count]").forEach(button => {
     const limit=Number(button.dataset.count),session=classroom.prepare('flip',classroom.scope,`pairs:${limit}`);
     const available=session.cycle.remaining.length||session.pool.length;
     const count=Math.min(limit,available);
-    button.replaceChildren(document.createTextNode(`Up to ${limit} words`));
-    const detail=document.createElement('span');detail.textContent=`${count} ${count===1?'word · practice':'words'} · ${count*2} tiles`;button.append(detail);
+    // Plants pattern: a stacked tile pair picture, "Up to N words" and the tile count.
+    const strong=document.createElement('strong');strong.textContent=`Up to ${limit} words`;
+    const detail=document.createElement('span');detail.className='flip-choice-count';detail.textContent=`${count*2} tiles${count===1?' · practice':''}`;
+    button.replaceChildren(strong,detail);
     button.addEventListener('click',()=>startFlipGame(limit));
   });
   illustrateFlipChoices();
@@ -472,33 +474,34 @@ function startFlipGame(vocabularyCount) {
   state.questions = vocabulary;
   state.sessionKey=session.key;state.completedIds=[];state.practice=vocabulary.length<2;
   state.choosing=false;state.setup={flipCount:vocabularyCount};setStandardBack('Matching choices');
-  state.flip = { tiles, firstTileId: null, locked: false, matches: 0 };
+  state.flip = { tiles, firstTileId: null, locked: false, matches: 0, turns: 0 };
   state.score = 0;
   renderFlipGame();
   rememberAttempt();
 }
 
 function renderFlipGame() {
-  setStandardBack('Matching choices');els.stage.style.display='none';els.listen.hidden=true;document.querySelector('.progress-track').hidden=false;
+  setStandardBack('Matching choices');els.stage.style.display='none';els.listen.hidden=true;els.scorePill.hidden=false;document.querySelector('.progress-track').hidden=false;
   const { tiles, matches } = state.flip;
   clearVehiclePicture();
   els.emoji.textContent = "";
   els.name.textContent = "";
   els.stage.dataset.sound = "";
   els.question.textContent = "";
-  els.round.textContent = `MATCHES ${matches}/${state.questions.length}`;
+  els.round.textContent = `Matches ${matches}/${state.questions.length}`;
   els.progress.style.width = `${(matches / state.questions.length) * 100}%`;
   els.score.textContent = matches;
   if (!els.answers.querySelector(".flip-board")) {
-  els.answers.innerHTML = `<div class="flip-board flip-board-${tiles.length}" aria-label="Vocabulary matching tiles">${tiles.map(tile => `<button class="flip-tile ${tile.flipped || tile.matched ? "flipped" : ""} ${tile.matched ? "matched" : ""}" data-tile-id="${tile.id}" ${tile.matched ? "disabled" : ""} aria-label="${tile.flipped || tile.matched ? tile.vehicle.name : "Hidden tile"}"><span class="flip-tile-inner"><span class="flip-tile-back">?</span><span class="flip-tile-front"><img src="${vehicleEmojiPath(tile.vehicle)}" alt=""><strong>${tile.vehicle.name}</strong></span></span></button>`).join("")}</div>`;
+  els.answers.innerHTML = `<div class="flip-board flip-board-${tiles.length}" aria-label="Vocabulary matching tiles">${tiles.map((tile, index) => `<button class="flip-tile ${tile.flipped || tile.matched ? "flipped" : ""} ${tile.matched ? "matched" : ""}" data-tile-id="${tile.id}" data-tile-number="${index + 1}" ${tile.matched ? "disabled" : ""} aria-label="${tile.flipped || tile.matched ? tile.vehicle.name : `Tile ${index + 1}`}"><span class="flip-tile-inner"><span class="flip-tile-back">${index + 1}</span><span class="flip-tile-front"><img src="${vehicleEmojiPath(tile.vehicle)}" alt=""><strong>${tile.vehicle.name}</strong></span></span></button>`).join("")}</div><p class="flip-turns" aria-live="polite"></p>`;
   els.answers.querySelectorAll("[data-tile-id]").forEach(tile => tile.addEventListener("click", () => flipTile(tile.dataset.tileId)));
   }
+  els.answers.querySelector(".flip-turns").textContent = `Turns: ${state.flip.turns || 0}`;
   for (const tile of tiles) {
     const button = els.answers.querySelector(`[data-tile-id="${tile.id}"]`);
     button.classList.toggle("flipped", tile.flipped || tile.matched);
     button.classList.toggle("matched", tile.matched);
     button.disabled = tile.matched;
-    button.setAttribute("aria-label", tile.flipped || tile.matched ? tile.vehicle.name : "Hidden tile");
+    button.setAttribute("aria-label", tile.flipped || tile.matched ? tile.vehicle.name : `Tile ${button.dataset.tileNumber}`);
     button.querySelector(".flip-tile-front").setAttribute("aria-hidden", String(!tile.flipped && !tile.matched));
     button.querySelector(".flip-tile-back").setAttribute("aria-hidden", String(tile.flipped || tile.matched));
   }
@@ -521,6 +524,7 @@ function flipTile(tileId) {
     return;
   }
   const firstTile = game.tiles.find(candidate => candidate.id === game.firstTileId);
+  game.turns = (game.turns || 0) + 1;
   if (firstTile.vehicle.name === tile.vehicle.name) {
     firstTile.matched = tile.matched = true;
     game.matches++;
@@ -536,10 +540,8 @@ function flipTile(tileId) {
   renderFlipGame();
   if (game.matches === state.questions.length) {
     state.answered = true;
-    els.feedback.className = "feedback good";
-    els.feedback.innerHTML = '<button class="next-btn" id="nextBtn">Finish game</button>';
-    document.getElementById("nextBtn").onclick = finishGame;
-    speak("You found every match!");
+    standardFeedback("You found every matching pair!", finishGame, "correct", "See results");
+    speak("You found every matching pair!");
   }
 }
 
