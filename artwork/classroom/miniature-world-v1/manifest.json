@@ -1,0 +1,1651 @@
+{
+  "batch": "Transport classroom Miniature World v1",
+  "tool": "Built-in ImageGen",
+  "status": "ready for artwork review and handoff",
+  "provenance": "Generated for Transport with the project visual style. Existing assets retain their provenance in the original art ledger.",
+  "assets": [
+    {
+      "name": "cover-all",
+      "id": "all",
+      "label": "All words",
+      "group": "category",
+      "path": "artwork/classroom/miniature-world-v1/originals/cover-all.png",
+      "transparent": true,
+      "generationId": "exec-c1c8574b-da2e-4901-ac11-816710fe1180",
+      "prompt": "Use case: illustration-story. Create a separate transparent artwork for the Transport Town children's classroom app, Miniature World painted family. Reference 1 gives the hand-painted gouache, colored pencil, warm brass, ivory paper and navy/teal finish. Reference 2 shows the simple grouped silhouette and clarity expected of a category picture; don't copy the plants. Use a compact individually painted 4:3 or square composition with one clear leading subject. Full objects, all edges inside frame, clear transparent border, real alpha around everything. Artwork must be readable at 85px. No full bleed background, enclosing UI rectangle, drop shadow, words, letters, digits or watermark. A vintage circular brass travel compass behind a broad fan of three ivory picture stamps: a yellow coach, a teal ferry and a red propeller plane. Add one small cream rocket stamp peeking high from behind, with no written marks. Make the composition a compact fan with a clear outer silhouette, distinctly different from the open book used for Meet the Words.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "../plants-weekly-game/assets/vocab/category-vegetables-watercolour-v1.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        8,
+        53,
+        1243,
+        1141
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1254,
+        1228
+      ],
+      "sha256": "3f6438ff1f88beb0b443e8f73965dd1a3750e1c1c7decc501d5777155980be38"
+    },
+    {
+      "name": "cover-land",
+      "id": "land",
+      "label": "Land travel",
+      "group": "category",
+      "path": "artwork/classroom/miniature-world-v1/originals/cover-land.png",
+      "transparent": true,
+      "generationId": "exec-ebb5bc31-5d97-4556-be87-bae46f5ecf20",
+      "prompt": "Use case: illustration-story. Create a separate transparent artwork for the Transport Town children's classroom app, Miniature World painted family. Reference 1 gives the hand-painted gouache, colored pencil, warm brass, ivory paper and navy/teal finish. Reference 2 shows the simple grouped silhouette and clarity expected of a category picture; don't copy the plants. Use a compact individually painted 4:3 or square composition with one clear leading subject. Full objects, all edges inside frame, clear transparent border, real alpha around everything. Artwork must be readable at 85px. No full bleed background, enclosing UI rectangle, drop shadow, words, letters, digits or watermark. A compact painted miniature landscape on one wedge of warm earth with a winding gray road and a short parallel railway track. A mustard town bus on the road is the hero and a red train nose on the track adds the second type of land travel. Sparse sage grass, no huge background.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "../plants-weekly-game/assets/vocab/category-vegetables-watercolour-v1.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1448,
+        1086
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        23,
+        126,
+        1429,
+        1006
+      ],
+      "suggestedCrop": [
+        0,
+        27,
+        1448,
+        1086
+      ],
+      "sha256": "276b3676f686dc90ed9d42eac9acfc6242a6b5f2fa7c5c2e19da6390a8b4e096"
+    },
+    {
+      "name": "cover-water",
+      "id": "water",
+      "label": "Water travel",
+      "group": "category",
+      "path": "artwork/classroom/miniature-world-v1/originals/cover-water.png",
+      "transparent": true,
+      "generationId": "exec-e0749e87-4bd0-481a-8e4e-ae74b0e5c24b",
+      "prompt": "Use case: illustration-story. Create a separate transparent artwork for the Transport Town children's classroom app, Miniature World painted family. Reference 1 gives the hand-painted gouache, colored pencil, warm brass, ivory paper and navy/teal finish. Reference 2 shows the simple grouped silhouette and clarity expected of a category picture; don't copy the plants. Use a compact individually painted 4:3 or square composition with one clear leading subject. Full objects, all edges inside frame, clear transparent border, real alpha around everything. Artwork must be readable at 85px. No full bleed background, enclosing UI rectangle, drop shadow, words, letters, digits or watermark. One teal and ivory passenger ferry and a smaller red sailboat together on a compact swash of painterly mid blue water with two white wave strokes. The ferry leads and has a clear deck profile, the small sailboat stands apart with a single cream sail. No other landscape.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "../plants-weekly-game/assets/vocab/category-vegetables-watercolour-v1.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1448,
+        1086
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        44,
+        46,
+        1404,
+        1046
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "sha256": "b60bd17bb2faa50a95d85bc8e2408d262f260f2abcc332b82b8c9f27c4a7a049"
+    },
+    {
+      "name": "cover-air",
+      "id": "air",
+      "label": "Air travel",
+      "group": "category",
+      "path": "artwork/classroom/miniature-world-v1/originals/cover-air.png",
+      "transparent": true,
+      "generationId": "exec-c1827cd6-b0cc-4627-b194-7ee745032bae",
+      "prompt": "Use case: illustration-story. Create a separate transparent artwork for the Transport Town children's classroom app, Miniature World painted family. Reference 1 gives the hand-painted gouache, colored pencil, warm brass, ivory paper and navy/teal finish. Reference 2 shows the simple grouped silhouette and clarity expected of a category picture; don't copy the plants. Use a compact individually painted 4:3 or square composition with one clear leading subject. Full objects, all edges inside frame, clear transparent border, real alpha around everything. Artwork must be readable at 85px. No full bleed background, enclosing UI rectangle, drop shadow, words, letters, digits or watermark. A bright brick-red and cream propeller plane in three-quarter view with a golden hot-air balloon behind it, separated silhouettes with one or two very small powder-blue cloud puffs clustering their bases. Full wings and balloon basket visible. Plane is the hero.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "../plants-weekly-game/assets/vocab/category-vegetables-watercolour-v1.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1448,
+        1086
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        124,
+        13,
+        1323,
+        1063
+      ],
+      "suggestedCrop": [
+        40,
+        0,
+        1407,
+        1086
+      ],
+      "sha256": "cafafd34dac3af8ba397282aaec794bef918d1c6c424994b6616a2899640657e"
+    },
+    {
+      "name": "cover-space",
+      "id": "space",
+      "label": "Space travel",
+      "group": "category",
+      "path": "artwork/classroom/miniature-world-v1/originals/cover-space.png",
+      "transparent": true,
+      "generationId": "exec-2121d78b-4700-4a85-959b-c0ac2dd39cd8",
+      "prompt": "Use case: illustration-story. Create a separate transparent artwork for the Transport Town children's classroom app, Miniature World painted family. Reference 1 gives the hand-painted gouache, colored pencil, warm brass, ivory paper and navy/teal finish. Reference 2 shows the simple grouped silhouette and clarity expected of a category picture; don't copy the plants. Use a compact individually painted 4:3 or square composition with one clear leading subject. Full objects, all edges inside frame, clear transparent border, real alpha around everything. Artwork must be readable at 85px. No full bleed background, enclosing UI rectangle, drop shadow, words, letters, digits or watermark. A tall ivory and rust rocket lifting away above a small curve of pale rocky moon, with a tiny petrol blue ringed planet above one shoulder. Compact grouped silhouette, no sky backdrop or stars scattered outside the main cluster. All objects readable at small size.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "../plants-weekly-game/assets/vocab/category-vegetables-watercolour-v1.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        228,
+        49,
+        1154,
+        1218
+      ],
+      "suggestedCrop": [
+        146,
+        0,
+        1236,
+        1254
+      ],
+      "sha256": "0b753fbbe8863ee9be0db9ebf429bb24909cb86e1aaeb1de1e1c6be6c249b297"
+    },
+    {
+      "name": "cover-part",
+      "id": "part",
+      "label": "Vehicle parts",
+      "group": "category",
+      "path": "artwork/classroom/miniature-world-v1/originals/cover-part.png",
+      "transparent": true,
+      "generationId": "exec-7f2b8ae5-6a2f-4227-afa2-bfd09d4f3f89",
+      "prompt": "Use case: illustration-story. Create a separate transparent artwork for the Transport Town children's classroom app, Miniature World painted family. Reference 1 gives the hand-painted gouache, colored pencil, warm brass, ivory paper and navy/teal finish. Reference 2 shows the simple grouped silhouette and clarity expected of a category picture; don't copy the plants. Use a compact individually painted 4:3 or square composition with one clear leading subject. Full objects, all edges inside frame, clear transparent border, real alpha around everything. Artwork must be readable at 85px. No full bleed background, enclosing UI rectangle, drop shadow, words, letters, digits or watermark. A mechanic’s compact ivory tabletop display with three unmistakable detached transport parts arranged in a clear triangle: black treaded tire with warm metal hub, turquoise bicycle handlebar with visible brake lever, and honey-brass two-blade propeller. Tire leads and pieces remain distinct. No tools or labels.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "../plants-weekly-game/assets/vocab/category-vegetables-watercolour-v1.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1448,
+        1086
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        31,
+        40,
+        1414,
+        1049
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "sha256": "3c0ed2673860e2f8f33018ef84ea2c3500bf2a01e3bf58cff5ca20ed488d5a30"
+    },
+    {
+      "name": "cover-place",
+      "id": "place",
+      "label": "Journey places",
+      "group": "category",
+      "path": "artwork/classroom/miniature-world-v1/originals/cover-place.png",
+      "transparent": true,
+      "generationId": "exec-5cf42a42-c2f1-4070-a724-ac09dacf1dd6",
+      "prompt": "Use case: illustration-story. Create a separate transparent artwork for the Transport Town children's classroom app, Miniature World painted family. Reference 1 gives the hand-painted gouache, colored pencil, warm brass, ivory paper and navy/teal finish. Reference 2 shows the simple grouped silhouette and clarity expected of a category picture; don't copy the plants. Use a compact individually painted 4:3 or square composition with one clear leading subject. Full objects, all edges inside frame, clear transparent border, real alpha around everything. Artwork must be readable at 85px. No full bleed background, enclosing UI rectangle, drop shadow, words, letters, digits or watermark. Three tightly clustered miniature travel places from a similar three-quarter view: a honey-stone railway station with slate canopy as hero, a small blue bus shelter in front left, and a wooden harbour jetty with mooring post above right. Join with a small pale paving cutout only. No lettering or station signs.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "../plants-weekly-game/assets/vocab/category-vegetables-watercolour-v1.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1448,
+        1086
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        45,
+        111,
+        1379,
+        1036
+      ],
+      "suggestedCrop": [
+        0,
+        17,
+        1448,
+        1086
+      ],
+      "sha256": "4d4d696492f99e1d6260a5b97b661d2714b67963bb3627db2dee3a8c775ee79f"
+    },
+    {
+      "name": "cover-person",
+      "id": "person",
+      "label": "People and roles",
+      "group": "category",
+      "path": "artwork/classroom/miniature-world-v1/originals/cover-person.png",
+      "transparent": true,
+      "generationId": "exec-7b8249f1-3348-4d95-9666-3bff22ffb0d4",
+      "prompt": "Use case: illustration-story. Create a separate transparent artwork for the Transport Town children's classroom app, Miniature World painted family. Reference 1 gives the hand-painted gouache, colored pencil, warm brass, ivory paper and navy/teal finish. Reference 2 shows the simple grouped silhouette and clarity expected of a category picture; don't copy the plants. Use a compact individually painted 4:3 or square composition with one clear leading subject. Full objects, all edges inside frame, clear transparent border, real alpha around everything. Artwork must be readable at 85px. No full bleed background, enclosing UI rectangle, drop shadow, words, letters, digits or watermark. A clear friendly pair of full-length adult transport workers side by side: a rail conductor in navy uniform and small peaked cap holding a ticket punch, and a dock worker in orange high-visibility vest and dark work boots holding a neatly coiled rope. Human characters with varied skin tones, realistic clothing, no insignia or lettering. A loose cluster with feet fully visible.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "../plants-weekly-game/assets/vocab/category-vegetables-watercolour-v1.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1448,
+        1086
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        255,
+        11,
+        1166,
+        1070
+      ],
+      "suggestedCrop": [
+        180,
+        0,
+        1241,
+        1086
+      ],
+      "sha256": "f488cc4f887603b732847de841ba2972a0a80451ee8778aac3862ca1ac16db11"
+    },
+    {
+      "name": "cover-action",
+      "id": "action",
+      "label": "Journey actions",
+      "group": "category",
+      "path": "artwork/classroom/miniature-world-v1/originals/cover-action.png",
+      "transparent": true,
+      "generationId": "exec-e8a17707-d4be-43ce-a843-100b3db19515",
+      "prompt": "Use case: illustration-story. Create a separate transparent artwork for the Transport Town children's classroom app, Miniature World painted family. Reference 1 gives the hand-painted gouache, colored pencil, warm brass, ivory paper and navy/teal finish. Reference 2 shows the simple grouped silhouette and clarity expected of a category picture; don't copy the plants. Use a compact individually painted 4:3 or square composition with one clear leading subject. Full objects, all edges inside frame, clear transparent border, real alpha around everything. Artwork must be readable at 85px. No full bleed background, enclosing UI rectangle, drop shadow, words, letters, digits or watermark. Two clustered illustrated picture plaques showing action: on the left, a traveler rolls a suitcase up a stopped coach's entry steps; on the right, a pair of dock workers guide a small wooden crate onto a cargo trolley. Bold, readable silhouettes, each action visibly in progress, no arrows, no motion marks and no text.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "../plants-weekly-game/assets/vocab/category-vegetables-watercolour-v1.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1448,
+        1086
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        8,
+        30,
+        1440,
+        1062
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "sha256": "27e89cecd27a91d1b1109720e91df53e31e0d86ebe37b9d126c3a882d4628c9a"
+    },
+    {
+      "name": "cover-safety",
+      "id": "safety",
+      "label": "Safe journeys",
+      "group": "category",
+      "path": "artwork/classroom/miniature-world-v1/originals/cover-safety.png",
+      "transparent": true,
+      "generationId": "exec-ea34d80a-140d-47b2-a500-bd3505c96560",
+      "prompt": "Use case: illustration-story. Create a separate transparent artwork for the Transport Town children's classroom app, Miniature World painted family. Reference 1 gives the hand-painted gouache, colored pencil, warm brass, ivory paper and navy/teal finish. Reference 2 shows the simple grouped silhouette and clarity expected of a category picture; don't copy the plants. Use a compact individually painted 4:3 or square composition with one clear leading subject. Full objects, all edges inside frame, clear transparent border, real alpha around everything. Artwork must be readable at 85px. No full bleed background, enclosing UI rectangle, drop shadow, words, letters, digits or watermark. A compact cluster of three large unmistakable safety items: orange zip-front life jacket with straps, teal vented bicycle helmet with chin strap, and small dark traffic light with only top red illuminated. Put the vest front and center. Keep items separated enough to identify; no signage or words.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "../plants-weekly-game/assets/vocab/category-vegetables-watercolour-v1.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1448,
+        1086
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        106,
+        25,
+        1375,
+        1065
+      ],
+      "suggestedCrop": [
+        17,
+        0,
+        1448,
+        1086
+      ],
+      "sha256": "7147d74f347bf7cbb9a40915abf921a7c4c19d0bae197b6e24aebc034f28565c"
+    },
+    {
+      "name": "completion",
+      "id": "activity.complete",
+      "label": "Activity complete",
+      "group": "completion",
+      "path": "artwork/classroom/miniature-world-v1/originals/completion.png",
+      "transparent": true,
+      "generationId": "exec-6e9a27b9-8cc6-4814-9ed5-037fff322fc1",
+      "prompt": "Use case: illustration-story. Create a separate transparent artwork for the Transport Town children's classroom app, Miniature World painted family. Reference 1 gives the hand-painted gouache, colored pencil, warm brass, ivory paper and navy/teal finish. Reference 2 shows the simple grouped silhouette and clarity expected of a category picture; don't copy the plants. Use a compact individually painted 4:3 or square composition with one clear leading subject. Full objects, all edges inside frame, clear transparent border, real alpha around everything. Artwork must be readable at 85px. No full bleed background, enclosing UI rectangle, drop shadow, words, letters, digits or watermark. An illustrated railway arrival medal: polished warm brass round travel medal with a raised three-dimensional little navy steam engine and cream rail on its face, teal ribbon looping up behind, two tiny warm star glints at the edge. It should feel earned and celebratory but quiet enough for a classroom. One broad compact silhouette, no engraved writing, no score, no words, no logo.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "../plants-weekly-game/assets/vocab/category-vegetables-watercolour-v1.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1448,
+        1086
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        308,
+        23,
+        1112,
+        1063
+      ],
+      "suggestedCrop": [
+        235,
+        0,
+        1185,
+        1086
+      ],
+      "sha256": "ac668aeaaa0db952b39cbc578651fa9e6b79a7723071d53cbe354c2349bbf910"
+    },
+    {
+      "name": "cover-scenes",
+      "id": "scenes",
+      "label": "Transport Scenes",
+      "group": "category",
+      "path": "artwork/classroom/miniature-world-v1/originals/cover-scenes.png",
+      "transparent": true,
+      "generationId": "exec-5e1d122e-a4ea-46ec-9bb5-da4d4f8935a8",
+      "prompt": "Use case: illustration-story. Paint a transparent grouped category illustration for the Transport Scenes screen of Transport Town. Miniature World gouache and coloured pencil like the approved Transport reference, warm ivory, slate blue and ochre. One compact cluster of two overlapping landscape picture prints with warm cream paper edges and a tiny brass viewing frame. Front large picture shows a turquoise bicycle and a clear rail-platform shelter in a miniature station courtyard. Rear print shows a small blue ferry at a dock. Keep the two pictures simple, solid and readable at 85 pixels. No magnifying glass, no open book, no text, letters, numbers, logos, shadow or full-frame background. Completely framed composition with clean transparent margins.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1536,
+        1024
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBounds": [
+        130,
+        81,
+        1404,
+        960
+      ],
+      "suggestedCrop": [
+        40,
+        0,
+        1494,
+        1024
+      ],
+      "sha256": "7c11f443b52558694ec5afb04358c9836b02b4b8b58431587248681b0facd10f"
+    },
+    {
+      "name": "driving-card",
+      "id": "driving",
+      "label": "Driving game",
+      "group": "game-card",
+      "path": "artwork/classroom/miniature-world-v1/originals/driving-card.png",
+      "transparent": true,
+      "generationId": "exec-d47b8755-865c-4e17-9ad7-7fc276c787a4",
+      "prompt": "Use case: illustration-story. One wide activity card illustration for a forthcoming children's driving game in Transport Town. Focus on the act of steering: a warm brass and dark slate steering wheel in the foreground with a simple glimpse of a winding miniature road behind it on a shaped cream map fragment. A small teal car sits on the road. The steering wheel is the large unmistakable hero, distinct from a route map banner. Match the attached Miniature World gouache and pencil texture, warm ivory, teal, petrol blue, ochre. Compact clustered silhouette, wide but full margins, genuine transparency outside, no UI, text, logos or extra controls. No gameplay claim or implied map layout.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1536,
+        1024
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBounds": [
+        26,
+        61,
+        1510,
+        977
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "sha256": "c5ba37b80c591d46b930690bc523efbbfe91772841a01a7b1c313e444107b0af"
+    },
+    {
+      "name": "question-car-restraint",
+      "id": "safety.car-restraint",
+      "label": "What should you wear in a car?",
+      "group": "question",
+      "path": "artwork/classroom/miniature-world-v1/originals/question-car-restraint.png",
+      "transparent": false,
+      "generationId": "exec-0e7813b9-9cd8-420f-94d2-8438e53823b6",
+      "prompt": "Use case: illustration-story. Paint one new 3:2 horizontal classroom question scene for Transport Town Knowledge & Safety. Match the attached Transport teaching art's clean hand-painted gouache and coloured-pencil Miniature World world, believable perspective and silhouettes. Simple small-town setting, good daylight, strong focus and readable at phone size. Full-bleed artwork, not a UI mockup. Keep important scene content away from the canvas edges. No text, digits, watermarks, answer checkmarks, arrows, or decorations that give away the answer. A parked family car viewed through its open back door, with empty charcoal rear passenger seats, headrests and an ordinary visible belt retractor beside the seat. Framing clearly reads as a car interior, with no child in it. Small slice of calm pavement outside.",
+      "references": [
+        "site/dist/images/teaching-scenes/street-crossing.png",
+        "site/dist/images/teaching-scenes/water-safety.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1536,
+        1024
+      ],
+      "imageMode": "RGB",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "visibleBounds": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "sha256": "8c49c89c6a8d4460acaeeafc6233a78054b60bf9b74f3593bc4a4e0a48e665d1"
+    },
+    {
+      "name": "question-cycle-helmet",
+      "id": "safety.cycle-helmet",
+      "label": "What should you wear on a bicycle?",
+      "group": "question",
+      "path": "artwork/classroom/miniature-world-v1/originals/question-cycle-helmet.png",
+      "transparent": false,
+      "generationId": "exec-7662e633-5d56-4c9d-968b-cef0069f6ecf",
+      "prompt": "Use case: illustration-story. Paint one new 3:2 horizontal classroom question scene for Transport Town Knowledge & Safety. Match the attached Transport teaching art's clean hand-painted gouache and coloured-pencil Miniature World world, believable perspective and silhouettes. Simple small-town setting, good daylight, strong focus and readable at phone size. Full-bleed artwork, not a UI mockup. Keep important scene content away from the canvas edges. No text, digits, watermarks, answer checkmarks, arrows, or decorations that give away the answer. A turquoise pedal bicycle standing still on its kickstand on a calm paved path, slightly oblique broadside with entire frame and both wheels. No rider and no protective equipment in the picture. Modest low stone wall and grass.",
+      "references": [
+        "site/dist/images/teaching-scenes/street-crossing.png",
+        "site/dist/images/teaching-scenes/water-safety.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1536,
+        1024
+      ],
+      "imageMode": "RGB",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "visibleBounds": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "sha256": "1d17d6c7986e136812e346a9ec122f35b63c561e9c223c714d60f7cac7710968"
+    },
+    {
+      "name": "question-red-light",
+      "id": "safety.red-light",
+      "label": "The traffic light is red. What do we do?",
+      "group": "question",
+      "path": "artwork/classroom/miniature-world-v1/originals/question-red-light.png",
+      "transparent": false,
+      "generationId": "exec-290ec8f8-53ed-4dd2-96bb-e69d0bde7812",
+      "prompt": "Use case: illustration-story. Paint one new 3:2 horizontal classroom question scene for Transport Town Knowledge & Safety. Match the attached Transport teaching art's clean hand-painted gouache and coloured-pencil Miniature World world, believable perspective and silhouettes. Simple small-town setting, good daylight, strong focus and readable at phone size. Full-bleed artwork, not a UI mockup. Keep important scene content away from the canvas edges. No text, digits, watermarks, answer checkmarks, arrows, or decorations that give away the answer. Close frontal view of a vehicle signal with three vertically stacked hooded lenses, top lens lit unmistakably bright red, both lower lenses entirely dark and unlit. Behind it, a clean quiet empty miniature town road and pastel trees. The signal occupies the central 60 percent of image height. No pedestrian signal or other signs.",
+      "references": [
+        "site/dist/images/teaching-scenes/street-crossing.png",
+        "site/dist/images/teaching-scenes/water-safety.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1536,
+        1024
+      ],
+      "imageMode": "RGB",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "visibleBounds": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "sha256": "47df6156218af87f52e11711ae67a4529a0fb5eea628d83ef79e05aaddd6c1ad"
+    },
+    {
+      "name": "question-road-crossing",
+      "id": "safety.road-crossing",
+      "label": "Before crossing the road, what do we do?",
+      "group": "question",
+      "path": "artwork/classroom/miniature-world-v1/originals/question-road-crossing.png",
+      "transparent": false,
+      "generationId": "exec-7d1537fb-fb7e-4f50-9641-7eba02643dae",
+      "prompt": "Use case: illustration-story. Paint one new 3:2 horizontal classroom question scene for Transport Town Knowledge & Safety. Match the attached Transport teaching art's clean hand-painted gouache and coloured-pencil Miniature World world, believable perspective and silhouettes. Simple small-town setting, good daylight, strong focus and readable at phone size. Full-bleed artwork, not a UI mockup. Keep important scene content away from the canvas edges. No text, digits, watermarks, answer checkmarks, arrows, or decorations that give away the answer. Eye-level view of a quiet straight neighbourhood street and a marked zebra pedestrian crossing, seen from the near pavement. Show clear sight lines in both directions, no traffic, and a readable kerb. No people showing the answer and no traffic lights.",
+      "references": [
+        "site/dist/images/teaching-scenes/street-crossing.png",
+        "site/dist/images/teaching-scenes/water-safety.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1536,
+        1024
+      ],
+      "imageMode": "RGB",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "visibleBounds": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "sha256": "885257635d194b81ccda1d4ecc0a1745ecaf1ac7ef37836f320a929c0223620b"
+    },
+    {
+      "name": "question-life-jacket",
+      "id": "safety.life-jacket",
+      "label": "What keeps you safe on a boat?",
+      "group": "question",
+      "path": "artwork/classroom/miniature-world-v1/originals/question-life-jacket.png",
+      "transparent": false,
+      "generationId": "exec-c60d8fbe-387e-4422-8645-82409c63a15e",
+      "prompt": "Use case: illustration-story. Paint one new 3:2 horizontal classroom question scene for Transport Town Knowledge & Safety. Match the attached Transport teaching art's clean hand-painted gouache and coloured-pencil Miniature World world, believable perspective and silhouettes. Simple small-town setting, good daylight, strong focus and readable at phone size. Full-bleed artwork, not a UI mockup. Keep important scene content away from the canvas edges. No text, digits, watermarks, answer checkmarks, arrows, or decorations that give away the answer. A small, empty blue-and-cream passenger launch tied at a calm wooden dock, with the boat at center and visible water around it. No people, no life jacket, no flotation ring, no logos. Simple far shore and bright warm daylight.",
+      "references": [
+        "site/dist/images/teaching-scenes/street-crossing.png",
+        "site/dist/images/teaching-scenes/water-safety.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1536,
+        1024
+      ],
+      "imageMode": "RGB",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "visibleBounds": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "sha256": "c16d964b84937149d18bd98402f2bc8ad777e9143fcbd72d81ac47b206906493"
+    },
+    {
+      "name": "question-bus-seat",
+      "id": "safety.bus-seat",
+      "label": "Where should you sit on a moving bus?",
+      "group": "question",
+      "path": "artwork/classroom/miniature-world-v1/originals/question-bus-seat.png",
+      "transparent": false,
+      "generationId": "exec-0ef6dbae-28ad-4828-b9dc-32c61813cbc8",
+      "prompt": "Use case: illustration-story. Paint one new 3:2 horizontal classroom question scene for Transport Town Knowledge & Safety. Match the attached Transport teaching art's clean hand-painted gouache and coloured-pencil Miniature World world, believable perspective and silhouettes. Simple small-town setting, good daylight, strong focus and readable at phone size. Full-bleed artwork, not a UI mockup. Keep important scene content away from the canvas edges. No text, digits, watermarks, answer checkmarks, arrows, or decorations that give away the answer. Inside a city bus from an eye-level view down the aisle, with clearly visible paired passenger seats, overhead handrails, a step toward a closed front door, and city greenery beyond the windows. Empty bus. No passengers, no visible brand, no seat belts or signs added.",
+      "references": [
+        "site/dist/images/teaching-scenes/street-crossing.png",
+        "site/dist/images/teaching-scenes/water-safety.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1536,
+        1024
+      ],
+      "imageMode": "RGB",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "visibleBounds": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "sha256": "688547ec4840e9575b299680cf69ed6434432c9e7003ae45ccd45b878cb3356a"
+    },
+    {
+      "name": "question-reversing-vehicle",
+      "id": "safety.reversing-vehicle",
+      "label": "When can we walk behind a reversing car?",
+      "group": "question",
+      "path": "artwork/classroom/miniature-world-v1/originals/question-reversing-vehicle.png",
+      "transparent": false,
+      "generationId": "exec-2f460a98-561a-4c4d-953c-cf730e88a75e",
+      "prompt": "Use case: illustration-story. Paint one new 3:2 horizontal classroom question scene for Transport Town Knowledge & Safety. Match the attached Transport teaching art's clean hand-painted gouache and coloured-pencil Miniature World world, believable perspective and silhouettes. Simple small-town setting, good daylight, strong focus and readable at phone size. Full-bleed artwork, not a UI mockup. Keep important scene content away from the canvas edges. No text, digits, watermarks, answer checkmarks, arrows, or decorations that give away the answer. A small blue car seen from rear three-quarter angle in a driveway, nose toward a garage with the rear pointed toward the driveway opening. Two modest white reverse lamps are lit at the rear, wheels visible. Quiet residential driveway, with no children, pedestrians or other cars near the vehicle.",
+      "references": [
+        "site/dist/images/teaching-scenes/street-crossing.png",
+        "site/dist/images/teaching-scenes/water-safety.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1536,
+        1024
+      ],
+      "imageMode": "RGB",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "visibleBounds": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "sha256": "a343ed7b2d68693a083dd6ef3de05b76dd1af04ae13ef08660720b26184dbc27"
+    },
+    {
+      "name": "question-crossing-place",
+      "id": "safety.crossing-place",
+      "label": "Where is the safest place to cross?",
+      "group": "question",
+      "path": "artwork/classroom/miniature-world-v1/originals/question-crossing-place.png",
+      "transparent": false,
+      "generationId": "exec-b4b60a9a-73bd-48ea-84c5-2b0031edbcbc",
+      "prompt": "Use case: illustration-story. Paint one new 3:2 horizontal classroom question scene for Transport Town Knowledge & Safety. Match the attached Transport teaching art's clean hand-painted gouache and coloured-pencil Miniature World world, believable perspective and silhouettes. Simple small-town setting, good daylight, strong focus and readable at phone size. Full-bleed artwork, not a UI mockup. Keep important scene content away from the canvas edges. No text, digits, watermarks, answer checkmarks, arrows, or decorations that give away the answer. One coherent overhead miniature neighborhood street with a readable striped crossing in one part of the frame, a pair of parked cars along a different part of the kerb and a corner with a tall hedge in another part. No people, no highlights or markers selecting a location. Simple warm palette, give the street clear space and avoid clutter.",
+      "references": [
+        "site/dist/images/teaching-scenes/street-crossing.png",
+        "site/dist/images/teaching-scenes/water-safety.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1536,
+        1024
+      ],
+      "imageMode": "RGB",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "visibleBounds": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "sha256": "315b2cb955a500e70f9137ddcbeeed0f07d1f0797d312d202006c8cd196e4115"
+    },
+    {
+      "name": "answer-car-restraint-2",
+      "id": "safety.car-restraint.choice-2",
+      "label": "A swimming ring",
+      "group": "answer",
+      "path": "artwork/classroom/miniature-world-v1/originals/answer-car-restraint-2.png",
+      "transparent": true,
+      "generationId": "exec-ba0b2acd-fabd-4d95-a41a-55cd03ab084f",
+      "prompt": "Use case: illustration-story. Create an individual square illustration for a Transport Town Knowledge & Safety answer tile. Hand-painted gouache and colored pencil, warm classroom picture-book palette, clean solid shapes and sufficient contrast to read at 70px wide. Miniature World style from the references; no book, typography or UI. One complete subject or compact scene vignette, comfortably centered with a clean transparent margin and genuine RGBA beyond the silhouette. Use consistent ordinary daylight, no colored answer badge, checkmark, cross, label, logo, hard shadow or enclosing card. One red-and-ivory inflatable swimming ring, plain round torus, slightly tilted so the hole reads. No ropes, straps or safety markings, no water.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "site/dist/images/teaching-scenes/street-crossing.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        86,
+        170,
+        1161,
+        1065
+      ],
+      "suggestedCrop": [
+        10,
+        94,
+        1237,
+        1141
+      ],
+      "sha256": "8784f8a26aacbf04d7a0f537af6be7e652d031f374353403464d40d1ea461151"
+    },
+    {
+      "name": "answer-car-restraint-3",
+      "id": "safety.car-restraint.choice-3",
+      "label": "Roller skates",
+      "group": "answer",
+      "path": "artwork/classroom/miniature-world-v1/originals/answer-car-restraint-3.png",
+      "transparent": true,
+      "generationId": "exec-0ae7c2e3-4b2f-4a01-b7ac-c66964b067a0",
+      "prompt": "Use case: illustration-story. Create an individual square illustration for a Transport Town Knowledge & Safety answer tile. Hand-painted gouache and colored pencil, warm classroom picture-book palette, clean solid shapes and sufficient contrast to read at 70px wide. Miniature World style from the references; no book, typography or UI. One complete subject or compact scene vignette, comfortably centered with a clean transparent margin and genuine RGBA beyond the silhouette. Use consistent ordinary daylight, no colored answer badge, checkmark, cross, label, logo, hard shadow or enclosing card. A pair of classic blue quad roller skates, each with four orange wheels, shown together in three-quarter view. No feet or floor.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "site/dist/images/teaching-scenes/street-crossing.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1312,
+        1199
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        78,
+        89,
+        1212,
+        1131
+      ],
+      "suggestedCrop": [
+        0,
+        9,
+        1292,
+        1199
+      ],
+      "sha256": "cdd0f7786811d75138379cceac00ffaac306ddc4a40e62e5dce3044c6f78255c"
+    },
+    {
+      "name": "answer-cycle-helmet-2",
+      "id": "safety.cycle-helmet.choice-2",
+      "label": "A party hat",
+      "group": "answer",
+      "path": "artwork/classroom/miniature-world-v1/originals/answer-cycle-helmet-2.png",
+      "transparent": true,
+      "generationId": "exec-2cc5400d-7cba-40b5-a117-733357dfd021",
+      "prompt": "Use case: illustration-story. Create an individual square illustration for a Transport Town Knowledge & Safety answer tile. Hand-painted gouache and colored pencil, warm classroom picture-book palette, clean solid shapes and sufficient contrast to read at 70px wide. Miniature World style from the references; no book, typography or UI. One complete subject or compact scene vignette, comfortably centered with a clean transparent margin and genuine RGBA beyond the silhouette. Use consistent ordinary daylight, no colored answer badge, checkmark, cross, label, logo, hard shadow or enclosing card. One paper cone birthday party hat, yellow with large blue spots, a small red pompom and thin elastic chin string. No writing, no person.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "site/dist/images/teaching-scenes/street-crossing.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        240,
+        34,
+        992,
+        1214
+      ],
+      "suggestedCrop": [
+        157,
+        0,
+        1075,
+        1254
+      ],
+      "sha256": "ed30f49eda9d8abde54410a9013c883ab88cbe186a3ccce37fd9f7d552505902"
+    },
+    {
+      "name": "answer-cycle-helmet-3",
+      "id": "safety.cycle-helmet.choice-3",
+      "label": "Slippers",
+      "group": "answer",
+      "path": "artwork/classroom/miniature-world-v1/originals/answer-cycle-helmet-3.png",
+      "transparent": true,
+      "generationId": "exec-c4b1ef63-c9bb-471a-8467-61ecfa82b983",
+      "prompt": "Use case: illustration-story. Create an individual square illustration for a Transport Town Knowledge & Safety answer tile. Hand-painted gouache and colored pencil, warm classroom picture-book palette, clean solid shapes and sufficient contrast to read at 70px wide. Miniature World style from the references; no book, typography or UI. One complete subject or compact scene vignette, comfortably centered with a clean transparent margin and genuine RGBA beyond the silhouette. Use consistent ordinary daylight, no colored answer badge, checkmark, cross, label, logo, hard shadow or enclosing card. A pair of soft purple indoor house slippers with plain backs and fuzzy texture, front three-quarter, no heel straps, no feet.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "site/dist/images/teaching-scenes/street-crossing.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        49,
+        253,
+        1200,
+        1029
+      ],
+      "suggestedCrop": [
+        0,
+        172,
+        1254,
+        1110
+      ],
+      "sha256": "a8f47dd9b54eb9a51c2553a3ec102c911294bdb3ef6ab5d89c92e5642bd86582"
+    },
+    {
+      "name": "answer-red-light-1",
+      "id": "safety.red-light.choice-1",
+      "label": "Stop",
+      "group": "answer",
+      "path": "artwork/classroom/miniature-world-v1/originals/answer-red-light-1.png",
+      "transparent": true,
+      "generationId": "exec-970f5010-da7b-4d99-95b3-1fc42c552c35",
+      "prompt": "Use case: illustration-story. Create an individual square illustration for a Transport Town Knowledge & Safety answer tile. Hand-painted gouache and colored pencil, warm classroom picture-book palette, clean solid shapes and sufficient contrast to read at 70px wide. Miniature World style from the references; no book, typography or UI. One complete subject or compact scene vignette, comfortably centered with a clean transparent margin and genuine RGBA beyond the silhouette. Use consistent ordinary daylight, no colored answer badge, checkmark, cross, label, logo, hard shadow or enclosing card. One small cream-colored hatchback stopped completely just behind a broad white stop line on a tiny clipped road patch; distant plain curb. No sign, no text, no movement lines.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "site/dist/images/teaching-scenes/street-crossing.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        16,
+        57,
+        1240,
+        1158
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1254,
+        1244
+      ],
+      "sha256": "fd5e7a43b20d8065f9df322ad1200a0d5f7fedfaebe3fc6aab3520d58a7d6e3b"
+    },
+    {
+      "name": "answer-red-light-2",
+      "id": "safety.red-light.choice-2",
+      "label": "Go fast",
+      "group": "answer",
+      "path": "artwork/classroom/miniature-world-v1/originals/answer-red-light-2.png",
+      "transparent": true,
+      "generationId": "exec-0e4c38aa-195c-40d7-827c-4216d4b27214",
+      "prompt": "Use case: illustration-story. Create an individual square illustration for a Transport Town Knowledge & Safety answer tile. Hand-painted gouache and colored pencil, warm classroom picture-book palette, clean solid shapes and sufficient contrast to read at 70px wide. Miniature World style from the references; no book, typography or UI. One complete subject or compact scene vignette, comfortably centered with a clean transparent margin and genuine RGBA beyond the silhouette. Use consistent ordinary daylight, no colored answer badge, checkmark, cross, label, logo, hard shadow or enclosing card. One small sky-blue hatchback moving right on a tiny clipped road patch, with two restrained pale hand-painted motion streaks behind the vehicle. No marks crossing the front of the car, no traffic light.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "site/dist/images/teaching-scenes/street-crossing.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        36,
+        115,
+        1219,
+        1117
+      ],
+      "suggestedCrop": [
+        0,
+        32,
+        1254,
+        1200
+      ],
+      "sha256": "62b247793ba64fc9cf3dabc27fd7c4770d939d11f5be805927df5c4e496d06a5"
+    },
+    {
+      "name": "answer-red-light-3",
+      "id": "safety.red-light.choice-3",
+      "label": "Dance",
+      "group": "answer",
+      "path": "artwork/classroom/miniature-world-v1/originals/answer-red-light-3.png",
+      "transparent": true,
+      "generationId": "exec-ac0ccac6-a7e7-425e-b2f2-2497534f2aa2",
+      "prompt": "Use case: illustration-story. Create an individual square illustration for a Transport Town Knowledge & Safety answer tile. Hand-painted gouache and colored pencil, warm classroom picture-book palette, clean solid shapes and sufficient contrast to read at 70px wide. Miniature World style from the references; no book, typography or UI. One complete subject or compact scene vignette, comfortably centered with a clean transparent margin and genuine RGBA beyond the silhouette. Use consistent ordinary daylight, no colored answer badge, checkmark, cross, label, logo, hard shadow or enclosing card. One full-body adult in a warm red jumper and navy trousers doing a simple dance step with one foot lifted and arms up. A tiny warm painted note near the head is okay; no dance floor or text. No vehicle.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "site/dist/images/teaching-scenes/street-crossing.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        237,
+        80,
+        957,
+        1210
+      ],
+      "suggestedCrop": [
+        157,
+        0,
+        1037,
+        1254
+      ],
+      "sha256": "4c33668dc398dd3ba26174e19b7757296698dce381b635df6077943e5fe57628"
+    },
+    {
+      "name": "answer-road-crossing-1",
+      "id": "safety.road-crossing.choice-1",
+      "label": "Stop, look, and listen",
+      "group": "answer",
+      "path": "artwork/classroom/miniature-world-v1/originals/answer-road-crossing-1.png",
+      "transparent": true,
+      "generationId": "exec-d0025450-21ea-4fe6-8a19-51cd7d7dfdb0",
+      "prompt": "Use case: illustration-story. Create an individual square illustration for a Transport Town Knowledge & Safety answer tile. Hand-painted gouache and colored pencil, warm classroom picture-book palette, clean solid shapes and sufficient contrast to read at 70px wide. Miniature World style from the references; no book, typography or UI. One complete subject or compact scene vignette, comfortably centered with a clean transparent margin and genuine RGBA beyond the silhouette. Use consistent ordinary daylight, no colored answer badge, checkmark, cross, label, logo, hard shadow or enclosing card. Two people, an adult and primary-age child, both stopped together behind a clear pavement curb. Both stand still, child’s head turned to check traffic with eyes open. Small compact pavement and road slice. No vehicles, no icons, no arrows.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "site/dist/images/teaching-scenes/street-crossing.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        32,
+        29,
+        1223,
+        1208
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "sha256": "0b3871f1dd43a10960f6b7428b2d9d5ce712e16ef237359e92bcfb9b0c9f9422"
+    },
+    {
+      "name": "answer-road-crossing-2",
+      "id": "safety.road-crossing.choice-2",
+      "label": "Run without looking",
+      "group": "answer",
+      "path": "artwork/classroom/miniature-world-v1/originals/answer-road-crossing-2.png",
+      "transparent": true,
+      "generationId": "exec-26f18071-04ae-455f-ab7e-e2e414225649",
+      "prompt": "Use case: illustration-story. Create an individual square illustration for a Transport Town Knowledge & Safety answer tile. Hand-painted gouache and colored pencil, warm classroom picture-book palette, clean solid shapes and sufficient contrast to read at 70px wide. Miniature World style from the references; no book, typography or UI. One complete subject or compact scene vignette, comfortably centered with a clean transparent margin and genuine RGBA beyond the silhouette. Use consistent ordinary daylight, no colored answer badge, checkmark, cross, label, logo, hard shadow or enclosing card. One primary-age child taking a running stride toward the edge of a small empty curb and road slice, head facing straight ahead. Show the illustrative wrong choice without traffic, collisions or injury. No icons.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "site/dist/images/teaching-scenes/street-crossing.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        18,
+        31,
+        1231,
+        1222
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "sha256": "6db3b934d3ecbac0879b8f800032853bda4c207daaf9f7d103179ad4081232d4"
+    },
+    {
+      "name": "answer-road-crossing-3",
+      "id": "safety.road-crossing.choice-3",
+      "label": "Close our eyes",
+      "group": "answer",
+      "path": "artwork/classroom/miniature-world-v1/originals/answer-road-crossing-3.png",
+      "transparent": true,
+      "generationId": "exec-7ef284f6-8f69-4c4a-bfac-7b0dd9c48d71",
+      "prompt": "Use case: illustration-story. Create an individual square illustration for a Transport Town Knowledge & Safety answer tile. Hand-painted gouache and colored pencil, warm classroom picture-book palette, clean solid shapes and sufficient contrast to read at 70px wide. Miniature World style from the references; no book, typography or UI. One complete subject or compact scene vignette, comfortably centered with a clean transparent margin and genuine RGBA beyond the silhouette. Use consistent ordinary daylight, no colored answer badge, checkmark, cross, label, logo, hard shadow or enclosing card. Bust of a child with both palms covering both eyes and elbows visible, looking neither left nor right. Small simple faded warm pavement fragment below if needed. No other people, signs or icons.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "site/dist/images/teaching-scenes/street-crossing.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        91,
+        63,
+        1165,
+        1200
+      ],
+      "suggestedCrop": [
+        11,
+        0,
+        1245,
+        1254
+      ],
+      "sha256": "aa47406b73c3c0d2cd0c03d499671439e3a15d9b5d19457da7721a5587292496"
+    },
+    {
+      "name": "answer-life-jacket-2",
+      "id": "safety.life-jacket.choice-2",
+      "label": "A winter scarf",
+      "group": "answer",
+      "path": "artwork/classroom/miniature-world-v1/originals/answer-life-jacket-2.png",
+      "transparent": true,
+      "generationId": "exec-a6ddb3e1-16bc-485b-a716-bd4427eeab1f",
+      "prompt": "Use case: illustration-story. Create an individual square illustration for a Transport Town Knowledge & Safety answer tile. Hand-painted gouache and colored pencil, warm classroom picture-book palette, clean solid shapes and sufficient contrast to read at 70px wide. Miniature World style from the references; no book, typography or UI. One complete subject or compact scene vignette, comfortably centered with a clean transparent margin and genuine RGBA beyond the silhouette. Use consistent ordinary daylight, no colored answer badge, checkmark, cross, label, logo, hard shadow or enclosing card. One knitted indigo winter scarf folded in a loose U with wide stripes and thick fringe at the ends. No other clothing or person.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "site/dist/images/teaching-scenes/street-crossing.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        11,
+        112,
+        1243,
+        1190
+      ],
+      "suggestedCrop": [
+        0,
+        25,
+        1254,
+        1254
+      ],
+      "sha256": "bae95a6e26768cdd11609b2ee26abc4474ee4c40ad9a52c6aaa1cf29fa512d82"
+    },
+    {
+      "name": "answer-life-jacket-3",
+      "id": "safety.life-jacket.choice-3",
+      "label": "A school bag",
+      "group": "answer",
+      "path": "artwork/classroom/miniature-world-v1/originals/answer-life-jacket-3.png",
+      "transparent": true,
+      "generationId": "exec-12ed5f31-ee5a-4c91-af2a-aa81dc8928e9",
+      "prompt": "Use case: illustration-story. Create an individual square illustration for a Transport Town Knowledge & Safety answer tile. Hand-painted gouache and colored pencil, warm classroom picture-book palette, clean solid shapes and sufficient contrast to read at 70px wide. Miniature World style from the references; no book, typography or UI. One complete subject or compact scene vignette, comfortably centered with a clean transparent margin and genuine RGBA beyond the silhouette. Use consistent ordinary daylight, no colored answer badge, checkmark, cross, label, logo, hard shadow or enclosing card. One small brick-red school backpack with front zip pocket, top carry handle and visible padded shoulder straps. No person, lettering or logos.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "site/dist/images/teaching-scenes/street-crossing.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        158,
+        75,
+        1086,
+        1169
+      ],
+      "suggestedCrop": [
+        81,
+        0,
+        1163,
+        1246
+      ],
+      "sha256": "b045d5c7d760fff3884920814d4d7fed5d07293787cab2fcf2d4a48dfea7f370"
+    },
+    {
+      "name": "answer-bus-seat-1",
+      "id": "safety.bus-seat.choice-1",
+      "label": "On a seat",
+      "group": "answer",
+      "path": "artwork/classroom/miniature-world-v1/originals/answer-bus-seat-1.png",
+      "transparent": true,
+      "generationId": "exec-0fc93eee-8627-458a-94c7-0903938a66fb",
+      "prompt": "Use case: illustration-story. Create an individual square illustration for a Transport Town Knowledge & Safety answer tile. Hand-painted gouache and colored pencil, warm classroom picture-book palette, clean solid shapes and sufficient contrast to read at 70px wide. Miniature World style from the references; no book, typography or UI. One complete subject or compact scene vignette, comfortably centered with a clean transparent margin and genuine RGBA beyond the silhouette. Use consistent ordinary daylight, no colored answer badge, checkmark, cross, label, logo, hard shadow or enclosing card. One compact mini vignette from inside a bus, with one full-body school-age rider sitting upright on a blue fabric passenger seat, both feet on bus floor, next to a window and yellow hand pole. Seat clearly distinguishable from stair step. No car seat belt.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "site/dist/images/teaching-scenes/street-crossing.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        87,
+        47,
+        1098,
+        1204
+      ],
+      "suggestedCrop": [
+        6,
+        0,
+        1179,
+        1254
+      ],
+      "sha256": "e2f532d7c53b50835128f80499179219a7d65536dffa786dcf22d1c020a0c3b7"
+    },
+    {
+      "name": "answer-bus-seat-2",
+      "id": "safety.bus-seat.choice-2",
+      "label": "On the steps",
+      "group": "answer",
+      "path": "artwork/classroom/miniature-world-v1/originals/answer-bus-seat-2.png",
+      "transparent": true,
+      "generationId": "exec-5eec1f09-7ee1-4dec-9bb5-47356d21c8dc",
+      "prompt": "Use case: illustration-story. Create an individual square illustration for a Transport Town Knowledge & Safety answer tile. Hand-painted gouache and colored pencil, warm classroom picture-book palette, clean solid shapes and sufficient contrast to read at 70px wide. Miniature World style from the references; no book, typography or UI. One complete subject or compact scene vignette, comfortably centered with a clean transparent margin and genuine RGBA beyond the silhouette. Use consistent ordinary daylight, no colored answer badge, checkmark, cross, label, logo, hard shadow or enclosing card. One isolated cutaway vignette of a child sitting on the lower entry step just inside a parked bus doorway, next to one hand rail. Show two stair risers and a bit of a yellow bus body so steps unmistakable. No movement or danger beyond the illustrated wrong choice.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "site/dist/images/teaching-scenes/street-crossing.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        50,
+        60,
+        1182,
+        1164
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1254,
+        1244
+      ],
+      "sha256": "170a493b18e8d9ada67abb3f6bfacea1493e75458494038149f3cd8fd026dc26"
+    },
+    {
+      "name": "answer-bus-seat-3",
+      "id": "safety.bus-seat.choice-3",
+      "label": "On the roof",
+      "group": "answer",
+      "path": "artwork/classroom/miniature-world-v1/originals/answer-bus-seat-3.png",
+      "transparent": true,
+      "generationId": "exec-83a7d69d-90c5-42eb-948e-03365eb02dc5",
+      "prompt": "Use case: illustration-story. Create an individual square illustration for a Transport Town Knowledge & Safety answer tile. Hand-painted gouache and colored pencil, warm classroom picture-book palette, clean solid shapes and sufficient contrast to read at 70px wide. Miniature World style from the references; no book, typography or UI. One complete subject or compact scene vignette, comfortably centered with a clean transparent margin and genuine RGBA beyond the silhouette. Use consistent ordinary daylight, no colored answer badge, checkmark, cross, label, logo, hard shadow or enclosing card. One toy-sized yellow bus seen from slightly raised three-quarter view with one small seated figure on the flat roof, still and clearly separate from bus windows. No moving road or hazard, no exaggerated expression. Fully visible bus.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "site/dist/images/teaching-scenes/street-crossing.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        77,
+        95,
+        1180,
+        1126
+      ],
+      "suggestedCrop": [
+        0,
+        17,
+        1254,
+        1204
+      ],
+      "sha256": "bcb826f4dbcfc734f7d03c2a75ac60f528c09fff87b1f46bf674e708cb3d82ae"
+    },
+    {
+      "name": "answer-reversing-vehicle-1",
+      "id": "safety.reversing-vehicle.choice-1",
+      "label": "Only when it has stopped and an adult says it is safe",
+      "group": "answer",
+      "path": "artwork/classroom/miniature-world-v1/originals/answer-reversing-vehicle-1.png",
+      "transparent": true,
+      "generationId": "exec-933b9b33-9042-44aa-9f11-f749bfe42896",
+      "prompt": "Use case: illustration-story. Create an individual square illustration for a Transport Town Knowledge & Safety answer tile. Hand-painted gouache and colored pencil, warm classroom picture-book palette, clean solid shapes and sufficient contrast to read at 70px wide. Miniature World style from the references; no book, typography or UI. One complete subject or compact scene vignette, comfortably centered with a clean transparent margin and genuine RGBA beyond the silhouette. Use consistent ordinary daylight, no colored answer badge, checkmark, cross, label, logo, hard shadow or enclosing card. Miniature road-safety vignette. A child and accompanying adult together on a raised pavement. Adult looks toward and gestures to the child. In the background a pale blue hatchback is clearly stationary with no lit reverse lamps. Adult and child remain outside the vehicle's path. Compact and readable.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "site/dist/images/teaching-scenes/street-crossing.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        18,
+        35,
+        1234,
+        1217
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "sha256": "3520f5c39022e48a8de5409c0b6df623dbe441c55bfe98fe83c1198141bfdcc2"
+    },
+    {
+      "name": "answer-reversing-vehicle-2",
+      "id": "safety.reversing-vehicle.choice-2",
+      "label": "Whenever we want",
+      "group": "answer",
+      "path": "artwork/classroom/miniature-world-v1/originals/answer-reversing-vehicle-2.png",
+      "transparent": true,
+      "generationId": "exec-a3b91ebe-e30c-4253-8c90-77ee0616c6da",
+      "prompt": "Use case: illustration-story. Create an individual square illustration for a Transport Town Knowledge & Safety answer tile. Hand-painted gouache and colored pencil, warm classroom picture-book palette, clean solid shapes and sufficient contrast to read at 70px wide. Miniature World style from the references; no book, typography or UI. One complete subject or compact scene vignette, comfortably centered with a clean transparent margin and genuine RGBA beyond the silhouette. Use consistent ordinary daylight, no colored answer badge, checkmark, cross, label, logo, hard shadow or enclosing card. One child starting a step from pavement toward an empty driveway, without an accompanying adult, eyes looking away. Crop the driveway and pavement as a compact vignette. No vehicle close by, no incident.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "site/dist/images/teaching-scenes/street-crossing.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1312,
+        1199
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        22,
+        44,
+        1287,
+        1123
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1312,
+        1199
+      ],
+      "sha256": "226ff6d687e2490d8eb72249381c5aaf9fc182ba3e57a198d9977e9bdadbe3ed"
+    },
+    {
+      "name": "answer-reversing-vehicle-3",
+      "id": "safety.reversing-vehicle.choice-3",
+      "label": "When it is moving",
+      "group": "answer",
+      "path": "artwork/classroom/miniature-world-v1/originals/answer-reversing-vehicle-3.png",
+      "transparent": true,
+      "generationId": "exec-ceb0adeb-c8ae-4328-9a77-e3bcdd363987",
+      "prompt": "Use case: illustration-story. Create an individual square illustration for a Transport Town Knowledge & Safety answer tile. Hand-painted gouache and colored pencil, warm classroom picture-book palette, clean solid shapes and sufficient contrast to read at 70px wide. Miniature World style from the references; no book, typography or UI. One complete subject or compact scene vignette, comfortably centered with a clean transparent margin and genuine RGBA beyond the silhouette. Use consistent ordinary daylight, no colored answer badge, checkmark, cross, label, logo, hard shadow or enclosing card. One pale blue hatchback from behind, two modest white reverse lights illuminated, small simple movement strokes near rear wheels. Tiny driveway paving beneath. No pedestrian, no arrow or words.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "site/dist/images/teaching-scenes/street-crossing.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        28,
+        81,
+        1232,
+        1177
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "sha256": "d12a796ec31266ea54c5c8092dd7c061ddf27b0647c4e3b84731f64269f57fac"
+    },
+    {
+      "name": "answer-crossing-place-2",
+      "id": "safety.crossing-place.choice-2",
+      "label": "Between parked cars",
+      "group": "answer",
+      "path": "artwork/classroom/miniature-world-v1/originals/answer-crossing-place-2.png",
+      "transparent": true,
+      "generationId": "exec-3237c45c-f054-4c60-9ad8-f17be92d93d1",
+      "prompt": "Use case: illustration-story. Create an individual square illustration for a Transport Town Knowledge & Safety answer tile. Hand-painted gouache and colored pencil, warm classroom picture-book palette, clean solid shapes and sufficient contrast to read at 70px wide. Miniature World style from the references; no book, typography or UI. One complete subject or compact scene vignette, comfortably centered with a clean transparent margin and genuine RGBA beyond the silhouette. Use consistent ordinary daylight, no colored answer badge, checkmark, cross, label, logo, hard shadow or enclosing card. Two differently coloured compact hatchbacks parked in line along a quiet curb with one visible narrow gap between them, shown from a gently raised angle. One small piece of street under the pair. No person, no crossing stripes, no text.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "site/dist/images/teaching-scenes/street-crossing.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        17,
+        106,
+        1234,
+        1046
+      ],
+      "suggestedCrop": [
+        0,
+        20,
+        1254,
+        1132
+      ],
+      "sha256": "7a92a5ef6d18a290be78a4944db79e5304ffe4248e2dbe5ba7ee308d8dae7de0"
+    },
+    {
+      "name": "answer-crossing-place-3",
+      "id": "safety.crossing-place.choice-3",
+      "label": "Around a blind corner",
+      "group": "answer",
+      "path": "artwork/classroom/miniature-world-v1/originals/answer-crossing-place-3.png",
+      "transparent": true,
+      "generationId": "exec-c8318361-8da5-4b31-af22-bccf79b9fe7c",
+      "prompt": "Use case: illustration-story. Create an individual square illustration for a Transport Town Knowledge & Safety answer tile. Hand-painted gouache and colored pencil, warm classroom picture-book palette, clean solid shapes and sufficient contrast to read at 70px wide. Miniature World style from the references; no book, typography or UI. One complete subject or compact scene vignette, comfortably centered with a clean transparent margin and genuine RGBA beyond the silhouette. Use consistent ordinary daylight, no colored answer badge, checkmark, cross, label, logo, hard shadow or enclosing card. A miniature road bend viewed from raised three-quarter angle, with a tall tidy dense hedge right on the inside of the curve, clearly blocking the view around it. One small curved road and kerb slice only, no people or cars.",
+      "references": [
+        "artwork/menu/miniature-world-pilot-v1/meet-the-words.png",
+        "site/dist/images/teaching-scenes/street-crossing.png"
+      ],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        30,
+        182,
+        1201,
+        1141
+      ],
+      "suggestedCrop": [
+        0,
+        100,
+        1254,
+        1223
+      ],
+      "sha256": "348edec83d912b865c6e4c7132572001c8c753f5d29b827d0b8d138012e3cbf9"
+    },
+    {
+      "id": "safety.car-restraint.choice-1",
+      "label": "A seat belt",
+      "group": "answer",
+      "sourceId": "part.seat-belt",
+      "reused": true,
+      "transparent": true,
+      "path": "site/dist/images/vocabulary/part.seat-belt.png",
+      "status": "reuse approved vocabulary artwork",
+      "size": [
+        720,
+        720
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        63,
+        64,
+        658,
+        656
+      ],
+      "suggestedCrop": [
+        21,
+        22,
+        700,
+        698
+      ],
+      "sha256": "6f7cc1fd1849548b384d4dc9d9ddbeb11d64ab8d9d97f7d00930b8147934c272"
+    },
+    {
+      "id": "safety.cycle-helmet.choice-1",
+      "label": "A helmet",
+      "group": "answer",
+      "sourceId": "safety.helmet",
+      "reused": true,
+      "transparent": true,
+      "path": "site/dist/images/vocabulary/safety.helmet.png",
+      "status": "reuse approved vocabulary artwork",
+      "size": [
+        720,
+        720
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        84,
+        63,
+        637,
+        657
+      ],
+      "suggestedCrop": [
+        42,
+        21,
+        679,
+        699
+      ],
+      "sha256": "66e9ea2431d0a900b99f61eb3a1d5533e103d303a5ec945b3c56d0c93da4776b"
+    },
+    {
+      "id": "safety.life-jacket.choice-1",
+      "label": "A life jacket",
+      "group": "answer",
+      "sourceId": "safety.life-jacket",
+      "reused": true,
+      "transparent": true,
+      "path": "site/dist/images/vocabulary/safety.life-jacket.png",
+      "status": "reuse approved vocabulary artwork",
+      "size": [
+        720,
+        720
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        132,
+        63,
+        588,
+        658
+      ],
+      "suggestedCrop": [
+        90,
+        21,
+        630,
+        700
+      ],
+      "sha256": "93d3d871cf5a189abf36519d1cfab2723f9d5a755c9680150841c5d7f9e72051"
+    },
+    {
+      "id": "safety.crossing-place.choice-1",
+      "label": "At a pedestrian crossing",
+      "group": "answer",
+      "sourceId": "place.pedestrian-crossing",
+      "reused": true,
+      "transparent": true,
+      "path": "site/dist/images/vocabulary/place.pedestrian-crossing.png",
+      "status": "reuse approved vocabulary artwork",
+      "size": [
+        720,
+        720
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        63,
+        178,
+        658,
+        542
+      ],
+      "suggestedCrop": [
+        21,
+        136,
+        700,
+        584
+      ],
+      "sha256": "acad76186a7afd99bfaf3c5fdf40b816fabe6ed216ed2fbb380ae8af95900fcb"
+    }
+  ]
+}

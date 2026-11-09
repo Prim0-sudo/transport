@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Transport Town · missing artwork review</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#eef4f8;color:#16354b;font:16px/1.45 system-ui,sans-serif}
+main{max-width:1050px;margin:auto;padding:clamp(14px,4vw,35px)}
+h1,h2,h3{line-height:1.18}
+a{color:inherit}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px}
+.group{margin:18px 0;padding:12px;border:1px solid #bbcfda;border-radius:12px;background:#fff}
+.card{display:flex;flex-direction:column;gap:8px;min-width:0;padding:10px;border:1px solid #bbcfda;border-radius:10px;background:#fff}
+.card img,.card svg{display:block;width:100%;height:125px;object-fit:contain;border-radius:6px;background:#fff7e2}
+.card.question img{height:160px;object-fit:contain}
+.card svg{height:156px}
+.card small{display:block}
+.swatches{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.swatches img+img{background:#17384c}
+.map .swatches img{height:95px}
+.map .marker-sample{display:flex;align-items:center;gap:8px;padding:5px 8px;background:#a2aa69;border-radius:6px}
+.map .marker-sample svg{width:30px;height:30px;background:transparent}
+@media(max-width:480px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.swatches img{height:80px}}
+</style>
+<main>
+  <h1>Transport Town artwork review</h1>
+  <p>Painted category covers, a completion medal, a Driving game card, Safety question and answer art, vehicle part insets, and modular scenery for Dispatch.</p>
+  <p><a href="../../../docs/ARTWORK-REPORT-2026-11-10.md">Open the artwork report and integration notes</a></p>
+  <section><h2>Category, completion, and game cards</h2><div class="grid" id="covers"></div></section>
+  <section><h2>Knowledge &amp; Safety</h2><div id="safety"></div></section>
+  <section><h2>Vehicle part detail insets</h2><div class="grid" id="parts"></div></section>
+  <section class="map"><h2>Dispatch map pieces</h2><div class="grid" id="map"></div></section>
+</main>
+<script type="module">
+const root = '../../../';
+const svgNs = 'http://www.w3.org/2000/svg';
+const [classroom, insets, map] = await Promise.all(
+  ['manifest.json', 'part-insets.json', '../../dispatch/miniature-world-map-v1/manifest.json']
+    .map(async url => {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error('Could not load ' + url);
+      return response.json();
+    })
+);
+function tag(name, text, className) {
+  const node = document.createElement(name);
+  if (text) node.textContent = text;
+  if (className) node.className = className;
+  return node;
+}
+function picture(asset) {
+  const image = tag('img');
+  image.src = root + asset.path;
+  image.alt = asset.label;
+  return image;
+}
+function card(asset) {
+  const wrapper = tag('div', '', 'card ' + asset.group);
+  if (asset.transparent) {
+    const pair = tag('div', '', 'swatches');
+    pair.append(picture(asset), picture(asset));
+    pair.lastChild.alt = '';
+    wrapper.append(pair);
+  } else {
+    wrapper.append(picture(asset));
+  }
+  const link = tag('a', asset.label);
+  link.href = root + asset.path;
+  wrapper.append(link);
+  if (asset.reused) wrapper.append(tag('small', 'From the approved vocabulary library'));
+  return wrapper;
+}
+const covers = document.querySelector('#covers');
+classroom.assets.filter(asset => ['category', 'completion', 'game-card'].includes(asset.group)).forEach(asset => covers.append(card(asset)));
+const safety = document.querySelector('#safety');
+for (const question of classroom.assets.filter(asset => asset.group === 'question')) {
+  const group = tag('div', '', 'group');
+  const grid = tag('div', '', 'grid');
+  grid.append(card(question));
+  classroom.assets.filter(asset => asset.id.startsWith(question.id + '.choice-'))
+    .sort((a, b) => a.id.localeCompare(b.id)).forEach(asset => grid.append(card(asset)));
+  group.append(tag('h3', question.label), grid);
+  safety.append(group);
+}
+const parts = document.querySelector('#parts');
+for (const part of insets.entries) {
+  const wrapper = tag('div', '', 'card');
+  const svg = document.createElementNS(svgNs, 'svg');
+  svg.setAttribute('viewBox', part.insetViewBox.join(' '));
+  svg.setAttribute('role', 'img');
+  svg.setAttribute('aria-label', part.label);
+  const image = document.createElementNS(svgNs, 'image');
+  image.setAttribute('href', root + part.scenePath);
+  image.setAttribute('width', part.sceneViewBox[2]);
+  image.setAttribute('height', part.sceneViewBox[3]);
+  image.setAttribute('preserveAspectRatio', 'none');
+  const path = document.createElementNS(svgNs, 'path');
+  path.setAttribute('d', part.highlightPath);
+  path.setAttribute('fill-rule', part.fillRule);
+  path.setAttribute('fill', '#ffd34e35');
+  path.setAttribute('stroke', '#ffde56');
+  path.setAttribute('stroke-width', '2.5');
+  path.setAttribute('vector-effect', 'non-scaling-stroke');
+  svg.append(image, path);
+  wrapper.append(svg, tag('strong', part.label));
+  parts.append(wrapper);
+}
+const mapGrid = document.querySelector('#map');
+for (const asset of map.assets) {
+  const wrapper = card(asset);
+  if (asset.group === 'landmark') {
+    const sample = tag('div', '', 'marker-sample');
+    const svg = document.createElementNS(svgNs, 'svg');
+    const [left, top, right, bottom] = asset.visibleBounds;
+    svg.setAttribute('viewBox', [left, top, right-left, bottom-top].join(' '));
+    svg.setAttribute('aria-hidden', 'true');
+    const image = document.createElementNS(svgNs, 'image');
+    image.setAttribute('href', root + asset.path);
+    image.setAttribute('width', asset.size[0]);
+    image.setAttribute('height', asset.size[1]);
+    svg.append(image);
+    sample.append(svg, tag('small', '30 px board sample'));
+    wrapper.append(sample);
+  }
+  mapGrid.append(wrapper);
+}
+</script>

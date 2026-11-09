@@ -1,0 +1,446 @@
+{
+  "sourceLedger": "docs/content/TRANSPORT-FIELD-GUIDE-SCENES.json",
+  "description": "Optional context insets paired with the individual part pictures. Render each existing scene image and its highlight on the same SVG viewBox. No new raster or modified scene.",
+  "entries": [
+    {
+      "id": "part.wheel",
+      "label": "Wheel",
+      "sceneId": "bicycle-parts",
+      "scenePath": "site/dist/images/teaching-scenes/bicycle-parts.png",
+      "sceneSha256": "5454f8e75294a74eb737848f231ded768c742656f25bd584fdf6f77cd972cd4e",
+      "sceneViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "insetViewBox": [
+        347,
+        74,
+        453,
+        459
+      ],
+      "highlightPath": "M630 215 C710 211 774 278 776 359 C782 444 720 514 643 520 C562 525 496 462 492 381 C486 300 540 220 619 215Z",
+      "fillRule": "evenodd",
+      "note": "The whole wheel includes the hub, spokes, rim and tyre."
+    },
+    {
+      "id": "part.tyre",
+      "label": "Tyre",
+      "sceneId": "bicycle-parts",
+      "scenePath": "site/dist/images/teaching-scenes/bicycle-parts.png",
+      "sceneSha256": "5454f8e75294a74eb737848f231ded768c742656f25bd584fdf6f77cd972cd4e",
+      "sceneViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "insetViewBox": [
+        347,
+        74,
+        453,
+        459
+      ],
+      "highlightPath": "M630 215 C710 211 774 278 776 359 C782 444 720 514 643 520 C562 525 496 462 492 381 C486 300 540 220 619 215Z M631 237 C694 234 747 290 749 362 C755 434 705 488 641 495 C574 500 519 446 516 374 C512 302 560 242 627 237Z",
+      "fillRule": "evenodd",
+      "note": "The tyre is the dark rubber ring around the wheel."
+    },
+    {
+      "id": "part.pedal",
+      "label": "Pedal",
+      "sceneId": "bicycle-parts",
+      "scenePath": "site/dist/images/teaching-scenes/bicycle-parts.png",
+      "sceneSha256": "5454f8e75294a74eb737848f231ded768c742656f25bd584fdf6f77cd972cd4e",
+      "sceneViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "insetViewBox": [
+        345,
+        412,
+        120,
+        78
+      ],
+      "highlightPath": "M372 437 L423 432 Q435 431 446 443 L446 461 Q443 471 430 471 L379 472 Q366 471 364 462 L367 444Z",
+      "fillRule": "evenodd",
+      "note": "Push the pedal with your foot to move the bicycle."
+    },
+    {
+      "id": "part.handlebars",
+      "label": "Handlebars",
+      "sceneId": "bicycle-parts",
+      "scenePath": "site/dist/images/teaching-scenes/bicycle-parts.png",
+      "sceneSha256": "5454f8e75294a74eb737848f231ded768c742656f25bd584fdf6f77cd972cd4e",
+      "sceneViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "insetViewBox": [
+        296,
+        0,
+        504,
+        328
+      ],
+      "highlightPath": "M387 67 Q389 61 400 57 L449 40 Q457 36 463 46 Q480 39 495 42 Q508 44 521 56 L538 72 Q548 78 560 77 L582 76 Q604 76 614 63 Q627 48 640 44 L656 39 L668 40 Q672 36 681 37 L722 40 Q732 43 732 53 L729 66 Q727 75 717 74 L674 65 Q666 63 665 56 Q646 53 632 69 Q618 87 603 92 Q593 95 580 95 L575 105 Q567 109 566 126 L549 130 Q545 113 541 107 L541 98 Q530 96 519 85 L502 65 Q488 54 470 60 Q468 70 461 73 L405 93 Q392 97 388 86Z",
+      "fillRule": "evenodd",
+      "note": "Hold the grips and turn the handlebars to steer."
+    },
+    {
+      "id": "part.door",
+      "label": "Door",
+      "sceneId": "bus-at-the-bus-stop",
+      "scenePath": "site/dist/images/teaching-scenes/bus-at-the-bus-stop.png",
+      "sceneSha256": "576a67a318a1d9c28b7a56bd161b6bfb17c31c95c7816b0956c028955541b966",
+      "sceneViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "insetViewBox": [
+        313,
+        193,
+        231,
+        234
+      ],
+      "highlightPath": "M379 232 L392 231 L400 240 L462 240 L474 230 L479 231 L479 383 L471 390 H386 L378 382Z",
+      "fillRule": "evenodd",
+      "note": "Passengers use the open doorway to get on and off."
+    },
+    {
+      "id": "part.carriage",
+      "label": "Carriage",
+      "sceneId": "train-at-the-platform",
+      "scenePath": "site/dist/images/teaching-scenes/train-at-the-platform.png",
+      "sceneSha256": "3ef2179bcd208fb72f0b31724faad04f34dbd3996adc7badca9d293b9e970746",
+      "sceneViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "insetViewBox": [
+        5,
+        154,
+        433,
+        282
+      ],
+      "highlightPath": "M79 269 Q79 251 100 248 L343 248 Q361 247 367 260 L370 317 L369 332 L352 342 L97 344 L82 338 L74 327 L75 315 L79 311Z",
+      "fillRule": "evenodd",
+      "note": "The carriage has seats and windows for passengers."
+    },
+    {
+      "id": "part.window",
+      "label": "Window",
+      "sceneId": "train-at-the-platform",
+      "scenePath": "site/dist/images/teaching-scenes/train-at-the-platform.png",
+      "sceneSha256": "3ef2179bcd208fb72f0b31724faad04f34dbd3996adc7badca9d293b9e970746",
+      "sceneViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "insetViewBox": [
+        181,
+        249,
+        96,
+        76
+      ],
+      "highlightPath": "M210 273 H247 Q251 273 251 277 V297 Q251 301 247 301 H211 Q208 301 208 297 V277 Q208 273 210 273Z",
+      "fillRule": "evenodd",
+      "note": "Passengers can look outside through this carriage window."
+    },
+    {
+      "id": "part.sail",
+      "label": "Sail",
+      "sceneId": "small-boats",
+      "scenePath": "site/dist/images/teaching-scenes/small-boats.png",
+      "sceneSha256": "c2f5455921a7f2575016eeba1d2b083fc13ca3f3f78c088f707af6370d95bea7",
+      "sceneViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "insetViewBox": [
+        405,
+        0,
+        365,
+        281
+      ],
+      "highlightPath": "M463,208 569,23 579,16 630,54 663,94 713,183 582,198 489,205Z",
+      "fillRule": "evenodd",
+      "note": "A large sheet of strong material that catches wind to help move a boat."
+    },
+    {
+      "id": "part.wing",
+      "label": "Wing",
+      "sceneId": "aircraft",
+      "scenePath": "site/dist/images/teaching-scenes/aircraft.png",
+      "sceneSha256": "cc5aacc195aba0a7c0f5b40376374d5cf31ab9b2c2383810d77868e0767e8020",
+      "sceneViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "insetViewBox": [
+        0,
+        0,
+        465,
+        303
+      ],
+      "highlightPath": "M11,88 51,74 112,88 184,101 241,116 319,118 329,124 326,131 293,136 220,133 161,126 110,116 61,106 18,100 11,96Z",
+      "fillRule": "evenodd",
+      "note": "A shaped part of an aircraft that helps support it in flight."
+    },
+    {
+      "id": "part.rotor",
+      "label": "Rotor",
+      "sceneId": "aircraft",
+      "scenePath": "site/dist/images/teaching-scenes/aircraft.png",
+      "sceneSha256": "cc5aacc195aba0a7c0f5b40376374d5cf31ab9b2c2383810d77868e0767e8020",
+      "sceneViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "insetViewBox": [
+        230,
+        0,
+        453,
+        295
+      ],
+      "highlightPath": "M302,55 321,51 426,67 445,74 460,69 473,73 489,73 591,61 611,65 612,71 488,84 470,85 470,97 449,97 449,84 426,80 304,61Z",
+      "fillRule": "evenodd",
+      "note": "The set of turning blades above a helicopter that helps lift it."
+    },
+    {
+      "id": "part.propeller",
+      "label": "Propeller",
+      "sceneId": "aircraft",
+      "scenePath": "site/dist/images/teaching-scenes/aircraft.png",
+      "sceneSha256": "cc5aacc195aba0a7c0f5b40376374d5cf31ab9b2c2383810d77868e0767e8020",
+      "sceneViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "insetViewBox": [
+        191,
+        67,
+        146,
+        148
+      ],
+      "highlightPath": "M242,136 254,134 268,112 271,98 277,91 281,96 277,117 268,137 272,143 268,151 275,166 284,182 287,188 283,192 276,187 267,170 262,152 251,153 243,148Z",
+      "fillRule": "evenodd",
+      "note": "A set of turning blades that push air to move this airplane forwards."
+    },
+    {
+      "id": "part.steering-wheel",
+      "label": "Steering wheel",
+      "sceneId": "car-cockpit",
+      "scenePath": "site/dist/images/teaching-scenes/car-cockpit.png",
+      "sceneSha256": "ef21621e27286dc76a64ebaf4be93a48af10df3b1a0c474e7c81ec9836b027dd",
+      "sceneViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "insetViewBox": [
+        405,
+        173,
+        137,
+        139
+      ],
+      "highlightPath": "M452 282 Q439 276 445 254 Q452 229 476 207 Q487 195 496 199 Q508 204 504 223 Q500 251 477 276 Q463 290 452 282Z",
+      "fillRule": "evenodd",
+      "note": "A wheel-shaped control used to steer many vehicles."
+    },
+    {
+      "id": "part.engine",
+      "label": "Engine",
+      "sceneId": "car-cockpit",
+      "scenePath": "site/dist/images/teaching-scenes/car-cockpit.png",
+      "sceneSha256": "ef21621e27286dc76a64ebaf4be93a48af10df3b1a0c474e7c81ec9836b027dd",
+      "sceneViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "insetViewBox": [
+        538,
+        188,
+        250,
+        163
+      ],
+      "highlightPath": "M578,308 579,267 585,244 606,227 645,222 678,223 705,233 722,237 740,251 749,271 747,308 726,318 703,316 681,316 646,311 615,311Z",
+      "fillRule": "evenodd",
+      "note": "A machine that supplies power to move many vehicles."
+    },
+    {
+      "id": "part.seat-belt",
+      "label": "Seat belt",
+      "sceneId": "car-cockpit",
+      "scenePath": "site/dist/images/teaching-scenes/car-cockpit.png",
+      "sceneSha256": "ef21621e27286dc76a64ebaf4be93a48af10df3b1a0c474e7c81ec9836b027dd",
+      "sceneViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "insetViewBox": [
+        235,
+        170,
+        238,
+        241
+      ],
+      "highlightPath": "M307,215 316,208 328,211 342,229 369,263 398,302 402,314 384,327 370,338 360,355 354,373 336,371 334,363 341,344 350,335 380,307 354,275 330,246Z",
+      "fillRule": "evenodd",
+      "note": "A belt that helps hold a person in their seat. An adult checks the right belt or restraint for a child."
+    },
+    {
+      "id": "part.headlight",
+      "label": "Headlight",
+      "sceneId": "car-front",
+      "scenePath": "site/dist/images/teaching-scenes/car-front.png",
+      "sceneSha256": "f1c04fa7bac923de433dd55ab6ea307c8f46fcd01abcf005edd914bce14b6caa",
+      "sceneViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "insetViewBox": [
+        74,
+        0,
+        726,
+        473
+      ],
+      "highlightPath": "M288,253 324,253 365,268 388,289 398,306 372,303 331,300 312,288Z M541,172 558,136 576,114 578,104 598,105 608,114 661,92 711,80 737,76 744,64 764,64 770,79 785,89 780,115 751,174 742,201 717,205 704,194 650,201 586,200 551,188Z",
+      "fillRule": "evenodd",
+      "note": "A light on the front of a vehicle that helps light the way."
+    },
+    {
+      "id": "part.indicator",
+      "label": "Indicator",
+      "sceneId": "car-front",
+      "scenePath": "site/dist/images/teaching-scenes/car-front.png",
+      "sceneSha256": "f1c04fa7bac923de433dd55ab6ea307c8f46fcd01abcf005edd914bce14b6caa",
+      "sceneViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "insetViewBox": [
+        208,
+        85,
+        592,
+        385
+      ],
+      "highlightPath": "M345,309 359,299 380,300 399,306 400,313 377,314Z M600,259 610,249 640,241 718,241 749,246 750,257 739,281 720,303 690,310 619,310 603,301Z",
+      "fillRule": "evenodd",
+      "note": "A light that flashes to tell others a driver intends to turn or change lanes."
+    },
+    {
+      "id": "part.mirror",
+      "label": "Vehicle mirror",
+      "sceneId": "car-front",
+      "scenePath": "site/dist/images/teaching-scenes/car-front.png",
+      "sceneSha256": "f1c04fa7bac923de433dd55ab6ea307c8f46fcd01abcf005edd914bce14b6caa",
+      "sceneViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "insetViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "highlightPath": "M156,207 165,194 195,190 205,195 212,214 221,223 216,234 191,231 159,221Z M575,482 588,433 610,384 628,354 635,358 639,393 664,371 697,364 746,368 772,387 779,414 778,443 763,455 725,463 638,466 584,486Z",
+      "fillRule": "evenodd",
+      "note": "A mirror that helps a driver or rider see around or behind a vehicle."
+    },
+    {
+      "id": "part.brake",
+      "label": "Brake",
+      "sceneId": "cycle-safety",
+      "scenePath": "site/dist/images/teaching-scenes/cycle-safety.png",
+      "sceneSha256": "552ddef4727fe2d5993e3e6856c550767673d1699a18fd9a9eb38d3b1b03fbbf",
+      "sceneViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "insetViewBox": [
+        487,
+        285,
+        96,
+        84
+      ],
+      "highlightPath": "M519,302 526,299 534,304 537,313 550,318 550,326 542,331 552,347 544,356 532,350 527,338 527,323 519,320Z",
+      "fillRule": "evenodd",
+      "note": "A brake slows or stops a vehicle. On this bicycle the hand lever operates the brake at the wheel."
+    },
+    {
+      "id": "part.seat",
+      "label": "Seat",
+      "sceneId": "crew-and-passengers",
+      "scenePath": "site/dist/images/teaching-scenes/crew-and-passengers.png",
+      "sceneSha256": "bad53b4ed6ba8f42642351cc68b1dfd790c2f90a213bad84330180e0139c70b6",
+      "sceneViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "insetViewBox": [
+        137,
+        91,
+        143,
+        145
+      ],
+      "highlightPath": "M171,119 177,114 202,114 212,118 220,151 233,153 245,163 246,182 231,194 230,213 220,213 218,190 195,190 195,213 185,213 184,189 176,183 174,157Z",
+      "fillRule": "evenodd",
+      "note": "A place made for a person to sit."
+    },
+    {
+      "id": "part.anchor",
+      "label": "Anchor",
+      "sceneId": "water-safety",
+      "scenePath": "site/dist/images/teaching-scenes/water-safety.png",
+      "sceneSha256": "9894169c238fe099d247ce6834655b9f9a00363899ed7d5bbe3f88f72f2cac80",
+      "sceneViewBox": [
+        0,
+        0,
+        800,
+        533
+      ],
+      "insetViewBox": [
+        444,
+        371,
+        168,
+        157
+      ],
+      "highlightPath": "M471,456 481,440 490,431 497,451 497,459 490,459 498,470 514,482 529,445 539,421 533,416 534,406 541,399 551,396 560,400 565,409 562,420 552,424 534,478 549,478 561,473 558,469 566,463 583,451 586,466 584,481 576,489 572,485 555,497 529,503 507,500 489,488 478,472 475,461Z",
+      "fillRule": "evenodd",
+      "note": "A heavy object lowered from a boat to help hold it in place."
+    }
+  ]
+}

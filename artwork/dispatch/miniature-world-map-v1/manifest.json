@@ -1,0 +1,552 @@
+{
+  "batch": "Transport Dispatch Miniature World map v1",
+  "tool": "Built-in ImageGen",
+  "status": "ready for artwork review and handoff",
+  "provenance": "Generated for Transport with the project visual style. Existing assets retain their provenance in the original art ledger.",
+  "assets": [
+    {
+      "name": "land-texture",
+      "id": "land-texture",
+      "label": "Land fill",
+      "group": "material",
+      "path": "artwork/dispatch/miniature-world-map-v1/originals/land-texture.png",
+      "transparent": false,
+      "generationId": "exec-d8cd7a29-5326-46ff-bb3d-f3cbf051441c",
+      "prompt": "Use case: illustration-story. Production raster map element for Transport Dispatch, Miniature World. True orthographic 90-degree top down bird’s-eye view, no side perspective or horizon. Small hand-painted gouache miniature with fine subtle paper grain, slate blue, sage, muted brick and honey accents, restrained clean silhouette and contrast. No words, letters, numbers, trademarks or watermark. One square opaque full-bleed material swatch of warm muted sage grass and tiny irregular dry earth grain. Very low contrast and no distinct objects. Even density and color across all edges. This lies behind the entire randomized top-down town map. Absolutely no roads, shapes, scenery, hills, horizon or light hotspots.",
+      "references": [],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGB",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "visibleBounds": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "sha256": "e1eb3a74ea92cb1c0947d0972e8c920d2db5d817826aa586fc523c455aa3b6b0"
+    },
+    {
+      "name": "water-texture",
+      "id": "water-texture",
+      "label": "Water fill",
+      "group": "material",
+      "path": "artwork/dispatch/miniature-world-map-v1/originals/water-texture.png",
+      "transparent": false,
+      "generationId": "exec-4560e968-a5e6-447f-9dbb-99d9f4564af3",
+      "prompt": "Use case: illustration-story. Production raster map element for Transport Dispatch, Miniature World. True orthographic 90-degree top down bird’s-eye view, no side perspective or horizon. Small hand-painted gouache miniature with fine subtle paper grain, slate blue, sage, muted brick and honey accents, restrained clean silhouette and contrast. No words, letters, numbers, trademarks or watermark. One square opaque full-bleed swatch of calm blue water seen exactly from above, with an extremely fine soft gouache ripple texture, subtle short wavelets no more than 8 percent brighter than the average. Muted mid-deep blue, strongly distinct from sage land and asphalt. No foam borders, bank, boats, objects or large waves. Even density edge to edge.",
+      "references": [],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGB",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "visibleBounds": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "sha256": "2d6f97d1675f660d1d2cb9983eee6dc1a788cb3760069ea84aad01fe34435dde"
+    },
+    {
+      "name": "landmark-depot",
+      "id": "depot",
+      "label": "Depot",
+      "group": "landmark",
+      "path": "artwork/dispatch/miniature-world-map-v1/originals/landmark-depot.png",
+      "transparent": true,
+      "generationId": "exec-8000949c-7c75-45d5-b45b-ce8a4dddf49c",
+      "prompt": "Use case: illustration-story. Production raster map element for Transport Dispatch, Miniature World. True orthographic 90-degree top down bird’s-eye view, no side perspective or horizon. Small hand-painted gouache miniature with fine subtle paper grain, slate blue, sage, muted brick and honey accents, restrained clean silhouette and contrast. No words, letters, numbers, trademarks or watermark. One centered compact place marker, all edges in frame, strong visual cue at 26–32 pixels, no projected shadow and genuine transparent RGBA outside the painted footprint. Keep props inside that footprint and the world outside it empty. One compact road-transport depot building, seen directly overhead. Warm neutral flat roof, one row of small roof vents and two easily read blue loading-bay awnings on its bottom edge, a tiny unloading pad contained in silhouette.",
+      "references": [],
+      "status": "ready for artwork review",
+      "size": [
+        1536,
+        1024
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBounds": [
+        331,
+        104,
+        1200,
+        930
+      ],
+      "suggestedCrop": [
+        270,
+        43,
+        1261,
+        991
+      ],
+      "sha256": "c3f56b51fb4813bc47d59ba374c8af24b97333dc2f7a3c757e4fff3282081caf"
+    },
+    {
+      "name": "landmark-school",
+      "id": "school",
+      "label": "School",
+      "group": "landmark",
+      "path": "artwork/dispatch/miniature-world-map-v1/originals/landmark-school.png",
+      "transparent": true,
+      "generationId": "exec-1a4b3deb-03c1-464d-b65f-ff84413624f9",
+      "prompt": "Use case: illustration-story. Production raster map element for Transport Dispatch, Miniature World. True orthographic 90-degree top down bird’s-eye view, no side perspective or horizon. Small hand-painted gouache miniature with fine subtle paper grain, slate blue, sage, muted brick and honey accents, restrained clean silhouette and contrast. No words, letters, numbers, trademarks or watermark. One centered compact place marker, all edges in frame, strong visual cue at 26–32 pixels, no projected shadow and genuine transparent RGBA outside the painted footprint. Keep props inside that footprint and the world outside it empty. One compact elementary school building seen directly overhead, warm ochre brick suggested by the eaves, pitched terracotta tile roof with two small dormer tops, a miniature short entry path and a little painted schoolyard hopscotch grid with blank squares. No people.",
+      "references": [],
+      "status": "ready for artwork review",
+      "size": [
+        1312,
+        1199
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        117,
+        67,
+        1168,
+        1122
+      ],
+      "suggestedCrop": [
+        43,
+        0,
+        1242,
+        1196
+      ],
+      "sha256": "46bdc6b875a1496df5c7a276f4146df37ef5adf939ea8b5381cebe567bd053a8"
+    },
+    {
+      "name": "landmark-station",
+      "id": "station",
+      "label": "Station",
+      "group": "landmark",
+      "path": "artwork/dispatch/miniature-world-map-v1/originals/landmark-station.png",
+      "transparent": true,
+      "generationId": "exec-657a34f3-de9f-4474-80fb-c6afe73dfda2",
+      "prompt": "Use case: illustration-story. Production raster map element for Transport Dispatch, Miniature World. True orthographic 90-degree top down bird’s-eye view, no side perspective or horizon. Small hand-painted gouache miniature with fine subtle paper grain, slate blue, sage, muted brick and honey accents, restrained clean silhouette and contrast. No words, letters, numbers, trademarks or watermark. One centered compact place marker, all edges in frame, strong visual cue at 26–32 pixels, no projected shadow and genuine transparent RGBA outside the painted footprint. Keep props inside that footprint and the world outside it empty. One small rail station building with a navy-gray pitched canopy roof beside a short visible silver two-rail track on compact brown track bed. Genuine overhead view, not a façade; tightly grouped model, no trains.",
+      "references": [],
+      "status": "ready for artwork review",
+      "size": [
+        1536,
+        1024
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBounds": [
+        195,
+        60,
+        1310,
+        980
+      ],
+      "suggestedCrop": [
+        116,
+        0,
+        1389,
+        1024
+      ],
+      "sha256": "6e0fb2ebeca29a1298f988abddef159dc5abb1d6ce3397a58849e383fff28e7d"
+    },
+    {
+      "name": "landmark-hospital",
+      "id": "hospital",
+      "label": "Hospital",
+      "group": "landmark",
+      "path": "artwork/dispatch/miniature-world-map-v1/originals/landmark-hospital.png",
+      "transparent": true,
+      "generationId": "exec-33f4bb81-a9da-4213-bbf0-43ce817a62f0",
+      "prompt": "Use case: illustration-story. Production raster map element for Transport Dispatch, Miniature World. True orthographic 90-degree top down bird’s-eye view, no side perspective or horizon. Small hand-painted gouache miniature with fine subtle paper grain, slate blue, sage, muted brick and honey accents, restrained clean silhouette and contrast. No words, letters, numbers, trademarks or watermark. One centered compact place marker, all edges in frame, strong visual cue at 26–32 pixels, no projected shadow and genuine transparent RGBA outside the painted footprint. Keep props inside that footprint and the world outside it empty. One compact ivory clinic roof with a broad blue medical plus on a small ivory rooftop panel as the only emblem, pale blue entrance canopy at bottom. Directly overhead, no helipad or vehicle. A dark thin edge separates pale shapes from the cream tile.",
+      "references": [],
+      "status": "ready for artwork review",
+      "size": [
+        1536,
+        1024
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBounds": [
+        350,
+        110,
+        1171,
+        938
+      ],
+      "suggestedCrop": [
+        292,
+        52,
+        1229,
+        996
+      ],
+      "sha256": "865130ef717bcc2fc39fb30d8a77a9e8634d83adb21e58fb6c12f1259b55f3d3"
+    },
+    {
+      "name": "landmark-fire",
+      "id": "fire",
+      "label": "Fire station",
+      "group": "landmark",
+      "path": "artwork/dispatch/miniature-world-map-v1/originals/landmark-fire.png",
+      "transparent": true,
+      "generationId": "exec-8364e51e-bd0b-4513-b711-4619c0e04c1a",
+      "prompt": "Use case: illustration-story. Production raster map element for Transport Dispatch, Miniature World. True orthographic 90-degree top down bird’s-eye view, no side perspective or horizon. Small hand-painted gouache miniature with fine subtle paper grain, slate blue, sage, muted brick and honey accents, restrained clean silhouette and contrast. No words, letters, numbers, trademarks or watermark. One centered compact place marker, all edges in frame, strong visual cue at 26–32 pixels, no projected shadow and genuine transparent RGBA outside the painted footprint. Keep props inside that footprint and the world outside it empty. One compact rust-red roof over a small fire station and a strongly contrasting row of two rust-red appliance bay awnings toward the bottom. A small neat ochre tower cap off one roof corner as a distinct profile. No fire, vehicle, text or numerals.",
+      "references": [],
+      "status": "ready for artwork review",
+      "size": [
+        1312,
+        1199
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        73,
+        46,
+        1218,
+        1127
+      ],
+      "suggestedCrop": [
+        0,
+        0,
+        1299,
+        1199
+      ],
+      "sha256": "f25748f70a1a424e7f15861b77fb539844d115c36bd513573f6d4f6acdbfa883"
+    },
+    {
+      "name": "landmark-building",
+      "id": "building",
+      "label": "Building site",
+      "group": "landmark",
+      "path": "artwork/dispatch/miniature-world-map-v1/originals/landmark-building.png",
+      "transparent": true,
+      "generationId": "exec-e4302842-32e3-4510-9b7a-fb3b18476c27",
+      "prompt": "Use case: illustration-story. Production raster map element for Transport Dispatch, Miniature World. True orthographic 90-degree top down bird’s-eye view, no side perspective or horizon. Small hand-painted gouache miniature with fine subtle paper grain, slate blue, sage, muted brick and honey accents, restrained clean silhouette and contrast. No words, letters, numbers, trademarks or watermark. One centered compact place marker, all edges in frame, strong visual cue at 26–32 pixels, no projected shadow and genuine transparent RGBA outside the painted footprint. Keep props inside that footprint and the world outside it empty. One small rectangular tan fenced construction plot seen straight down, with a mustard crane boom across one corner and two short tidy brick stacks. Strong simple geometry, no workers, no cones in surrounding space.",
+      "references": [],
+      "status": "ready for artwork review",
+      "size": [
+        1536,
+        1024
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBounds": [
+        299,
+        177,
+        1236,
+        867
+      ],
+      "suggestedCrop": [
+        233,
+        111,
+        1302,
+        933
+      ],
+      "sha256": "fb75c6c9c601d16a73c0349b463d0fc16cab5a18f08e7fc3aa4318b448193f7d"
+    },
+    {
+      "name": "landmark-farm",
+      "id": "farm",
+      "label": "Farm",
+      "group": "landmark",
+      "path": "artwork/dispatch/miniature-world-map-v1/originals/landmark-farm.png",
+      "transparent": true,
+      "generationId": "exec-2442f64f-7dbf-42cd-b88f-28c60a6409b7",
+      "prompt": "Use case: illustration-story. Production raster map element for Transport Dispatch, Miniature World. True orthographic 90-degree top down bird’s-eye view, no side perspective or horizon. Small hand-painted gouache miniature with fine subtle paper grain, slate blue, sage, muted brick and honey accents, restrained clean silhouette and contrast. No words, letters, numbers, trademarks or watermark. One centered compact place marker, all edges in frame, strong visual cue at 26–32 pixels, no projected shadow and genuine transparent RGBA outside the painted footprint. Keep props inside that footprint and the world outside it empty. A tiny overhead red barn roof beside two broad furrows of muted green crops on one clipped ochre farm plot. Compact silhouette, clear legible striped fields, no animals or vehicle.",
+      "references": [],
+      "status": "ready for artwork review",
+      "size": [
+        1312,
+        1199
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        295,
+        246,
+        990,
+        929
+      ],
+      "suggestedCrop": [
+        246,
+        197,
+        1039,
+        978
+      ],
+      "sha256": "fa801d4cd2352b2c26b62a240e33f631fab6e152528df2f1b5ced2673b618714"
+    },
+    {
+      "name": "landmark-shop",
+      "id": "shop",
+      "label": "Shop",
+      "group": "landmark",
+      "path": "artwork/dispatch/miniature-world-map-v1/originals/landmark-shop.png",
+      "transparent": true,
+      "generationId": "exec-eea24c7a-1533-470d-966f-9a44bee3711a",
+      "prompt": "Use case: illustration-story. Production raster map element for Transport Dispatch, Miniature World. True orthographic 90-degree top down bird’s-eye view, no side perspective or horizon. Small hand-painted gouache miniature with fine subtle paper grain, slate blue, sage, muted brick and honey accents, restrained clean silhouette and contrast. No words, letters, numbers, trademarks or watermark. One centered compact place marker, all edges in frame, strong visual cue at 26–32 pixels, no projected shadow and genuine transparent RGBA outside the painted footprint. Keep props inside that footprint and the world outside it empty. One compact corner shop with small dark teal flat roof and a large striped cream and teal awning projected from the bottom edge in true overhead view. Keep a tiny single entrance slab. No signage, writing or people.",
+      "references": [],
+      "status": "ready for artwork review",
+      "size": [
+        1312,
+        1199
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        241,
+        172,
+        1048,
+        1052
+      ],
+      "suggestedCrop": [
+        179,
+        110,
+        1110,
+        1114
+      ],
+      "sha256": "8070714dcf307ae77a4c7f1bd4e58072df897d4d040860b50f21e0ca55ca0d11"
+    },
+    {
+      "name": "landmark-houses",
+      "id": "houses",
+      "label": "Houses",
+      "group": "landmark",
+      "path": "artwork/dispatch/miniature-world-map-v1/originals/landmark-houses.png",
+      "transparent": true,
+      "generationId": "exec-184daf38-f864-4098-9efc-9a06b103dde5",
+      "prompt": "Use case: illustration-story. Production raster map element for Transport Dispatch, Miniature World. True orthographic 90-degree top down bird’s-eye view, no side perspective or horizon. Small hand-painted gouache miniature with fine subtle paper grain, slate blue, sage, muted brick and honey accents, restrained clean silhouette and contrast. No words, letters, numbers, trademarks or watermark. One centered compact place marker, all edges in frame, strong visual cue at 26–32 pixels, no projected shadow and genuine transparent RGBA outside the painted footprint. Keep props inside that footprint and the world outside it empty. Two small adjacent home roofs in two distinct tones, terracotta and desaturated blue, with a little pale garden path and sage-green hedge joining their shapes. Distinct from the depot or school, no roads.",
+      "references": [],
+      "status": "ready for artwork review",
+      "size": [
+        1457,
+        1080
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        297,
+        184,
+        1157,
+        962
+      ],
+      "suggestedCrop": [
+        236,
+        123,
+        1218,
+        1023
+      ],
+      "sha256": "218b84bd364b52333a664c30ddbe8e837b064fe74ebf6a66463b26d18a185096"
+    },
+    {
+      "name": "landmark-police",
+      "id": "police",
+      "label": "Police station",
+      "group": "landmark",
+      "path": "artwork/dispatch/miniature-world-map-v1/originals/landmark-police.png",
+      "transparent": true,
+      "generationId": "exec-f89754b6-c55b-49af-b2fb-016d04be9ff6",
+      "prompt": "Use case: illustration-story. Production raster map element for Transport Dispatch, Miniature World. True orthographic 90-degree top down bird’s-eye view, no side perspective or horizon. Small hand-painted gouache miniature with fine subtle paper grain, slate blue, sage, muted brick and honey accents, restrained clean silhouette and contrast. No words, letters, numbers, trademarks or watermark. One centered compact place marker, all edges in frame, strong visual cue at 26–32 pixels, no projected shadow and genuine transparent RGBA outside the painted footprint. Keep props inside that footprint and the world outside it empty. One small slate-blue roof with a bold pale blue stylized five-point shield plaque flush on the roof as the only identity mark, small navy entrance canopy. Clearly different from the hospital and no official insignia, writing, lightbars or car.",
+      "references": [],
+      "status": "ready for artwork review",
+      "size": [
+        1312,
+        1199
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        33,
+        119,
+        1276,
+        1122
+      ],
+      "suggestedCrop": [
+        0,
+        31,
+        1312,
+        1199
+      ],
+      "sha256": "d361705bb7a30221b5d7657667fd44e8fce11dfb6c62b2eae709bde457a0fee6"
+    },
+    {
+      "name": "landmark-park",
+      "id": "park",
+      "label": "Park",
+      "group": "landmark",
+      "path": "artwork/dispatch/miniature-world-map-v1/originals/landmark-park.png",
+      "transparent": true,
+      "generationId": "exec-377717a9-b419-445b-9bb2-a97320005fa8",
+      "prompt": "Use case: illustration-story. Production raster map element for Transport Dispatch, Miniature World. True orthographic 90-degree top down bird’s-eye view, no side perspective or horizon. Small hand-painted gouache miniature with fine subtle paper grain, slate blue, sage, muted brick and honey accents, restrained clean silhouette and contrast. No words, letters, numbers, trademarks or watermark. One centered compact place marker, all edges in frame, strong visual cue at 26–32 pixels, no projected shadow and genuine transparent RGBA outside the painted footprint. Keep props inside that footprint and the world outside it empty. One small rounded park island seen directly down: two varied green tree canopies and a pale loop path around a muted green lawn with a single honey-coloured bench top. Keep path within its own silhouette. No roads.",
+      "references": [],
+      "status": "ready for artwork review",
+      "size": [
+        1536,
+        1024
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBounds": [
+        317,
+        107,
+        1203,
+        874
+      ],
+      "suggestedCrop": [
+        254,
+        44,
+        1266,
+        937
+      ],
+      "sha256": "044c0fc0018cf492d8d781c5606029b121ff81b625e7e03cc7ac4836a715cdf0"
+    },
+    {
+      "name": "landmark-island",
+      "id": "island",
+      "label": "Island",
+      "group": "landmark",
+      "path": "artwork/dispatch/miniature-world-map-v1/originals/landmark-island.png",
+      "transparent": true,
+      "generationId": "exec-be70083c-4857-4b32-94c1-64c57ec8f461",
+      "prompt": "Use case: illustration-story. Production raster map element for Transport Dispatch, Miniature World. True orthographic 90-degree top down bird’s-eye view, no side perspective or horizon. Small hand-painted gouache miniature with fine subtle paper grain, slate blue, sage, muted brick and honey accents, restrained clean silhouette and contrast. No words, letters, numbers, trademarks or watermark. One centered compact place marker, all edges in frame, strong visual cue at 26–32 pixels, no projected shadow and genuine transparent RGBA outside the painted footprint. Keep props inside that footprint and the world outside it empty. A single compact overhead oval island vignette of low sage grass over pale sand with three soft miniature wind-shaped tree canopies and one short footpath. Left edge clear for a separate island berth, no pier, no boat, no water outside the shoreline, no lettering.",
+      "references": [],
+      "status": "ready for artwork review",
+      "size": [
+        1536,
+        1024
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBounds": [
+        223,
+        81,
+        1313,
+        948
+      ],
+      "suggestedCrop": [
+        146,
+        4,
+        1390,
+        1024
+      ],
+      "sha256": "578b97d71f5efa39bd41f701e309c591acdf0247a433318cb707aa587bca54ed"
+    },
+    {
+      "name": "landmark-dock",
+      "id": "dock",
+      "label": "Ferry dock",
+      "group": "landmark",
+      "path": "artwork/dispatch/miniature-world-map-v1/originals/landmark-dock.png",
+      "transparent": true,
+      "generationId": "exec-d0b93838-a6ed-44fc-9075-4f3392895cbc",
+      "prompt": "Use case: illustration-story. True orthographic overhead destination art for the Transport Town Dispatch map. One small ferry terminal building with distinctive slate teal hipped roof and a large round brass anchor plaque set flush on top. Put it on a compact warm sandstone quayside landing tile with one tidy blue bollard at the lower edge. Clear shape at 30px. Stop at the shore; the separate timber pier, ferry, water and road are separate pieces. No lettering, no boats, no crowd. Hand-painted Miniature World gouache and colored pencil, muted greens and warm ivory, all edges clear inside frame, real transparency around the whole cutout.",
+      "references": [],
+      "status": "ready for artwork review",
+      "size": [
+        1254,
+        1254
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        128,
+        74,
+        1126,
+        1181
+      ],
+      "suggestedCrop": [
+        50,
+        0,
+        1204,
+        1254
+      ],
+      "sha256": "cbe00aad531a71f3e3dbab5c30b797477d4fc2bf993a4967510112b17ab311e0"
+    },
+    {
+      "name": "roadworks-marker",
+      "id": "roadworks-marker",
+      "label": "Roadworks closure",
+      "group": "marker",
+      "path": "artwork/dispatch/miniature-world-map-v1/originals/roadworks-marker.png",
+      "transparent": true,
+      "generationId": "exec-ed1a18b1-ab1d-4bca-8c2b-4709ee8be64a",
+      "prompt": "Use case: illustration-story. Paint one standalone icon-sized roadworks closure marker for a child-friendly overhead board game. A single bold horizontal orange-and-cream reflective barricade bar with two black broad feet, nearly straight on from slightly above. Three thick orange diagonal stripes on ivory, no signs, writing, traffic cones, landscaping or shadow. Hand-painted matte gouache Miniature World with fine navy outline and simple bold shape, clearly readable at 13px high. Full centered subject, broad clear margins and true RGBA transparency.",
+      "references": [],
+      "status": "ready for artwork review",
+      "size": [
+        1536,
+        1024
+      ],
+      "imageMode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBounds": [
+        121,
+        287,
+        1413,
+        864
+      ],
+      "suggestedCrop": [
+        30,
+        196,
+        1504,
+        955
+      ],
+      "sha256": "6277c4690d2c2fdb95a7767644ec5cbd37fad7dac71423d2b030617e5acd800b"
+    }
+  ]
+}

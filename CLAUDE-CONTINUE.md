@@ -2,6 +2,8 @@
 
 Written 2026-11-09 at the end of a Claude session. Read this first, then the existing HANDOFF.md (Codex-era) for background only. Claude is now the main developer. Codex produced the Painted Field Guide art.
 
+10 November 2026 artwork handoff. The new classroom covers, completion medal, Safety scenes and choices, vehicle part insets, and modular Dispatch map art have a single integration guide in the [artwork report](docs/ARTWORK-REPORT-2026-11-10.md). Use its ID mappings and check the artwork gallery before wiring. The existing coastal Spelling scene and menu artwork are already on `main`.
+
 ## Approved menu and Dispatch artwork
 
 The user approved all twelve Miniature World activity illustrations and the separate Dispatch feature banner. Start with [the menu art handoff](artwork/menu/miniature-world-v1/REVIEW.md) and its [mode-to-image ledger](artwork/menu/miniature-world-v1/manifest.json). The three approved pilot originals stay in their original folder and are referenced by the ledger. Wire the images into the existing native menu buttons and banner, retain direct Dispatch navigation, and check the actual desktop and 390 × 844 phone menu. The artwork review's sizing and edge checks are already recorded.
