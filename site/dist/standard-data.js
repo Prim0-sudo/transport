@@ -71,11 +71,30 @@
       entryIds:['vehicle.train','part.carriage','part.window','place.railway','place.station','place.platform'],
     },
   ];
+  // Read, Draw & Talk: one sentence per card, tied to one taught word (hidden when that word is out of the teacher scope).
+  const readingCards=[{"id":"bus","itemId":"vehicle.bus","sentence":"The bus stops to pick up people.","draw":"Draw the bus at the bus stop.","talk":"Where would you like the bus to take you?"},
+    {"id":"train","itemId":"vehicle.train","sentence":"The train runs on a long track.","draw":"Draw a train with three carriages.","talk":"Who could be riding on the train?"},
+    {"id":"bicycle","itemId":"vehicle.bicycle","sentence":"I push the pedals to ride my bicycle.","draw":"Draw yourself riding a bicycle.","talk":"Where would you ride your bicycle?"},
+    {"id":"fire-engine","itemId":"vehicle.fire-engine","sentence":"The fire engine has a long ladder.","draw":"Draw the fire engine and its ladder.","talk":"How do firefighters help people?"},
+    {"id":"tractor","itemId":"vehicle.tractor","sentence":"The tractor pulls a heavy load on the farm.","draw":"Draw the tractor in a muddy field.","talk":"What could the tractor carry?"},
+    {"id":"ferry","itemId":"vehicle.ferry","sentence":"The ferry carries cars across the water.","draw":"Draw the ferry on the waves.","talk":"What would you see from the ferry?"},
+    {"id":"sailboat","itemId":"vehicle.sailboat","sentence":"The wind pushes the sailboat along.","draw":"Draw a sailboat with a big sail.","talk":"What happens when the wind stops?"},
+    {"id":"helicopter","itemId":"vehicle.helicopter","sentence":"The helicopter can go straight up.","draw":"Draw the helicopter in the sky.","talk":"Where could a helicopter land?"},
+    {"id":"hot-air-balloon","itemId":"vehicle.hot-air-balloon","sentence":"The hot air balloon floats up high.","draw":"Draw the balloon above the trees.","talk":"What would you see from up high?"},
+    {"id":"rocket","itemId":"vehicle.rocket","sentence":"The rocket blasts off into space.","draw":"Draw the rocket and the stars.","talk":"Where would you fly in a rocket?"},
+    {"id":"ambulance","itemId":"vehicle.ambulance","sentence":"The ambulance takes people to the hospital.","draw":"Draw the ambulance with its lights on.","talk":"Why does the ambulance need to be fast?"},
+    {"id":"wheel","itemId":"part.wheel","sentence":"A wheel goes round and round.","draw":"Draw something that has wheels.","talk":"How many wheels can you count on a car?"},
+    {"id":"airport","itemId":"place.airport","sentence":"Airplanes take off and land at the airport.","draw":"Draw an airplane at the airport.","talk":"What do people take on a trip?"},
+    {"id":"pilot","itemId":"person.pilot","sentence":"The pilot flies the airplane.","draw":"Draw the pilot in the cockpit.","talk":"Would you like to be a pilot? Why?"},
+    {"id":"board","itemId":"action.board","sentence":"We get on the bus at the front door.","draw":"Draw people getting on the bus.","talk":"What do you say to the driver?"},
+    {"id":"helmet","itemId":"safety.helmet","sentence":"I wear a helmet to keep my head safe.","draw":"Draw yourself wearing a helmet.","talk":"When do you need to wear a helmet?"},
+    {"id":"traffic-light","itemId":"safety.traffic-light","sentence":"Red means stop and green means go.","draw":"Draw a traffic light with all three colours.","talk":"What does the yellow light mean?"},
+    {"id":"pedestrian-crossing","itemId":"place.pedestrian-crossing","sentence":"I hold a grown-up's hand at the crossing.","draw":"Draw a safe crossing with stripes.","talk":"Who helps you cross the road safely?"}];
   const hubs={
-    media:{title:'Media',description:'Choose a resource group.',groups:[['printables','Printables','Printable cards are not available yet.'],['books','Books','Books are not available yet.'],['videos','Videos','Films are not available yet.'],['songs','Songs','Songs are not available yet.']]},
+    media:{title:'Media',description:'Choose a resource group.',groups:[['printables','Printables','Picture flashcards to print in four A4 layouts.'],['books','Books','Books are not available yet.'],['videos','Videos','Films are not available yet.'],['songs','Songs','Songs are not available yet.']]},
     games:{title:'Transport Games',description:'Choose a transport game.',groups:[['dispatch','Transport Dispatch','Transport Dispatch is being prepared. Choose another activity for now.'],['driving','Driving game','A separate driving game is being prepared. Choose another activity for now.']]},
     phonics:{title:'Phonics & Sight Words',description:'Explore sounds and Transport words.',groups:[['sounds','Shared sounds','Sound practice is not available yet.'],['words','Transport words','Transport word practice is not available yet.']]},
-    create:{title:'Read, Draw & Talk',description:'Read together, then draw and talk.',groups:[['cards','Reading cards','Reading cards are not available yet.']]},
+    create:{title:'Read, Draw & Talk',description:'Read together, then draw and talk.',groups:[['cards','Reading cards','One sentence, one picture, then draw and talk.']]},
   };
   function prepare(entries){for(const entry of entries){entry.eligibility.detective=true;entry.silhouetteEligible=silhouetteIds.has(entry.id);if(entry.id==='vehicle.space-shuttle')entry.category='space';}}
   const ruleFor=id=>sortRules.find(rule=>rule.id===id)||sortRules[0];
@@ -100,5 +119,5 @@
     if(won||round.misses>=8){round.terminal=won?'won':'lost';if(won&&!round.assisted&&!round.awarded){round.awarded=true;reward=1;}}
     return {changed:true,correct,terminal:Boolean(round.terminal),won,reward};
   }
-  globalThis.TransportStandard={categories,teachingCategories,sortRules,silhouetteIds,teachingScenes,hubs,prepare,ruleFor,sortingPool,availableGroups,poolFor,variantFor,setupFor,guessSpelling};
+  globalThis.TransportStandard={categories,teachingCategories,sortRules,silhouetteIds,teachingScenes,hubs,readingCards,prepare,ruleFor,sortingPool,availableGroups,poolFor,variantFor,setupFor,guessSpelling};
 })();
