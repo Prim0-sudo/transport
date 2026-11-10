@@ -117,6 +117,36 @@ button:disabled{cursor:default}.standard-actions button:disabled{opacity:.55}
 .printable-actions>a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:6px 12px;border:1px solid #1d4f73;border-radius:8px;color:#183a51;font-size:.875rem;font-weight:700;text-decoration:none;background:#fff}
 .printable-actions>a[download]{background:#1d4f73;color:#fff}
 .printable-actions>a:hover{background:#f5ecd2;color:#183a51}
+/* Presentation tab and full-screen presenter (media-views.js presenter). */
+.printable-actions>.present-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:6px 14px;border:1px solid #1d4f73;border-radius:8px;background:#e6c45a;color:#183a51;font:inherit;font-size:.875rem;font-weight:800;cursor:pointer}
+.printable-actions>.present-btn:hover{background:#f0d77f}
+body.presenting{overflow:hidden}
+.presenter{position:fixed;inset:0;z-index:1000;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:10px;padding:12px 16px 14px;background:#10324a;color:#fffbed}
+.presenter-bar{display:flex;align-items:center;gap:14px}.presenter-bar strong{font-size:1.05rem}.presenter-count{margin-left:auto;font-weight:700;color:#e6c45a}
+.presenter-close,.presenter-nav{min-height:44px;padding:6px 18px;border:2px solid #d8bd7d;border-radius:999px;background:#fffbed;color:#183a51;font:inherit;font-weight:800;cursor:pointer}
+.presenter-nav--next{background:#e6c45a}.presenter-nav:disabled{opacity:.4;cursor:default}
+.presenter-controls{display:flex;justify-content:center;gap:12px}
+.presenter-stage{display:grid;place-items:center;min-height:0;cursor:pointer}
+.pslide{container-type:inline-size;box-sizing:border-box;width:min(100%,calc((100dvh - 150px)*16/9));aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#fffbed;color:#183a51;padding:4.5cqw;display:flex;flex-direction:column;gap:2cqw;box-shadow:0 10px 40px #0006}
+.pslide h2{margin:0;font-size:4.2cqw;line-height:1.1}.pslide h2:after{content:'';display:block;width:10cqw;height:.7cqw;margin-top:1.2cqw;border-radius:9px;background:#d8bd7d}
+.pslide img{display:block;width:100%;height:100%;object-fit:contain;min-height:0}
+.pslide-frame{background:#fff;border:.35cqw solid #d8bd7d;border-radius:2cqw;padding:2cqw;min-height:0;box-sizing:border-box}
+.pslide--title,.pslide--section,.pslide--scene,.pslide--end{background:#1d4f73;color:#fffbed}
+.pslide--title,.pslide--section{flex-direction:row;align-items:center}
+.pslide--title .pslide-words,.pslide--section .pslide-words{flex:1}.pslide-words small{font-size:1.6cqw;font-weight:800;color:#d8bd7d;letter-spacing:.05em}
+.pslide--title h2,.pslide--section h2{font-size:6cqw;margin:4cqw 0 2cqw}.pslide--title h2:after,.pslide--section h2:after{display:none}
+.pslide--title p,.pslide--section p{margin:0;font-size:2.4cqw;color:#e6c45a}
+.pslide--title .pslide-frame,.pslide--section .pslide-frame{width:45%;height:100%;background:#fffbed}
+.pslide--word{flex-direction:row;align-items:center;gap:4cqw}.pslide--word .pslide-frame{width:47%;height:100%}
+.pslide--word .pslide-words{flex:1}.pslide--word h2{font-size:7cqw}.pslide--word p{font-size:2.6cqw;line-height:1.35;margin:2cqw 0}
+.pslide--word blockquote{margin:0;padding:1.6cqw 2cqw;border:.3cqw solid #d8bd7d;border-radius:1.6cqw;background:#fcf1da;font-size:2.2cqw;font-style:italic}
+.pslide-scene{flex:1;min-height:0;display:grid;grid-template-columns:62% 1fr;gap:3cqw;align-items:center}.pslide-scene .pslide-frame{height:100%;padding:.8cqw}
+.pslide-scene dl{margin:0;font-size:1.7cqw;line-height:1.35}.pslide-scene dt{font-weight:800;color:#e6c45a}.pslide-scene dd{margin:0 0 1.2cqw}
+.pslide-tiles{flex:1;min-height:0;display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:1.8cqw}
+.pslide-tile{box-sizing:border-box;width:calc((100% - (var(--cols) - 1)*1.8cqw)/var(--cols));height:calc((100% - 1.8cqw)/2);display:flex;flex-direction:column;gap:.6cqw;padding:1.2cqw;background:#fff;border:.3cqw solid #d8bd7d;border-radius:1.6cqw}
+.pslide-tile img{flex:1}.pslide-tile,.pslide-frame{overflow:hidden}.pslide img[src*="images/vocabulary/"]{transform:scale(1.2)}.pslide-tile span{text-align:center;font-weight:800;font-size:1.9cqw}
+.pslide--end{align-items:center;justify-content:center;text-align:center}.pslide--end h2:after{margin-inline:auto}.pslide-medal{height:45%!important;width:auto!important}.pslide--end p{margin:0;font-size:2.4cqw;color:#e6c45a}
+@media(max-width:560px){.presenter{padding:8px 8px 10px}.pslide{width:100%}.presenter-bar strong{font-size:.9rem}}
 .media-tab:focus-visible,.printables-library :is(a,select):focus-visible{outline:2px solid #183a51;outline-offset:2px}
 @media(max-width:560px){.media-sections{width:100%;gap:2px}.media-tab{flex:1 1 auto;padding-inline:7px;font-size:.875rem}.printables-toolbar label{width:100%;white-space:nowrap}.printables-toolbar select{flex:1}.printable-card{grid-template-columns:68px minmax(0,1fr);gap:4px 10px;padding:8px 12px}.printable-card>img{grid-row:span 2;height:62px}.printable-actions{grid-column:2}.printable-actions>a{padding-inline:8px}}
 /* Read, Draw & Talk (matched to Plants activities-v5.css 2026-11-10). */

@@ -23,6 +23,7 @@
     }
     root.append(nav);
     if (mediaSection === 'printables') printables(root);
+    else if (mediaSection === 'presentation') presentations(root);
     else { const empty = el('section', 'media-empty'); empty.setAttribute('aria-live', 'polite'); empty.append(el('p', '', `No ${mediaSection} yet.`)); root.append(empty); }
   }
 
@@ -53,6 +54,85 @@
       actions.append(open, save); row.append(picture, details, actions); grid.append(row);
     }
     library.append(grid); root.append(library);
+  }
+
+  // Presentation: one slide deck per word group plus the whole topic (scripts/build-presentations.mjs).
+  // Present opens a full-screen slideshow in the app; Download saves the matching PowerPoint file.
+  function presentations(root) {
+    const decks = globalThis.TransportPresentations;
+    const library = el('section', 'printables-library presentations-library');
+    const toolbar = el('div', 'printables-toolbar'); toolbar.append(el('h3', '', 'Class presentations')); library.append(toolbar);
+    if (!Array.isArray(decks) || !decks.length) { library.append(el('p', 'printables-hint', 'Presentations are being prepared. Check back soon.')); root.append(library); return; }
+    library.append(el('p', 'printables-hint', 'Present shows the slides full screen: use the arrow keys or tap the sides. Download gives the PowerPoint file.'));
+    const grid = el('div', 'printables-grid');
+    for (const deck of decks) {
+      const row = el('article', 'printable-card' + (deck.id === 'all' ? ' printable-card--complete' : ''));
+      const picture = el('img'); picture.src = deck.image; picture.alt = ''; picture.loading = 'lazy';
+      const details = el('div', 'printable-details');
+      details.append(el('h4', '', deck.title), el('p', '', `${deck.slideCount} slides · ${deck.wordCount} words${deck.bytes ? ' · ' + fileSize(deck.bytes) : ''}`));
+      const actions = el('div', 'printable-actions');
+      const present = el('button', 'present-btn', 'Present'); present.type = 'button'; present.onclick = () => presenter(deck, present);
+      const save = el('a', '', 'Download'); save.href = deck.pptx; save.download = deck.pptx.split('/').pop();
+      present.setAttribute('aria-label', `Present ${deck.title}`); save.setAttribute('aria-label', `Download ${deck.title} PowerPoint`);
+      actions.append(present, save); row.append(picture, details, actions); grid.append(row);
+    }
+    library.append(grid); root.append(library);
+  }
+
+  function slideNode(slide) {
+    const node = el('div', `pslide pslide--${slide.type}`);
+    const img = (src, cls = '') => { const i = el('img', cls); i.src = src; i.alt = ''; i.decoding = 'async'; return i; };
+    const tiles = (items, names) => { const g = el('div', 'pslide-tiles'); g.style.setProperty('--cols', items.length > 6 ? 6 : 3); for (const item of items) { const t = el('div', 'pslide-tile'); t.append(img(item.image)); if (names) t.append(el('span', '', item.name)); g.append(t); } return g; };
+    if (slide.type === 'title' || slide.type === 'section') {
+      const words = el('div', 'pslide-words'); words.append(el('small', '', slide.type === 'title' ? 'TRANSPORT TOWN' : 'NEXT UP'), el('h2', '', slide.title), el('p', '', slide.subtitle));
+      const frame = el('div', 'pslide-frame'); frame.append(img(slide.image)); node.append(words, frame);
+    } else if (slide.type === 'word') {
+      const frame = el('div', 'pslide-frame'); frame.append(img(slide.image));
+      const words = el('div', 'pslide-words'); words.append(el('h2', '', slide.name), el('p', '', slide.meaning)); if (slide.example) words.append(el('blockquote', '', slide.example));
+      node.append(frame, words);
+    } else if (slide.type === 'scene') {
+      node.append(el('h2', '', slide.title)); const body = el('div', 'pslide-scene'); const frame = el('div', 'pslide-frame'); frame.append(img(slide.image));
+      const list = el('dl'); for (const [name, text] of slide.labels.slice(0, 4)) list.append(el('dt', '', name), el('dd', '', text));
+      body.append(frame, list); node.append(body);
+    } else if (slide.type === 'end') {
+      node.append(img(slide.image, 'pslide-medal'), el('h2', '', slide.title), el('p', '', slide.subtitle));
+    } else {
+      node.append(el('h2', '', slide.title), tiles(slide.items, slide.type !== 'quiz'));
+    }
+    return node;
+  }
+
+  function presenter(deck, opener) {
+    let index = 0;
+    const shell = el('div', 'presenter'); shell.setAttribute('role', 'dialog'); shell.setAttribute('aria-modal', 'true'); shell.setAttribute('aria-label', `${deck.title} presentation`);
+    const bar = el('div', 'presenter-bar'), count = el('span', 'presenter-count'); count.setAttribute('aria-live', 'polite');
+    const close = el('button', 'presenter-close', 'Close'); close.type = 'button';
+    bar.append(el('strong', '', deck.title), count, close);
+    const stage = el('div', 'presenter-stage');
+    const prev = el('button', 'presenter-nav presenter-nav--prev', 'Previous'), next = el('button', 'presenter-nav presenter-nav--next', 'Next'); prev.type = next.type = 'button';
+    const nav = el('div', 'presenter-controls'); nav.append(prev, next);
+    shell.append(bar, stage, nav);
+    const show = i => {
+      index = Math.max(0, Math.min(deck.slides.length - 1, i)); stage.replaceChildren(slideNode(deck.slides[index]));
+      count.textContent = `${index + 1} / ${deck.slides.length}`; prev.disabled = index === 0; next.disabled = index === deck.slides.length - 1;
+      for (const s of deck.slides.slice(index + 1, index + 3)) for (const src of [s.image, ...(s.items || []).map(t => t.image)]) if (src) new Image().src = src;
+    };
+    const keys = event => {
+      event.stopPropagation(); // the slideshow owns the keyboard while open (Escape must not also leave Media)
+      if (['ArrowRight', 'PageDown', ' '].includes(event.key)) { event.preventDefault(); show(index + 1); }
+      else if (['ArrowLeft', 'PageUp'].includes(event.key)) { event.preventDefault(); show(index - 1); }
+      else if (event.key === 'Home') show(0); else if (event.key === 'End') show(deck.slides.length - 1);
+      else if (event.key === 'Escape') finish();
+      else if (event.key === 'Tab') { const f = [...shell.querySelectorAll('button:not(:disabled)')]; const at = f.indexOf(document.activeElement); if (event.shiftKey ? at <= 0 : at === f.length - 1) { event.preventDefault(); f[event.shiftKey ? f.length - 1 : 0].focus(); } }
+    };
+    // Tap the left third to go back, anywhere else to go on.
+    stage.onclick = event => { const r = stage.getBoundingClientRect(); show(index + (event.clientX - r.left < r.width / 3 ? -1 : 1)); };
+    prev.onclick = () => show(index - 1); next.onclick = () => show(index + 1);
+    function finish() { document.removeEventListener('keydown', keys, true); shell.remove(); document.body.classList.remove('presenting'); if (document.fullscreenElement) document.exitFullscreen?.().catch(() => {}); opener?.focus(); }
+    close.onclick = finish;
+    document.addEventListener('keydown', keys, true);
+    document.body.append(shell); document.body.classList.add('presenting'); show(0); close.focus();
+    shell.requestFullscreen?.().catch(() => {});
   }
 
   function readingCards() {
