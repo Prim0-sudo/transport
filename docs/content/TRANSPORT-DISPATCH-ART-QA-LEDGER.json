@@ -1,0 +1,162 @@
+{
+  "description": "Dispatch art QA exports. The main vocabulary, scene and map manifests retain their existing contracts.",
+  "approvedSourceNotes": "artwork/dispatch/miniature-world-pilot-v1/REVIEW.md",
+  "entries": [
+    {
+      "id": "road-surface",
+      "originalPath": "artwork/dispatch/miniature-world-pilot-v1/road-surface.png",
+      "originalSha256": "d208204f888ec5a31893bfb2a0019e7f3db7255fa870b884410b09572a874357",
+      "originalDimensions": [
+        1254,
+        1254
+      ],
+      "sourceCrop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "destinationRect": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "runtimePath": "site/dist/images/dispatch-map/road-surface.png",
+      "runtimeDimensions": [
+        512,
+        512
+      ],
+      "runtimeSha256": "a06ab948149bbc107687709c71885e147b96cf5d9046cd4f2dfb916ffe75c06b",
+      "alpha": false,
+      "teachingPurpose": "Give every drivable road one readable slate surface beneath route feedback.",
+      "status": "exported; app placement pending",
+      "reviewNotes": "Opaque map texture by design; clip to the road geometry."
+    },
+    {
+      "id": "bridge-deck",
+      "originalPath": "artwork/dispatch/miniature-world-pilot-v1/bridge-deck-v2.png",
+      "originalSha256": "914d4d0f155aad33b0f4c6d9fdb1902d225580848b13f0a1dd7d764feba42253",
+      "originalDimensions": [
+        1816,
+        866
+      ],
+      "sourceCrop": [
+        36,
+        142,
+        1744,
+        581
+      ],
+      "destinationRect": [
+        0,
+        0,
+        512,
+        171
+      ],
+      "runtimePath": "site/dist/images/dispatch-map/bridge-deck.png",
+      "runtimeDimensions": [
+        512,
+        171
+      ],
+      "runtimeSha256": "8d8c0ac9a17b7bbfa5c4c84891cbe4c9e85295c8db6b65e2e7c4fd467beddb18",
+      "alpha": true,
+      "teachingPurpose": "Make the road crossing read as a bridge while preserving entry and exit alignment.",
+      "status": "exported; app placement pending",
+      "reviewNotes": "Transparent PNG; preserve proportions and use the handoff placement notes."
+    },
+    {
+      "id": "dock-pier",
+      "originalPath": "artwork/dispatch/miniature-world-pilot-v1/dock-pier.png",
+      "originalSha256": "d0096c5d42f9b13cfb3a91c4b14cc7c36858d6bf5afe62c1c92ee306760e17ee",
+      "originalDimensions": [
+        778,
+        2022
+      ],
+      "sourceCrop": [
+        55,
+        40,
+        665,
+        1940
+      ],
+      "destinationRect": [
+        0,
+        0,
+        176,
+        512
+      ],
+      "runtimePath": "site/dist/images/dispatch-map/dock-pier.png",
+      "runtimeDimensions": [
+        176,
+        512
+      ],
+      "runtimeSha256": "c6150f4b118de2b02020eb43a906d76ab1da6caca641efb488226d8e6eb6efc6",
+      "alpha": true,
+      "teachingPurpose": "Show where passengers step from the north shore onto the ferry.",
+      "status": "exported; app placement pending",
+      "reviewNotes": "Transparent PNG; preserve proportions and use the handoff placement notes."
+    },
+    {
+      "id": "island-berth",
+      "originalPath": "artwork/dispatch/miniature-world-pilot-v1/island-berth.png",
+      "originalSha256": "803cb3140087dd296c6308ce2e61125e49535133a1cef36efd82e1217d1b9e5b",
+      "originalDimensions": [
+        1900,
+        828
+      ],
+      "sourceCrop": [
+        102,
+        152,
+        1697,
+        518
+      ],
+      "destinationRect": [
+        0,
+        0,
+        512,
+        156
+      ],
+      "runtimePath": "site/dist/images/dispatch-map/island-berth.png",
+      "runtimeDimensions": [
+        512,
+        156
+      ],
+      "runtimeSha256": "94b20a19a77e91f41d78fac550316ee1366bf22351a412c817ee3a9bedacec37",
+      "alpha": true,
+      "teachingPurpose": "Show where ferry passengers step off at the island.",
+      "status": "exported; app placement pending",
+      "reviewNotes": "Transparent PNG; preserve proportions and use the handoff placement notes."
+    },
+    {
+      "id": "incident-fire",
+      "originalPath": "artwork/dispatch/miniature-world-map-v1/originals/incident-fire.png",
+      "originalSha256": "14f1526e3a2a88e195f65aceb64b851799e2e1e764cc6912a8a1ec0dfded966e",
+      "originalDimensions": [
+        1254,
+        1254
+      ],
+      "sourceCrop": [
+        170,
+        112,
+        898,
+        1046
+      ],
+      "destinationRect": [
+        16,
+        8,
+        96,
+        112
+      ],
+      "runtimePath": "site/dist/images/dispatch-map/incident-fire.png",
+      "runtimeDimensions": [
+        128,
+        128
+      ],
+      "runtimeSha256": "00e716bc142233857794d31ddbe2f0c665ff0e3650ae825fb7bf129cf0ed0fb4",
+      "alpha": true,
+      "teachingPurpose": "Identify the active fire incident at the existing map destination.",
+      "status": "exported; app placement pending",
+      "reviewNotes": "Transparent PNG; preserve proportions and use the handoff placement notes.",
+      "exactPrompt": "A single tiny fire-incident marker for Transport Dispatch, a child-friendly painted Miniature World educational map. Transparent PNG RGBA with absolutely clear surrounding pixels. Design to read instantly at 16–24 pixels: exactly one simple compact upright cluster of three rounded flame tongues, a warm orange outer flame with a small bright yellow inner flame and a thin deep rust outer contour. Rich matte hand-painted gouache on the silhouette, subtle pigment, no glossy emoji rendering. Front-facing stylised symbol for an overhead board-game map; shape is round and grounded with a flat short lower edge. Fill 80 percent of a square, centred with generous clear transparent padding. No smoke, sparks, faces, badge, ring, background, shadow, platform, text, people, objects or scenery. One complete shape, crisp alpha edge."
+    }
+  ]
+}
