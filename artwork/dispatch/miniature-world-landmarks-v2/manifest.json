@@ -1,0 +1,574 @@
+{
+  "batch": "Transport Dispatch Miniature World landmarks v2",
+  "generation": "Built-in OpenAI ImageGen with transparent background, one generation per location",
+  "references": [
+    "Plants blueprint v6.0 ART-AND-ANIMATION.md and APPLIED-GAMES.md from local Plants 092ff78",
+    "Transport docs/DISPATCH-ART-PRODUCTION-BRIEF.md and the current roadside-plot layout"
+  ],
+  "intendedUse": "Static Dispatch locations only. Centered square alpha exports for existing roadside plots and the island center.",
+  "registration": "192 x 192 px square, centered anchor [96, 96]. Front faces toward the bottom. Existing apron and ferry anchors define movement.",
+  "derivative": "Original PNG preserved byte for byte. Trim alpha below 4, crop transparent padding, fit aspect ratio inside 180 x 180 and center in 192 x 192. Export WebP quality 90 with alpha.",
+  "provenance": "Project-generated illustrations. No third-party imagery was imported.",
+  "reviewSheet": "artwork/dispatch/miniature-world-landmarks-v2/contact-sheet.png",
+  "assets": [
+    {
+      "id": "depot",
+      "label": "Depot",
+      "source": "artwork/dispatch/miniature-world-landmarks-v2/originals/landmark-depot.png",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "sourceVisibleBounds": [
+        134,
+        126,
+        1403,
+        905
+      ],
+      "sourceAlpha": [
+        0,
+        254
+      ],
+      "sourceSha256": "a13e4316c6320775596585dddee29cdd607df96fbe0c5779644feab834c0a56f",
+      "generationId": "exec-6641cf33-dd98-4038-9cb4-97f2e44bf4fc",
+      "runtime": "site/dist/images/dispatch-map/landmarks-v2/landmark-depot.webp",
+      "runtimeSize": [
+        192,
+        192
+      ],
+      "runtimeVisibleBounds": [
+        6,
+        41,
+        186,
+        151
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeSha256": "1c756d4a7219b61dd3cb8b9e84abd5c66fa26fac5d9470b4c6433956916a8d09",
+      "anchor": [
+        96,
+        96
+      ],
+      "status": "Ready for art review and Claude integration",
+      "prompt": "Create one new production game sprite for Transport Dispatch in the approved Miniature World style. A tiny handcrafted gouache and coloured-pencil model village, painted and tactile, soft warm sunlight from upper left, weathered sandstone, clay, slate and subdued teal. Use a steep high three-quarter orthographic camera looking down at about 65 degrees, seeing broad roofs and just enough of the front fa\u00e7ade to identify the place. Align the front edge horizontally with the frame, entrance facing screen bottom. One compact, bold, instantly readable silhouette at 20\u201360 CSS pixels, limited simplified detail, strong local contrast. Entire isolated structure or site centered with at least 8% clear margin on every side, a genuinely transparent background and clean silhouette, no cast shadow outside the subject. At most a close irregular footprint for places that need ground; no rectangular tile backing, framed icon, bubble, platform pedestal, map, road, bridge, vehicle, character, text, lettering, number, watermark or signage with writing. Keep all components physically contiguous. Subject: A transport maintenance and parcel depot in a low pale ochre brick shed, big slate-blue ribbed loading doors, corrugated dark teal sawtooth roof and a few integrated brown cartons at one door. Utilitarian and low, with a single wide loading bay."
+    },
+    {
+      "id": "school",
+      "label": "School",
+      "source": "artwork/dispatch/miniature-world-landmarks-v2/originals/landmark-school.png",
+      "sourceSize": [
+        1312,
+        1199
+      ],
+      "sourceVisibleBounds": [
+        33,
+        24,
+        1279,
+        1169
+      ],
+      "sourceAlpha": [
+        0,
+        255
+      ],
+      "sourceSha256": "0fec4c65f1b23ce8a154da8c19a5f6ec1a8950442e2613b685b7b5e4e9d6522c",
+      "generationId": "exec-5e97acf4-4e0c-4272-beb1-dfe93f793146",
+      "runtime": "site/dist/images/dispatch-map/landmarks-v2/landmark-school.webp",
+      "runtimeSize": [
+        192,
+        192
+      ],
+      "runtimeVisibleBounds": [
+        6,
+        13,
+        186,
+        178
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeSha256": "d50819c239812d46769e977a66f04c83c381cca805a85ece75b668d25a6cb8c2",
+      "anchor": [
+        96,
+        96
+      ],
+      "status": "Ready for art review and Claude integration",
+      "prompt": "Create one new production game sprite for Transport Dispatch in the approved Miniature World style. A tiny handcrafted gouache and coloured-pencil model village, painted and tactile, soft warm sunlight from upper left, weathered sandstone, clay, slate and subdued teal. Use a steep high three-quarter orthographic camera looking down at about 65 degrees, seeing broad roofs and just enough of the front fa\u00e7ade to identify the place. Align the front edge horizontally with the frame, entrance facing screen bottom. One compact, bold, instantly readable silhouette at 20\u201360 CSS pixels, limited simplified detail, strong local contrast. Entire isolated structure or site centered with at least 8% clear margin on every side, a genuinely transparent background and clean silhouette, no cast shadow outside the subject. At most a close irregular footprint for places that need ground; no rectangular tile backing, framed icon, bubble, platform pedestal, map, road, bridge, vehicle, character, text, lettering, number, watermark or signage with writing. Keep all components physically contiguous. Subject: An inviting two-story amber brick primary school, symmetrical deep blue-gray gabled wings, teal double entry door under a distinctive little central bell tower, and a short run of attached front steps. One blank yellow flag. Clear primary-school silhouette."
+    },
+    {
+      "id": "station",
+      "label": "Station",
+      "source": "artwork/dispatch/miniature-world-landmarks-v2/originals/landmark-station.png",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "sourceVisibleBounds": [
+        66,
+        62,
+        1451,
+        974
+      ],
+      "sourceAlpha": [
+        0,
+        254
+      ],
+      "sourceSha256": "43a2ed8e4b7dc01bf0eec505801848c902845e147bae31013913d9fa92b919a6",
+      "generationId": "exec-25a46d15-6f9d-4bcb-a5f7-48ab57705d23",
+      "runtime": "site/dist/images/dispatch-map/landmarks-v2/landmark-station.webp",
+      "runtimeSize": [
+        192,
+        192
+      ],
+      "runtimeVisibleBounds": [
+        6,
+        36,
+        186,
+        155
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeSha256": "2b4bea249f2ff0f3198178b153bad521e343e7120a9a77877f7faea58723eabe",
+      "anchor": [
+        96,
+        96
+      ],
+      "status": "Ready for art review and Claude integration",
+      "prompt": "Create one new production game sprite for Transport Dispatch in the approved Miniature World style. A tiny handcrafted gouache and coloured-pencil model village, painted and tactile, soft warm sunlight from upper left, weathered sandstone, clay, slate and subdued teal. Use a steep high three-quarter orthographic camera looking down at about 65 degrees, seeing broad roofs and just enough of the front fa\u00e7ade to identify the place. Align the front edge horizontally with the frame, entrance facing screen bottom. One compact, bold, instantly readable silhouette at 20\u201360 CSS pixels, limited simplified detail, strong local contrast. Entire isolated structure or site centered with at least 8% clear margin on every side, a genuinely transparent background and clean silhouette, no cast shadow outside the subject. At most a close irregular footprint for places that need ground; no rectangular tile backing, framed icon, bubble, platform pedestal, map, road, bridge, vehicle, character, text, lettering, number, watermark or signage with writing. Keep all components physically contiguous. Subject: A miniature countryside railway station, single story honey sandstone with an azure slate hipped roof, two slim brick chimneys and a long cream canopy along the entire front, with a narrow attached platform lip and a red bench under the canopy. No track."
+    },
+    {
+      "id": "hospital",
+      "label": "Hospital",
+      "source": "artwork/dispatch/miniature-world-landmarks-v2/originals/landmark-hospital.png",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "sourceVisibleBounds": [
+        112,
+        31,
+        1425,
+        995
+      ],
+      "sourceAlpha": [
+        0,
+        254
+      ],
+      "sourceSha256": "32c7df5a97902151d55aa214d41ffe0dbf420009b6b474f6a6562acb458b7812",
+      "generationId": "exec-4f10f4bf-f49c-40e1-8676-22bb9bfd346c",
+      "runtime": "site/dist/images/dispatch-map/landmarks-v2/landmark-hospital.webp",
+      "runtimeSize": [
+        192,
+        192
+      ],
+      "runtimeVisibleBounds": [
+        6,
+        30,
+        186,
+        162
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeSha256": "89a920e0929d1d8b565e501c10a82f70acc6d7dff1da3f612e67822839d833d3",
+      "anchor": [
+        96,
+        96
+      ],
+      "status": "Ready for art review and Claude integration",
+      "prompt": "Create one new production game sprite for Transport Dispatch in the approved Miniature World style. A tiny handcrafted gouache and coloured-pencil model village, painted and tactile, soft warm sunlight from upper left, weathered sandstone, clay, slate and subdued teal. Use a steep high three-quarter orthographic camera looking down at about 65 degrees, seeing broad roofs and just enough of the front fa\u00e7ade to identify the place. Align the front edge horizontally with the frame, entrance facing screen bottom. One compact, bold, instantly readable silhouette at 20\u201360 CSS pixels, limited simplified detail, strong local contrast. Entire isolated structure or site centered with at least 8% clear margin on every side, a genuinely transparent background and clean silhouette, no cast shadow outside the subject. At most a close irregular footprint for places that need ground; no rectangular tile backing, framed icon, bubble, platform pedestal, map, road, bridge, vehicle, character, text, lettering, number, watermark or signage with writing. Keep all components physically contiguous. Subject: A light ivory stone cottage hospital with a muted sage roof, rounded projecting glass entry canopy, broad blue window bands and a clearly recognizable white medical cross on a small blue roof plaque. Compact, bright and calm."
+    },
+    {
+      "id": "dock",
+      "label": "Ferry dock",
+      "source": "artwork/dispatch/miniature-world-landmarks-v2/originals/landmark-dock.png",
+      "sourceSize": [
+        1312,
+        1199
+      ],
+      "sourceVisibleBounds": [
+        225,
+        71,
+        1084,
+        1146
+      ],
+      "sourceAlpha": [
+        0,
+        255
+      ],
+      "sourceSha256": "9f96c5a545aeeb527e62446a4e90665048ad0d58596e7bbe78d68886fd380c4f",
+      "generationId": "exec-54dd58db-623b-4047-8227-9477db7b8ad3",
+      "runtime": "site/dist/images/dispatch-map/landmarks-v2/landmark-dock.webp",
+      "runtimeSize": [
+        192,
+        192
+      ],
+      "runtimeVisibleBounds": [
+        24,
+        6,
+        168,
+        186
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeSha256": "07acb020f7d714cf6cee545bf1566f104847af78755508ec3d43d05283255f9b",
+      "anchor": [
+        96,
+        96
+      ],
+      "status": "Ready for art review and Claude integration",
+      "prompt": "Create one new production game sprite for Transport Dispatch in the approved Miniature World style. A tiny handcrafted gouache and coloured-pencil model village, painted and tactile, soft warm sunlight from upper left, weathered sandstone, clay, slate and subdued teal. Use a steep high three-quarter orthographic camera looking down at about 65 degrees, seeing broad roofs and just enough of the front fa\u00e7ade to identify the place. Align the front edge horizontally with the frame, entrance facing screen bottom. One compact, bold, instantly readable silhouette at 20\u201360 CSS pixels, limited simplified detail, strong local contrast. Entire isolated structure or site centered with at least 8% clear margin on every side, a genuinely transparent background and clean silhouette, no cast shadow outside the subject. At most a close irregular footprint for places that need ground; no rectangular tile backing, framed icon, bubble, platform pedestal, map, road, bridge, vehicle, character, text, lettering, number, watermark or signage with writing. Keep all components physically contiguous. Subject: A seaside ferry ticket hut with cream clapboard, square blue roof and golden ochre trim. A life ring on the front wall and a pair of bollards on a tiny cobble entry apron attached directly to the building. A land-side asset, no water or pier."
+    },
+    {
+      "id": "fire",
+      "label": "Fire station",
+      "source": "artwork/dispatch/miniature-world-landmarks-v2/originals/landmark-fire.png",
+      "sourceSize": [
+        1312,
+        1199
+      ],
+      "sourceVisibleBounds": [
+        88,
+        17,
+        1213,
+        1168
+      ],
+      "sourceAlpha": [
+        0,
+        255
+      ],
+      "sourceSha256": "471e7745d9082168842998e79d702abf4a108685de2f3a9f59b85a0ea335fd39",
+      "generationId": "exec-80a72bfd-32d8-424d-b7de-b7a4d73744e2",
+      "runtime": "site/dist/images/dispatch-map/landmarks-v2/landmark-fire.webp",
+      "runtimeSize": [
+        192,
+        192
+      ],
+      "runtimeVisibleBounds": [
+        8,
+        6,
+        184,
+        186
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeSha256": "544ad857d3c964a34a1be788938ce1a48da4a2f171082152f54dded14f40fad4",
+      "anchor": [
+        96,
+        96
+      ],
+      "status": "Ready for art review and Claude integration",
+      "prompt": "Create one new production game sprite for Transport Dispatch in the approved Miniature World style. A tiny handcrafted gouache and coloured-pencil model village, painted and tactile, soft warm sunlight from upper left, weathered sandstone, clay, slate and subdued teal. Use a steep high three-quarter orthographic camera looking down at about 65 degrees, seeing broad roofs and just enough of the front fa\u00e7ade to identify the place. Align the front edge horizontally with the frame, entrance facing screen bottom. One compact, bold, instantly readable silhouette at 20\u201360 CSS pixels, limited simplified detail, strong local contrast. Entire isolated structure or site centered with at least 8% clear margin on every side, a genuinely transparent background and clean silhouette, no cast shadow outside the subject. At most a close irregular footprint for places that need ground; no rectangular tile backing, framed icon, bubble, platform pedestal, map, road, bridge, vehicle, character, text, lettering, number, watermark or signage with writing. Keep all components physically contiguous. Subject: A vermilion brick firehouse, two large warm red bay doors facing the viewer, cream headers, distinctive tall slim square hose-drying tower with peaked slate cap, dark gray roof. No engine."
+    },
+    {
+      "id": "building",
+      "label": "Building site",
+      "source": "artwork/dispatch/miniature-world-landmarks-v2/originals/landmark-building.png",
+      "sourceSize": [
+        1312,
+        1199
+      ],
+      "sourceVisibleBounds": [
+        114,
+        55,
+        1176,
+        1130
+      ],
+      "sourceAlpha": [
+        0,
+        255
+      ],
+      "sourceSha256": "b21ee64a7a018f0b1180c03f85e57eff606fc36064cb9cf939fdb7ee4af6150f",
+      "generationId": "exec-ac9fbd0d-6c1b-4c62-a6dd-dfa94b3be2bb",
+      "runtime": "site/dist/images/dispatch-map/landmarks-v2/landmark-building.webp",
+      "runtimeSize": [
+        192,
+        192
+      ],
+      "runtimeVisibleBounds": [
+        7,
+        6,
+        185,
+        186
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeSha256": "be6fd8bcdfd9bd5145ae9f2be6960b959f579447cf340d4e09505495c6c7e2c3",
+      "anchor": [
+        96,
+        96
+      ],
+      "status": "Ready for art review and Claude integration",
+      "prompt": "Create one new production game sprite for Transport Dispatch in the approved Miniature World style. A tiny handcrafted gouache and coloured-pencil model village, painted and tactile, soft warm sunlight from upper left, weathered sandstone, clay, slate and subdued teal. Use a steep high three-quarter orthographic camera looking down at about 65 degrees, seeing broad roofs and just enough of the front fa\u00e7ade to identify the place. Align the front edge horizontally with the frame, entrance facing screen bottom. One compact, bold, instantly readable silhouette at 20\u201360 CSS pixels, limited simplified detail, strong local contrast. Entire isolated structure or site centered with at least 8% clear margin on every side, a genuinely transparent background and clean silhouette, no cast shadow outside the subject. At most a close irregular footprint for places that need ground; no rectangular tile backing, framed icon, bubble, platform pedestal, map, road, bridge, vehicle, character, text, lettering, number, watermark or signage with writing. Keep all components physically contiguous. Subject: A compact active building site with an ochre timber-framed cottage skeleton under construction, a pile of bricks and one small orange mini site hoist attached on its footprint. Restrained tiny irregular warm soil footprint. No crane arm overhanging the sprite boundary."
+    },
+    {
+      "id": "farm",
+      "label": "Farm",
+      "source": "artwork/dispatch/miniature-world-landmarks-v2/originals/landmark-farm.png",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "sourceVisibleBounds": [
+        228,
+        83,
+        1303,
+        961
+      ],
+      "sourceAlpha": [
+        0,
+        254
+      ],
+      "sourceSha256": "b8bf624c94103b120bbed1ba5ac22edc12b6cb5a525b7e956a4e1aa9e81088b9",
+      "generationId": "exec-8657cc5c-19fb-474e-ad3e-5a4f25c17175",
+      "runtime": "site/dist/images/dispatch-map/landmarks-v2/landmark-farm.webp",
+      "runtimeSize": [
+        192,
+        192
+      ],
+      "runtimeVisibleBounds": [
+        6,
+        22,
+        186,
+        169
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeSha256": "d1d32f00c38956540ec2b26f44bec35fcd951da0e2f06681646abdd691042947",
+      "anchor": [
+        96,
+        96
+      ],
+      "status": "Ready for art review and Claude integration",
+      "prompt": "Create one new production game sprite for Transport Dispatch in the approved Miniature World style. A tiny handcrafted gouache and coloured-pencil model village, painted and tactile, soft warm sunlight from upper left, weathered sandstone, clay, slate and subdued teal. Use a steep high three-quarter orthographic camera looking down at about 65 degrees, seeing broad roofs and just enough of the front fa\u00e7ade to identify the place. Align the front edge horizontally with the frame, entrance facing screen bottom. One compact, bold, instantly readable silhouette at 20\u201360 CSS pixels, limited simplified detail, strong local contrast. Entire isolated structure or site centered with at least 8% clear margin on every side, a genuinely transparent background and clean silhouette, no cast shadow outside the subject. At most a close irregular footprint for places that need ground; no rectangular tile backing, framed icon, bubble, platform pedestal, map, road, bridge, vehicle, character, text, lettering, number, watermark or signage with writing. Keep all components physically contiguous. Subject: A small green market garden farm with one coral red pitched barn, a light cream door, two bold leafy vegetable beds beside it and a handful of bright pumpkin shapes. A single small irregular green-soil footprint hugging the components."
+    },
+    {
+      "id": "shop",
+      "label": "Shop",
+      "source": "artwork/dispatch/miniature-world-landmarks-v2/originals/landmark-shop.png",
+      "sourceSize": [
+        1312,
+        1199
+      ],
+      "sourceVisibleBounds": [
+        176,
+        46,
+        1123,
+        1130
+      ],
+      "sourceAlpha": [
+        0,
+        255
+      ],
+      "sourceSha256": "7ff523db107bff7b0033a643ae0b9334a340418d7b0f5777bedf8d54e03b6416",
+      "generationId": "exec-9d561053-0844-4d03-81e1-4ed6254996fe",
+      "runtime": "site/dist/images/dispatch-map/landmarks-v2/landmark-shop.webp",
+      "runtimeSize": [
+        192,
+        192
+      ],
+      "runtimeVisibleBounds": [
+        17,
+        6,
+        174,
+        186
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeSha256": "5f9da8002f74b0a015dac7783d1bf26d1cfc42a6878e87e730ac11a348148299",
+      "anchor": [
+        96,
+        96
+      ],
+      "status": "Ready for art review and Claude integration",
+      "prompt": "Create one new production game sprite for Transport Dispatch in the approved Miniature World style. A tiny handcrafted gouache and coloured-pencil model village, painted and tactile, soft warm sunlight from upper left, weathered sandstone, clay, slate and subdued teal. Use a steep high three-quarter orthographic camera looking down at about 65 degrees, seeing broad roofs and just enough of the front fa\u00e7ade to identify the place. Align the front edge horizontally with the frame, entrance facing screen bottom. One compact, bold, instantly readable silhouette at 20\u201360 CSS pixels, limited simplified detail, strong local contrast. Entire isolated structure or site centered with at least 8% clear margin on every side, a genuinely transparent background and clean silhouette, no cast shadow outside the subject. At most a close irregular footprint for places that need ground; no rectangular tile backing, framed icon, bubble, platform pedestal, map, road, bridge, vehicle, character, text, lettering, number, watermark or signage with writing. Keep all components physically contiguous. Subject: A small grocer's shop with a warm cream stone fa\u00e7ade, deep teal pitched roof, one distinctive scalloped orange-and-cream awning and tightly grouped apple and green produce crates against the front wall. No signage lettering."
+    },
+    {
+      "id": "houses",
+      "label": "Houses",
+      "source": "artwork/dispatch/miniature-world-landmarks-v2/originals/landmark-houses.png",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "sourceVisibleBounds": [
+        184,
+        37,
+        1336,
+        997
+      ],
+      "sourceAlpha": [
+        0,
+        254
+      ],
+      "sourceSha256": "243aa4f1770b66c0de96fec0e2ab1037bc9393626222c0ebae4c6c38dce8452b",
+      "generationId": "exec-30482457-f310-4715-8abd-6173529350ac",
+      "runtime": "site/dist/images/dispatch-map/landmarks-v2/landmark-houses.webp",
+      "runtimeSize": [
+        192,
+        192
+      ],
+      "runtimeVisibleBounds": [
+        6,
+        21,
+        186,
+        171
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeSha256": "844fa460671cd5b785706b2b9027e29182a2f7a620ce53a8162497c927024f1d",
+      "anchor": [
+        96,
+        96
+      ],
+      "status": "Ready for art review and Claude integration",
+      "prompt": "Create one new production game sprite for Transport Dispatch in the approved Miniature World style. A tiny handcrafted gouache and coloured-pencil model village, painted and tactile, soft warm sunlight from upper left, weathered sandstone, clay, slate and subdued teal. Use a steep high three-quarter orthographic camera looking down at about 65 degrees, seeing broad roofs and just enough of the front fa\u00e7ade to identify the place. Align the front edge horizontally with the frame, entrance facing screen bottom. One compact, bold, instantly readable silhouette at 20\u201360 CSS pixels, limited simplified detail, strong local contrast. Entire isolated structure or site centered with at least 8% clear margin on every side, a genuinely transparent background and clean silhouette, no cast shadow outside the subject. At most a close irregular footprint for places that need ground; no rectangular tile backing, framed icon, bubble, platform pedestal, map, road, bridge, vehicle, character, text, lettering, number, watermark or signage with writing. Keep all components physically contiguous. Subject: A cluster of three compact connected village row homes with staggered gables and distinctly different ochre, light cream and rose fa\u00e7ades, varied slate and terracotta roofs and tiny connected front steps. Reads as one residential terrace."
+    },
+    {
+      "id": "police",
+      "label": "Police station",
+      "source": "artwork/dispatch/miniature-world-landmarks-v2/originals/landmark-police.png",
+      "sourceSize": [
+        1312,
+        1199
+      ],
+      "sourceVisibleBounds": [
+        146,
+        90,
+        1161,
+        1123
+      ],
+      "sourceAlpha": [
+        0,
+        255
+      ],
+      "sourceSha256": "2907e39ffca2d123226a99c3350315b7d2663f3885214f86433b74cf3b812279",
+      "generationId": "exec-64afa964-d819-4b01-9762-d262a6c8246c",
+      "runtime": "site/dist/images/dispatch-map/landmarks-v2/landmark-police.webp",
+      "runtimeSize": [
+        192,
+        192
+      ],
+      "runtimeVisibleBounds": [
+        7,
+        6,
+        184,
+        186
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeSha256": "0c99ac345e941a5514a42c3ab21842e715ac6683f91b922d1932596fa389b5d0",
+      "anchor": [
+        96,
+        96
+      ],
+      "status": "Ready for art review and Claude integration",
+      "prompt": "Create one new production game sprite for Transport Dispatch in the approved Miniature World style. A tiny handcrafted gouache and coloured-pencil model village, painted and tactile, soft warm sunlight from upper left, weathered sandstone, clay, slate and subdued teal. Use a steep high three-quarter orthographic camera looking down at about 65 degrees, seeing broad roofs and just enough of the front fa\u00e7ade to identify the place. Align the front edge horizontally with the frame, entrance facing screen bottom. One compact, bold, instantly readable silhouette at 20\u201360 CSS pixels, limited simplified detail, strong local contrast. Entire isolated structure or site centered with at least 8% clear margin on every side, a genuinely transparent background and clean silhouette, no cast shadow outside the subject. At most a close irregular footprint for places that need ground; no rectangular tile backing, framed icon, bubble, platform pedestal, map, road, bridge, vehicle, character, text, lettering, number, watermark or signage with writing. Keep all components physically contiguous. Subject: A miniature deep-blue and cream-brick village police station, formal small square building with a navy hipped roof, strong centered doorway, two small cobalt lights framing the entrance and a clear shield silhouette above it, no symbols with writing."
+    },
+    {
+      "id": "park",
+      "label": "Park",
+      "source": "artwork/dispatch/miniature-world-landmarks-v2/originals/landmark-park.png",
+      "sourceSize": [
+        1312,
+        1199
+      ],
+      "sourceVisibleBounds": [
+        69,
+        59,
+        1164,
+        1120
+      ],
+      "sourceAlpha": [
+        0,
+        255
+      ],
+      "sourceSha256": "31dbbb5c9d8e2f1f5ab7574c54ad0f09139c9728138789c2deb2e5cb117691df",
+      "generationId": "exec-1b097a2b-6a87-4218-8fc0-44b37a1842ac",
+      "runtime": "site/dist/images/dispatch-map/landmarks-v2/landmark-park.webp",
+      "runtimeSize": [
+        192,
+        192
+      ],
+      "runtimeVisibleBounds": [
+        6,
+        9,
+        186,
+        183
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeSha256": "833202f5e14b316688f6f3ba2f749c9a90529ca5ced07961f0e79e47f8629c4a",
+      "anchor": [
+        96,
+        96
+      ],
+      "status": "Ready for art review and Claude integration",
+      "prompt": "Create one new production game sprite for Transport Dispatch in the approved Miniature World style. A tiny handcrafted gouache and coloured-pencil model village, painted and tactile, soft warm sunlight from upper left, weathered sandstone, clay, slate and subdued teal. Use a steep high three-quarter orthographic camera looking down at about 65 degrees, seeing broad roofs and just enough of the front fa\u00e7ade to identify the place. Align the front edge horizontally with the frame, entrance facing screen bottom. One compact, bold, instantly readable silhouette at 20\u201360 CSS pixels, limited simplified detail, strong local contrast. Entire isolated structure or site centered with at least 8% clear margin on every side, a genuinely transparent background and clean silhouette, no cast shadow outside the subject. At most a close irregular footprint for places that need ground; no rectangular tile backing, framed icon, bubble, platform pedestal, map, road, bridge, vehicle, character, text, lettering, number, watermark or signage with writing. Keep all components physically contiguous. Subject: A small town park grouping with one distinctive leafy tree, a connected curved tan footpath and a bench, a few flowers and a low shrub, on a very small irregular grassy ground footprint. The silhouette is dominated by the tree and a readable crescent path."
+    },
+    {
+      "id": "island",
+      "label": "Island",
+      "source": "artwork/dispatch/miniature-world-landmarks-v2/originals/landmark-island.png",
+      "sourceSize": [
+        1312,
+        1199
+      ],
+      "sourceVisibleBounds": [
+        83,
+        22,
+        1230,
+        1160
+      ],
+      "sourceAlpha": [
+        0,
+        255
+      ],
+      "sourceSha256": "78d9358eacb8d92c596ba78798943df7686fa617939e820ad470a0f2c6a044f2",
+      "generationId": "exec-4344d23a-79f6-4c31-90ef-762e96abd5df",
+      "runtime": "site/dist/images/dispatch-map/landmarks-v2/landmark-island.webp",
+      "runtimeSize": [
+        192,
+        192
+      ],
+      "runtimeVisibleBounds": [
+        6,
+        6,
+        186,
+        185
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeSha256": "57e07fc0e3190dc9a7dae3429d250d88a8ee35af2f6f365660cc878edff4a917",
+      "anchor": [
+        96,
+        96
+      ],
+      "status": "Ready for art review and Claude integration",
+      "prompt": "Create one new production game sprite for Transport Dispatch in the approved Miniature World style. A tiny handcrafted gouache and coloured-pencil model village, painted and tactile, soft warm sunlight from upper left, weathered sandstone, clay, slate and subdued teal. Use a steep high three-quarter orthographic camera looking down at about 65 degrees, seeing broad roofs and just enough of the front fa\u00e7ade to identify the place. Align the front edge horizontally with the frame, entrance facing screen bottom. One compact, bold, instantly readable silhouette at 20\u201360 CSS pixels, limited simplified detail, strong local contrast. Entire isolated structure or site centered with at least 8% clear margin on every side, a genuinely transparent background and clean silhouette, no cast shadow outside the subject. At most a close irregular footprint for places that need ground; no rectangular tile backing, framed icon, bubble, platform pedestal, map, road, bridge, vehicle, character, text, lettering, number, watermark or signage with writing. Keep all components physically contiguous. Subject: A small island destination's center landmark, a sturdy cream-and-red striped miniature lighthouse and its attached keeper's cottage on a few weathered sandstone rocks and short scrub. Keep the ground shape small and irregular, no full island coastline, sea, dock, pier or berth. The game already draws the island and berth separately."
+    }
+  ]
+}
