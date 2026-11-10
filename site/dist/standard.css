@@ -451,3 +451,7 @@ body[data-transport-shell] .home-screen.menu-open .menu-title{font:700 2rem/1.06
   .results-card .result-actions{display:flex;flex-direction:column;align-items:stretch;gap:10px;width:100%}
   .results-card .result-actions > button{width:100%;min-height:47px;height:auto;padding:10px 14px;border-radius:17px;font-size:16px;margin:0}
 }
+/* Narrow phones (320px): the picture switches wrap instead of pushing the card sideways. */
+@media(max-width:380px){.game-screen.active .game-card:has(> .picture-controls) > .picture-controls{flex-wrap:wrap}.game-screen.active .game-card:has(> .picture-controls) > .picture-controls > label{flex:1 1 120px;min-width:0;white-space:normal;text-align:center;justify-content:center}}
+/* Media: the card, tabs and printable selector shrink within their grid track instead of widening it. */
+.answers:has(> .standard-resource){grid-template-columns:minmax(0,1fr)}.standard-resource{min-width:0;grid-template-columns:minmax(0,1fr)}.standard-resource > *{min-width:0}.media-sections{flex-wrap:wrap}.printables-toolbar label{flex-wrap:wrap;min-width:0;max-width:100%}.printables-toolbar select{min-width:0;max-width:100%}
