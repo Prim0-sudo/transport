@@ -214,7 +214,15 @@ function standardBack(){
 // Vehicle part insets (artwork/classroom/miniature-world-v1/part-insets.json): the part's own teaching scene,
 // cropped to the inset viewBox, with the original highlight drawn in the same SVG space so it stays on the part.
 let partInsets=null;
-fetch('images/classroom/part-insets.json').then(r=>r.ok?r.json():null).then(data=>{partInsets=data?.entries||{};if(state.mode==='learn'&&!state.choosing&&state.questions[state.round]?.id?.startsWith('part.'))renderQuestion();}).catch(()=>{partInsets={};});
+// The index can arrive before app.js has set up the lesson (cold or restored sessions), so it never touches
+// lesson state: a part card drawn early is tagged, and its inset is slotted in beside that same picture.
+fetch('images/classroom/part-insets.json').then(r=>r.ok?r.json():null).then(data=>{partInsets=data?.entries||{};addPendingInsets();},()=>{partInsets={};});
+function addPendingInsets(){
+  document.querySelectorAll('.learn-word-card > img[data-inset-for]').forEach(image=>{
+    const id=image.dataset.insetFor,inset=partInset({id,name:image.dataset.partName||''});image.removeAttribute('data-inset-for');if(!inset)return;
+    const pair=document.createElement('div');pair.className='learn-picture-pair';image.replaceWith(pair);pair.append(image,inset);
+  });
+}
 function partInset(item){
   const inset=partInsets?.[item.id];if(!inset)return null;
   const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg'),[,,w,h]=inset.sceneViewBox;
@@ -237,7 +245,8 @@ function renderStandardLearn(){
     image.src=source;
     image.alt=item.alt||`Miniature illustration of ${item.name}.`;
     const inset=partInset(item);
-    if(inset){const pair=document.createElement('div');pair.className='learn-picture-pair';pair.append(image,inset);panel.append(pair);}else panel.append(image);
+    if(inset){const pair=document.createElement('div');pair.className='learn-picture-pair';pair.append(image,inset);panel.append(pair);}
+    else{if(!partInsets&&item.id?.startsWith('part.')){image.dataset.insetFor=item.id;image.dataset.partName=item.name;}panel.append(image);}
   }
   const title=document.createElement('h2');
   title.textContent=item.name;
