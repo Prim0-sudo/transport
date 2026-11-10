@@ -437,3 +437,9 @@ body[data-transport-shell] .home-screen.menu-open .menu-title{font:700 2rem/1.06
   .game-card[data-mode=wheel] .standard-choice-grid .standard-choice{min-height:0;padding:6px;gap:6px}
   .game-card[data-mode=wheel] .standard-choice-grid .standard-choice img{height:30px;width:auto;max-width:100%}
 }
+/* Plants parity: pages with no score (Media and the like) keep their label pill beside the back button; their heading sits left. */
+@media(max-width:650px){
+  .game-screen .game-status:has(> .score-pill[hidden]){grid-template-columns:auto auto 1fr;grid-template-areas:"back label .";align-items:center}
+  .game-screen .game-status:has(> .score-pill[hidden]) > .round-label{align-self:center}
+  .game-card[data-mode=media] > h2{text-align:left;align-self:stretch;width:100%}
+}
