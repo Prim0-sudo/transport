@@ -121,10 +121,10 @@
     const river = town.riverX * w / 100;
     const riverHalf = w * .045;
     const land = (x, y, radius) => x > radius + 2 && x < w - radius - 2 && y > radius + 2 &&
-      y + radius + 3 < shoreY(x * 100 / w) * h / 100 &&
       Math.abs(x - river) > riverHalf + radius &&
       streets.every(street => streetDistance(x, y, street) > roadWidth / 2 + radius + 2) &&
-      used.every(other => Math.abs(x - other.x) > radius + other.radius || Math.abs(y - other.y) > radius + other.radius);
+      used.every(other => Math.abs(x - other.x) > radius + other.radius || Math.abs(y - other.y) > radius + other.radius) &&
+      y + radius + 3 < shoreY(x * 100 / w) * h / 100;
     const offsets = [];
     const columns = [-.39,.39,-.28,.28,-.21,.21,-.16,.16,-.12,.12,-.49,.49,-.58,.58,0];
     const rows = [-.39,.39,-.49,.49,-.29,.29,-.18,.18,-.59,.59,0];
@@ -140,21 +140,26 @@
     };
     for (const node of nodes) {
       const start = point(node);
+      const onBank = x => (x < river) === (start.x < river);
       for (const scale of [1, .83, .66, .5, .38, .30, .24]) {
         const side = size * scale, radius = side * .62;
         if (side < 18) break;
-        const offset = offsets.find(([dx,dy]) => land(start.x + dx * stepX, start.y + dy * stepY, radius));
+        const offset = offsets.find(([dx,dy]) => {
+          const x = start.x + dx * stepX;
+          return onBank(x) && land(x, start.y + dy * stepY, radius);
+        });
         if (!offset) continue;
         register(node, start, start.x + offset[0] * stepX, start.y + offset[1] * stepY, side);
         break;
       }
       // At a narrow riverbank, look for the nearest free small plot on the same bank.
       if (!lots[node.id]) {
-        for (const side of [18, 15, 12]) {
+        for (const side of [18, 15, 12, 10, 8]) {
           let nearest, best = Infinity;
-          for (let y = 8; y < h * .8; y += 6) for (let x = 8; x < w; x += 6) {
+          const stride = side < 12 ? 3 : 6;
+          for (let y = 8; y < h * .8; y += stride) for (let x = 8; x < w; x += stride) {
             const distance = Math.hypot(x - start.x, y - start.y);
-            if ((x < river) === (start.x < river) && distance < best && land(x, y, side * .62)) {
+            if (onBank(x) && distance < best && land(x, y, side * .62)) {
               nearest = [x,y]; best = distance;
             }
           }
