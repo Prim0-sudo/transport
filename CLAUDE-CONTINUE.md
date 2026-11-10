@@ -168,7 +168,7 @@ Commit identity: `git -c user.name=Prim0-sudo -c user.email=Prim0-sudo@users.nor
 ## Phonics and Polly (2026-11-10)
 
 - Phonics: use Plants' sounds (already identical) until the owner says otherwise.
-- Polly: no Transport recordings exist in the repo, its history, Drive or sibling projects. Request list ready (154 texts, about 4,600 characters, Amy neural en-GB, about US$0.07). Needs the owner signed in to the AWS console in the browser pane, or the files from the work laptop.
+- Polly: 154 clips generated 2026-11-10 (Amy neural en-GB, console, owner signed in). Installed as site/dist/audio/polly/<sha256(text)>.mp3 with site/dist/audio/narration-manifest.json. speak() in app.js plays the clip when the exact text is in the manifest, otherwise the device voice. New texts: add them, generate, then run scripts/install-polly-bundle.mjs on a bundle of {text, b64}.
 
 ## Driving game (started 2026-11-10)
 
@@ -191,7 +191,7 @@ Commit identity: `git -c user.name=Prim0-sudo -c user.email=Prim0-sudo@users.nor
 1. Media page now matches Plants (2026-11-09): Printables / Books / Videos / Songs tabs (from hubs.media.groups), "Print layout" dropdown (default 4 per sheet), picture rows with Open and Download. Books, Videos and Songs show "No … yet." until content exists.
 2. Media content: books, videos, songs.
 3. Alphabet sounds: use Plants' sounds until the owner says otherwise.
-4. Paid narration (Polly via AWS console) needs a cost estimate and owner OK first.
+4. Paid narration (Polly via AWS console) needs a cost estimate and owner OK first. First batch done 2026-11-10.
 5. More art: Dispatch scenery and top-down vehicle sprites (word pictures and scenes are done; see above).
 6. The separate driving game (Garden Patrol-style controls) after Dispatch, per the upgrade plan.
 

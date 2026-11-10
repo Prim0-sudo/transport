@@ -1,5 +1,5 @@
 {
-  "status": "Unfunded draft request list; do not submit to a generation service",
+  "status": "Generated 2026-11-10 in the Polly console and installed in site/dist/audio (scripts/install-polly-bundle.mjs)",
   "voice": "Amy",
   "engine": "neural",
   "locale": "en-GB",

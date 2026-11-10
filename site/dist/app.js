@@ -108,6 +108,10 @@ const work = new TransportLifecycle({ onHold: held => {
   spellingScene?.setHeld(held);
   wheelTween?.paused(held);
   landingScene.setHold('activity', held);
+  if (activeClip) {
+    if (held) activeClip.pause();
+    else if (!state.muted && !activeClip.ended) activeClip.play().catch(() => {});
+  }
   if ("speechSynthesis" in window) {
     if (held) {
       speechHeld = speechSynthesis.speaking && !speechSynthesis.paused;
@@ -131,9 +135,7 @@ function cancelCurrentWork() {
   work.cancel();
   wheelTickTimers = [];
   promptTask = confettiTask = null;
-  speechHeld = false;
-  if ("speechSynthesis" in window) speechSynthesis.cancel();
-  if (activeClip) activeClip.pause();
+  stopSpeech();
   for (const source of activeEffects) {
     try { source.stop(); } catch (_) {}
     source.disconnect();
@@ -170,10 +172,43 @@ function showScreen(name) {
   landingScene.setActive(launch);
 }
 
+// Recorded narration (Amazon Polly, Amy, neural, en-GB). Texts without a recording use the device voice.
+let narrationManifest = null;
+let speakGeneration = 0;
+function narrationClips() {
+  narrationManifest ||= fetch("audio/narration-manifest.json")
+    .then(r => r.ok ? r.json() : { clips: {} })
+    .then(m => (m.voice === "Amy" && m.engine === "neural" && m.locale === "en-GB" ? m.clips : {}) || {})
+    .catch(() => { narrationManifest = null; return {}; });
+  return narrationManifest;
+}
+narrationClips(); // Load early so the first tap plays straight away.
+
+function stopSpeech() {
+  speakGeneration++;
+  speechHeld = false;
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  if (activeClip) { activeClip.pause(); activeClip = null; }
+}
+
 function speak(text) {
   work.cancelTask(promptTask);
-  if (state.muted || work.held || !text || !("speechSynthesis" in window)) return;
-  speechHeld = false;
+  if (state.muted || work.held || !text) return;
+  stopSpeech();
+  const generation = speakGeneration;
+  narrationClips().then(clips => {
+    if (generation !== speakGeneration || state.muted || work.held) return;
+    const path = clips[text];
+    if (!/^audio\/polly\/[a-f0-9]{64}\.mp3$/.test(path || "")) { speakWithDevice(text); return; }
+    const clip = new Audio(path);
+    activeClip = clip;
+    clip.onended = () => { if (activeClip === clip) activeClip = null; };
+    clip.play().catch(() => { if (generation === speakGeneration && activeClip === clip) { activeClip = null; speakWithDevice(text); } });
+  });
+}
+
+function speakWithDevice(text) {
+  if (!("speechSynthesis" in window)) return;
   speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.rate = .82;
@@ -542,8 +577,8 @@ function flipTile(tileId) {
   renderFlipGame();
   if (game.matches === state.questions.length) {
     state.answered = true;
-    standardFeedback("You found every matching pair!", finishGame, "correct", "See results");
-    speak("You found every matching pair!");
+    standardFeedback("You found every match!", finishGame, "correct", "See results");
+    speak("You found every match!");
   }
 }
 
@@ -979,9 +1014,7 @@ els.sound.addEventListener("click", () => {
   els.sound.title = state.muted ? "Sound off (M)" : "Sound on (M)";
   els.sound.setAttribute("aria-label", state.muted ? "Turn sound on" : "Turn sound off");
   if (state.muted) {
-    speechHeld = false;
-    if ("speechSynthesis" in window) speechSynthesis.cancel();
-    if (activeClip) activeClip.pause();
+    stopSpeech();
     for (const source of activeEffects) { try { source.stop(); } catch (_) {} }
     activeEffects.clear();
   }
