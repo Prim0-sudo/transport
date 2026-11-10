@@ -1,0 +1,903 @@
+{
+  "schema": 1,
+  "project": "Transport Town coastal station square",
+  "source": "OpenAI built-in ImageGen",
+  "reference": "Plants Blueprint v6.0 ART-AND-ANIMATION.md and the approved coastal station motion study",
+  "status": "Painted motion preview approved by owner; app integration assigned to Claude",
+  "coordinateSystem": {
+    "width": 1536,
+    "height": 1024,
+    "origin": "top left",
+    "units": "source pixels",
+    "planeOrder": [
+      "sky-backplate",
+      "distant-coast",
+      "runway-plane",
+      "station-stage",
+      "harbour-ferry",
+      "station-train",
+      "station-bus",
+      "kerb-stop",
+      "ferry-gangway",
+      "passenger frames",
+      "exit-trees"
+    ]
+  },
+  "originals": {
+    "station-stage": {
+      "path": "originals/station-stage.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "c012edf544cfb3c832489198c5c94076ec42f6b8d5639dd216391ac989e15b5a",
+      "alpha": false,
+      "transparentPixels": 0,
+      "maxBorderAlpha": 255,
+      "prompt": "Paint one clean reusable environment plate for Transport Town, an animation-ready coastal station square in a cheerful premium children's Miniature World style. Wide landscape 3:2 framing, 1536 x 1024. Hand-painted gouache with matte subtle texture on handcrafted miniature architecture, simplified factual geometry, layered greenery, warm cream stone, muted navy, sea turquoise, soft morning light. Camera looks straight across all routes side-on from a modest elevation, orthographic feel. This is an empty set with absolutely NO train, bus, boat, airplane, people, clouds, text, letters, signage text, foreground trees, title, UI or decorative border. Clean road and rails all the way to the frame edges. Layout with these exact visual bands: y=0–27% quiet pale blue sky, y=27–38% low coastal hills with distant sea and a tiny empty horizontal light-grey runway on the far LEFT; y=38–51% calm blue harbour across full width, with a LOW, HORIZONTAL stone quay at y=49–52% and a short walkway landing in the centre-right near x=58%. y=52–65% warm station scene with a neat small cream station house and navy roof on the left and low canopy near centre-right, both BEHIND the track. The TRAIN tracks run perfectly straight, horizontal and unbroken left-to-right at y=65–68%, no perspective convergence or turns; pale passenger platform in front of them at y=68–73%, with a yellow edge. y=75–86% is a straight horizontal dark grey bus street with a road surface across the FULL image. Kerb at y=87%, then warm pedestrian paving to y=95%. Low planted border at the very bottom. Very clean visual separation between sea, platform, rails, street and sidewalk. Keep the middle half usable when the edges are cropped on a phone. Reserve unbroken negative space in the top third for HTML title and Explore. Transport scene will be composited with individual side-view sprites and people. Paint every surface clean behind the actors, and NEVER put any moving subjects into the scenery."
+    },
+    "sky-backplate": {
+      "path": "originals/sky-backplate.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "8d36c00615f1a2a5f17445beee20279d62d6da0a0fba532328f5f834176409a9",
+      "alpha": false,
+      "transparentPixels": 0,
+      "maxBorderAlpha": 255,
+      "prompt": "Wide 3:2 seamless edge-to-edge quiet morning sky, background for a painted Miniature World children's coastal railway station. Soft blue at the top grading to pale warm blue low down, exceptionally subtle matte gouache grain, gentle clear light, minimal faint wispy cloud colour off to the extreme edges only. Blank readable central sky for navy HTML text. Sky only, no horizon line, water, hills, buildings, sunlight disk, graphics, text, vignetting, borders or objects."
+    },
+    "exit-trees": {
+      "path": "originals/exit-trees.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "f175ecc331e0e88c5130f580bbada71b5919e622381f52ddcabbfe8cad19d002",
+      "alpha": true,
+      "transparentPixels": 745568,
+      "maxBorderAlpha": 1,
+      "prompt": "One independent painted foreground cutout to mask a departing bus in a Miniature World educational coastal station scene. A dense rounded clump of three coastal garden trees with green and yellow-green foliage plus a low hedge across the trunk bases, fully connected visual silhouette, substantial opaque foliage across the entire lower middle so it can conceal a passing yellow bus. Three-quarter slightly elevated miniature diorama view, matte hand-painted gouache texture, rich soft greens with subtle sunlit edges, no floor or cast shadow outside the cutout. Square canvas, centre the complete group with padding, transparent background RGBA PNG. No people, vehicles, lettering or buildings."
+    },
+    "station-train": {
+      "path": "originals/station-train.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "ded34a5bb3002c4e4d6708fa09cd8759db1f902d2aa14439b8794cebfff98e87",
+      "alpha": true,
+      "transparentPixels": 1336475,
+      "maxBorderAlpha": 0,
+      "prompt": "Animation sprite for premium Miniature World children's educational app, opaque matte gouache on handcrafted miniature models. One complete exactly FOUR-unit double-ended red and cream passenger train, straight orthographic true SIDE profile with a perfectly horizontal rail contact line. Composition in order LEFT to RIGHT: a short red locomotive with its sloping nose pointing LEFT; a distinct cream-and-red passenger coach with rows of windows; a second distinct cream-and-red passenger coach; a short red locomotive with its nose pointing RIGHT. Both end locomotives face outward. Exactly four complete separately readable coupled units with exactly three obvious dark inter-car gaps/couplers, two passenger coaches only. Same common wheel baseline and height, tiny dark wheels, classic coastal railway appearance, muted brick-red, warm cream, navy undercarriage, glass in blue. A single coherent assembled train cutout; leave space around tips; centre the entire long subject in a wide 3:2 canvas. No rotation, angle, ground, rails, backdrop, shadow or text. Real transparent background RGBA PNG."
+    },
+    "station-bus": {
+      "path": "originals/station-bus.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "c349c6a6316855518cf7d1663b118d1ef5b63aa74f1b26d9cb19fd42cc52a94b",
+      "alpha": true,
+      "transparentPixels": 752985,
+      "maxBorderAlpha": 1,
+      "prompt": "One complete standalone golden yellow compact city bus animation cutout, true orthographic SIDE view, front facing RIGHT, perfectly horizontal tyre baseline. Miniature World premium painted gouache of a handmade little bus, matte bright marigold body, warm cream stripe, subtle navy trim, cool blue cabin windows. Exactly two visible large black tyres with subtle hubs. One clearly OPEN dark full-height boarding doorway immediately behind the right/front wheel, with an obvious threshold near the bottom of the body; door panels slid aside within the bus, no person visible inside. Driver windscreen at far right. No ground, cast shadow, floor strip, road, reflections outside the silhouette, people, roof signs or text. Entire bus centred with margin in wide 3:2 PNG, real alpha transparent canvas, clean edges."
+    },
+    "harbour-ferry": {
+      "path": "originals/harbour-ferry.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "b3736318e2512d3a755c07d67aead2d1f63cca8a5eca9f1b13587ff73223f70d",
+      "alpha": true,
+      "transparentPixels": 1102028,
+      "maxBorderAlpha": 1,
+      "prompt": "One small coastal passenger ferry, isolated side-on orthographic miniature painted gouache cutout for Transport Town, front bow facing LEFT so it can approach from the right along a straight harbour. Show entire ferry, gently rounded stern on right, low navy hull, narrow burnt-orange stripe, ivory cabin with blue windows and navy funnel, open small dark passenger boarding door in the near side just right of the middle, short railings; door has a clear low threshold close to the painted hull's upper edge. The bottom of the visible hull is one straight horizontal waterline. Cream, nautical blue, warm accent. Complete coherent hand-painted matte Miniature World actor, no waves, foam, water, background, cast shadow, smoke, lettering, people, land or pier. Transparent RGBA PNG, entire long ferry centred in wide 3:2 with clearance on all sides."
+    },
+    "boarding-passenger": {
+      "path": "originals/boarding-passenger.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "86eb382ad39c012b4b9a43251bf61dcb2c68745ef230a6847c5936ed772ec880",
+      "alpha": true,
+      "transparentPixels": 1267815,
+      "maxBorderAlpha": 1,
+      "prompt": "One compact animation sprite atlas of the SAME single painted passenger in four registered walking poses for a premium Miniature World educational diorama. Four whole-body poses in a 2 by 2 grid with roomy transparent gutters. Same character each time, adult woman in a muted red-orange short coat, cream trousers, tiny teal cross-body bag and dark brown short hair. True side view facing RIGHT throughout, no turned camera. Top-left relaxed standing with feet even; top-right right foot forward and left foot back, opposite arms; bottom-left passing pose with one heel lifted; bottom-right left foot forward and right foot back, opposite arms. Use identical head height, foot contact baseline relative to each equal quadrant, anatomical proportions, bag, coat and shoes. Painterly gouache on matte handcrafted miniature figure, simple legible silhouette for 20px size. Each figure entirely separate, centred within its quadrant with substantial clear margin. Clean real transparent RGBA PNG background. No typography, labels, shadow, floor, panels, guides or props other than bag."
+    },
+    "runway-plane": {
+      "path": "originals/runway-plane.png",
+      "width": 1774,
+      "height": 887,
+      "sha256": "36e4d98a607772c722968d271cb75c22dd15f29fa9f23b6082b2b0fdd7e37874",
+      "alpha": true,
+      "transparentPixels": 927993,
+      "maxBorderAlpha": 1,
+      "prompt": "A single complete small cream and navy propeller airplane with short fixed landing gear, true side profile facing RIGHT, exact horizontal wheel contact line, clear navy glass, subtly hand-painted matte gouache finish, cheerful premium Miniature World handcrafted toy aesthetic. Simple factual proportions, visible complete propeller and wings. Transparent RGBA PNG with actual alpha and complete clean silhouette with margin, no pilot figure, sky, floor, cast shadow, markings, text, exhaust or background."
+    },
+    "boarding-passenger-2": {
+      "path": "originals/boarding-passenger-2.png",
+      "width": 1263,
+      "height": 1246,
+      "sha256": "14b3cdfadd9b327436ff9ee4256996aad8f32440db95ad7c610b54792ea4e99e",
+      "alpha": true,
+      "transparentPixels": 1298550,
+      "maxBorderAlpha": 0,
+      "prompt": "One compact sprite atlas of the SAME person in four registered walking poses for a painted Miniature World coastal station animation. Four distinct whole-body poses in a 2 by 2 grid, substantial transparent gutters. One friendly adult man in a deep teal jacket, navy trousers, tan boots, carrying a small warm ochre backpack, curly dark brown hair and medium brown skin. True SIDE profile facing RIGHT in all frames. Top-left standing at rest; top-right right foot forward and opposite arms; bottom-left passing pose; bottom-right left foot forward and opposite arms. Equal scale, consistent proportions, same head height and foot contact baseline within each equally sized quadrant. Complete figures entirely separate and centred in each quadrant. Matte hand-painted gouache, simple bold silhouette that reads at 24 pixels tall. Real transparent RGBA PNG, no checkerboard, no props other than backpack, no text, floor, shadow, labels, panels or borders."
+    },
+    "ferry-gangway": {
+      "path": "originals/ferry-gangway.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "e161ad96fa87713e0e1e7784a1ac4ed939c52007290e95e0eaf7e1d121f9de81",
+      "alpha": true,
+      "transparentPixels": 1010727,
+      "maxBorderAlpha": 1,
+      "prompt": "One tiny miniature ferry boarding gangway for a premium hand-painted children's Miniature World coastal harbour. Seen from slightly elevated side orthographic camera with a diagonal axis from lower right to upper left on the canvas. Simple complete wooden plank ramp with parallel matte muted cream handrails, warm light weathered oak planks, small navy brackets. Clean factual silhouette, subtly textured gouache, enough contrast at 30 pixels, gentle warm morning lighting. Isolated RGBA transparent PNG with true transparency, full object within clear margins. No people, boat, rope, water, dock, background, shadow, words or extra objects."
+    },
+    "kerb-stop": {
+      "path": "originals/kerb-stop.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "d3abfdc74b90aaf22c7473863be5568a3e4dcdb3f9240176f8436a64836f0dc4",
+      "alpha": true,
+      "transparentPixels": 680606,
+      "maxBorderAlpha": 1,
+      "prompt": "One isolated small wooden coastal bus stop shelter with blue painted shallow gabled roof, pale cream timber posts and bench, one simple little blue-and-cream bus pictogram sign on a post to its side, no lettering. Front-facing orthographic with a tiny bit of top visible, warm morning light, matte painterly gouache on a handcrafted Miniature World diorama, coherent with cream stone and navy roofs. Render as a single complete RGBA transparent PNG cutout with true clear surrounding alpha. No people, bus, pavement, backdrop, ground strip, drop shadow or extra scenery."
+    },
+    "bus-door-closed": {
+      "path": "originals/bus-door-closed.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "e52a35bf83f9d4804dc85907d8d0c1919365d408ef48b6d9adf23e5f05813ade",
+      "alpha": true,
+      "transparentPixels": 759554,
+      "maxBorderAlpha": 1,
+      "prompt": "Edit this exact orthographic painted yellow bus. Change only the empty open boarding doorway behind the right wheel. Close it with two flush navy-framed folding glass panels, blue tinted glass above and dark navy lower panels. Match its existing window trim and gouache finish. Keep the original 1536 × 1024 canvas, pixel position, camera, scale and shape of the bus and every other part. Do not move or resize the doorway. Maintain true transparent RGBA background.",
+      "reference": "originals/station-bus.png"
+    },
+    "ferry-door-closed": {
+      "path": "originals/ferry-door-closed.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "f9e149b75185fe55e99b34fd5cb2052f224819fccef44b701c1f3c34af9bd62d",
+      "alpha": true,
+      "transparentPixels": 1124699,
+      "maxBorderAlpha": 0,
+      "prompt": "Edit this exact painted side-on coastal ferry. Close only the dark open passenger doorway at the near-side centre with one flush cream maritime door, small blue porthole in its upper third and a subtle navy frame. Preserve the original 1536 × 1024 canvas, camera, pixel position, size and shape of the entire ferry and every other part. Do not change the door frame geometry or threshold. Maintain true transparent RGBA background.",
+      "reference": "originals/harbour-ferry.png"
+    }
+  },
+  "runtime": {
+    "distant-coast": {
+      "path": "art/distant-coast.png",
+      "source": "station-stage",
+      "width": 1536,
+      "height": 1024,
+      "sourceCrop": [
+        0,
+        0,
+        1536,
+        445
+      ],
+      "target": [
+        0,
+        0,
+        1536,
+        445
+      ],
+      "alpha": true,
+      "transparentPixels": 889344,
+      "maxBorderAlpha": 255,
+      "sha256": "a73bb4622edacd51bb96ee982bef12d0c45486bace7915295a2dbbcf614dcaed"
+    },
+    "station-stage": {
+      "path": "art/station-stage.png",
+      "source": "station-stage",
+      "width": 1536,
+      "height": 1024,
+      "sourceCrop": [
+        0,
+        438,
+        1536,
+        586
+      ],
+      "target": [
+        0,
+        438,
+        1536,
+        586
+      ],
+      "alpha": true,
+      "transparentPixels": 672768,
+      "maxBorderAlpha": 255,
+      "sha256": "49395418de5d7488f0a932113a15532acd6c5b8263339014018c6ffa496df571"
+    },
+    "sky-backplate": {
+      "path": "art/sky-backplate.png",
+      "source": "sky-backplate",
+      "width": 1024,
+      "height": 683,
+      "sourceCrop": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "target": [
+        0,
+        0,
+        1024,
+        683
+      ],
+      "alpha": false,
+      "transparentPixels": 0,
+      "maxBorderAlpha": 244,
+      "sha256": "cd88d8c98831b9c0314f64d341d96c9820d083631b76bfa82d91ff99e075fc38"
+    },
+    "exit-trees": {
+      "path": "art/exit-trees.png",
+      "source": "exit-trees",
+      "width": 900,
+      "height": 600,
+      "sourceCrop": [
+        9,
+        216,
+        1237,
+        824
+      ],
+      "target": [
+        0,
+        0,
+        900,
+        600
+      ],
+      "alpha": true,
+      "transparentPixels": 141216,
+      "maxBorderAlpha": 4,
+      "sha256": "99eee1c814322baed4f2d4c7d42fff95433e116a0403eca87fd30889f9ce53a8"
+    },
+    "station-train": {
+      "path": "art/station-train.png",
+      "source": "station-train",
+      "width": 900,
+      "height": 117,
+      "sourceCrop": [
+        36,
+        432,
+        1463,
+        190
+      ],
+      "target": [
+        0,
+        0,
+        900,
+        117
+      ],
+      "alpha": true,
+      "transparentPixels": 21904,
+      "maxBorderAlpha": 3,
+      "sha256": "8a84184e0c409b23b166524c08e34aeb06b39496c1b611f74247a03b025ebbda"
+    },
+    "station-bus": {
+      "path": "art/station-bus.png",
+      "source": "station-bus",
+      "width": 900,
+      "height": 380,
+      "sourceCrop": [
+        21,
+        232,
+        1486,
+        627
+      ],
+      "target": [
+        0,
+        0,
+        900,
+        380
+      ],
+      "alpha": true,
+      "transparentPixels": 50164,
+      "maxBorderAlpha": 0,
+      "sha256": "c055c5174c45f66eb69d709705ec6935c18c7bfa634cf68dd616bd45810ab636"
+    },
+    "harbour-ferry": {
+      "path": "art/harbour-ferry.png",
+      "source": "harbour-ferry",
+      "width": 900,
+      "height": 329,
+      "sourceCrop": [
+        49,
+        255,
+        1438,
+        525
+      ],
+      "target": [
+        0,
+        0,
+        900,
+        329
+      ],
+      "alpha": true,
+      "transparentPixels": 130460,
+      "maxBorderAlpha": 5,
+      "sha256": "1b64796ca7078de9e84e723b9bc61f8bb917a8f177ac7d2ebb66c5ada73e3fe0"
+    },
+    "boarding-passenger-0": {
+      "path": "art/boarding-passenger-0.png",
+      "source": "boarding-passenger",
+      "width": 204,
+      "height": 260,
+      "sourceCrop": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "target": [
+        -32.80500000000001,
+        7.170000000000016,
+        269.61,
+        269.61
+      ],
+      "alpha": true,
+      "transparentPixels": 44146,
+      "maxBorderAlpha": 0,
+      "sha256": "8422510140dae53aca9ffe32b804c3c490b9b9858045608506007e2ef7901cf0"
+    },
+    "boarding-passenger-1": {
+      "path": "art/boarding-passenger-1.png",
+      "source": "boarding-passenger",
+      "width": 204,
+      "height": 260,
+      "sourceCrop": [
+        627,
+        0,
+        627,
+        627
+      ],
+      "target": [
+        -32.80500000000001,
+        6.740000000000009,
+        269.61,
+        269.61
+      ],
+      "alpha": true,
+      "transparentPixels": 40805,
+      "maxBorderAlpha": 0,
+      "sha256": "c9472e4041acf29b65e4b1bda8b49bb4bdf83465f0339b974c8a74d6bf72d4d5"
+    },
+    "boarding-passenger-2": {
+      "path": "art/boarding-passenger-2.png",
+      "source": "boarding-passenger",
+      "width": 204,
+      "height": 260,
+      "sourceCrop": [
+        0,
+        627,
+        627,
+        627
+      ],
+      "target": [
+        -32.80500000000001,
+        6.310000000000002,
+        269.61,
+        269.61
+      ],
+      "alpha": true,
+      "transparentPixels": 42263,
+      "maxBorderAlpha": 0,
+      "sha256": "228a420dde834a7a68ff8b67b43982e88da67a7133fe1950beb3c0de8ea30567"
+    },
+    "boarding-passenger-3": {
+      "path": "art/boarding-passenger-3.png",
+      "source": "boarding-passenger",
+      "width": 204,
+      "height": 260,
+      "sourceCrop": [
+        627,
+        627,
+        627,
+        627
+      ],
+      "target": [
+        -32.80500000000001,
+        6.310000000000002,
+        269.61,
+        269.61
+      ],
+      "alpha": true,
+      "transparentPixels": 40391,
+      "maxBorderAlpha": 0,
+      "sha256": "a622492a6821871d48d3442ec4e96fe9ddc2131d8d600635cc42010f489db55d"
+    },
+    "runway-plane": {
+      "path": "art/runway-plane.png",
+      "source": "runway-plane",
+      "width": 900,
+      "height": 387,
+      "sourceCrop": [
+        34,
+        153,
+        1652,
+        710
+      ],
+      "target": [
+        0,
+        0,
+        900,
+        387
+      ],
+      "alpha": true,
+      "transparentPixels": 162684,
+      "maxBorderAlpha": 0,
+      "sha256": "940a5ef0cbc14dcfd260c45c7b341e3b2ad39e2380fe2bdafcd656953c001127"
+    },
+    "boarding-passenger-2-0": {
+      "path": "art/boarding-passenger-2-0.png",
+      "source": "boarding-passenger-2",
+      "width": 204,
+      "height": 260,
+      "sourceCrop": [
+        0,
+        0,
+        632,
+        623
+      ],
+      "target": [
+        -33.879999999999995,
+        7.170000000000016,
+        271.76,
+        267.89
+      ],
+      "alpha": true,
+      "transparentPixels": 43242,
+      "maxBorderAlpha": 0,
+      "sha256": "b9cda49341a8c9599a56769e5a71038986fd957fee4c436575a5f58f32d0c566"
+    },
+    "boarding-passenger-2-1": {
+      "path": "art/boarding-passenger-2-1.png",
+      "source": "boarding-passenger-2",
+      "width": 204,
+      "height": 260,
+      "sourceCrop": [
+        632,
+        0,
+        632,
+        623
+      ],
+      "target": [
+        -33.879999999999995,
+        8.460000000000008,
+        271.76,
+        267.89
+      ],
+      "alpha": true,
+      "transparentPixels": 40190,
+      "maxBorderAlpha": 0,
+      "sha256": "a9fbd0a8094cb73842caad65fd848847d99fc28509be75d4e3e8d09ae14d21cd"
+    },
+    "boarding-passenger-2-2": {
+      "path": "art/boarding-passenger-2-2.png",
+      "source": "boarding-passenger-2",
+      "width": 204,
+      "height": 260,
+      "sourceCrop": [
+        0,
+        623,
+        632,
+        623
+      ],
+      "target": [
+        -33.879999999999995,
+        0.7200000000000273,
+        271.76,
+        267.89
+      ],
+      "alpha": true,
+      "transparentPixels": 41145,
+      "maxBorderAlpha": 0,
+      "sha256": "691948c8e7df05746511783d03572e637d419e771226fdac6716e974c7d8fb3b"
+    },
+    "boarding-passenger-2-3": {
+      "path": "art/boarding-passenger-2-3.png",
+      "source": "boarding-passenger-2",
+      "width": 204,
+      "height": 260,
+      "sourceCrop": [
+        632,
+        623,
+        632,
+        623
+      ],
+      "target": [
+        -33.879999999999995,
+        -0.13999999999998636,
+        271.76,
+        267.89
+      ],
+      "alpha": true,
+      "transparentPixels": 40001,
+      "maxBorderAlpha": 0,
+      "sha256": "db6542c2cdc73e5ba8813fcedbb590498fae19aa6d9e7612ec0c44e2b07dc1ba"
+    },
+    "ferry-gangway": {
+      "path": "art/ferry-gangway.png",
+      "source": "ferry-gangway",
+      "width": 900,
+      "height": 651,
+      "sourceCrop": [
+        103,
+        46,
+        1329,
+        961
+      ],
+      "target": [
+        0,
+        0,
+        900,
+        651
+      ],
+      "alpha": true,
+      "transparentPixels": 363847,
+      "maxBorderAlpha": 0,
+      "sha256": "70e0fa16559aeac9c601943ec0b10a037bea19b2dfa9f77bfc1b2038a834d25f"
+    },
+    "kerb-stop": {
+      "path": "art/kerb-stop.png",
+      "source": "kerb-stop",
+      "width": 900,
+      "height": 709,
+      "sourceCrop": [
+        159,
+        15,
+        1259,
+        992
+      ],
+      "target": [
+        0,
+        0,
+        900,
+        709
+      ],
+      "alpha": true,
+      "transparentPixels": 200507,
+      "maxBorderAlpha": 3,
+      "sha256": "25ea0be7c2ee65e6be422f96b0af816241d405707ee674c9419c5ccd980d4fa5"
+    },
+    "bus-door-closed": {
+      "path": "art/bus-door-closed.png",
+      "source": "bus-door-closed",
+      "width": 185,
+      "height": 437,
+      "sourceCrop": [
+        978,
+        315,
+        185,
+        437
+      ],
+      "target": [
+        0,
+        0,
+        185,
+        437
+      ],
+      "alpha": false,
+      "transparentPixels": 0,
+      "maxBorderAlpha": 254,
+      "sha256": "04f58d8482df44870ea54acd3b718e6541cb774ae0f141c6b4fe18bbb73ec209"
+    },
+    "ferry-door-closed": {
+      "path": "art/ferry-door-closed.png",
+      "source": "ferry-door-closed",
+      "width": 110,
+      "height": 174,
+      "sourceCrop": [
+        804,
+        551,
+        110,
+        174
+      ],
+      "target": [
+        0,
+        0,
+        110,
+        174
+      ],
+      "alpha": false,
+      "transparentPixels": 0,
+      "maxBorderAlpha": 254,
+      "sha256": "25d2a89f27526916efd4e9dbad64c2ff4594ba3ddd0e93ea0b68bb68862cf999"
+    }
+  },
+  "placement": {
+    "W": 1536,
+    "H": 1024,
+    "cameraX": 770,
+    "art": {
+      "distant-coast": {
+        "width": 1536,
+        "height": 1024
+      },
+      "station-stage": {
+        "width": 1536,
+        "height": 1024
+      },
+      "sky-backplate": {
+        "width": 1024,
+        "height": 683
+      },
+      "exit-trees": {
+        "width": 900,
+        "height": 600
+      },
+      "station-train": {
+        "width": 900,
+        "height": 117
+      },
+      "station-bus": {
+        "width": 900,
+        "height": 380
+      },
+      "harbour-ferry": {
+        "width": 900,
+        "height": 329
+      },
+      "boarding-passenger-0": {
+        "width": 204,
+        "height": 260
+      },
+      "boarding-passenger-1": {
+        "width": 204,
+        "height": 260
+      },
+      "boarding-passenger-2": {
+        "width": 204,
+        "height": 260
+      },
+      "boarding-passenger-3": {
+        "width": 204,
+        "height": 260
+      },
+      "runway-plane": {
+        "width": 900,
+        "height": 387
+      },
+      "boarding-passenger-2-0": {
+        "width": 204,
+        "height": 260
+      },
+      "boarding-passenger-2-1": {
+        "width": 204,
+        "height": 260
+      },
+      "boarding-passenger-2-2": {
+        "width": 204,
+        "height": 260
+      },
+      "boarding-passenger-2-3": {
+        "width": 204,
+        "height": 260
+      },
+      "ferry-gangway": {
+        "width": 900,
+        "height": 651
+      },
+      "kerb-stop": {
+        "width": 900,
+        "height": 709
+      },
+      "bus-door-closed": {
+        "width": 185,
+        "height": 437
+      },
+      "ferry-door-closed": {
+        "width": 110,
+        "height": 174
+      }
+    },
+    "bus": {
+      "x": 545,
+      "y": 797.9333333333334,
+      "w": 282,
+      "exit": 1100,
+      "door": [
+        181.61,
+        15.75,
+        35.11,
+        82.93
+      ],
+      "shelter": [
+        405,
+        862.9844444444444,
+        146,
+        115.01555555555555
+      ]
+    },
+    "train": {
+      "x": 500,
+      "y": 656.51,
+      "w": 573,
+      "arrival": 1110
+    },
+    "ferry": {
+      "x": 725,
+      "y": 401.19444444444446,
+      "w": 325,
+      "arrival": 850,
+      "exit": -1110,
+      "door": [
+        170.64,
+        66.9,
+        24.86,
+        39.33
+      ]
+    },
+    "plane": {
+      "x": 163,
+      "y": 377.9,
+      "w": 70,
+      "startX": -240,
+      "startY": -100,
+      "touchX": -108,
+      "liftX": 107,
+      "exitX": 1450,
+      "exitY": -324
+    },
+    "occluder": {
+      "box": [
+        1180,
+        717.3333333333333,
+        460,
+        306.6666666666667
+      ]
+    },
+    "gangway": {
+      "box": [
+        896,
+        489,
+        61,
+        59
+      ]
+    },
+    "people": [
+      {
+        "queue": "bus",
+        "cast": "boarding-passenger",
+        "h": 72,
+        "start": [
+          698,
+          952
+        ],
+        "path": [
+          [
+            698,
+            952
+          ],
+          [
+            736,
+            945
+          ],
+          [
+            746,
+            920
+          ],
+          [
+            745,
+            898
+          ]
+        ],
+        "at": 4.46,
+        "walk": 1.31
+      },
+      {
+        "queue": "bus",
+        "cast": "boarding-passenger-2",
+        "h": 76,
+        "start": [
+          649,
+          961
+        ],
+        "path": [
+          [
+            649,
+            961
+          ],
+          [
+            733,
+            946
+          ],
+          [
+            745,
+            920
+          ],
+          [
+            745,
+            898
+          ]
+        ],
+        "at": 5.53,
+        "walk": 1.31
+      },
+      {
+        "queue": "bus",
+        "cast": "boarding-passenger",
+        "h": 65,
+        "tint": 61,
+        "start": [
+          604,
+          958
+        ],
+        "path": [
+          [
+            604,
+            958
+          ],
+          [
+            735,
+            944
+          ],
+          [
+            745,
+            918
+          ],
+          [
+            745,
+            898
+          ]
+        ],
+        "at": 6.48,
+        "walk": 1.42
+      },
+      {
+        "queue": "ferry",
+        "cast": "boarding-passenger-2",
+        "h": 49,
+        "face": -1,
+        "start": [
+          941,
+          544
+        ],
+        "path": [
+          [
+            941,
+            544
+          ],
+          [
+            943,
+            537
+          ],
+          [
+            927,
+            526
+          ],
+          [
+            909,
+            510
+          ]
+        ],
+        "at": 9,
+        "walk": 1.28
+      },
+      {
+        "queue": "ferry",
+        "cast": "boarding-passenger",
+        "h": 47,
+        "face": -1,
+        "start": [
+          967,
+          549
+        ],
+        "path": [
+          [
+            967,
+            549
+          ],
+          [
+            947,
+            541
+          ],
+          [
+            926,
+            526
+          ],
+          [
+            909,
+            510
+          ]
+        ],
+        "at": 10.38,
+        "walk": 1.38
+      }
+    ]
+  }
+}

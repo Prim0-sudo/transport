@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transport Town · Coastal Station</title>
+<link rel="stylesheet" href="preview.css">
+<main>
+  <div class="review-header">
+    <p>Miniature World · animation preview</p>
+    <button id="camera" type="button" aria-pressed="false">Phone framing</button>
+  </div>
+  <section class="stage" aria-label="Painted coastal station square">
+    <svg id="world" viewBox="0 0 1536 1024" aria-hidden="true"></svg>
+    <header class="launch">
+      <h1>Transport Town</h1>
+      <p>Journeys &amp; discoveries</p>
+      <a href="http://127.0.0.1:4251/" class="explore">Explore</a>
+    </header>
+  </section>
+  <div class="playback" aria-label="Playback controls">
+    <button id="play" type="button">Play scene</button>
+    <button id="reset" type="button">Reset</button>
+    <label class="seek">
+      <span class="sr-only">Scene time</span>
+      <input id="seek" type="range" min="0" max="18" step=".01" value="0">
+      <output id="seconds" for="seek">0.0 s</output>
+    </label>
+  </div>
+  <div class="moments" aria-label="Jump to a moment">
+    <button type="button" data-moment="bus">Bus boarding</button>
+    <button type="button" data-moment="ferry">Ferry pickup</button>
+    <button type="button" data-moment="train">Train reversal</button>
+  </div>
+  <p id="phase">Ready to play.</p>
+</main>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/MotionPathPlugin.min.js"></script>
+<script src="placement.js"></script>
+<script src="preview.js"></script>
+</html>
