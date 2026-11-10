@@ -443,3 +443,6 @@ body[data-transport-shell] .home-screen.menu-open .menu-title{font:700 2rem/1.06
   .game-screen .game-status:has(> .score-pill[hidden]) > .round-label{align-self:center}
   .game-card[data-mode=media] > h2{text-align:left;align-self:stretch;width:100%}
 }
+@media(max-width:650px){.game-screen .game-card > h2{text-align:left;align-self:stretch;width:100%}}
+/* Plants parity: Read, Draw & Talk — 150px picture so the card and its buttons fit a phone. */
+@media(max-width:650px){.reading-workspace .reading-picture{height:150px;max-height:150px;width:auto;max-width:100%;object-fit:contain;margin-inline:auto}}
