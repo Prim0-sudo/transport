@@ -764,13 +764,13 @@
           "wordId": "safety.reflector",
           "label": "Reflector",
           "note": "A piece that sends light back towards where it came from.",
-          "path": "M310,255 317,222 319,167 319,136 326,120 339,113 355,118 370,135 391,160 395,186 386,183 377,160 364,147 351,132 338,130 331,147 333,167 349,187 376,201 397,208 407,215 415,263 407,270 400,268 394,228 392,265 380,273 323,270 308,264Z"
+          "path": "M228,290 237,287 265,289 271,296 270,306 265,313 229,311 226,305Z"
         },
         {
           "wordId": "safety.reflective-vest",
           "label": "Reflective vest",
           "note": "A vest with strips that reflect light and help people see the wearer.",
-          "path": "M228,290 237,287 265,289 271,296 270,306 265,313 229,311 226,305Z"
+          "path": "M310,255 317,222 319,167 319,136 326,120 339,113 355,118 370,135 391,160 395,186 386,183 377,160 364,147 351,132 338,130 331,147 333,167 349,187 376,201 397,208 407,215 415,263 407,270 400,268 394,228 392,265 380,273 323,270 308,264Z"
         }
       ],
       "sourcePath": "originals/cycle-safety.png",
@@ -783,7 +783,8 @@
       "runtimeSha256": "552ddef4727fe2d5993e3e6856c550767673d1699a18fd9a9eb38d3b1b03fbbf",
       "runtimeWidth": 1200,
       "runtimeHeight": 800,
-      "status": "Reviewed in standalone preview; app integration pending"
+      "status": "Phone QA art registration repaired",
+      "reviewNotes": "Exchanged two mislabeled art contours. Reflector now traces the amber bicycle reflector, and Reflective vest traces the fluorescent clothing."
     },
     {
       "id": "street-crossing",
@@ -843,17 +844,29 @@
           "path": "M306,123 314,117 352,117 360,123 361,166 352,172 333,174 333,200 341,207 340,221 333,230 333,262 340,268 339,278 322,282 313,276 314,267 318,262 318,230 314,224 313,202 318,198 319,174 308,170 304,163Z"
         }
       ],
-      "sourcePath": "originals/street-crossing.png",
+      "sourcePath": "phone-qa-2026-11-10/originals/street-crossing.png",
       "originalPath": "artwork/originals/teaching-scenes/street-crossing.png",
-      "sourceSha256": "0990a04a9f9cbce0600287bc4ae6fefecd65c9d98e346091d363a026f84af0ea",
-      "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nOne child-friendly street from elevated oblique viewpoint. Broad grey road with zebra crossing, raised pale sidewalk with one waiting adult well back, separate green lane with bicycle pictogram. Distinct road traffic light, blank red octagonal stop sign, smaller pedestrian crossing signal with person pictogram. All three separated.",
+      "sourceSha256": "97a9f26c1ea73f713f7ecb8afbc84e9034e372c904a729de2b91b2c461b72883",
+      "exactPrompt": "Precisely retouch the supplied 1536×1024 gouache street-crossing scene. This is a registration-locked edit of an existing educational painting. Preserve the exact canvas and composition. Only change the light emission inside TWO small circular lenses of the tall vehicle traffic light near x=950, y=170 and x=950, y=247: make middle amber and bottom green clearly OFF, very dark charcoal glass with faint brown and green tints, no bright highlights. Keep the TOP red lens lit. Do not touch the small GREEN walking-person crossing signal, stop sign, pavement, pedestrian, crosswalk, perspective, the housing/hoods/post of the traffic light, or anything else. Do not crop, zoom, redraw or reposition. Preserve existing painterly brush marks and all existing boundaries. Same full rectangular landscape 3:2 canvas. No new elements or text. Return full-size PNG.",
       "background": "Full painted scene",
       "pngHasAlphaChannel": false,
       "runtimePath": "site/dist/images/teaching-scenes/street-crossing.png",
-      "runtimeSha256": "76c7e3473a0743ccdf8a5511b283c9c2cfd6ece8c92c029f438da4ee736cbab8",
+      "runtimeSha256": "143ff6d25143fc50894065ff8579fa922d85895e00a240cdb965fe77e09a57d9",
       "runtimeWidth": 1200,
       "runtimeHeight": 800,
-      "status": "Reviewed in standalone preview; app integration pending"
+      "status": "Phone art repair; highlight paths preserved",
+      "revisionHistory": [
+        {
+          "supersededOn": "2026-11-10",
+          "exactPrompt": "One 3:2 landscape educational illustration, 1536×1024. Direction A, premium children's hand-painted opaque gouache field guide: crisp dark coloured contours, visible dry brush inside shapes, saturated natural colours, calm pale surroundings and simple factual geometry. Keep every teaching target separate and easy to identify on a phone. Complete objects with clear space around the frame. No text, labels, baked-in highlights, arrow graphics, watermarks or panel borders.\n\nOne child-friendly street from elevated oblique viewpoint. Broad grey road with zebra crossing, raised pale sidewalk with one waiting adult well back, separate green lane with bicycle pictogram. Distinct road traffic light, blank red octagonal stop sign, smaller pedestrian crossing signal with person pictogram. All three separated.",
+          "sourceSha256": "0990a04a9f9cbce0600287bc4ae6fefecd65c9d98e346091d363a026f84af0ea",
+          "runtimeSha256": "76c7e3473a0743ccdf8a5511b283c9c2cfd6ece8c92c029f438da4ee736cbab8",
+          "status": "Reviewed in standalone preview; app integration pending"
+        }
+      ],
+      "rawArchivePath": "phone-qa-2026-11-10/raw/street-crossing.png",
+      "rawSha256": "97a9f26c1ea73f713f7ecb8afbc84e9034e372c904a729de2b91b2c461b72883",
+      "reviewNotes": "Dimmed the amber and green vehicle lamps so only red is active. The pedestrian signal still displays a green walking person. Original canvas, framing and highlight coordinates retained."
     },
     {
       "id": "route-features",
