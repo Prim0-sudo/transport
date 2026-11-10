@@ -1,4 +1,5 @@
 # Transport reference requirement
+**BRANCH RULE (owner, 10 November 2026): work on `main` only.** Pull from `main`, commit to `main`, push to `main`. Do not create, switch to or pull any other branch. The old `codex/...` branches are fully merged into `main` and are history only.
 
 Current user direction: stop landing-page work. Follow docs/UPGRADE-PLAN.md in order. Step 2 content/classroom foundations and step 3 standard-activity functionality are implemented; consult docs/CLASSROOM-FOUNDATIONS.md and docs/STANDARD-ACTIVITIES.md for evidence. Continue with step 4 review of the curriculum, art and audio inventories listed in HANDOFF.md. New art remains subject to review. Do not resume landing art/animation as a detour. Consult the blueprint and Plants before changes.
 
