@@ -30,7 +30,7 @@
       "runtimeSha256": "a06ab948149bbc107687709c71885e147b96cf5d9046cd4f2dfb916ffe75c06b",
       "alpha": false,
       "teachingPurpose": "Give every drivable road one readable slate surface beneath route feedback.",
-      "status": "exported; app placement pending",
+      "status": "exported; placed in Dispatch 2026-11-10",
       "reviewNotes": "Opaque map texture by design; clip to the road geometry."
     },
     {
@@ -61,7 +61,7 @@
       "runtimeSha256": "8d8c0ac9a17b7bbfa5c4c84891cbe4c9e85295c8db6b65e2e7c4fd467beddb18",
       "alpha": true,
       "teachingPurpose": "Make the road crossing read as a bridge while preserving entry and exit alignment.",
-      "status": "exported; app placement pending",
+      "status": "exported; placed in Dispatch 2026-11-10",
       "reviewNotes": "Transparent PNG; preserve proportions and use the handoff placement notes."
     },
     {
@@ -92,7 +92,7 @@
       "runtimeSha256": "c6150f4b118de2b02020eb43a906d76ab1da6caca641efb488226d8e6eb6efc6",
       "alpha": true,
       "teachingPurpose": "Show where passengers step from the north shore onto the ferry.",
-      "status": "exported; app placement pending",
+      "status": "exported; placed in Dispatch 2026-11-10",
       "reviewNotes": "Transparent PNG; preserve proportions and use the handoff placement notes."
     },
     {
@@ -123,7 +123,7 @@
       "runtimeSha256": "94b20a19a77e91f41d78fac550316ee1366bf22351a412c817ee3a9bedacec37",
       "alpha": true,
       "teachingPurpose": "Show where ferry passengers step off at the island.",
-      "status": "exported; app placement pending",
+      "status": "exported; placed in Dispatch 2026-11-10",
       "reviewNotes": "Transparent PNG; preserve proportions and use the handoff placement notes."
     },
     {
@@ -154,7 +154,7 @@
       "runtimeSha256": "00e716bc142233857794d31ddbe2f0c665ff0e3650ae825fb7bf129cf0ed0fb4",
       "alpha": true,
       "teachingPurpose": "Identify the active fire incident at the existing map destination.",
-      "status": "exported; app placement pending",
+      "status": "exported; placed in Dispatch 2026-11-10",
       "reviewNotes": "Transparent PNG; preserve proportions and use the handoff placement notes.",
       "exactPrompt": "A single tiny fire-incident marker for Transport Dispatch, a child-friendly painted Miniature World educational map. Transparent PNG RGBA with absolutely clear surrounding pixels. Design to read instantly at 16–24 pixels: exactly one simple compact upright cluster of three rounded flame tongues, a warm orange outer flame with a small bright yellow inner flame and a thin deep rust outer contour. Rich matte hand-painted gouache on the silhouette, subtle pigment, no glossy emoji rendering. Front-facing stylised symbol for an overhead board-game map; shape is round and grounded with a flat short lower edge. Fill 80 percent of a square, centred with generous clear transparent padding. No smoke, sparks, faces, badge, ring, background, shadow, platform, text, people, objects or scenery. One complete shape, crisp alpha edge."
     }

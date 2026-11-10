@@ -209,6 +209,71 @@
    "source": "artwork/dispatch/miniature-world-map-v1/originals/roadworks-marker.png",
    "sha256": "c24706a5f6ac09778350db186f1aa1b5d64927da5b9d5e2f581df0c302c6c55e",
    "bytes": 6030
+  },
+  {
+   "id": "road-surface",
+   "name": "road-surface",
+   "group": "material",
+   "file": "road-surface.png",
+   "size": [
+    512,
+    512
+   ],
+   "source": "artwork/dispatch/miniature-world-pilot-v1/road-surface.png",
+   "sha256": "a06ab948149bbc107687709c71885e147b96cf5d9046cd4f2dfb916ffe75c06b",
+   "bytes": 289023
+  },
+  {
+   "id": "bridge-deck",
+   "name": "bridge-deck",
+   "group": "map-piece",
+   "file": "bridge-deck.png",
+   "size": [
+    512,
+    171
+   ],
+   "source": "artwork/dispatch/miniature-world-pilot-v1/bridge-deck-v2.png",
+   "sha256": "8d8c0ac9a17b7bbfa5c4c84891cbe4c9e85295c8db6b65e2e7c4fd467beddb18",
+   "bytes": 130645
+  },
+  {
+   "id": "dock-pier",
+   "name": "dock-pier",
+   "group": "map-piece",
+   "file": "dock-pier.png",
+   "size": [
+    176,
+    512
+   ],
+   "source": "artwork/dispatch/miniature-world-pilot-v1/dock-pier.png",
+   "sha256": "c6150f4b118de2b02020eb43a906d76ab1da6caca641efb488226d8e6eb6efc6",
+   "bytes": 187802
+  },
+  {
+   "id": "island-berth",
+   "name": "island-berth",
+   "group": "map-piece",
+   "file": "island-berth.png",
+   "size": [
+    512,
+    156
+   ],
+   "source": "artwork/dispatch/miniature-world-pilot-v1/island-berth.png",
+   "sha256": "94b20a19a77e91f41d78fac550316ee1366bf22351a412c817ee3a9bedacec37",
+   "bytes": 159375
+  },
+  {
+   "id": "incident-fire",
+   "name": "incident-fire",
+   "group": "marker",
+   "file": "incident-fire.png",
+   "size": [
+    128,
+    128
+   ],
+   "source": "artwork/dispatch/miniature-world-map-v1/originals/incident-fire.png",
+   "sha256": "00e716bc142233857794d31ddbe2f0c665ff0e3650ae825fb7bf129cf0ed0fb4",
+   "bytes": 16913
   }
  ]
 }
