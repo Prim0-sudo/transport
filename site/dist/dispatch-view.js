@@ -20,7 +20,12 @@
   };
   // Painted destination landmarks and the roadworks barrier replace the old emoji markers; the label and aria stay on the button.
   const art = name => { const i = document.createElement('img'); i.src = 'images/dispatch-map/' + name + '.webp'; i.alt = ''; i.decoding = 'async'; i.draggable = false; return i; };
-  const landmark = place => { const s = el('span', 'dw-emoji dw-landmark'); s.append(art('landmark-' + place)); return s; };
+  const landmark = place => {
+    const plot = el('span', 'dw-plot');
+    plot.append(art('landmark-' + place), el('span', 'dw-label', PLACES[place][0]));
+    plot.setAttribute('aria-hidden', 'true');
+    return plot;
+  };
   const TOWN_PLACES = {
     small:['depot', 'school', 'station', 'hospital', 'dock'],
     medium:['depot', 'school', 'station', 'hospital', 'dock', 'fire', 'building', 'farm', 'shop', 'houses'],
@@ -99,6 +104,74 @@
     return bz(1, (lo + hi) / 2);
   }
   const MAP_ART = 'images/dispatch-map/';
+  const TOWN_ART = MAP_ART + 'town-v2/';
+
+  function streetDistance(x, y, [a, b]) {
+    const dx = b.x - a.x, dy = b.y - a.y;
+    const t = Math.max(0, Math.min(1, ((x - a.x) * dx + (y - a.y) * dy) / (dx * dx + dy * dy)));
+    return Math.hypot(x - a.x - t * dx, y - a.y - t * dy);
+  }
+
+  function roadsidePlots(town, w, h, roadWidth) {
+    const point = n => ({x: n.x * w / 100, y: n.y * h / 100});
+    const streets = [...town.edges.values()].map(e => [point(town.nodes[e.a]), point(town.nodes[e.b])]);
+    const lots = {}, trees = [], used = [];
+    const stepX = w * .76 / (town.S - 1), stepY = h * .62 / (town.S - 1);
+    const size = Math.min(88, Math.min(stepX, stepY) * .77);
+    const river = town.riverX * w / 100;
+    const riverHalf = w * .045;
+    const land = (x, y, radius) => x > radius + 2 && x < w - radius - 2 && y > radius + 2 &&
+      y + radius + 3 < shoreY(x * 100 / w) * h / 100 &&
+      Math.abs(x - river) > riverHalf + radius &&
+      streets.every(street => streetDistance(x, y, street) > roadWidth / 2 + radius + 2) &&
+      used.every(other => Math.abs(x - other.x) > radius + other.radius || Math.abs(y - other.y) > radius + other.radius);
+    const offsets = [];
+    const columns = [-.39,.39,-.28,.28,-.21,.21,-.16,.16,-.12,.12,-.49,.49,-.58,.58,0];
+    const rows = [-.39,.39,-.49,.49,-.29,.29,-.18,.18,-.59,.59,0];
+    for (const dy of rows) for (const dx of columns) if (dx || dy) offsets.push([dx,dy]);
+    const toBoard = ({x,y}) => [100*x/w,100*y/h];
+    const nodes = Object.values(town.nodes).filter(n => n.place);
+    nodes.sort((a,b) => Number(b.place === 'dock') - Number(a.place === 'dock'));
+    const register = (node, start, x, y, side) => {
+      const distance = Math.hypot(start.x - x, start.y - y);
+      const apron = {x: x + (start.x - x) * side * .35 / distance, y: y + (start.y - y) * side * .35 / distance};
+      used.push({x,y,radius:side * .62});
+      lots[node.id] = {position: toBoard({x,y}), apron: toBoard(apron), side};
+    };
+    for (const node of nodes) {
+      const start = point(node);
+      for (const scale of [1, .83, .66, .5, .38, .30, .24]) {
+        const side = size * scale, radius = side * .62;
+        if (side < 18) break;
+        const offset = offsets.find(([dx,dy]) => land(start.x + dx * stepX, start.y + dy * stepY, radius));
+        if (!offset) continue;
+        register(node, start, start.x + offset[0] * stepX, start.y + offset[1] * stepY, side);
+        break;
+      }
+      // At a narrow riverbank, look for the nearest free small plot on the same bank.
+      if (!lots[node.id]) {
+        for (const side of [18, 15, 12]) {
+          let nearest, best = Infinity;
+          for (let y = 8; y < h * .8; y += 6) for (let x = 8; x < w; x += 6) {
+            const distance = Math.hypot(x - start.x, y - start.y);
+            if ((x < river) === (start.x < river) && distance < best && land(x, y, side * .62)) {
+              nearest = [x,y]; best = distance;
+            }
+          }
+          if (nearest) { register(node, start, ...nearest, side); break; }
+        }
+      }
+    }
+    // Add small tree groups only on spare ground, away from buildings and route controls.
+    const treeSide = Math.min(43, size * .50);
+    for (let r = 0; r < town.S - 1; r++) for (let c = 0; c < town.S - 1; c++) {
+      if ((c + r) % 2 || c === town.rc) continue;
+      const a = point(town.nodes[`${c}-${r}`]), b = point(town.nodes[`${c+1}-${r+1}`]);
+      const x = (a.x + b.x) / 2, y = (a.y + b.y) / 2;
+      if (land(x, y, treeSide / 2)) trees.push({position:toBoard({x,y}), side:treeSide});
+    }
+    return {lots, trees};
+  }
 
   const name = id => PLACES[id][0].toLowerCase();
   const el = (tag, className, text) => { const n = document.createElement(tag); if (className) n.className = className; if (text != null) n.textContent = text; return n; };
@@ -284,11 +357,11 @@
       const defs = svgEl('defs');
       this.texturePatterns = ['land', 'water'].map(kind => {
         const p = svgEl('pattern', {id: `dw-${kind}-fill`, patternUnits: 'userSpaceOnUse', width: 34, height: 34});
-        p.append(svgEl('image', {href: 'images/dispatch-map/' + kind + '-texture.webp', width: 34, height: 34, preserveAspectRatio: 'none'})); defs.append(p); return p;
+        p.append(svgEl('image', {href: TOWN_ART + (kind === 'land' ? 'grass-field.webp' : 'river-water.webp'), width: 34, height: 34, preserveAspectRatio: 'none'})); defs.append(p); return p;
       });
       // Road surface: one sample over the whole board, painted only where the road strokes are.
       this.roadPattern = svgEl('pattern', {id: 'dw-road-fill', patternUnits: 'userSpaceOnUse', width: 100, height: 100});
-      this.roadPattern.append(svgEl('image', {href: MAP_ART + 'road-surface.png', width: 100, height: 100, preserveAspectRatio: 'none'})); defs.append(this.roadPattern);
+      this.roadPattern.append(svgEl('image', {href: TOWN_ART + 'asphalt.webp', width: 100, height: 100, preserveAspectRatio: 'none'})); defs.append(this.roadPattern);
       svg.append(defs);
       svg.append(
         svgEl('path', {class: 'dw-water', d: `M${rx - 3.4} 0 H${rx + 3.4} C${rx + 4.5} 30 ${rx + 2} 55 ${rx + 3.4} 82 H${rx - 3.4} C${rx - 2} 55 ${rx - 4.5} 30 ${rx - 3.4} 0 Z`}),
@@ -299,13 +372,15 @@
       // Its stops and the pier, berth and bridge pictures are sized in screen pixels by fitArt().
       this.ferryPath = [[dock.x, 84], [dock.x + 8, 91], [ISLAND[0] - 15, ISLAND[1] + 1], [ISLAND[0] - 9, ISLAND[1]]];
       this.pierStub = svgEl('path', {class: 'dw-road dw-pier', d: ''}); this.laneEl = svgEl('path', {class: 'dw-lane', d: ''});
-      const artImg = (file, fit) => svgEl('image', {class: 'dw-art', href: MAP_ART + file, preserveAspectRatio: fit || 'none'});
+      const artImg = file => svgEl('image', {class: 'dw-art', href: MAP_ART + file, preserveAspectRatio: 'none'});
       this.pierArt = artImg('dock-pier.png'); this.berthArt = artImg('island-berth.png');
       svg.append(this.pierStub, this.laneEl, this.berthArt, this.pierArt);
       const xy = id => [t.nodes[id].x, t.nodes[id].y];
+      this.aprons = svgEl('g', {class: 'dw-aprons'}); svg.append(this.aprons);
+      for (const e of t.edges.values()) svg.append(svgEl('path', {class: 'dw-road-edge', d: smooth([xy(e.a), xy(e.b)])}));
       for (const e of t.edges.values()) svg.append(svgEl('path', {class: 'dw-road', d: smooth([xy(e.a), xy(e.b)])}));
-      // Bridges sit over the road; slice keeps the deck's proportions and trims the open ends to fit the span.
-      this.bridgeArt = [...t.edges.values()].filter(e => e.bridge).map(e => ({e, im: artImg('bridge-deck.png', 'xMidYMid slice')}));
+      // Fit the two open ends to the road and retain both painted parapets.
+      this.bridgeArt = [...t.edges.values()].filter(e => e.bridge).map(e => ({e, im: artImg('town-v2/stone-bridge.webp')}));
       svg.append(...this.bridgeArt.map(b => b.im));
       for (const e of t.edges.values()) svg.append(svgEl('path', {class: 'dw-centre', d: smooth([xy(e.a), xy(e.b)])}));
       this.hintEl = svgEl('path', {class: 'dw-hint', d: ''}); this.planEl = svgEl('path', {class: 'dw-plan', d: ''});
@@ -317,20 +392,21 @@
         w.style.left = (a.x + b.x) / 2 + '%'; w.style.top = (a.y + b.y) / 2 + '%'; w.hidden = true; w.setAttribute('aria-hidden', 'true');
         this.worksEls[e.key] = w; world.append(w);
       }
-      this.nodeEls = {};
+      this.nodeEls = {}; this.plotEls = {};
+      this.verges = el('div', 'dw-verges'); this.verges.setAttribute('aria-hidden', 'true'); world.append(this.verges);
       for (const n of Object.values(t.nodes)) {
         const b = el('button', n.place ? 'dw-node dw-node--place' : 'dw-node'); b.type = 'button';
         b.style.left = n.x + '%'; b.style.top = n.y + '%';
         b.setAttribute('aria-label', n.place ? PLACES[n.place][0] : `Crossing ${n.r + 1}-${n.c + 1}`);
-        if (n.place) { b.append(landmark(n.place)); b.append(el('span', 'dw-label', PLACES[n.place][0])); }
+        if (n.place) { const plot = landmark(n.place); this.plotEls[n.id] = plot; world.append(plot); }
         b.onclick = () => this.tapNode(n.id);
         this.nodeEls[n.id] = b; world.append(b);
       }
-      const isle = el('span', 'dw-node dw-node--place dw-node--island'); isle.style.left = ISLAND[0] + '%'; isle.style.top = ISLAND[1] + '%';
-      isle.append(landmark('island'), el('span', 'dw-label', PLACES.island[0])); world.append(isle); this.islandEl = isle;
+      const isle = landmark('island'); isle.classList.add('dw-plot--island'); isle.style.left = ISLAND[0] + '%'; isle.style.top = ISLAND[1] + '%';
+      world.append(isle); this.islandEl = isle;
       this.fireEl = el('span', 'dw-fire'); const fireImg = el('img'); fireImg.src = MAP_ART + 'incident-fire.png'; fireImg.alt = ''; fireImg.decoding = 'async'; this.fireEl.append(fireImg); this.fireEl.hidden = true; this.fireEl.setAttribute('aria-hidden', 'true'); world.append(this.fireEl);
       this.actor = el('div', 'dw-actor'); this.actor.setAttribute('aria-hidden', 'true'); this.actorImg = el('img'); this.actorImg.alt = ''; this.actorImg.decoding = 'async'; this.actor.append(this.actorImg); world.append(this.actor);
-      this.loads = Array.from({length: 12}, () => { const m = el('i', 'dw-load'); m.setAttribute('aria-hidden', 'true'); world.append(m); return {el: m, x: 0, y: 0, a: 0, active: false}; });
+      this.loads = Array.from({length: 12}, () => { const m = el('img', 'dw-load'); m.alt = ''; m.setAttribute('aria-hidden', 'true'); world.append(m); return {el: m, x: 0, y: 0, a: 0, active: false}; });
       this.choicesEl = el('div', 'dispatch-vehicles'); this.choicesEl.setAttribute('role', 'group'); this.choicesEl.setAttribute('aria-label', 'Vehicles');
       this.toolsEl = el('div', 'dispatch-tools');
       this.fuelEl = el('span', 'dispatch-fuel');
@@ -354,6 +430,27 @@
     fitArt() {
       const t = this.town; if (!t || !this.pierArt) return;
       const w = this.size.w > 20 ? this.size.w : 340, h = this.size.h > 20 ? this.size.h : 200, ux = w / 100, uy = h / 100;
+      const road = Math.max(9, Math.min(26, w * .045, h * .62 / (t.S - 1) * .27));
+      this.world.style.setProperty('--road-width', road + 'px');
+      this.world.style.setProperty('--road-edge-width', road + 4 + 'px');
+      const {lots, trees} = roadsidePlots(t, w, h, road + 4);
+      this.lots = lots;
+      const position = (element, [x,y], side) => Object.assign(element.style, {left:x+'%', top:y+'%', width:side+'px', height:side+'px'});
+      this.aprons.replaceChildren();
+      for (const [id, plot] of Object.entries(this.plotEls)) {
+        const lot = lots[id];
+        plot.hidden = !lot;
+        if (!lot) continue;
+        const n = t.nodes[id];
+        plot.classList.toggle('is-tight', lot.side < 36);
+        position(plot, lot.position, lot.side);
+        this.aprons.append(svgEl('path', {d: smooth([[n.x,n.y],lot.apron])}));
+      }
+      position(this.islandEl, ISLAND, Math.min(w * .14, h * .145));
+      this.verges.replaceChildren(...trees.map(tree => {
+        const img = el('img', 'dw-verge'); img.alt = ''; img.src = TOWN_ART + 'verge-trees.webp';
+        position(img, tree.position, tree.side); return img;
+      }));
       const put = (im, cx, cy, deg, L, T) => {
         Object.entries({x: -L / 2, y: -T / 2, width: L, height: T, transform: `translate(${cx} ${cy}) scale(${1 / ux} ${1 / uy}) rotate(${deg})`}).forEach(([k, v]) => im.setAttribute(k, v));
       };
@@ -362,6 +459,7 @@
       const dock = t.nodes[t.placeNode.dock], ph = pw * 512 / 176, top = shoreY(dock.x) - 3 / uy, bottom = top + ph / uy;
       put(this.pierArt, dock.x, (top + bottom) / 2, 0, pw, ph);
       this.pierStub.setAttribute('d', smooth([[dock.x, dock.y], [dock.x, top + 1 / uy]]));
+      this.pierWalk = [{x:dock.x,y:top}, {x:dock.x,y:bottom}];
       const out = [8, 3], ol = Math.hypot(out[0] * ux, out[1] * uy), door = -SPRITES.ferry[2] * fl / 2;
       const s0 = [dock.x + out[0] * ux / ol * door / ux, bottom + out[1] * uy / ol * door / uy], s1 = [s0[0] + out[0], Math.min(96, s0[1] + out[1])];
       // Berth: sandstone pad on the island's west shore, plank end at the water where the ferry's bow stops.
@@ -375,8 +473,8 @@
       // Bridges: the deck's open short edges meet the road on either bank, centred on the river.
       for (const {e, im} of this.bridgeArt) {
         const [a, b] = [t.nodes[e.a], t.nodes[e.b]], f = (t.riverX - a.x) / ((b.x - a.x) || 1), cx = t.riverX, cy = a.y + f * (b.y - a.y);
-        const dx = (b.x - a.x) * ux, dy = (b.y - a.y) * uy, span = Math.hypot(dx, dy), road = 6 * uy;
-        const L = Math.min(span - 30, 9.5 * ux + road * .6), T = road * 1.3;
+        const dx = (b.x - a.x) * ux, dy = (b.y - a.y) * uy, span = Math.hypot(dx, dy);
+        const L = Math.min(span - 8, 9.5 * ux + road * .5), T = road + 9;
         put(im, cx, cy, Math.atan2(dy, dx) * 180 / Math.PI, Math.max(L, T), T);
       }
     }
@@ -389,6 +487,19 @@
     }
 
     point(place) { if (place === 'island') return ISLAND; const n = this.town.nodes[this.town.placeNode[place]]; return [n.x, n.y]; }
+
+    waitingSpot(place, index) {
+      const id = this.town.placeNode[place], lot = this.lots[id];
+      const [nx,ny] = this.point(place);
+      const [x,y] = lot?.apron || [nx,ny];
+      const {w,h} = this.size;
+      const dx = (nx - x) * w, dy = (ny - y) * h, distance = Math.hypot(dx,dy) || 1;
+      const forwardX = dx / distance, forwardY = dy / distance;
+      const spacing = Math.min(11, (lot?.side || 30) / 4);
+      const across = ((index % 4) - 1.5) * spacing, inward = Math.floor(index / 4) * spacing;
+      return {x:x - (forwardY * across + forwardX * inward) * 100 / w,
+        y:y + (forwardX * across - forwardY * inward) * 100 / h};
+    }
 
     startJob(restart = false) {
       this.stopMotion();
@@ -414,9 +525,9 @@
       const total = job.count + job.extra;
       this.loads.forEach((p, i) => {
         const atVia = i >= job.count && i < total, active = i < total;
-        const [bx, by] = atVia ? this.point(job.via) : [sx, sy], k = atVia ? i - job.count : i;
-        Object.assign(p, {x: bx - 4 + (k % 5) * 2.2, y: by < 25 ? by + 10 + Math.floor(k / 5) * 2.6 : by - 7 - Math.floor(k / 5) * 2.6, a: active ? 1 : 0, active});
-        p.el.className = `dw-load dw-load--${job.t.kind}`;
+        const spot = this.waitingSpot(atVia ? job.via : job.from, atVia ? i - job.count : i);
+        Object.assign(p, {...spot, a: active ? 1 : 0, active});
+        p.el.src = TOWN_ART + 'load-' + job.t.kind + '.webp';
       });
       this.titleEl.textContent = job.t.title(job) + (job.via ? `. Collect ${job.extra} more at the ${name(job.via)} on the way.` : '.');
       this.world.setAttribute('aria-label', `Town map. From the ${name(job.from)} to the ${name(job.to)}. Tap crossings to plan the route.`);
@@ -519,7 +630,16 @@
 
     board(items, finish) {
       const c = this.contact();
-      this.run(tl => items.forEach((p, i) => tl.to(p, {x: c.x, y: c.y, a: 0, duration: .4, ease: 'power1.inOut', onUpdate: () => this.paint()}, i * .14)),
+      this.run(tl => items.forEach((p, i) => {
+        let at = i * .14;
+        if (this.job.t.sea) {
+          for (const point of this.pierWalk) {
+            tl.to(p, {...point, duration: .3, ease: 'none', onUpdate: () => this.paint()}, at);
+            at += .3;
+          }
+        }
+        tl.to(p, {x: c.x, y: c.y, a: 0, duration: .4, ease: 'power1.inOut', onUpdate: () => this.paint()}, at);
+      }),
         () => { items.forEach(p => { p.a = 0; }); this.onboard += items.length; finish(); });
     }
 
@@ -540,12 +660,12 @@
     }
 
     unload() {
-      const job = this.job, items = this.loads.filter(p => p.active), [qx, qy] = this.point(job.to);
+      const job = this.job, items = this.loads.filter(p => p.active);
       this.phase = 'unloading'; this.say(job.t.id === 'fire' ? 'The crew sprays water on the fire.' : 'Unloading at the stop.');
       const c = this.contact(); items.forEach(p => { p.x = c.x; p.y = c.y; p.a = 0; });
       // Island passengers step off along the berth onto its sandstone pad, then head inland out of sight.
       const ashore = job.to === 'island' && this.berthPad, fade = ashore ? 0 : 1;
-      const spot = ashore ? i => ({x: this.berthPad[0] + (i % 2 ? .8 : -.8), y: this.berthPad[1] + (i % 3 - 1) * 1.2}) : i => ({x: qx - 4 + (i % 5) * 2.2, y: qy < 25 ? qy + 10 + Math.floor(i / 5) * 2.6 : qy - 7 - Math.floor(i / 5) * 2.6});
+      const spot = ashore ? i => ({x: this.berthPad[0] + (i % 2 ? .8 : -.8), y: this.berthPad[1] + (i % 3 - 1) * 1.2}) : i => this.waitingSpot(job.to, i);
       this.run(tl => items.forEach((p, i) => { tl.to(p, {...spot(i), a: 1, duration: .4, ease: 'power1.inOut', onUpdate: () => this.paint()}, i * .11); if (ashore) tl.to(p, {x: ISLAND[0], a: 0, duration: .35, ease: 'power1.in', onUpdate: () => this.paint()}, i * .11 + .4); }),
         () => {
           items.forEach((p, i) => Object.assign(p, spot(i), {a: fade}));
@@ -607,6 +727,12 @@
         b.classList.toggle('is-start', id === this.startNode);
         b.classList.toggle('is-dest', id === this.destNode);
         b.classList.toggle('is-via', id === this.viaNode && !this.viaDone);
+        const plot = this.plotEls[id];
+        if (plot) {
+          plot.classList.toggle('is-start', id === this.startNode);
+          plot.classList.toggle('is-dest', id === this.destNode);
+          plot.classList.toggle('is-via', id === this.viaNode && !this.viaDone);
+        }
         b.classList.toggle('is-route', routing && this.plan.includes(id));
         b.classList.toggle('is-next', next.has(id) && (id !== this.plan[this.plan.length - 2] || last === this.viaNode));
         b.disabled = this.held || !routing;
@@ -617,7 +743,7 @@
       this.hintEl.setAttribute('d', this.setup.level === 'easy' && routing && this.best ? smooth(this.best.map(xy)) : '');
       const fire = job.t.id === 'fire' && this.phase !== 'done';
       this.fireEl.hidden = !fire;
-      if (fire) { const [fx, fy] = this.point(job.to); this.fireEl.style.left = fx + 3 + '%'; this.fireEl.style.top = fy - 6 + '%'; }
+      if (fire) { const [fx, fy] = this.lots[this.destNode]?.position || this.point(job.to); this.fireEl.style.left = fx + '%'; this.fireEl.style.top = fy - 2 + '%'; }
       // Route tools
       this.toolsEl.hidden = !routing;
       const used = this.plan.length - 1;
@@ -652,7 +778,7 @@
         dir = o ? [t.nodes[o].x - n.x, t.nodes[o].y - n.y] : [1, 0];
       }
       const px = [dir[0] * w / 100, dir[1] * h / 100], len = Math.hypot(...px) || 1, sp = SPRITES[this.vehicle || this.job.t.answer] || [30];
-      const sign = this.nodeEls?.[id]?.querySelector('.dw-emoji'), d = Math.min(len * .7, (sign ? sign.offsetWidth / 2 : 14) + sp[0] * this.scale() / 2 + 3);
+      const d = Math.min(len * .7, sp[0] * this.scale() / 2 + 10);
       const x = n.x + px[0] / len * d / w * 100, y = n.y + px[1] / len * d / h * 100;
       const heading = from ? [n.x - from[0], n.y - from[1]] : dir;
       return {x, y, rotation: Math.atan2(heading[1], heading[0]) * 180 / Math.PI};

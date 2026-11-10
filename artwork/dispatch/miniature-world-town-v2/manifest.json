@@ -1,0 +1,431 @@
+{
+  "batch": "Transport Dispatch roadside plots v2",
+  "generation": "Built-in ImageGen",
+  "layout": "Buildings use the existing painted landmark sprites at roadside plot positions computed from the live route graph. Stone bridge ends align with the road and the six load types retain independent sprites.",
+  "existingLandmarks": "artwork/dispatch/miniature-world-map-v1/manifest.json",
+  "references": [
+    "Approved Miniature World style",
+    "Plants Blueprint v6 Art and Animation and Applied Games",
+    "Current Transport Dispatch road graph and art"
+  ],
+  "assets": [
+    {
+      "id": "load-people",
+      "source": "originals/load-people.png",
+      "runtime": "site/dist/images/dispatch-map/town-v2/load-people.webp",
+      "transparent": true,
+      "generationId": "exec-1bf80daa-7d28-49d1-a58e-2d0051df0e2d",
+      "prompt": "Paint an individual tiny game sprite for Transport Dispatch. One small friendly standing passenger seen from slightly overhead, teal sweater, dark hair, warm skin, compact silhouette and full feet. No luggage. Warm hand-painted Miniature World gouache and pencil, clean dark outlines, one bold object cluster, recognizable at 13 to 20 pixels. No lettering, labels, enclosing badge, floor or shadow. Full subject centered with an even margin and real transparent alpha.",
+      "sourceSize": [
+        1199,
+        1312
+      ],
+      "sourceAlpha": [
+        0,
+        255
+      ],
+      "sourceBounds": [
+        350,
+        191,
+        816,
+        1129
+      ],
+      "sourceSha256": "06eb30413c582b4a1c646477bd96426e557e98310613704a0009c62988d27fe2",
+      "runtimeSize": [
+        101,
+        192
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeBounds": [
+        5,
+        5,
+        96,
+        187
+      ],
+      "runtimeSha256": "7c1a41ec368891ad477759c46be7ef6ab1bbeeab854f2bf60a50f890f135440d"
+    },
+    {
+      "id": "load-cargo",
+      "source": "originals/load-cargo.png",
+      "runtime": "site/dist/images/dispatch-map/town-v2/load-cargo.webp",
+      "transparent": true,
+      "generationId": "exec-357979ff-65cf-42c9-8bda-a01d6863e3d0",
+      "prompt": "Paint an individual tiny game sprite for Transport Dispatch. One short stack of four red clay bricks on a tiny pale wooden pallet, straight-down rooflike view. Bold shape. Warm hand-painted Miniature World gouache and pencil, clean dark outlines, one bold object cluster, recognizable at 13 to 20 pixels. No lettering, labels, enclosing badge, floor or shadow. Full subject centered with an even margin and real transparent alpha.",
+      "sourceSize": [
+        1261,
+        1247
+      ],
+      "sourceAlpha": [
+        0,
+        255
+      ],
+      "sourceBounds": [
+        312,
+        271,
+        947,
+        959
+      ],
+      "sourceSha256": "9342e0709b46d159c2384c1f8aa49421c47c5be2252eb07089636faed3c1e6e5",
+      "runtimeSize": [
+        178,
+        192
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeBounds": [
+        5,
+        5,
+        173,
+        187
+      ],
+      "runtimeSha256": "ac317b862562de456c1e657ddd1f769086d68d5cbf91fb8c8af05ae65c72a164"
+    },
+    {
+      "id": "load-patient",
+      "source": "originals/load-patient.png",
+      "runtime": "site/dist/images/dispatch-map/town-v2/load-patient.webp",
+      "transparent": true,
+      "generationId": "exec-3f8708b3-0f68-4e2a-a95b-aeb026886704",
+      "prompt": "Paint an individual tiny game sprite for Transport Dispatch. One ivory-and-teal stretcher carrying a resting patient with a teal blanket, seen directly from overhead, visible face, no injury or medical text. Warm hand-painted Miniature World gouache and pencil, clean dark outlines, one bold object cluster, recognizable at 13 to 20 pixels. No lettering, labels, enclosing badge, floor or shadow. Full subject centered with an even margin and real transparent alpha.",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "sourceAlpha": [
+        0,
+        254
+      ],
+      "sourceBounds": [
+        530,
+        57,
+        997,
+        967
+      ],
+      "sourceSha256": "dffc88cb47d0de6407033445f9a8a16be4b88882014000ebf0751e3a947d2aba",
+      "runtimeSize": [
+        104,
+        192
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeBounds": [
+        5,
+        5,
+        99,
+        187
+      ],
+      "runtimeSha256": "e9ceafcbc1ab3660881a211e3861a4556b7250b223e4d2e7a6473298aefd7750"
+    },
+    {
+      "id": "load-parcel",
+      "source": "originals/load-parcel.png",
+      "runtime": "site/dist/images/dispatch-map/town-v2/load-parcel.webp",
+      "transparent": true,
+      "generationId": "exec-789052ea-b7f7-4a89-b174-898971b8b955",
+      "prompt": "Paint an individual tiny game sprite for Transport Dispatch. One warm tan delivery carton with a broad dark navy tape stripe, top-down three-quarter, full box. Warm hand-painted Miniature World gouache and pencil, clean dark outlines, one bold object cluster, recognizable at 13 to 20 pixels. No lettering, labels, enclosing badge, floor or shadow. Full subject centered with an even margin and real transparent alpha.",
+      "sourceSize": [
+        1312,
+        1199
+      ],
+      "sourceAlpha": [
+        0,
+        255
+      ],
+      "sourceBounds": [
+        231,
+        135,
+        1078,
+        1073
+      ],
+      "sourceSha256": "eeab7cd2a07bb06246384de33b4d4c09b819ecb1bd32192e2e26c2d98caedcef",
+      "runtimeSize": [
+        174,
+        192
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeBounds": [
+        5,
+        5,
+        169,
+        187
+      ],
+      "runtimeSha256": "4e9b366bad26e917bdd530ab36dcb9a7c7daed24616242527fdf56572f3f4a91"
+    },
+    {
+      "id": "load-crew",
+      "source": "originals/load-crew.png",
+      "runtime": "site/dist/images/dispatch-map/town-v2/load-crew.webp",
+      "transparent": true,
+      "generationId": "exec-0cee14ff-d52a-4ef1-aba0-f2c7e984bd1a",
+      "prompt": "Paint an individual tiny game sprite for Transport Dispatch. One standing rescue crew member with a bold bright yellow helmet and brick-red jacket with one ivory stripe, slightly overhead, whole figure. Warm hand-painted Miniature World gouache and pencil, clean dark outlines, one bold object cluster, recognizable at 13 to 20 pixels. No lettering, labels, enclosing badge, floor or shadow. Full subject centered with an even margin and real transparent alpha.",
+      "sourceSize": [
+        1199,
+        1312
+      ],
+      "sourceAlpha": [
+        0,
+        255
+      ],
+      "sourceBounds": [
+        349,
+        152,
+        834,
+        1110
+      ],
+      "sourceSha256": "9c53d1a1116111c5c6f3c04de8d680cfeb60ba4ee23a4a90ded42351fa0f1c02",
+      "runtimeSize": [
+        103,
+        192
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeBounds": [
+        5,
+        5,
+        98,
+        187
+      ],
+      "runtimeSha256": "903f340d5c1cc404c4dbd29e5d07ad7445bda54558ccc558b5ab3b2fba1be947"
+    },
+    {
+      "id": "load-veg",
+      "source": "originals/load-veg.png",
+      "runtime": "site/dist/images/dispatch-map/town-v2/load-veg.webp",
+      "transparent": true,
+      "generationId": "exec-9e61a2c1-0544-4c55-94aa-d3d82110d42d",
+      "prompt": "Paint an individual tiny game sprite for Transport Dispatch. One shallow wooden produce crate with a bright red apple, leafy green vegetables and orange carrots large and distinct, seen almost directly from overhead. Warm hand-painted Miniature World gouache and pencil, clean dark outlines, one bold object cluster, recognizable at 13 to 20 pixels. No lettering, labels, enclosing badge, floor or shadow. Full subject centered with an even margin and real transparent alpha.",
+      "sourceSize": [
+        1261,
+        1247
+      ],
+      "sourceAlpha": [
+        0,
+        255
+      ],
+      "sourceBounds": [
+        140,
+        122,
+        1100,
+        1126
+      ],
+      "sourceSha256": "80241edabf7d1fa4295abb30ef8d9b5df34f572a07ccde33f15b84806d31e02d",
+      "runtimeSize": [
+        184,
+        192
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeBounds": [
+        5,
+        5,
+        179,
+        187
+      ],
+      "runtimeSha256": "cfcd33ec99d4a1afd42288a184ee67a4d3ef4fe8959804f9cdaab8cb1a012466"
+    },
+    {
+      "id": "grass-field",
+      "source": "originals/grass-field.png",
+      "runtime": "site/dist/images/dispatch-map/town-v2/grass-field.webp",
+      "transparent": false,
+      "generationId": "exec-1bb9a1e7-d71c-422d-b944-80433f42e88b",
+      "prompt": "One seamless-looking square opaque source texture for a painted top-down miniature town map. Lively but quiet light meadow green with warm sage, very fine gouache and coloured pencil grass texture, a few subtle finely scattered spring-green blades and tiny pale ochre flecks. Calm enough for a board behind dark roads and buildings. Straight down. Full bleed, no perspective, hill, horizon, stripe, path, large shape, trees, stone or text. Even daylight and edge colours.",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceAlpha": [
+        255,
+        255
+      ],
+      "sourceBounds": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "sourceSha256": "f1535472f404735210b5d6aaec48a83a823f1d81cdc6ff65e477e249b797bb4f",
+      "runtimeSize": [
+        768,
+        768
+      ],
+      "runtimeAlpha": [
+        255,
+        255
+      ],
+      "runtimeBounds": [
+        0,
+        0,
+        768,
+        768
+      ],
+      "runtimeSha256": "df58313d0edfc09b81b8441a796a04adc8163761d3a41ca25d15dfaa591e8df3"
+    },
+    {
+      "id": "river-water",
+      "source": "originals/river-water.png",
+      "runtime": "site/dist/images/dispatch-map/town-v2/river-water.webp",
+      "transparent": false,
+      "generationId": "exec-1d4441f5-1ac4-453d-8e33-a13a9aacf5c5",
+      "prompt": "One square opaque full-bleed material swatch for a painted miniature harbour and river map, strict orthographic directly overhead. Attractive blue-green turquoise water with quiet short pale ripples of varying size, soft hand-painted gouache with fine pencil grain and an even teal-blue base. A recognizable water surface when shrunk, subtle enough for ferry and dashed lane overlay. No boat, land, banks, coast, foam border, horizon or isolated highlights. Natural daylight, even edges.",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceAlpha": [
+        255,
+        255
+      ],
+      "sourceBounds": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "sourceSha256": "c362085053cb028a391a250fa1e8f51afc3cc914708b2d1dbcb42758c006e3cc",
+      "runtimeSize": [
+        768,
+        768
+      ],
+      "runtimeAlpha": [
+        255,
+        255
+      ],
+      "runtimeBounds": [
+        0,
+        0,
+        768,
+        768
+      ],
+      "runtimeSha256": "907edec9dfd4436aae3af9ce260ff474ae1a816f27d0ab3d44786c08c8e76ae4"
+    },
+    {
+      "id": "asphalt",
+      "source": "originals/asphalt.png",
+      "runtime": "site/dist/images/dispatch-map/town-v2/asphalt.webp",
+      "transparent": false,
+      "generationId": "exec-39ce0c00-2615-48dd-8d35-ce0dc34aa577",
+      "prompt": "Paint one square opaque full-bleed hand-painted asphalt material for a Miniature World orthographic top-down town game. Smooth warm slate gray road with very fine matte aggregate and slight natural gouache tonal variation. Fairly neutral gray distinct from grass and water. No curb, edge, line, arrow, objects, markings, cast shadow or perspective. It will be clipped into road curves and intersections, leave the entire swatch clean and even to its edges.",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceAlpha": [
+        255,
+        255
+      ],
+      "sourceBounds": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "sourceSha256": "c501c433e9d279e235b5780e7a5bdb7ed7673e04a5862e4efdf42f7670fe5633",
+      "runtimeSize": [
+        768,
+        768
+      ],
+      "runtimeAlpha": [
+        255,
+        255
+      ],
+      "runtimeBounds": [
+        0,
+        0,
+        768,
+        768
+      ],
+      "runtimeSha256": "f01af06c0374ecafcc0c77531c2c39a8e44cbf6d39fcd7a0cddb92be815a519e"
+    },
+    {
+      "id": "stone-bridge",
+      "source": "originals/stone-bridge.png",
+      "runtime": "site/dist/images/dispatch-map/town-v2/stone-bridge.webp",
+      "transparent": true,
+      "generationId": "exec-6c2315cd-e366-4c3c-ac01-25a2bfac1cec",
+      "prompt": "Paint one isolated top-down orthographic two-lane town bridge sprite for a hand-painted Miniature World game. Horizontal east-west, 3.2:1 long narrow rectangle, warm sandstone parapet walls along the TOP and BOTTOM long edges ONLY, dark neutral asphalt clear straight roadway through the middle. Both short sides must stay open completely to join roads without a barrier, seam, lip, crossbar or steps. Deliberate grey running surface wide enough for two miniature vehicles, no markings, no water, no boat, no road beyond the deck. True transparent alpha surrounding the whole bridge. Strong painted stone texture and low orderly brick walls, subtle paper grain and no external shadows, perspective, lettering or logos.",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceAlpha": [
+        0,
+        255
+      ],
+      "sourceBounds": [
+        21,
+        111,
+        2150,
+        612
+      ],
+      "sourceSha256": "828e2c76cb588e4fb3899037be1fd46c954502c7864150e7724c20549d58a635",
+      "runtimeSize": [
+        640,
+        152
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeBounds": [
+        1,
+        1,
+        639,
+        151
+      ],
+      "runtimeSha256": "b669fa678968f71e6e02183d14d3ca304379cfb475c5b7a87bf64d9f3c29f433"
+    },
+    {
+      "id": "verge-trees",
+      "source": "originals/verge-trees.png",
+      "runtime": "site/dist/images/dispatch-map/town-v2/verge-trees.webp",
+      "transparent": true,
+      "generationId": "exec-3dade66c-bdec-4f8d-a985-4a2ffe9db02a",
+      "prompt": "One transparent top-down game scenery sprite, a compact group of three small hand-painted trees over a clipped patch of soft lawn, olive and lime green leaf canopies and a few white meadow flowers. True plan view directly overhead, no horizon or side trunks. Miniature World tactile gouache and fine coloured pencil. Quiet and readable at 20 pixels; simple group, no road, no decoration outside the grass, no hard shadows, full edges and true alpha around the patch.",
+      "sourceSize": [
+        1312,
+        1199
+      ],
+      "sourceAlpha": [
+        0,
+        255
+      ],
+      "sourceBounds": [
+        144,
+        93,
+        1138,
+        1099
+      ],
+      "sourceSha256": "9b87f80f88e9f877427c3fab346dc2ac2028a48054461284bcbb2bbc78a0bfca",
+      "runtimeSize": [
+        190,
+        192
+      ],
+      "runtimeAlpha": [
+        0,
+        255
+      ],
+      "runtimeBounds": [
+        5,
+        5,
+        185,
+        187
+      ],
+      "runtimeSha256": "7aaa2d84a8fd6d5552474065960b37b0c4f7539cf8697ab6baa4c9d975f1dadd"
+    }
+  ]
+}
