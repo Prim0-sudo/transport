@@ -296,3 +296,46 @@ img.result-burst{display:block;width:clamp(130px,22vw,220px);height:auto;margin:
 @media(max-width:480px){.game-card[data-mode=flip] .flip-choice-row{grid-template-columns:minmax(0,1fr);gap:14px}.game-card[data-mode=flip] .flip-choice{grid-template-columns:96px minmax(0,1fr);grid-template-rows:1fr 1fr;justify-items:start;align-items:center;column-gap:16px;row-gap:3px;padding:10px 16px;text-align:left;font-size:1.15rem}.flip-choice .flip-choice-art{grid-row:1/3;width:96px;height:92px;margin:0}.game-card[data-mode=flip] .flip-choice>strong{align-self:end}.game-card[data-mode=flip] .flip-choice .flip-choice-count{align-self:start;font-size:.95rem}.game-card[data-mode=flip] .flip-board{gap:6px}.game-card[data-mode=flip] .flip-board-20{grid-template-columns:repeat(4,minmax(0,1fr))}.game-card[data-mode=flip] .flip-board-40{grid-template-columns:repeat(5,minmax(0,1fr))}.game-card[data-mode=flip] .flip-board-60{grid-template-columns:repeat(6,minmax(0,1fr))}.game-card[data-mode=flip] .flip-tile,.game-card[data-mode=flip] .flip-tile-inner{min-height:84px}.game-card[data-mode=flip] .flip-board-20 .flip-tile,.game-card[data-mode=flip] .flip-board-20 .flip-tile-inner{min-height:112px}.game-card[data-mode=flip] .flip-tile-front strong{font-size:.62rem}.game-status .round-label{white-space:nowrap}}
 @media(min-width:761px){.game-card[data-mode=flip] .flip-board-20{max-width:790px;margin-inline:auto}.game-card[data-mode=flip] .flip-board-20 .flip-tile,.game-card[data-mode=flip] .flip-board-20 .flip-tile-inner{min-height:140px}}
 @media(min-width:761px){.game-card[data-mode=flip] .flip-board-60{gap:7px}.game-card[data-mode=flip] .flip-board-60 .flip-tile,.game-card[data-mode=flip] .flip-board-60 .flip-tile-inner{min-height:88px}}
+
+/* ===== Plants parity: shared top bar and status row (matches Plants at 390x844) ===== */
+body[data-transport-shell] .topbar{flex-wrap:nowrap;gap:8px;min-height:52px}
+body[data-transport-shell] .top-actions{gap:8px;margin-left:auto}
+body[data-transport-shell] .icon-btn{width:48px;min-width:48px;height:48px;min-height:48px;padding:0;border:2px solid #fffdf0;border-radius:14px;background:#eef4fa;color:#183a51;box-shadow:0 3px 0 #183a5155;font-size:0;display:inline-flex;align-items:center;justify-content:center}
+body[data-transport-shell] .icon-btn[data-ui-icon]::before{content:"";width:30px;height:30px;background:var(--button-icon) center/76% no-repeat}
+body[data-transport-shell] #teacherBtn{width:auto;padding:0 9px;font-size:14.4px;font-weight:800}
+[data-ui-icon="sound"]{--button-icon:url('images/ui-icons/sound.svg')}
+[data-ui-icon="muted"]{--button-icon:url('images/ui-icons/muted.svg')}
+[data-ui-icon="fullscreen"]{--button-icon:url('images/ui-icons/fullscreen.svg')}
+[data-ui-icon="collapse"]{--button-icon:url('images/ui-icons/collapse.svg')}
+body[data-transport-shell] .brand{height:52px;min-height:52px;padding:6px 12px 6px 8px;border:2px solid #fffdf0;border-radius:18px;background:#f6f9fc;box-shadow:0 6px 0 #183a512e}
+body[data-transport-shell] .brand img{width:36px;height:36px}
+@media(max-width:650px){body[data-transport-shell] .brand span{display:none}body[data-transport-shell] .brand{padding:6px 8px}}
+
+/* Status row: back button and score on one line, progress label and bar on the next (Plants layout) */
+.game-screen .game-status{display:grid;grid-template-columns:auto 1fr auto;grid-template-areas:"back . score" "label bar bar";gap:10px 5px;align-items:center}
+.game-status .back-menu-btn{grid-area:back;min-height:44px;border-radius:16px;padding:0 12px;box-shadow:0 5px 0 #0b1f3338}
+.game-status .score-pill{grid-area:score;display:flex;align-items:center;gap:6px;height:48px;padding:0 10px;border:3px solid rgba(255,255,255,.9);border-radius:16px;font-size:17.92px;font-weight:900;box-shadow:0 5px 0 #0b1f3338}
+.game-status .round-label{grid-area:label;justify-self:start;padding:7px 10px;border-radius:999px;background:rgba(240,246,252,.94);font-size:13.6px;font-weight:1000;line-height:1.3}
+.game-status .progress-track{grid-area:bar;height:15px;border:3px solid #fff;border-radius:999px;background:rgba(255,255,255,.55);box-shadow:0 4px 0 #0b1f332e}
+.game-status .round-label:empty,.game-status .round-label[hidden]{display:none}
+.game-status:has(.round-label:empty) .progress-track,.game-status:has(.round-label[hidden]) .progress-track{grid-column:1/-1}
+/* Plants parity: titles use the app's rounded font, not a serif. */
+body[data-transport-shell] .home-copy h1{font:700 clamp(2.6rem,12vw,5rem)/1 "Trebuchet MS","Arial Rounded MT Bold",system-ui,sans-serif;letter-spacing:0;text-shadow:0 2px 0 #f4f9fd,0 0 26px #eef5fb}
+body[data-transport-shell] .home-screen.menu-open .menu-title{font:700 2rem/1.06 "Trebuchet MS","Arial Rounded MT Bold",system-ui,sans-serif;color:#fff;text-shadow:0 3px 12px rgba(13,40,67,.55)}
+.ticket-title{font-family:"Trebuchet MS","Arial Rounded MT Bold",system-ui,sans-serif}
+/* Plants parity: group/setup pages use a compact heading and compact group cards (Plants: 23px heading, ~100px cards). */
+@media(max-width:650px){
+  .game-card:has(.standard-choice-grid) #questionText{font-size:23.2px;line-height:1.1;margin-bottom:10px}
+  .standard-choice-grid{gap:10px}
+  .standard-choice-grid .standard-choice{min-height:0;padding:10px 8px;gap:5px;justify-content:center}
+  .standard-choice-grid .standard-choice img{height:44px;width:auto;max-width:100%;object-fit:contain}
+}
+/* Plants parity: Meet the Words word page — 240px picture, 2x2 equal action buttons (67px), fits one phone screen. */
+@media(max-width:650px){
+  .learn-word-card{display:flex;flex-direction:column;align-items:center}
+  .learn-word-card>img{width:240px;height:240px;max-width:100%;object-fit:contain;border-radius:25px}
+  .learn-word-card h2{margin:14px 0 10px;font-size:28.8px}
+  .learn-word-card .learn-meaning{width:100%;margin:0}
+  .standard-actions.learn-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px;width:100%;margin-top:12px}
+  .standard-actions.learn-actions .standard-action{width:100%;min-height:67px;margin:0;border-radius:17px;font-size:16px}
+}

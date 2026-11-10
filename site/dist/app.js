@@ -972,7 +972,7 @@ els.emojiToggle.addEventListener("click", () => {
 els.sound.addEventListener("click", () => {
   state.muted = !state.muted;
   window.dispatchEvent(new Event('plants-sound'));
-  els.sound.textContent = state.muted ? "Sound off" : "Sound on";
+  els.sound.dataset.uiIcon = state.muted ? "muted" : "sound";
   els.sound.setAttribute('aria-pressed', String(!state.muted));
   els.sound.title = state.muted ? "Sound off (M)" : "Sound on (M)";
   els.sound.setAttribute("aria-label", state.muted ? "Turn sound on" : "Turn sound off");
@@ -1036,4 +1036,12 @@ window.addEventListener('pageshow',event=>{
     else showScopeRecovery(state.mode,'The saved activity changed while this page was away. Choose how to continue.',true);
   }
   work.setHold('page',false);
+});
+
+// Plants parity: full-screen button swaps between the expand and collapse icons.
+document.addEventListener("fullscreenchange", () => {
+  const btn = document.getElementById("fullscreenBtn"), on = Boolean(document.fullscreenElement);
+  btn.dataset.uiIcon = on ? "collapse" : "fullscreen";
+  btn.setAttribute("aria-label", on ? "Exit full screen" : "Enter full screen");
+  btn.title = on ? "Exit full screen (F)" : "Full screen (F)";
 });
