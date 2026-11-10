@@ -4,7 +4,7 @@
   // Same layout labels as Plants.
   const layouts = [[1, 'A4 · 1 large card'], [2, 'A4 · 2 horizontal A5 cards'], [4, 'A4 · 4 cards'], [8, 'A4 landscape · 8 cards']];
   const sections = () => TransportStandard.hubs.media.groups.map(([id, label]) => [id, label]);
-  let cardsPerSheet = 4, mediaSection = 'printables', readingIndex = 0;
+  let cardsPerSheet = 4, mediaSection = 'printables', readingIndex = 0, openBook = null, bookPage = 0;
   const exploredKey = 'transport-reading-explored';
   const el = (tag, className, text) => { const node = document.createElement(tag); if (className) node.className = className; if (text != null) node.textContent = text; return node; };
   const fileSize = bytes => bytes < 1048576 ? `${Math.round(bytes / 1024)} KB` : `${(bytes / 1048576).toFixed(1)} MB`;
@@ -18,12 +18,13 @@
     for (const [id, label] of sections()) {
       const button = el('button', 'media-tab', label); button.type = 'button'; button.dataset.mediaSection = id;
       button.setAttribute('aria-pressed', String(id === mediaSection));
-      button.onclick = () => { mediaSection = id; renderStandardHub('media'); document.querySelector(`[data-media-section="${id}"]`)?.focus(); };
+      button.onclick = () => { mediaSection = id; openBook = null; renderStandardHub('media'); document.querySelector(`[data-media-section="${id}"]`)?.focus(); };
       nav.append(button);
     }
     root.append(nav);
     if (mediaSection === 'printables') printables(root);
     else if (mediaSection === 'presentation') presentations(root);
+    else if (mediaSection === 'books' && globalThis.TransportBooks?.length) books(root);
     else { const empty = el('section', 'media-empty'); empty.setAttribute('aria-live', 'polite'); empty.append(el('p', '', `No ${mediaSection} yet.`)); root.append(empty); }
   }
 
@@ -77,6 +78,43 @@
       actions.append(present, save); row.append(picture, details, actions); grid.append(row);
     }
     library.append(grid); root.append(library);
+  }
+
+  // Books: Plants' read-together model. A list of books, then one page at a time with a Talk together prompt.
+  function books(root) {
+    const list = globalThis.TransportBooks, rerender = focus => { renderStandardHub('media'); document.querySelector(focus)?.focus(); };
+    if (!openBook) {
+      const library = el('section', 'printables-library books-library');
+      const toolbar = el('div', 'printables-toolbar'); toolbar.append(el('h3', '', 'Read together')); library.append(toolbar);
+      library.append(el('p', 'printables-hint', 'Read a page together, then talk about the picture.'));
+      const grid = el('div', 'printables-grid');
+      for (const book of list) {
+        const row = el('article', 'printable-card'), picture = el('img'); picture.src = book.cover; picture.alt = ''; picture.loading = 'lazy';
+        const details = el('div', 'printable-details'); details.append(el('h4', '', book.title), el('p', '', `${book.summary} · ${book.pages.length} pages`));
+        const actions = el('div', 'printable-actions'), read = el('button', 'present-btn', 'Read'); read.type = 'button'; read.setAttribute('aria-label', `Read ${book.title}`);
+        read.onclick = () => { openBook = book.id; bookPage = 0; rerender('[data-book-heading]'); };
+        actions.append(read); row.append(picture, details, actions); grid.append(row);
+      }
+      library.append(grid); root.append(library); return;
+    }
+    const book = list.find(b => b.id === openBook); if (!book) { openBook = null; books(root); return; }
+    bookPage = Math.min(bookPage, book.pages.length - 1);
+    const page = book.pages[bookPage], last = bookPage === book.pages.length - 1;
+    const reader = el('article', 'media-book-reader'); reader.setAttribute('aria-label', book.title);
+    const head = el('header'), back = el('button', 'standard-action', 'Books'); back.type = 'button'; back.onclick = () => { openBook = null; rerender('[data-media-section="books"]'); };
+    head.append(back, el('span', '', `${bookPage + 1} / ${book.pages.length}`));
+    const spread = el('div', 'media-book-spread'), figure = el('figure'), frame = el('div', 'media-book-picture'), img = el('img'); img.src = page.image; img.alt = page.alt; frame.append(img); figure.append(frame);
+    const words = el('section'), heading = el('h2', '', page.title); heading.tabIndex = -1; heading.dataset.bookHeading = '';
+    const talk = el('details', 'media-book-help'); talk.append(el('summary', '', 'Talk together'), el('p', '', page.talk)); if (page.note) talk.append(el('p', '', page.note));
+    words.append(el('p', 'media-book-name', book.title), heading, el('p', 'media-book-text', page.text), talk);
+    spread.append(figure, words);
+    const nav = el('nav', 'media-book-controls'); nav.setAttribute('aria-label', 'Book pages');
+    const prev = el('button', 'standard-action', 'Previous page'), next = el('button', 'standard-action is-primary', last ? 'Read again' : 'Next page'); prev.type = next.type = 'button'; prev.disabled = bookPage === 0;
+    prev.onclick = () => { bookPage--; rerender('[data-book-heading]'); }; next.onclick = () => { bookPage = last ? 0 : bookPage + 1; rerender('[data-book-heading]'); };
+    nav.append(prev, next);
+    const about = el('details', 'media-book-help'); about.append(el('summary', '', 'About this book'), el('p', '', book.credit));
+    reader.append(head, spread, nav, about); root.append(reader);
+    const ahead = book.pages[bookPage + 1]; if (ahead) new Image().src = ahead.image;
   }
 
   function slideNode(slide) {

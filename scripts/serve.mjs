@@ -76,7 +76,7 @@ createServer((request, response) => {
   const path = normalize(join(servingRoot, relative));
 
   const safeRelative = relativePath(servingRoot, path).replaceAll("\\", "/");
-  const allowed = isAssetReview ? /^(index\.html|manifest\.json|(?:sky|distant-background|middle-ground|foreground|bus|train|train-front|ferry|airplane|cloud)\.png)$/ : isReview ? /^(index\.html|style\.css|shell\.js|scene\.png|dispatch\.html|gsap\.min\.js|MotionPathPlugin\.min\.js)$/ : /^(index\.html|(?:app|lifecycle|landing-scene|curriculum|classroom-core|standard-data|standard-views|media-views|dispatch-view|spelling-scene|teaching-bounds|detective-model|detective-view)\.js|(?:styles|landing|classroom|standard|dispatch)\.css|vendor\/(?:gsap|MotionPathPlugin)\.min\.js|transport-town-bg\.png|images\/[^.].*|printables\/[^.].*|presentations\/[^.].*|phonics\/[^.].*)$/;
+  const allowed = isAssetReview ? /^(index\.html|manifest\.json|(?:sky|distant-background|middle-ground|foreground|bus|train|train-front|ferry|airplane|cloud)\.png)$/ : isReview ? /^(index\.html|style\.css|shell\.js|scene\.png|dispatch\.html|gsap\.min\.js|MotionPathPlugin\.min\.js)$/ : /^(index\.html|(?:app|lifecycle|landing-scene|curriculum|classroom-core|standard-data|standard-views|media-views|media-books|dispatch-view|spelling-scene|teaching-bounds|detective-model|detective-view)\.js|(?:styles|landing|classroom|standard|dispatch)\.css|vendor\/(?:gsap|MotionPathPlugin)\.min\.js|transport-town-bg\.png|images\/[^.].*|printables\/[^.].*|presentations\/[^.].*|phonics\/[^.].*)$/;
   if (!allowed.test(safeRelative) || safeRelative.split("/").some(part => part.startsWith("."))) {
     response.writeHead(403).end("Forbidden");
     return;

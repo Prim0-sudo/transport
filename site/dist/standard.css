@@ -117,6 +117,19 @@ button:disabled{cursor:default}.standard-actions button:disabled{opacity:.55}
 .printable-actions>a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:6px 12px;border:1px solid #1d4f73;border-radius:8px;color:#183a51;font-size:.875rem;font-weight:700;text-decoration:none;background:#fff}
 .printable-actions>a[download]{background:#1d4f73;color:#fff}
 .printable-actions>a:hover{background:#f5ecd2;color:#183a51}
+/* Media books (Plants read-together reader). */
+.media-book-reader{width:100%;display:grid;gap:12px;text-align:left;color:#183a51}
+.media-book-reader>header{display:flex;align-items:center;justify-content:space-between;gap:12px}.media-book-reader>header span{font-weight:800;color:#1d4f73}
+.media-book-spread{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(12px,2.5vw,24px);align-items:center}
+.media-book-spread figure{margin:0}.media-book-spread section{text-align:left}.media-book-picture{border:4px solid #fff;border-radius:20px;overflow:hidden;background:#fcf1da;box-shadow:0 6px 18px #183a5120}
+.media-book-picture img{display:block;width:100%;aspect-ratio:3/2;max-height:calc(100dvh - 480px);min-height:180px;object-fit:cover}
+.media-book-name{margin:0;font-size:.85rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#8a6a1f}
+.media-book-spread h2{margin:4px 0 8px;font-size:clamp(1.4rem,3vw,2rem);color:#1d4f73}.media-book-spread h2:focus{outline:none}
+.media-book-text{margin:0 0 12px;font-size:clamp(1.15rem,2.2vw,1.45rem);line-height:1.45}
+.media-book-help{border:1px solid #d8bd7d;border-radius:12px;background:#fffbed;padding:8px 12px}.media-book-help summary{cursor:pointer;font-weight:800;min-height:28px}.media-book-help p{margin:6px 0 0;line-height:1.4}
+.media-book-controls{display:grid;grid-template-columns:1fr 1fr;gap:10px}.media-book-controls .is-primary{background:#1d4f73;border-color:#1d4f73;color:#fff}.media-book-controls button:disabled{opacity:.5;cursor:default}
+.game-card .media-book-reader .media-book-spread h2{text-align:left}
+@media(max-width:700px){.media-book-spread{grid-template-columns:1fr;gap:8px}.media-book-picture img{aspect-ratio:16/9;max-height:28dvh}.media-book-spread h2{margin:0 0 4px}.media-book-text{margin-bottom:8px}}
 /* Presentation tab and full-screen presenter (media-views.js presenter). */
 .printable-actions>.present-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:6px 14px;border:1px solid #1d4f73;border-radius:8px;background:#e6c45a;color:#183a51;font:inherit;font-size:.875rem;font-weight:800;cursor:pointer}
 .printable-actions>.present-btn:hover{background:#f0d77f}
