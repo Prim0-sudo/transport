@@ -403,3 +403,26 @@ body[data-transport-shell] .home-screen.menu-open .menu-title{font:700 2rem/1.06
   .detective-controls > [data-reveal-practice]{flex:0 0 auto;min-height:44px;max-width:45%;padding:4px 10px;font-size:14px;line-height:1.15}
   .game-card:has(.detective-workspace) > h2{margin-bottom:4px}
 }
+/* Plants parity: Which One Is It? — Plants-style 169px picture, answers stacked as full-width 64px rows. */
+@media(max-width:650px){
+  .game-card:has(> .picture-controls) > .picture-controls{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 10px}
+  .game-card:has(> .picture-controls) > .picture-controls .picture-toggle{min-height:44px;padding:6px 12px;font-size:15px}
+  .game-card:has(> .picture-controls) > .vehicle-stage{width:auto;height:auto;margin:0 auto 12px;display:flex;justify-content:center}
+  .game-card:has(> .picture-controls) > .vehicle-stage .vehicle-emoji{width:169px;height:169px;margin:0}
+  .game-card:has(> .picture-controls) > .answers:has(> .answer-btn){display:flex;flex-direction:column;gap:8px}
+  .game-card:has(> .picture-controls) > .answers > .answer-btn{width:100%;height:auto;min-height:64px;flex-direction:row;justify-content:center;gap:12px;padding:6px 12px}
+  .game-card:has(> .picture-controls) > .answers > .answer-btn .answer-icon,.game-card:has(> .picture-controls) > .answers > .answer-btn .answer-icon img{width:44px;height:44px}
+}
+@media(max-width:650px){
+  .game-card:has(> .picture-controls) > .picture-controls{display:flex;flex-direction:column;align-items:center;grid-template-columns:none}
+  .game-card:has(> .picture-controls) > .picture-controls .picture-toggle{width:auto;white-space:nowrap}
+  .game-card:has(> .picture-controls) > .vehicle-stage .vehicle-emoji{box-sizing:border-box}
+}
+/* Which One Is It?: both Hide buttons on one row; once answered, the picture shrinks so Next stays on screen. */
+@media(max-width:650px){
+  .game-card:has(> .picture-controls) > .picture-controls{flex-direction:row;flex-wrap:nowrap;gap:6px}
+  .game-card:has(> .picture-controls) > .picture-controls .picture-toggle{flex:1 1 0;min-width:0;font-size:13.5px;padding:6px 8px;white-space:nowrap}
+  .game-card:has(> .picture-controls):has(> .feedback:is(.is-correct,.is-try)) > .vehicle-stage .vehicle-emoji{width:120px;height:120px}
+}
+@media(max-width:650px){.game-screen.active .game-card:has(> .picture-controls):has(> .feedback:is(.is-correct,.is-try)) > .answers:has(> .answer-btn) > .answer-btn{min-height:54px;height:auto;padding-block:4px}}
+@media(max-width:650px){.game-screen.active .game-card:has(> .picture-controls):has(> .feedback:is(.is-correct,.is-try)) > .answers > .answer-btn :is(.answer-icon,.answer-icon img){width:36px;height:36px}}
