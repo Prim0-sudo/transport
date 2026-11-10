@@ -159,6 +159,21 @@ Commit identity: `git -c user.name=Prim0-sudo -c user.email=Prim0-sudo@users.nor
 - Dispatch: land texture on the board, water texture via board-space SVG pattern clipped to .dw-water (fitTextures keeps tiles square), painted landmark per PLACES ID inside the marker circle, roadworks barrier art for closures. Roads, closures, paths and hit areas unchanged.
 - Checked at 768x1024, 1280x800, 390x844: no overflow, all images load, ferry job runs to completion.
 
+## Media Presentation and Books (added 2026-11-10)
+
+- Presentation tab: scripts/build-presentations.mjs builds decks from the app's words and scenes (site/dist/presentations/decks.js); scripts/build-presentations-pptx.py writes the PowerPoint downloads (needs Pillow + python-pptx). Full deck 188 slides plus one deck per group. In-app full-screen presenter: arrows, Space, Home/End, Escape, tap left third to go back.
+- Books tab: site/dist/media-books.js, five original read-together books (7 pages each) on the teaching scenes, Plants reader model with Talk together.
+- Videos still need narration (Polly) and ffmpeg; Songs stay empty like Plants.
+
+## Phonics and Polly (2026-11-10)
+
+- Phonics: use Plants' sounds (already identical) until the owner says otherwise.
+- Polly: no Transport recordings exist in the repo, its history, Drive or sibling projects. Request list ready (154 texts, about 4,600 characters, Amy neural en-GB, about US$0.07). Needs the owner signed in to the AWS console in the browser pane, or the files from the work laptop.
+
+## Driving game (started 2026-11-10)
+
+- docs/DRIVING-GAME-BRIEF.md: brief, concepts A Road Safety Drive / B Taxi Rounds / C Park and Go (recommend A with B's passengers), and sprite option sheets in artwork/driving-options/. Waiting for the owner's pick.
+
 ## Queued by owner (after every activity matches Plants)
 
 - Plants presentation: design a full-topic PPT for the Plants game covering every category (everything the videos cover, plus more), and add a separate Media tab called Presentation for it.
@@ -167,7 +182,7 @@ Commit identity: `git -c user.name=Prim0-sudo -c user.email=Prim0-sudo@users.nor
 
 1. Media page now matches Plants (2026-11-09): Printables / Books / Videos / Songs tabs (from hubs.media.groups), "Print layout" dropdown (default 4 per sheet), picture rows with Open and Download. Books, Videos and Songs show "No … yet." until content exists.
 2. Media content: books, videos, songs.
-3. **Alphabet sounds: the owner is recording the 26 sounds themself.** Kokoro/Polly attempts were rejected. Do not regenerate; install the recordings when provided.
+3. Alphabet sounds: use Plants' sounds until the owner says otherwise.
 4. Paid narration (Polly via AWS console) needs a cost estimate and owner OK first.
 5. More art: Dispatch scenery and top-down vehicle sprites (word pictures and scenes are done; see above).
 6. The separate driving game (Garden Patrol-style controls) after Dispatch, per the upgrade plan.
