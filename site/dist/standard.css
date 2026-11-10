@@ -446,3 +446,8 @@ body[data-transport-shell] .home-screen.menu-open .menu-title{font:700 2rem/1.06
 @media(max-width:650px){.game-screen .game-card > h2{text-align:left;align-self:stretch;width:100%}}
 /* Plants parity: Read, Draw & Talk — 150px picture so the card and its buttons fit a phone. */
 @media(max-width:650px){.reading-workspace .reading-picture{height:150px;max-height:150px;width:auto;max-width:100%;object-fit:contain;margin-inline:auto}}
+/* Plants parity: results buttons stacked full width, 47px, radius 17. */
+@media(max-width:650px){
+  .results-card .result-actions{display:flex;flex-direction:column;align-items:stretch;gap:10px;width:100%}
+  .results-card .result-actions > button{width:100%;min-height:47px;height:auto;padding:10px 14px;border-radius:17px;font-size:16px;margin:0}
+}
