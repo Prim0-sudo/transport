@@ -28,7 +28,8 @@
   const art = name => { const i = document.createElement('img'); i.src = 'images/dispatch-map/' + name + '.webp'; i.alt = ''; i.decoding = 'async'; i.draggable = false; return i; };
   const landmark = place => {
     const plot = el('span', 'dw-plot');
-    plot.append(art('landmark-' + place), el('span', 'dw-label', PLACES[place][0]));
+    // Miniature World v2 sprites (versioned folder, so the first set stays for comparison). Dock = ticket hut on land, island = lighthouse.
+    plot.append(art('landmarks-v2/landmark-' + place), el('span', 'dw-label', PLACES[place][0]));
     plot.setAttribute('aria-hidden', 'true');
     return plot;
   };

@@ -34,3 +34,18 @@ test('the road, bridge, pier, berth and fire art stay listed and wired into Disp
   }
   assert.ok(!view.includes('🔥'), 'the fire marker should use the illustration, not the emoji');
 });
+
+test('every Dispatch place, including the island, uses its v2 landmark with the recorded hash', async () => {
+  const landmarks = JSON.parse(await readFile(new URL('../artwork/dispatch/miniature-world-landmarks-v2/manifest.json', import.meta.url)));
+  const view = String(await read('dispatch-view.js'));
+  assert.ok(view.includes("art('landmarks-v2/landmark-' + place)"), 'landmark lookup should load the v2 folder');
+  const ids = [...view.match(/const PLACES = \{([\s\S]*?)\};/)[1].matchAll(/(\w+):\[/g)].map(m => m[1]);
+  assert.ok(ids.includes('island') && ids.length === 13, 'expected 13 places including the island');
+  for (const id of ids) {
+    const asset = landmarks.assets.find(a => a.id === id);
+    assert.ok(asset, id + ' missing from the v2 manifest');
+    assert.equal(asset.runtime, `site/dist/images/dispatch-map/landmarks-v2/landmark-${id}.webp`);
+    const bytes = await readFile(new URL('../' + asset.runtime, import.meta.url));
+    assert.equal(createHash('sha256').update(bytes).digest('hex'), asset.runtimeSha256, asset.runtime);
+  }
+});
