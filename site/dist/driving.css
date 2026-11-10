@@ -1,0 +1,49 @@
+/* Transport Driving: top-down town, drawn placeholders for the car, people, cyclist and lights. Reuses the Dispatch setup, head and node rules. */
+.driving{display:grid;gap:10px;width:100%;min-width:0;grid-column:1/-1;container-type:inline-size;color:#183a51}
+.driving *{box-sizing:border-box}
+.driving-world{position:relative;aspect-ratio:1.6;background:#b6c67e url(images/dispatch-map/town-v2/grass-field.webp) center/300px;border:1px solid #d8bd7d;border-radius:14px;overflow:hidden;--block:120px}
+.driving-world>svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.dv-road,.dv-road-edge,.dv-drive,.dv-centre,.dv-plan{fill:none;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.dv-road-edge{stroke:#e0ccaa;stroke-width:calc(var(--block) * .26 + 4px)}
+.dv-road{stroke:#6f767b;stroke-width:calc(var(--block) * .26)}
+.dv-centre{stroke:#fff4ce;stroke-width:1.5px;stroke-dasharray:8 7}
+.dv-drive{stroke:#d9c49a;stroke-width:calc(var(--block) * .1)}
+.dv-plan{stroke:#f4c453;stroke-width:4px;stroke-dasharray:.1 9;opacity:.95}
+.dv-plot{position:absolute;z-index:1;width:calc(var(--block) * .62);aspect-ratio:1;transform:translate(-50%,-50%);display:grid;place-items:center;pointer-events:none}
+.dv-plot img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 2px 1px #2e3c3060)}
+.dv-plot.is-dest img,.dv-plot.is-from img{filter:drop-shadow(0 1px 1px #20384b80) drop-shadow(0 0 4px #ffdd66)}
+.dv-plot.is-dest .dw-label,.dv-plot.is-from .dw-label{background:#ffe4a2;border-color:#a6742f}
+.dv-plot.is-from::after{content:'🙋';position:absolute;right:-8%;top:-6%;font-size:calc(var(--block) * .2)}
+.driving .dv-node:disabled{cursor:default;opacity:1}
+.dv-node.is-dest:before{border-color:#9d4009;box-shadow:0 0 0 3px #ffdd7c;animation:dw-pulse 1.1s ease-in-out infinite}
+.dv-node.is-park:before{content:'P';width:22px;height:22px;display:grid;place-items:center;border-radius:5px;background:#2e6fb0;border-color:#fff;color:#fff;font-weight:900;font-size:13px}
+.dv-light{position:absolute;z-index:3;display:grid;gap:2px;padding:3px;border:2px solid #183a51;border-radius:8px;background:#2b3a44;transform:translate(calc(var(--block) * .15),calc(var(--block) * .15));pointer-events:none}
+.dv-light i{display:block;width:9px;height:9px;border-radius:50%;background:#55606a}
+.dv-light.is-red i:first-child{background:#ff4b3e;box-shadow:0 0 6px #ff4b3e}
+.dv-light.is-green i:last-child{background:#47d16c;box-shadow:0 0 6px #47d16c}
+.dv-zebra{position:absolute;z-index:1;transform:translate(-50%,-50%);pointer-events:none}
+.dv-zebra.is-v{width:calc(var(--block) * .16);height:calc(var(--block) * .3);background:repeating-linear-gradient(0deg,#fff 0 4px,transparent 4px 8px)}
+.dv-zebra.is-h{width:calc(var(--block) * .3);height:calc(var(--block) * .16);background:repeating-linear-gradient(90deg,#fff 0 4px,transparent 4px 8px)}
+.dv-walker{position:absolute;left:50%;top:50%;width:calc(var(--block) * .14);min-width:14px;aspect-ratio:1}
+.dv-walker svg,.dv-cyclist svg,.dv-car svg,.dv-car img,.dv-ambulance img{display:block;width:100%;height:auto}
+.dv-cyclist{position:absolute;z-index:3;width:calc(var(--block) * .2);min-width:22px;pointer-events:none}
+.dv-ambulance{position:absolute;z-index:4;width:calc(var(--block) * .34);transform:translate(-50%,-50%);pointer-events:none;filter:drop-shadow(0 0 6px #ff5a5a)}
+.dv-car{position:absolute;z-index:5;width:calc(var(--block) * .42);min-width:38px;pointer-events:none;filter:drop-shadow(0 1.5px 1.5px #0004)}
+.dv-car.is-bump{animation:dv-bump .45s}
+@keyframes dv-bump{25%{margin-left:-3px}75%{margin-left:3px}}
+.driving.is-siren .driving-world{box-shadow:inset 0 0 0 4px #ff5a5a}
+.driving-status{text-align:center;font-weight:700}
+.driving-pad{display:grid;grid-template-columns:repeat(3,64px);grid-template-areas:". up ." "left down right";gap:6px;justify-content:center}
+.driving-arrow{min-height:56px;border:2px solid #d8bd7d;border-radius:14px;background:#fff;color:#1d4f73;font-size:22px;cursor:pointer}
+.driving-arrow:active{background:#e7f0f7}
+.driving-arrow.is-up{grid-area:up}.driving-arrow.is-left{grid-area:left}.driving-arrow.is-right{grid-area:right}.driving-arrow.is-down{grid-area:down}
+.driving-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.driving-action{min-height:52px;border:2px solid #d8bd7d;border-radius:14px;background:#fff;color:#183a51;font:inherit;font-weight:800;font-size:16px;cursor:pointer}
+.driving-action.is-next{border-color:#1d4f73;box-shadow:0 0 0 2px #1d4f73}
+.driving-action.is-hint{animation:dv-hint .9s}
+@keyframes dv-hint{30%,70%{background:#ffe4a2}}
+.driving button:focus-visible{outline:3px solid #f4c453;outline-offset:3px}
+@container(max-width:520px){.driving-world{aspect-ratio:1.05}.driving-action{font-size:14px}}
+@media(pointer:fine) and (min-width:900px){.driving-pad{display:none}}
+@media(prefers-reduced-motion:reduce){.dv-node.is-dest:before,.dv-car.is-bump,.driving-action.is-hint{animation:none}}
+.dv-light.is-above{transform:translate(calc(var(--block) * .15),calc(-100% - var(--block) * .15))}

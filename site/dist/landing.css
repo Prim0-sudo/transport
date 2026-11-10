@@ -41,3 +41,12 @@ h1[tabindex='-1']:focus{outline:none}
 @media(max-width:800px){body[data-transport-shell] .mode-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:560px){body[data-transport-shell] .shell{padding:10px 12px 18px}body[data-transport-shell] .icon-btn{font-size:12px;padding:8px;min-height:44px}body[data-transport-shell] .top-actions{gap:6px}body[data-transport-shell] .brand{font-size:13px;padding:7px 9px}body[data-transport-shell] .brand img{width:30px;height:28px}body[data-transport-shell] .home-screen{padding-top:clamp(24px,6svh,55px);gap:24px}body[data-transport-shell] .home-copy h1{font-size:43px;max-width:8ch;margin-inline:auto}body[data-transport-shell] .home-copy p{font-size:17px}body[data-transport-shell] .mode-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-height:600px){body[data-transport-shell] .home-screen{padding-top:12px;gap:12px}body[data-transport-shell] .home-copy h1{font-size:40px;margin-bottom:6px}body[data-transport-shell] .home-copy p{font-size:16px}}
+/* Round Explore entry, matching the Plants launch circle in Transport navy and gold. */
+body[data-transport-shell] .home-launch{flex-direction:column;width:clamp(190px,22vw,250px);aspect-ratio:1;min-width:0;min-height:0;padding:16px;border:5px solid #fffbed;border-radius:50%;background:#fffbed;box-shadow:0 8px 0 #1d4f73,0 14px 30px #183a5140,inset 0 0 0 3px #d8bd7d;color:#183a51;gap:2px;transition:transform .18s ease,filter .15s ease}
+body[data-transport-shell] .home-launch:hover{transform:translateY(-3px);filter:brightness(1.03)}
+body[data-transport-shell] .home-launch:active{transform:translateY(3px);box-shadow:0 4px 0 #1d4f73,0 8px 18px #183a5140,inset 0 0 0 3px #d8bd7d}
+body[data-transport-shell] .home-launch img{width:58%;height:46%;object-fit:contain;margin:0 0 4px;transform:scale(1.45);pointer-events:none;user-select:none}
+body[data-transport-shell] .home-launch strong{font:700 clamp(26px,3vw,34px)/1.05 Georgia,serif}
+body[data-transport-shell] .home-launch .launch-hint{font-size:.85rem;font-weight:800;color:#3c5d73}
+@media(max-height:700px){body[data-transport-shell] .home-launch{width:clamp(160px,20vw,200px)}}
+@media(prefers-reduced-motion:reduce){body[data-transport-shell] .home-launch{transition:none}body[data-transport-shell] .home-launch:hover{transform:none}}

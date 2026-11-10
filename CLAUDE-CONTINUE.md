@@ -172,7 +172,15 @@ Commit identity: `git -c user.name=Prim0-sudo -c user.email=Prim0-sudo@users.nor
 
 ## Driving game (started 2026-11-10)
 
-- docs/DRIVING-GAME-BRIEF.md: brief, concepts A Road Safety Drive / B Taxi Rounds / C Park and Go (recommend A with B's passengers), and sprite option sheets in artwork/driving-options/. Waiting for the owner's pick.
+- Owner chose all three. Built as one game, three modes (site/dist/driving-view.js + driving.css, Games > Driving): Safe Drive (lights, zebras; Hard adds a cyclist loop and siren), Taxi (pick up, drop off), Park and Go (action-word buttons). Arrow keys or tap a crossing; tapped routes wait at hazards, arrow presses into a hazard are explained and cost a star.
+- Car, people, cyclist and lights are drawn placeholders (taxi mode uses the fleet taxi). Final sprites go to GPT/Codex image generation (owner 2026-11-10: save Figma usage). Option sheets: artwork/driving-options/.
+
+## Dispatch menu and maps (2026-11-10)
+
+- Setup redesigned: banner hero, compact segmented rows (Town size, Map, Difficulty, Jobs, Rounds) with the chosen option's hint under each row.
+- Three named maps per size (MAPS in dispatch-view.js): river middle/west/east plus bridge count. Mix plays every map once before repeating.
+- Redundant text removed: Games heading/helper hidden over Dispatch and Driving, topbar labels that repeated headings blanked, duplicate job count and "Waiting at" line dropped.
+- Launch: round Explore button with icon and "Choose an activity", matching Plants.
 
 ## Queued by owner (after every activity matches Plants)
 

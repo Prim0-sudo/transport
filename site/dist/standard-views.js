@@ -24,7 +24,7 @@ function renderStandardSetup(mode,title,helper=''){
   els.modeBadge.textContent=modeInfo[mode]?.badge||title;els.question.textContent=title;els.helper.textContent=helper;
   clearVehiclePicture();els.stage.style.display='none';els.listen.hidden=true;els.emojiToggle.hidden=true;
   els.answers.replaceChildren();els.feedback.replaceChildren();els.scorePill.hidden=true;
-  document.querySelector('.progress-track').hidden=true;els.round.textContent='Choose';
+  document.querySelector('.progress-track').hidden=true;els.round.textContent='';
   setStandardBack('Games');
 }
 function setStandardBack(label){const button=document.getElementById('backMenuBtn');button.textContent=label;button.setAttribute('aria-label',`Back to ${label.toLowerCase()}`);button.title=`Back to ${label.toLowerCase()}`;}
@@ -38,7 +38,7 @@ const wordModes=new Set(['learn','wheel']);
 function renderStandardCategories(mode){
   const learn=mode==='learn';
   const wheel=mode==='wheel';
-  renderStandardSetup(mode,learn?'Which words shall we meet?':wheel?'Which words shall we spin?':'Choose words to explore',learn||wheel?'':'Your Teacher selection still applies.');els.round.textContent='Categories';
+  renderStandardSetup(mode,learn?'Which words shall we meet?':wheel?'Which words shall we spin?':'Choose words to explore',learn||wheel?'':'Your Teacher selection still applies.');els.round.textContent='';
   const grid=document.createElement('div');grid.className='standard-choice-grid'+(learn||wheel?' learn-groups':'');
   const categories=wordModes.has(mode)?[...TransportStandard.categories,...TransportStandard.teachingCategories]:TransportStandard.categories;
   for(const category of categories){const pool=filteredStandardPool(mode,{category:category.id});
@@ -100,7 +100,7 @@ const teachingFigureMarkup=`
 function renderTeachingScenes(){
   renderStandardSetup('teaching-scenes','Explore transport scenes','Choose a label to highlight it in the picture.');
   els.modeBadge.textContent='TRANSPORT SCENES';
-  els.round.textContent='Scene explorer';
+  els.round.textContent='';
   setStandardBack('Categories');
 
   const panel=document.createElement('div');
@@ -152,7 +152,7 @@ function renderTeachingScenes(){
   focusLandingHeading('questionText');
 }
 function renderStandardSortRules(){
-  renderStandardSetup('sort','Choose a sorting rule');els.round.textContent='Sorting rules';
+  renderStandardSetup('sort','Choose a sorting rule');els.round.textContent='';
   const grid=document.createElement('div');grid.className='sorting-rules';let available=0;
   for(const rule of TransportStandard.sortRules){const pool=filteredStandardPool('sort',{rule:rule.id}),groups=TransportStandard.availableGroups(rule,pool),valid=groups.length>=2;available+=valid?1:0;
     const card=document.createElement('section');card.className='sorting-rule';
@@ -166,7 +166,7 @@ function renderStandardSortRules(){
 }
 function renderStandardDetectiveSetup(){
   const pref=classroom.data.preferences?.detective||{kind:'mosaic',duration:45};
-  renderStandardSetup('detective','Choose your picture clues');els.round.textContent='Detective setup';
+  renderStandardSetup('detective','Choose your picture clues');els.round.textContent='';
   const panel=document.createElement('div');panel.className='standard-settings';
   panel.innerHTML='<label>Reveal <select aria-label="Reveal type"><option value="mosaic">Mosaic reveal</option><option value="pixel">Pixel reveal</option><option value="silhouette">Silhouette</option></select></label><label>Time <select aria-label="Reveal duration"><option value="30">30 seconds</option><option value="45">45 seconds</option><option value="60">60 seconds</option></select></label><p class="setup-availability" role="status"></p>';
   const kind=panel.querySelector('[aria-label="Reveal type"]'),duration=panel.querySelector('[aria-label="Reveal duration"]');
@@ -178,13 +178,13 @@ function renderStandardDetectiveSetup(){
   kind.onchange=update;duration.onchange=update;panel.classList.add('detective-settings');els.answers.append(panel,row,recovery);standardRecoveryActions(recovery);update();
 }
 function renderStandardHub(mode,groupId=null){
-  const hub=TransportStandard.hubs[mode];renderStandardSetup(mode,hub.title,hub.description);state.hubGroup=groupId;els.round.textContent=mode==='games'?'Transport games':mode==='create'?'Reading cards':mode==='phonics'?'Sounds and words':'Resources';
+  const hub=TransportStandard.hubs[mode];renderStandardSetup(mode,hub.title,hub.description);state.hubGroup=groupId;els.round.textContent='';
   const group=hub.groups.find(g=>g[0]===groupId),root=document.createElement('div');root.className='standard-resource';
   if(globalThis.TransportMedia?.render(mode,groupId,root)){if(group)setStandardBack(hub.title);}
   else if(group){setStandardBack(hub.title);const heading=document.createElement('h3');heading.textContent=group[1];const text=document.createElement('p');text.textContent=group[2];root.append(heading,text,standardButton(`Back to ${hub.title}`,()=>renderStandardHub(mode)));}
   else if(mode==='phonics'){
     // Plants Phonics menu: one row of plain buttons, no descriptions or helper line.
-    els.helper.textContent='';els.round.textContent='Reading practice';const menu=document.createElement('div');menu.className='phonics-menu';
+    els.helper.textContent='';els.round.textContent='';const menu=document.createElement('div');menu.className='phonics-menu';
     for(const [id,title] of hub.groups)menu.append(standardButton(title,()=>renderStandardHub(mode,id),'standard-action'));
     root.append(menu);
   }
@@ -192,7 +192,7 @@ function renderStandardHub(mode,groupId=null){
     // Plants Games menu: big picture cards, title only, no helper line.
     els.helper.textContent='';const cards=document.createElement('div');cards.className='transport-game-cards';
     const art={dispatch:'images/menu/dispatch-banner.webp',driving:'images/classroom/driving-card.webp'};
-    for(const [id,title] of hub.groups){const soon=id==='driving';const button=standardButton('',()=>renderStandardHub(mode,id),'transport-game-card');button.disabled=soon;
+    for(const [id,title] of hub.groups){const soon=false;const button=standardButton('',()=>renderStandardHub(mode,id),'transport-game-card');button.disabled=soon;
       button.innerHTML=`<img src="${art[id]}" alt=""><strong>${title}</strong>${soon?'<span class="transport-game-soon">Coming soon</span>':''}`;cards.append(button);}
     root.append(cards);
   }

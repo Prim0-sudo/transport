@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="standard.css">
   <link rel="stylesheet" href="phonics/phonics.css">
   <link rel="stylesheet" href="dispatch.css">
+  <link rel="stylesheet" href="driving.css">
 </head>
 <body data-transport-shell data-screen="launch">
   <div class="backdrop" aria-hidden="true"></div>
@@ -34,8 +35,10 @@
         <h1 id="homeTitle">Transport Town</h1>
         <p>Journeys &amp; discoveries</p>
       </div>
-      <button class="home-launch" id="openGamesBtn" aria-label="Explore Transport Town">
+      <button class="home-launch" id="openGamesBtn" aria-label="Explore Transport Town activities" aria-describedby="launchHint">
+        <img src="images/vocabulary/vehicle.double-decker-bus.png" alt="" width="140" height="140" draggable="false">
         <strong>Explore</strong>
+        <span class="launch-hint" id="launchHint">Choose an activity</span>
       </button>
       <h1 class="menu-title" id="menuTitle">Choose a game</h1>
       <button class="featured-game" id="featuredDispatch" type="button" aria-label="Play Transport Dispatch. Choose the right vehicle and deliver everyone."><span class="featured-game__art" aria-hidden="true"><img src="images/menu/dispatch-banner.webp" alt="" draggable="false"></span><span class="featured-game__copy"><strong>Transport Dispatch</strong><span>Choose the right vehicle · deliver everyone</span></span></button>
@@ -174,6 +177,7 @@
   <script src="media-books.js"></script>
   <script src="media-views.js"></script>
   <script src="dispatch-view.js"></script>
+  <script src="driving-view.js"></script>
   <script type="module" src="phonics/src/transport-phonics.js"></script>
   <script src="app.js?v=20260917-hangman"></script>
 </body>

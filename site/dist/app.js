@@ -103,6 +103,7 @@ const landingScene = new TransportLanding(document.querySelector('.backdrop'));
 const work = new TransportLifecycle({ onHold: held => {
   globalThis.TransportPhonics?.setPaused(held);
   globalThis.TransportDispatch?.setHeld(held);
+  globalThis.TransportDriving?.setHeld(held);
   detectiveView?.setHeld(held);
   spellingScene?.setHeld(held);
   wheelTween?.paused(held);
@@ -123,6 +124,7 @@ const work = new TransportLifecycle({ onHold: held => {
 function cancelCurrentWork() {
   globalThis.TransportPhonics?.destroy();
   globalThis.TransportDispatch?.destroy();
+  globalThis.TransportDriving?.destroy();
   detectiveView?.destroy();detectiveView=null;
   spellingScene?.destroy();spellingScene=null;
   wheelTween?.kill();wheelTween=null;
@@ -369,7 +371,7 @@ function showScopeRecovery(mode,message='No eligible content matches this select
   showScreen('game');
   clearVehiclePicture();els.stage.style.display='none';els.emojiToggle.hidden=true;els.listen.disabled=true;
   els.modeBadge.textContent=modeInfo[mode]?.badge||'Transport';els.question.textContent='Choose content for this activity';els.helper.textContent='';
-  els.round.textContent='Selection';els.progress.style.width='0%';els.scorePill.hidden=true;els.feedback.replaceChildren();
+  els.round.textContent='';els.progress.style.width='0%';els.scorePill.hidden=true;els.feedback.replaceChildren();
   const panel=document.createElement('div');panel.className='scope-recovery';
   const text=document.createElement('p');text.textContent=message;
   const selection=document.createElement('p');selection.textContent=TransportCurriculum.scopeLabel(classroom.scope);

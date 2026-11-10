@@ -13,7 +13,7 @@
 
   function mediaLibrary(root) {
     els.helper.textContent = '';
-    els.round.textContent = 'Media library';
+    els.round.textContent = '';
     const nav = el('nav', 'media-sections'); nav.setAttribute('aria-label', 'Media type');
     for (const [id, label] of sections()) {
       const button = el('button', 'media-tab', label); button.type = 'button'; button.dataset.mediaSection = id;
@@ -232,6 +232,7 @@
       if (mode === 'create') { reading(root); return true; }
       if (mode === 'phonics' && groupId) { phonics(root, groupId); return true; }
       if (mode === 'games' && groupId === 'dispatch' && globalThis.TransportDispatch) { TransportDispatch.mount(root); return true; }
+      if (mode === 'games' && groupId === 'driving' && globalThis.TransportDriving) { TransportDriving.mount(root); return true; }
       return false;
     }
   };

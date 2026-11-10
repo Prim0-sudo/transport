@@ -9,6 +9,12 @@
     medium:['Medium', 'Roadworks block the quickest way · 3 vehicles'],
     hard:['Hard', 'More roadworks, limited fuel, extra stops · 4 vehicles']
   };
+  // Three named maps for each size. Each puts the river in a different place; streets, places and roadworks still change every round.
+  const MAPS = {
+    small:[['Little Ford', 'west', 1], ['Mill Lane', 'east', 2], ['Pebble Quay', 'west', 3]],
+    medium:[['Riverside', 'middle', 2], ['Old Bridge', 'west', 3], ['Harbour Row', 'east', 2]],
+    large:[['Kingsbridge', 'middle', 3], ['Westwater', 'west', 2], ['Eastport', 'east', 3]]
+  };
   const JOBS = [3, 5, 7];
   const ROUNDS = [1, 3, 5];
   const CHOICES = {easy:2, medium:3, hard:4};
@@ -199,26 +205,27 @@
   const writeJSON = (key, value) => { try { localStorage.setItem(key, JSON.stringify(value)); } catch {} };
   function readSetup() {
     const s = readJSON(KEY, {});
-    return {size: SIZES[s.size] ? s.size : 'small', level: LEVELS[s.level] ? s.level : 'easy', jobs: JOBS.includes(s.jobs) ? s.jobs : 5, rounds: ROUNDS.includes(s.rounds) ? s.rounds : 3};
+    return {size: SIZES[s.size] ? s.size : 'small', map: [0, 1, 2].includes(s.map) ? s.map : 'mix', level: LEVELS[s.level] ? s.level : 'easy', jobs: JOBS.includes(s.jobs) ? s.jobs : 5, rounds: ROUNDS.includes(s.rounds) ? s.rounds : 3};
   }
   const setupKey = s => `${s.size}-${s.level}-${s.jobs}-${s.rounds}`;
 
   // ---------- Town generation ----------
   const edgeKey = (a, b) => a < b ? `${a}|${b}` : `${b}|${a}`;
-  function makeTown(size) {
-    const S = SIZES[size][2], rc = Math.floor((S - 1) / 2), j = S > 3 ? 1.6 : 1;
+  function makeTown(size, map = 0) {
+    const S = SIZES[size][2], river = MAPS[size][map][1], j = S > 3 ? 1.6 : 1;
+    const rc = river === 'west' ? (S > 4 ? 1 : 0) : river === 'east' ? S - 2 : Math.floor((S - 1) / 2);
     const nodes = {}, edges = new Map();
     for (let c = 0; c < S; c++) for (let r = 0; r < S; r++) {
       const id = `${c}-${r}`;
       nodes[id] = {id, c, r, x: 12 + c * 76 / (S - 1) + (Math.random() * 2 - 1) * j, y: 10 + r * 62 / (S - 1) + (Math.random() * 2 - 1) * j, place: null};
     }
     const add = (a, b, bridge = false) => edges.set(edgeKey(a, b), {key: edgeKey(a, b), a, b, bridge});
-    const bridgeRows = shuffle([...Array(S).keys()]).slice(0, S === 5 ? 3 : 2);
+    const bridgeRows = shuffle([...Array(S).keys()]).slice(0, MAPS[size][map][2]);
     for (let c = 0; c < S; c++) for (let r = 0; r < S; r++) {
       if (c < S - 1 && (c !== rc || bridgeRows.includes(r))) add(`${c}-${r}`, `${c + 1}-${r}`, c === rc);
       if (r < S - 1) add(`${c}-${r}`, `${c}-${r + 1}`);
     }
-    const town = {size, S, rc, nodes, edges, riverX: (nodes[`${rc}-0`].x + nodes[`${rc + 1}-0`].x) / 2};
+    const town = {size, map, mapName: MAPS[size][map][0], S, rc, nodes, edges, riverX: (nodes[`${rc}-0`].x + nodes[`${rc + 1}-0`].x) / 2};
     // Knock out a few ordinary streets on bigger maps so the grid is less regular.
     let remove = {small: 0, medium: 2, large: 4}[size];
     for (const e of shuffle([...edges.values()].filter(e => !e.bridge))) {
@@ -309,40 +316,54 @@
 
     renderSetup() {
       this.stopMotion(); this.resize?.disconnect();
-      els.round.textContent = 'Transport Dispatch';
+      els.round.textContent = '';
       const box = el('section', 'dispatch-setup');
-      box.append(el('h3', '', 'Transport Dispatch'), el('p', '', 'Choose the right vehicle, plan a road that is open and deliver everyone safely. Every round is a new town.'));
-      const group = (title, items, key) => {
-        const wrap = el('div', 'dispatch-options'); wrap.setAttribute('role', 'group'); wrap.setAttribute('aria-label', title);
-        wrap.append(el('h4', '', title));
-        for (const [value, label, hint] of items) {
-          const b = el('button', 'dispatch-option'); b.type = 'button'; b.setAttribute('aria-pressed', String(value === this.setup[key]));
-          b.append(el('strong', '', label)); if (hint) b.append(el('span', '', hint));
-          b.onclick = () => { this.setup[key] = value; for (const o of wrap.querySelectorAll('button')) o.setAttribute('aria-pressed', String(o === b)); showBest(); };
-          wrap.append(b);
+      const hero = el('div', 'dispatch-hero'), heroArt = el('img'); heroArt.src = 'images/menu/dispatch-banner.webp'; heroArt.alt = ''; heroArt.draggable = false;
+      const heroText = el('div'); heroText.append(el('h3', '', 'Transport Dispatch'), el('p', '', 'Pick the right vehicle and plan an open road.'));
+      hero.append(heroArt, heroText); box.append(hero);
+      const rows = el('div', 'dispatch-rows');
+      const group = (title, items, key, onPick) => {
+        const wrap = el('div', 'dispatch-options'), id = 'dispatch-' + key;
+        const label = el('span', 'dispatch-options__label', title); label.id = id;
+        const seg = el('div', 'dispatch-segment'); seg.setAttribute('role', 'group'); seg.setAttribute('aria-labelledby', id);
+        const hint = el('span', 'dispatch-options__hint'); hint.setAttribute('aria-live', 'polite');
+        const sync = () => { const item = items.find(i => i[0] === this.setup[key]) || items[0]; hint.textContent = item[2] || ''; for (const o of seg.children) o.setAttribute('aria-pressed', String(o.dataset.value === String(item[0]))); };
+        for (const [value, text, more] of items) {
+          const b = el('button', 'dispatch-option', text); b.type = 'button'; b.dataset.value = String(value); if (more) b.title = more;
+          b.onclick = () => { this.setup[key] = value; sync(); onPick?.(); showBest(); };
+          seg.append(b);
         }
-        return wrap;
+        wrap.append(label, seg, hint); sync(); wrap.sync = sync; return wrap;
       };
+      const mapItems = () => [...MAPS[this.setup.size].map(([n, river, bridges], i) => [i, n, `River ${river === 'middle' ? 'through the middle' : 'on the ' + river + ' side'} · ${bridges === 1 ? 'one bridge' : bridges + ' bridges'}`]), ['mix', 'Mix', 'A different map each round.']];
+      const mapRow = () => group('Map', mapItems(), 'map');
+      let maps = mapRow();
+      const sizeRow = group('Town size', Object.entries(SIZES).map(([k, [l, h]]) => [k, l, h]), 'size', () => { const next = mapRow(); maps.replaceWith(next); maps = next; });
       const best = el('p', 'dispatch-best');
-      const showBest = () => { const b = readJSON(BEST, {})[setupKey(this.setup)]; best.textContent = b ? `Best for this setup: ${b.stars} of ${b.max} stars` : 'No best score for this setup yet.'; };
-      box.append(
-        group('Map size', Object.entries(SIZES).map(([k, [l, h]]) => [k, l, h]), 'size'),
+      const showBest = () => { const b = readJSON(BEST, {})[setupKey(this.setup)]; best.textContent = b ? `Best: ${b.stars} of ${b.max} ⭐` : ''; best.hidden = !b; };
+      rows.append(
+        sizeRow, maps,
         group('Difficulty', Object.entries(LEVELS).map(([k, [l, h]]) => [k, l, h]), 'level'),
-        group('Jobs in each round', JOBS.map(n => [n, `${n} jobs`, n === 3 ? 'Quick' : n === 5 ? 'Standard' : 'Long']), 'jobs'),
-        group('Rounds', ROUNDS.map(n => [n, n === 1 ? '1 round' : `${n} rounds`, n === 1 ? 'One town' : `${n} different towns`]), 'rounds'),
-        best);
+        group('Jobs', JOBS.map(n => [n, String(n), n === 3 ? 'Quick round' : n === 5 ? 'Standard round' : 'Long round']), 'jobs'),
+        group('Rounds', ROUNDS.map(n => [n, String(n), n === 1 ? 'One town' : `${n} towns in a row`]), 'rounds'));
       showBest();
       const start = el('button', 'dispatch-primary', 'Start dispatching'); start.type = 'button';
       start.onclick = () => { if (this.held) return; writeJSON(KEY, this.setup); this.startGame(); };
-      box.append(start);
+      box.append(rows, best, start);
       this.root.replaceChildren(box);
     }
 
-    startGame() { this.round = 0; this.totalStars = 0; this.roundScores = []; this.startRound(); }
+    startGame() {
+      this.round = 0; this.totalStars = 0; this.roundScores = [];
+      // Mix: every map once before any repeats.
+      this.mapOrder = null; this.names = [];
+      if (this.setup.map === 'mix') { const order = []; while (order.length < this.setup.rounds) order.push(...shuffle([0, 1, 2])); this.mapOrder = order.slice(0, this.setup.rounds); }
+      this.startRound();
+    }
 
     startRound() {
       const {size, level, jobs} = this.setup;
-      this.town = makeTown(size);
+      this.town = makeTown(size, this.mapOrder ? this.mapOrder[this.round] : this.setup.map);
       this.roadworks = new Set();
       closeSome(this.town, this.roadworks, {easy: {small: 0, medium: 0, large: 0}, medium: {small: 0, medium: 1, large: 2}, hard: {small: 1, medium: 2, large: 4}}[level][size]);
       this.jobs = makeJobs(this.town, jobs, level);
@@ -687,22 +708,22 @@
     finishRound() {
       this.stopMotion(); this.resize?.disconnect();
       const max = this.jobs.length * 3, last = this.round + 1 >= this.setup.rounds;
-      this.roundScores.push(this.stars); this.totalStars += this.stars;
+      this.roundScores.push(this.stars); this.totalStars += this.stars; (this.names ||= [])[this.round] = this.town.mapName;
       const box = el('section', 'dispatch-setup dispatch-done');
       if (!last) {
-        els.round.textContent = `Round ${this.round + 1} complete`;
+        els.round.textContent = '';
         box.append(el('h3', '', `Round ${this.round + 1} of ${this.setup.rounds} complete`), el('p', 'dispatch-done-score', `${this.stars} of ${max} ⭐`),
           el('p', '', this.stars === max ? 'A perfect town! The next town is waiting.' : 'Every job was delivered. The next town has new roads and new jobs.'));
         const next = el('button', 'dispatch-primary', 'Next town'); next.type = 'button';
         next.onclick = () => { if (this.held) return; this.round++; this.startRound(); };
         const row = el('div', 'dispatch-actions'); row.append(next); box.append(row);
       } else {
-        els.round.textContent = 'Dispatch complete';
+        els.round.textContent = '';
         const all = this.setup.rounds * max, key = setupKey(this.setup), bests = readJSON(BEST, {}), prev = bests[key];
         const record = !prev || this.totalStars > prev.stars;
         if (record) { bests[key] = {stars: this.totalStars, max: all}; writeJSON(BEST, bests); }
         box.append(el('h3', '', 'Dispatch complete'), el('p', 'dispatch-done-score', `${this.totalStars} of ${all} ⭐`));
-        if (this.setup.rounds > 1) box.append(el('p', '', this.roundScores.map((s, i) => `Town ${i + 1}: ${s}`).join(' · ')));
+        if (this.setup.rounds > 1) box.append(el('p', '', this.roundScores.map((s, i) => `${this.names[i]}: ${s}`).join(' · ')));
         box.append(el('p', '', record ? (prev ? `New best! Your old best was ${prev.stars}.` : 'Your first score for this setup.') : `Best for this setup: ${prev.stars} of ${prev.max}.`));
         if (this.setup.level !== 'hard' && this.totalStars >= all * .85) box.append(el('p', 'dispatch-tip', `Great dispatching. Try ${this.setup.level === 'easy' ? 'Medium' : 'Hard'} for roadworks${this.setup.level === 'easy' ? '' : ', fuel and extra stops'}.`));
         else if (this.setup.size !== 'large' && this.totalStars >= all * .85) box.append(el('p', 'dispatch-tip', `Ready for more? Try a ${this.setup.size === 'small' ? 'medium town' : 'big city'}.`));
@@ -718,10 +739,11 @@
       if (!this.shell?.isConnected) return;
       const job = this.job, t = this.town, routing = ['route', 'ready'].includes(this.phase) && !job.t.sea;
       const roundText = this.setup.rounds > 1 ? `Town ${this.round + 1} of ${this.setup.rounds} · ` : '';
-      this.countEl.textContent = `${roundText}Job ${this.index + 1} of ${this.jobs.length} · ⭐ ${this.stars}`;
+      this.countEl.textContent = `${t.mapName} · ⭐ ${this.stars}`;
+      this.countEl.title = `${roundText}Job ${this.index + 1} of ${this.jobs.length} · ⭐ ${this.stars}`;
       els.round.textContent = `${roundText}Job ${this.index + 1} of ${this.jobs.length}`;
       const total = job.count + job.extra;
-      this.subEl.textContent = this.phase === 'done' ? `${total} delivered` : this.onboard ? `${this.onboard} aboard` : `Waiting at the ${name(job.from)}${job.via ? ` · ${job.extra} more at the ${name(job.via)}` : ''}`;
+      this.subEl.textContent = this.phase === 'done' ? `${total} delivered` : this.onboard ? `${this.onboard} aboard` : '';
       for (const b of this.choicesEl.children) { b.disabled = this.phase !== 'choose' || this.held; b.setAttribute('aria-pressed', String(b.dataset.vehicle === this.vehicle)); b.classList.toggle('is-wrong', b.dataset.vehicle === wrongId); }
       this.choicesEl.hidden = this.phase !== 'choose' && this.phase !== 'boarding';
       // Map state
@@ -815,7 +837,7 @@
   }
 
   globalThis.TransportDispatch = {
-    mount(root) { this.destroy(); view = new DispatchView(root); if (globalThis.__dispatchHeld) view.setHeld(true); },
+    mount(root) { this.destroy(); document.getElementById('gameCard')?.setAttribute('data-mode', 'dispatch'); view = new DispatchView(root); if (globalThis.__dispatchHeld) view.setHeld(true); },
     setHeld(held) { globalThis.__dispatchHeld = held; view?.setHeld(held); },
     destroy() { view?.destroy(); view = null; },
     _view: () => view

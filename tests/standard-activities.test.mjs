@@ -46,5 +46,5 @@ test('eight distinct misses lose; punctuation and spaces require no guesses; ass
  const assisted=round('bus');assisted.assisted=true;for(const l of 'bus')assert.equal(S.guessSpelling(assisted,l).reward,0);
 });
 test('resource routes declare real absent content instead of reporting imaginary playable libraries',()=>{
- assert.deepEqual(Object.keys(S.hubs),['media','games','phonics','create']);assert.deepEqual(S.hubs.media.groups.map(g=>g[0]),['printables','books','videos','songs']);assert.ok(S.hubs.games.groups.some(g=>g[0]==='driving'));
+ assert.deepEqual(Object.keys(S.hubs),['media','games','phonics','create']);assert.deepEqual(S.hubs.media.groups.map(g=>g[0]),['printables','books','videos','songs','presentation']);assert.ok(S.hubs.games.groups.some(g=>g[0]==='driving'));
 });
