@@ -74,7 +74,7 @@
 
     // Layers follow the ledger's planeOrder; door panels ride inside their vehicle groups.
     build() {
-      const { W, H, art, bus, train, ferry, plane, occluder, people, gangway } = this.place;
+      const { W, H, art, bus, train, ferry, plane, occluder, people, gangway, stationRoofOcclusion } = this.place;
       this.svg = this.node('svg', { class: 'transport-camera', viewBox: `0 0 ${W} ${H}`, 'aria-hidden': 'true', focusable: 'false' }, this.root);
       this.image('sky-backplate', [0, 0, W, H]);
       const defs = this.node('defs', {});
@@ -87,6 +87,11 @@
       this.plane = this.vehicle('runway-plane', plane);
       this.image('station-stage', [0, 0, W, H]);
       this.ferry = this.vehicle('harbour-ferry', ferry);
+      // Trace the roof from the station painting. The stage also contains water,
+      // so only the roof and chimneys belong in front of the passing ferry.
+      const roof = this.node('clipPath', { id: 'coastal-station-roof' }, defs);
+      this.node('path', { d: stationRoofOcclusion }, roof);
+      this.image('station-stage', [0, 0, W, H]).setAttribute('clip-path', 'url(#coastal-station-roof)');
       this.train = this.vehicle('station-train', train);
       this.bus = this.vehicle('station-bus', bus);
       this.ferryDoor = this.image('ferry-door-closed', ferry.door, this.ferry);

@@ -1,4 +1,4 @@
-const { W, H, cameraX, art, bus, train, ferry, plane, occluder, people, gangway } = window.COASTAL_STATION;
+const { W, H, cameraX, art, bus, train, ferry, plane, occluder, people, gangway, stationRoofOcclusion } = window.COASTAL_STATION;
 const world = document.getElementById('world');
 const root = document.querySelector('main');
 const camera = document.getElementById('camera');
@@ -56,6 +56,9 @@ coast.setAttribute('mask', 'url(#distant-mask)');
 const runwayPlane = vehicle('runway-plane', plane);
 image('station-stage', [0, 0, W, H]);
 const ferryActor = vehicle('harbour-ferry', ferry);
+const roof = node('clipPath', { id: 'station-roof' }, defs);
+node('path', { d: stationRoofOcclusion }, roof);
+image('station-stage', [0, 0, W, H]).setAttribute('clip-path', 'url(#station-roof)');
 const trainActor = vehicle('station-train', train);
 const busActor = vehicle('station-bus', bus);
 const ferryDoor = image('ferry-door-closed', ferry.door, ferryActor);
