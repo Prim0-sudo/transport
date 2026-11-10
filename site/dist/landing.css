@@ -1,18 +1,6 @@
-/* Shared launch grammar, with one registered Miniature World camera. */
-.transport-world{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:#8fcce3!important;isolation:isolate}
-.transport-world::after{display:none}.transport-sky{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}
-.transport-camera{position:absolute;left:0;top:0;width:1672px;height:941px;transform-origin:0 0}
-.transport-plane{position:absolute;inset:0;width:1672px;height:941px;max-width:none;object-fit:fill}
-.transport-actor,.transport-cloud{position:absolute;will-change:transform;pointer-events:none}.transport-actor img,.transport-cloud img{display:block;width:100%;height:auto;max-width:none}
-.transport-cloud{z-index:1;width:320px;left:0;top:30px;transform:translateX(180px)}.cloud-two{width:240px;top:90px;transform:translateX(1110px)}
-.distant-plane{z-index:2}.plane-actor{z-index:3;left:1310px;top:264px;width:160px;transform-origin:62px 82px}
-.airfield-cover{z-index:4;clip-path:polygon(88.5% 27.5%,96.3% 27.5%,99% 29.8%,99% 34.5%,88.5% 34.5%)}
-.town-plane{z-index:5}.bus-actor{z-index:6;left:170px;top:695px;width:260px;transform-origin:166px 131px}
-.train-actor{z-index:6;left:100px;top:440px;width:260px;transform-origin:95px 137px}
-.ferry-actor{z-index:6;left:1220px;top:510px;width:480px;transform-origin:246px 236px}
-.depot-cover{z-index:7;clip-path:polygon(0 62.3%,4.8% 63.3%,14.4% 69.6%,13.4% 89.3%,0 93.1%)}.foreground-plane{z-index:8}
-.transport-world[data-active=false] .transport-actor,.transport-world[data-active=false] .transport-cloud,.transport-world[data-reduced=true] .transport-actor,.transport-world[data-reduced=true] .transport-cloud{will-change:auto}
-@media(max-width:600px) and (orientation:portrait){.cloud-two{display:none}}
+/* Shared launch grammar over the Coastal Station camera (landing-scene.js frames the 1536 x 1024 source). */
+.transport-world{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:#abd4df!important;isolation:isolate}
+.transport-world::after{display:none}.transport-camera{display:block;position:absolute;inset:0;width:100%;height:100%}
 
 body[data-transport-shell]{--ink:#183a51;--shadow:0 4px 0 #183a5120;background:#8fcce3;color:var(--ink)}
 body[data-transport-shell] .shell{width:100%;max-width:none;padding:14px clamp(14px,3vw,40px) 24px}
@@ -25,11 +13,15 @@ body[data-transport-shell] .home-screen{justify-content:flex-start;gap:26px;padd
 body[data-transport-shell] .home-copy{display:block;text-align:center}
 body[data-transport-shell] .home-copy h1{font:700 clamp(42px,6.8vw,88px)/1.05 Georgia,serif;letter-spacing:-.025em;margin:0 0 12px;text-shadow:0 2px 1px #fff9}
 body[data-transport-shell] .home-copy p{display:inline-block;background:#fffbed;border-radius:18px;padding:6px 18px;font-size:clamp(18px,2vw,25px);font-weight:800}
-body[data-transport-shell] .home-launch{width:clamp(210px,24vw,280px);aspect-ratio:1;flex-shrink:0;border:7px double #d8b34f;border-radius:50%;box-shadow:0 6px 0 #163c5140;background:#fffbed;color:#183a51;padding:22px;justify-content:center;gap:2px;transition:filter .15s ease}
-body[data-transport-shell] .home-launch:hover{transform:none;filter:brightness(1.03)}
-.landing-start-art{display:block;width:148px;height:95px;object-fit:contain}
-body[data-transport-shell] .home-launch strong{font-size:34px}
-body[data-transport-shell] .home-launch small{font-size:14px;font-weight:800;letter-spacing:0;text-transform:none;color:inherit}
+/* Approved Coastal Station launch: a compact gold pill under the title keeps the quay, platform and kerb in view. */
+body[data-transport-shell] .home-screen:not(.menu-open){gap:12px}
+body[data-transport-shell] .home-copy p{margin:0}
+body[data-transport-shell] .home-launch{flex-direction:row;flex-shrink:0;min-width:150px;min-height:54px;padding:8px 30px;border:3px solid #234453;border-radius:999px;background:#ffe3a4;box-shadow:0 4px 0 #a37136;color:#17384a;justify-content:center;gap:0;transition:filter .15s ease}
+body[data-transport-shell] .home-launch:hover{transform:none;filter:brightness(1.04)}
+body[data-transport-shell] .home-launch:active{transform:translateY(2px);box-shadow:0 2px 0 #a37136}
+body[data-transport-shell] .home-launch strong{font-size:24px;line-height:1}
+/* Wide camera (16:9 laptops): a tighter title block keeps Explore clear of the ferry's wheelhouse. */
+@media(min-aspect-ratio:3/2){body[data-transport-shell] .home-screen:not(.menu-open){padding-top:4px;gap:8px}body[data-transport-shell] .home-screen .home-copy h1{font-size:clamp(42px,5vw,64px);margin-bottom:8px}}
 .menu-title{display:none}body[data-transport-shell] .home-screen.menu-open .home-copy{display:none}
 body[data-transport-shell] .home-screen.menu-open{align-items:stretch;padding-top:20px}
 body[data-transport-shell] .home-screen.menu-open .menu-title{display:block;font:700 clamp(32px,4.4vw,56px)/1.1 Georgia,serif;margin:0 0 6px}
@@ -47,5 +39,5 @@ body[data-screen=launch][data-transport-shell] .shell{min-height:100svh}
 .landing-teacher::backdrop{background:#163c5166}.landing-teacher h2{margin:0 0 16px}.landing-teacher label{display:flex;gap:12px;align-items:center;min-height:48px;font-weight:800}.landing-teacher input{width:22px;height:22px;accent-color:#164759}.landing-teacher p{line-height:1.5}.landing-teacher button{background:#f7d46f;border:1px solid #d8b34f;border-radius:12px;padding:10px 18px;min-height:44px;font:inherit;color:inherit;font-weight:bold}
 h1[tabindex='-1']:focus{outline:none}
 @media(max-width:800px){body[data-transport-shell] .mode-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:560px){body[data-transport-shell] .shell{padding:10px 12px 18px}body[data-transport-shell] .icon-btn{font-size:12px;padding:8px;min-height:44px}body[data-transport-shell] .top-actions{gap:6px}body[data-transport-shell] .brand{font-size:13px;padding:7px 9px}body[data-transport-shell] .brand img{width:30px;height:28px}body[data-transport-shell] .home-screen{padding-top:clamp(24px,6svh,55px);gap:24px}body[data-transport-shell] .home-copy h1{font-size:43px;max-width:8ch;margin-inline:auto}body[data-transport-shell] .home-copy p{font-size:17px}body[data-transport-shell] .home-launch{width:220px}body[data-transport-shell] .mode-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-height:600px){body[data-transport-shell] .home-screen{padding-top:12px;gap:12px}body[data-transport-shell] .home-copy h1{font-size:40px;margin-bottom:6px}body[data-transport-shell] .home-copy p{font-size:16px}body[data-transport-shell] .home-launch{width:176px;padding:12px}body[data-transport-shell] .landing-start-art{width:120px;height:67px}body[data-transport-shell] .home-launch strong{font-size:27px}body[data-transport-shell] .home-launch small{font-size:12px}}
+@media(max-width:560px){body[data-transport-shell] .shell{padding:10px 12px 18px}body[data-transport-shell] .icon-btn{font-size:12px;padding:8px;min-height:44px}body[data-transport-shell] .top-actions{gap:6px}body[data-transport-shell] .brand{font-size:13px;padding:7px 9px}body[data-transport-shell] .brand img{width:30px;height:28px}body[data-transport-shell] .home-screen{padding-top:clamp(24px,6svh,55px);gap:24px}body[data-transport-shell] .home-copy h1{font-size:43px;max-width:8ch;margin-inline:auto}body[data-transport-shell] .home-copy p{font-size:17px}body[data-transport-shell] .mode-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-height:600px){body[data-transport-shell] .home-screen{padding-top:12px;gap:12px}body[data-transport-shell] .home-copy h1{font-size:40px;margin-bottom:6px}body[data-transport-shell] .home-copy p{font-size:16px}}

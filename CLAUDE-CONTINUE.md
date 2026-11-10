@@ -4,6 +4,10 @@ Written 2026-11-09 at the end of a Claude session. Read this first, then the exi
 
 10 November 2026 artwork handoff. The new classroom covers, completion medal, Safety scenes and choices, vehicle part insets, and modular Dispatch map art have a single integration guide in the [artwork report](docs/ARTWORK-REPORT-2026-11-10.md). Use its ID mappings and check the artwork gallery before wiring. The existing coastal Spelling scene and menu artwork are already on `main`.
 
+## Coastal Station landing (wired in 2026-11-10)
+
+The owner-approved painted motion preview in artwork/landing/coastal-station-miniature-world now drives the landing. Runtime copies of its 20 images and placement.js live in site/dist/images/landing/coastal-station; tests/landing-art.test.mjs checks them against the ledger hashes and placement block, so re-export there and re-copy together. landing-scene.js is an SVG port of the preview timeline (same tweens and times, one 19 s departure per landing visit, rebuilt from 0 s on re-entry, held by Teacher/hidden, docked still frame for reduced motion). Explore is now the preview's gold pill so the quay, platform and kerb stay visible; on 16:9 screens the camera trims 48 px of the front flower bed as well as sky and the title block tightens. The old miniature-world-v1 layers stay only for the brand button.
+
 ## Approved menu and Dispatch artwork
 
 The user approved all twelve Miniature World activity illustrations and the separate Dispatch feature banner. Start with [the menu art handoff](artwork/menu/miniature-world-v1/REVIEW.md) and its [mode-to-image ledger](artwork/menu/miniature-world-v1/manifest.json). The three approved pilot originals stay in their original folder and are referenced by the ledger. Wire the images into the existing native menu buttons and banner, retain direct Dispatch navigation, and check the actual desktop and 390 × 844 phone menu. The artwork review's sizing and edge checks are already recorded.
