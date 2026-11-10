@@ -377,3 +377,29 @@ body[data-transport-shell] .home-screen.menu-open .menu-title{font:700 2rem/1.06
   .game-card:has(> .answers > .answer-btn) > .answers:has(> .answer-btn:nth-child(3)) .answer-btn{min-height:64px;padding:6px 12px}
   .game-card:has(> .answers > .answer-btn) > .answers:has(> .answer-btn:nth-child(3)) .answer-btn :is(.answer-icon,.answer-image-icon){width:48px;height:48px}
 }
+/* Plants parity: activity setup forms (Detective and others) — label above each dropdown, dropdowns side by side, full-width start button. */
+@media(max-width:650px){
+  .game-card:has(.standard-settings) #questionText{width:100%;align-self:stretch;font-size:23.2px;line-height:1.1;text-align:left;margin-bottom:10px}
+  .answers .standard-settings{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;width:100%;margin:0}
+  .answers .standard-settings > label{display:grid;gap:4px;font-weight:700;text-align:left;margin:0}
+  .answers .standard-settings > label select{width:100%;min-height:44px;padding:7px;border:2px solid #24527a;border-radius:10px;background:#fff;font-weight:700;font-size:16px}
+  .answers .standard-settings + .standard-actions{width:100%;margin-top:12px}
+  .answers .standard-settings + .standard-actions .standard-action{width:100%;min-height:46px}
+}
+/* Plants parity: Detective — 270px square picture, feedback panel with full-width Next. */
+@media(max-width:650px){
+  .detective-picture{width:min(100%,270px);aspect-ratio:1/1;margin-inline:auto}
+  .game-card > .feedback{flex-direction:column;align-items:stretch;gap:6px;padding:8px;border-radius:16px;text-align:center}
+  .game-card > .feedback .next-btn{width:100%;min-height:46px;margin:0;border-radius:17px}
+}
+@media(max-width:650px){.game-card > .feedback p{font-size:15px;line-height:1.3;margin:0}}
+/* Plants parity: Detective controls — 48px guesses, status and practice button on one row. */
+@media(max-width:650px){
+  .detective-workspace{gap:8px}
+  .detective-controls{display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;align-content:flex-start;gap:8px;height:auto;min-height:0}
+  .detective-controls > .detective-time,.detective-controls > .standard-actions,.detective-controls > .detective-choices{flex:1 1 100%}
+  .detective-controls .detective-choices .answer-btn{min-height:48px;height:48px;padding:4px 6px}
+  .detective-controls > .detective-status{flex:1 1 0;margin:0;font-size:14px;line-height:1.3}
+  .detective-controls > [data-reveal-practice]{flex:0 0 auto;min-height:44px;max-width:45%;padding:4px 10px;font-size:14px;line-height:1.15}
+  .game-card:has(.detective-workspace) > h2{margin-bottom:4px}
+}
