@@ -430,3 +430,10 @@ body[data-transport-shell] .home-screen.menu-open .menu-title{font:700 2rem/1.06
 @media(max-width:650px){.game-screen .game-card > h2{font-size:23.2px;line-height:1.2}}
 /* Flip the Tiles on phones: 106px tiles so the 20-tile board and Turns line fit the screen. */
 @media(max-width:650px){.game-screen .game-card[data-mode=flip] .flip-board-20 .flip-tile,.game-screen .game-card[data-mode=flip] .flip-board-20 .flip-tile-inner{min-height:106px;height:106px}}
+/* Plants parity: Spin the Wheel group picker — Plants' compact 104px cards with 30px icons. */
+@media(max-width:650px){
+  .game-card[data-mode=wheel] > h2{margin-top:0}
+  .game-card[data-mode=wheel] .standard-choice-grid{gap:8px}
+  .game-card[data-mode=wheel] .standard-choice-grid .standard-choice{min-height:0;padding:6px;gap:6px}
+  .game-card[data-mode=wheel] .standard-choice-grid .standard-choice img{height:30px;width:auto;max-width:100%}
+}
